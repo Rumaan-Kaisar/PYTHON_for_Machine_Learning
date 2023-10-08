@@ -1,0 +1,8 @@
+Practice based Learning
+
+
+	1.	Jose Portilla: Python 3.0
+	2.	Colt Steele : Modern Python Bootcamp
+	3.	ZTM : Python Part only (Andrei Neagoie)
+	4.	Build 10 Real world project
+	5.	Complete DS bootcamp: Python part only (rev)

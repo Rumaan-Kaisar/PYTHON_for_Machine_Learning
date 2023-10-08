@@ -1,0 +1,77 @@
+py_ch_1_intro
+    Python Tutorial
+    Python HOME 
+    Python Intro 
+    Python Get Started 
+    Python Syntax 
+    Python Comments 
+    Python Variables 
+    Python Data Types 
+    Python Numbers 
+    Python Casting 
+    Python Strings 
+    Python Booleans 
+    Python Operators
+
+py_ch_2_countables
+    Python Lists 
+    Python Tuples 
+    Python Sets 
+    Python Dictionaries
+
+py_ch_3_control_statement
+    lf...Else  
+    While Loops  
+    For Loops
+
+py_ch_4_functions
+    Functions
+    Lambda
+    Scope
+
+py_ch_5_OOP
+    classes/Objects  
+    Inheritance  
+    Iterators  
+
+py_ch_6_modules_packages
+
+py_ch_7_exception
+    Try...Except 
+
+py_ch_8_file_IO
+    File Handling
+    Read Files  
+    Write/Create Files 
+    Delete Files
+
+py_ch_9_Decorators_Generators
+
+py_ch_10_GUIs
+
+py_ch_11_adv_obj_DS
+
+
+
+
+py_misc_1_Date_Math
+py_misc_2_JSON_RegEx
+py_misc_3_pip
+py_misc_4_standard_libraries
+py_misc_5_user_input
+
+
+Python User Input Python String Formatting
+
+
+py_app_1_Web Scraping
+py_app_2_Images
+py_app_3_PDFs_Spreadsheets
+py_app_4_Emails
+
+
+
+
+
+
+
