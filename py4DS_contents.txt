@@ -1,77 +1,147 @@
-py_ch_1_intro
-    Python Tutorial
-    Python HOME 
-    Python Intro 
-    Python Get Started 
-    Python Syntax 
-    Python Comments 
-    Python Variables 
-    Python Data Types 
-    Python Numbers 
-    Python Casting 
-    Python Strings 
-    Python Booleans 
-    Python Operators
 
-py_ch_2_countables
-    Python Lists 
-    Python Tuples 
-    Python Sets 
-    Python Dictionaries
 
-py_ch_3_control_statement
-    lf...Else  
-    While Loops  
-    For Loops
-
-py_ch_4_functions
-    Functions
-    Lambda
-    Scope
-
-py_ch_5_OOP
-    classes/Objects  
-    Inheritance  
-    Iterators  
-
-py_ch_6_modules_packages
-
-py_ch_7_exception
-    Try...Except 
-
-py_ch_8_file_IO
-    File Handling
-    Read Files  
-    Write/Create Files 
-    Delete Files
-
-py_ch_9_Decorators_Generators
-
-py_ch_10_GUIs
-
-py_ch_11_adv_obj_DS
+A-Z: Python for Data Science:
+    Core Programming Principles 
+    Fundamentals Of Python 
+    Matrices 
+    Data Frames 
+    Advanced Visualization
+    Homework Solutions
 
 
 
 
-py_misc_1_Date_Math
-py_misc_2_JSON_RegEx
-py_misc_3_pip
-py_misc_4_standard_libraries
-py_misc_5_user_input
-
-
-Python User Input Python String Formatting
-
-
-py_app_1_Web Scraping
-py_app_2_Images
-py_app_3_PDFs_Spreadsheets
-py_app_4_Emails
+ZTM : 
+    Pandas, 
+    NumPy, 
+    MatPlotlib
 
 
 
 
+Jose Portilla: Python for Computer vision, OpenCV
+    Course Overview and Introduction 
+    NumPy and Image Basics 
+    Image Basics with OpenCV 
+    Image Processing
+    Video Basics with Python and OpenCV 
+    Object Detection with OpenCV and Python 
+    Object Tracking
+    Deep Learning for Computer Vision
+    Capstone Project
+
+
+
+
+Jose Portilla: Python for DS, ML
+    Course Introduction
+    Environment Set-Up
+    Jupyter Overview
+    Python Crash Course
+    Python for Data Analysis - NurnPy
+    Python for Data Analysis - Pandas
+    Python for Data Analysis - Pandas Exercises
+    Python for Data Visualization - Matplotlib
+    Python for Data Visualization - Seaborn
+    Python for Data Visualization - Pandas Built-in Data Visualization
+    Python for Data Visualization - Plotly and Cufflinks
+    Python for Data Visualization - Geographical Plotting
+    Data Capstone Project
+    Introduction to Machine Learning
+    Linear Regression
+    Cross Validation and Bias-Variance Trade-Off
+    Logistic Regression
+    K Nearest Neighbors
+    Decision Trees and Random Forests
+    Support Vector Machines
+    K Means Clustering
+    Principal Component Analysis
+    Recommend er Systems
+    Natural Language Processing
+    Neural Nets and Deep Learning
+    Big Data and Spark with Python
+
+
+
+
+PyTorch for Deep Learning in 2023: Zero to Mastery
+    PyTorch Fundamentals
+    PyTorch Workflow
+    PyTorch Neural Network Classification
+    PyTorch Computer Vision
+    PyTorch Custom Datasets
+    PyTorch Going Modular
+    PyTorch Transfer Learning
+    PyTorch Experiment Tracking
+    PyTorch Paper Replicating
+    PyTorch Model Deployment
+    Introduction to PyTorch 2.0 and torch.compile
+    Bonus Section
+    Where To Go From Here?
+
+
+
+
+PyTorch for Deep Learning with Python Bootcamp
+    Course Overview, Installs, and Setup 
+    COURSE OVERVIEW CONFIRMATION CHECK 
+    Crash Course: NumPy 
+    Crash Course: Pandas 
+    PyTorch Basics
+    Machine Learning Concepts Overview 
+    ANN - Artificial Neural Networks 
+    CNN - Convolutional Neural Networks 
+    Recurrent Neural Networks 
+    Using a GPU with PyTorch and CUDA 
+    NLP with PyTorch
+    BONUS SECTION: THANK YOU!
+
+
+
+
+NLP - Natural Language Processing with Python
+    Introduction
+    Python Text Basics
+    Natural Language Processing Basics
+    Part of Speech Tagging and Named Entity Recognition
+    Text Classification
+    Semantics and Sentiment Analysis
+    Topic Modeling
+    Deep Learning for NLP
+    BONUS SECTION: THANK YOU!
+
+
+
+Learning Python for Data Analysis and Visualization Ver 1
+    Intro to Course and Python
+    Setup
+    Learning Numpy 
+    Intro to Pandas 
+    Working with Data: Part 1 
+    Working with Data: Part 2 
+    Working with Data: Part 3 
+    Data Visualization 
+    Example Projects.
+    Machine Learning 
+    Appendix: Statistics Overview 
+    Appendix: SQL and Python 
+    Appendix: Web Scraping with Python 
+    Appendix: Python Special Offers BONUS SECTION: THANK YOU!
+
+
+
+
+Python for Time Series Data Analysis
+    Introduction
+    Course Set Up and Install NumPy
+    Pandas Overview
+    Data Visualization with Pandas
+    Time Series with Pandas
+    Time Series Analysis with Statsmodels
+    General Forecasting Models
+    Deep Learning for Time Series Forecasting
+    Facebook's Prophet Library
+    BONUS SECTION: THANK YOU!
 
 
 
