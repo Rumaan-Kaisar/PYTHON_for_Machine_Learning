@@ -145,3 +145,16 @@ Python for Time Series Data Analysis
 
 
 
+-------------    Objectives/Core_Topics    ------------
+## New first; Review later
+
+Python_core_fundamnetals
+Pandas
+Numpy
+Matplotlib
+Database
+Matrices
+Data-Frames
+Visualization
+
+

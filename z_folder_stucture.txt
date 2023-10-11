@@ -1,4 +1,11 @@
 
+py4DS_ch_1_basics
+py4DS_ch_2_dataFrame
+py4DS_ch_3_matrices
+py4DS_ch_4_VIZ_p1
+
+
+
     py_ch_1_basics
     py_ch_1_intro
     py_ch_2_countables
