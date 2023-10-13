@@ -1,0 +1,35 @@
+
+----------    part 1    ----------
+Types of variables
+Using Variables
+Boolean Variables and Operators
+The While Loop
+The For Loop
+The If statement
+Code indentation in Python
+Section recap
+HOMEWORK Law of Large Numbers
+
+----------    part 2    ----------
+What is a List
+Lets create some Iists
+Using the [] brackets
+Slicing
+Tuples in Python
+Functions in Python
+Packages in Python
+Numpy and Arrays in Python
+Slicing Arrays
+Section Recap
+HOMEWORK Financial Statement Analysis
+
+
+###########    file structure    ##########
+variables_operators
+loops_control
+inDntN_HW
+list_tuples
+functn_pkg
+Numpy_array
+prj_HW
+
