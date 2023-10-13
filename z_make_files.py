@@ -18,7 +18,8 @@ for i in range (0, len(file_names)):
     # Create the files
     try:
         # os.makedirs(path, exist_ok = True)
-        f = open(f"{file_names[i]}.py", "w") # creates an empty 'py' 
+        with open(f"{file_names[i]}.py", "w") as f:     # creates an empty 'py'
+            f.write("# Courses: A-Z PY for Data-Science    0\n") 
         print(f"{file_names[i]}.py is created sucuessfully")
     except:
         print("files '%s' can not be created" % file_names[i])
@@ -27,7 +28,11 @@ for i in range (0, len(file_names)):
 # python z_make_files.py
 
 
-# "py_ch12_1_1_HTTP_intro",
-# "py_ch12_1_2_Verbs_APIs",
-# "py_ch12_1_3_PyRequest",
-# "py_ch12_1_4_API_Project"
+# "pyDS_ch1_1_variables_operators",
+# "pyDS_ch1_2_loops_control",
+# "pyDS_ch1_3_inDntN_HW",
+# "pyDS_ch1_4_list_tuples",
+# "pyDS_ch1_5_functn_pkg",
+# "pyDS_ch1_6_Numpy_array",
+# "pyDS_ch1_7_prj_HW"
+
