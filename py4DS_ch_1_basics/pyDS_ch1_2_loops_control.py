@@ -1,11 +1,4 @@
 
-################# 7: full
-# copy:  
-#        
-#        
-################# (15-oct-23 for 17-oct-23)
-
-
 # Courses: A-Z PY for Data-Science    5, 6, 7
 
 
