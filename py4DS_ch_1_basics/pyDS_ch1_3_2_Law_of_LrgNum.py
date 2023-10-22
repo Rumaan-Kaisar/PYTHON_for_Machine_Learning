@@ -89,3 +89,19 @@ for sample_size in range(1, 1000):
         if (i<1) and (i>-1):
             count += 1
     print(count/N)
+
+
+
+
+# --------    Instructors code    --------
+from numpy.random import randn
+
+N = 1000000 
+counter = 0 
+
+for i in randn(N):
+    if ((i > -1) and (i < 1)):
+        counter = counter + 1
+
+print(counter/N)
+
