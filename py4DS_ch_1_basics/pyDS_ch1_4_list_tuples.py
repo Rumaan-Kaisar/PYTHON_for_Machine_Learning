@@ -1,11 +1,19 @@
 
-################# 3.2: full
+################# 3.4: 5:00
 # copy:  
 #        
 #        
-################# (21-oct-23 for 22-oct-23)
+################# (22-oct-23 for 24-oct-23)
 
 # Courses: A-Z PY for Data-Science    3.1, 3.2,
+
+# Lygometry: Learn Basics -> Detect Unknown-topic -> learn
+    # Lygo : darkness
+    # metry : measuring
+
+    # Lygometry : measuring unknown
+        # Measuring what we dont know and try to master that
+
 
 
 # ---------    list    ---------
@@ -56,4 +64,53 @@ list(range(15, 70, 3))  # [15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 5
         2.  They have the start, stop and step attributes (since Python 3.3), count and index methods and they support in, len and __getitem__ operations.
         3.  You can iterate over the same range multiple times.
 """
+
+
+
+# --------    Accessing data from a list    --------
+w = ['a', 'b', 'c', 'd', 'e'] 
+
+#  +ve index: starts from 0
+w[0]    # 'a'
+lngth = len(w)  # list size
+w[lngth-1]    # last elemnt: 'e'
+
+# -ve index: starts fr0m -1, from last element
+w[-1]   # last element
+w[-lngth]   # last element
+
+# update/overrite an element
+w[2]    # 'c'
+w[2] = "w"  # updting
+w[2]    # 'w'
+
+
+
+
+# ---------    slicing    ---------
+# assume we are inside sqaure braces []
+# 1 colon only
+        :   
+    # means slice everything, from satrt-finish, it remains same
+
+        start_point : end_point
+    # end_point not inclusive
+
+# +ve index
+wrd = "Hello, World!"
+wrd[8:12]   # 'orld'
+
+# -ve index
+wrd[-5:-2]  # 'orl'
+
+
+
+# advanced slicing with  " : : " 
+# 2 colons
+        start_point : end_point : steps
+
+wrd = "Hello, World!"
+wrd[2:11]   # 'llo, Worl'
+wrd[2:11:1]   # 'llo, Worl'
+wrd[2:11:2]   # 'lo ol'
 
