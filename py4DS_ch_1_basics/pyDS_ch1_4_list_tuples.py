@@ -1,9 +1,9 @@
 
-################# 3.4: 5:00
+################# 3.4: full
 # copy:  
 #        
 #        
-################# (22-oct-23 for 24-oct-23)
+################# (24-oct-23 for 25-oct-23)
 
 # Courses: A-Z PY for Data-Science    3.1, 3.2,
 
@@ -113,4 +113,42 @@ wrd = "Hello, World!"
 wrd[2:11]   # 'llo, Worl'
 wrd[2:11:1]   # 'llo, Worl'
 wrd[2:11:2]   # 'lo ol'
+
+# -ve step
+
+
+# ---------    instructor code    ---------
+letters = ['A', 'B', 'C', 'D' , 'E', 'F', 'G', 'H' , 'I', 'J']
+letters
+letters[ : ]
+letters[2: ]
+letters[ :7]
+letters[:5]
+letters[2:7]
+
+# using -ve index: index 2 equivalent is -8 from back
+# one +ve and another -ve
+letters[-8:7]
+# both -ve
+letters[-8:-3]
+
+
+# Advanced slicing using steps:
+letters[2:9]
+letters[2:9:2]
+letters[:]
+# only steps
+letters[::3]
+
+# -ve steps returns reversed list
+letters[::-1]
+letters[2:9:-1] # []
+letters[2:9:-3] # []
+letters[9:2]    # []
+
+# works with reversed satrt & end
+letters[9:2:-1] # []
+letters[9:2:-3] # []
+
+
 
