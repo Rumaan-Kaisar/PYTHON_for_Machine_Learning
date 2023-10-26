@@ -1,11 +1,5 @@
 
-################# 3.4: full
-# copy:  
-#        
-#        
-################# (24-oct-23 for 25-oct-23)
-
-# Courses: A-Z PY for Data-Science    3.1, 3.2,
+# Courses: A-Z PY for Data-Science    3.1, 3.2, 3.3, 3.4, 3.5
 
 # Lygometry: Learn Basics -> Detect Unknown-topic -> learn
     # Lygo : darkness
@@ -142,13 +136,23 @@ letters[::3]
 
 # -ve steps returns reversed list
 letters[::-1]
-letters[2:9:-1] # []
-letters[2:9:-3] # []
-letters[9:2]    # []
+letters[2:9:-1] # [] wont work
+letters[2:9:-3] # [] wont work
+letters[9:2]    # [] wont work
 
 # works with reversed satrt & end
-letters[9:2:-1] # []
-letters[9:2:-3] # []
+letters[9:2:-1] # index- 2 is not inclusive: ['J', 'I', 'H', 'G', 'F', 'E', 'D']
+letters[9:2:-3] # ['J', 'G', 'D']
 
+
+
+
+# ---------    tuple    ---------
+# tuples are similar to lists, but they are immutable (i.e. cannot be changed)
+# it uses () insted of []
+
+# Its not frequently used in Data-Science
+# mostly it used in general purpose python programming
+letters_tuple = ('A', 'B', 'C', 'D' , 'E', 'F', 'G', 'H' , 'I', 'J')
 
 
