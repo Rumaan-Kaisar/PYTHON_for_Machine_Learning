@@ -26,6 +26,8 @@ np_arr = np.array(ls)
 type(np_arr)    # <class 'numpy.ndarray'>
 
 
+
+
 # -------------    array vs list    -------------
 # an array "Cannot support different data-types"
     # if we use a lsit of mixed data-types, 
@@ -77,6 +79,7 @@ c[:] = 111
 b   # array([23245, 11235,   111,   111, -1234])
 a   # array([23245, 11235,   111,   111, -1234])
 c   # array([111, 111])
+
 
 # creating a copy
 copy = a.copy()
