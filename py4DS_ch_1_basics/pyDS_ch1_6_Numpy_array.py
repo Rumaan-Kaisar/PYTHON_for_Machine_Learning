@@ -1,10 +1,4 @@
 
-################# 3.9: full
-# copy:  
-#        
-#        
-################# (28-oct-23 for 29-oct-23)
-
 # Courses: A-Z PY for Data-Science    3.8, 3.9
 
 
