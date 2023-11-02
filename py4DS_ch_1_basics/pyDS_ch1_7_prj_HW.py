@@ -1,9 +1,9 @@
 
-################# 7.2: full
+################# 7.23: 8:48
 # copy:  
 #        
 #        
-################# (31-oct-23 for 1-nov-23)
+################# (1-nov-23 for 3-nov-23)
 
 # Courses: A-Z PY for Data-Science    3.10
 
@@ -40,7 +40,7 @@
     Your task is to calculate the following financial metrics:
     -	profit for each month
     -	'profit after tax' for each month (the tax rate is 30%)
-    -	profit margin for each month - equals to 'profit after tax' divided by revenue
+    -	profit margin for each month - equals to 'profit after tax' divided by 'revenue'
     -	good months - where the 'profit after tax' was greater than the mean for the year
     -	bad months - where the profit aftertax was less than the mean for the year
     -	the best month - where the 'profit after tax' was max for the year
@@ -109,5 +109,56 @@ print(profit_after_tax)
 
 
 
+
+# Calculate The 'Profit Margin' As Profit After Tax Over Revenue
+        #Round To 2 Decimal Points, Then Multiply By 100 To Get %
+        # profit margin for each month - equals to 'profit after tax' divided by 'revenue'
+profit_margin = []
+for i in range (0, len(profit_after_tax)):
+    profit_margin.append(profit_after_tax[i] / revenue[i])
+
+print(profit_margin)
+# [0.12116170102693131, 0.17589916991609766, -0.3013966353942038, -0.22233556865578755, -0.05211046515235183, 0.6274391026273712, 0.4999338916588671, 0.2827620880004178, 0.2260841972883908, -0.10897457294735184, 0.04309513653668982, 0.527468169890174]
+
+profit_margin = [round(i*100, 2) for i in profit_margin]
+print(profit_margin)
+# [12.12, 17.59, -30.14, -22.23, -5.21, 62.74, 49.99, 28.28, 22.61, -10.9, 4.31, 52.75]
+
+
+
+
+# Calculate The Mean 'Profit After Tax' For The 12 Months
+mean_pat = sum(profit_after_tax) / len(profit_after_tax)
+print(mean_pat) # 1750.6816666666666
+
+
+
+
+# Good-month: Find The Months With Above-Mean Profit After Tax
+good_months = []
+for i in range (0, len(profit_after_tax)):
+    good_months.append(profit_after_tax[i] > mean_pat)
+
+print(good_months)
+# [True, False, False, False, False, True, True, True, True, False, False, True]
+
+
+
+
+# Bad Months Are The Opposite Of Good Months!
+bad_months = []
+for i in range (0, len(good_months)):
+    bad_months.append(not (good_months[i]))
+
+print(bad_months)
+# [False, True, True, True, True, False, False, False, False, True, True, False]
+
+# method 2:
+bad_months = []
+for i in range (0, len(profit_after_tax)):
+    bad_months.append(profit_after_tax[i] < mean_pat)
+
+print(bad_months)
+# [False, True, True, True, True, False, False, False, False, True, True, False]
 
 
