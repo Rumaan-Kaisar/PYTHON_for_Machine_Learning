@@ -1,10 +1,4 @@
 
-################# 7.23: 8:48
-# copy:  
-#        
-#        
-################# (1-nov-23 for 3-nov-23)
-
 # Courses: A-Z PY for Data-Science    3.10
 
 
@@ -161,4 +155,53 @@ for i in range (0, len(profit_after_tax)):
 print(bad_months)
 # [False, True, True, True, True, False, False, False, False, True, True, False]
 
+
+
+
+#The Best Month Is Where Profit After Tax Was Equal To The Maximum
+best_month = []
+for i in range (0, len(profit_after_tax)):
+    best_month.append(profit_after_tax[i] == max(profit_after_tax))
+
+print(best_month)
+# [False, False, False, False, False, False, False, False, False, False, False, True]
+
+
+
+
+#The Worst Month Is Where Profit After Tax Was Equal To The Minimum
+worst_month = []
+for i in range (0, len(profit_after_tax)):
+    worst_month.append(profit_after_tax[i] == min(profit_after_tax))
+
+print(worst_month)
+# [False, False, True, False, False, False, False, False, False, False, False, False]
+
+
+
+
+#Convert All Calculations To Units Of One Thousand Dollars (unit of 1k)
+revenue_1000 = [round(i/1000, 2) for i in revenue]
+expenses_1000 = [round(i/1000, 2) for i in expenses]
+profit_1000 = [round(i/1000, 2) for i in profit]
+profit_after_tax_1000 = [round(i/1000, 2) for i in profit_after_tax]
+
+revenue_1000 = [int(i) for i in revenue_1000]
+expenses_1000 = [int(i) for i in expenses_1000]
+profit_1000 = [int(i) for i in profit_1000]
+profit_after_tax_1000 = [int(i) for i in profit_after_tax_1000]
+
+
+
+
+#Print Results
+print(f"Revenue : {revenue_1000}")      # Revenue : [14, 7, 8, 9, 8, 8, 11, 9, 10, 14, 10, 15]
+print(f"Expenses : {expenses_1000}")        # Expenses : [12, 5, 12, 12, 8, 0, 3, 5, 6, 16, 10, 3]
+print(f"Profit : {profit_1000}")        # Profit : [2, 1, -3, -2, 0, 7, 8, 3, 3, -2, 0, 11]
+print(f"Profit after tax : {profit_after_tax_1000}")        # Profit after tax : [1, 1, -2, -2, 0, 5, 5, 2, 2, -1, 0, 8]
+print(f"Profit margin : {profit_margin}")       # Profit margin : [12.12, 17.59, -30.14, -22.23, -5.21, 62.74, 49.99, 28.28, 22.61, -10.9, 4.31, 52.75]
+print(f"Good months : {good_months}")       # Good months : [True, False, False, False, False, True, True, True, True, False, False, True]
+print(f"Bad months : {bad_months}")     # Bad months : [False, True, True, True, True, False, False, False, False, True, True, False]
+print(f"Best month : {best_month}")     # Best month : [False, False, False, False, False, False, False, False, False, False, False, True]
+print(f"Worst month : {worst_month}")       # Worst month : [False, False, True, False, False, False, False, False, False, False, False, False]
 
