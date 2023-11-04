@@ -1,0 +1,23 @@
+
+Topics
+1.	Project Brief Basketball Trends
+2.	Matrices
+3.	Building Your First Matrix
+4.	Dictionaries in Python
+5.	Matrix Operations
+6.	Your first visualization
+7.	Expanded Visualization
+8.	Creating Your First Function
+9.	Advanced Function Design
+10.	Basketball Insights
+11.	Section Recap
+12.	HOMEWORK Basketball free throws
+
+
+
+###########    file structure    ##########
+prj_info_Bsktbl
+mtrix_dict
+visualize
+functions
+prj_FW
