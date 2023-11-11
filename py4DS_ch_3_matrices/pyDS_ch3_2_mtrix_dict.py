@@ -1,9 +1,9 @@
 
-################# 4.3: full
+################# 4.4: 0:0
 # copy:  
 #        
 #        
-################# (10-nov-23 for 11-nov-23)
+################# (11-nov-23 for 12-nov-23)
 
 # Courses: A-Z PY for Data-Science    4.2, 4.3, 4.4, 4.5
 
@@ -247,3 +247,56 @@ r4 = [2.5, 3.7, 3.1415, 1.618]  # 4 elemnt, makes jagged array
 li_li = [r1, r2, r3, r4]
 
 np.array(li_li, dtype=object)
+
+
+
+
+
+# ------------------    Dictionaries    ------------------
+import numpy as np
+# ----    Games    ----
+KobeBryant_G = [80,77,82,82,73,82,58,78,6,35]
+JoeJohnson_G = [82,57,82,79,76,72,60,72,79,80]
+LeBronJames_G = [79,78,75,81,76,79,62,76,77,69]
+CarmeloAnthony_G = [80,65,77,66,69,77,55,67,77,40]
+DwightHoward_G = [82,82,82,79,82,78,54,76,71,41]
+ChrisBosh_G = [70,69,67,77,70,77,57,74,79,44]
+ChrisPaul_G = [78,64,80,78,45,80,60,70,62,82]
+KevinDurant_G = [35,35,80,74,82,78,66,81,81,27]
+DerrickRose_G = [40,40,40,81,78,81,39,0,10,51]
+DwayneWade_G = [75,51,51,79,77,76,49,69,54,62]
+
+# Matrix
+Games = np.array([KobeBryant_G, JoeJohnson_G, LeBronJames_G, CarmeloAnthony_G, DwightHoward_G, ChrisBosh_G, ChrisPaul_G, KevinDurant_G, DerrickRose_G, DwayneWade_G])
+
+# acessing : But it's hard to indicate the PLAYER
+print(Games[0])
+print(Games[2])
+
+print(Games[2][9])  # 69
+# alternative
+print(Games[2][-1]) # 69
+
+
+# ----    using Dictionaries    ----
+# dictionaries are un-ordered
+#  lists are ordered
+dict_1 = {
+    'key_1' : 'val_1',
+    'key_2' : 'val_2',
+    'key_3' : 'val_3',
+    'key_4' : 'val_4',
+}
+
+print(dict_1['key_3'])  # val_3
+
+# dictionaries can have different data-types
+dict2 = {
+    'Germany' : 'I have been here', 
+    'France' : 2,	
+    'Spain':True
+}
+
+# however python stores the dict-data in its own way
+print(dict2)
+
