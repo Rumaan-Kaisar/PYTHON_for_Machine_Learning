@@ -1,9 +1,9 @@
 
-################# 4.4: 0:0
+################# 4.4: full, 4.5: 5:5
 # copy:  
 #        
 #        
-################# (11-nov-23 for 12-nov-23)
+################# (12-nov-23 for 14-nov-23)
 
 # Courses: A-Z PY for Data-Science    4.2, 4.3, 4.4, 4.5
 
@@ -299,4 +299,112 @@ dict2 = {
 
 # however python stores the dict-data in its own way
 print(dict2)
+
+
+
+
+# --------    How to use 'Dictionaries' to access following data ?    --------
+import numpy as np
+# ----    Games    ----
+KobeBryant_G = [80,77,82,82,73,82,58,78,6,35]
+JoeJohnson_G = [82,57,82,79,76,72,60,72,79,80]
+LeBronJames_G = [79,78,75,81,76,79,62,76,77,69]
+CarmeloAnthony_G = [80,65,77,66,69,77,55,67,77,40]
+DwightHoward_G = [82,82,82,79,82,78,54,76,71,41]
+ChrisBosh_G = [70,69,67,77,70,77,57,74,79,44]
+ChrisPaul_G = [78,64,80,78,45,80,60,70,62,82]
+KevinDurant_G = [35,35,80,74,82,78,66,81,81,27]
+DerrickRose_G = [40,40,40,81,78,81,39,0,10,51]
+DwayneWade_G = [75,51,51,79,77,76,49,69,54,62]
+
+# The players will follow the same order
+    # we'll treat each player as a ROW
+
+# The "GAME SEASONS" will follow the same order for each Player (ROW)
+    # we'll treat each game as a COL
+
+
+# Notice the corresponding dictionaries
+#Seasons
+Seasons = ["2005","2006","2007","2008","2009","2010","2011","2012","2013","2014"]
+Sdict = {"2005":0,"2006":1,"2007":2,"2008":3,"2009":4,"2010":5,"2011":6,"2012":7,"2013":8,"2014":9}
+
+#Players
+Players = ["KobeBryant","JoeJohnson","LeBronJames","CarmeloAnthony","DwightHoward","ChrisBosh","ChrisPaul","KevinDurant","DerrickRose","DwayneWade"]
+Pdict = {"KobeBryant":0,"JoeJohnson":1,"LeBronJames":2,"CarmeloAnthony":3,"DwightHoward":4,"ChrisBosh":5,"ChrisPaul":6,"KevinDurant":7,"DerrickRose":8,"DwayneWade":9}
+
+Pdict['DwightHoward']
+
+# Matrix
+Games = np.array([KobeBryant_G, JoeJohnson_G, LeBronJames_G, CarmeloAnthony_G, DwightHoward_G, ChrisBosh_G, ChrisPaul_G, KevinDurant_G, DerrickRose_G, DwayneWade_G])
+
+Games[4]
+Games[Pdict['DwightHoward']][Sdict['2012']]
+# row : Pdict['DwightHoward'
+# col : Sdict['2012']
+
+
+
+
+# ------------------    Matrix Operations    ------------------
+# Calculate How many field goles a player scored
+# get the "FieldGoals" and devide it by the played game in the "Season"
+import numpy as np
+
+# ----    Field Goals    ----
+KobeBryant_FG = [978,813,775,800,716,740,574,738,31,266]
+JoeJohnson_FG = [632,536,647,620,635,514,423,445,462,446]
+LeBronJames_FG = [875,772,794,789,768,758,621,765,767,624]
+CarmeloAnthony_FG = [756,691,728,535,688,684,441,669,743,358]
+DwightHoward_FG = [468,526,583,560,510,619,416,470,473,251]
+ChrisBosh_FG = [549,543,507,615,600,524,393,485,492,343]
+ChrisPaul_FG = [407,381,630,631,314,430,425,412,406,568]
+KevinDurant_FG = [306,306,587,661,794,711,643,731,849,238]
+DerrickRose_FG = [208,208,208,574,672,711,302,0,58,338]
+DwayneWade_FG = [699,472,439,854,719,692,416,569,415,509]
+#Matrix
+FieldGoals  = np.array([KobeBryant_FG, JoeJohnson_FG, LeBronJames_FG, CarmeloAnthony_FG, DwightHoward_FG, ChrisBosh_FG, ChrisPaul_FG, KevinDurant_FG, DerrickRose_FG, DwayneWade_FG])
+
+
+# ----    Games    ----
+KobeBryant_G = [80,77,82,82,73,82,58,78,6,35]
+JoeJohnson_G = [82,57,82,79,76,72,60,72,79,80]
+LeBronJames_G = [79,78,75,81,76,79,62,76,77,69]
+CarmeloAnthony_G = [80,65,77,66,69,77,55,67,77,40]
+DwightHoward_G = [82,82,82,79,82,78,54,76,71,41]
+ChrisBosh_G = [70,69,67,77,70,77,57,74,79,44]
+ChrisPaul_G = [78,64,80,78,45,80,60,70,62,82]
+KevinDurant_G = [35,35,80,74,82,78,66,81,81,27]
+DerrickRose_G = [40,40,40,81,78,81,39,0,10,51]
+DwayneWade_G = [75,51,51,79,77,76,49,69,54,62]
+# Matrix
+Games = np.array([KobeBryant_G, JoeJohnson_G, LeBronJames_G, CarmeloAnthony_G, DwightHoward_G, ChrisBosh_G, ChrisPaul_G, KevinDurant_G, DerrickRose_G, DwayneWade_G])
+
+
+#Seasons
+Seasons = ["2005","2006","2007","2008","2009","2010","2011","2012","2013","2014"]
+Sdict = {"2005":0,"2006":1,"2007":2,"2008":3,"2009":4,"2010":5,"2011":6,"2012":7,"2013":8,"2014":9}
+
+#Players
+Players = ["KobeBryant","JoeJohnson","LeBronJames","CarmeloAnthony","DwightHoward","ChrisBosh","ChrisPaul","KevinDurant","DerrickRose","DwayneWade"]
+Pdict = {"KobeBryant":0,"JoeJohnson":1,"LeBronJames":2,"CarmeloAnthony":3,"DwightHoward":4,"ChrisBosh":5,"ChrisPaul":6,"KevinDurant":7,"DerrickRose":8,"DwayneWade":9}
+
+
+# by programming approach: we need to use two loops
+    # devide each element of a row of "FieldGoals" by each element of a row of "Games"
+
+
+# --------    Matrix-division    --------
+# however it can be easily done by "Matrix-division"
+    # it devides the matrices element-by-element
+
+# Ignore Error-warnings
+# use np.matrix.round() instead of "round()"
+
+import warnings
+warnings.filterwarnings('ignore')
+
+FieldGoals / Games
+
+np.matrix.round(FieldGoals / Games)
 
