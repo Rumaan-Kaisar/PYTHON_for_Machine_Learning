@@ -1,10 +1,4 @@
 
-################# 4.4: full, 4.5: 5:5
-# copy:  
-#        
-#        
-################# (12-nov-23 for 14-nov-23)
-
 # Courses: A-Z PY for Data-Science    4.2, 4.3, 4.4, 4.5
 
 
@@ -406,5 +400,35 @@ warnings.filterwarnings('ignore')
 
 FieldGoals / Games
 
-np.matrix.round(FieldGoals / Games)
+FieldGoalsPerGame = np.matrix.round(FieldGoals / Games)
+FieldGoalsPerGame[Pdict['DerrickRose']][Sdict['2009']]
+
+
+
+# --------------------     Normalization     --------------------
+# what we are doing by the division 'FieldGoals / Games' is NORMALIZATION
+    # it is useful to remove 'unwanted-flactuation' in the data
+    # Eg: a player playes average 10 games in each season, but in one season he played 2 games due to injury
+    # Then there will be 'unwanted-flactuation' in his total-score data.
+    # to remove this kind of irregularity we need the division (total_score / played_games_in_a_season)
+
+
+# ----    Minutes Played    ----
+KobeBryant_MP = [3277,3140,3192,2960,2835,2779,2232,3013,177,1207]
+JoeJohnson_MP = [3340,2359,3343,3124,2886,2554,2127,2642,2575,2791]
+LeBronJames_MP = [3361,3190,3027,3054,2966,3063,2326,2877,2902,2493]
+CarmeloAnthony_MP = [2941,2486,2806,2277,2634,2751,1876,2482,2982,1428]
+DwightHoward_MP = [3021,3023,3088,2821,2843,2935,2070,2722,2396,1223]
+ChrisBosh_MP = [2751,2658,2425,2928,2526,2795,2007,2454,2531,1556]
+ChrisPaul_MP = [2808,2353,3006,3002,1712,2880,2181,2335,2171,2857]
+KevinDurant_MP = [1255,1255,2768,2885,3239,3038,2546,3119,3122,913]
+DerrickRose_MP = [1168,1168,1168,3000,2871,3026,1375,0,311,1530]
+DwayneWade_MP = [2892,1931,1954,3048,2792,2823,1625,2391,1775,1971]
+#Matrix
+MinutesPlayed = np.array([KobeBryant_MP, JoeJohnson_MP, LeBronJames_MP, CarmeloAnthony_MP, DwightHoward_MP, ChrisBosh_MP, ChrisPaul_MP, KevinDurant_MP, DerrickRose_MP, DwayneWade_MP])
+
+MinutesPlayed_PerGame = np.matrix.round(MinutesPlayed / Games)
+MinutesPlayed_PerGame
+MinutesPlayed_PerGame[Pdict['DerrickRose']][Sdict['2009']]
+
 
