@@ -432,3 +432,43 @@ MinutesPlayed_PerGame
 MinutesPlayed_PerGame[Pdict['DerrickRose']][Sdict['2009']]
 
 
+
+
+# -----------    Mini HW    -----------
+import numpy as np
+import warnings
+warnings.filterwarnings('ignore')
+
+# ----    Field Goals    ----
+KobeBryant_FG = [978,813,775,800,716,740,574,738,31,266]
+JoeJohnson_FG = [632,536,647,620,635,514,423,445,462,446]
+LeBronJames_FG = [875,772,794,789,768,758,621,765,767,624]
+CarmeloAnthony_FG = [756,691,728,535,688,684,441,669,743,358]
+DwightHoward_FG = [468,526,583,560,510,619,416,470,473,251]
+ChrisBosh_FG = [549,543,507,615,600,524,393,485,492,343]
+ChrisPaul_FG = [407,381,630,631,314,430,425,412,406,568]
+KevinDurant_FG = [306,306,587,661,794,711,643,731,849,238]
+DerrickRose_FG = [208,208,208,574,672,711,302,0,58,338]
+DwayneWade_FG = [699,472,439,854,719,692,416,569,415,509]
+#Matrix
+FieldGoals  = np.array([KobeBryant_FG, JoeJohnson_FG, LeBronJames_FG, CarmeloAnthony_FG, DwightHoward_FG, ChrisBosh_FG, ChrisPaul_FG, KevinDurant_FG, DerrickRose_FG, DwayneWade_FG])
+
+# ----    Field Goal Attempts    ----
+KobeBryant_FGA = [2173,1757,1690,1712,1569,1639,1336,1595,73,713]
+JoeJohnson_FGA = [1395,1139,1497,1420,1386,1161,931,1052,1018,1025]
+LeBronJames_FGA = [1823,1621,1642,1613,1528,1485,1169,1354,1353,1279]
+CarmeloAnthony_FGA = [1572,1453,1481,1207,1502,1503,1025,1489,1643,806]
+DwightHoward_FGA = [881,873,974,979,834,1044,726,813,800,423]
+ChrisBosh_FGA = [1087,1094,1027,1263,1158,1056,807,907,953,745]
+ChrisPaul_FGA = [947,871,1291,1255,637,928,890,856,870,1170]
+KevinDurant_FGA = [647,647,1366,1390,1668,1538,1297,1433,1688,467]
+DerrickRose_FGA = [436,436,436,1208,1373,1597,695,0,164,835]
+DwayneWade_FGA = [1413,962,937,1739,1511,1384,837,1093,761,1084]
+#Matrix
+FieldGoalAttempts = np.array([KobeBryant_FGA, JoeJohnson_FGA, LeBronJames_FGA, CarmeloAnthony_FGA, DwightHoward_FGA, ChrisBosh_FGA, ChrisPaul_FGA, KevinDurant_FGA, DerrickRose_FGA, DwayneWade_FGA])
+
+
+np.matrix.round(FieldGoals / FieldGoalAttempts,2)*100
+
+
+
