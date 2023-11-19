@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (17-nov-23 for 18-nov-23)
+################# (18-nov-23 for 19-nov-23)
 
 # Courses: A-Z PY for Data-Science    4.6, 4.7
 
@@ -39,6 +39,7 @@ Salary = np.array([KobeBryant_Salary, JoeJohnson_Salary, LeBronJames_Salary, Car
 # ---------------------    MATPLOTLIB    ---------------------
 # download the package 'matplotlib' if not available
 
+from cProfile import label
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -56,7 +57,15 @@ print(Salary[0])
 
 
 # --------    plot STYLES & COLOR    --------
-# ls : line-style,      c : color
-plt.plot(Salary[0], ls='--', c='Black')
+# ls : line-style,      c : color, marker = 's'   s-square, ms : marker-size
+plt.plot(Salary[0], ls='--', c='Black', marker = 's', ms=17)
+
+# Size of the figure, (there is also other ways)
+plt.rcParams['figure.figsize'] = 8, 4   # note: a space is needed between the values
+
+# Notice: [<matplotlib.lines.Line2D at 0x1dbfea6b7c0>], we're printing object
+# insterad we can use plt.show(), to avoid "[<matplotlib.lines.Line2D at 0x1dbfea6b7c0>]" message
+plt.show()
+
 
 
