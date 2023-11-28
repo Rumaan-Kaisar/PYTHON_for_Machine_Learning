@@ -1,9 +1,9 @@
 
-################# 4.10: 1:28
+################# 4.10: 4:35
 # copy:  
 #        
 #        
-################# (25-nov-23 for 26-nov-23)
+################# (26-nov-23 for 28-nov-23)
 
 # Courses: A-Z PY for Data-Science    4.10, 4.11, 4.12
 
@@ -181,18 +181,55 @@ myPlot(Games)
 
 # --------    Visualization 1: Salary Metrices (salary vs in-game statistics)    --------
 # Salary
+myPlot(Salary)
+# notice 'KobeBryant' has over $30 million salary, second is 'JoeJohnson'
+
 # Salary-per game
+myPlot(Salary/Games)    # Matrix Division
+# Notice Anomalies for 'KobeBryant' and 'DerrickRose'
+    # are they getting paid 'Very high' per the games they played?
+    # the reason is: They were injured during that season 2013-2014, but they fuly paid
+    # so they 'played very-few game' due to the injury but 'fully paid'
+    # that's why the salary per-game is so high
+
+    # This same Anomalies also happen to 'Salary-per FieldGoals' for the same reason
+
 # Salary-per FieldGoals
+myPlot(Salary/FieldGoals)    # Matrix Division
+# However, we could remove these anomalies in 'Data-analytics-point of view'
+
 
 # Coclusion:
     #  "salary vs in-game statistics" might not be a good option
-    # Salary is not effected by injuries
+    # Salary is not effected by injuries due to their COTRACTS
     # but "in-game statistics" is effected by injuries
+    # so should not visualize "salary & in-game statistics" togather
 
 
 
  
 # --------    Visualization 2: In-game Metrices (in-game statistics only)    --------
-# (walk through 3:58)
 # Minuets Played
+myPlot(MinutesPlayed)
+
 # points
+myPlot(Points)
+
+# Notice for both case 'MinutesPlayed' and 'Points' the anomalies appear again
+    # The value decrease for 'KobeBryant' and 'DerrickRose'
+    # INJURIES affecting our visualization again
+
+
+# The Question is: how do we fix these anomalies?
+    # How do we avoid 'injuries' type anomaly (irregularity) from our visualization?
+
+
+
+
+# --------    Normalization : To avoid anomalies    --------
+# Since all game-statistics are affected by the injuries, we can normalize 'in-game-matrix by in-game-matrix'
+
+# --------    Visualization 3: In-Game Metrics Normalized    --------
+myPlot(FieldGoals/Games)
+myPlot(FieldGoals/FieldGoalAttempts)
+
