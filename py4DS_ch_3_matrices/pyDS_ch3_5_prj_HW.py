@@ -1,9 +1,9 @@
 
-################# 4.10: 4:35
+################# 4.10: 7:28
 # copy:  
 #        
 #        
-################# (26-nov-23 for 28-nov-23)
+################# (28-nov-23 for 29-nov-23)
 
 # Courses: A-Z PY for Data-Science    4.10, 4.11, 4.12
 
@@ -51,6 +51,10 @@
 # Import numpy & Other modules
 import numpy as np      # numpy for matrix calculation
 import matplotlib.pyplot as plt     # for visualization
+
+# Ignore Error-warnings "divide by zero"
+import warnings
+warnings.filterwarnings('ignore')
 
 %matplotlib inline
 plt.rcParams['figure.figsize'] = 8, 4
@@ -230,6 +234,35 @@ myPlot(Points)
 # Since all game-statistics are affected by the injuries, we can normalize 'in-game-matrix by in-game-matrix'
 
 # --------    Visualization 3: In-Game Metrics Normalized    --------
+# 'FieldGoals' without normalization
+myPlot(FieldGoals)
+
+# ----    Following are comarable now    ----
+
+# NORMALIZE 'FieldGoals' dividing it by 'Games'
+    # The 'injuries' of 'KobeBryant' and 'DerrickRose' are also visible but comparable to other players
 myPlot(FieldGoals/Games)
+
+# NORMALIZE 'FieldGoals' dividing it by 'FieldGoalAttempts' (Success rate)
+    # It is kind of accuracy of the player
+    # notice 'DwightHoward' is above all and more accurate (60% accuracy)
+        # But he's 5th highest paid player. Why? we'll get the answer in the next plot.
 myPlot(FieldGoals/FieldGoalAttempts)
+
+# normalized 'FieldGoalAttempts' (Attempt rate)
+    # notice 'DwightHoward' is now at the bottom
+    # we know from previous plot 'DwightHoward' is more accurate but he makes 'less attempts than others'
+    # this makes him 5th paid player
+    # It also says that he doesn't score many points in a game (next plot)
+myPlot(FieldGoalAttempts/Games)
+
+myPlot(Points/Games) # normalized 'Points'
+
+
+
+
+# rev
+# --------    Interest±ng Observation    --------
+# myplot(MinutesPlayed/Games) 
+# rayplot (Gaines)
 
