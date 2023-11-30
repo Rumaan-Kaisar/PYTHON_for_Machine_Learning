@@ -1,9 +1,9 @@
 
-################# 4.10: 7:28
+################# 4.10: full
 # copy:  
 #        
 #        
-################# (28-nov-23 for 29-nov-23)
+################# (29-nov-23 for 1-dec-23)
 
 # Courses: A-Z PY for Data-Science    4.10, 4.11, 4.12
 
@@ -261,8 +261,56 @@ myPlot(Points/Games) # normalized 'Points'
 
 
 
-# rev
 # --------    Interest±ng Observation    --------
-# myplot(MinutesPlayed/Games) 
-# rayplot (Gaines)
+# notice 'MinutesPlayed/Games' are decreasing  for the players
+    # They're playing less minutes per game
+    # However, they are playing same amount of games (more or less), notice the 'Games' plot
+myPlot(MinutesPlayed/Games) 
+
+myPlot(Games)
+
+
+
+
+# --------    Time is valuable    --------
+# Find out the playes who 'spend times efficiently'
+# Scored most 'FieldGoals' per 'MinutesPlayed'
+
+# Notice 'KevinDurant' is increasing, he's young and he uses time more efficiently
+# also notice there are 'two group of players' appears in the plot
+    # according to their time usage efficiency
+
+        # KevinDurant
+        # LeBronJames
+        # CarmeloAnthony
+        # DwayneWade
+
+
+        # JoeJohnson
+        # DwightHoward
+        # ChrisBosh
+        # ChrisPaul
+
+myPlot(FieldGoals/MinutesPlayed)
+
+
+
+
+# --------    Player Style    --------
+# we plot the 'Points' per 'FieldGoals'
+# 2-point-goal or 3-point-goal
+
+# BUT some of our data is above 3-points, because there are 'free-shots'
+# We notice that the player-style of some player is changing
+    # Eg: 'KevinDurant', at the beginniong he used 2-point-goal but later he changed to 3-point-goal
+    # also notice the chanhe of 'KobeBryant' and 'ChrisBosh'
+myPlot(Points/FieldGoals)
+
+# conclusion:
+# we can observe many things/insights from plotting those data: 
+    # Whats the cause of these changes
+    # Trainers tell them to changes their styles
+    # other trends in basketball that change over time
+
+
 
