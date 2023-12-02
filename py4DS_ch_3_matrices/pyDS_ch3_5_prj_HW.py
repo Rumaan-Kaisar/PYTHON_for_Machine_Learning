@@ -1,9 +1,9 @@
 
-################# 4.10: full
+################# 4.11: full, 4.12 : 5:0
 # copy:  
 #        
 #        
-################# (29-nov-23 for 1-dec-23)
+################# (1-dec-23 for 2-dec-23)
 
 # Courses: A-Z PY for Data-Science    4.10, 4.11, 4.12
 
@@ -311,6 +311,55 @@ myPlot(Points/FieldGoals)
     # Whats the cause of these changes
     # Trainers tell them to changes their styles
     # other trends in basketball that change over time
+
+
+
+
+# --------    Section recap    --------
+
+# In this section we learned:
+# 1.	Matrices
+# 2.	Building matrices: 
+            # np.reshape
+                # (*,*,'C') : C-like 'row-by-row'
+                # (...'F') : Fortran-like 'column-by-column'
+            
+            # np.array()
+                # combining differnt types of lists
+
+
+# 3.	Dictionaries in Python
+# 4.	Matrix Operations
+# 5.	Visualizing with Pyplot
+# 6.	Creating your first function
+# 7.	Advanced function design (using dictionary)
+# 8.	Deriving insights
+
+
+
+
+# --------    Basketball free throws    --------
+# we'll investigate the trends of free throws
+    # free-throw is a kind of penalty (for making a fawl)
+    # Each Free Throw is worth 1 point
+
+# we'll work for two more game statistics
+
+
+# You have been supplied data for two more additional in-game statistics:
+    # Free Throws
+    # Free Throw Attempts
+
+# Data will be in vector form, first cretae matrices before start calculations
+    # The data has been supplied in the form of vectors. 
+    # You will have to create the two matrices before you proceed with the analysis
+    # also use previous data 'Games' and 'Points' matrices
+    # to investigate further also visialize 'FieldGoals'  and 'FieldGoalAttempts'
+
+# You need to create three plots that portray the following insights:
+    # Free Throw Attempts per game
+    # Accuracy of Free Throws
+    # Player playing style (2 vs 3 points preference) excluding Free Throws*
 
 
 
