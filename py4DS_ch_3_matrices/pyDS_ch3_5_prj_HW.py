@@ -1,11 +1,5 @@
 
-################# 4.11: full, 4.12 : 5:0
-# copy:  
-#        
-#        
-################# (3-dec-23 for 5-dec-23)
-
-# Courses: A-Z PY for Data-Science    4.10, 4.11, 4.12
+# Courses: A-Z PY for Data-Science    4.10, 4.11, 4.12, 7.4
 
 
 # --------    Import following Data    --------
@@ -459,10 +453,6 @@ Players = ["KobeBryant","JoeJohnson","LeBronJames","CarmeloAnthony","DwightHowar
 Pdict = {"KobeBryant":0,"JoeJohnson":1,"LeBronJames":2,"CarmeloAnthony":3,"DwightHoward":4,"ChrisBosh":5,"ChrisPaul":6,"KevinDurant":7,"DerrickRose":8,"DwayneWade":9}
 
 
-# --------    Check matices FreeThrows, FreeThrowAttempts    --------
-# --------    Define function    --------
-
-
 
 
 # --------    HW data    --------
@@ -504,10 +494,13 @@ FreeThrowAttempts
 
 # Define PLOT function
 def myPlot(data, list_of_player_name = Players):
+
     col_r = {"KobeBryant":"Black","JoeJohnson":"Red","LeBronJames":"Green","CarmeloAnthony":"Blue","DwightHoward":"Magenta","ChrisBosh":"Black","ChrisPaul":"Red","KevinDurant":"Green","DerrickRose":"Blue","DwayneWade":"Magenta"}
     mr_kr = {"KobeBryant":"s","JoeJohnson":"o","LeBronJames":"^","CarmeloAnthony":"D","DwightHoward":"s","ChrisBosh":"o","ChrisPaul":"^","KevinDurant":"D","DerrickRose":"s","DwayneWade":"o"}
+    
     for name in list_of_player_name:
         plt.plot(data[Pdict[name]], ls='-.', c=col_r[name], marker = mr_kr[name], ms=7, label = name)
+    
     # legend positioning
     plt.legend(loc='lower left', bbox_to_anchor=(.5,.5))
     plt.legend(loc='upper left', bbox_to_anchor=(1,1))
