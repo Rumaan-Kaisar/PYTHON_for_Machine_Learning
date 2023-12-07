@@ -1,0 +1,28 @@
+
+Topics
+1.	Importing data into Python
+2.	Exploring your dataset
+3.	Renaming Columns of a Dataframe
+4.	Subsetting dataframes in Pandas
+5.	Basic operations with a Data Frame
+6.	Filtering a Data Frame
+7.	Using .atO and .iatO (advanced tutorial)
+8.	Introduction to Seaborn
+9.	Visualizing With Seaborn Part 1
+10.	Keyword Arguments in Python (advanced tutorial)
+11.	Section Recap
+12.	HOMEWORK World Trends
+
+
+###########    file structure    ##########
+pyDS_ch2_1_pandas_imprt_Xplr_colRenm
+pyDS_ch2_2_subsetting
+pyDS_ch2_3_basic_opr
+pyDS_ch2_4_filtering
+pyDS_ch2_5_at_iat
+pyDS_ch2_6_seaborn_viz
+pyDS_ch2_7_kwarg_RECAP
+pyDS_ch2_8_HW_wrldTrnd
+
+
+pyDS_ch2_
