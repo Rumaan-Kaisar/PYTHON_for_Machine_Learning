@@ -1,5 +1,5 @@
 
-################# 5.1: 4:40
+################# 5.1: full, 5.2: 3:20
 # copy:  jupyter file, dataset
 #        
 #        
@@ -48,5 +48,43 @@ stats = pd.read_csv('G:/tut_py_A_to_Z_data_science/Python For Data Science With 
     # also 'Heading row' doesn't count
 
 
+
 # ----  Method 2: Change Working Directory  ----
+import os
+
+# get current working directory
+print(os.getcwd())  # "H:\shared_docs\codes_pyMLDL\py4DS_ch_2_dataFrame"
+
+# change working directory
+# Windows:
+os.chdir("H:\\shared_docs\\codes_py\\py_ch_14_CSV_pikling")
+# Mac:
+# os.chdir("H:/shared_docs/codes_py/py_ch_14_CSV_pikling")
+
+print(os.getcwd())  # "H:\shared_docs\codes_py\py_ch_14_CSV_pikling"
+stats_3 = pd.read_csv('fighters.csv')
+
+
+
+
+
+
+# ------------    EXPLORING dataset    ------------
+# 1. Full Dataframe
+import pandas as pd
+stats = pd.read_csv('G:/tut_py_A_to_Z_data_science/Python For Data Science With Real Exercises/P4-Demographic-Data.csv')
+stats
+
+
+# 2. Number of rows
+    # in Data-Scince it's important to CHECK
+    # in SQL or other language: 
+        # always check length of the 'imported data' to "given data size"
+        # always comment the "length of imported data" so that you can later check with the 'given data size'
+        # if full-dataset isn't imported or ERR occurs, try to 'fix that' or make comment
+len(stats)  # 195 rows importes
+
+
+# 3. see the columns
+stats.columns
 
