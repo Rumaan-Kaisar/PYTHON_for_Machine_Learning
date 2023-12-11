@@ -1,9 +1,9 @@
 
-################# 5.1: full, 5.2: 3:20
+################# 5.1: full, 5.2: full
 # copy:  jupyter file, dataset
 #        
 #        
-################# (8-dec-23 for 9-dec-23)
+################# (9-dec-23 for 11-dec-23)
 
 # Courses: A-Z PY for Data-Science    5.1, 5.2, 5.3
 
@@ -86,5 +86,39 @@ len(stats)  # 195 rows importes
 
 
 # 3. see the columns
+    # it's also usefull to check the columns because there might be many columns
+    # you can see the columns very easily
 stats.columns
+
+
+# 4. number of columns
+len(stats.columns)
+
+
+# 5. Top rows
+    # following prints top 5 rows
+stats.head()    # remember the brackets
+    # specify the number of rows
+stats.head(10)  # prints first 10 rows
+
+
+# 6. bottom rows
+stats.tail()    # # prints last 5 rows
+    # specify the number of rows
+stats.tail(5)  # prints first 5 rows
+
+# Note: in SQL there is similat 'top' and 'bottom' methods 
+
+
+# 7. information on the columns
+    # following prints the dataset-info
+stats.info()    # similar to R str() function
+
+
+# 8. get stats (statistical info as summery) on the columns
+stats.describe()    # similar to R summery() function
+# we can also rotate/transpose the table
+stats.describe().transpose()    # more easier to read
+
+
 
