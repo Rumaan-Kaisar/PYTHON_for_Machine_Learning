@@ -1,10 +1,4 @@
 
-################# 5.1: full, 5.2: full
-# copy:  jupyter file, dataset
-#        
-#        
-################# (9-dec-23 for 11-dec-23)
-
 # Courses: A-Z PY for Data-Science    5.1, 5.2, 5.3
 
 
@@ -120,5 +114,31 @@ stats.describe()    # similar to R summery() function
 # we can also rotate/transpose the table
 stats.describe().transpose()    # more easier to read
 
+
+
+
+# ------------    Renaming column names    ------------
+    # it's important for 'Data Cleaning'
+    # eg: we need to remove space, proper capitalization
+
+stats.head()    # view first 5 rows
+stats.columns   # column names
+
+# just assign new column names
+stats.columns = ['a', 'b', 'c', 'd', 'e']
+
+stats.head()    # check the column names
+
+# rename again
+stats.columns = ['CountryName', 'CountryCode', 'BirthRate', 'InternetUsers', 'IncomeGroup']
+stats.head()    # check again
+
+""" 
+    Note: multi-line in JupyterNB, use '\' at the end of the line to continue
+
+    stats.columns = ['CountryName', 'CountryCode', \
+                        'BirthRate', 'InternetUsers', \
+                        'IncomeGroup'] 
+"""
 
 
