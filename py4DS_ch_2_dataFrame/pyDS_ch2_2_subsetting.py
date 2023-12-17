@@ -26,7 +26,7 @@ stats.head()    # view dataset
 
 
 
-# ----  subset by Rows  ----
+# ----  PART 1: subset by Rows  ----
 # Its exactly similar to "SLICING" matrix or list
     # 'slice by ROWs' is deafault
     # usually when we slice a dataset we slice it by ROWs
@@ -65,7 +65,7 @@ stats[::20]
 
 
 
-# ----  subset by columns  ----
+# ----  PART 2: subset by columns  ----
 # To get the columns: Just specify the 'name of the column'
     # and to get the ROWs just use 'slicing-technique'
 
@@ -93,9 +93,47 @@ stats['Country Name'].head()
 stats[['Country Code', 'Country Name', 'Internet users']].head(15)
 
 
-
-
 # Convention!!
+# --------  quick Acess - requires the name to be one word  --------
+    # this is only good for 'one column'
+    # also the name needs to be one word
+
+stats.head()    # check the column names
+# rename to one words
+stats.columns = ['CountryName', 'CountryCode', 'BirthRate', 'InternetUsers', 'IncomeGroup']
+
+stats.birthRate # quick access, (R has similar '$' operator: stats$birthRate)
+stats.birthRate.head()
+
+
+
+
+# ----  PART 3: subset by combining 'ROW & COLUMNS'  ----
+# we can combine Rows and Columns in 2 ways
+    # subset by rows (seperate ROWs first) - then subset by columns
+    # subset by columns (seperate COLUMNs first) - then subset by rows
+    # actually we're doing "Two-Subsetting at once"
+    # both cases we can same result
+
+# seperate ROW first
+stats[20:30][['CountryName', 'CountryCode']]
+# above works, because 'stats[20:30]' is also a Data-frame, we then apply 'column-seperaton' on it
+    # we can break it down as below
+df_1 = stats[20:30]
+df_1[['CountryName', 'CountryCode']]
+
+stats[20:30:2][['CountryName', 'BirthRate']].head(3)    # we can also use head()
+
+
+# seperate COLUMN first
+stats[['CountryName', 'CountryCode']][20:30]
+# stats[['CountryName', 'CountryCode']] itself a Data-frame, we then apply 'row-seperaton' on it
+    # we can break it down as below
+df_2 = stats[['CountryName', 'CountryCode']]
+df_2[20:30]
+
+stats[['CountryName', 'BirthRate']][20:30:2].head(3)    # we can also use head()
+
 
 
 
