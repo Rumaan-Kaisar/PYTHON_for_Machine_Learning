@@ -1,10 +1,4 @@
 
-################# 5.4: 10:23
-# copy:  
-#        
-#        
-################# (15-dec-23 for 16-dec-23)
-
 # Courses: A-Z PY for Data-Science    5.4
 
 
@@ -133,9 +127,5 @@ df_2 = stats[['CountryName', 'CountryCode']]
 df_2[20:30]
 
 stats[['CountryName', 'BirthRate']][20:30:2].head(3)    # we can also use head()
-
-
-
-
 
 
