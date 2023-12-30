@@ -1,9 +1,9 @@
 
-################# 5.8: 6:57
+################# 5.8: full
 # copy:  
 #        
 #        
-################# (27-dec-23 for 29-dec-23)
+################# (29-dec-23 for 30-dec-23)
 
 # Courses: A-Z PY for Data-Science    5.8, 5.9
 
@@ -33,16 +33,6 @@ stats.head()    # view dataset
 
 # 'matplotlib' is needed along with 'seaborn'
 
-
-# seaborn Example gallery : use the examples to plot something awesome 
-# https://seaborn.pydata.org/examples/index.html
-
-# kdeplot: cubehelix palettes : https://seaborn.pydata.org/examples/palette_generation.html
-# violinplot: Grouped violinplots with split violins : https://seaborn.pydata.org/examples/grouped_violinplots.html
-    # Violinplot from a wide-form dataset: https://seaborn.pydata.org/examples/wide_form_violinplot.html
-
-# Replacement for deprecated tsplot (not used anymore)
-    # Timeseries plot with error bands : https://seaborn.pydata.org/examples/errorband_lineplots.html
 
 
 # introduction to seaborn
@@ -76,6 +66,32 @@ viz_1 = sns.distplot(stats.InternetUsers)
 # More Modification. e.g. 'increase bars'
     # use 'bins', 'hist'
 viz_1 = sns.distplot(stats.InternetUsers, bins=30)
+# observations: some countries has internet users between 0 & 20% acces to internet
+    # most of the countires has 30% to 70% access
+    # the curve slowly drops off for 100% access
+    # the curve is "double bell-shaped"
 
 
 # --------    Boxplots    --------
+# we'll visualize 'IncomeGroup' vs 'BirthRate'
+viz_2 = sns.boxplot(data = stats, x='IncomeGroup', y='BirthRate')
+
+# for "HighIncome" group the birth rate is sitting between 10 & 15 and its 12, there are also 1st, 2nd, 3rd quartels
+# also notice 'outlier', the "arrow or little ball" upward, indicating "High Income group" has high-birth-rate
+    # also "Low Income group" has low-birth-rate
+# notice "High Income" birthrate is closer to "Low middle Income" and 
+    # "Low Income" birthrate is closer to "Lower middle Income"
+
+
+
+# --------  Seaborn gallery  --------
+# seaborn Example gallery : use the examples to plot something awesome 
+# https://seaborn.pydata.org/examples/index.html
+
+# kdeplot: cubehelix palettes : https://seaborn.pydata.org/examples/palette_generation.html
+# violinplot: Grouped violinplots with split violins : https://seaborn.pydata.org/examples/grouped_violinplots.html
+    # Violinplot from a wide-form dataset: https://seaborn.pydata.org/examples/wide_form_violinplot.html
+
+# Replacement for deprecated tsplot (not used anymore)
+    # Timeseries plot with error bands : https://seaborn.pydata.org/examples/errorband_lineplots.html
+
