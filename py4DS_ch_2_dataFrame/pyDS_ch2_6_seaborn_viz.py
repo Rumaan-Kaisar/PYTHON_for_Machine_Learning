@@ -1,9 +1,9 @@
 
-################# 5.8: full
+################# 5.9: 5:50
 # copy:  
 #        
 #        
-################# (29-dec-23 for 30-dec-23)
+################# (30-dec-23 for 31-dec-23)
 
 # Courses: A-Z PY for Data-Science    5.8, 5.9
 
@@ -60,13 +60,15 @@ warnings.filterwarnings('ignore')
         # FacetGrid(), PairGrid(), clustermap(), 
 
 viz_1 = sns.distplot(stats.InternetUsers)
+plt.show()  # use matplot to show the plot
 # Note: This function has been deprecated and will be removed in seaborn v0.14.0. 
     # It has been replaced by 'histplot' and 'displot', two functions with a modern API and many more capabilities.
 
 # More Modification. e.g. 'increase bars'
     # use 'bins', 'hist'
 viz_1 = sns.distplot(stats.InternetUsers, bins=30)
-# observations: some countries has internet users between 0 & 20% acces to internet
+# observations: 
+# some countries has internet users between 0 & 20% acces to internet
     # most of the countires has 30% to 70% access
     # the curve slowly drops off for 100% access
     # the curve is "double bell-shaped"
@@ -75,7 +77,9 @@ viz_1 = sns.distplot(stats.InternetUsers, bins=30)
 # --------    Boxplots    --------
 # we'll visualize 'IncomeGroup' vs 'BirthRate'
 viz_2 = sns.boxplot(data = stats, x='IncomeGroup', y='BirthRate')
+plt.show()
 
+# Observations: 
 # for "HighIncome" group the birth rate is sitting between 10 & 15 and its 12, there are also 1st, 2nd, 3rd quartels
 # also notice 'outlier', the "arrow or little ball" upward, indicating "High Income group" has high-birth-rate
     # also "Low Income group" has low-birth-rate
@@ -94,4 +98,31 @@ viz_2 = sns.boxplot(data = stats, x='IncomeGroup', y='BirthRate')
 
 # Replacement for deprecated tsplot (not used anymore)
     # Timeseries plot with error bands : https://seaborn.pydata.org/examples/errorband_lineplots.html
+
+
+
+
+# Example 1: Now we try to analyze "BirthRate vs InternetUsers", we'll trt to find pattern inside of these data
+                # plot these parameters against each other
+
+# --------  lmplot()  --------
+# lm : linear model
+# lmplot() : Plot data and regression model fits across a FacetGrid.
+viz_3 = sns.lmplot(data = stats, x='InternetUsers', y='BirthRate')
+# plt.show()
+# always use keywards for argumnets, to avoid 'order of the arguments'
+    # use the order (x, y, data) if you dont use keywards
+
+# Observations:
+    # the data isn't look like a 'linear relationship'
+    # so we cannot fit a 'linear-regression model' to these data, so we set it false 'fit_reg=False'
+    # pattern: 'more internet user' lower the 'birth-rate'
+    # the data more looks like '1/x' kind-of non-liner relation
+viz_3 = sns.lmplot(data = stats, x='InternetUsers', y='BirthRate', fit_reg=False)
+
+# viz_4 = sns.distplot(stats.BirthRate, bins=30)
+
+# Now we braek it up into 'IncomeGroup' categorical data
+# add some color
+
 
