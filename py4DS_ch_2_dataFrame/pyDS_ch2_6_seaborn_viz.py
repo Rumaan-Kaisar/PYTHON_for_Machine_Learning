@@ -1,10 +1,4 @@
 
-################# 5.9: 5:50
-# copy:  
-#        
-#        
-################# (30-dec-23 for 31-dec-23)
-
 # Courses: A-Z PY for Data-Science    5.8, 5.9
 
 # Loading Dataset
@@ -123,6 +117,24 @@ viz_3 = sns.lmplot(data = stats, x='InternetUsers', y='BirthRate', fit_reg=False
 # viz_4 = sns.distplot(stats.BirthRate, bins=30)
 
 # Now we braek it up into 'IncomeGroup' categorical data
-# add some color
+# add some color, we use 'hue' attribute for 'IncomeGroup' categorical data 
+    # along with 'InternetUsers' and 'BirthRate'
+viz_3 = sns.lmplot(data = stats, x='InternetUsers', y='BirthRate', hue='IncomeGroup', fit_reg=False)
+
+# observations : we're observing relation between 3-data at once
+    # low interent users has high birth-rate and has 'low income'
+    # high internet users have low birth-rate and hsa 'Hihg income'
+
+
+
+# ----  resize 'FacetGrid'  ----
+# 'FacetGrid' takes lots of space
+# to resize it need it's own paramters
+    # 'size : resize' and 
+    # aspect : acpect ratio (1, 1.5, 2, 3 etc to increase width; 0.5, 0.75 etc for decrease width)
+viz_3 = sns.lmplot(data = stats, x='InternetUsers', y='BirthRate', hue='IncomeGroup', fit_reg=False, size = 10, aspect=2)
+
+# The 'size' parameter has been renamed to 'height' in new version 0.13
+viz_3 = sns.lmplot(data = stats, x='InternetUsers', y='BirthRate', hue='IncomeGroup', fit_reg=False, height=10, aspect=2)
 
 
