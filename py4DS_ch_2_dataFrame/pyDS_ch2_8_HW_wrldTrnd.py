@@ -1,9 +1,9 @@
 
-################# 5.12: 2.09
+################# 5.12: Full, 7.5:0.0
 # copy:  
 #        
 #        
-################# (6-dec-24 for 7-dec-24)
+################# (7-dec-24 for 9-dec-24)
 
 # Courses: A-Z PY for Data-Science    5.12, 7.5, 7.6
 
@@ -58,6 +58,62 @@ Regions_2012_Dataset = list(["The Americas","Asia","Africa","Europe","Middle Eas
 
 # Good Luck!!!
 
+
+
+
+# ------------    WORLD TRENDS : Data Analysis    ------------
+# solution:
+
+# Import the following packages needed to perform the analysis
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# To remove 'warnings' use 'filterwarnings'
+import warnings
+warnings.filterwarnings('ignore')
+
+# plot shown in Jupyter Notebook
+%matplotlib inline  
+# expand the figure-width
+plt.rcParams['figure.figsize'] = 8, 4
+
+
+# --------    Loading Dataset    --------
+# Import the csv dataset
+data = pd.read_csv("./DataDemographic.csv")     # load datset
+
+# -=-=-  Explore the data  -=-=-
+# Visualize the dataframe
+data
+
+# rename the column names to single-string names
+data.columns = ['CountryName', 'CountryCode', 'BirthRate', 'InternetUsers', 'IncomeGroup']
+data.head()    # view dataset
+
+# Check top 6 rows
+data.head(6)
+
+# Check bottom 7 rows
+data.tail(7)
+
+# Check the structure of the data frame
+data.info()
+
+# Check the summary (statistical info as summery) of the data
+data.describe().transpose()     # transpose the table fro better view
+
+
+
+# plot 1: SCATTERPLOT illustrating 'Birth Rate' and 'Internet Usage' statistics by Country.
+    # The scatterplot needs to also be 'categorised' by Countries’ "Income Groups". 
+
+
+
+# plot 2: SCATTERPLOT illustrating Birth Rate and Internet Usage statistics by Country.
+    # However, this time the scatterplot needs to be 'categorised' by Countries’ "Regions".
+    # use the given 'list' from the dataset given above "Country names, codes and regions dataset"
 
 
 
