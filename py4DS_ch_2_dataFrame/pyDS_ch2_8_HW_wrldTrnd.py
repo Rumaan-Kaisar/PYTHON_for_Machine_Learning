@@ -1,5 +1,5 @@
 
-################# 5.12: Full, 7.5:0.0
+################# 5.12: Full, 7.5:11.20
 # copy:  
 #        
 #        
@@ -99,7 +99,7 @@ data.head(6)
 data.tail(7)
 
 # Check the structure of the data frame
-data.info()
+data.info() # it also shows data-types: 2 floats & 3 objects
 
 # Check the summary (statistical info as summery) of the data
 data.describe().transpose()     # transpose the table fro better view
@@ -107,13 +107,41 @@ data.describe().transpose()     # transpose the table fro better view
 
 
 # plot 1: SCATTERPLOT illustrating 'Birth Rate' and 'Internet Usage' statistics by Country.
-    # The scatterplot needs to also be 'categorised' by Countries’ "Income Groups". 
+            # The scatterplot needs to also be 'categorised' by Countries’ "Income Groups". 
+
+# Plot the BirthRate versus Internet Users categorized by Income Group
+vis1 = sns.lmplot(data = data, x = 'InternetUsers', y = 'BirthRate', hue = 'IncomeGroup', fit_reg = False, height=6, scatter_kws={'s': 10})
+
 
 
 
 # plot 2: SCATTERPLOT illustrating Birth Rate and Internet Usage statistics by Country.
-    # However, this time the scatterplot needs to be 'categorised' by Countries’ "Regions".
-    # use the given 'list' from the dataset given above "Country names, codes and regions dataset"
+            # However, this time the scatterplot needs to be 'categorised' by Countries’ "Regions".
+            # use the given 'list' from the dataset given above "Country names, codes and regions dataset"
+
+# Copy here the data from the homework provided in lists, Country names, codes and regions dataset
+
+# Create the dataframe: Notice how the 'dataframe' is created
+    # since we dont have 'Regions' catagory in our dataset, we create a new one
+    # Notice how the 'dataframe' is created:
+        # column names as 'keyward'
+        # 'value' is converted list to numpy-array
+        # this 'dictionary' is passed to 'pd.DataFrame()'
+country_data = pd.DataFrame({'CountryName': np.array(Countries_2012_Dataset), 
+                             'CountryCode': np.array(Codes_2012_Dataset),
+                             'CountryRegion': np.array(Regions_2012_Dataset)})
+
+# Explore the dataset
+country_data._()
+
+# Merge the country data to the original dataframe
+merged_data = pd._(left=data, right=country_data, how='inner', on="CountryCode")
+
+# Explore the dataset
+merged_data._()
+
+# Plot the BirthRate versus Internet Users cathegorized by Country Region
+vis2 = sns._( data = merged_data, x = '_', y = '_', fit_reg = False, hue = '_', size = 10 )
 
 
 
