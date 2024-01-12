@@ -1,9 +1,9 @@
 
-################# 5.12: Full, 7.5:11.20
+################# 5.12: Full, 7.5:full, 7.6: 
 # copy:  
 #        
 #        
-################# (7-dec-24 for 9-dec-24)
+################# (10-dec-24 for 12-dec-24)
 
 # Courses: A-Z PY for Data-Science    5.12, 7.5, 7.6
 
@@ -131,14 +131,47 @@ country_data = pd.DataFrame({'CountryName': np.array(Countries_2012_Dataset),
                              'CountryCode': np.array(Codes_2012_Dataset),
                              'CountryRegion': np.array(Regions_2012_Dataset)})
 
-# Explore the dataset
-country_data._()
 
-# Merge the country data to the original dataframe
-merged_data = pd._(left=data, right=country_data, how='inner', on="CountryCode")
+# Explore the datasets
+country_data.head() # new dataframe
+data.head() # old dataframe
 
-# Explore the dataset
-merged_data._()
+# Merge the country data to the original dataframe. 
+# Use pd.merge() 
+    # we marge 'DataDemographic.csv' i.e. 'data' to our new dataframe 'country_data'
+    # we use "CountryCode" to align the two data-set.
+        # in this case "CountryCode" is our primary key
+merged_data = pd.merge(left=data, right=country_data, how='inner', on="CountryCode")
+
+# Explore the marged dataset
+merged_data.head()
+
+
+# --------    rename a single column    --------
+# https://stackoverflow.com/questions/19758364/rename-specific-columns-in-pandas
+# get rid of extra 'CountryName' column
+mrgdData_1 = merged_data.drop('CountryName_y', axis=1)
+# Rename specific column(s) in pandas. Rename 'CountryName_x' to 'CountryName'
+mrgdData_1.rename(columns={'CountryName_x':'CountryName'}, inplace=True)
+mrgdData_1.head()
+
+""" 
+    A much faster implementation would be to use list-comprehension if you need to rename a single column.
+
+                df.columns = ['new_name' if x=='old_name' else x for x in df.columns]
+
+
+    rename multiple columns:
+        If the need arises to rename multiple columns, either use conditional expressions like:
+
+                df.columns = ['new_name1' if x=='old_name1' else 'new_name2' if x=='old_name2' else x for x in df.columns]
+
+        Or, construct a mapping using a dictionary and perform the list-comprehension with it's get operation by setting default value as the old name:
+
+                col_dict = old_name1': 'new_name1', old_name2': 'new_name2'}   ## key→old name, value→new name
+                df.columns = [col_dict.get(x, x) for x in df.columns]
+"""
+
 
 # Plot the BirthRate versus Internet Users cathegorized by Country Region
 vis2 = sns._( data = merged_data, x = '_', y = '_', fit_reg = False, hue = '_', size = 10 )
