@@ -1,9 +1,9 @@
 
-################# 5.12: Full, 7.5:full, 7.6: 
+################# 5.12: Full, 7.5:full, 7.6: 2.10 
 # copy:  
 #        
 #        
-################# (10-dec-24 for 12-dec-24)
+################# (12-jan-24 for 13-jan-24)
 
 # Courses: A-Z PY for Data-Science    5.12, 7.5, 7.6
 
@@ -115,7 +115,7 @@ vis1 = sns.lmplot(data = data, x = 'InternetUsers', y = 'BirthRate', hue = 'Inco
 
 
 
-# plot 2: SCATTERPLOT illustrating Birth Rate and Internet Usage statistics by Country.
+# plot 2: SCATTERPLOT illustrating 'Birth Rate' and 'Internet Usage' statistics by Country.
             # However, this time the scatterplot needs to be 'categorised' by Countries’ "Regions".
             # use the given 'list' from the dataset given above "Country names, codes and regions dataset"
 
@@ -153,6 +153,8 @@ merged_data.head()
 mrgdData_1 = merged_data.drop('CountryName_y', axis=1)
 # Rename specific column(s) in pandas. Rename 'CountryName_x' to 'CountryName'
 mrgdData_1.rename(columns={'CountryName_x':'CountryName'}, inplace=True)
+# 'inplace = True' makes the changes to our original dataframe object
+
 mrgdData_1.head()
 
 """ 
@@ -174,8 +176,70 @@ mrgdData_1.head()
 
 
 # Plot the BirthRate versus Internet Users cathegorized by Country Region
-vis2 = sns._( data = merged_data, x = '_', y = '_', fit_reg = False, hue = '_', size = 10 )
+vis2 = sns.lmplot(data = mrgdData_1, x = 'BirthRate', y = 'InternetUsers', hue = 'CountryRegion', fit_reg = False, height=6, scatter_kws={'s': 10})
+# notice the hue = 'CountryRegion', to categorize by Region
+
+# Observations: 
+    # countries in 'Africa' has 'High-Birthrate' and 'Less-internet-user'
+    # Many countries in 'America' has 'Low-Birthrate' and 'High-internet-user'
+    # Most countries in 'Europe' has 'Low-Birthrate' and 'High-internet-user'
 
 
 
 
+
+
+
+# ------------------    Challenge: scatterplot 'Life_Expectancy vs Fertility_Rate'    ------------------
+
+# You are required to produce a scatterplot depicting 
+    # 'Life Expectancy (y-axis)' and 'Fertility Rate (x-axis)' statistics by Country. (new data from given lists)
+    # The scatterplot need to be categorised by 'Countries Regions' (new data from given lists).
+
+# You have been supplied with data for 2 years: 
+    # 1960 and 2013 and you are requires to produce a visualisation for each of these years.
+
+# Some data has been provided in a CSV file, some in Python lists. 
+    # All data manipulations have to be performed in Python (not in Excel)
+
+# You also have been requested to provide insights into how the two periods compare. 
+
+
+
+# Create a data frame with the life expectancy
+life_exp_data = pd._({'CountryCode': np.array(Country_Code),
+                              'LifeExp1960': np.array(Life_Expectancy_At_Birth_1960),
+                              'LifeExp2013': np.array(Life_Expectancy_At_Birth_2013)})
+
+
+# Check row counts
+_(_(life_exp_data)) #187 rows
+
+# Check summaries
+life_exp_data._()
+
+
+
+# NOTE: Did you pick up that there is more than one year in the data? From the challenge we know that there are two: **1960** and **2013**
+
+# Merge the data frame with the life expectancy
+merged_data = pd._(left=merged_data, right=life_exp_data, how='inner', on='CountryCode')
+
+# Explore the dataset
+merged_data._()
+
+# Check the new structures
+merged_data._()
+
+# We can see obsolete columns because of the merge operation
+# Rename the one of the colunms containing the country names and delete the other
+merged_data._(columns = {'CountryName_x':'CountryName'}, inplace = True)
+_ merged_data['CountryName_y']
+
+# Check structures again
+merged_data._()
+
+# Plot the BirthRate versus LifeExpectancy cathegorized by Country Region in 1960
+vis3 = sns._( data = merged_data, x = '_', y = '_', fit_reg = False, hue = '_', size = 10 )
+
+# Plot the BirthRate versus LifeExpectancy cathegorized by Country Region in 2013
