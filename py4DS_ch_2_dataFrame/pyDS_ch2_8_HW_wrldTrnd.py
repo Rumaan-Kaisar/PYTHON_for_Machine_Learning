@@ -1,9 +1,9 @@
 
-################# 5.12: Full, 7.5:full, 7.6: 2.10 
+################# 5.12: Full, 7.5:full, 7.6: full
 # copy:  
 #        
 #        
-################# (12-jan-24 for 13-jan-24)
+################# (13-jan-24 for 14-jan-24)
 
 # Courses: A-Z PY for Data-Science    5.12, 7.5, 7.6
 
@@ -205,41 +205,60 @@ vis2 = sns.lmplot(data = mrgdData_1, x = 'BirthRate', y = 'InternetUsers', hue =
 # You also have been requested to provide insights into how the two periods compare. 
 
 
-
 # Create a data frame with the life expectancy
-life_exp_data = pd._({'CountryCode': np.array(Country_Code),
+life_exp_data = pd.DataFrame({'CountryCode': np.array(Country_Code),
                               'LifeExp1960': np.array(Life_Expectancy_At_Birth_1960),
                               'LifeExp2013': np.array(Life_Expectancy_At_Birth_2013)})
 
 
 # Check row counts
-_(_(life_exp_data)) #187 rows
+len(life_exp_data) #187 rows
+len(mrgdData_1) # 195 rows
 
 # Check summaries
-life_exp_data._()
-
+life_exp_data.describe()
+# notice the life expectancy increased "17 years" between 1960 and 2013
 
 
 # NOTE: Did you pick up that there is more than one year in the data? From the challenge we know that there are two: **1960** and **2013**
 
-# Merge the data frame with the life expectancy
-merged_data = pd._(left=merged_data, right=life_exp_data, how='inner', on='CountryCode')
+
+
+# Merge the 'dataframe' with the 'life expectancy'
+mrgdData_2 = pd.merge(left=mrgdData_1, right=life_exp_data, how='inner', on='CountryCode')
+
+# notice we have 195 rows in our original data, but here we have 187 rows, 
+    # 'inner' brings the countries that are in 'both datasets'
+
 
 # Explore the dataset
-merged_data._()
+mrgdData_2.head()
 
 # Check the new structures
-merged_data._()
+mrgdData_2.info()
 
 # We can see obsolete columns because of the merge operation
 # Rename the one of the colunms containing the country names and delete the other
-merged_data._(columns = {'CountryName_x':'CountryName'}, inplace = True)
-_ merged_data['CountryName_y']
+# Note: we dont need delete or rename, becaye we've used 'mrgdData_2' insted of 'merged_data'
+del mrgdData_2['CountryName_y'] # delete extra column 
+merged_data.rename(columns = {'CountryName_x':'CountryName'}, inplace = True)
+# 'inplace = True' makes the changes to our original dataframe object
 
 # Check structures again
-merged_data._()
+merged_data.info()
 
-# Plot the BirthRate versus LifeExpectancy cathegorized by Country Region in 1960
-vis3 = sns._( data = merged_data, x = '_', y = '_', fit_reg = False, hue = '_', size = 10 )
+# Plot the 'BirthRate' versus 'LifeExpectancy' cathegorized by Country Region in 1960; y = 'LifeExp1960'
+vis3_1960 = sns.lmplot(data = mrgdData_2, x = 'BirthRate', y = 'LifeExp1960', hue = 'CountryRegion', fit_reg = False, height=6, scatter_kws={'s': 50})
+# Observations: 
+    # in 1960 Eurrope and America has 'Lower Birthrate' and 'Higher Life Expectancy'
+    # African coutries has 'Higher Birthrate' and 'Lower Life Expectancy'
 
-# Plot the BirthRate versus LifeExpectancy cathegorized by Country Region in 2013
+
+# Plot the BirthRate versus LifeExpectancy cathegorized by Country Region in 2013; y = 'LifeExp2013'
+vis3_2013 = sns.lmplot(data = mrgdData_2, x = 'BirthRate', y = 'LifeExp2013', hue = 'CountryRegion', fit_reg = False, height=6, scatter_kws={'s': 50})
+# Observations: 
+    # in 2013 Eurrope and America has 'Lower Birthrate' and 'Higher Life Expectancy' mostly the same as 1960
+    # African coutries has 'Higher Birthrate' and 'Lower Life Expectancy' 
+        # However some African coutries 'Decreased' their birthrate in 2013
+
+
