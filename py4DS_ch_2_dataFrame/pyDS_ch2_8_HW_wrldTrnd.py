@@ -1,10 +1,4 @@
 
-################# 5.12: Full, 7.5:full, 7.6: full
-# copy:  
-#        
-#        
-################# (13-jan-24 for 14-jan-24)
-
 # Courses: A-Z PY for Data-Science    5.12, 7.5, 7.6
 
 # ------------    WORLD TRENDS    ------------
