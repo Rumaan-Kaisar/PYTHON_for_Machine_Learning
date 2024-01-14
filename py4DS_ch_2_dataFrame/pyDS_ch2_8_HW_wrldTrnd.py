@@ -254,5 +254,6 @@ vis3_2013 = sns.lmplot(data = mrgdData_2, x = 'BirthRate', y = 'LifeExp2013', hu
     # in 2013 Eurrope and America has 'Lower Birthrate' and 'Higher Life Expectancy' mostly the same as 1960
     # African coutries has 'Higher Birthrate' and 'Lower Life Expectancy' 
         # However some African coutries 'Decreased' their birthrate in 2013
+    # most of the Asian countires increased their 'Life Expectancy' near 70y as well as decreasing birthrate.
 
 
