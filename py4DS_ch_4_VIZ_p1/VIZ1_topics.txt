@@ -1,0 +1,39 @@
+
+--------  Topics  --------
+
+1.	What is a Category data type
+2.	Working with JointPlots
+3.	Histograms
+4.	Stacked histograms in Python
+5.	Creating a KDE Plot
+6.	Working with Subplots
+7.	Violinplots vs Boxplots
+8.	Creating a Facet Grid
+9.	Coordinates and Diagonals
+10.	BONUS Building Dashboards in Python
+11.	BONUS Styling Tips
+12.	BONUS Finishing Touches
+13.	Section Recap
+14.	HOMEWORK Movie Domestic Gross
+
+
+
+###########    file structure    ##########
+Category data type, JointPlots 1, 2
+Histograms & Stacked histograms 3, 4
+Subplots(), KDE,  5, 6
+violin, Boxplots 7
+Facet Grid, Coordinates and Diagonals 8, 9
+Dashbors_styling_finishing 11, 12, 13
+Movie_gross_HW 14, 7.7, 7.8
+
+
+
+
+ctgryData_JointPlt
+Hist_StkdHist
+Subplots_KDE
+violinPlt_BoxPlt
+FacetGrid_Cordnt_diagnl
+Dshbrd_styly_finalTuch
+Movie_gross_HW
