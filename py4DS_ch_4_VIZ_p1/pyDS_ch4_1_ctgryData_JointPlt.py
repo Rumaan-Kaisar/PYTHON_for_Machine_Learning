@@ -1,9 +1,9 @@
 
-################# 6.1: 3:30
+################# 6.1: 8:46
 # copy:  Dataset, Update: py, ipynb
 #        
 #        
-################# (16-jan-24 for 17-jan-24)
+################# (17-jan-24 for 19-jan-24)
 
 # Courses: A-Z PY for Data-Science    6.1, 6.2
 
@@ -44,4 +44,48 @@ movies.head()
     # 'Year' is a numerical data, but we should treat it as 'category'. Why?
     # lets do more exploration to understand the reason - 
 
+# Get some information
+movies.info()
+
+# Notice we have 6 columns
+    # 2 of those are 'objects' but not 'category' yet
+    # 4 of those are int type
+
+    # 'CriticRating', 'AudienceRating', 'BudgetMillions' are meaningful in int-type
+        # these can have mean, variance, max, min and other statistical-data
+
+    # But "Years" cannot be treated as 'int-type'. There is no mean, variance for "Years"
+        # We don't really treat "Years" as numerical data. "Years" is a 'Ctegorical data'
+        # We have to convert "Years" from NUMERICAL data to 'CTEGORICAL data'
+        # Notice right now we have mean, variance, max, min, 25%(1st quartel), 50%(median), 75%(3rd quartel)  for "Year". Which is absurd.
+
+
+# Statistical info
+movies.describe()
+# mean, variance, max, min, 25%(1st quartel), 50%(median), 75%(3rd quartel) make sense for 
+    # 'CriticRating', 'AudienceRating', 'BudgetMillions'
+    # those statistical info have no meaning foor "Year"
+        # So we treat "Year" as categorical data
+        # "Years" are presented as numbers, but there could be moonths (Jan, Feb, Mar)
+        # after transformatioon to categorical variable we can still do some basic arithmatic operation like 'Dofference', 'max', 'min'
+
+
+# ----   convert 'numerical-type',' object-type' to "categorical-type"   ----
+movies['Film'].astype("category")   # way 1: using [] to access column
+movies.Genre.astype("category")   # way 2: using '.' to access column
+
+# use assignment '=' operation to update the dataset
+movies['Film'] = movies['Film'].astype("category")
+movies.Genre = movies.Genre.astype("category")   # way 2: using '.' to access column
+movies.Year = movies.Year.astype("category")   # way 2: using '.' to access column
+
+
+# Explore the changes
+movies.head() 
+movies.info()   # notice the 'obect-type' are converted to 'category'
+# in 'R-programming'  categories are called fdactors
+
+
+
+# Getting 'uniques' used in a column
 
