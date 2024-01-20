@@ -1,5 +1,5 @@
 
-################# 6.1: 8:46
+################# 6.1: full
 # copy:  Dataset, Update: py, ipynb
 #        
 #        
@@ -87,5 +87,23 @@ movies.info()   # notice the 'obect-type' are converted to 'category'
 
 
 
-# Getting 'uniques' used in a column
+# Getting 'uniques' used in a 'category' columns
+    # there are 7 different 'Genres' on movies
+movies.Genre.cat.categories
+# Another way: How to get all 'Unique Categories'
+movies.Genre.unique()  # shows all the 'categories' used in a column
+
+# in 'R' these categories are called 'labels' or 'factors'
+
+# Explore the 'statistical-info' again
+    # notice 'Year' is no longer considered as 'numerical data', it act as 'category'
+movies.describe()
+ 
+# Conclusion: Above are the 'Data preparation step' for Data-analysis
+    # Key point is how deal with 'categorical data' when we prepare our dataset
+        # how to force data to act as 'categorical data'. Eg: 'years'
+    # also its a good practice to explore the dataset before Data-analysis
+
+
+
 
