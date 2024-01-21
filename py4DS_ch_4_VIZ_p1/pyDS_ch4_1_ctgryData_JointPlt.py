@@ -1,9 +1,9 @@
 
-################# 6.1: full
+################# 6.1: full, 6.2: 2.55
 # copy:  Dataset, Update: py, ipynb
 #        
 #        
-################# (17-jan-24 for 19-jan-24)
+################# (20-jan-24 for 21-jan-24)
 
 # Courses: A-Z PY for Data-Science    6.1, 6.2
 
@@ -107,3 +107,47 @@ movies.describe()
 
 
 
+# ------------    jointplots    ------------
+# Import the following packages needed to perform the analysis
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# To remove 'warnings' use 'filterwarnings'
+import warnings
+warnings.filterwarnings('ignore')
+
+# plot shown in Jupyter Notebook
+%matplotlib inline  
+# expand the figure-width
+plt.rcParams['figure.figsize'] = 8, 4
+
+
+# --------    Loading Dataset    --------
+# Import the csv dataset
+movies = pd.read_csv("./MovieRatings.csv")     # load datset
+
+# -=-=-  Explore the data  -=-=-
+# Visualize the dataframe
+movies
+
+# rename the column names to single-string names
+movies.columns = ['Film', 'Genre', 'CriticRating', 'AudienceRating', 'BudgetMillions', 'Year']
+movies.head()    # view dataset
+
+
+# -=-=-=-  Jointplots  -=-=-=-
+# select dataset, sepcify the columns
+jnPlt_1 = sns.jointplot(data=movies, x='CriticRating', y='AudienceRating')
+
+# What does the 'Jointplots' shows us:
+    # basically it's a 'scatterplot', 
+    # showing: is there any dependencies between 'CriticRating' and 'AudienceRating'
+        # if we draw a diagonal, 'AudienceRating' stays above the diagonal
+        # i.e. 'AudienceRating' usually greater than 'CriticRating'
+        # However, for higer ratings 'AudienceRating' starts to match 'CriticRating', 
+            # i.e. points getting near to the diagonal (more or less)
+    # it helps us to visualize multivariate distribution 
+
+# Styling: 'Hexagonal' clustered presentation
+jnPlt_1 = sns.jointplot(data=movies, x='CriticRating', y='AudienceRating', kind='hex')
