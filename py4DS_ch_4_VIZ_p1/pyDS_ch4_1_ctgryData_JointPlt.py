@@ -1,10 +1,4 @@
 
-################# 6.1: full, 6.2: 2.55
-# copy:  Dataset, Update: py, ipynb
-#        
-#        
-################# (20-jan-24 for 21-jan-24)
-
 # Courses: A-Z PY for Data-Science    6.1, 6.2
 
 
@@ -136,7 +130,7 @@ movies.columns = ['Film', 'Genre', 'CriticRating', 'AudienceRating', 'BudgetMill
 movies.head()    # view dataset
 
 
-# -=-=-=-  Jointplots  -=-=-=-
+# -=-=-=-  Chart 1: Jointplots  -=-=-=-
 # select dataset, sepcify the columns
 jnPlt_1 = sns.jointplot(data=movies, x='CriticRating', y='AudienceRating')
 
@@ -149,5 +143,26 @@ jnPlt_1 = sns.jointplot(data=movies, x='CriticRating', y='AudienceRating')
             # i.e. points getting near to the diagonal (more or less)
     # it helps us to visualize multivariate distribution 
 
+    # 2 distributions
+    # in jointplot we have 2 ditsributions on the top, and on the right
+        # useful for bi-variate distribution,
+        #  because the scatterplot alone we cannot get any idea about the distributions of the 'seperate variables'
+        # notice 'AudienceRating' is some kind of 'normal ditribution'
+        # also notice 'CriticRating' is a kind of 'uniform ditribution'
+
 # Styling: 'Hexagonal' clustered presentation
+    # change the style of the jointplot
+    # to style jointplot use 'kind' attribute with values: 'scatter', 'reg', 'kde', 'hex'
+    # Eg: 'hex' gives 'Hexagonal' kind of 'grops of the dots'. It kind of make a 'cluster'
+        # Notice the clusters are associated with their corresponding distribution
+        # color is denser if both distribution meets high values.
 jnPlt_1 = sns.jointplot(data=movies, x='CriticRating', y='AudienceRating', kind='hex')
+# in python its easy to create, but in 'R', you have to give some effort
+
+# Another try
+jnPlt_2 = sns.jointplot(data=movies, x='AudienceRating', y='BudgetMillions', kind='kde')
+
+# Try same variable for x, y both
+jnPlt_1 = sns.jointplot(data=movies, x='AudienceRating', y='AudienceRating', kind='hex')
+
+
