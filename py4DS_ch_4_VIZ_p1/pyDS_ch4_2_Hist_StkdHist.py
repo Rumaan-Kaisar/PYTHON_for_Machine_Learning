@@ -1,5 +1,5 @@
 
-################# 6.3: 1.30
+################# 6.3: 4:30
 # copy: replacing_seaborn_distplot.ipynb
 #        
 #        
@@ -66,10 +66,30 @@ hist_3 = sns.histplot(data=movies.AudienceRating, kde=True)
 hist_4 = sns.histplot(data=movies, x='AudienceRating', hue='Genre', kde=True) 
 
 
+# CriticRating
+hist_5 = sns.histplot(data=movies, x='CriticRating', kde=True, bins=15, kde_kws=dict(cut=3))
+# without 'cut' only actual range of the data shown
+    # 'cut=3' used to get 'full curve'
+ 
+
+# ----    Another way to plot "Distribution" using pyplot 'plt'    ----
+# Since seaborn is built on top of 'matplotlib.pyplot', we can directly use 'pyplot'
+plt.grid(color = 'green', linestyle = '--', linewidth = 0.5,)   # grid styling
+plt.style.use("seaborn")    # background color
+hist_5 = plt.hist(movies.AudienceRating, bins=15, edgecolor='black', linewidth=.2)
+# edgecolor='black', linewidth=.2 used to show 'bar edege'
+# Also notice the plot is RANGED from 0 to 100 (instead of -20 to 120)
 
 
+# ----   seaborn styles    ----
+# To reset all styles of seaborn use: 
+# sns.set_style("white")
+
+# To get a seaborn style use:
+sns.set_style("darkgrid")
+hist_6 = sns.distplot(movies.AudienceRating)
 
 
-
+# What is special about above 2 chatrs for: 'AudienceRating' & 'CriticRating' ?
 
 
