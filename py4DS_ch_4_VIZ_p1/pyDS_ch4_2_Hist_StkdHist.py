@@ -1,9 +1,9 @@
 
-################# 6.3: 4:30
+################# 6.3: full, 6.4: 
 # copy: replacing_seaborn_distplot.ipynb
 #        
 #        
-################# (23-jan-24 for 24-jan-24)
+################# (26-jan-24 for 27-jan-24)
 
 # Courses: A-Z PY for Data-Science    6.3, 6.4
 
@@ -90,6 +90,29 @@ sns.set_style("darkgrid")
 hist_6 = sns.distplot(movies.AudienceRating)
 
 
-# What is special about above 2 chatrs for: 'AudienceRating' & 'CriticRating' ?
+# Observations:
+    # What is special about above 2 chatrs for: 'AudienceRating' & 'CriticRating' ?
+
+    # 'AudienceRating' has a kind of NORMAL distribution
+        # it's based on human rating using their 'natural intuition' on movies 
+
+    # 'CriticRating' has some kind of UNIFORM distribution
+        # there is a kind of average line between '20 to 30'
+        # this rating is based on critria: movie-plot, story-telling, ligting, sound-effect
+
+
+
+
+# ------------    STACKED HISTOGRAMS in python    ------------
+
+# -=-=-=-    using 'pyplot'    -=-=-=-
+# Histogram of 'BudgetMillions'
+hst_1 = plt.hist(movies.BudgetMillions)
+plt.show()  # shows plot without any info
+
+# Specific 'Genre' Histogram of 'BudgetMillions'
+# Filter data for specific Genere. eg: 'Drama'
+drama_Bgt = (movies.Drama == 'Drama')
+
 
 
