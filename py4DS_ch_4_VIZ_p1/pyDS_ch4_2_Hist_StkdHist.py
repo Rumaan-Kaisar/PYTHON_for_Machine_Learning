@@ -1,9 +1,9 @@
 
-################# 6.3: full, 6.4: 
+################# 6.3: full, 6.4: 4.05
 # copy: replacing_seaborn_distplot.ipynb
 #        
 #        
-################# (26-jan-24 for 27-jan-24)
+################# (27-jan-24 for 28-jan-24)
 
 # Courses: A-Z PY for Data-Science    6.3, 6.4
 
@@ -103,16 +103,53 @@ hist_6 = sns.distplot(movies.AudienceRating)
 
 
 
+
+
 # ------------    STACKED HISTOGRAMS in python    ------------
 
 # -=-=-=-    using 'pyplot'    -=-=-=-
+# Our approach will be more related on 'Programming' rather than data-science
 # Histogram of 'BudgetMillions'
 hst_1 = plt.hist(movies.BudgetMillions)
 plt.show()  # shows plot without any info
 
+
 # Specific 'Genre' Histogram of 'BudgetMillions'
 # Filter data for specific Genere. eg: 'Drama'
-drama_Bgt = (movies.Drama == 'Drama')
+is_drama = (movies.Genre == 'Drama')   # Budget on certain 'Genre'
+is_drama
 
+# Now we create new data-frame for 'Drama-movies' only
+drama_movies = movies[is_drama]     # ONLY Drama-movies data
+
+# Visualize Drama-movies 'BudgetMillions'
+hst_2 = plt.hist(drama_movies.BudgetMillions)
+plt.show()
+
+
+# Using same approach we can visualize Action-movies cost
+    # NOTICE how we combine 3-steps using a single line
+    # However it just vizualize the histogram
+    # if we created the specific data-frame for 'Action-movies' we coud use it later
+hst_3 = plt.hist(movies[movies.Genre == 'Action'].BudgetMillions)   # Action-movies Budget
+
+# More Visualizations
+hst_4 = plt.hist(movies[movies.Genre == 'Comedy'].BudgetMillions, bins=15)   # Comedy-movies Budget
+hst_5 = plt.hist(movies[movies.Genre == 'Thriller'].BudgetMillions, bins=15)   # Thriller-movies Budget
+
+
+
+# Above Historams are 'Manually codded' for different 'Genre'
+    # Now we use a FOR-LOOP to make saperate Data-farme for each 'Genre'
+    # Then we visualize those in a single plot
+        # Currently they're behaind each-other (hst_4 & hst_5)
+        # We want them 'stacked on top of each-other'
+
+# 'Stacked Histogram'
+    # To create a 'Stacked Histogram' we need to pass a list of data-frame in hist()
+    # the list of budgets of 'Comedy' & 'Thriller':
+        # [movies[movies.Genre == 'Comedy'].BudgetMillions, movies[movies.Genre == 'Thriller'].BudgetMillions]
+stckHst_1 = plt.hist([movies[movies.Genre == 'Comedy'].BudgetMillions, movies[movies.Genre == 'Thriller'].BudgetMillions], bins=15)
+# Notice the bars is presented 'side-by-side' instead of 'stacked-on-top'
 
 
