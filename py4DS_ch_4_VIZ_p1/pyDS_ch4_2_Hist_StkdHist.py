@@ -1,10 +1,4 @@
 
-################# 6.3: full, 6.4: 4.05
-# copy: replacing_seaborn_distplot.ipynb
-#        
-#        
-################# (27-jan-24 for 28-jan-24)
-
 # Courses: A-Z PY for Data-Science    6.3, 6.4
 
 
@@ -151,5 +145,61 @@ hst_5 = plt.hist(movies[movies.Genre == 'Thriller'].BudgetMillions, bins=15)   #
         # [movies[movies.Genre == 'Comedy'].BudgetMillions, movies[movies.Genre == 'Thriller'].BudgetMillions]
 stckHst_1 = plt.hist([movies[movies.Genre == 'Comedy'].BudgetMillions, movies[movies.Genre == 'Thriller'].BudgetMillions], bins=15)
 # Notice the bars is presented 'side-by-side' instead of 'stacked-on-top'
+    # set attribute stacked = True
+bdgt_ls1 = [movies[movies.Genre == 'Action'].BudgetMillions, movies[movies.Genre == 'Drama'].BudgetMillions]
+stckHst_2 = plt.hist(bdgt_ls1, bins=15, stacked=True)
+
+
+# We have 7 Genre, we can do the stacked plot manually
+    # what if we had 100 Genre?
+    # We have to solve it using python coding. We'll use 'For-loop'
+
+# get all the 'Genre'
+all_genre = movies.Genre.cat.categories
+all_genre = list(all_genre) # convert to 'List'
+
+# create the list of data-frames
+bdgt_ls2 = []
+for gnr in all_genre:
+    bdgt_ls2.append(movies[movies.Genre == gnr].BudgetMillions)
+
+# visualize
+stckHst_3 = plt.hist(bdgt_ls2, bins=15, stacked=True)
+plt.hist(bdgt_ls2)
+
+
+# also we can use following code
+list_1 = list()
+for gen in movies.Genre.cat.categories:
+    list_1.append(movies[movies.Genre == gen].BudgetMillions)
+hs_1 = plt.hist(list_1) # side-by-side
+
+# stacked 
+    # remove gap between the bars (side): rwidth=1. range (0, 1)
+hs_2 = plt.hist(list_1, bins=30, stacked=True, rwidth=1)
+
+# Legends
+all_genre = list(movies.Genre.cat.categories)
+hs_3 = plt.hist(list_1, bins=30, stacked=True, rwidth=.8, label=all_genre)
+plt.legend()
+plt.show()
+
+# Note: in 'R' or 'Tablue' it's more easy to create stacked-histogram
+
+
+
+# -=-=-=-    using 'seaborn'    -=-=-=-
+# 'seaborn' as sns. We do this in one line of code
+hist_sns_1 = sns.histplot(data=movies, x='BudgetMillions', hue='Genre', multiple="stack", shrink=.8, linewidth=0, bins=30) 
+# hue='Genre' gets all the 'Genre'
+# shrink=.8 is similar to 'rwidth'
+# multiple="stack" is similar to stacked=True
+# linewidth=0 removes borders of the bars
+# bins=30 number of bars
+
+# What are 'bins'?
+    # A histogram displays numerical data by grouping data into "bins" of equal width. 
+    # Each bin is plotted as a bar whose height corresponds to how many data points are in that bin. 
+    # Bins are also sometimes called "intervals", "classes", or "buckets".
 
 
