@@ -1,9 +1,9 @@
 
-################# 6.5: 4:10
+################# 6.5: full, 6.6: 1:35
 # copy:  
 #        
 #        
-################# (31-jan-24 for 2-feb-24)
+################# (2-feb-24 for 3-feb-24)
 
 # Courses: A-Z PY for Data-Science    6.5, 6.6
 
@@ -67,21 +67,42 @@ vis2_lm.set(xlim=(-20, 120), ylim=(-10, 110))
 kDe1 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating)  # this will get us a KDE-plot
 # it's pretty much the same as 'scatter-plot' or 'lmplot' but instead of dots we get the 'kernel-density-estimate'
     # 'kernel-density-estimate' shows us most 'density of the data'
-    # how the density is distributed across the chart
+    # how the density is distributed across the chart for 'Bi-variate distribution'
     # further away the 'kernel' the density gets lower (fading away)
 
 # why KDE used:
     # to get the idea 'where two data are mostly correlated'
     # how data is distributed accross the two-variables for a 'Bi-variate distribution'
 
-# ----  rev  ----
 # More Adjustments for the KDE-plot
+    # It's more liak a 'Heat-map' or 'Heat-digram'
+    # shade=True  we simply add a color
+    # shade_lowest=False  it removes the color/shade of the last layer so that we can see the grids
+    # We'll learn more styling, at the end of the section
 kDe2 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, shade=True, shade_lowest=False)
+
+# cmap='Reds'  adds differnt color to our KDE-plot
 kDe3 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, shade=True, shade_lowest=False, cmap='Reds')
+
+# without any shades/color, just the outlines
 kDe4 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='Reds')
 
 # combine with border
+    # in 'kDe3' it was slightly rough on the edges, 
+    # so we combine 'shades' & 'border' like below, it'll give us overlaied plot
+    # edge will look like more contured
 kDe5 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, shade=True, shade_lowest=False, cmap='Reds')
 kDe6 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='Reds') # ads border on top of 'kDe5'
 
+# Below we try to create KDE-plot for other numeric variables
+
+
+
+
+# ------------    Subplots()    ------------
+# allows us to create some sophisticated visualizations
+    # it COMBINES different visualizations togather
+
+# Create new Kernel Density Estimate (KDE)
+k_BA = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating')
 
