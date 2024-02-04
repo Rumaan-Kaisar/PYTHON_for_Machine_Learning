@@ -1,9 +1,9 @@
 
-################# 6.5: full, 6.6: 1:35
+################# 6.5: full, 6.6: 5.10
 # copy:  
 #        
 #        
-################# (2-feb-24 for 3-feb-24)
+################# (3-feb-24 for 4-feb-24)
 
 # Courses: A-Z PY for Data-Science    6.5, 6.6
 
@@ -103,6 +103,38 @@ kDe6 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='Reds') 
 # allows us to create some sophisticated visualizations
     # it COMBINES different visualizations togather
 
-# Create new Kernel Density Estimate (KDE)
+# Create new Kernel Density Estimate (KDE): BudgetMillions vs AudienceRating
+# sns.set_style("dark")   # change seaborn-style, no-grid
 k_BA = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating')
+k_BA.set(xlim=(-40, 250), ylim=(-20, 120))  # we set the range to compare the plots
+
+# Observations: It shows us wheather the budget of the movies affect the 'AudienceRating'
+    # is there any 'skew' of the visualization to the Right/Left or UP/Down
+    # slice the plot at AudienceRating = 40, notice the Budget is lie between (30, 45)
+    # If we slice the plot at AudienceRating = 60, notice now the Budget is spread-out
+    # if we slice it vertically BudgetMillions = 20, the Rating is streached around (20, 90)
+    # But slicing vertically at BudgetMillions = 90, the Rating shrinks around (40, 70)
+        #i.e. 'lower density' gets bit higher and the 'higher-density' gets low
+    
+
+# (KDE): BudgetMillions vs AudienceRating
+k_BC = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating')
+k_BC.set(xlim=(-40, 250), ylim=(-20, 120))  # we set the range to compare the plots
+
+# Observations: Similar to above plot
+    # notice the CriticRating & BudgetMillions values go under 0.
+    # its not in reality, actually its the 'way the KDE is constructed'
+    # Actually the CriticRating is constructed at the KERNEL, between (20, 40)
+        # and then its streached out
+    # as we go above BudgetMillions = 50, the CriticRating start to shrink
+        # max-CriticRating drops and min-CriticRating increase
+
+# Notice from both plot/chart
+    # the AudienceRating make the plot bit-tighter
+    # the CriticRating make the plot bit-spread-out
+    # the reason is:
+        # AudienceRating is closer to 'Normal-distribution'
+        # CriticRating is closer to 'Uniform-distribution'
+    
+
 
