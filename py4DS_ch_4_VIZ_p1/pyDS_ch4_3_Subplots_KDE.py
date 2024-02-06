@@ -1,10 +1,4 @@
 
-################# 6.5: full, 6.6: 5.10
-# copy:  
-#        
-#        
-################# (3-feb-24 for 4-feb-24)
-
 # Courses: A-Z PY for Data-Science    6.5, 6.6
 
 
@@ -137,4 +131,128 @@ k_BC.set(xlim=(-40, 250), ylim=(-20, 120))  # we set the range to compare the pl
         # CriticRating is closer to 'Uniform-distribution'
     
 
+# ----  subplots:  ----
+    # Notice we have to set 'xlim' & 'ylim' same in the both plots 'k_BA' and 'k_BC' for camparison
+    # subplot is a tool used to do that kind of comparison
+    # subplot comes from 'pyplot'
+    # in subplot we can show multiple plots at the same-time
+    # a subplot can be a 1D or 2D array of plots
+    # we can put the different plots in 'different locations' using coordinates (array-index)
+    
+    # Dashboard creation:
+        # COMBINE any kind of plots: not only 'KDE' but we can also plot 'KDE', 'scatterplot' togater
+        # subplot is commonly used to create DASHBOARDs
+
+
+# Following is a coding convention- f:figure, ax:axes
+f, axes = plt.subplots(1, 2)
+# above creates an 1D array of 2-plots
+    # (1, 2) means one-row, two columns
+f, axes = plt.subplots(1, 2) # 1 row of 3-plots
+f, axes = plt.subplots(3, 3) # 3 rows of 3-plots = 9 plots
+
+# attributes
+# figsize = Size of the "whole subplot figure", input is a tuple
+    # figsize = (length, height) = (12, 6)
+
+
+# we'll place 'k_BA' and 'k_BC' in the following subplot
+f, axes = plt.subplots(1, 2, figsize = (12, 6))
+
+# We have to specify the place of each plot, notice the arrgumnet ax=axes[0], ax=axes[1]
+    # index is used: axes[0] is the first plot, axes[1] is the second plot
+f, axes = plt.subplots(1, 2, figsize = (12, 6))
+k_BA = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', ax=axes[0])
+k_BC = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', ax=axes[1])
+
+# 'f, axes' is actually "fig, ax", its a tuple of two objects. 
+    # 'f' is the figure, 
+    # 'axes' is the array for acessing each of the plot
+""" 
+    *fig* is the :class:'matplotlib.figure.Figure' object
+
+    *ax* can be either a 
+        'single axis object' or 
+        'an array of axis objects' if more than one subplot was created. 
+
+    The dimensions of the resulting array can be controlled with the 'squeeze' keyword. 
+"""
+
+axes
+# array([<AxesSubplot:xlabel='BudgetMillions', ylabel='AudienceRating'>,
+#        <AxesSubplot:xlabel='BudgetMillions', ylabel='CriticRating'>],
+#       dtype=object)
+
+
+# ----  2D array of plots (array of axis objects)  ----
+f, axes = plt.subplots(2, 2, figsize = (12, 6))
+# k_BA = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', ax=axes[0])   # ERROR
+# k_BC = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', ax=axes[1])     # ERROR
+
+# Dimension: notice we have to specify 2-indexes for each plot,, otherwise we'll get an error
+    # 2D set of subplots vs 1D set of subplots
+        # for 1D array objects we use 1-index
+        # in 2D array objects we use 2-indexes
+k_BA = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', ax=axes[0, 0])
+k_BC = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', ax=axes[0,1])
+k_AC = sns.kdeplot(data=movies, x='AudienceRating', y='CriticRating', ax=axes[1,1])
+
+
+# setting the RANGE of x, y:
+    # as before we use 'xlim' and 'ylim'
+    # however, we can use 'sharex', 'sharey' attributes to set all same 'xlim & ylim'
+f2, axes2 = plt.subplots(1, 2, figsize = (12, 6), sharex=True, sharey=True)
+k_BA = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', ax=axes2[0])
+k_BC = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', ax=axes2[1])
+k_BA.set(xlim=(-20, 160))
+# We can use same for k_BC
+    # k_BC.set(xlim=(-20, 160))
+    # but it can be done with 'subplots' attribute "sharex"
+    # 'sharex=True' set the same xlim for all plots
+    # 'sharey' does the same thing for y-axis
+
+# issue 1, label: sharex, sharey hides 'label'
+    # the label exists, but it is not visible.
+    # Add this line to get the label to be visible.
+axes[1].yaxis.get_label().set_visible(True)
+# now both charts are visually comparable
+
+# issue 2, ticks: also you can use following workaround to show ticks (numbers)
+fig, (ax,ax2) = plt.subplots(2, sharex=True)
+ax.xaxis.set_tick_params(which='both', labelbottom=True)
+
+# issue fixed: 
+""" 
+    matplotlib.axes.Axes.tick_params
+    Axes.tick_params(axis='both', **kwargs)[source]
+    Change the appearance of ticks, tick labels, and gridlines.
+
+    Tick properties that are not explicitly set using the keyword arguments remain unchanged unless reset is True. For the current style settings, see Axis.get_tick_params.
+
+Parameters:
+    axis
+    {'x', 'y', 'both'}, default: 'both'
+    The axis to which the parameters are applied.
+
+    which
+    {'major', 'minor', 'both'}, default: 'major'
+    The group of ticks to which the parameters are applied.
+
+    reset
+    bool, default: False
+    Whether to reset the ticks to defaults before updating them. 
+"""
+
+f, axes = plt.subplots(2, 2, figsize = (12, 6), sharex=True, sharey=True)
+k_BA = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', ax=axes[0, 0])
+k_BC = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', ax=axes[0,1])
+k_AC = sns.kdeplot(data=movies, x='AudienceRating', y='CriticRating', ax=axes[1,1])
+for i in range(0,2):
+    for j in range(0,2):
+        # show labels
+        axes[i,j].yaxis.get_label().set_visible(True)
+        axes[i,j].xaxis.get_label().set_visible(True)
+        # show ticks
+        axes[i,j].xaxis.set_tick_params(which='both', labelbottom=True)
+        axes[i,j].yaxis.set_tick_params(which='both', labelleft=True)
 
