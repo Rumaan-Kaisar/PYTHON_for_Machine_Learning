@@ -1,0 +1,33 @@
+
+------------------------    QUARTILES    ------------------------
+What are quartiles?
+    Quartiles are a set of 'descriptive statistics'. 
+    They summarize the "central tendency" and 'variability of a dataset' or DISTRIBUTION.
+
+    Quartiles are a type of percentile. 
+        A 'percentile' is a value with a 'certain percentage of the data' falling below it. 
+        In general terms, "k%" of the data falls below the 'k-th percentile'.
+
+
+
+1st, 2nd, 3rd quartiles:
+    The first quartile (Q1, or the Lowest quartile) 
+        is the 25th percentile, meaning that 25% of the data falls below the first quartile.
+
+    The second quartile or MEDIAN (Q2, or the Median) 
+        is the 50th percentile, meaning that 50% of the data falls below the second quartile.
+
+    The third quartile (Q3, or the Upper quartile) 
+        is the 75th percentile, meaning that 75% of the data falls below the third quartile.
+
+
+Notes:
+    By splitting the data at the 25th, 50th, and 75th percentiles, the quartiles 'divide' the data into "four equal parts".
+
+    In a sample or dataset, the quartiles divide the data into "four groups" with "Equal Numbers of Observations".
+
+    probability distribution:
+        In a probability distribution, the 'quartiles' divide the distribution’s range into four "Intervals with Equal Probability".
+
+
+
