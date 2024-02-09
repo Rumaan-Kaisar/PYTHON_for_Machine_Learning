@@ -1,9 +1,9 @@
 
-################# 6.7:
-# copy:  quartiles image, txt (rev)
+################# 6.7: 3.00
+# copy:  quartiles image, txt (rev) : done
 #        
 #        
-################# (6-feb-24 for 7-feb-24)
+################# (7-feb-24 for 9-feb-24)
 
 # Courses: A-Z PY for Data-Science    6.7
 
@@ -50,45 +50,83 @@ movies.info()   # check the data-type changes
 # we'll plot 'violinplots' and 'boxplots'
     # we'll compare which one is better & which one people often use
 
-z = sns.violinplot data=movies, x='Genre , y= CnticRatmg
-z = sns.violinplot(data=movies, x='Genre', y='CriticRating')
+# boxplot & boxenplot
+bxp_1 = sns.boxplot(data=movies, x='Genre', y='CriticRating', hue='Genre')  # box-plot
+# following gives n-box plot, 'outliers' are shown as 'circles'
+bxp_n = sns.boxenplot(data=movies, x='Genre', y='CriticRating', hue='Genre') 
 
-# ----  rev  ----
+# violinplot
+vlp_1 = sns.violinplot(data=movies, x='Genre', y='CriticRating', hue='Genre')
+
+# violinplots vs boxplots
+    # notice at the bottom we have all 'Genre' as x-label
+    # The both plot shows us how the 'CriticRating' distributes across different 'Genre'
+    # boxplot:
+        # shows the quartiles, 
+            # Q1: bottom of the box
+            # Q2 or median: horizontal line middle of the box
+            # Q3: Top of the box
+            # outliers are excluded (not shown)
+        # Observations: 
+            # for example: the Horror movies, critic ratings are lower than others, 
+                # it has median at 22, lowest of all 'Genre'
+                # the highest median has 'Thriller' and gets best critic-ratings
+                # 'Comedy' and 'Drama' has similar boxplot (but violinplot of those 2 are different)
+                # 'Comedy' is little lower than 'Drama'
+            
+            # for a rough insight: if we want to create an average type of movie
+                # it will be best to crate 'Thriller' than a 'Horror'
+
+
+
+
+
+
+
+
 """ 
-What are Quartiles?
-Quartiles are three values that split your dataset into quarters.
+    ------------------------    QUARTILES    ------------------------
+    What are Quartiles?
+        Quartiles are three values that 'split' your dataset into 'quarters'.
 
-A median divides a given dataset (which is already sorted) into two equal halves similarly, the quartiles are used to divide a given dataset into four equal halves. Therefore, logically there should be three quartiles for a given distribution, but if you think about it, the second quartile is equal to the median itself! 
+    A MEDIAN divides a given dataset (which is already sorted) into two equal halves 
+        similarly, the QUARTILES are used to divide a given dataset into 'four equal halves'. 
+        Therefore, logically there should be 'three quartiles' for a given distribution, 
+        however, the second_quartile = median 
 
-These values are the following:
+    These values are the following:
+        Q1 First quartile: 25% of the data are below this value.
+        Q2 Second quartile / Median: This value splits the data in half.
+        Q3 Third quartile: 25% of the data are above this value.
 
-Q1 First quartile: 25% of the data are below this value.
-Q2: Second quartile / Median: This value splits the data in half.
-Q3 Third quartile: 25% of the data are above this value.
-Quartiles also correspond to percentiles. Q1 is the 25th percentile, Q2 is the 50th, and Q3 is the 75th.
+    Quartiles also correspond to 'percentiles': 
+        Q1 is the 25th percentile, 
+        Q2 is the 50th, and 
+        Q3 is the 75th.
 
-How to Find Quartiles
-The simple method for finding quartiles is to list the values in your dataset in numeric order. Then find the three values that split your data into quarters, as shown below.
+    How to Find Quartiles:
+        The simple method for finding quartiles is to list the values in your dataset in numeric order. 
+        Then find the 'three values' that split your data into quarters, as shown below.
 
-        11
-        13
-        16
-        19
-        20  # Q1
-        21
-        23
-        25
-        26
-        29 # Q2 or Median
-        33
-        34
-        36
-        38
-        39 # Q3
-        46
-        52
-        55
-        58
+            11
+            13
+            16
+            19
+            20   # Q1
+            21
+            23
+            25
+            26
+            29   # Q2 or Median
+            33
+            34
+            36
+            38
+            39   # Q3
+            46
+            52
+            55
+            58
 
  """
 
