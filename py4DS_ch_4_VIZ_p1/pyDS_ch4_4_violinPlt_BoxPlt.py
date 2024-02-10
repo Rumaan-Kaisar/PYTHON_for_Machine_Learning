@@ -1,5 +1,5 @@
 
-################# 6.7: 3.00
+################# 6.7: 7.25
 # copy:  quartiles image, txt (rev) : done
 #        
 #        
@@ -77,10 +77,43 @@ vlp_1 = sns.violinplot(data=movies, x='Genre', y='CriticRating', hue='Genre')
             # for a rough insight: if we want to create an average type of movie
                 # it will be best to crate 'Thriller' than a 'Horror'
 
+            # You'll get more insights if we comapre two 'Genre' side by side:
+            # For example 'Action' vs 'Comedy', 
+                # the "median" is almost the same
+                # but 'Comedy' has more streached distribution than 'Action'
 
 
+    # violinplot
+        # The violinplot tells us prettyy-much the same thing, but in different characteristics
+        # It has "Width" tells us number of points falling in that certain-area, 
+            # where the boxplot onlyy shows the 'quartiles' and four quarters of the data
+        # for eaxmple in 'Action' we have 2-wide areas and in 'Comedy' we have 3-wide areas
+        # we can't get those from a boxplot
+        # so violinplot shows us the concentration of points
+
+        # in other words, 'violinplot' gives ud bit more info than 'boxplot'
+            # cosider following example
 
 
+# observations for criticrating of 'Drama' (subset of above dataset) for different 'years' (instead of Genre)
+    # movies[movies.Genre=='Drama'] filters the data only for 'Drama'
+    # now we compare the 'boxplot' and 'violinplot' for this specific data
+
+# box-plot for 'CriticRating' in different 'Year' for 'Drama'
+bxp_2 = sns.boxplot(data=movies[movies.Genre=='Drama'], x='Year', y='CriticRating', hue='Year')
+sns.move_legend(bxp_2, "upper right", bbox_to_anchor=(1.2, .45))    # move legends
+# violinplot for 'CriticRating' in different 'Year' for 'Drama'
+vlp_2 = sns.violinplot(data=movies[movies.Genre=='Drama'], x='Year', y='CriticRating', hue='Year')
+sns.move_legend(vlp_2, "upper right", bbox_to_anchor=(1.2, .45))    # move legends
+
+# Observations
+    # notice the years 2008 and 2011
+    # they look similar in 'boxplot', though '2008' has more streached boxplot than '2011', 
+    # but in 'violinplot' they look very different
+    # '2008' has smooth violinplot than '2011'
+    # '2008' has one wide area, '2011' has two wide area, 
+    # i.e '2011' has two 'concentration of points' in two specific 'CriticRating' and '2008' has only one
+    # in boxplot we dont have these, it doesnot move the median toward the 'concentration of points'
 
 
 
