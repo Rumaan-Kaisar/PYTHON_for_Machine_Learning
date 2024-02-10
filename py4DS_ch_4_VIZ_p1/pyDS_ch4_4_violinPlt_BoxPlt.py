@@ -1,10 +1,4 @@
 
-################# 6.7: 7.25
-# copy:  quartiles image, txt (rev) : done
-#        
-#        
-################# (7-feb-24 for 9-feb-24)
-
 # Courses: A-Z PY for Data-Science    6.7
 
 
@@ -115,7 +109,9 @@ sns.move_legend(vlp_2, "upper right", bbox_to_anchor=(1.2, .45))    # move legen
     # i.e '2011' has two 'concentration of points' in two specific 'CriticRating' and '2008' has only one
     # in boxplot we dont have these, it doesnot move the median toward the 'concentration of points'
 
-
+    # when you analyze your own dataset you'll get more insight on 'violinplot' than boxplot
+    # however boxplot is more popular among 'executives'
+        # theyy don't like the wierd shape of 'violinplot'
 
 """ 
     ------------------------    QUARTILES    ------------------------
