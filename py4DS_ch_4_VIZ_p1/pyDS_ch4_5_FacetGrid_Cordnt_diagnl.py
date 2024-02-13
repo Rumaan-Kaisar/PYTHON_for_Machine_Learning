@@ -3,7 +3,7 @@
 # copy:
 #        
 #        
-################# (10-feb-24 for 11-feb-24)
+################# (11-feb-24 for 13-feb-24)
 
 # Courses: A-Z PY for Data-Science    6.8, 6.9 : Facet Grid, Coordinates and Diagonals
 
@@ -63,7 +63,30 @@ vis2_lm.set(xlim=(-20, 120), ylim=(-10, 110))   # setting x,y axis range
     # we need to split this chart, to make more simplified visualization
     # we'll plot multiple charts for seperate 'Genre' or othet 'criteria'
 
+
 # ----  Facet Grid  ----
+fct_grd_1 = sns.FacetGrid(movies, row='Genre', hue='Genre')
+
+fct_grd_2 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
+
+# use map(), to plot the data
+# fct_grd_2.map(), for example we'll plot 'scatter'
+plt.scatter(movies.CriticRating, movies.AudienceRating)
+
+# applying facet-grid to visualize 'CriticRating vs AudienceRating' evolution through 'Years' for different 'Genre'
+fct_grd_3 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
+# plt.scatter(movies.CriticRating, movies.AudienceRating)
+fct_grd_3.map(plt.scatter, 'CriticRating', 'AudienceRating')
 
 
+# populate facet-grid using different plot: plt.hist
+fct_grd_4 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
+# plt.scatter(movies.CriticRating, movies.AudienceRating)
+fct_grd_4.map(plt.hist, 'BudgetMillions')
+
+
+# Styling the plots using 'kwargs'
+fct_grd_5 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
+kw_rgs = dict(s=50, linewidth=0.5, edgecolor='black')
+fct_grd_5.map(plt.scatter, 'CriticRating', 'AudienceRating')
 
