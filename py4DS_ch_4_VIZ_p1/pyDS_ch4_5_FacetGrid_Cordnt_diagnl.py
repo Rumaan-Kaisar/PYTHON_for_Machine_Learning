@@ -1,9 +1,9 @@
 
-################# 6.8: 1.05
+################# 6.8: 3.33
 # copy:
 #        
 #        
-################# (11-feb-24 for 13-feb-24)
+################# (13-feb-24 for 14-feb-24)
 
 # Courses: A-Z PY for Data-Science    6.8, 6.9 : Facet Grid, Coordinates and Diagonals
 
@@ -65,9 +65,35 @@ vis2_lm.set(xlim=(-20, 120), ylim=(-10, 110))   # setting x,y axis range
 
 
 # ----  Facet Grid  ----
+# first we need to prepare the facetgrid as below
+    # we specify the dataset, 
+    # we have to specify the type of 'Facet-grid', we set 'Genre' for both
+        # we used 'raw' and 'hue'
+        # 'raw' creates no. of rows for each 'Genre'
+        # 'hue' colorize the rows (with differnt colors) for each 'Genre'
+        # col='Year' creates no. of columns 
+
 fct_grd_1 = sns.FacetGrid(movies, row='Genre', hue='Genre')
 
 fct_grd_2 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
+
+# Above creates an epty list of plots
+    # 7 rows corresponds to 'Genre' and 5 columns for 'Year'
+    # we have to populate those with our plots
+    # the concept is simialr to 'subpot' but its different
+
+# 'sublot' vs 'facetgrid'
+    # in 'sublpot' we populate it with different plots
+        # we do comparison between different plot
+
+    # in 'facetgrid' we're splitting a plot for better view.
+        # we compare between data evolution
+        # we're splitting-up a visualization w.r.to certain rules
+        # we can't populate the array with different 
+
+
+
+# ----  rev[13-feb-24]  ----
 
 # use map(), to plot the data
 # fct_grd_2.map(), for example we'll plot 'scatter'
