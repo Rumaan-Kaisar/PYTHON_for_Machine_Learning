@@ -1,9 +1,9 @@
 
-################# 6.8: 3.33
+################# 6.8: 9.33
 # copy:
 #        
 #        
-################# (13-feb-24 for 14-feb-24)
+################# (14-feb-24 for 16-feb-24)
 
 # Courses: A-Z PY for Data-Science    6.8, 6.9 : Facet Grid, Coordinates and Diagonals
 
@@ -93,26 +93,52 @@ fct_grd_2 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
 
 
 
-# ----  rev[13-feb-24]  ----
+# ----  map()  ----
+# use map(), to map something in facet grid
+    # we use map() to populate the facetgrid 
 
-# use map(), to plot the data
 # fct_grd_2.map(), for example we'll plot 'scatter'
+    # the scatterplot will split across all of the grids for 'Year' and 'Genre'
+    # fct_grd_2 is some kind of construct that we've created
+    # following is the usual scatterplot
 plt.scatter(movies.CriticRating, movies.AudienceRating)
 
 # applying facet-grid to visualize 'CriticRating vs AudienceRating' evolution through 'Years' for different 'Genre'
+# we'll map the 'scatter' on our facetgrid
+# the function "plt.scatter" itself is passed as a parameter to FacetGrid(), and 
+    # 'CriticRating', 'AudienceRating' as x & y data
+    # notice no '()' used with 'plt.scatter' and we don't need to specify the dataset 'movies', i.e. "movies.CriticRating" 
+        # also notice quatation "'" is used: 'CriticRating', 'AudienceRating'
+    # beacuse our facetgrid "fct_grd_3" already built on the datset 'movies'
 fct_grd_3 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
 # plt.scatter(movies.CriticRating, movies.AudienceRating)
 fct_grd_3.map(plt.scatter, 'CriticRating', 'AudienceRating')
+# It maps 'func' in each of the grid of our facetgrid
+# it based on the 'movies' dataframe and splitting the 'plt.scatter' accorss the grid according to 'Genre' & 'Year'
+# Vertically it splitted by 'Year' and horizontally by 'Genre'
+# colored by the rows according to 'Genre'
+
+# general form is:
+    # fct_grd_3.map(func, *args, **kwargs)
+    # fct_grd_3.map() is going to map 'func' in each of the grid of our facetgrid
 
 
-# populate facet-grid using different plot: plt.hist
+
+# populate facet-grid using different plot/chart: plt.hist
 fct_grd_4 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
-# plt.scatter(movies.CriticRating, movies.AudienceRating)
+# plt.hist(movies.BudgetMillions)   # histogram
+    # since histogram needs only one variable, we use 'fct_grd_4' as below
 fct_grd_4.map(plt.hist, 'BudgetMillions')
+# Note: sometimes it could be bit tricky to implement some sort of plot/chart and 
+    # sometimes research needed to know how to populate specific types of chart
 
 
+
+# ----  rev[14-2-24]  ----
 # Styling the plots using 'kwargs'
 fct_grd_5 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
 kw_rgs = dict(s=50, linewidth=0.5, edgecolor='black')
 fct_grd_5.map(plt.scatter, 'CriticRating', 'AudienceRating')
+
+
 
