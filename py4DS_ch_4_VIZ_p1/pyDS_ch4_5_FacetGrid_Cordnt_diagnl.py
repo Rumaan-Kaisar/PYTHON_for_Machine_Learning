@@ -1,9 +1,9 @@
 
-################# 6.8: 9.33
+################# 6.8: full
 # copy:
 #        
 #        
-################# (14-feb-24 for 16-feb-24)
+################# (16-feb-24 for 17-feb-24)
 
 # Courses: A-Z PY for Data-Science    6.8, 6.9 : Facet Grid, Coordinates and Diagonals
 
@@ -134,11 +134,23 @@ fct_grd_4.map(plt.hist, 'BudgetMillions')
 
 
 
-# ----  rev[14-2-24]  ----
+
 # Styling the plots using 'kwargs'
+    # here the 'kw_rgs' used to set: size of the dots, border for each dots with edge-color black
+    # notice the 'kw_rgs dictionary' passed to fct_grd_5.map()
+    # it will makes the points a little bigger and helps to analuze
 fct_grd_5 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
 kw_rgs = dict(s=50, linewidth=0.5, edgecolor='black')
-fct_grd_5.map(plt.scatter, 'CriticRating', 'AudienceRating')
+fct_grd_5.map(plt.scatter, 'CriticRating', 'AudienceRating', **kw_rgs)
+# note: In this chart, for specific 'Genre', we compare each scatter w.r.to 'Year'
+    # We compare from left to Right, to notice the 'evolution'
 
+# Observations:
+# We can notice the relation between 'CriticRating' & 'AudienceRating' is evolving throughout the 'Year'
+    # We can get some sort-of trends from the scatter-plot:
+    # 'Action' movies: in 2009 it becomes little scattered, and in 2011 it forms two groups
+    # 'Comedy' movies: More condensed in 2010, more lined-up in 2011
+    # 'Comedy' movies: More condensed at top-right corner in 2011
 
+# For analytics & visualizations in python 'facetgrid' is a useful tool
 
