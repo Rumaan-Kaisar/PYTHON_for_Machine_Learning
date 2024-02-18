@@ -1,5 +1,5 @@
 
-################# 6.8: full
+################# 6.8: full, 6.9: 5.00
 # copy:
 #        
 #        
@@ -153,4 +153,44 @@ fct_grd_5.map(plt.scatter, 'CriticRating', 'AudienceRating', **kw_rgs)
     # 'Comedy' movies: More condensed at top-right corner in 2011
 
 # For analytics & visualizations in python 'facetgrid' is a useful tool
+
+
+
+
+# ------------    Controlling Axes and Adding Diagonals    ------------
+    # the facetgrid is telling us about the evolution of 'CriticRating' & 'AudienceRating' relation
+
+# specify x, y range:
+    # notice that the rage is from (-20, -20) to (100, 100)
+
+# diagonal lines
+    # we need a diagonal line for better comparison of 'CriticRating' vs 'AudienceRating'
+    # to view tah the dots lie 'above the diagonal' or "below"
+    # above: 'AudienceRating' is higher than 'CriticRating'
+    # below: 'CriticRating' is higher than 'AudienceRating'
+
+fct_grd_6 = sns.FacetGrid(movies, row='Genre', col='Year', hue='Genre')
+kw_rgs = dict(s=50, linewidth=0.5, edgecolor='black')
+fct_grd_6.map(plt.scatter, 'CriticRating', 'AudienceRating', **kw_rgs)
+
+# set limit for x, y axis:
+fct_grd_6.set(xlim=(0, 100), ylim=(0, 100))
+
+# to draw diagonal for eacg of the grid we have to use a "FOR-loop"
+    # because python isn't a vectorizr programming language like R
+for ax in fct_grd_6.axes.flat:
+    ax.plot((0, 100), (0, 100), c='gray', ls='--')
+
+# fct_grd_6.axes: is an array of the subplot (array of the elements of the facetgrid)
+    # we use "flat" on top of that to iterate over the array easily, 
+    # since facetgrid is a 2D array and 'flat' will treat it as a list
+
+# shortly: 'fct_grd_6.axes' gets the elements of the facetgrid as an array
+    # 'flat' will flatten the array we get from 'fct_grd_6.axes'
+    # ax.plot((0, 100), (0, 100), c='gray', ls='--')    plots the diagonal line
+        # c='gray' is the color of the line, 
+        # ls='--' is the line style (dashed)
+
+# observations:
+
 
