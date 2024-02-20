@@ -1,10 +1,4 @@
 
-################# 6.8: full, 6.9: 5.00
-# copy:
-#        
-#        
-################# (16-feb-24 for 17-feb-24)
-
 # Courses: A-Z PY for Data-Science    6.8, 6.9 : Facet Grid, Coordinates and Diagonals
 
 
@@ -164,7 +158,7 @@ fct_grd_5.map(plt.scatter, 'CriticRating', 'AudienceRating', **kw_rgs)
     # notice that the rage is from (-20, -20) to (100, 100)
 
 # diagonal lines
-    # we need a diagonal line for better comparison of 'CriticRating' vs 'AudienceRating'
+    # we need a "Diagonal Line" for better comparison of 'CriticRating' vs 'AudienceRating'
     # to view tah the dots lie 'above the diagonal' or "below"
     # above: 'AudienceRating' is higher than 'CriticRating'
     # below: 'CriticRating' is higher than 'AudienceRating'
@@ -191,6 +185,13 @@ for ax in fct_grd_6.axes.flat:
         # c='gray' is the color of the line, 
         # ls='--' is the line style (dashed)
 
-# observations:
+
+# Observations:
+    # in 2009 'AudienceRating' is much higher than 'CriticRating'
+        # we can easily observe that, since most of the dots are above the diagonal
+    # we can see the oppsite for Thriller & Drama in 2011, where 'CriticRating' is higher 
+
+# adding legend
+fct_grd_6.add_legend()
 
 
