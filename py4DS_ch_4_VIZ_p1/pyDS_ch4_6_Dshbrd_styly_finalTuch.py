@@ -1,9 +1,9 @@
 
-################# 6.11: 3.40
+################# 6.11: 8.53
 # copy:  
 #        
 #        
-################# (21-feb-24 for 23-feb-24)
+################# (23-feb-24 for 24-feb-24)
 
 # Courses: A-Z PY for Data-Science    6.11, 6.12, 6.13
 
@@ -75,24 +75,25 @@ dshBd, axes = plt.subplots(2, 2, figsize = (15, 15))    # 2x2 subplot
 
 k_BA = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', ax=axes[0, 0])
 k_BC = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', ax=axes[0, 1])
-k_BA.set(xlim=(-20, 160))   # setting the RANGE for k_BA
-k_BC.set(xlim=(-20, 160))   # setting the RANGE for k_BC
+k_BA.set(xlim=(-40, 250))   # setting the RANGE for k_BA
+k_BC.set(xlim=(-40, 250))   # setting the RANGE for k_BC
 # We use k_BC "k_BC.set(xlim=(-20, 160))" but it can be done with 'subplots' attribute "sharex"
-    # the reason is: we have different kind of plots, so we do it manually
+    # the reason is: we have different kind of plots (we don't know how they look), 
+    # so we do it manually
 
 
+# violinplot: we put violinplot at (1, 0)
+vlp_1 = sns.violinplot(data=movies, x='Genre', y='CriticRating', hue='Genre', ax=axes[1, 0])
 
-# ----  rev[21-2-24]  ----
-# kdeplot (shaded): CriticRating vs AudienceRating
+
+# kdeplot (shaded): CriticRating vs AudienceRating at (1, 1) i.e. ax=axes[1, 1]
     # combine 'shades' & 'border'  to get a overlaied plot
-kDe1 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, shade=True, shade_lowest=False, cmap='Reds')
-kDe2 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='Reds') # ads border on top of 'kDe5'
-
-
-
-
-# violinplot:
-vlp_1 = sns.violinplot(data=movies, x='Genre', y='CriticRating', hue='Genre')
+    # notice we also used ax=axes[1, 1] for the outlines 'kDe2'
+    # we put two plots in one plotting space (overlaying)
+# if we dont specify the axes, the plots will be added to the last subplot
+kDe1 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, shade=True, shade_lowest=False, cmap='Reds', ax=axes[1, 1])
+kDe2 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='Reds', ax=axes[1, 1]) # ads border on top of 'kDe5'
+# kDe2 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='Reds', ax=axes[0, 0]) # different axes
 
 
 
