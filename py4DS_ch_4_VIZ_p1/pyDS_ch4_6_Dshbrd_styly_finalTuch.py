@@ -1,9 +1,9 @@
 
-################# 6.11: 8.53
+################# 6.11: 11.12
 # copy:  
 #        
 #        
-################# (23-feb-24 for 24-feb-24)
+################# (24-feb-24 for 25-feb-24)
 
 # Courses: A-Z PY for Data-Science    6.11, 6.12, 6.13
 
@@ -95,25 +95,45 @@ kDe1 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, shade=True, s
 kDe2 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='Reds', ax=axes[1, 1]) # ads border on top of 'kDe5'
 # kDe2 = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='Reds', ax=axes[0, 0]) # different axes
 
+# So it's so simple to add charts to a 'Dashboard'
 
 
 
-""" 
-# issue 1, label: sharex, sharey hides 'label'
-axes[1].yaxis.get_label().set_visible(True)
 
-# issue 2, ticks: also you can use following workaround to show ticks (numbers)
-axes[i,j].xaxis.set_tick_params(which='both', labelbottom=True)
-axes[i,j].yaxis.set_tick_params(which='both', labelleft=True)
+# ------------    Non-Seaborn plot    ------------
+# how do we add a 'non-seaborn' plot into our diagram?
+    # above we'll used ony sns (seaborn) plots
+# How do we add a plt (pyplot) chart, EG: 'Histogram', to visualize distribution?
 
-"""
-# use for loop to fix issue 1 & issue 2
-for i in range(0,2):
-    for j in range(0,2):
-        # show labels
-        axes[i,j].yaxis.get_label().set_visible(True)
-        axes[i,j].xaxis.get_label().set_visible(True)
-        # show ticks
-        axes[i,j].xaxis.set_tick_params(which='both', labelbottom=True)
-        axes[i,j].yaxis.set_tick_params(which='both', labelleft=True)
+# ERR: we can not use 'sns' syntax to add a 'plt.hist' for example in the 4th digram of our dashboard
+hs_1 = plt.hist(movies.CriticRating, rwidth=.8, ax=axes[1, 1])
+# rwidth=.8 gaps between bars
+
+# we must use following 'pyplot' syntax: The procedure is bit diffeent
+    # actually we use now the "standared approach", above we used a 'seaboarn way'
+
+# standared approach: since 'dshBd, axes = plt.subplots()' is pyplot entity
+    # we use 'axes[i, j].hist()' instead of "plt.hist()"
+    # because each axes[i, j] itself is a 'pyplot-object'
+axes[1, 1].hist(movies.CriticRating, rwidth=.8)    
+
+
+
+# Following dashboard uses a histogram as 'non-seaboarn' plot
+sns.set_style('darkgrid')   # change style
+dshBd_2, axes_2 = plt.subplots(2, 2, figsize = (15, 15))    # 2x2 subplot
+
+# kdeplot:
+k_BA = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', ax=axes_2[0, 0])
+k_BC = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', ax=axes_2[0, 1])
+k_BA.set(xlim=(-40, 250))   # setting the RANGE for k_BA
+k_BC.set(xlim=(-40, 250))   # setting the RANGE for k_BC
+
+# violinplot: we put violinplot at (1, 0)
+vlp_1 = sns.violinplot(data=movies, x='Genre', y='CriticRating', hue='Genre', ax=axes_2[1, 0])
+
+# Histogram
+axes_2[1, 1].hist(movies.CriticRating, rwidth=.8) 
+plt.show() 
+
 
