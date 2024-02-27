@@ -1,9 +1,9 @@
 
-################# 6.11: 11.12
+################# 6.11: full
 # copy:  
 #        
 #        
-################# (24-feb-24 for 25-feb-24)
+################# (25-feb-24 for 27-feb-24)
 
 # Courses: A-Z PY for Data-Science    6.11, 6.12, 6.13
 
@@ -135,5 +135,21 @@ vlp_1 = sns.violinplot(data=movies, x='Genre', y='CriticRating', hue='Genre', ax
 # Histogram
 axes_2[1, 1].hist(movies.CriticRating, rwidth=.8) 
 plt.show() 
+
+# Note: To learn more, visit 'matplotlib' documentation
+    # in seaboarn we cannot use "axes_2[1, 1].kdeplot", 
+    # because, "axes_2[1, 1]" is a pyplot object, it's not a 'seaboarn object'
+        # seaborn is created on top of pyplot like an 'add-on'
+        # so "axes_2" doesn't know anything about 'seaboarn', i.e. kdeplot or violinplot
+        # that's why we need to sepcify the location in 'seaborn' using: "ax=axes_2[1, 0]" as argumet
+        # but 'hist' is a pyplot function, therefore 'axes_2[1, 1].hist()' works
+    # hence following cause error
+axes_2[1, 0].violinplot(data=movies, x='Genre', y='CriticRating', hue='Genre')    # ERR
+# it also disables the next 'sub-plots'
+
+
+
+
+# ------------    Styling Dashboard    ------------
 
 
