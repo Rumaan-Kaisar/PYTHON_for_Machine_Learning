@@ -1,5 +1,5 @@
 
-################# 6.11: full
+################# 6.11: full, 6.12: 7.30
 # copy:  
 #        
 #        
@@ -151,5 +151,67 @@ axes_2[1, 0].violinplot(data=movies, x='Genre', y='CriticRating', hue='Genre')  
 
 
 # ------------    Styling Dashboard    ------------
+# Styling Tips:
+    # we can style our existing Dashboard to look more professional
+    # To make more interesting to make people read it
 
+# We'll style our previous Dashboard as below:
+    # How to style?
+        # we first style 'k_BA' and 'k_BC' as we did for 'kDe1' (shade, cmap or color map)
+        # we'll use different color map for 'k_BA' and 'k_BC' because they related to 'budget and ratings'
+        # so that reader can differ 'k_BA' and 'k_BC' from 'kDe1'
+
+# Tip 1: How to get all available color easily?
+    # TYPO: make a typo in cmap='Reds'. Eg: cmap='Redos12'
+    # it'll generate an error with showing all available colors
+    # copy all those color to a list and use that later
+    # Reverse: to reverse a colormap use '_r'. Eg: 'inferno' to 'inferno_r'
+
+sns.set_style('darkgrid')   # change style
+dshBd_3, axes_3 = plt.subplots(2, 2, figsize = (15, 15))    # 2x2 subplot
+
+
+# -=-=-=-   kdeplot   -=-=-=-
+# Plot [0,0]
+    # we'll use 'inferno' for sahding and 'cool' for outlines
+k_BA_s = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', shade=True, shade_lowest=True, cmap='inferno', ax=axes_3[0, 0])
+k_BAo_s = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', cmap='cool', ax=axes_3[0, 0])
+
+# Plot [0,1]
+k_BC_s = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', shade=True, shade_lowest=True, cmap='inferno', ax=axes_3[0, 1])
+k_BC_s = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', cmap='cool', ax=axes_3[0, 1])
+
+# setting x range for 'k_BA' and 'k_BC'
+k_BA_s.set(xlim=(-40, 250))   # setting the RANGE for k_BA
+k_BC_s.set(xlim=(-40, 250))   # setting the RANGE for k_BC
+
+
+# -=-=-=-   violinplot   -=-=-=-
+# Plot [1,0]
+vlp_1_s = sns.violinplot(data=movies, x='Genre', y='CriticRating', hue='Genre', ax=axes_3[1, 0])
+
+
+# -=-=-=-   kdeplot (shaded)   -=-=-=-
+# Plot [1,1]
+kDe1_s = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, shade=True, shade_lowest=False, cmap='Reds', ax=axes_3[1, 1])
+kDe2_s = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='Reds', ax=axes_3[1, 1]) # ads border on top of 'kDe5'
+plt.show() 
+
+
+
+""" 
+Getting all colors using 'ERR'
+ValueError: ['infernyo' is not a valid value for name; supported values are 'Accent', 'Accent_r', 'Blues', 'Blues_r', 'BrBG', 'BrBG_r', 'BuGn', 'BuGn_r', 'BuPu', 'BuPu_r', 'CMRmap', 
+'CMRmap_r', 'Dark2', 'Dark2_r', 'GnBu', 'GnBu_r', 'Greens', 'Greens_r', 'Greys', 'Greys_r', 'OrRd', 'OrRd_r', 'Oranges', 'Oranges_r', 'PRGn', 'PRGn_r', 'Paired', 'Paired_r', 'Pastel1', 
+'Pastel1_r', 'Pastel2', 'Pastel2_r', 'PiYG', 'PiYG_r', 'PuBu', 'PuBuGn', 'PuBuGn_r', 'PuBu_r', 'PuOr', 'PuOr_r', 'PuRd', 'PuRd_r', 'Purples', 'Purples_r', 'RdBu', 'RdBu_r', 'RdGy', 
+'RdGy_r', 'RdPu', 'RdPu_r', 'RdYlBu', 'RdYlBu_r', 'RdYlGn', 'RdYlGn_r', 'Reds', 'Reds_r', 'Set1', 'Set1_r', 'Set2', 'Set2_r', 'Set3', 'Set3_r', 'Spectral', 'Spectral_r', 'Wistia', 
+'Wistia_r', 'YlGn', 'YlGnBu', 'YlGnBu_r', 'YlGn_r', 'YlOrBr', 'YlOrBr_r', 'YlOrRd', 'YlOrRd_r', 'afmhot', 'afmhot_r', 'autumn', 'autumn_r', 'binary', 'binary_r', 'bone', 'bone_r', 'brg', 
+'brg_r', 'bwr', 'bwr_r', 'cividis', 'cividis_r', 'cool', 'cool_r', 'coolwarm', 'coolwarm_r', 'copper', 'copper_r', 'crest', 'crest_r', 'cubehelix', 'cubehelix_r', 'flag', 'flag_r', 'flare', 
+'flare_r', 'gist_earth', 'gist_earth_r', 'gist_gray', 'gist_gray_r', 'gist_heat', 'gist_heat_r', 'gist_ncar', 'gist_ncar_r', 'gist_rainbow', 'gist_rainbow_r', 'gist_stern', 'gist_stern_r', 
+'gist_yarg', 'gist_yarg_r', 'gnuplot', 'gnuplot2', 'gnuplot2_r', 'gnuplot_r', 'gray', 'gray_r', 'hot', 'hot_r', 'hsv', 'hsv_r', 'icefire', 'icefire_r', 'inferno', 'inferno_r', 'jet', 
+'jet_r', 'magma', 'magma_r', 'mako', 'mako_r', 'nipy_spectral', 'nipy_spectral_r', 'ocean', 'ocean_r', 'pink', 'pink_r', 'plasma', 'plasma_r', 'prism', 'prism_r', 'rainbow', 'rainbow_r', 
+'rocket', 'rocket_r', 'seismic', 'seismic_r', 'spring', 'spring_r', 'summer', 'summer_r', 'tab10', 'tab10_r', 'tab20', 'tab20_r', 'tab20b', 'tab20b_r', 'tab20c', 'tab20c_r', 'terrain', 
+'terrain_r', 'turbo', 'turbo_r', 'twilight', 'twilight_r', 'twilight_shifted', 'twilight_shifted_r', 'viridis', 'viridis_r', 'vlag', 'vlag_r', 'winter', 'winter_r']
+
+"""
 
