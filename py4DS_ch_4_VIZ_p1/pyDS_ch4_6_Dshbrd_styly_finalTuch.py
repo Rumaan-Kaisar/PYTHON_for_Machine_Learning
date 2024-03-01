@@ -1,9 +1,9 @@
 
-################# 6.11: full, 6.12: 7.30
+################# 6.11: full, 6.12: 9.30
 # copy:  
 #        
 #        
-################# (25-feb-24 for 27-feb-24)
+################# (28-feb-24 for 1-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.11, 6.12, 6.13
 
@@ -214,4 +214,49 @@ ValueError: ['infernyo' is not a valid value for name; supported values are 'Acc
 'terrain_r', 'turbo', 'turbo_r', 'twilight', 'twilight_r', 'twilight_shifted', 'twilight_shifted_r', 'viridis', 'viridis_r', 'vlag', 'vlag_r', 'winter', 'winter_r']
 
 """
+
+
+
+# -=-=-=-    Changing Seaborn BACKGROUND & GRID style    -=-=-=-
+    # the background in plot [0,0] & [0,1] are coming from "shade_lowest=True" it's not the real background
+    # from the color skim "inferno"
+    # To change the background, we need to set for the 'sns' seaboarn style
+sns.set_style('darkgrid')
+# the other preset styles are: white, whitegrid, dark, darkgrid, ticks
+    # to change further, we need to pass "kwargs" in a dictionary
+sns.set_style('darkgrid', {"axes.facecolor":"black"})
+# Note: 'darkgrid' isn't actually black, its kinda bluish background
+    # We also get our grids
+
+# To disable the grids we set: 'darkgrid' to 'white' or 'dark'; 
+    # then it'll ovveride by the kwargs "axes.facecolor":"black"
+    # also we can set 'shade_lowest=False' for all KDE plots
+sns.set_style('white', {"axes.facecolor":"black"}) 
+
+dshBd_3, axes_3 = plt.subplots(2, 2, figsize = (15, 15))    # 2x2 subplot
+
+# -=-=-=-   kdeplot   -=-=-=-
+# Plot [0,0]
+k_BA_s = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', shade=True, shade_lowest=False, cmap='inferno', ax=axes_3[0, 0])
+k_BAo_s = sns.kdeplot(data=movies, x='BudgetMillions', y='AudienceRating', cmap='cool', ax=axes_3[0, 0])
+# Plot [0,1]
+k_BC_s = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', shade=True, shade_lowest=False, cmap='inferno', ax=axes_3[0, 1])
+k_BC_s = sns.kdeplot(data=movies, x='BudgetMillions', y='CriticRating', cmap='cool', ax=axes_3[0, 1])
+# setting x range for 'k_BA' and 'k_BC'
+k_BA_s.set(xlim=(-40, 250))
+k_BC_s.set(xlim=(-40, 250))
+
+# -=-=-=-   violinplot   -=-=-=-
+# Plot [1,0]
+vlp_1_s = sns.violinplot(data=movies, x='Genre', y='CriticRating', hue='Genre', ax=axes_3[1, 0])
+
+# -=-=-=-   kdeplot (shaded)   -=-=-=-
+# Plot [1,1]
+kDe1_s = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, shade=True, shade_lowest=False, cmap='Reds', ax=axes_3[1, 1])
+kDe2_s = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='Reds', ax=axes_3[1, 1]) # ads border on top of 'kDe5'
+plt.show() 
+
+
+# ----  rev[28-feb-24]  ----
+# Styling Violinplot and last KDE-plot
 
