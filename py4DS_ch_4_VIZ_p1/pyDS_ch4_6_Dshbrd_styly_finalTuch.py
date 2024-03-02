@@ -1,9 +1,9 @@
 
-################# 6.11: full, 6.12: 9.30
+################# 6.11: full, 6.12: full
 # copy:  
 #        
 #        
-################# (28-feb-24 for 1-mar-24)
+################# (1-mar-24 for 2-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.11, 6.12, 6.13
 
@@ -259,4 +259,28 @@ plt.show()
 
 # ----  rev[28-feb-24]  ----
 # Styling Violinplot and last KDE-plot
+    # we use different color for the last KDE than the first two
+        # We use 'gist_gray_r' for contour outline.
+        # for shading we use 'blue_r'
+        # lighter color will be on outline for the outside, for inside we'll get light shading with darker outlines
+        # notice how we used reversed colors
+    # for violinplot, we'll use a parmeter: "palette" for color. Eg: palette='cool'
+        # we don't use 'hue' anynore
+        # we've used palette='YlOrRd'. for Yellow-Orange-Red palatte.
+
+# -=-=-=-   violinplot   -=-=-=-
+# Plot [1,0]
+vlp_1_s = sns.violinplot(data=movies, x='Genre', y='CriticRating', palette='YlOrRd', ax=axes_3[1, 0])
+
+# -=-=-=-   kdeplot (shaded)   -=-=-=-
+# Plot [1,1]
+kDe1_s = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, shade=True, shade_lowest=False, cmap='Blues_r', ax=axes_3[1, 1])
+kDe2_s = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='gist_gray_r', ax=axes_3[1, 1]) # ads border on top of 'kDe5'
+
+# This 'styled dashboard' is good for the Presentation. 
+    # It stands out more and make people curious
+    # It is fun and vibrant, 
+    # Makes your presentation attractive that audience wants to learn more about the data
+# Other Dashboards (no-style) is suitable for academic-publication/paper.
+
 
