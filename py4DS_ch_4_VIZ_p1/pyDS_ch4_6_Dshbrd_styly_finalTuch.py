@@ -1,9 +1,9 @@
 
-################# 6.11: full, 6.12: full
+################# 6.11: full, 6.12: full, 6.13: 3.30
 # copy:  
 #        
 #        
-################# (1-mar-24 for 2-mar-24)
+################# (2-mar-24 for 3-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.11, 6.12, 6.13
 
@@ -282,5 +282,45 @@ kDe2_s = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='gist_
     # It is fun and vibrant, 
     # Makes your presentation attractive that audience wants to learn more about the data
 # Other Dashboards (no-style) is suitable for academic-publication/paper.
+
+
+
+
+# ------------    some Finishing Touches    ------------
+# Previously we've learned to style our dashboards
+    # we can go on more about 'Styling and Visualization'
+    # Through the previous sections we learned only fundamnetal techniques.
+    # so we can learn more techniques from web/documentation
+
+# as finishing touch for example: we can improve "Stacked Histogram" that we previously created 
+    # it wwas built using 'pyyplot' instead of 'seaborn' and it needs following:
+            # adding a "Title"
+            # changing the axis
+            # increasing font size, 
+            # Axis titles
+            # modifying Legends and make it more visible by changing color
+
+# Though our previous "Stacked Histogram" visualizing the data and telling some stories
+    # Those are 'Thematical-edits' that we can do for final presentation
+    
+# stacked 
+    # remove gap between the bars (side): rwidth=1
+    # Legends: use 'label=list_of_strings' attribute
+# also we can use following code
+
+
+# ------------    Thematic edits    ------------
+list_1 = list()
+all_genre = list()
+for gen in movies.Genre.cat.categories:
+    list_1.append(movies[movies.Genre == gen].BudgetMillions) 
+    all_genre.append(gen)   
+
+# all_genre = list(movies.Genre.cat.categories)   # for lebels
+hs_3 = plt.hist(list_1, bins=30, stacked=True, rwidth=.8, label=all_genre)
+plt.legend()
+plt.show()
+
+
 
 
