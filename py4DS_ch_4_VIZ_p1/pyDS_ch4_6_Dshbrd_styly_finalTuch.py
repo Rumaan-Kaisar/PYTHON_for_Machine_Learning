@@ -1,9 +1,9 @@
 
-################# 6.11: full, 6.12: full, 6.13: 3.30
+################# 6.11: full, 6.12: full, 6.13: 4.42
 # copy:  
 #        
 #        
-################# (2-mar-24 for 3-mar-24)
+################# (3-mar-24 for 4-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.11, 6.12, 6.13
 
@@ -309,18 +309,70 @@ kDe2_s = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='gist_
 # also we can use following code
 
 
-# ------------    Thematic edits    ------------
+# ------------    THEMATIC EDITS    ------------
+
+# -=-=-  2 ways of styling grid  -=-=-
+
+# way 1: use 'seaborn-style':
+    # even though we're doing 'pyplot', but we can still apply 'seaborn' style
+    # remember 'seaborn' is just a addon on top of 'pyplot'
+    # here its affecting a 'non-seaborn' pyplot visualization
 list_1 = list()
 all_genre = list()
 for gen in movies.Genre.cat.categories:
     list_1.append(movies[movies.Genre == gen].BudgetMillions) 
     all_genre.append(gen)   
 
+sns.set_style("whitegrid")  # applying seaborn-style to 'non-seaborn' pyplot visualization
 # all_genre = list(movies.Genre.cat.categories)   # for lebels
 hs_3 = plt.hist(list_1, bins=30, stacked=True, rwidth=.8, label=all_genre)
 plt.legend()
 plt.show()
 
 
+# way 2: use 'subplots' Hack:
+    # it'll allow us to 'Resize' the chart
+    # its doable to many other different graphs/charts
+
+    # we'll create a 'subplots', but with "only one item"
+        # we won't specify any parameters, it'll create a 'subplots with one item' 
+        # fig, ax = plt.subplots()
+        # The trick is: we've seen any changes will applied to 'last-box of the subplots'
+            # when we created a 'subplots with one item',
+            # the new plot 'hs_3 = plt.hist()' will be on top of the 'subplot'
+            # thus the grid from 'subplot' autometically applied to 'hs_3 = plt.hist()'
+        
+        # Note: 'subplot' and 'subplots' are different
+
+list_1 = list()
+all_genre = list()
+for gen in movies.Genre.cat.categories:
+    list_1.append(movies[movies.Genre == gen].BudgetMillions) 
+    all_genre.append(gen)   
+
+fig, ax = plt.subplots() # applying "subplot"
+
+# following 'hs_3 = plt.hist()' is created inside the 'fig' of the 'subplot with one item'
+hs_3 = plt.hist(list_1, bins=30, stacked=True, rwidth=.8, label=all_genre)
+plt.legend()
+plt.show()
+
+
+# change the 'subplot size'
+# we can now apply 'fig.set_size_inches()' to our subplot
+list_1 = list()
+all_genre = list()
+for gen in movies.Genre.cat.categories:
+    list_1.append(movies[movies.Genre == gen].BudgetMillions) 
+    all_genre.append(gen)   
+
+fig, ax = plt.subplots() # applying "subplot"
+# Now we can easily change the size of the figure
+fig.set_size_inches(11.7, 8.27)     # size of A4 paper
+
+# following 'hs_3 = plt.hist()' is created inside the 'fig' of the 'subplot with one item'
+hs_3 = plt.hist(list_1, bins=30, stacked=True, rwidth=.8, label=all_genre)
+plt.legend()
+plt.show()
 
 
