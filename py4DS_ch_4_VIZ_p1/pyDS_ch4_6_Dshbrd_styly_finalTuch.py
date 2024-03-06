@@ -1,9 +1,9 @@
 
-################# 6.11: full, 6.12: full, 6.13: 4.42
+################# 6.11: full, 6.12: full, 6.13: 8.18
 # copy:  
 #        
 #        
-################# (3-mar-24 for 4-mar-24)
+################# (5-mar-24 for 6-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.11, 6.12, 6.13
 
@@ -303,10 +303,7 @@ kDe2_s = sns.kdeplot(x=movies.CriticRating, y=movies.AudienceRating, cmap='gist_
 # Though our previous "Stacked Histogram" visualizing the data and telling some stories
     # Those are 'Thematical-edits' that we can do for final presentation
     
-# stacked 
-    # remove gap between the bars (side): rwidth=1
-    # Legends: use 'label=list_of_strings' attribute
-# also we can use following code
+
 
 
 # ------------    THEMATIC EDITS    ------------
@@ -332,7 +329,7 @@ plt.show()
 
 # way 2: use 'subplots' Hack:
     # it'll allow us to 'Resize' the chart
-    # its doable to many other different graphs/charts
+    # its applicable to many other different graphs/charts
 
     # we'll create a 'subplots', but with "only one item"
         # we won't specify any parameters, it'll create a 'subplots with one item' 
@@ -343,6 +340,12 @@ plt.show()
             # thus the grid from 'subplot' autometically applied to 'hs_3 = plt.hist()'
         
         # Note: 'subplot' and 'subplots' are different
+    
+    # We apply both 'seaborn' & subplots'
+        # 'seaborn' to apply styling
+        # 'subplots' for resizing and more styling
+
+sns.set_style("whitegrid")  # applying seaborn-style
 
 list_1 = list()
 all_genre = list()
@@ -358,8 +361,11 @@ plt.legend()
 plt.show()
 
 
-# change the 'subplot size'
+
+
+# ----    change the 'subplot size'    ----
 # we can now apply 'fig.set_size_inches()' to our subplot
+sns.set_style("whitegrid")  # applying seaborn-style
 list_1 = list()
 all_genre = list()
 for gen in movies.Genre.cat.categories:
@@ -369,10 +375,41 @@ for gen in movies.Genre.cat.categories:
 fig, ax = plt.subplots() # applying "subplot"
 # Now we can easily change the size of the figure
 fig.set_size_inches(11.7, 8.27)     # size of A4 paper
+# Notice we now controll the size of the visualization by controlling the 'figure of a subplot'
 
 # following 'hs_3 = plt.hist()' is created inside the 'fig' of the 'subplot with one item'
 hs_3 = plt.hist(list_1, bins=30, stacked=True, rwidth=.8, label=all_genre)
 plt.legend()
 plt.show()
+
+
+
+
+# ----    Adding title    ----
+sns.set_style("whitegrid")  # applying seaborn-style, We apply both 'seaborn' & subplots'
+list_1 = list()
+all_genre = list()
+for gen in movies.Genre.cat.categories:
+    list_1.append(movies[movies.Genre == gen].BudgetMillions) 
+    all_genre.append(gen)   
+
+fig, ax = plt.subplots() # applying "subplot"
+fig.set_size_inches(11.7, 8.27)     # size of A4 paper
+
+hs_3 = plt.hist(list_1, bins=30, stacked=True, rwidth=.8, label=all_genre)
+plt.title("Movie Budget Distribution", fontsize=35, color="Darkblue", fontname="Consolas")
+# we use following 'kwargs'
+    # Increase font size: fontsize = 35
+    # color = "Darkblue"
+    # fontname = "Roboto"
+    # for more kwrgs, use Google to find-out
+plt.legend()
+plt.show()
+
+
+
+# Note
+    # remove gap between the bars (side): rwidth=1
+    # Legends: use 'label = all_genre' attribute
 
 
