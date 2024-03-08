@@ -1,5 +1,5 @@
 
-################# 6.11: full, 6.12: full, 6.13: 8.18
+################# 6.11: full, 6.12: full, 6.13: 10.32
 # copy:  
 #        
 #        
@@ -385,7 +385,7 @@ plt.show()
 
 
 
-# ----    Adding title    ----
+# ----    Adding title, axis-lables, tick-size, Legends    ----
 sns.set_style("whitegrid")  # applying seaborn-style, We apply both 'seaborn' & subplots'
 list_1 = list()
 all_genre = list()
@@ -397,19 +397,33 @@ fig, ax = plt.subplots() # applying "subplot"
 fig.set_size_inches(11.7, 8.27)     # size of A4 paper
 
 hs_3 = plt.hist(list_1, bins=30, stacked=True, rwidth=.8, label=all_genre)
+# ----    Adding title    ----
 plt.title("Movie Budget Distribution", fontsize=35, color="Darkblue", fontname="Consolas")
 # we use following 'kwargs'
     # Increase font size: fontsize = 35
     # color = "Darkblue"
     # fontname = "Roboto"
     # for more kwrgs, use Google to find-out
+# ----    axis-lables    ----
+plt.xlabel("Budget", fontsize=25, color="Green")
+plt.ylabel("Number of Movies", fontsize=25, color="Red")
+# ----    tick-size, fontsize of the x-axis, y-axis ticks    ----
+plt.xticks(fontsize=20, color="Green")
+plt.yticks(fontsize=20, color="Red")
+# ----    modify legends    ----
+    # we already applied 'plt.legend()', we just need to adjust some parameters
+    # size: prop={'size':20}
+    # background and frame: frameon=True
+    # rounded frame: fancybox=True
+    # shadow=True
+    # transperancy: framealpha=1
+# ----  rev[6-mar-24]  ----
 plt.legend()
 plt.show()
-
-
 
 # Note
     # remove gap between the bars (side): rwidth=1
     # Legends: use 'label = all_genre' attribute
+    # label text color: change plt.hist's label color, color=["Red", "Salmon", "Blue"]
 
 
