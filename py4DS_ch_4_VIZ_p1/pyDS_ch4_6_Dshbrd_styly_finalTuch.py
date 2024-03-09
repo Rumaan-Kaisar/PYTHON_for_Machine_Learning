@@ -1,10 +1,4 @@
 
-################# 6.11: full, 6.12: full, 6.13: 10.32
-# copy:  
-#        
-#        
-################# (5-mar-24 for 6-mar-24)
-
 # Courses: A-Z PY for Data-Science    6.11, 6.12, 6.13
 
 
@@ -417,13 +411,16 @@ plt.yticks(fontsize=20, color="Red")
     # rounded frame: fancybox=True
     # shadow=True
     # transperancy: framealpha=1
+        # to make it transparent, we can use framealpha=0.5
 # ----  rev[6-mar-24]  ----
-plt.legend()
+plt.legend(prop={'size':20}, frameon=True, fancybox=True, shadow=True, framealpha=1)
+# label color: change plt.hist's label color, color=["Red", "Salmon", "Blue"]
 plt.show()
+
 
 # Note
     # remove gap between the bars (side): rwidth=1
     # Legends: use 'label = all_genre' attribute
-    # label text color: change plt.hist's label color, color=["Red", "Salmon", "Blue"]
+    
 
 
