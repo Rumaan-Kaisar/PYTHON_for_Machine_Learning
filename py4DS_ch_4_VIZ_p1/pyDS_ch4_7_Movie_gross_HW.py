@@ -1,9 +1,9 @@
 
 ################# 6.14: full, 6.15: 3.50
-# copy: dataset, pevious_chart, fill_in_blank.py
+# copy: dataset, pevious_chart, fill_in_blank.py [done]
 #        
 #        
-################# (10-mar-24 for 12-mar-24)
+################# (12-mar-24 for 13-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.14, 6.15, 7.7, 7.8, 7.9
 
@@ -100,5 +100,36 @@
 
 
     --------    Previous plot    --------
+    It's a Boxplot
+    X-axis: Genre
+    Y-axis: Gross % in US (last column in our dtaset)
+        action avg 40% gross
+        comedy avg 50%
+    
+    Studios as 'hue/group' and colored legends
+        represented dots by the columns
+
+
+
+    --------    Hints/Clues    --------
+    Hint 1: 
+        Filter the dataset using '6 studios' from the given plot
+            eg. 'TriStar' is not in the plot
+            Bueno Vista Studios
+            Use: Sony, Universal, WB, Paramount Pictures, Fox
+
+        Filter the 'Genre' also, use 5-generes present in the plot
+            eg. 'Biography' is not in the plot
+            Use: action, comedy, adventure, animation, drama
+                
+
+    Hint 2: 
+        Use the 'fill_in_blank' file
+            Import library/packages
+            Load data
+            Explore the data
+            Filter the data-set
+            Make the plot
 
 """
+
