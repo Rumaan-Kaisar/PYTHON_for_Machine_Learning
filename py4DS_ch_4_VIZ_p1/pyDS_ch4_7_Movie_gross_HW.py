@@ -1,9 +1,9 @@
 
-################# 6.14: full, 6.15: 3.50
+################# 6.14: full, 6.15: full
 # copy: dataset, pevious_chart, fill_in_blank.py [done]
 #        
 #        
-################# (12-mar-24 for 13-mar-24)
+################# (13-mar-24 for 15-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.14, 6.15, 7.7, 7.8, 7.9
 
@@ -132,4 +132,91 @@
             Make the plot
 
 """
+
+
+
+# ------------    Load Dataset & Libraries    ------------
+# Import the following packages needed to perform the analysis
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# To remove 'warnings' use 'filterwarnings'
+import warnings
+warnings.filterwarnings('ignore')
+
+# plot shown in Jupyter Notebook
+%matplotlib inline  
+# expand the figure-width
+plt.rcParams['figure.figsize'] = 8, 4
+
+
+# Loading Dataset
+# Import the csv dataset
+movies = pd.read_csv("./Section6-Homework-Dataset.csv", encoding = 'latin1')
+
+
+
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-    Explore the data    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Visualize the dataframe, get Row, column numbers
+movies
+# 608 rows × 18 columns
+
+movies.head(5)  # first 5 rows
+
+# --------    rev[13-mar-24]    --------
+
+movies.columns  # get column info
+
+# RENAME the columns so that we can use '.' operator
+    # notice "Rotten Tomatoes Ratings %" is actually a 'Critic Rating'
+movies.columns = ['Film', 'Genre', 'CriticRating', 'AudienceRating', 'BudgetMillions', 'Year']
+movies.head()
+
+
+
+# -=-=-=-  categorical data  -=-=-=-
+# which data should we treat as category?
+    # 'Year' is a numerical data, but we should treat it as 'category'. Why?
+    # lets do more exploration to understand the reason - 
+
+# Get some information
+movies.info()
+
+# Notice we have 6 columns
+    # 2 of those are 'objects' but not 'category' yet
+    # 4 of those are int type
+
+    # 'CriticRating', 'AudienceRating', 'BudgetMillions' are meaningful in int-type
+        # these can have mean, variance, max, min and other statistical-data
+
+    # But "Years" cannot be treated as 'int-type'. There is no mean, variance for "Years"
+        # We don't really treat "Years" as numerical data. "Years" is a 'Ctegorical data'
+        # We have to convert "Years" from NUMERICAL data to 'CTEGORICAL data'
+        # Notice right now we have mean, variance, max, min, 25%(1st quartel), 50%(median), 75%(3rd quartel)  for "Year". Which is absurd.
+
+
+# Statistical info
+movies.describe()
+# mean, variance, max, min, 25%(1st quartel), 50%(median), 75%(3rd quartel) make sense for 
+    # 'CriticRating', 'AudienceRating', 'BudgetMillions'
+    # those statistical info have no meaning foor "Year"
+        # So we treat "Year" as categorical data
+        # "Years" are presented as numbers, but there could be moonths (Jan, Feb, Mar)
+        # after transformatioon to categorical variable we can still do some basic arithmatic operation like 'Dofference', 'max', 'min'
+
+
+
+# rename the column names to single-string names
+# movies.columns = ['Film', 'Genre', 'CriticRating', 'AudienceRating', 'BudgetMillions', 'Year']
+# movies.head()    # view dataset
+
+
+# ----   convert 'numerical-type',' object-type' to "categorical-type"   ----
+# movies.Film = movies.Film.astype("category") # use assignment '=' to update the dataset
+# movies.Genre = movies.Genre.astype("category")   
+# movies.Year = movies.Year.astype("category")   
+# movies.info()   # check the data-type changes
+
+
 
