@@ -1,5 +1,5 @@
 
-################# 6.14: full, 6.15: full
+################# 6.14: full, 6.15: full, 7.7: 2.29
 # copy: dataset, pevious_chart, fill_in_blank.py [done]
 #        
 #        
@@ -164,46 +164,25 @@ movies
 
 movies.head(5)  # first 5 rows
 
-# --------    rev[13-mar-24]    --------
-
 movies.columns  # get column info
 
-# RENAME the columns so that we can use '.' operator
-    # notice "Rotten Tomatoes Ratings %" is actually a 'Critic Rating'
-movies.columns = ['Film', 'Genre', 'CriticRating', 'AudienceRating', 'BudgetMillions', 'Year']
-movies.head()
+# Statistical info. Summary of the dataframe
+movies.describe()
+# mean, variance, max, min, 25%(1st quartel), 50%(median), 75%(3rd quartel)
 
-
-
-# -=-=-=-  categorical data  -=-=-=-
-# which data should we treat as category?
-    # 'Year' is a numerical data, but we should treat it as 'category'. Why?
-    # lets do more exploration to understand the reason - 
-
-# Get some information
+# Get structure of the dataframe, information,
 movies.info()
 
-# Notice we have 6 columns
-    # 2 of those are 'objects' but not 'category' yet
-    # 4 of those are int type
-
-    # 'CriticRating', 'AudienceRating', 'BudgetMillions' are meaningful in int-type
-        # these can have mean, variance, max, min and other statistical-data
-
-    # But "Years" cannot be treated as 'int-type'. There is no mean, variance for "Years"
-        # We don't really treat "Years" as numerical data. "Years" is a 'Ctegorical data'
-        # We have to convert "Years" from NUMERICAL data to 'CTEGORICAL data'
-        # Notice right now we have mean, variance, max, min, 25%(1st quartel), 50%(median), 75%(3rd quartel)  for "Year". Which is absurd.
 
 
-# Statistical info
-movies.describe()
-# mean, variance, max, min, 25%(1st quartel), 50%(median), 75%(3rd quartel) make sense for 
-    # 'CriticRating', 'AudienceRating', 'BudgetMillions'
-    # those statistical info have no meaning foor "Year"
-        # So we treat "Year" as categorical data
-        # "Years" are presented as numbers, but there could be moonths (Jan, Feb, Mar)
-        # after transformatioon to categorical variable we can still do some basic arithmatic operation like 'Dofference', 'max', 'min'
+
+
+# Type convertions
+# -=-=-=-  To numerical data  -=-=-=-
+
+# -=-=-=-  To categorical data  -=-=-=-
+
+
 
 
 
@@ -220,3 +199,44 @@ movies.describe()
 
 
 
+
+# fill in the blanks
+
+# Explore the categorical variable 'Studio', used in the assignment
+mov.Studio._()
+
+
+# Explore the categorical variable Genre, used in the assignment
+mov.Genre._()
+
+
+# Filter the dataframe by genre
+mov2 = mov[(mov._ == 'action') | (mov._ == 'adventure') | (mov._ == 'animation') | (mov._ == 'comedy') | (mov._ == 'drama')]
+
+
+# Filter the dataframe by studio
+mov3 = mov2[(mov2._ == 'Buena Vista Studios') | (mov2._ == 'Fox') | (mov2._ == 'Paramount Pictures') | (mov2._ == 'Sony') | (mov2._ == 'Universal') | (mov2._ == 'WB')]
+
+# Check how the filters worked
+print (_.Genre.unique())
+print (_.Studio.unique())
+print (len(_))
+
+
+
+# Define the style
+_.set(style="darkgrid", palette="muted", color_codes=True)
+
+# Plot the boxsplots
+ax = sns._(data=_, x='_', y='_', orient='v', color='lightgray', showfliers=False)
+plt.setp(ax.artists, alpha=0.5)
+
+# Add in points to show each observation
+_.stripplot(x='_', y='_', data=_, jitter=True, size=6, linewidth=0, hue = 'Studio', alpha=0.7)
+
+ax.axes.set_title('_',fontsize=30)
+ax.set_xlabel('_',fontsize=20)
+ax.set_ylabel('_',fontsize=20)
+
+# Define where to place the legend
+ax.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
