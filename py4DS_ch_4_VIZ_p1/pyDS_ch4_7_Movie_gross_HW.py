@@ -3,7 +3,7 @@
 # copy: dataset, pevious_chart, fill_in_blank.py [done]
 #        
 #        
-################# (13-mar-24 for 15-mar-24)
+################# (16-mar-24 for 17-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.14, 6.15, 7.7, 7.8, 7.9
 
@@ -166,12 +166,37 @@ movies.head(5)  # first 5 rows
 
 movies.columns  # get column info
 
-# Statistical info. Summary of the dataframe
+# Statistical info. Summary of the DATAFRAME
 movies.describe()
-# mean, variance, max, min, 25%(1st quartel), 50%(median), 75%(3rd quartel)
+    # mean, variance, max, min, 25%(1st quartel), 50%(median), 75%(3rd quartel)
+    # "Gross % US" is in between 0 and 100%.
 
-# Get structure of the dataframe, information,
+# Get structure of the dataframe, Data-type information.
 movies.info()
+
+
+# We'll use following variables from given dataset
+        # Genere
+        # Studio
+        # Gross % in US
+
+
+# --------    Vizualization 1 : Grouping the informations    --------
+    # Day of week for a movie Relese
+    # Notice most of the movies relesed on 'Friday' and 'Wednesday'
+        # None of the movies relesed on 'Monday'
+vis1 = sns.factorplot(data=movies, x='Day of Week', kind='count', size=10)
+# factorplot has been changed to catplot. sns.factorplot > sns.catplot
+    # Replace the above code with the following
+vis1 = sns.catplot(data=movies, x='Day of Week', kind='count', height=10)
+
+# sns.catplot(data=auto, x="fuel-type", y="horsepower", hue="num-of-doors", kind = 'point')
+
+# chatGPT:
+    # In Seaborn, the 'size' parameter in factorplot (deprecated since Seaborn version 0.11.0) was used to specify the 'height of the figure' in inches. 
+    # It was essentially replaced by the 'height' parameter. 
+
+
 
 
 
