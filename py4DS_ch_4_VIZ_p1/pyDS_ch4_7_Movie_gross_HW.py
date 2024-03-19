@@ -1,9 +1,9 @@
 
-################# 6.14: full, 6.15: full, 7.7: 2.29
+################# 6.14: full, 6.15: full, 7.7: 10:45
 # copy: dataset, pevious_chart, fill_in_blank.py [done]
 #        
 #        
-################# (16-mar-24 for 17-mar-24)
+################# (17-mar-24 for 19-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.14, 6.15, 7.7, 7.8, 7.9
 
@@ -114,9 +114,8 @@
     --------    Hints/Clues    --------
     Hint 1: 
         Filter the dataset using '6 studios' from the given plot
-            eg. 'TriStar' is not in the plot
-            Bueno Vista Studios
-            Use: Sony, Universal, WB, Paramount Pictures, Fox
+            eg. 'TriStar' is not in the plot            
+            Use: Bueno Vista Studios, Sony, Universal, WB, Paramount Pictures, Fox
 
         Filter the 'Genre' also, use 5-generes present in the plot
             eg. 'Biography' is not in the plot
@@ -157,6 +156,7 @@ movies = pd.read_csv("./Section6-Homework-Dataset.csv", encoding = 'latin1')
 
 
 
+
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-    Explore the data    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Visualize the dataframe, get Row, column numbers
 movies
@@ -181,6 +181,8 @@ movies.info()
         # Gross % in US
 
 
+
+
 # --------    Vizualization 1 : Grouping the informations    --------
     # Day of week for a movie Relese
     # Notice most of the movies relesed on 'Friday' and 'Wednesday'
@@ -197,42 +199,54 @@ vis1 = sns.catplot(data=movies, x='Day of Week', kind='count', height=10)
     # It was essentially replaced by the 'height' parameter. 
 
 
-
-
-
-
-
 # Type convertions
 # -=-=-=-  To numerical data  -=-=-=-
 
 # -=-=-=-  To categorical data  -=-=-=-
+movies['Day of Week'] = movies['Day of Week'].astype("category")    # movies.'Day of Week' won't work. Need to rename
+movies.Studio = movies.Studio.astype("category") # use assignment '=' to update the dataset
+movies.Genre = movies.Genre.astype("category")   
+
+
+# All studios: Explore the categorical variable 'Studio', used in this project
+    # get all the categories i.e. studios
+movies.Studio.unique()
+# There are 36 different studios in this dataset
+len(movies.Studio.unique())
+
+# All Genres: Explore the categorical variable Genre, used in this project
+movies.Genre.unique()
+# There are 15 different Generes in this dataset
 
 
 
 
+# ------------    Filter the dataframe by genre & studio    ------------
+# Since we need only 5 genres and 6 studios:
+    # studios: 
+        # Bueno Vista Studios, 
+        # Sony, 
+        # Universal, 
+        # WB, 
+        # Paramount Pictures, 
+        # Fox
+    # genres: 
+        # action, 
+        # comedy, 
+        # adventure, 
+        # animation, 
+        # drama
 
-# rename the column names to single-string names
-# movies.columns = ['Film', 'Genre', 'CriticRating', 'AudienceRating', 'BudgetMillions', 'Year']
-# movies.head()    # view dataset
+# ----  rev[17-mar-24]  ----
 
+# So we filter our dataset as Below
+    # We'll do a "NESTED FILTER"
 
-# ----   convert 'numerical-type',' object-type' to "categorical-type"   ----
-# movies.Film = movies.Film.astype("category") # use assignment '=' to update the dataset
-# movies.Genre = movies.Genre.astype("category")   
-# movies.Year = movies.Year.astype("category")   
-# movies.info()   # check the data-type changes
 
 
 
 
 # fill in the blanks
-
-# Explore the categorical variable 'Studio', used in the assignment
-mov.Studio._()
-
-
-# Explore the categorical variable Genre, used in the assignment
-mov.Genre._()
 
 
 # Filter the dataframe by genre
@@ -265,3 +279,6 @@ ax.set_ylabel('_',fontsize=20)
 
 # Define where to place the legend
 ax.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+
+
+
