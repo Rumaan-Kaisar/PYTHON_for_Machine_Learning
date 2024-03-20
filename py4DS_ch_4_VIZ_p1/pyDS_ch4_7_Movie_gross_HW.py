@@ -3,7 +3,7 @@
 # copy: dataset, pevious_chart, fill_in_blank.py [done]
 #        
 #        
-################# (17-mar-24 for 19-mar-24)
+################# (19-mar-24 for 20-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.14, 6.15, 7.7, 7.8, 7.9
 
@@ -237,10 +237,28 @@ movies.Genre.unique()
         # animation, 
         # drama
 
-# ----  rev[17-mar-24]  ----
+# Boolian values. only True-False
+movies.Studio == 'Buena Vista Studios'
+movies.Genre == 'action'
+
+# Filter with these Boolian Values
+movies[(movies.Genre == 'action')]  # 236 action movies
+movies[movies.Studio == 'Buena Vista Studios']  # 93 movies by Buena Vista Studios
+
+# ----    "NESTED FILTER"    ----
+# Nested filtering: 'Action' movies by Buena Vista Studios
+mov1G = movies[movies.Genre == 'action']
+mov1GS = mov1G[mov1G.Studio == 'Buena Vista Studios']
+mov1GS.head(5)
+len(mov1GS)     # 30 movies
+
+
+
+# ----  rev[19-mar-24]  ----
 
 # So we filter our dataset as Below
     # We'll do a "NESTED FILTER"
+    # we'll use conditionala OR '|' for multiple Studios/Genres
 
 
 
