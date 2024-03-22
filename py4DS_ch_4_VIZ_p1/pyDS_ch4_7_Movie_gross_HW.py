@@ -1,9 +1,9 @@
 
-################# 6.14: full, 6.15: full, 7.7: 10:45
+################# 6.14: full, 6.15: full, 7.7: 12.58
 # copy: dataset, pevious_chart, fill_in_blank.py [done]
 #        
 #        
-################# (19-mar-24 for 20-mar-24)
+################# (22-mar-24 for 23-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.14, 6.15, 7.7, 7.8, 7.9
 
@@ -252,37 +252,45 @@ mov1GS = mov1G[mov1G.Studio == 'Buena Vista Studios']
 mov1GS.head(5)
 len(mov1GS)     # 30 movies
 
-
-
-# ----  rev[19-mar-24]  ----
+# ----  rev[20-mar-2024]  ----
 
 # So we filter our dataset as Below
     # We'll do a "NESTED FILTER"
     # we'll use conditionala OR '|' for multiple Studios/Genres
+        # First we extract movies for 5-genres 
+        # Then we take the filtered moves and apply another filter for 6-studios
 
+# Filter the dataframe by GENRE
+mov_Gnr = movies[(movies.Genre == 'action') | (movies.Genre == 'adventure') | (movies.Genre == 'animation') | (movies.Genre == 'comedy') | (movies.Genre == 'drama')]
 
-
-
-
-# fill in the blanks
-
-
-# Filter the dataframe by genre
-mov2 = mov[(mov._ == 'action') | (mov._ == 'adventure') | (mov._ == 'animation') | (mov._ == 'comedy') | (mov._ == 'drama')]
-
-
-# Filter the dataframe by studio
-mov3 = mov2[(mov2._ == 'Buena Vista Studios') | (mov2._ == 'Fox') | (mov2._ == 'Paramount Pictures') | (mov2._ == 'Sony') | (mov2._ == 'Universal') | (mov2._ == 'WB')]
+# Filter the dataframe by STUDIO
+mov_Sdo_Gnr = mov_Gnr[(mov_Gnr.Studio == 'Buena Vista Studios') | (mov_Gnr.Studio == 'Fox') | (mov_Gnr.Studio == 'Paramount Pictures') | (mov_Gnr.Studio == 'Sony') | (mov_Gnr.Studio == 'Universal') | (mov_Gnr.Studio == 'WB')]
 
 # Check how the filters worked
-print (_.Genre.unique())
-print (_.Studio.unique())
-print (len(_))
+print(mov_Sdo_Gnr.Genre.unique())
+print(mov_Sdo_Gnr.Studio.unique())
+print(len(mov_Sdo_Gnr))
+
+
+# ALTERNATIVE: more neat & clean way (dry): use 'isin()' over the data-frame
+# Filter the dataframe by GENRE, using array of Generes
+genre_filter = ['action', 'adventure', 'animation', 'comedy', 'drama', '']
+mov_Gnr_2 = movies[movies.Genre.isin(genre_filter)]
+
+# Filter the dataframe by STUDIO, using array of Studios
+studio_filter = ['Buena Vista Studios', 'Fox', 'Paramount Pictures', 'Sony', 'Universal', 'WB']
+mov_Sdo_Gnr_2 = mov_Gnr_2[mov_Gnr_2.Studio.isin(studio_filter)]
+
+# Check how the filters worked
+print(mov_Sdo_Gnr_2.Genre.unique())
+print(mov_Sdo_Gnr_2.Studio.unique())
+print(len(mov_Sdo_Gnr_2))
+
 
 
 
 # Define the style
-_.set(style="darkgrid", palette="muted", color_codes=True)
+sns.set(style="darkgrid", palette="muted", color_codes=True)
 
 # Plot the boxsplots
 ax = sns._(data=_, x='_', y='_', orient='v', color='lightgray', showfliers=False)
