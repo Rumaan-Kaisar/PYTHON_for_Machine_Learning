@@ -1,5 +1,5 @@
 
-################# 6.14: full, 6.15: full, 7.7: 12.58
+################# 6.14: full, 6.15: full, 7.7: full
 # copy: dataset, pevious_chart, fill_in_blank.py [done]
 #        
 #        
@@ -252,7 +252,6 @@ mov1GS = mov1G[mov1G.Studio == 'Buena Vista Studios']
 mov1GS.head(5)
 len(mov1GS)     # 30 movies
 
-# ----  rev[20-mar-2024]  ----
 
 # So we filter our dataset as Below
     # We'll do a "NESTED FILTER"
@@ -269,12 +268,12 @@ mov_Sdo_Gnr = mov_Gnr[(mov_Gnr.Studio == 'Buena Vista Studios') | (mov_Gnr.Studi
 # Check how the filters worked
 print(mov_Sdo_Gnr.Genre.unique())
 print(mov_Sdo_Gnr.Studio.unique())
-print(len(mov_Sdo_Gnr))
+print(len(mov_Sdo_Gnr))   # 423
 
 
-# ALTERNATIVE: more neat & clean way (dry): use 'isin()' over the data-frame
+# ALTERNATIVE: more neat & clean way (dry)-- use 'isin()' over the data-frame
 # Filter the dataframe by GENRE, using array of Generes
-genre_filter = ['action', 'adventure', 'animation', 'comedy', 'drama', '']
+genre_filter = ['action', 'adventure', 'animation', 'comedy', 'drama']
 mov_Gnr_2 = movies[movies.Genre.isin(genre_filter)]
 
 # Filter the dataframe by STUDIO, using array of Studios
@@ -284,16 +283,21 @@ mov_Sdo_Gnr_2 = mov_Gnr_2[mov_Gnr_2.Studio.isin(studio_filter)]
 # Check how the filters worked
 print(mov_Sdo_Gnr_2.Genre.unique())
 print(mov_Sdo_Gnr_2.Studio.unique())
-print(len(mov_Sdo_Gnr_2))
+print(len(mov_Sdo_Gnr_2))   # 423 (out of 608)
 
 
 
 
+# --------    Vizualization 2 : Recrearte the given Box-plot    --------
+# First we'll create the boxplot
+    # then we place the zitter (fro the studios) over the boxplot
+
+# ----  rev[22-mar-2024]  ----
 # Define the style
 sns.set(style="darkgrid", palette="muted", color_codes=True)
 
 # Plot the boxsplots
-ax = sns._(data=_, x='_', y='_', orient='v', color='lightgray', showfliers=False)
+ax = sns.boxplot(data=_, x='_', y='_', orient='v', color='lightgray', showfliers=False)
 plt.setp(ax.artists, alpha=0.5)
 
 # Add in points to show each observation
