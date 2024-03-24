@@ -1,9 +1,9 @@
 
-################# 6.14: full, 6.15: full, 7.7: full
+################# 6.14: full, 6.15: full, 7.7: full, 7.8: 4.00
 # copy: dataset, pevious_chart, fill_in_blank.py [done]
 #        
 #        
-################# (22-mar-24 for 23-mar-24)
+################# (23-mar-24 for 24-mar-24)
 
 # Courses: A-Z PY for Data-Science    6.14, 6.15, 7.7, 7.8, 7.9
 
@@ -290,25 +290,36 @@ print(len(mov_Sdo_Gnr_2))   # 423 (out of 608)
 
 # --------    Vizualization 2 : Recrearte the given Box-plot    --------
 # First we'll create the boxplot
-    # then we place the zitter (fro the studios) over the boxplot
+    # then we place the 'Jitter' (for the studios) over the boxplot
 
-# ----  rev[22-mar-2024]  ----
 # Define the style
 sns.set(style="darkgrid", palette="muted", color_codes=True)
 
 # Plot the boxsplots
-ax = sns.boxplot(data=_, x='_', y='_', orient='v', color='lightgray', showfliers=False)
-plt.setp(ax.artists, alpha=0.5)
+    # we use our filtered dataframe
+    # x agis: Genre
+    # y axis: Gross % US
+bx = sns.boxplot(data=mov_Sdo_Gnr_2, x='Genre', y='Gross % US', orient='v', color='lightgray', showfliers=False)
+plt.setp(bx.artists, alpha=0.5)     # For Transperancy 
 
-# Add in points to show each observation
-_.stripplot(x='_', y='_', data=_, jitter=True, size=6, linewidth=0, hue = 'Studio', alpha=0.7)
+# Jitter: Add in points to show each observation
+    # we're using striplot
+    # we use our filtered dataframe again, x agis: Genre, y axis: Gross % US
+    # We used hue = 'Studio' for 6 different studios
+sns.stripplot(x='Genre', y='Gross % US', data=mov_Sdo_Gnr_2, jitter=True, size=6, linewidth=0, hue = 'Studio', alpha=0.7)
 
-ax.axes.set_title('_',fontsize=30)
-ax.set_xlabel('_',fontsize=20)
-ax.set_ylabel('_',fontsize=20)
+# --------   rev[23-mar-24]   --------
+# problems: 
+    # Deep copy
+    # seperate Studios from all others
+    # seperate Genrers from all others
+
+bx.axes.set_title('_',fontsize=30)
+bx.set_xlabel('_',fontsize=20)
+bx.set_ylabel('_',fontsize=20)
 
 # Define where to place the legend
-ax.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+bx.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 
 
 
