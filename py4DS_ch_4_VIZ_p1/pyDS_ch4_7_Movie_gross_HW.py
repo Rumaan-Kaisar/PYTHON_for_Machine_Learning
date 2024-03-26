@@ -1,10 +1,4 @@
 
-################# 6.14: full, 6.15: full, 7.7: full, 7.8: 4.00
-# copy: dataset, pevious_chart, fill_in_blank.py [done]
-#        
-#        
-################# (23-mar-24 for 24-mar-24)
-
 # Courses: A-Z PY for Data-Science    6.14, 6.15, 7.7, 7.8, 7.9
 
 
@@ -288,6 +282,59 @@ print(len(mov_Sdo_Gnr_2))   # 423 (out of 608)
 
 
 
+# --------   corrections   --------
+# problems: 
+    # Deep copy
+    # seperate Studios from all others
+    # seperate Genrers from all others
+    # remove all unused categories
+
+import pandas as pd
+
+# Assuming 'movies' is your original DataFrame
+
+# Filter the dataframe by GENRE, using array of Genres
+genre_filter = ['action', 'adventure', 'animation', 'comedy', 'drama']
+mov_Gnr_2 = movies[movies.Genre.isin(genre_filter)].copy()
+
+# Filter the dataframe by STUDIO, using array of Studios
+studio_filter = ['Buena Vista Studios', 'Fox', 'Paramount Pictures', 'Sony', 'Universal', 'WB']
+mov_Sdo_Gnr_2 = mov_Gnr_2[mov_Gnr_2.Studio.isin(studio_filter)].copy()
+
+# Convert Genre and Studio columns to categorical type:(Done already)
+mov_Sdo_Gnr_2['Genre'] = pd.Categorical(mov_Sdo_Gnr_2['Genre'], categories=genre_filter)
+mov_Sdo_Gnr_2['Studio'] = pd.Categorical(mov_Sdo_Gnr_2['Studio'], categories=studio_filter)
+
+# Remove unused categories
+mov_Sdo_Gnr_2['Genre'] = mov_Sdo_Gnr_2['Genre'].cat.remove_unused_categories()
+mov_Sdo_Gnr_2['Studio'] = mov_Sdo_Gnr_2['Studio'].cat.remove_unused_categories()
+
+# Check how the filters worked
+print(mov_Sdo_Gnr_2.Genre.unique())
+print(mov_Sdo_Gnr_2.Studio.unique())
+print(len(mov_Sdo_Gnr_2))   # 423 (out of 608)
+
+# copy():
+# create a separate DataFrame that is completely independent 
+    # of the original 'movies' DataFrame, you can use the copy() method. 
+    # This method creates a "deep copy" of the DataFrame, 
+    # ensuring that any modifications to the copied DataFrame do not affect the original one. 
+
+# cat.remove_unused_categories()
+""" 
+    In pandas, the '.cat' accessor is used to access categorical methods and properties 
+        of a Series or DataFrame column that has been converted to a categorical data type. 
+
+    When you create a categorical column using "pd.Categorical", 
+        pandas automatically creates a 'CategoricalDtype' object to store the categories and their codes.
+
+    ".cat.remove_unused_categories()" is a method provided by 
+        the CategoricalAccessor to remove categories that are not present in the filtered DataFrame.
+ """
+
+
+
+
 # --------    Vizualization 2 : Recrearte the given Box-plot    --------
 # First we'll create the boxplot
     # then we place the 'Jitter' (for the studios) over the boxplot
@@ -308,18 +355,58 @@ plt.setp(bx.artists, alpha=0.5)     # For Transperancy
     # We used hue = 'Studio' for 6 different studios
 sns.stripplot(x='Genre', y='Gross % US', data=mov_Sdo_Gnr_2, jitter=True, size=6, linewidth=0, hue = 'Studio', alpha=0.7)
 
-# --------   rev[23-mar-24]   --------
-# problems: 
-    # Deep copy
-    # seperate Studios from all others
-    # seperate Genrers from all others
-
-bx.axes.set_title('_',fontsize=30)
-bx.set_xlabel('_',fontsize=20)
-bx.set_ylabel('_',fontsize=20)
+# Title, X,Y labels, Legends
+bx.axes.set_title('Domestic Gross % by Genre',fontsize=30)
+bx.set_xlabel('Genre',fontsize=20)
+bx.set_ylabel('Gross % US',fontsize=20)
 
 # Define where to place the legend
 bx.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 
 
 
+
+# ----------------    set different colors    ----------------
+# If you want to set specific colors for each level of the 'hue' variable 
+    # or use a custom color palette instead of the default 'husl' palette, 
+    # you can provide a list of colors to the palette parameter in the sns.stripplot() function. 
+    # Here's how you can do it:
+    
+# import seaborn as sns
+# import matplotlib.pyplot as plt
+
+# Define custom colors for each level of 'Studio' variable
+""" 
+custom_palette = {'Buena Vista Studios': 'blue', 
+                  'Fox': 'green', 
+                  'Paramount Pictures': 'red', 
+                  'Sony': 'purple', 
+                  'Universal': 'orange', 
+                  'WB': 'brown'} 
+"""
+
+# Define custom colors using a triad color scheme
+studio_colors = {'Buena Vista Studios': '#ff5733',  # Reddish-orange
+                 'Fox': '#33ff57',                # Greenish
+                 'Paramount Pictures': '#3333ff',  # Bluish
+                 'Sony': '#ff33f9',               # Pinkish-purple
+                 'Universal': '#ffbd33',           # Yellowish-orange
+                 'WB': '#333333'}                  # Dark gray
+
+
+# Plot the box plots
+bx = sns.boxplot(data=mov_Sdo_Gnr_2, x='Genre', y='Gross % US', orient='v', color='lightgray', showfliers=False)
+plt.setp(bx.artists, alpha=0.5)  # For Transparency
+
+# Jitter: Add in points to show each observation with custom colors
+sns.stripplot(x='Genre', y='Gross % US', data=mov_Sdo_Gnr_2, jitter=True, size=6, linewidth=0, hue='Studio', alpha=0.7, palette=custom_palette)
+
+# Title, X,Y labels, Legends
+bx.axes.set_title('Domestic Gross % by Genre', fontsize=30)
+bx.set_xlabel('Genre', fontsize=20)
+bx.set_ylabel('Gross % US', fontsize=20)
+
+# Define where to place the legend
+bx.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+
+plt.show()
