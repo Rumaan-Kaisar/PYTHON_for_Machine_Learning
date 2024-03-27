@@ -1,5 +1,14 @@
 
-# Courses: A-Z PY for Data-Science    1, 2, 3, 4
+################# 1.1: 0.0
+# copy:  
+#        
+#        
+################# (26-mar-24 for 27-mar-24)
+
+# Courses: 
+    # A-Z PY for Data-Science    1, 2, 3, 4
+    # PrTla PY for DS & ML : 1.1, 1.2; 2.1; 3.1, 3.2, 3.3; 4.1, 4.2, 4.3 (10:50)
+
 
 # ----------------    Anaconda, jupyter Installation    ----------------
     # install anaconda
