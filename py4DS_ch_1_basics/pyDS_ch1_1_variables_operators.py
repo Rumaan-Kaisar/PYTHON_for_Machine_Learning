@@ -1,14 +1,39 @@
 
-################# 1.1: 0.0
-# copy:  
+################# 1.1: ok
+# copy: update 'content_topics.txt'
 #        
 #        
-################# (26-mar-24 for 27-mar-24)
+################# (27-mar-24 for 29-mar-24)
 
 # Courses: 
     # A-Z PY for Data-Science    1, 2, 3, 4
     # PrTla PY for DS & ML : 1.1, 1.2; 2.1; 3.1, 3.2, 3.3; 4.1, 4.2, 4.3 (10:50)
 
+# -=-=-=-=-=-=-=-=-    PrTla PY for DS & M    L-=-=-=-=-=-=-=-=-
+# Most Popular Python Data Science Libraries
+""" 
+    NumPy
+    SciPy
+    Pandas	
+    Seaborn	
+    SciKit-Learn 	
+    MatplotLib
+    Plotly
+    PySpark
+"""
+
+# part 1: Python review
+# part 2: Numpy and work with array
+# part 3: Pandas: work with CSV, Excel, HTML-web scrapping and SQL-DB
+# part 4: Matplotlib: Data visualization
+# part 5: Seaborn: Visualization, Interactive plotting techniques, 
+                    # Financial and Geographical plotting techniques
+# part 6: SciKit-Learn: Implement ML algorithms, regressin, classification, clustering, NLP
+# part 7: Big data: spark tech wit AWS & python, Tensor FLow basics
+
+
+
+# -=-=-=-=-=-=-=-=-    A-Z PY for Data-Science    -=-=-=-=-=-=-=-=-
 
 # ----------------    Anaconda, jupyter Installation    ----------------
     # install anaconda
