@@ -5,6 +5,28 @@
 #        
 ################# (26-sep-23 for 27-sep-23)
 
+--------    Python Crash Course    --------
+Go through the basic topics in order:
+    • Datatypes
+        ■	Numbers
+        ■	Strings
+        ■	Printing
+        ■	Lists
+        ■	Dictionaries
+        ■	Booleans
+        ■	Tuples
+        ■	Sets
+    •	Comparison Operators
+    •	if, elif, else Statements
+    •	for Loops
+    •	while Loops
+    •	range()
+    •	list comprehension
+    •	functions
+    •	lambda expressions
+    •	map and filter
+    •	methods
+
 
 ----------    part 1    ----------
 Types of variables
