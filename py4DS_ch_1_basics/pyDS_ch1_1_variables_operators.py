@@ -1,9 +1,9 @@
 
-################# 1.1: ok
+################# 1.1: ok; 1.2: ok; 2.1:ok; 3.1: 4:20
 # copy: update 'content_topics.txt'
 #        
 #        
-################# (27-mar-24 for 29-mar-24)
+################# (29-mar-24 for 30-mar-24)
 
 # Courses: 
     # A-Z PY for Data-Science    1, 2, 3, 4
@@ -33,12 +33,32 @@
 
 
 
-# -=-=-=-=-=-=-=-=-    A-Z PY for Data-Science    -=-=-=-=-=-=-=-=-
+# -=-=-=-=-=-=-=-=-    A-Z PY for Data-Science + PrTla    -=-=-=-=-=-=-=-=-
+
+# Anaconda:
+    # it is a distribution of Python 
+    # Its an “all-in-one" install that is extremely popular in data science and machine learning!
+    # This means it includes not only Python, but many libraries that we use in Data-Science, 
+    # It has its own virtual environment system. 
+
+# Jupyter:
+    # It is the most popular IDE in data science for exploring and analyzing data!
+    # Jupyter is a "development environment" where we can 
+            # write code, 
+            # display images, and 
+            # write down markdown notes.
+
+
 
 # ----------------    Anaconda, jupyter Installation    ----------------
-    # install anaconda
-    # open command line/terminal
-    # run jupyter notebook
+    # install anaconda for Python 3.XXX, Graphical installer
+        # Note: Do Not check "Add anaconda to my PATH env" & "Register anaconda as ... Python 3.XX"
+        # these will make problems if you had pre installed Python envs
+    # Go to "Anaconda Navigator" -> "Jupyter Notebook"
+            # or
+    # open command line/terminal in your 'current folder' [win-path: type 'cmd'] 
+    # or use 'cd' in cmd to change the directory
+    # cmd >> jupyter notebook
 
 
 # ----------------    Run jupyter in VS-code    ----------------
