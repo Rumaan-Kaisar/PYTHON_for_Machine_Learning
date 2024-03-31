@@ -1,9 +1,9 @@
 
-################# 1.1: ok; 1.2: ok; 2.1:ok; 3.1: 4:20
-# copy: update 'content_topics.txt'
+################# 1.1: ok; 1.2: ok; 2.1:ok; 3.1: ok, 3.2: ok
+# copy: copy img, update: new ipynb, py
 #        
 #        
-################# (29-mar-24 for 30-mar-24)
+################# (30-mar-24 for 31-mar-24)
 
 # Courses: 
     # A-Z PY for Data-Science    1, 2, 3, 4
@@ -65,6 +65,113 @@
 # But we're gonna use VS-code to run "Jupyter Notebook - ipynb" files
     # install ipykernel package (vs-code): Running cells with 'Python 3.10.3 64-bit' requires ipykernel package.
     # Allow VS-code in windows sequrity (if pop-up appears)
+
+
+# Use shortcut keys:
+    # Shift + Enter : to run a code and open a 'New cell'
+    # ctrl + enter: works for VS-code (Jupyter NB), It only runs a 'cell'
+    # ALt + Enter: same as 'Shift + Enter',  to run a code and open a 'New cell'
+    # use 'Help -> Keyboard Shortcuts'
+
+    # A Jypyter NB file can be exported as 'py' file
+
+    # Kernel Restart:
+        # If you run a infinite loop or somthing that crashing the program
+        # use 'Restart' or 'Kernel -> Restart'
+
+    # Markdown Cells:
+        # other than 'code-cells' Jypyter has 'markdown cells'
+
+
+
+# ----------------    MARKDOWN Basics (ChatGPT)    ----------------
+""" 
+    These are some of the basic syntaxes for 'formatting text' in Jupyter Markdown. 
+    You can combine these elements to create more complex documents.
+    
+
+
+    1. Headings: 
+        Use the pound symbol (#) followed by a space to create headings. 
+        The number of pound symbols indicates the level of the heading (from 1 to 6, with 1 being the highest level).
+            Use #, ##, ###, ####, #####, ###### for For 6-level of 'Headings'
+        
+        Example:
+            # Heading 1
+            ## Heading 2
+            ### Heading 3
+
+
+
+    2. Bold Text:
+        Surround the text with double asterisks (**) or double underscores (__)
+        "No space"
+
+        Example:
+            **Bold Text**
+            __Bold Text__
+
+
+
+    3. Italic Text:
+        Surround the text with single asterisks (*) or single underscores (_)
+        "No space"
+
+        Example:
+            *Italic Text*
+            _Italic Text_
+
+
+
+    4. Bulleted Lists:
+        Use asterisks (*), plus signs (+), or hyphens (-) "followed by a space"
+
+        Example:
+            - Item 1
+            - Item 2
+                * Sub-item 1
+                * Sub-item 2
+
+
+
+    5. Numbered Lists:
+        Use numbers followed by a period (.) and "a space" to create numbered lists.
+
+        Example:
+            1. First item
+            2. Second item
+
+
+
+    6. Links:
+        Enclose the 'text' you want to display in square brackets [] and 
+        the 'URL' in parentheses ().
+
+        Example:
+            [OpenAI's website](https://openai.com)
+
+
+
+    7. Images:
+        Similar to links, but with an exclamation mark (!) before the square brackets.
+
+        Example:
+            ![Alt text](path/to/image.png)
+
+
+
+    8. Horizontal Rule:
+        Use three or more hyphens (---), asterisks (***), or underscores (___) on a line by themselves to create a horizontal rule.
+
+        Example:
+            ---
+
+
+----  rev[30-mar-24]  ----
+
+What about Centeralize?
+
+"""
 
 
 
