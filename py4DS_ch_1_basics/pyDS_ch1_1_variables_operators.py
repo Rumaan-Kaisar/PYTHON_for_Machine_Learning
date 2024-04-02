@@ -1,9 +1,9 @@
 
-################# 1.1: ok; 1.2: ok; 2.1:ok; 3.1: ok, 3.2: ok
-# copy: copy img, update: new ipynb, py
+################# 1.1:ok; 1.2:ok; 2.1:ok; 3.1:ok, 3.2:ok, 3.3:ok
+# copy: copy img, update: new ipynb, py, content_topics
 #        
 #        
-################# (30-mar-24 for 31-mar-24)
+################# (31-mar-24 for 2-apr-24)
 
 # Courses: 
     # A-Z PY for Data-Science    1, 2, 3, 4
@@ -59,6 +59,42 @@
     # open command line/terminal in your 'current folder' [win-path: type 'cmd'] 
     # or use 'cd' in cmd to change the directory
     # cmd >> jupyter notebook
+
+    # ------------    Anaconda virtual environment    ------------
+    # Virtual Environments allow you to set up virtual installations of Python and libraries on your computer. 
+    # You can have "multiple versions" of Python or libraries and easily activate or deactivate these environments 
+    # Let's see some examples of why you may want to do this
+        # Sometimes you'll want to program in different versions of a library. For example:
+            # You develop a program with SciKit-Learn 0.17 then SciKit-Learn 0.18 is released
+            # You want to explore 0.18 but don't want your old code to break
+        # Sometimes you'll to make sure your library installations are in the correct location For example:
+            # You want multiple versions of Python on your computer
+            # You want one environment with Py 2.7 and another with Py 3.5
+        # There is the "virtualenv" library for normal Python distributions
+            # Anaconda has a built-in virtual environment manager that makes the whole process really easy
+            # http://conda.pydata.org/docs/using/envs.html
+
+    # Commands:
+        # conda create --name env_name package_name
+            # EG: conda create --name snowflakes biopython
+            # EG: conda create --name fluffy numpy
+            # if python version isn't specified, the base version will be used
+        # activate fluffy
+            # there will be different python packages in yor "venev" than the "base env"
+            # to install package inside the active environment: 
+                # conda install pandas
+        # deactivate                
+
+        # specific python version:
+            # conda create --name env_name python=3.5 package_name
+            # EG: conda create --name mypy3 python=3.5 numpy
+            # EG: following creates an environment with entire anaconda ditribution
+                # conda create --name mypy3 python=3.5 ANACONDA
+
+        # CHECKS existed venvs:
+            # conda info --envs
+        
+        # changing, cloning & removing environments are straight forward, just Google them
 
 
 # ----------------    Run jupyter in VS-code    ----------------
@@ -154,9 +190,12 @@
 
     7. Images:
         Similar to links, but with an exclamation mark (!) before the square brackets.
+        Also you can use HTML tag <img src>
 
         Example:
             ![Alt text](path/to/image.png)
+            or
+            <img src='.././path'>
 
 
 
@@ -167,10 +206,14 @@
             ---
 
 
-----  rev[30-mar-24]  ----
-
-What about Centeralize?
-
+    9. Center aligned text
+        To center-align text in a Markdown cell in Jupyter Notebook: 
+            Use HTML formatting tags. Specifically, you can use the <div> tag with the style attribute set to text-align: center;
+        
+        Example: 
+            <div style="text-align: center; font-size: 40px; font-weight: bold; font-style: italic;">
+                This text will be centered.
+            </div>
 """
 
 
@@ -262,5 +305,4 @@ print(result and result2)   # False
 # '!=' '<> '
 print(4 <> 5) # Operator "<>" is not supported in Python 3; use "!=" instead
 print(4 != 5) # True
-
 
