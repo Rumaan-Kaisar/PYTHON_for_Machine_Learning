@@ -1,9 +1,9 @@
 
-################# 1.1:ok; 1.2:ok; 2.1:ok; 3.1:ok, 3.2:ok, 3.3:ok
-# copy: copy img, update: new ipynb, py, content_topics
+################# 1.1:ok; 1.2:ok; 2.1:ok; 3.1:ok, 3.2:ok, 3.3:ok, 4.1:ok, 4.2:ok
+# copy: Python_Crash_course.ipynb
 #        
 #        
-################# (31-mar-24 for 2-apr-24)
+################# (02-Apr-24 for 03-Apr-24)
 
 # Courses: 
     # A-Z PY for Data-Science    1, 2, 3, 4
@@ -305,4 +305,35 @@ print(result and result2)   # False
 # '!=' '<> '
 print(4 <> 5) # Operator "<>" is not supported in Python 3; use "!=" instead
 print(4 != 5) # True
+
+
+
+
+
+# ------------    Python Crash-Course (PrTla)    ------------
+""" 
+    Go through the basic topics in order:
+        • Datatypes
+            ■	Numbers - pyDS_ch1_1
+            ■	Strings
+            ■	Printing, formatting string
+            ■	Lists
+            ■	Dictionaries
+            ■	Booleans
+            ■	Tuples
+            ■	Sets
+        •	Comparison Operators
+        •	if, elif, else Statements
+        •	for Loops
+        •	while Loops
+        •	range()
+        •	list comprehension
+        •	functions
+        •	lambda expressions
+        •	map and filter
+        •	methods
+"""
+
+# Number types: integer & float. 
+    # No need to declare the datatype
 
