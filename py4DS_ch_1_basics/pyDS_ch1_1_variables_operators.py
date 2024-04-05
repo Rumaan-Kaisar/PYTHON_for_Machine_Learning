@@ -1,9 +1,9 @@
 
-################# 1.1:ok; 1.2:ok; 2.1:ok; 3.1:ok, 3.2:ok, 3.3:ok, 4.1:ok, 4.2:ok
-# copy: Python_Crash_course.ipynb
+################# 1.1:ok; 1.2:ok; 2.1:ok; 3.1:ok, 3.2:ok, 3.3:ok, 4.1:ok, 4.2:ok, 4.3:6.7
+# copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, py
 #        
 #        
-################# (02-Apr-24 for 03-Apr-24)
+################# (03-Apr-24 for 05-Apr-24)
 
 # Courses: 
     # A-Z PY for Data-Science    1, 2, 3, 4
@@ -337,3 +337,26 @@ print(4 != 5) # True
 # Number types: integer & float. 
     # No need to declare the datatype
 
+# --------    Data Types: Numbers    --------
+1+1
+1-2
+1*3
+1/2
+2**8    # Power or exponent
+9%2     # mod
+
+# for arithmetic Python uses: PEMDAS
+    # So we can use () for paranthesis
+2+3*5+5     # 22    
+(2+3)*(5+5)     # 50
+
+
+# --------    Variable Assignments    --------
+    # var_name = obj
+    # do not use numbers, special signs at beginning of a var_name
+    # do not use keywors as var_name
+
+
+
+
+# --------    strings    --------
