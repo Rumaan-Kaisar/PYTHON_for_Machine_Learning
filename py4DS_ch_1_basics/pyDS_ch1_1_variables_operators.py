@@ -1,5 +1,5 @@
 
-################# 1.1:ok; 1.2:ok; 2.1:ok; 3.1:ok, 3.2:ok, 3.3:ok, 4.1:ok, 4.2:ok, 4.3:6.7
+################# 1.1:ok; 1.2:ok; 2.1:ok; 3.1:ok, 3.2:ok, 3.3:ok, 4.1:ok, 4.2:ok, 4.3:11.26
 # copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, py
 #        
 #        
@@ -360,3 +360,27 @@ print(4 != 5) # True
 
 
 # --------    strings    --------
+    # use '' or ""
+    # mix both to print other
+sTr = "I can't Go"
+sTr
+print(sTr)  # notice the difference between the outputs 
+
+# ----  rev[05-Apr-24]  ----
+# indexing strings
+
+
+
+# --------    formatted output    --------
+# Using format() method
+num = 144
+name = 'Smith'
+'My contact number id {} and call me {}'.format(num, name)
+# you can use 'named-parameters' inside format()
+'My contact number id {param1} and call me {param2}, more {param1}'.format(param1=num, param2=name)
+print('My contact number id {param1} and call me {param2}, more {param1}'.format(param1=num, param2=name))
+
+# f-string: More readable
+print(f'My contact number id {num} and call me {name}, more {num}')  # it more readable than format()
+
+
