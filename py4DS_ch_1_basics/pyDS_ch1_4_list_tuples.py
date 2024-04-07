@@ -1,5 +1,13 @@
 
-# Courses: A-Z PY for Data-Science    3.1, 3.2, 3.3, 3.4, 3.5
+#################  4.3:15.27
+# copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_1_variables_operators.py, pyDS_ch1_4_list_tuples.py
+#        
+#        
+################# (06-Apr-24 for 07-Apr-24) Start here
+
+# Courses: 
+    # A-Z PY for Data-Science    3.1, 3.2, 3.3, 3.4, 3.5
+    # PrTla PY for DS & ML : 4.3(10:50 - end), 
 
 # Lygometry: Learn Basics -> Detect Unknown-topic -> learn
     # Lygo : darkness
@@ -155,4 +163,30 @@ letters[9:2:-3] # ['J', 'G', 'D']
 # mostly it used in general purpose python programming
 letters_tuple = ('A', 'B', 'C', 'D' , 'E', 'F', 'G', 'H' , 'I', 'J')
 
+
+
+
+# ------------    Python Crash-Course (PrTla)    ------------
+
+# --------    strings    --------
+    # use '' or ""
+    # mix both to print other
+sTr = "I can't Go"
+sTr
+print(sTr)  # notice the difference between the outputs 
+
+# indexing strings
+s = 'Hello'
+s[0]
+s[4]
+# slicing
+s = 'abcdefghijk'
+s[0:]   # 'all' starting from 0
+s[2:]   # 'all' starting from 2 i.e. 'l'
+s[:4]   # show upto index 4 (not inclusive)
+s[1:3]  # start at 1 and end at 2
+
+
+
+# --------    lists    --------
 
