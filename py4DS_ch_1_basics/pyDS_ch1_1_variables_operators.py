@@ -1,15 +1,9 @@
 
-################# 1.1:ok; 1.2:ok; 2.1:ok; 3.1:ok, 3.2:ok, 3.3:ok, 4.1:ok, 4.2:ok, 4.3:11.26
-# copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, py
-#        
-#        
-################# (03-Apr-24 for 05-Apr-24)
-
 # Courses: 
     # A-Z PY for Data-Science    1, 2, 3, 4
     # PrTla PY for DS & ML : 1.1, 1.2; 2.1; 3.1, 3.2, 3.3; 4.1, 4.2, 4.3 (10:50)
 
-# -=-=-=-=-=-=-=-=-    PrTla PY for DS & M    L-=-=-=-=-=-=-=-=-
+# -=-=-=-=-=-=-=-=-    PrTla PY for DS & ML    -=-=-=-=-=-=-=-=-
 # Most Popular Python Data Science Libraries
 """ 
     NumPy
@@ -315,9 +309,9 @@ print(4 != 5) # True
     Go through the basic topics in order:
         • Datatypes
             ■	Numbers - pyDS_ch1_1
-            ■	Strings
-            ■	Printing, formatting string
-            ■	Lists
+            ■	Strings - pyDS_ch1_4
+            ■	Printing, formatting string - pyDS_ch1_1
+            ■	Lists - pyDS_ch1_4
             ■	Dictionaries
             ■	Booleans
             ■	Tuples
@@ -355,20 +349,6 @@ print(4 != 5) # True
     # var_name = obj
     # do not use numbers, special signs at beginning of a var_name
     # do not use keywors as var_name
-
-
-
-
-# --------    strings    --------
-    # use '' or ""
-    # mix both to print other
-sTr = "I can't Go"
-sTr
-print(sTr)  # notice the difference between the outputs 
-
-# ----  rev[05-Apr-24]  ----
-# indexing strings
-
 
 
 # --------    formatted output    --------
