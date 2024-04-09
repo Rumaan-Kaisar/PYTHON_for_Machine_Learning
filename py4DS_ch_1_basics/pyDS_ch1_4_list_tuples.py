@@ -1,9 +1,9 @@
 
-#################  4.3:15.27
-# copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_1_variables_operators.py, pyDS_ch1_4_list_tuples.py
+#################  4.3:full
+# copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py
 #        
 #        
-################# (06-Apr-24 for 07-Apr-24) Start here
+################# (07-Apr-24 for 09-Apr-24) Start here
 
 # Courses: 
     # A-Z PY for Data-Science    3.1, 3.2, 3.3, 3.4, 3.5
@@ -189,4 +189,26 @@ s[1:3]  # start at 1 and end at 2
 
 
 # --------    lists    --------
+# a list can have any kind of data-type
+lis_1 = ['a', 2, 3, 'ggc', 45.67]
+
+# add an element
+lis_1.append("Hello World")
+
+# accessing an element
+lis_1[3]
+
+# slicing
+lis_1[1:3]
+
+# updating
+lis_1[0] = "abc"
+
+# nested lists
+nstLs_1 = [1, 2, [3, 4]]
+nstLs_2 = [5, 8, 'q', [13, 21, ['snowden', 'rmsprop']]]
+
+# accessing nested list's enlement
+nstLs_1[2][1]
+print(nstLs_2[3][2][1])
 
