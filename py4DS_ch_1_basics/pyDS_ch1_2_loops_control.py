@@ -1,4 +1,10 @@
 
+#################  4.3:full, 4.4:3.47
+# copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py, pyDS_ch1_2_loops_control.py
+#        
+#        
+################# (09-Apr-24 for 10-Apr-24) Start here
+
 # Courses: A-Z PY for Data-Science    5, 6, 7
 
 
@@ -109,5 +115,14 @@ else:
 
 print(x) 
 print(answer)
+
+
+
+
+# ------------    Python Crash-Course (PrTla)    ------------
+
+# --------    Booleans    --------
+# two values 'True' and 'False' are the booliand in python. 
+    # Notice both use capitalization. C++ and Java uses 'true' and 'false'
 
 
