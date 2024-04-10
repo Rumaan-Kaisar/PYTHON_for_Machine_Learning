@@ -1,10 +1,4 @@
 
-#################  4.3:full
-# copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py
-#        
-#        
-################# (07-Apr-24 for 09-Apr-24) Start here
-
 # Courses: 
     # A-Z PY for Data-Science    3.1, 3.2, 3.3, 3.4, 3.5
     # PrTla PY for DS & ML : 4.3(10:50 - end), 
@@ -212,3 +206,24 @@ nstLs_2 = [5, 8, 'q', [13, 21, ['snowden', 'rmsprop']]]
 nstLs_1[2][1]
 print(nstLs_2[3][2][1])
 
+
+
+
+# ------------    Python Crash-Course (PrTla)    ------------
+
+# --------    Dictionaries    --------
+# dict can take any type of items including: tuples, lists, strings and nested dicts.
+
+d = {'key1': 'value', 'key2':123}
+d[0]    # won't work, use 'key' instead
+d['key1']
+d['key2']
+
+d2 = {'k1': [1,2,3]}
+d2
+d2['k1']    # accesing the list inside the dictionary
+d2['k1'][1]    # acessing the elements of the list
+
+# Nested Dict
+d3 = {'k1':{'innerKey':[1,2,3,5,8]}}
+d3['k1']['innerKey'][-1]
