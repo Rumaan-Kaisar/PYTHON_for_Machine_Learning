@@ -3,9 +3,11 @@
 # copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py, pyDS_ch1_2_loops_control.py
 #        
 #        
-################# (09-Apr-24 for 10-Apr-24) Start here
+################# (10-Apr-24 for 12-Apr-24)
 
-# Courses: A-Z PY for Data-Science    5, 6, 7
+# Courses: 
+    # A-Z PY for Data-Science    5, 6, 7
+    # PrTla PY for DS & ML : 4.4 (boolians)
 
 
 # ------------    while loop    ------------
