@@ -1,7 +1,13 @@
 
+#################  4.3:full, 4.4:3.47
+# copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py, pyDS_ch1_2_loops_control.py
+#        
+#        
+################# (10-Apr-24 for 12-Apr-24) Start [10-Apr-24]
+
 # Courses: 
     # A-Z PY for Data-Science    3.1, 3.2, 3.3, 3.4, 3.5
-    # PrTla PY for DS & ML : 4.3(10:50 - end), 
+    # PrTla PY for DS & ML : 4.3(10:50 - end), 4.4 (set, tuples)
 
 # Lygometry: Learn Basics -> Detect Unknown-topic -> learn
     # Lygo : darkness
@@ -208,9 +214,6 @@ print(nstLs_2[3][2][1])
 
 
 
-
-# ------------    Python Crash-Course (PrTla)    ------------
-
 # --------    Dictionaries    --------
 # dict can take any type of items including: tuples, lists, strings and nested dicts.
 
@@ -227,3 +230,25 @@ d2['k1'][1]    # acessing the elements of the list
 # Nested Dict
 d3 = {'k1':{'innerKey':[1,2,3,5,8]}}
 d3['k1']['innerKey'][-1]
+
+
+
+
+# --------    Tuples    --------
+# tuples are similar to lists, () is used instead of []
+# the main difference between tuple and list is:
+    # tuples are immutable: i.e. we cannot update the elements
+my_tuple = (1, 2, 3)
+my_tuple[0]
+my_tuple[0] = 'new'     # ERR
+
+
+
+
+# --------    sets    --------
+# Set is a collection of unique elements
+    # all elements are unique, i.e. no repeated elements
+{1, 2, 3}    
+
+{1, 2, 1, 1, 2, 2, 2, 3, 3}     # we still get {1, 2, 3}
+
