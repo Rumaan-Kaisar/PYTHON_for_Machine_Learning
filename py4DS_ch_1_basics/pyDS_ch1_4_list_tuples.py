@@ -1,9 +1,9 @@
 
-#################  4.3:full, 4.4:3.47
+#################  4.3:full, 4.4:7:15
 # copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py, pyDS_ch1_2_loops_control.py
 #        
 #        
-################# (10-Apr-24 for 12-Apr-24) Start [10-Apr-24]
+################# (12-Apr-24 for 13-Apr-24)
 
 # Courses: 
     # A-Z PY for Data-Science    3.1, 3.2, 3.3, 3.4, 3.5
@@ -251,4 +251,18 @@ my_tuple[0] = 'new'     # ERR
 {1, 2, 3}    
 
 {1, 2, 1, 1, 2, 2, 2, 3, 3}     # we still get {1, 2, 3}
+
+# use set() to get the unique elements from a list
+    # it returns the set of unique elements
+set([1, 1, 2, 2, 3, 3, 3, 5, 8, 8, 8])
+
+# adding elements to set 
+s = {1, 2, 3}
+s.add(5)
+s.add(3)
+s.add(3)
+s.add(2)
+print(s)
+
+
 
