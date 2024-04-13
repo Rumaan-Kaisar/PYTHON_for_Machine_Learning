@@ -1,9 +1,9 @@
 
-#################  4.3:full, 4.4:3.47
+#################  4.3:full, 4.4:8.40
 # copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py, pyDS_ch1_2_loops_control.py
 #        
 #        
-################# (10-Apr-24 for 12-Apr-24)
+################# (12-Apr-24 for 13-Apr-24) Start
 
 # Courses: 
     # A-Z PY for Data-Science    5, 6, 7
@@ -128,3 +128,19 @@ print(answer)
     # Notice both use capitalization. C++ and Java uses 'true' and 'false'
 
 
+# --------    comparison operators    --------
+# >, <, ==, >=, <=, != etc
+# these returns boolian values
+1>2
+1<2
+1>=2
+1<=2
+1==2    # equality
+1!=2
+# using with strings
+'Hi!' == 'bye'
+'Hi!' != 'bye'
+
+
+# --------    Logical Operators    --------
+# we can combine "logical" operators with "conditional" operators
