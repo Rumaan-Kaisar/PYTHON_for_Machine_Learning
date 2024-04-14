@@ -3,7 +3,7 @@
 # copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py, pyDS_ch1_2_loops_control.py
 #        
 #        
-################# (12-Apr-24 for 13-Apr-24) Start
+################# (14-Apr-24 for 16-Apr-24) Start
 
 # Courses: 
     # A-Z PY for Data-Science    5, 6, 7
@@ -144,3 +144,61 @@ print(answer)
 
 # --------    Logical Operators    --------
 # we can combine "logical" operators with "conditional" operators
+
+# 'and'
+(1 < 2) and (2 < 3)
+(1 < 2) and (2 > 3)
+
+# 'or'
+(1 < 2) or (2 < 3)
+(1 < 2) or (2 > 3)
+
+True or False   # True
+True and False  # False
+
+
+# --------    if, elif    --------
+# To make a block of code, just indent
+
+# if
+if 1<2:
+    print('yep!')
+
+if True:
+    print('Perform Code')
+
+if True:
+    x = 2 + 2 
+
+print(x)
+
+# if-else
+if 1 == 2:
+    print('First')  # never gonna execute
+else:
+    print('last')
+
+if 1 != 2:
+    print('First')  # Always executes
+else:
+    print('last')   # skipped
+
+# elif: for multiple conditions
+if 1 == 2:
+    print('First')  # skipped
+elif 3 == 3:
+    print('Middle') # execute
+else:
+    print('last')   # skipped
+
+# always first true elif will executes even if there are multiple treu-elif
+if 1 == 2:
+    print('First')  # skipped
+elif 4 == 4:
+    print('second') # execute    
+elif 3 == 3:
+    print('Middle') # skipped
+else:
+    print('last')   # skipped
+
+
