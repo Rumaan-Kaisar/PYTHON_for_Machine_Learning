@@ -260,7 +260,7 @@ set([1, 1, 2, 2, 3, 3, 3, 5, 8, 8, 8])
 s = {1, 2, 3}
 s.add(5)
 s.add(3)
-s.add(3)
+s.add(3)    # notice adding same item multiple times won't change the 'set'
 s.add(2)
 print(s)
 
