@@ -1,5 +1,5 @@
 
-#################  4.3:full, 4.4:8.40
+#################  4.3:full, 4.4:full, 4.5: 4.3
 # copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py, pyDS_ch1_2_loops_control.py
 #        
 #        
@@ -36,6 +36,7 @@ print("Hello")
 
 
 # ------------    for loop    ------------
+# iterate through a sequence
 for i in range(5):
     print("Hello", i)
 
@@ -121,6 +122,8 @@ print(answer)
 
 
 
+
+
 # ------------    Python Crash-Course (PrTla)    ------------
 
 # --------    Booleans    --------
@@ -202,3 +205,33 @@ else:
     print('last')   # skipped
 
 
+
+# --------    for, while    --------
+
+# for
+    # iterate through a sequence
+seq = [1,2,3,4,5]
+for item in seq: print(item)
+
+# use any name for 'loop control variable'
+for num in seq: 
+    print(f"Hello: {num}")
+
+
+# while
+    # always use restriction to loop control variable. Following is infinite loop:
+                # i = 1
+                # while i < 5:
+                #     print(f'i is: {i}')
+    # avoid infinite loop: restart the kernel
+i = 1
+while i < 5:
+    print(f'i is: {i}')
+    i = i+1
+
+
+
+# --------    more functions    --------
+
+# more functions
+# range: 
