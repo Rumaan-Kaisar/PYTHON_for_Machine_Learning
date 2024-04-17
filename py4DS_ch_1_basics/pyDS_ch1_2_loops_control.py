@@ -1,9 +1,9 @@
 
-#################  4.3:full, 4.4:full, 4.5: 4.3
+#################  4.3:full, 4.4:full, 4.5: 9.10
 # copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py, pyDS_ch1_2_loops_control.py
 #        
 #        
-################# (14-Apr-24 for 16-Apr-24) Start
+################# (16-Apr-24 for 17-Apr-24)
 
 # Courses: 
     # A-Z PY for Data-Science    5, 6, 7
@@ -231,7 +231,39 @@ while i < 5:
 
 
 
-# --------    more functions    --------
 
-# more functions
+# --------    range    --------
 # range: 
+    # it's a generator of numerical values
+range(0, 5)
+list(range(0, 5))   # [0, 1, 2, 3, 4]
+
+for x in range(0, 5):
+    print(x)
+
+# 0 to 9. No need to specify start point if increment is 1
+for x in range(10):
+    print(x)
+
+# 0 to 9 with 2 increment
+for x in range(0, 10, 2):
+    print(x)
+
+
+
+
+# --------    list comprehension    --------
+# its a shorcut for-loop to create a list from a list
+# Usinng for-loop instead list-comprehension
+x = [1,2,3,4]
+out = []
+for num in x:
+    out.append(num**2)
+print(out)  # [1, 4, 9, 16]
+
+# using list-comprehension:
+[num**2 for num in x]
+out = [num**2 for num in x]
+print(out)
+
+
