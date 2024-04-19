@@ -1,5 +1,14 @@
 
-# Courses: A-Z PY for Data-Science    3.6, 3.7
+#################  4.5: 13.3
+# copy: pyDS_ch1_1_PrTla_crshCrs_2.ipynb, pyDS_ch1_5_functn_pkg.py
+#        
+#        
+################# (17-Apr-24 for 19-Apr-24)
+
+# Courses: 
+    # A-Z PY for Data-Science    3.6, 3.7
+    # PrTla PY for DS & ML : 4.5 (9:10)
+
 
 # min & max
 
@@ -67,3 +76,39 @@ from scrapy.crawler import CrawlerProcess
 
 
 
+
+# ------------    Python Crash-Course (PrTla)    ------------
+
+
+# --------    function    --------
+def my_func(param1):
+    print(param1)
+
+my_func("Hello")
+
+
+def my_func2(name):
+    print("Hello "+name)
+
+my_func2("Mi MI")
+
+
+# Using default value
+def my_func3(name='Default Name'):
+    print("Hello "+name)
+
+my_func3()
+my_func3('Gogo')
+my_func3(name='Bogo')
+
+# () used to call (execute) a function
+    # following won't call  the function
+my_func3
+
+
+# Return values from a function
+def sqRnum(n):
+    return n**2
+
+out = sqRnum(12)
+out
