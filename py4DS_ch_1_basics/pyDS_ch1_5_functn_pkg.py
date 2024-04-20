@@ -1,9 +1,9 @@
 
-#################  4.5: 13.3
+#################  4.5: full, 4.6
 # copy: pyDS_ch1_1_PrTla_crshCrs_2.ipynb, pyDS_ch1_5_functn_pkg.py
 #        
 #        
-################# (17-Apr-24 for 19-Apr-24)
+################# (19-Apr-24 for 20-Apr-24)
 
 # Courses: 
     # A-Z PY for Data-Science    3.6, 3.7
@@ -79,7 +79,6 @@ from scrapy.crawler import CrawlerProcess
 
 # ------------    Python Crash-Course (PrTla)    ------------
 
-
 # --------    function    --------
 def my_func(param1):
     print(param1)
@@ -112,3 +111,31 @@ def sqRnum(n):
 
 out = sqRnum(12)
 out
+
+# Returning vs printing
+out = sqRnum(12)    # returning, stored in out
+print(out)  # printing, not stored anywhere
+
+
+
+# --------    DOCKSTRING : adding function info    --------
+# use ''' or """ immediately after function declaration
+# we can get information from library functions from their DOCSTRING
+def sqRnum(n):
+    '''
+        THIS IS A DOCSTRING.
+        CAN GO MULTIPLE LINES.
+        THIS FUNCTION SQUARES A NUMBER.
+    '''
+    return n**2
+
+
+def my_func4(name='Default Name'):
+    """
+        This is another DOCKSTRING
+    """
+    print("Hello "+name)
+
+
+# Next >> Lambda Expression, Map & Filter
+
