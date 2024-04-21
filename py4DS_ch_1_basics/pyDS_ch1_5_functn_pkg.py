@@ -1,9 +1,9 @@
 
-#################  4.5: full, 4.6
+#################  4.5: full, 4.6: 5.05
 # copy: pyDS_ch1_1_PrTla_crshCrs_2.ipynb, pyDS_ch1_5_functn_pkg.py
 #        
 #        
-################# (19-Apr-24 for 20-Apr-24)
+################# (20-Apr-24 for 21-Apr-24)
 
 # Courses: 
     # A-Z PY for Data-Science    3.6, 3.7
@@ -137,5 +137,54 @@ def my_func4(name='Default Name'):
     print("Hello "+name)
 
 
-# Next >> Lambda Expression, Map & Filter
+# --------    Lambda Expression, Map & Filter    --------
+# use Lambda Expression instead of writing full function
+
+# a normal function
+def times2(num):
+    return num*2
+
+times2(5)
+
+# --------    map()    --------
+seq = [1,2,3,4,5]
+# we want to apply times2() on each element of the list "seq"
+    # method 1 : we can use a for-loop and make another list
+    # method 2 : use map(), it's a python built-in function to do the same thing
+""" 
+    map(func, *iterables) --> map object
+
+    Make an iterator that computes the function using arguments from each of the iterables. 
+    Stops when the shortest iterable is exhausted.
+"""
+
+map(times2, seq)    # mapped every elemnt of "seq" in a map-obj using the function "times2"
+
+# converting map-obj to a list
+list(map(times2, seq))
+
+
+# It's more usefull with "Lambda Expression" instead of writing a whole function
+
+# --------    Lambda Expression    --------
+# now we convert above times2() to a lambda function
+# our function can be re-written as
+def times2(num): return num*2
+# in lambda expression we don't use "def times2" and "return" we define it as below
+    # we just directly use the retrning expression
+
+# lambda expression of times2()
+lambda num: num*2
+
+# we can also store it in a variable, and call it later
+    # however we don't usually use lambda like this
+    # we'll use lambda for a mpa() like things
+t = lambda num: num*2
+t(60)
+
+# Following we use lambda inside map()
+    # this time we return multiple of 3
+list(map(lambda num: num*3, seq))
+
+
 
