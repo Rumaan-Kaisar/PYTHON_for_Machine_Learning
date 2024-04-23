@@ -1,9 +1,9 @@
 
-#################  4.5: full, 4.6: 5.05
+#################  4.5: full, 4.6: 7.33
 # copy: pyDS_ch1_1_PrTla_crshCrs_2.ipynb, pyDS_ch1_5_functn_pkg.py
 #        
 #        
-################# (20-Apr-24 for 21-Apr-24)
+################# (21-Apr-24 for 23-Apr-24)
 
 # Courses: 
     # A-Z PY for Data-Science    3.6, 3.7
@@ -139,6 +139,7 @@ def my_func4(name='Default Name'):
 
 # --------    Lambda Expression, Map & Filter    --------
 # use Lambda Expression instead of writing full function
+# Also we'll use Lambda Expression a lot with Panadas library
 
 # a normal function
 def times2(num):
@@ -168,6 +169,7 @@ list(map(times2, seq))
 
 # --------    Lambda Expression    --------
 # now we convert above times2() to a lambda function
+# basically it's a one-line version of a small-function
 # our function can be re-written as
 def times2(num): return num*2
 # in lambda expression we don't use "def times2" and "return" we define it as below
@@ -187,4 +189,19 @@ t(60)
 list(map(lambda num: num*3, seq))
 
 
+# ----------------    filter()    ----------------
+# it's similar to map(), but insteal of mapping a sequence, we'll filter the sequence
+# a function/lambda (returns BOOLEAN values) is passed as an argument that will filter out.
+seq = [1,2,3,4,5]
+list(filter(lambda n: n%2 == 0, seq))
+# notice "lambda n: n%2 == 0" returns either True or False (Boolean values)
+# filter() returns only the element that are true for the condition "n%2 == 0"
+
+
+# ----------------    methods    ----------------
+# methods are functions that are attached to an object 
+# methods canm be caled upon an object using '.' operator
+# a method can modify the object and return results or do some actions
+
+# For example there are several methods defined for 'string' type object
 
