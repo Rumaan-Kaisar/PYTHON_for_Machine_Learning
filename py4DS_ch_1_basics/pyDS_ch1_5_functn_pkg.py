@@ -1,9 +1,9 @@
 
-#################  4.5: full, 4.6: 7.33
+#################  4.5: full, 4.6: 12.26
 # copy: pyDS_ch1_1_PrTla_crshCrs_2.ipynb, pyDS_ch1_5_functn_pkg.py
 #        
 #        
-################# (21-Apr-24 for 23-Apr-24)
+################# (23-Apr-24 for 24-Apr-24)
 
 # Courses: 
     # A-Z PY for Data-Science    3.6, 3.7
@@ -203,5 +203,47 @@ list(filter(lambda n: n%2 == 0, seq))
 # methods canm be caled upon an object using '.' operator
 # a method can modify the object and return results or do some actions
 
+# ----  string methods  ----
 # For example there are several methods defined for 'string' type object
+# following uses string-method "lower"
+s = "There And Back Again"
+s.lower()   # all charecter to lowercase
+s.upper()   # all uppercase
+s.split()   # split on the white-space ' '
+
+# split according to a charcter or string
+# following splits on "#"
+tweet = 'Go Sports! #Sports'
+tweet.split('#')[1]
+tweet.split('#')[1]     # use index to access specific element
+
+
+# ----  dictionary methods  ----
+d = {'k1': 1,'k2':2}
+d.keys()    # get the keys
+d.values()  # get the values
+d.items()   # dictionary items in a tuple
+
+
+# ----  list methods  ----
+# pop: pop the last item of the list.
+    # it changes the list parmanently
+lst = [1,2,3]
+lst.pop()
+print(lst)
+
+ls2 = [1,2,3,4,5]
+itm = ls2.pop()     # store popped item to a vriable
+
+# pop specific item
+frst = lst.pop(0)
+print(ls2)
+print(itm)
+print(frst)
+
+# append(): appned new item to a list
+    # new items appear at the last index
+ls2.append('new')
+print(ls2)
+
 
