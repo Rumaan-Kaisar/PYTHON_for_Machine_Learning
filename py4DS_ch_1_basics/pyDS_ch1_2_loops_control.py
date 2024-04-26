@@ -1,10 +1,4 @@
 
-#################  4.3:full, 4.4:full, 4.5: 9.10
-# copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py, pyDS_ch1_2_loops_control.py
-#        
-#        
-################# (16-Apr-24 for 17-Apr-24)
-
 # Courses: 
     # A-Z PY for Data-Science    5, 6, 7
     # PrTla PY for DS & ML : 4.4 (boolians)
