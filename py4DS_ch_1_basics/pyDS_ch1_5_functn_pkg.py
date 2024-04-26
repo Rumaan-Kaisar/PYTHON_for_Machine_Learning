@@ -1,10 +1,4 @@
 
-#################  4.5: full, 4.6: 12.26
-# copy: pyDS_ch1_1_PrTla_crshCrs_2.ipynb, pyDS_ch1_5_functn_pkg.py
-#        
-#        
-################# (23-Apr-24 for 24-Apr-24)
-
 # Courses: 
     # A-Z PY for Data-Science    3.6, 3.7
     # PrTla PY for DS & ML : 4.5 (9:10)
@@ -246,4 +240,105 @@ print(frst)
 ls2.append('new')
 print(ls2)
 
+
+
+# ----  in  ----
+'x' in [1,2,3]
+
+'x' in ['x', 'y', 'z']
+
+
+# ----  tuple unpacking  ----
+# consider a list of tuples:
+x = [(1,2), (3,4), (5,6)]
+
+# accessing items of a tuple from above list
+x[0][0]
+x[0][1]
+
+# tuple unpacking: iterating through a list of tuples
+    # in python, lots of functions do this 
+
+# using a loop:
+for item in x:
+    print(item[1])
+
+# or
+for (a,b) in x:
+    print(a)
+
+for (a,b) in x:
+    print(b)
+
+# above 3 lopos are actually tuple-unpacking
+    # however, () is just a formality, we can do as below
+for a,b in x:
+    print(b)
+# Note that 'x' is an iterable of (i,j) format
+# for more: colt_python: 
+    # py_ch4_3_4_UnPack_varArg_kwArg.py; 
+    # py_ch4_4_9_zip.py
+
+
+# -------------------    zip    -------------------
+# Example 1: Join two tuples together:
+a = ("John", "Charles", "Mike")
+b = ("Jenny", "Christy", "Monica")
+x = zip(a, b)   # <zip object at 0x000001A40B072D80>
+
+# x is one time usable, so we store it in a seperate variable
+# list(x)     # [('John', 'Jenny'), ('Charles', 'Christy'), ('Mike', 'Monica')]
+pair_nm = list(x)     # [('John', 'Jenny'), ('Charles', 'Christy'), ('Mike', 'Monica')]
+pair_nm
+
+
+# -------------------    UNPACKING a zip    -------------------
+# we use * to unpack a zip, with zip()
+
+itr_tup = [(5, 1), (7, 2), (8, 3)]      # an iterable of tuple
+unPack = zip(*itr_tup)  # unpacking
+list(unPack)    # [(5, 7, 8), (1, 2, 3)]
+
+unPak_name = zip(*pair_nm)  # using kwargs
+list(unPak_name)
+
+
+
+# ==========     List Unpacking     ==========
+# -------------    Problem passing List/Tuple to *args    -------------
+    # Using * as an Argument (during function call): Argument Unpacking
+    # We can use * as an argument to a function-call to "unpack" values like "List" or "Tuple"
+
+# var-arg: *arg
+# kwarg: **arg
+
+# first we define a function "sum_all_values" using var-arg
+def sum_all_values(*args):
+    print(args)
+    total = 0
+    for num in args:
+        total += num
+    print(total)
+
+# we want to pass all elements from a list/tuple as multiple arguments of "sum_all_values"
+# sum_all_values(1,30,2,5,6)
+    # args: (1, 30, 2, 5, 6)
+
+# following returns ERROR
+nums = [1,2,3,4,5,6]
+sum_all_values(nums)    # ERROR
+    # args: ([1, 2, 3, 4, 5, 6],), list is stored as an element of the *args tuple
+
+# -----------    unpacking list    -----------
+# to unpack the list and pass its elemens as individual arguments to *args, we need to use '*' in the function call
+sum_all_values(*nums)   # works
+    # args: (1, 30, 2, 5, 6)
+
+
+# -----------    unpacking Tuple    -----------
+# following also returns ERROR
+nums2 = (1,2,3,4)
+sum_all_values(nums2)    # ERROR
+#  args: ((1, 2, 3, 4),) tuple is stored as an element of the *args tuple
+sum_all_values(*nums2)   # works
 
