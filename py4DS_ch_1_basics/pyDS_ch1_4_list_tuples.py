@@ -1,10 +1,4 @@
 
-#################  4.3:full, 4.4:7:15
-# copy: pyDS_ch1_1_PrTla_crshCrs_1.ipynb, pyDS_ch1_4_list_tuples.py, pyDS_ch1_2_loops_control.py
-#        
-#        
-################# (12-Apr-24 for 13-Apr-24)
-
 # Courses: 
     # A-Z PY for Data-Science    3.1, 3.2, 3.3, 3.4, 3.5
     # PrTla PY for DS & ML : 4.3(10:50 - end), 4.4 (set, tuples)
