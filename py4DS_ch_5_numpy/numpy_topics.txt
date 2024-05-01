@@ -1,0 +1,17 @@
+
+Quick Note on Array lndexing
+Welcome to the NumPy Section!
+
+Introduction to Numpy
+Numpy Arrays
+Numpy Array Indexing
+Numpy Operations
+
+Numpy Exercises 0verview
+Numpy Exercises Solutions
+
+
+numpy_intro
+numpy_array_indexing
+numpy_operatn
+
