@@ -1,5 +1,5 @@
 
-################# 5.1
+################# 5.1: ok, 5.2: ok, 5.3: 1.20
 # copy:  
 #        
 #        
@@ -96,4 +96,38 @@ copy    # array([23245,     0,   111,   111, -1234])
 a   # array([23245, 11235,   111,   111, -1234])
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+
+
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-      PrTla PY for DS & ML      -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# We'll focus on NumPy array
+
+# Numpy arrays essentially come in two flavors: 
+#         vectors
+#         matrices
+
+# Vectors are strictly 1D arrays and 
+# matrices are 2D (but a matrix can still have only one row or one column).
+
+""" 
+    NumPy (or Numpy) is a Linear Algebra Library for Python.
+    Almost all of the libraries in the PyData Ecosystem created based on NumPy
+    Numpy is also incredibly fast, as it has bindings to C libraries.
+
+    install numpy:
+        conda install numpy
+        pip install numpy 
+"""
+
+# numpy array from a python object (such as: list)
+# convert a list to a numpy array
+my_list = [1, 2, 3]
+my_list
+
+import numpy as np
+np.array(my_list)
+
+arr = np.array(my_list)
+arr
 
