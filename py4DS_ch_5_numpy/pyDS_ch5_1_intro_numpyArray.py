@@ -1,5 +1,5 @@
 
-################# 5.1: ok, 5.2: ok, 5.3: 1.20
+################# 5.1: ok, 5.2: ok, 5.3: 5.10
 # copy:  
 #        
 #        
@@ -100,6 +100,8 @@ a   # array([23245, 11235,   111,   111, -1234])
 
 
 
+
+
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-      PrTla PY for DS & ML      -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # We'll focus on NumPy array
 
@@ -130,4 +132,33 @@ np.array(my_list)
 
 arr = np.array(my_list)
 arr
+
+
+# 2D - array: cast a list of lists to the np.array()
+my_mat = [[1,2,3],[4,5,6],[7,8,9]]
+np.array(my_mat)
+
+
+
+
+# --------    numpy methods to gnertae arrays    --------
+# use numpy's built-in array generator methods (faster)
+# following are some common ways to do that
+
+# np.arrange(start, stop, step) - most common & quick
+    # its similar to range() method
+np.arange(0, 10)
+
+np.arange(0, 11, 2)
+
+# for more specific type of array we can use following
+
+# array of all 0
+np.zeros(3)     # 1D
+# use tuple to generate higher dimensional array
+np.zeros((2,3)) # 2D by (row, column)
+
+# array of all 1
+np.ones(3)     # 1D
+np.ones((3,4)) # 2D by (row, column)
 
