@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (1-may-24 for 3-may-24)
+################# (4-may-24 for 5-may-24)
 
 # Courses: 
     # A-Z PY for Data-Science    3.8, 3.9
@@ -145,6 +145,7 @@ np.array(my_mat)
 # use numpy's built-in array generator methods (faster)
 # following are some common ways to do that
 
+# --------    arrange()    --------
 # np.arrange(start, stop, step) - most common & quick
     # its similar to range() method
 np.arange(0, 10)
@@ -161,4 +162,27 @@ np.zeros((2,3)) # 2D by (row, column)
 # array of all 1
 np.ones(3)     # 1D
 np.ones((3,4)) # 2D by (row, column)
+
+
+# easy way to understand multi-dimensional array:
+    # notic e the number of square-brackets []
+    # [] - 1D
+    # [[]] - 2D
+    # [[[]]] - 3D
+
+
+# --------    linspace()    --------
+# it returns evenly spaced numbers between intervals
+# difference between "arange() vs linspace()"
+    # arange(): 3rd argument is the step-size
+        # arange(start, end, stepSize)
+    # linspace(): 3rd argument is number of "equally spaced points between start and end"
+        # linspace(start, end, noumberOfPoints)
+
+# 10 evenly spaced points between 0 and 5
+np.linspace(0, 5, 10)
+np.linspace(0, 5, 100)  # 100 points
+
+# "Identity matrix" using numpy
+
 
