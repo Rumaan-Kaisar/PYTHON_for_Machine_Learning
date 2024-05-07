@@ -1,9 +1,9 @@
 
-################# 5.1: ok, 5.2: ok, 5.3: 5.10
+################# 5.1: ok, 5.2: ok, 5.3: 9.53
 # copy:  
 #        
 #        
-################# (4-may-24 for 5-may-24)
+################# (5-may-24 for 7-may-24)
 
 # Courses: 
     # A-Z PY for Data-Science    3.8, 3.9
@@ -184,5 +184,31 @@ np.linspace(0, 5, 10)
 np.linspace(0, 5, 100)  # 100 points
 
 # "Identity matrix" using numpy
+np.eye(4)   # gives 4x4 identity matrix
+
+
+
+
+# ------------    random numbers    ------------
+# there are lots of ways to create an array of random numbers
+# ----  np.random.rand()  ----
+    # array of given-shape of matrix with 
+    # random nubers from uniform distribution over "0 to 1"
+
+# 1D array of 5 random numbers
+np.random.rand(5)
+# unlike oprevious functions, in this case we don't need to pass the tuples
+    # we directly pass the size (dimensions) in seperate arguments
+np.random.rand(5,5)     # 5x5 matrix of random numbers
+
+
+# 'sample' or "many samples" from GAUSSIAN or standared NORMAL distributions
+    # instead of rand() we use randn()
+    # this will retun numbers from "standared NORMAL distribution" centered around 0
+    # instead of UNIFORM distribution over "0 to 1"
+np.random.randn(2)
+# we'll visualize GAUSSIAN or standared NORMAL distributions curves later
+np.random.randn(2,4)    # 2x4 matrix of random numbers from std normal distribution
+# notice agin we didn't use tuples here
 
 
