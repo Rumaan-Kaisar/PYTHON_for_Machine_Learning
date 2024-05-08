@@ -1,9 +1,9 @@
 
-################# 5.1: ok, 5.2: ok, 5.3: 9.53
+################# 5.1: ok, 5.2: ok, 5.3: 10.57
 # copy:  
 #        
 #        
-################# (5-may-24 for 7-may-24)
+################# (8-may-24 for 10-may-24)
 
 # Courses: 
     # A-Z PY for Data-Science    3.8, 3.9
@@ -210,5 +210,21 @@ np.random.randn(2)
 # we'll visualize GAUSSIAN or standared NORMAL distributions curves later
 np.random.randn(2,4)    # 2x4 matrix of random numbers from std normal distribution
 # notice agin we didn't use tuples here
+
+# ----  randint()  ----
+# returns random integers for a LOW (inclusive) to HIGH (exclusive) 
+    # for a given size (how many numbers)
+    # i.e. it returns n random numbers for a given "range" and "size=n"
+np.random.randint(1,100)    # returns a random number between 1 and 100
+np.random.randint(1,100, 10)    # returns 10 random numbers between 1 and 100
+
+
+
+
+# --------    "attributes" and "methods" of an array    --------
+arr_1 = np.arrange(25)
+rand_arr_1 = np.random.randint(0, 50, 10)
+
+# ----  reshape()  ----
 
 
