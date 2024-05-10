@@ -1,5 +1,5 @@
 
-################# 5.1: ok, 5.2: ok, 5.3: 10.57
+################# 5.1: ok, 5.2: ok, 5.3: 15.15
 # copy:  
 #        
 #        
@@ -143,7 +143,16 @@ np.array(my_mat)
 
 # --------    numpy methods to gnertae arrays    --------
 # use numpy's built-in array generator methods (faster)
-# following are some common ways to do that
+# following are some common ways to do that:
+        # from a list 
+        # arange()
+        # zeros()
+        # ones()
+        # linspace()
+        # eye()
+        # random.rand()
+        # random.randn()
+        # random.randint()
 
 # --------    arrange()    --------
 # np.arrange(start, stop, step) - most common & quick
@@ -218,13 +227,57 @@ np.random.randn(2,4)    # 2x4 matrix of random numbers from std normal distribut
 np.random.randint(1,100)    # returns a random number between 1 and 100
 np.random.randint(1,100, 10)    # returns 10 random numbers between 1 and 100
 
-
+# we can also import a specific function from the "random" as below
+from numpy.random import randint
+randint(2,10)
 
 
 # --------    "attributes" and "methods" of an array    --------
+        # reshape()
+        # max / min value 
+        # index-location of max/min
+        # shape info
+        # data-type
+        
 arr_1 = np.arrange(25)
 rand_arr_1 = np.random.randint(0, 50, 10)
 
 # ----  reshape()  ----
+# returns a new array of same data with new shape
+# reshapes the 1D arry "arr_1" to a 2D 5x5 array using reshape(row, column)
+arr_1.reshape(5,5)  
+# notice, reshape() is a method of object "arr_1"
+# youll get ERR if you won't fill out the matrix completely
+    # i.e. the 1D matrix must fit into the 2D matrix
+    # following gives an Value-ERR, 
+        # becausewe're trying to fit a 25 size 1D matrix into 50 size 2D
+arr_1.reshape(5,10) 
+# ValueError: total size of new array
 
+# to check: row*column = total size
+
+
+# ----  max / min values & their index location  ----
+# find the max / min value of "rand_arr_1"
+rand_arr_1.max()
+rand_arr_1.min()
+
+# to return the index-location of max/min, use: argmax() and argmin()
+rand_arr_1.argmax()
+rand_arr_1.argmin()
+
+# ----  shape info  ----
+# we use "shape" attribute, (it's not a method)
+arr_1.shape 
+# the comma in (25,) indicating it's a 1D vector
+
+# following, we converted it to a 5x5 2D matrix
+arr_2 = arr_1.reshape(5,5)  
+arr_2.shape
+# returns (5,5) i.e. it's 2D now
+
+
+# ----  data-type info  ----
+# to get the datatype of an array use "dtype" attribute
+arr_2.dtype
 
