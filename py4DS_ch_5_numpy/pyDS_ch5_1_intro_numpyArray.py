@@ -1,10 +1,4 @@
 
-################# 5.1: ok, 5.2: ok, 5.3: 15.15
-# copy:  
-#        
-#        
-################# (8-may-24 for 10-may-24)
-
 # Courses: 
     # A-Z PY for Data-Science    3.8, 3.9
     # PrTla PY for DS & ML : 5.1, 5.2, 5.3
