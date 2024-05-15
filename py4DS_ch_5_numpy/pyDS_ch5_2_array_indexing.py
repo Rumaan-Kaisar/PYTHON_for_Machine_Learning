@@ -1,15 +1,15 @@
 
-################# 5.4: 7:2
+################# 5.4: ok, 5.5: 8.32
 # copy:  
 #        
 #        
-################# (12-may-24 for 14-may-24)
+################# (14-may-24 for 15-may-24)
 
 # Courses: 
     # PrTla PY for DS & ML : 5.4, 5.5
 
 
-# --------    numpy array indexing    --------
+# --------    numpy array indexing and selection    --------
 # we'll see how to index and slice numpy arrays
     # it works exactly like a normal Python list
 
@@ -77,5 +77,17 @@ print(arr_2)
 
 
 
-# indexing of 2D array (matrix)
+# --------    indexing of 2D array (matrix)    --------
+import numpy as np
+
+# to crearte a 2D numpy array we use a list of list (nested list)
+arr_2d = np.array([[5,10,15], [20,25,30], [35,40,45]])
+print(arr_2d)
+
+# There are "two general formats" to access the element of a 2D array
+    # [row][column]-format
+    # [row, column]-format (recommend to use)
+
+# [row][column]-format
+arr_2d[0][0]    # 5
 
