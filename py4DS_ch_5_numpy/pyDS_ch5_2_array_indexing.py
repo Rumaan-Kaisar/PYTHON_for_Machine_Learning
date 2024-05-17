@@ -1,9 +1,9 @@
 
-################# 5.4: ok, 5.5: 8.32
+################# 5.4: ok, 5.5: 11.11
 # copy:  
 #        
 #        
-################# (14-may-24 for 15-may-24)
+################# (15-may-24 for 17-may-24)
 
 # Courses: 
     # PrTla PY for DS & ML : 5.4, 5.5
@@ -88,6 +88,41 @@ print(arr_2d)
     # [row][column]-format
     # [row, column]-format (recommend to use)
 
-# [row][column]-format
+# ----  [row][column]-format  ----
 arr_2d[0][0]    # 5
+arr_2d[0]       # gives entire row
+arr_2d[1][1]    # 25
+arr_2d[2][1]    # 40
+arr_2d[1][2]    # 30
+
+
+# ----  [row, column]-format  ----
+    # recommened to use
+arr_2d[2, 1]    # 40
+arr_2d[1, 2]    # 30
+
+# ----  sub-matrix: chunks of an array  ----
+# getting "part of an array" instead of single element
+# use slice: to retun a sub-matrix from a matrix we use ":"
+"""
+        [ 5,10,15],
+        [20,25,30],
+        [35,40,45]
+"""
+# Example: To grab the top right corner: i.e. 10, 15, 25, 30
+arr_2d[:2]          # gets the first 2 row
+# arr_2d[:2][1:]      # won't gets the first 2 row and then last two columns
+
+# If you want to use the arr_2d[row][column] format instead of slicing directly, 
+#   you can use list-comprehension
+
+# Note that this approach is different from slicing and may not produce the desired result directly.
+# Grab the top right corner using arr_2d[row][column] format
+top_right_corner = arr_2d[:2]
+top_right_corner = [row[1:] for row in top_right_corner]
+
+# or we can use other format
+arr_2d[:2, 1:]
+
+
 
