@@ -1,9 +1,9 @@
 
-################# 5.4: ok, 5.5: 11.11
-# copy:  
+################# 5.4: ok, 5.5: 13.00
+# copy:  lecture notebooks (3)
 #        
 #        
-################# (15-may-24 for 17-may-24)
+################# (17-may-24 for 18-may-24)
 
 # Courses: 
     # PrTla PY for DS & ML : 5.4, 5.5
@@ -121,8 +121,17 @@ arr_2d[:2]          # gets the first 2 row
 top_right_corner = arr_2d[:2]
 top_right_corner = [row[1:] for row in top_right_corner]
 
-# or we can use other format
-arr_2d[:2, 1:]
+# Convert the list of lists to a NumPy array
+# array = np.array(list_of_lists)
+top_right_corner = np.array(top_right_corner)
+print(top_right_corner)
 
+# or we can use other format
+arr_2d[:2, 1:]  
+# ':2' = grabs all rows upto index-2 (excluding 2)
+# '1:' = grab all columns from index 1 (including 1)
+
+
+# --------    conditional selection    --------
 
 
