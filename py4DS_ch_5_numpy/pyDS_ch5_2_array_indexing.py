@@ -1,9 +1,9 @@
 
-################# 5.4: ok, 5.5: 13.00
+################# 5.4: ok, 5.5: 14.49
 # copy:  lecture notebooks (3)
 #        
 #        
-################# (17-may-24 for 18-may-24)
+################# (18-may-24 for 19-may-24)
 
 # Courses: 
     # PrTla PY for DS & ML : 5.4, 5.5
@@ -132,6 +132,33 @@ arr_2d[:2, 1:]
 # '1:' = grab all columns from index 1 (including 1)
 
 
+
 # --------    conditional selection    --------
+# applying condition will retrun a "boolean array"
+    # comparison applied to each values of the array
+    # generates "Boolean array"
 
+import numpy as np
+arr_3 = np.arange(1, 11)
 
+# following generates Boolean-array
+arr_3 < 5   # array of boolean values
+
+# we can apply above "Boolean array" to filter elements form an array 
+    # (needs to same-size & shape)
+bool_arr3 = (arr_3 < 5)
+print(bool_arr3)
+
+# use "boolean-array" to conditionally select the elements of an array
+# following returns the elements corresponding "True" values of the "bool_arr3"
+arr_3[bool_arr3]
+
+filterArr_1 = arr_3[bool_arr3]
+print(filterArr_1)
+
+arr_4 = np.arange(31, 41)
+print(arr_4)
+filterArr_2 = arr_4[bool_arr3]
+print(filterArr_2)
+
+# We can do all above in one line of code
