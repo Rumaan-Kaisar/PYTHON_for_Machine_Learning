@@ -1,10 +1,4 @@
 
-################# 5.4: ok, 5.5: 14.49
-# copy:  lecture notebooks (3)
-#        
-#        
-################# (18-may-24 for 19-may-24)
-
 # Courses: 
     # PrTla PY for DS & ML : 5.4, 5.5
 
@@ -45,6 +39,7 @@ arr_1[6:]
 
 # --------    BROADCAST ability    --------
 # numpy Array differ from python list because of BROADCAST ability 
+
 
 # Example 1: if we try to assign elements from 0 to 4 as below:
 arr_1[0:5] = 100
@@ -109,7 +104,9 @@ arr_2d[1, 2]    # 30
         [20,25,30],
         [35,40,45]
 """
-# Example: To grab the top right corner: i.e. 10, 15, 25, 30
+
+
+# Example 2: To grab the top right corner: i.e. 10, 15, 25, 30
 arr_2d[:2]          # gets the first 2 row
 # arr_2d[:2][1:]      # won't gets the first 2 row and then last two columns
 
@@ -162,3 +159,27 @@ filterArr_2 = arr_4[bool_arr3]
 print(filterArr_2)
 
 # We can do all above in one line of code
+    # notice we used the conditional directly, and 
+    # it directly applies the "boolean array" to 'arr_3'
+arr_3[arr_3 < 5]
+
+# similarly, following returns the array of elements greater than 7
+arr_3[arr_3 > 7]
+
+# We'll use this kind of notations more frequently when we wprk with PANDAS
+
+
+
+# Example 3: return the sub-array from following 5x10 matrix (2D array)
+                # Notice we used reshape() to make it: 5x10
+                # grab the sub-array: [31, 32, 33]
+                # grab the sub-array: [[13.14], [23,24]]
+arr_2D = np.arange(50).reshape(5, 10)
+print(arr_2D)
+
+subArr2D_1 = arr_2D [3, 1:4]
+print(subArr2D_1)
+
+subArr2D_2 = arr_2D [1:3, 3:5]
+print(subArr2D_2)
+
