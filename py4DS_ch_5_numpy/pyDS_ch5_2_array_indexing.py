@@ -183,3 +183,10 @@ print(subArr2D_1)
 subArr2D_2 = arr_2D [1:3, 3:5]
 print(subArr2D_2)
 
+# getting column:
+subArr2D_3 = arr_2D [:, 1]  # 2nd column
+print(subArr2D_3)
+
+subArr2D_4 = arr_2D [:, 3]  # 4th column
+print(subArr2D_4)
+
