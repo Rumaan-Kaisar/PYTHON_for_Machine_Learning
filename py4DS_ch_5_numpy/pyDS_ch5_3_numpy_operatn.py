@@ -1,5 +1,5 @@
 
-################# 5.6: 5.28
+################# 5.6: full, 5.7: full
 # copy:  
 #        
 #        
@@ -73,4 +73,29 @@ np.sin(arr)     # gets the sin value element-wise
 # ----  logarithmic value  ----
 # NOTE: for 0, we'll get "-ve inf" and a RuntimeWarning for "divide by 0"
 np.log(arr)     # gets the "e"-based-log, i.e. ln() value element-wise
+
+# more universal array functions:
+# befor implementing your own function it's good to check if it's already built-in numpy function
+
+# visit numpy documentation: Universal Functions (ufunc)
+    # https://numpy.org/doc/stable/reference/ufuncs.html
+    # math operations
+    # triginimetric functions
+    # advance functions: max, min, comparison etc
+
+
+
+
+# ------------    Numpy Exercises    ------------
+# create zeros, ones, scalar multiplication
+# array of integers
+# 2D matrix
+# identity matrix
+# random numbers matrix
+# evenly spaced numbers
+
+# ----    Numpy indexing and selections    ----
+# reshape
+# select parts of matrix 
+# array functions
 
