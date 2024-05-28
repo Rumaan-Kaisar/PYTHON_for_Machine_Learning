@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (24-May-24 for 25-May-24)
+################# (26-May-24 for 28-May-24)
 
 # Courses: 
     # PrTla PY for DS & ML : 5.6, 5.7(ex), 5.8(ex-soln) 
@@ -86,7 +86,9 @@ np.log(arr)     # gets the "e"-based-log, i.e. ln() value element-wise
 
 
 
-# ------------    Numpy Exercises    ------------
+# ------------    NumPy Exercises    ------------
+# FOR MORE EXERCISE: https://www.w3resource.com/python-exercises/numpy/
+
 # create zeros, ones, scalar multiplication
 # array of integers
 # 2D matrix
@@ -99,3 +101,29 @@ np.log(arr)     # gets the "e"-based-log, i.e. ln() value element-wise
 # select parts of matrix 
 # array functions
 
+
+# Import NumPy as np
+import numpy as np
+
+# Create an array of 10 zeros 
+np.zeros(10)
+np.zeros((2, 5), dtype=int)
+np.zeros((5, 2), dtype=float)
+
+# Create an array of 10 ones
+np.ones(10)
+np.ones((2, 5), dtype=int)
+np.ones((5, 2), dtype=int)
+
+# Create an array of 10 fives
+5*np.ones(10)
+
+# Create an array of the integers from 10 to 50
+np.arange(10, 50)
+
+# Create an array of all the even integers from 10 to 50
+# TRICK: use increment
+np.arange(10, 50, 2)
+
+# ----  rev[26-may-24]  ----
+#### Create a 3x3 matrix with values ranging from 0 to 8
