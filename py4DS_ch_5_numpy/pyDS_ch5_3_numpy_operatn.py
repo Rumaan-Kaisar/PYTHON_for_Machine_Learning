@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (26-May-24 for 28-May-24)
+################# (28-May-24 for 29-May-24)
 
 # Courses: 
     # PrTla PY for DS & ML : 5.6, 5.7(ex), 5.8(ex-soln) 
@@ -125,5 +125,23 @@ np.arange(10, 50)
 # TRICK: use increment
 np.arange(10, 50, 2)
 
-# ----  rev[26-may-24]  ----
-#### Create a 3x3 matrix with values ranging from 0 to 8
+# Create a 3x3 matrix with values ranging from 0 to 8
+arr1 = np.arange(0, 9)
+arr1.reshape(3, 3)
+# we can do that in single line
+np.arange(0, 9).reshape(3, 3)
+
+# Create a 3x3 identity matrix
+np.eye(3, 3)
+
+
+# ----  random numbers  ----
+# Use NumPy to generate a random number between 0 and 1
+np.random.rand()    # rand() uses uniform distribution
+np.random.rand(1)    # gives an array containing one random number
+
+# ----  rev[28-may-24]  ----
+# Use NumPy to generate an array of 25 random numbers sampled from a standard normal distribution
+
+
+
