@@ -190,3 +190,9 @@ print(subArr2D_3)
 subArr2D_4 = arr_2D[:, 3]  # 4th column
 print(subArr2D_4)
 
+# Note: useing [:, 1] will return a 1D array
+# but [:, 1:2]  will return a 2D array, 
+    # an array containing arrays of single element
+arr_2D[:, 1:2]
+arr_2D[:, 3:4]
+
