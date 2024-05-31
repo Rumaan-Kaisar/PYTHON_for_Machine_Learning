@@ -177,16 +177,16 @@ arr_3[arr_3 > 7]
 arr_2D = np.arange(50).reshape(5, 10)
 print(arr_2D)
 
-subArr2D_1 = arr_2D [3, 1:4]
+subArr2D_1 = arr_2D[3, 1:4]
 print(subArr2D_1)
 
-subArr2D_2 = arr_2D [1:3, 3:5]
+subArr2D_2 = arr_2D[1:3, 3:5]
 print(subArr2D_2)
 
 # getting column:
-subArr2D_3 = arr_2D [:, 1]  # 2nd column
+subArr2D_3 = arr_2D[:, 1]  # 2nd column
 print(subArr2D_3)
 
-subArr2D_4 = arr_2D [:, 3]  # 4th column
+subArr2D_4 = arr_2D[:, 3]  # 4th column
 print(subArr2D_4)
 
