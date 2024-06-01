@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (29-May-24 for 31-May-24)
+################# (31-May-24 for 01-May-24)
 
 # Courses: 
     # PrTla PY for DS & ML : 5.6, 5.7(ex), 5.8(ex-soln) 
@@ -110,20 +110,25 @@ np.zeros(10)
 np.zeros((2, 5), dtype=int)
 np.zeros((5, 2), dtype=float)
 
+
 # Create an array of 10 ones
 np.ones(10)
 np.ones((2, 5), dtype=int)
 np.ones((5, 2), dtype=int)
 
+
 # Create an array of 10 fives
 5*np.ones(10)
+
 
 # Create an array of the integers from 10 to 50
 np.arange(10, 50)
 
+
 # Create an array of all the even integers from 10 to 50
 # TRICK: use increment
 np.arange(10, 50, 2)
+
 
 # Create a 3x3 matrix with values ranging from 0 to 8
 arr1 = np.arange(0, 9)
@@ -131,8 +136,10 @@ arr1.reshape(3, 3)
 # we can do that in single line
 np.arange(0, 9).reshape(3, 3)
 
+
 # Create a 3x3 identity matrix
 np.eye(3, 3)
+
 
 
 # ----  random numbers  ----
@@ -140,8 +147,10 @@ np.eye(3, 3)
 np.random.rand()    # rand() uses uniform distribution
 np.random.rand(1)    # gives an array containing one random number
 
+
 # Use NumPy to generate an array of 25 random numbers sampled from a "Standard Normal Distribution"
 np.random.randn(25)
+
 
 # Create the following matrix:
 """ 
@@ -164,6 +173,64 @@ np.linspace(0.01, 1, 100).reshape(10, 10)
 # we can also do:
 np.arange(1,101).reshape(10,10) / 100   # similar to firsat approach
 
+
 # Create an array of 20 linearly spaced points between 0 and 1:
 np.linspace(0, 1, 20)
 
+
+
+# ----  Numpy Indexing and Selection  ----
+# Now you will be given a few matrices, and be asked to replicate the resulting matrix outputs:
+""" 
+    array( [[ 1,  2,  3,  4,  5],
+            [ 6,  7,  8,  9, 10],
+            [11, 12, 13, 14, 15],
+            [16, 17, 18, 19, 20],
+            [21, 22, 23, 24, 25]] )
+
+"""
+mat = np.arange(1,26).reshape(5,5)
+mat
+
+
+# write code that reproduces the output as:
+""" 
+    array(  [[12, 13, 14, 15],
+             [17, 18, 19, 20],
+             [22, 23, 24, 25]]  )
+"""
+subArr2D_1 = mat[1:, 1:]
+print(subArr2D_1)
+
+
+# select "20" from the above matrix
+mat[3, -1]
+mat[3, 4]   # ALTERNATIVE
+
+
+# get following
+""" 
+    array( [[ 2],
+            [ 7],
+            [12]]) 
+"""
+mat[:3, 1]  # gets as 1D array 
+mat[:3, 1:2]  # returns the column as 2D array 
+
+
+# get: array([21, 22, 23, 24, 25])
+mat[4, :]
+
+
+# get:
+""" 
+    array( [[16, 17, 18, 19, 20],
+            [21, 22, 23, 24, 25]])
+"""
+mat[3:, :]
+mat[3:5, :]  # alternative. Notice we exceed the last-index of "mat"
+
+
+# ----  numpy: universal array functions  ----
+### Now do the following
+#### Get the sum of all the values in mat
