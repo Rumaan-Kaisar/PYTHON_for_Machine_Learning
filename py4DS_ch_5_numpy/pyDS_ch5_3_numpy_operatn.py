@@ -1,9 +1,9 @@
 
-################# 5.6: full, 5.7: full
+################# 5.6: full, 5.7: full, 5.8: 00.55
 # copy:  
 #        
 #        
-################# (31-May-24 for 01-May-24)
+################# (01-jun-24 for 02-jun-24)
 
 # Courses: 
     # PrTla PY for DS & ML : 5.6, 5.7(ex), 5.8(ex-soln) 
@@ -122,12 +122,13 @@ np.ones((5, 2), dtype=int)
 
 
 # Create an array of the integers from 10 to 50
-np.arange(10, 50)
+np.arange(10, 51)
 
 
 # Create an array of all the even integers from 10 to 50
-# TRICK: use increment
-np.arange(10, 50, 2)
+# TRICK: use increment or stepSize
+np.arange(10, 51, 2)
+# notice, we use 51, because the endpoint is excluded
 
 
 # Create a 3x3 matrix with values ranging from 0 to 8
@@ -138,8 +139,10 @@ np.arange(0, 9).reshape(3, 3)
 
 
 # Create a 3x3 identity matrix
-np.eye(3, 3)
-
+# note that we don't need to specify 3x3 by (3, 3)
+# since identity matices are always square, we just use: np.eye(3)
+# np.eye(3, 3)
+np.eye(3)
 
 
 # ----  random numbers  ----
@@ -232,5 +235,17 @@ mat[3:5, :]  # alternative. Notice we exceed the last-index of "mat"
 
 
 # ----  numpy: universal array functions  ----
-### Now do the following
-#### Get the sum of all the values in mat
+# Get the sum of all the values in mat
+mat.sum()
+
+# Get the standard deviation of the values in mat
+    # numpy.std()
+    # std = sqrt(mean(x)) , where x = abs(a - a.mean())**2
+mat.std()
+
+# Get the sum of all the columns in mat
+    # axis=1 for row-wise sum
+    # axis=0 for column-wise sumn
+mat.sum(axis=1)     # sum the rows
+mat.sum(axis=0)     # sum the columns
+
