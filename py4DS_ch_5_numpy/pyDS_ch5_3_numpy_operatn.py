@@ -1,5 +1,5 @@
 
-################# 5.6: full, 5.7: full, 5.8: 00.55
+################# 5.6: full, 5.7: full, 5.8: 5.11
 # copy:  
 #        
 #        
@@ -119,7 +119,8 @@ np.ones((5, 2), dtype=int)
 
 # Create an array of 10 fives
 5*np.ones(10)
-
+# Another way:  use addition to zeros 
+np.zeros(10) + 5    # array of 10, 5s
 
 # Create an array of the integers from 10 to 50
 np.arange(10, 51)
@@ -152,6 +153,7 @@ np.random.rand(1)    # gives an array containing one random number
 
 
 # Use NumPy to generate an array of 25 random numbers sampled from a "Standard Normal Distribution"
+# notice it'll return 1D array of 25 numbers, not 5x5
 np.random.randn(25)
 
 
