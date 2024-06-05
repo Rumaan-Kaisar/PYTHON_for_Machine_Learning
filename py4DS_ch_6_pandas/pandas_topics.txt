@@ -1,0 +1,23 @@
+
+--------   A-Z PY for Data-Science   --------
+Previously:
+    inside : py4DS_ch_2_dataFrame
+
+        pyDS_ch2_1_pandas_imprt_Xplr_colRenm
+            A-Z PY for Data-Science    5.1, 5.2, 5.3
+
+        pyDS_ch2_2_subsetting
+            A-Z PY for Data-Science    5.4
+
+        pyDS_ch2_3_basic_opr
+            A-Z PY for Data-Science    5.5
+
+        pyDS_ch2_4_filtering
+            A-Z PY for Data-Science    5.6
+
+        pyDS_ch2_5_at_iat
+            A-Z PY for Data-Science    5.7
+
+
+
+--------   PrTla PY for DS & ML   --------
