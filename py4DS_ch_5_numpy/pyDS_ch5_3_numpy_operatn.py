@@ -1,10 +1,4 @@
 
-################# 5.6: full, 5.7: full, 5.8: 5.11
-# copy:  
-#        
-#        
-################# (01-jun-24 for 02-jun-24)
-
 # Courses: 
     # PrTla PY for DS & ML : 5.6, 5.7(ex), 5.8(ex-soln) 
 
@@ -176,10 +170,11 @@ np.arange(0.01, 1.01, 0.01).reshape(10, 10)
 # alternatively
 np.linspace(0.01, 1, 100).reshape(10, 10)
 # we can also do:
-np.arange(1,101).reshape(10,10) / 100   # similar to firsat approach
+np.arange(1,101).reshape(10,10) / 100   # similar to first approach
 
 
 # Create an array of 20 linearly spaced points between 0 and 1:
+    # notice 0, 1 also included in those 20 points
 np.linspace(0, 1, 20)
 
 
@@ -204,7 +199,7 @@ mat
              [17, 18, 19, 20],
              [22, 23, 24, 25]]  )
 """
-subArr2D_1 = mat[1:, 1:]
+subArr2D_1 = mat[2:, 1:]
 print(subArr2D_1)
 
 
@@ -220,11 +215,13 @@ mat[3, 4]   # ALTERNATIVE
             [12]]) 
 """
 mat[:3, 1]  # gets as 1D array 
-mat[:3, 1:2]  # returns the column as 2D array 
+mat[:3, 1:2]  # returns the column as 2D array as 3x1 matrix
 
 
 # get: array([21, 22, 23, 24, 25])
 mat[4, :]
+# alternative
+mat[-1, :]
 
 
 # get:
@@ -239,15 +236,20 @@ mat[3:5, :]  # alternative. Notice we exceed the last-index of "mat"
 # ----  numpy: universal array functions  ----
 # Get the sum of all the values in mat
 mat.sum()
+# alternative
+np.sum(mat)
 
 # Get the standard deviation of the values in mat
     # numpy.std()
     # std = sqrt(mean(x)) , where x = abs(a - a.mean())**2
 mat.std()
+# alternative
+np.std(mat)
 
 # Get the sum of all the columns in mat
     # axis=1 for row-wise sum
     # axis=0 for column-wise sumn
+    # we'll se more like this in "pandas" library
 mat.sum(axis=1)     # sum the rows
 mat.sum(axis=0)     # sum the columns
 
