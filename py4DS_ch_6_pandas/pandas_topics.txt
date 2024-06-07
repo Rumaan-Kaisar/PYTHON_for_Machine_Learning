@@ -21,8 +21,6 @@ Previously:
 
 
 --------   PrTla PY for DS & ML   --------
-
-
 Welcome to the Pandas Section!
 Introduction to Pandas
 Series
@@ -36,3 +34,22 @@ Operations
 Data Input and Output
 
 
+
+Welcome to the Pandas Section:      Write some objectives
+Introduction to Pandas:         Use of pandas and install
+Series:         pandas series
+DataFrames - Part 1:        series and dataframe, creating dataframe, methods, arithmetic, Operations
+DataFrames - Part 2:        conditional opeartions, filtering and selection, manipulation, 
+DataFrames - Part 3:        Generating dataframe and Grouping, accessing via multi-level index, index hierarchy
+Missing Data:       use NaN
+
+----  rev[05-jun-2024]  ----
+Groupby:        
+Merging Joining and Concatenating
+Operations
+Data Input and Output
+
+
+dataframe 2 paRTS:
+1: BASIC Operations
+2: SELECT FILTER INDEX
