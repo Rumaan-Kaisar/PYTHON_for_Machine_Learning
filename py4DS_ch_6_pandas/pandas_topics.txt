@@ -21,3 +21,18 @@ Previously:
 
 
 --------   PrTla PY for DS & ML   --------
+
+
+Welcome to the Pandas Section!
+Introduction to Pandas
+Series
+DataFrames - Part 1
+DataFrames - Part 2
+DataFrames - Part 3
+Missing Data
+Groupby
+Merging Joining and Concatenating
+Operations
+Data Input and Output
+
+
