@@ -1,9 +1,9 @@
 
-################# 6.1: FULL, 6.2: full, 6.3: 0.34
+################# 6.1: FULL, 6.2: full, 6.3: 3.41
 # copy:  
 #        
 #        
-################# (09-jun-24 for 11-jun-24)
+################# (12-jun-24 for 14-jun-24)
 
 # Courses:  PrTla PY for DS & ML >   6.1, 6.2, 6.3
 #           Previously: py4DS_ch_2_dataFrame 
@@ -55,4 +55,33 @@
 # The difference bewteen "pandas-series" and "numpy-array" is:
     # series can access lebels, i.e. it can "indexed by labels"
 
-    
+
+# lets create some series from various object types
+import numpy as np
+import pandas as pd
+
+# we create 4 different python objects: 2 lists, 1 np-array, 1 dict
+laBls = ['a', 'b', 'c']
+my_dt = [10, 20, 30]
+arr = np.array(my_dt)   # convert to numpy-array
+dct = {'a':10, 'b':20, 'c':30}
+
+
+# ------  creating a series  ------
+    # pd.Series() takes lots of parameters. 
+    # We'll use the parameters "data" & "index"
+pd.Series(data=my_dt)   # notice the index appears autometically
+
+# The special thing is: we can set our own index
+# following we set the list "laBls" as the index to the "Series"
+sr_1 = pd.Series(data=my_dt, index=laBls)
+sr_1
+
+# so unlike np-array we can have lables in a Series
+# we can access the elements by their 'lables'
+
+
+# ----  other ways to create a series  ----
+
+
+
