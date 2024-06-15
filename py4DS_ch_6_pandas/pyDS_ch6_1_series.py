@@ -1,9 +1,9 @@
 
-################# 6.1: FULL, 6.2: full, 6.3: 3.41
+################# 6.1: FULL, 6.2: full, 6.3: 5:44
 # copy:  
 #        
 #        
-################# (12-jun-24 for 14-jun-24)
+################# (14-jun-24 for 15-jun-24)
 
 # Courses:  PrTla PY for DS & ML >   6.1, 6.2, 6.3
 #           Previously: py4DS_ch_2_dataFrame 
@@ -57,13 +57,14 @@
 
 
 # lets create some series from various object types
+from audioop import avg
 import numpy as np
 import pandas as pd
 
 # we create 4 different python objects: 2 lists, 1 np-array, 1 dict
 laBls = ['a', 'b', 'c']
 my_dt = [10, 20, 30]
-arr = np.array(my_dt)   # convert to numpy-array
+arr_1 = np.array(my_dt)   # convert to numpy-array
 dct = {'a':10, 'b':20, 'c':30}
 
 
@@ -81,7 +82,32 @@ sr_1
 # we can access the elements by their 'lables'
 
 
-# ----  other ways to create a series  ----
+# --------    other ways to create a series    --------
+# ----  using NumPy-array  ----
+pd.Series(arr_1)
+# we can also attach our "index" to it
+pd.Series(data=arr_1, index=laBls)
+
+# ----  using Dictionary  ----
+    # the "keys" will become index and 
+    # "values" will be corresponding data-points
+pd.Series(data= dct)    # passing dictionary as data
+
+
+
+# --------    pandas-Series can hold "any types"    --------
+# Note:
+    # another thing that differentialte pandas-Series from numpy-array
+    # pandas-Series can hold "any types" as data points
+# strings as data points
+pd.Series(data= laBls)
+
+# function references as data points
+    # we can insert "list of functions" as data-points into a Pandas-Series
+    # in that case the Series will hold the function-referances as the data-points
+# following we use "list of built-in functions" as data-points
+pd.Series(data= [sum, avg, max, min], index=["s", "a", "mx", "mn"])
+
 
 
 
