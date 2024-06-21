@@ -1,9 +1,9 @@
 
-################# 6.4: 3.50
+################# 6.4: 9.45
 # copy:  
 #        
 #        
-################# (18-jun-24 for 19-jun-24 )
+################# (19-jun-24 for 21-jun-24 )
 
 # Courses: PrTla PY for DS & ML >   6.4, 6.5(1/2)
 
@@ -74,6 +74,46 @@ type(fd['c3'])
 type(fd)
 
 # method 2: SQL-format, useing "."
+    # however it's good to use []-format, 
+    # if we use'.', we can get confused with built-in methods (e.g. last, ilk, loc)
+    # using SQL-format ".", can overrite those built-in methods with "column-names"
+    # so pandas get confused
+print(fd.c3)
+
+# multiple columns: use list of column-names
+    # we'll get a DataFrame instead of Series
+    # single column: Series, multi-column: DataFrame
+fd[['c2', 'c4']]
+
+# creating a new column
+fd['new1'] = [113, 123, 133, 143, 153]
+
+# or we can use operations
+fd['new2'] = fd['c1'] + fd['c2']
+fd
+
+# DELETING a column
+# axis: 0 is row, 1 is column
+fd.drop('nwe1', axis=1)
+
+# Note: original dataframe not affected, i.e. the column is not deleted
+    # not to accidentally lose information, it's done for safety
+    # inplace=True, actually occur the changes in-place (to actually delete the data)
+print(fd)
+fd.drop('nwe1', axis=1, inplace=True)
+print(fd)
+
+# drop a row
+fd.drop('r2')   # by default axis=0
+# fd.drop('r2', axis=0)
+
+# why axis=0 is row, and axis=1 is column?
+    # if we notice the shape of the DataFrame
+fd.shape    # (row, column)
+    # (row, column) is a tuple, row at index 0, and column is index 1
+
+
+# ----  selecting rows  ----
 
 
 
