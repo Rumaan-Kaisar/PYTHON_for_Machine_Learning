@@ -1,5 +1,5 @@
 
-################# 6.4: 9.45
+################# 6.4: 12.7
 # copy:  
 #        
 #        
@@ -113,7 +113,22 @@ fd.shape    # (row, column)
     # (row, column) is a tuple, row at index 0, and column is index 1
 
 
-# ----  selecting rows  ----
+# --------  selecting rows: loc[] and iloc[]  --------
+# The "single row" of a DataFrame is also a "Series"
+# There is two ways to select rows in a DataFrame
+    # loc[] and iloc[] are methods of pandas, but notice we're using "[]" instead of "()"
 
+# loc['label_of_row']   :   label based index
+    # notice we have to use "labels" of the row
+fd.loc['r2']    # accessing row 2 
+
+# iloc[index_of_row]    :   numeric based index
+    # notice in this case we use numerical "index" even if our rows are indexed by strings
+fd.iloc[1]    # accessing row 2 
+
+
+
+
+# ------------    subsetting: sub-sets of rows and columns    ------------
 
 
