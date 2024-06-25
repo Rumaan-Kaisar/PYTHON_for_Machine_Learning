@@ -85,7 +85,7 @@ w[2]    # 'w'
 
 # ---------    slicing    ---------
 # assume we are inside sqaure braces []
-# ":" called slicing operator
+# ":" is called slicing operator
 # 1 colon only
         :   
     # means slice everything, from satrt-finish, it remains same
