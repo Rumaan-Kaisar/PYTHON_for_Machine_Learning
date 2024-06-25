@@ -155,5 +155,24 @@ fd.loc[['r1', 'r3'], ['c2', 'c4']]
 # ------------    conditional selections and multi index    ------------
 
 # ------    conditional selections    ------
-# we can apply conditional selection using brackets notation in pandas
+# we can apply conditional selection using "[]" brackets notation in pandas
 # it is very similar to NumPy
+
+# Boolian DataFrame, similar to NumPy-array
+fd > 0
+
+# use boolian DataFrame for selection
+booLdf = fd > 0
+
+# filter / selecting
+    # values for True and NaN for False
+fd[booLdf]
+
+# we can do it in single line
+fd[fd > 0]
+
+# ------   avoiding "NaN"   ------
+# instead of using conditions like "fd > 0", we'll use row/column values
+# eg. fd['r1'] > 0
+# it'll only returns the rows / columns as the subset of DataFrame where condtions are true
+
