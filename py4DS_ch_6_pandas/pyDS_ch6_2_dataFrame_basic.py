@@ -1,9 +1,9 @@
 
-################# 6.4: full, 6.5: 0.53
+################# 6.4: full, 6.5: 2.40
 # copy:  
 #        
 #        
-################# (19-jun-24 for 21-jun-24 )
+################# (25-jun-24 for 26-jun-24 )
 
 # Courses: PrTla PY for DS & ML >   6.4, 6.5(1/2)
 
@@ -171,8 +171,36 @@ fd[booLdf]
 # we can do it in single line
 fd[fd > 0]
 
+
+
 # ------   avoiding "NaN"   ------
-# instead of using conditions like "fd > 0", we'll use row/column values
-# eg. fd['r1'] > 0
-# it'll only returns the rows / columns as the subset of DataFrame where condtions are true
+# instead of using conditions like "fd > 0", we'll use row/column values eg. fd['c2'] > 0
+    # it'll only returns the rows / columns as the subset of DataFrame where condtions are true
+    # where 'fd' is the whole dataset and 
+    # fd['c2'] is a column
+
+# "fd > 0" : condition for entire DataFrame
+# "fd['c2'] > 0" : condition for a column
+
+# Using fd[fd['c2'] > 0] will return a subset of the dataframe containing 
+    # only the rows where the condition is true for the column "c2", instead of returning NaN.
+
+
+# using column-condition
+    # operation fd[fd['c2'] > 0] filters the dataframe "fd" to include 
+        # only the rows where the values in column c2 are greater than 0.
+fd['c2'] > 0    # condition for column c2
+
+# filtering the DataFrame fd with condition "fd['c2'] > 0"
+fd[fd['c2'] > 0]
+
+
+# using row-condition
+    # we have to use "loc" and slicing operator ":"
+# we can filter "fd" for a row
+fd.loc['r3'] > 0    # condition for row r3
+
+# filtering the DataFrame fd with condition "fd.loc['r3'] > 0"
+fd.loc[:, fd.loc['r3'] > 0]
+
 
