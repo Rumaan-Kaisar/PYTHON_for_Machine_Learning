@@ -1,9 +1,9 @@
 
-################# 6.4: full, 6.5: 2.40
+################# 6.4: full, 6.5: 8.35
 # copy:  
 #        
 #        
-################# (25-jun-24 for 26-jun-24 )
+################# (26-jun-24 for 28-jun-24 )
 
 # Courses: PrTla PY for DS & ML >   6.4, 6.5(1/2)
 
@@ -203,4 +203,37 @@ fd.loc['r3'] > 0    # condition for row r3
 # filtering the DataFrame fd with condition "fd.loc['r3'] > 0"
 fd.loc[:, fd.loc['r3'] > 0]
 
+# get all the rows where 'c4' < 0
+# it returns the row 'r3', because it has -ve value in column 'c4'
+fd[fd['c4']<0]
+
+# work with resulting DataFrame, after filtering
+reslt  = fd[fd['c2'] > 0]
+
+# get result's 2nd row
+reslt.loc['r3']     # because r2 and r4 are eliminated in "reslt"
+
+# result's 1st column
+reslt['c1']
+
+# we can do it in a lingle line
+fd[fd['c2'] > 0]['c1']
+
+# getting multiple columns
+fd[fd['c2'] > 0][['c2', 'c4']]
+
+# getting 2nd row
+fd[fd['c2'] > 0].iloc[1]
+
+# "fd[fd['c2'] > 0][['c2', 'c4']]" is equivalent of following lines togather
+boolser = fd['c2'] > 0 
+result = fd[boolser] 
+mycols = ['c2', 'c4'] 
+result[mycols]
+# since more variables use more memory, "fd[fd['c2'] > 0][['c2', 'c4']]" recommended
+
+
+
+# ----  rev[26-jun-2024]  ----
+# try to move next ".py"
 
