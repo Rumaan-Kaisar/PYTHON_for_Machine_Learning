@@ -1,11 +1,5 @@
 
-################# 6.4: full, 6.5: 8.35
-# copy:  
-#        
-#        
-################# (26-jun-24 for 28-jun-24 )
-
-# Courses: PrTla PY for DS & ML >   6.4, 6.5(1/2)
+# Courses: PrTla PY for DS & ML >   6.4, 6.5(11:38)
 
 # ------------    dataframe basics    ------------
 # we mainly work with "dataframes" in pandas
@@ -234,6 +228,19 @@ result[mycols]
 
 
 
-# ----  rev[26-jun-2024]  ----
-# try to move next ".py"
+# --------  multiple conditions  --------
+# use bitwise "&", "|" instead of "and", "or"
+
+# following will return an error
+fd[(fd['c2'] > 0) and (fd['c4'] > 1)]   # ERR
+# Why error? The truth value of a Series is ambiguous
+    # because python normal "and" operator can't compare a "Series of Boolean" to another "Series of Boolean"
+    # "and" operator deal with single Boolean value at a time. E.g. True and True, True and False
+
+# Use bitwise-AND operator "&"
+    # always use () for seperations between conditions
+fd[(fd['c1'] > 0) & (fd['c3'] > 1)]   # Notice "&" instead of "and"
+
+# similarly we can use bitwise-OR operator "|"
+fd[(fd['c1'] > 0) | (fd['c3'] > 1)]   # Notice "|" instead of "or"
 
