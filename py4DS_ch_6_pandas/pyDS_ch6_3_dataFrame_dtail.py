@@ -1,9 +1,9 @@
 
-################# 6.5: 13.11
+################# 6.5: full
 # copy:  
 #        
 #        
-################# (29-jun-24 for 30-jun-24)
+################# (30-jun-24 for 01-jul-24)
 
 # Courses: PrTla PY for DS & ML >   6.5(11:40), 6.6, 6.7
 
@@ -20,6 +20,7 @@ fd = pd.DataFrame(data=rnd_20, index=["r1", "r2", "r3", "r4", "r5"], columns=["c
 
 
 # ------------    changing index    ------------
+# ----  reset_index  ----
 fd
 # resetting index to default
 fd.reset_index()
@@ -31,4 +32,26 @@ fd.reset_index()
 fd
 # use
 # fd.reset_index(inplace=True)
+
+
+# ----  set_index  ----
+# Awesome trick to create a list
+    # calling split() on a string!!
+    # don't need to typ ',' or ""
+newind = "CA NY WY OR CO".split()   # split on a blank space
+newind
+
+# we insert this "newind" to our DataFrame,
+    # notice the dimension must match
+fd['States'] = newind
+fd
+
+# column as index: setting a column as index
+    # instead of resetting we want the column "States" to be the index of our DataFrame
+    # use set_index() instead of reset_index()
+fd.set_index("States")  # overrides the old-index
+# note: we need to apply 'inpalce'
+# also we cannot retain information from the old-index (as in reset_index)
+
+
 
