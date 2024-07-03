@@ -1,9 +1,9 @@
 
-################# 6.5: full
-# copy:  
+################# 6.5: full, 6.6: 0.48
+# copy:  ipynbs from PrTla
 #        
 #        
-################# (30-jun-24 for 01-jul-24)
+################# (02-jul-24 for 03-jul-24)
 
 # Courses: PrTla PY for DS & ML >   6.5(11:40), 6.6, 6.7
 
@@ -17,6 +17,7 @@ np.random.seed(101)
 rnd_20 = randn(5, 4)
 
 fd = pd.DataFrame(data=rnd_20, index=["r1", "r2", "r3", "r4", "r5"], columns=["c1", "c2", "c3", "c4"])
+
 
 
 # ------------    changing index    ------------
@@ -53,5 +54,19 @@ fd.set_index("States")  # overrides the old-index
 # note: we need to apply 'inpalce'
 # also we cannot retain information from the old-index (as in reset_index)
 
+
+
+
+# --------    multi-index    --------
+# multi-index DataFrame
+
+# working with a multi-index DataFrame
+
+
+
+
+
+
+# --------    index-hierarchy    --------
 
 
