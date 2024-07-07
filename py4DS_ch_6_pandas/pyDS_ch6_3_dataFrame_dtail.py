@@ -1,9 +1,9 @@
 
-################# 6.5: full, 6.6: 2.43
+################# 6.5: full, 6.6: 5.10
 # copy:  
 #        
 #        
-################# (05-jul-24 for 06-jul-24)
+################# (06-jul-24 for 07-jul-24)
 
 # Courses: PrTla PY for DS & ML >   6.5(11:40), 6.6, 6.7
 
@@ -64,12 +64,12 @@ import pandas as pd
 
 # two lists
 # "Gl G1 G1 G2 G2 G2".split()
-outside = ['Gl', 'G1', 'G1', 'G2', 'G2', 'G2']
+outside = ['G1', 'G1', 'G1', 'G2', 'G2', 'G2']
 inside = [1,2,3,1,2,3]
 
 # create a "list of tuples / pairs"
 hier_index = list(zip(outside,inside))  # zip is used to create pair (a, b)
-hier_index  # [('Gl', 1), ('G1', 2), ('G1', 3), ('G2', 1), ('G2', 2), ('G2', 3)]
+hier_index  # [('G1', 1), ('G1', 2), ('G1', 3), ('G2', 1), ('G2', 2), ('G2', 3)]
 
 # creating "Multi-index"
 # "pd.Multiindex.from_tuples" creates a multi-index from a "list of tuples"
@@ -80,14 +80,33 @@ hier_index
 # creating a Dataframe using above Multi-Index
 df = pd.DataFrame(np.random.randn(6, 2), index=hier_index, columns=['A', 'B'])
 # np.random.randn(6, 2) creates a 6x2 matrix of 12 random numbers
+# you'll notice the 2-level of index
+    # 1st level [' G1', 'G2']
+    # 2nd leevl [1, 2, 3] for each G1 and G2
+    # so followwing is called: "Multi-level index" or "Index-Hierarchy"
 
-# working with a multi-index DataFrame
+""" 
+                A	        B
+    G1	1	0.622117	1.271678
+        2	1.084815	0.474254
+        3	-0.448297	0.217219
+    G2	1	0.117091	0.311963
+        2	-0.033285	-1.006097
+        3	1.835885	-0.526372
+"""
 
 
+# working with a multi-index DataFrame:
+    # Accessing data from a multi-level indexed DataFrame
+    # we'll use row-selection first
+    # call most-outside index and proceed deeper
 
+# Grab most-outside index, we'll get a sub-DataFrame
+df.loc['G1']
+# then we use next level of index
+df.loc['G1'].loc[1]     # returns the first row (labeled '1') of 'G1' as a Series
 
-
-
-# --------    index-hierarchy    --------
-
-
+# naming multi-level index
+df.index.names  # notice no names
+df.index.names  = ["Groups", "Num"]
+df
