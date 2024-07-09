@@ -1,9 +1,9 @@
 
-################# 6.5: full, 6.6: 5.10
+################# 6.5: full, 6.6: full, 6.7: 1:40
 # copy:  
 #        
 #        
-################# (06-jul-24 for 07-jul-24)
+################# (07-jul-24 for 09-jul-24)
 
 # Courses: PrTla PY for DS & ML >   6.5(11:40), 6.6, 6.7
 
@@ -57,7 +57,7 @@ fd.set_index("States")  # overrides the old-index
 
 
 
-# --------    multi-index    --------
+# --------    multi-index (index-hierarchy)    --------
 # multi-index DataFrame
 import numpy as np
 import pandas as pd
@@ -106,7 +106,28 @@ df.loc['G1']
 # then we use next level of index
 df.loc['G1'].loc[1]     # returns the first row (labeled '1') of 'G1' as a Series
 
+# accessing a single element, using both raw-index and column-index
+df.loc['G2'].loc[2]['B']
+# row.row.column, no '.' is used for column i.e. no attribute used
+
 # naming multi-level index
 df.index.names  # notice no names
 df.index.names  = ["Groups", "Num"]
 df
+
+
+
+# ------    cross-section (xs)    ------
+# returns cross-section of row(s) or column(s) in multi-indexed dataframe
+# everything under 'G1'
+df.loc['G1']    # using 'loc'
+df.xs('G1')     # using 'xs', also notice '()' used
+
+# xs can skip levels to get deep into multi-level-index
+    # 'xs' mostly used data-visualization projects, to grab stacked-indexed data
+    # lets grab "both Num=1 indexs" from both 'G1' and 'G2' groups
+        # it's little bit treacky using 'loc'
+df.xs(1, level="Num")
+# above gets all "1 indexes" from index-level named "Num"
+
+
