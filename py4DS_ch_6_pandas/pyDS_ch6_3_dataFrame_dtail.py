@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (07-jul-24 for 09-jul-24)
+################# (09-JUL-24 for 10-JUL-24)
 
 # Courses: PrTla PY for DS & ML >   6.5(11:40), 6.6, 6.7
 
@@ -129,5 +129,33 @@ df.xs('G1')     # using 'xs', also notice '()' used
         # it's little bit treacky using 'loc'
 df.xs(1, level="Num")
 # above gets all "1 indexes" from index-level named "Num"
+
+
+
+
+# ------------    missing data    ------------
+# There are methods that can deal with missing data
+
+# pandas wwill autometically fill the missing data with "NaN" value. 
+# we can do either:
+    # drop the NaN 
+    # fill the NaN 
+
+import numpy as np
+import pandas as pd
+
+# create a DataFrame
+# just like we could create a "Series" from a "Dict", 
+    # we can create a "DataFrame" from a "Dict" as wwell
+    # the keys 'A', 'B', 'C' will be the columns
+    # the points will be "list" of values for "each key"
+    # we'll use "np.nan" to make a missing value
+dCt = {'A': [1, 2, np.nan], 'B': [5, np.nan, np.nan], 'C': [1, 2, 3]}
+
+# To create a DataFrame we just pass the dictionary as a argumnet to pd.DataFrame()
+df = pd.DataFrame(dCt)
+df
+
+
 
 
