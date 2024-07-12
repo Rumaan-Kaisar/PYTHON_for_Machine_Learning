@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (09-JUL-24 for 10-JUL-24)
+################# (10-JUL-24 for 12-JUL-24)
 
 # Courses: PrTla PY for DS & ML >   6.5(11:40), 6.6, 6.7
 
@@ -153,9 +153,32 @@ import pandas as pd
 dCt = {'A': [1, 2, np.nan], 'B': [5, np.nan, np.nan], 'C': [1, 2, 3]}
 
 # To create a DataFrame we just pass the dictionary as a argumnet to pd.DataFrame()
-df = pd.DataFrame(dCt)
-df
+df2 = pd.DataFrame(dCt)
+df2
+# notice 1st-row nad 3rd-column has no missing values
 
 
+# ----  dropna()  ----
+# drops any rows and columns that contains 1 or more NaN values
+# axis = 0, row-wise is default
+df2.dropna()    # drops rows
+
+# drop columns
+df2.dropna(axis=1)
+
+# it can also specify a "threshold" for non-NA values, if we set the parameter "thresh"
+    # "thresh = 2" keeps all rows / columns that has "at least 2" non-Na values
+df2.dropna(thresh=2)    # keep rows, that has "at least 2" non-NaN values
+df2.dropna(thresh=1)    # keep rows, that has "at least 3" non-NaN values
+
+
+# ----  rev[10-JUL-2024]  ----
+
+# ----  fillna()  ----
+# fills the NaN with a given value
+# following fills with a string
+
+
+# following fills with a mean
 
 
