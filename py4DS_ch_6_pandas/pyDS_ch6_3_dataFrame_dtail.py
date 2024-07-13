@@ -1,9 +1,9 @@
 
-################# 6.5: full, 6.6: full, 6.7: 1:40
+################# 6.5: full, 6.6: full, 6.7: full
 # copy:  
 #        
 #        
-################# (10-JUL-24 for 12-JUL-24)
+################# (12-JUL-24 for 13-JUL-24)
 
 # Courses: PrTla PY for DS & ML >   6.5(11:40), 6.6, 6.7
 
@@ -158,6 +158,7 @@ df2
 # notice 1st-row nad 3rd-column has no missing values
 
 
+
 # ----  dropna()  ----
 # drops any rows and columns that contains 1 or more NaN values
 # axis = 0, row-wise is default
@@ -172,13 +173,21 @@ df2.dropna(thresh=2)    # keep rows, that has "at least 2" non-NaN values
 df2.dropna(thresh=1)    # keep rows, that has "at least 3" non-NaN values
 
 
-# ----  rev[10-JUL-2024]  ----
 
 # ----  fillna()  ----
 # fills the NaN with a given value
 # following fills with a string
+df2.fillna("howdy")
+df2.fillna(value = "filled data")
 
+# following fills with a given value
+df2.fillna(9.45)
 
-# following fills with a mean
+# following fills with the mean of the column
+# select a column, then use "fillna" with mean of that column
+df2["A"].fillna(value = df2["A"].mean())
+# However, we can use more appropriate statistical method to fill the missing values rather than "mean"
+# Totally depends on the type of data-set
+
 
 
