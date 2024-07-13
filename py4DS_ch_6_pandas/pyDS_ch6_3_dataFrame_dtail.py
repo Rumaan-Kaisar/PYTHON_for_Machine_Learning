@@ -1,10 +1,4 @@
 
-################# 6.5: full, 6.6: full, 6.7: full
-# copy:  
-#        
-#        
-################# (12-JUL-24 for 13-JUL-24)
-
 # Courses: PrTla PY for DS & ML >   6.5(11:40), 6.6, 6.7
 
 import numpy as np
