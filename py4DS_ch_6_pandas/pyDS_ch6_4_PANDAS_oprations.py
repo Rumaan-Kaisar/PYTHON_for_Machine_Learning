@@ -1,9 +1,9 @@
 
-################# 348: 6.8:1.25
-# copy:  image
+################# 348: 6.8:3:38
+# copy:
 #        
 #        
-################# (14-JUL-24 for 16-JUL-24)
+################# (16-JUL-24 for 17-JUL-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -71,3 +71,27 @@ data = {'Company':['GOOG','GOOG','MSFT','MSFT','FB','FB'],
 
 df = pd.DataFrame(data)
 df
+
+# we have the companies: Google, Microsoft and FaceBook, name of different people & their sales
+
+# groupby(): now we group the rows based-on of a column name
+# groupby "company":
+df.groupby('Company')
+# it'll  create a groupby object, stored in a memory:  <pandas.core.groupby.DataFrameGroupBy object at <sEftislsK015E8B8C36D8>
+
+# we can apply an aggregate function as below
+byComp = df.groupby('Company')
+byComp.mean()   # looks at "Sales" and give us the "mean"
+
+# pandas automatically ignores "non-numeric" columns
+    # it applies mean() to all the columns that have "numerical values"
+    # notice "Person" isn't counted because these are strings
+
+# applying other aggrigate functions
+byComp.sum()    # sum
+byComp.std()    # standared deviations
+
+
+
+
+
