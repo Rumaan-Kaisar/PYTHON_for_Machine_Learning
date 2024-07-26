@@ -207,15 +207,6 @@ pd.merge(lEft, riGht, how='inner', on='key')
     # then it creates the rows using that key-column
 
 
-
-# -=-=-=-=-=-=-    24-JUL-2024    -=-=-=-=-=-=-
-
-################# 348: 6.8:full, 6.9: 5.29
-# copy:
-#        
-#        
-################# (24-JUL-24 for 26-JUL-24)
-
 # ----  multiple key-columns  ----
 
 lEft2 = pd.DataFrame( { 'key1': ['K0', 'K0', 'K1', 'K2'],
@@ -231,6 +222,22 @@ riGht2 = pd.DataFrame({ 'key1': ['K0', 'K1', 'K1', 'K2'],
 print(lEft2)
 print(riGht2)
 
+""" 
+
+  key1 key2   A   B
+0   K0   K0  A0  B0 <-
+1   K0   K1  A1  B1 
+2   K1   K0  A2  B2 <-
+3   K2   K1  A3  B3
+
+  key1 key2   C   D
+0   K0   K0  C0  D0 <-
+1   K1   K0  C1  D1 <-
+2   K1   K0  C2  D2 <-
+3   K2   K0  C3  D3
+
+"""
+
 # notice: lEft2, riGht2 has 2 key-columns 'key1' and 'key2' but they have different elemnts
 #  to use multiple key-columns, use the list for 'on='
 
@@ -241,8 +248,34 @@ pd.merge(lEft2, riGht2, on=['key1', 'key2'])       # how='inner' is default
     0   K0	    K0	    A0	B0	C0	D0
     1   K1	    K0	    A2	B2	C1	D1
     2   K1	    K0	    A2	B2	C2	D2
+
+    Note: "A2	B2" repeated since lEft2 has only on row containing combination "K1   K0"
+
+
+    ******     Explain above using ChatGPT     ******
+
+
+
+    Matching Rows:
+        The output DataFrame only includes rows where the combination of key1 and key2 exists in "both" lEft2 and riGht2.
+
+    Merged Columns:
+        The resulting DataFrame includes all columns from both lEft2 and riGht2. 
+        For matching rows, the values from both DataFrames are included.
+
+
+
+    First Row:
+        Both lEft2 and riGht2 have key1='K0' and key2='K0', 
+            -so this row appears in the merged DataFrame with values from both.
+
+    Second and Third Rows:
+        Both have key1='K1' and key2='K0' in lEft2 and riGht2. 
+        However, riGht2 has two rows matching this key combination (C1, D1 and C2, D2), 
+            - so the row from lEft2 is repeated for each match.
+
 """
-# ******     Explain above using ChatGPT     ******
+
 
 
 
