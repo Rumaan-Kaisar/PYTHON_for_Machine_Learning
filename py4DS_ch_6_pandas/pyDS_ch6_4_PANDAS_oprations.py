@@ -130,6 +130,8 @@ df.groupby('Company').describe().transpose()['FB']
         # Concatenating.
 
 
+# --------    concatenation    -------- 
+
 # Example DataFrames
 import pandas as pd
 
@@ -155,10 +157,6 @@ print(df1)
 print(df2)
 print(df3)
 
-
-
-
-# --------    concatenation    -------- 
 
 # It glues together DataFrames
     # DIMENSIONs should match along the axis you are concatenating on. 
