@@ -115,16 +115,6 @@ df.groupby('Company').describe()
 # we can transpose it for better view (columns become rows)
 df.groupby('Company').describe().transpose()
 
-
-
-# -=-=-=-=-=-=-    19-JUL-2024    -=-=-=-=-=-=-
-
-################# 348: 6.8:full, 6.9: 1.13
-# copy:
-#        
-#        
-################# (19-JUL-24 for 20-JUL-24)
-
 # we can also call the column names of this transpose matrix
 df.groupby('Company').describe().transpose()['FB']
 
