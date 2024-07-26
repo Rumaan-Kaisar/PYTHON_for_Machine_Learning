@@ -1,9 +1,9 @@
 
-################# 348: 6.8:3:38
-# copy:
+################# 348: 6.8:6.00
+# copy:     UPLOAD all first -> then change
 #        
 #        
-################# (16-JUL-24 for 17-JUL-24)
+################# (17-JUL-24 for 19-JUL-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -90,8 +90,255 @@ byComp.mean()   # looks at "Sales" and give us the "mean"
 # applying other aggrigate functions
 byComp.sum()    # sum
 byComp.std()    # standared deviations
+# notice, it outputs a DataFrame
+    # so we can access the row of 'FB', careful about '['
+byComp.sum().loc['FB']
+
+# most of the time we'll do that in one line of code:
+df.groupby('Company').sum().loc['FB']
+
+# counts: counts noumber of instences for column
+df.groupby('Company').count()
+# notice "Person" is appeared, because "strings" are countable
+
+# max, min
+df.groupby('Company').max()
+# also notice "Person", but in this case its maxed it according to "alphabetical order"
+df.groupby('Company').min()
+# so in this case we need to avoid "Person"
+    # it's not a good idea to use max, min on a string column
+
+# describe: its very useful for analyzing data-set
+    # gives bunch-of information all at once
+    # such as: count, mean, std, min, max, quartiles
+df.groupby('Company').describe()
+# we can transpose it for better view (columns become rows)
+df.groupby('Company').describe().transpose()
 
 
+
+# -=-=-=-=-=-=-    19-JUL-2024    -=-=-=-=-=-=-
+
+################# 348: 6.8:full, 6.9: 1.13
+# copy:
+#        
+#        
+################# (19-JUL-24 for 20-JUL-24)
+
+# we can also call the column names of this transpose matrix
+df.groupby('Company').describe().transpose()['FB']
+
+
+
+
+# ------------    Merging Joining and Concatenating    ------------
+
+# combine DataFrames using different methods
+# There are 3 main ways of combining DataFrames together: 
+        # Merging, 
+        # Joining and 
+        # Concatenating.
+
+
+# Example DataFrames
+import pandas as pd
+
+df1 = pd.DataFrame({'A': ['A0', 'A1', 'A2', 'A3'],
+                    'B': ['B0', 'B1', 'B2', 'B3'],
+                    'C': ['C0', 'C1', 'C2', 'C3'],
+                    'D': ['D0', 'D1', 'D2', 'D3']},
+                    index=[0, 1, 2, 3])
+
+df2 = pd.DataFrame({'A': ['A4', 'A5', 'A6', 'A7'],
+                    'B': ['B4', 'B5', 'B6', 'B7'],
+                    'C': ['C4', 'C5', 'C6', 'C7'],
+                    'D': ['D4', 'D5', 'D6', 'D7']},
+                        index=[4, 5, 6, 7]) 
+
+df3 = pd.DataFrame({'A': ['A8', 'A9', 'A10', 'A11'],
+                    'B': ['B8', 'B9', 'B10', 'B11'],
+                    'C': ['C8', 'C9', 'C10', 'C11'],
+                    'D': ['D8', 'D9', 'D10', 'D11']},
+                    index=[8, 9, 10, 11])
+
+print(df1)
+print(df2)
+print(df3)
+
+
+
+
+
+# -=-=-=-=-=-=-    20-JUL-2024    -=-=-=-=-=-=-
+
+################# 348: 6.8:full, 6.9: 3.18
+# copy:
+#        
+#        
+################# (20-JUL-24 for 21-JUL-24)
+
+# --------    concatenation    -------- 
+
+# It glues together DataFrames
+    # DIMENSIONs should match along the axis you are concatenating on. 
+    # use-    pd.concat(list of DataFrames)
+    # by Default, axis to join on is 0, i.e. it joins "row-wise"
+pd.concat([df1, df2, df3])    # concate row-wise
+
+# axis = 1: concate column-wise
+    # the DataFrames are placed diagonally in a bigger matrix
+    # all other elements are "NaN"
+    # the reason is the row-index are different [1,2,3, . . ., 11]
+pd.concat([df1, df2, df3], axis = 1)
+
+
+
+
+# -=-=-=-=-=-=-    21-JUL-2024    -=-=-=-=-=-=-
+
+################# 348: 6.8:full, 6.9: 4.01
+# copy:
+#        
+#        
+################# (21-JUL-24 for 23-JUL-24)
+
+# --------    Merging    -------- 
+# using "merge logic" is similar to 'merging SQL tables' togather
+
+# let's create two more "Example DataFrames"
+
+lEft = pd.DataFrame( {'key': ['K0', 'K1', 'K2', 'K3'],
+                        'A': ['A0', 'A1', 'A2', 'A3'],
+                        'B': ['B0', 'B1', 'B2', 'B3']})
+   
+riGht = pd.DataFrame({'key': ['K0', 'K1', 'K2', 'K3'],
+                        'C': ['C0', 'C1', 'C2', 'C3'],
+                        'D': ['D0', 'D1', 'D2', 'D3']})    
+
+print(lEft)
+print(riGht)
+
+# Notice, both have a COMMON column 'key'
+
+# The merge() function allows you to merge DataFrames together 
+    # using a similar logic as merging SQL Tables together. For example:
+
+
+
+
+# -=-=-=-=-=-=-    23-JUL-2024    -=-=-=-=-=-=-
+
+################# 348: 6.8:full, 6.9: 5.02
+# copy:
+#        
+#        
+################# (23-JUL-24 for 24-JUL-24)
+
+# pd.merge(df1, df2, how='inner', on='col_name')
+    # by defaulet, how='inner'
+    # on: merge on a key-column, you can pass one or more key-column
+    # we merge/combine those DataFrames w.r to those key-colums
+pd.merge(lEft, riGht, how='inner', on='key')
+# just concatination will result repeated key-columns
+# By merging we are joining the DataFrames on the common key-column they share
+    # when we merge, insted of gluing the DataFrames, 
+    # we're looking for which values to match up on the key-column
+    # then it creates the rows using that key-column
+
+
+
+# -=-=-=-=-=-=-    24-JUL-2024    -=-=-=-=-=-=-
+
+################# 348: 6.8:full, 6.9: 5.29
+# copy:
+#        
+#        
+################# (24-JUL-24 for 26-JUL-24)
+
+# ----  multiple key-columns  ----
+
+lEft2 = pd.DataFrame( { 'key1': ['K0', 'K0', 'K1', 'K2'],
+                        'key2': ['K0', 'K1', 'K0', 'K1'],
+                        'A': ['A0', 'A1', 'A2', 'A3'],
+                        'B': ['B0', 'B1', 'B2', 'B3']})
+   
+riGht2 = pd.DataFrame({ 'key1': ['K0', 'K1', 'K1', 'K2'],
+                        'key2': ['K0', 'K0', 'K0', 'K0'],
+                        'C': ['C0', 'C1', 'C2', 'C3'],
+                        'D': ['D0', 'D1', 'D2', 'D3']})    
+
+print(lEft2)
+print(riGht2)
+
+# notice: lEft2, riGht2 has 2 key-columns 'key1' and 'key2' but they have different elemnts
+#  to use multiple key-columns, use the list for 'on='
+
+pd.merge(lEft2, riGht2, on=['key1', 'key2'])       # how='inner' is default 
+
+""" 
+        key1	key2	A	B	C	D
+    0   K0	    K0	    A0	B0	C0	D0
+    1   K1	    K0	    A2	B2	C1	D1
+    2   K1	    K0	    A2	B2	C2	D2
+"""
+# ******     Explain above using ChatGPT     ******
+
+
+
+
+
+# -=-=-=-=-=-=-    26-JUL-2024    -=-=-=-=-=-=-
+
+################# 348: 6.8:full, 6.9: 5.29
+# copy:
+#        
+#        
+################# (26-JUL-24 for 27-JUL-24)
+
+
+# SQL syntax: inner, outer, right, left
+    # most of the time in PANDAS we'll use "inner" join
+
+# merge OUTER
+pd.merge(lEft2, riGht2, how="outer", on=['key1', 'key2'])
+
+# merge RIGHT
+pd.merge(lEft2, riGht2, how="right", on=['key1', 'key2'])
+
+# merge LEFT
+pd.merge(lEft2, riGht2, how="left", on=['key1', 'key2'])
+
+# notice the MISSING values
+
+
+
+
+# --------    Joining    -------- 
+
+# combines the columns of two potentially "differently-indexed DataFrames" 
+    # into a single result DataFrame.
+
+# it's similar to merge but the "keys" to join is 'index' instead of 'columns' 
+
+# notice the "index" are different 
+
+left3 = pd.DataFrame({'A': ['A0', 'A1', 'A2'],
+                     'B': ['B0', 'B1', 'B2']},
+                      index=['K0', 'K1', 'K2']) 
+
+right3 = pd.DataFrame({'C': ['C0', 'C2', 'C3'],
+                      'D': ['D0', 'D2', 'D3']},
+                      index=['K0', 'K2', 'K3'])
+
+print(left3)
+print(right3)
+
+# autometically  inner-join, based on the key "index"
+    # NOTE: use 'merge' to join them based on of columns
+left3.join(right3)
+
+# we can also set 'how' attribute
+left3.join(right3, how='outer')
 
 
 
