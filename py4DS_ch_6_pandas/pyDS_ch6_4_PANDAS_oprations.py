@@ -1,9 +1,9 @@
 
-################# 348: 6.8:6.00
-# copy:     UPLOAD all first -> then change
+################# 348: 6.8:full, 6.9: full
+# copy:
 #        
 #        
-################# (17-JUL-24 for 19-JUL-24)
+################# (26-JUL-24 for 27-JUL-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -277,17 +277,6 @@ pd.merge(lEft2, riGht2, on=['key1', 'key2'])       # how='inner' is default
 """
 
 
-
-
-
-
-# -=-=-=-=-=-=-    26-JUL-2024    -=-=-=-=-=-=-
-
-################# 348: 6.8:full, 6.9: 5.29
-# copy:
-#        
-#        
-################# (26-JUL-24 for 27-JUL-24)
 
 
 # SQL syntax: inner, outer, right, left
