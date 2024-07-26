@@ -195,16 +195,6 @@ print(riGht)
     # using a similar logic as merging SQL Tables together. For example:
 
 
-
-
-# -=-=-=-=-=-=-    23-JUL-2024    -=-=-=-=-=-=-
-
-################# 348: 6.8:full, 6.9: 5.02
-# copy:
-#        
-#        
-################# (23-JUL-24 for 24-JUL-24)
-
 # pd.merge(df1, df2, how='inner', on='col_name')
     # by defaulet, how='inner'
     # on: merge on a key-column, you can pass one or more key-column
