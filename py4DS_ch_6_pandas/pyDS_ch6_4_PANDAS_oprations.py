@@ -325,3 +325,15 @@ left3.join(right3, how='outer')
 
 
 
+
+# ----------------    OPERATIONS    ----------------
+# useful operations in pandas
+
+# Creating DataFrame
+import numpy as np 
+import pandas as pd
+
+df = pd.DataFrame({ 'col1':[1,2,3,4],
+                    'Col2':[444,555,666,444],
+                    'col3':['abc', 'def','ghi','xyz']})
+df.head()
