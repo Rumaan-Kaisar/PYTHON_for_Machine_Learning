@@ -1,9 +1,9 @@
 
-################# 348: 6.8:full, 6.9: full
+################# 348: 6.8:full, 6.9: full, 6.10: 2.03
 # copy:
 #        
 #        
-################# (26-JUL-24 for 27-JUL-24)
+################# (27-JUL-24 for 28-JUL-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -333,7 +333,29 @@ left3.join(right3, how='outer')
 import numpy as np 
 import pandas as pd
 
-df = pd.DataFrame({ 'col1':[1,2,3,4],
-                    'Col2':[444,555,666,444],
+dfo = pd.DataFrame({ 'col1':[1,2,3,4],
+                    'col2':[444,555,666,444],
                     'col3':['abc', 'def','ghi','xyz']})
-df.head()
+dfo.head()
+
+# notice '444' is repeated
+
+# find "uniques"
+    # there are 3 methods
+
+# ----  unique(), nunique()  ----
+# all the uniques in a col
+dfo['col2'].unique()       # numpy-array of all uniques in 'col2'
+
+# number of unique-values
+len(dfo['col2'].unique())
+dfo['col2'].nunique()  # gives same result
+
+
+# ----  value_counts()  ----
+# how many times each unique-value shows up in a DataFrame
+dfo['col2'].value_counts()
+# no. of appearnce of unique values in 'col2'
+
+
+
