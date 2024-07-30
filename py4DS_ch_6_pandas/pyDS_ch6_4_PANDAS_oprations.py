@@ -1,9 +1,9 @@
 
-################# 348: 6.8:full, 6.9: full, 6.10: 2.03
+################# 348: 6.8:full, 6.9: full, 6.10: 5.41
 # copy:
 #        
 #        
-################# (27-JUL-24 for 28-JUL-24)
+################# (28-JUL-24 for 30-JUL-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -358,4 +358,37 @@ dfo['col2'].value_counts()
 # no. of appearnce of unique values in 'col2'
 
 
+# --------  selecting data  --------
+# use conditional-selection
+dfo[dfo['col1']>2]
+dfo['col1']>2   # just a Boolian-Series
 
+# using joint conditions
+dfo[(dfo['col1']>2) & (dfo['col2']==444)]
+
+
+# ----  apply()  ----
+# it apply a "custom-function"
+    # apply(function_name)
+    # NOTICE: no '()' is used with "function_name"
+    # it broadcast that function to each element of that column
+    # it's one of the most powerfull tools in pandas
+    
+def times2(x):
+    return x*2
+
+dfo["col2"].apply(times2)
+
+# apply "builtin-functions"
+dfo["col3"].apply(len)  
+# applying "len" to return the length of each string
+
+# ----  apply() with "LAMBDA expression"  ----
+# instead of defining whole function we can use LAMBDAS
+dfo["col2"].apply(lambda x: x*2)  
+
+
+# ----  removing columns  ----
+
+
+3:17
