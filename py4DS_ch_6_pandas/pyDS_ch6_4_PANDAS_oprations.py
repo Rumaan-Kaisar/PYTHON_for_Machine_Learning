@@ -3,7 +3,7 @@
 # copy:
 #        
 #        
-################# (28-JUL-24 for 30-JUL-24)
+################# (30-JUL-24 for 31-JUL-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -389,6 +389,40 @@ dfo["col2"].apply(lambda x: x*2)
 
 
 # ----  removing columns  ----
+# need to specify the axis (col / row)
+dfo
+# remove column 1
+dfo.drop("col1", axis=1)
+# use "inplae=True" to make the change parmanent
 
 
-3:17
+# ----   col / index names   ----
+# get the column names
+dfo.columns
+
+# get the index names
+dfo.index
+# if the index is numerical (similar to 'range'), start, stop, step-size are shown
+
+
+# ----   sorting / ordering   ----
+# sort by col2: dfo.sort_values(by='column_name')
+# notice the index is changed (they're attached to the rows)
+dfo.sort_values(by='col1')
+
+
+# ----  find Null  ----
+# find "Null" values in a DataFrame: returns "Boolian DataFrame"
+dfo.isnull()
+
+
+# rev[30-JUL-2024]
+# ----  pivot table  ----
+# it's familier to advanced excel-users
+# let's define a new DataFrame
+data = 
+
+
+
+
+
