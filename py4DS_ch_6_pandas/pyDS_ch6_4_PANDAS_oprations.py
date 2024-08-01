@@ -1,9 +1,9 @@
 
-################# 348: 6.8:full, 6.9: full, 6.10: 5.41
+################# 348: 6.8:full, 6.9: full, 6.10: Full
 # copy:
 #        
 #        
-################# (30-JUL-24 for 31-JUL-24)
+################# (31-JUL-24 for 02-AUG-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -330,10 +330,9 @@ left3.join(right3, how='outer')
 # useful operations in pandas
 
 # Creating DataFrame
-import numpy as np 
 import pandas as pd
 
-dfo = pd.DataFrame({ 'col1':[1,2,3,4],
+dfo = pd.DataFrame({'col1':[1,2,3,4],
                     'col2':[444,555,666,444],
                     'col3':['abc', 'def','ghi','xyz']})
 dfo.head()
@@ -416,11 +415,39 @@ dfo.sort_values(by='col1')
 dfo.isnull()
 
 
-# rev[30-JUL-2024]
-# ----  pivot table  ----
+
+# ----  PIVOT table  ----
 # it's familier to advanced excel-users
+
 # let's define a new DataFrame
-data = 
+import pandas as pd
+
+data = {'A':['foo','foo','foo','bar','bar','bar'],
+        'B':['one','one','two','two','one','one'],
+        'C':['x','y','x','y','x','y'],
+        'D':[1,3,2,5,4,1]
+        }
+
+dfpv = pd.DataFrame(data)
+
+# Notice the repeating values in columns: A, B, C, D
+# We'll create a "multi-index DataFrame" from this table
+
+# we'll use: pd.pivot_table(values, index, columns)
+    # lets consider column 'D' is the value
+    # columns 'A'. 'B' are the multi-layer-index
+    # also consider 'C' be the actual column, 
+        # we'll get one column for x and another for y
+
+dfpv.pivot_table(values='D', index=['A', 'B'], columns=['C'])
+
+# notice 'C' is in a list
+# also notice the 'NaN' values, because
+    # there's no value for ('bar', 'two', 'x')
+    # there is no value for ('foo', 'two', 'y')
+
+
+
 
 
 
