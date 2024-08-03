@@ -1,9 +1,9 @@
 
-################# 348: 6.8:full, 6.9: full, 6.10: Full
-# copy:
+################# 348: 6.8:full, 6.9: full, 6.10: Full, 6.11: 2.15
+# copy: check CSV and XLS files in GitHub
 #        
 #        
-################# (31-JUL-24 for 02-AUG-24)
+################# (02-Aug-24 for 03-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -450,6 +450,38 @@ dfpv.pivot_table(values='D', index=['A', 'B'], columns=['C'])
 
 
 
+# ------------    Data I/O    ------------
+# How to input data from files
+# How to save data in a file
 
+# ----  Data file types and sources  ----
+    # CSV
+    # Excel
+    # HTML
+    # SQL
 
+# in order to work with HTML and SQL, use following librariees
+
+""" 
+    We can install with "pip" or "conda"
+
+        conda install sqlalchemy
+        conda install lxml 
+        conda install html5lib 
+        conda install BeautifulSoup4
+
+"""
+
+# Put the XML or CSV files to your current "working directory" / location
+# to get the location of current "working directory":
+pwd
+
+# ----  open and read CSV files  ----
+import pandas as pd
+# pd.read_csv()
+df_x = pd.read_csv('z_prTla_example')
+
+# Notice: we didn't use any ".csv" extension because our file doesn't have any file extension
+# most of the time a CSV file has .csv extension, in that case we must use that in read_csv()
+df_x = pd.read_csv('z_prTla_example.csv')
 
