@@ -1,9 +1,9 @@
 
 ################# 348: 6.8:full, 6.9: full, 6.10: Full, 6.11: 4.25
-# copy: check CSV and XLS files in GitHub
+# copy: new examples
 #        
 #        
-################# (03-Aug-24 for 04-Aug-24)
+################# (04-Aug-24 for 06-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -525,3 +525,8 @@ df_x = pd.read_csv('my_output_2')
         pd.to_clipboard
         pd.to_sql
 """
+
+
+
+
+
