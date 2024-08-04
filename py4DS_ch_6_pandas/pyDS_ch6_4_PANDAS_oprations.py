@@ -1,9 +1,9 @@
 
-################# 348: 6.8:full, 6.9: full, 6.10: Full, 6.11: 2.15
+################# 348: 6.8:full, 6.9: full, 6.10: Full, 6.11: 4.25
 # copy: check CSV and XLS files in GitHub
 #        
 #        
-################# (02-Aug-24 for 03-Aug-24)
+################# (03-Aug-24 for 04-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -485,3 +485,43 @@ df_x = pd.read_csv('z_prTla_example')
 # most of the time a CSV file has .csv extension, in that case we must use that in read_csv()
 df_x = pd.read_csv('z_prTla_example.csv')
 
+# other read functions from Pandas
+""" 
+        pd.read_json
+        pd.read_pickle
+        pd.read_csv
+        pd.read_excel
+        pd.read_clipboard
+        pd.read_sql
+        pd.read_table
+"""
+
+# write a csv file
+data = {'A':['foo','foo','foo','bar','bar','bar'],
+        'B':['one','one','two','two','one','one'],
+        'C':['x','y','x','y','x','y'],
+        'D':[1,3,2,5,4,1]
+        }
+
+dfw = pd.DataFrame(data)
+
+dfw.to_csv("my_output.csv", index=False)
+# we set "index=False", because we don't want to save the indeex as a column
+df_x = pd.read_csv('my_output.csv')
+# Notice the use of ".csv" in both write-read
+
+dfw.to_csv("my_output_2")
+# notice the index is saved as "Unnamed" column
+df_x = pd.read_csv('my_output_2')
+
+
+
+# other write functions from Pandas (similar to read fumctions)
+""" 
+        pd.to_json
+        pd.to_pickle
+        pd.to_csv
+        pd.to_excel
+        pd.to_clipboard
+        pd.to_sql
+"""
