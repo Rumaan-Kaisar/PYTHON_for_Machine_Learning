@@ -510,6 +510,7 @@ dfw.to_csv("my_output.csv", index=False)
 df_x = pd.read_csv('my_output.csv')
 # Notice the use of ".csv" in both write-read
 
+# why we use "index=False"
 dfw.to_csv("my_output_2")
 # notice the index is saved as "Unnamed" column
 df_x = pd.read_csv('my_output_2')
@@ -525,8 +526,5 @@ df_x = pd.read_csv('my_output_2')
         pd.to_clipboard
         pd.to_sql
 """
-
-
-
 
 
