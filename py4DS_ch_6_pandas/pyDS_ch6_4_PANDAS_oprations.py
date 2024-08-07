@@ -3,7 +3,7 @@
 # copy: new examples
 #        
 #        
-################# (04-Aug-24 for 06-Aug-24)
+################# (06-Aug-24 for 07-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -496,7 +496,7 @@ df_x = pd.read_csv('z_prTla_example.csv')
         pd.read_table
 """
 
-# write a csv file
+# read/write a csv file
 data = {'A':['foo','foo','foo','bar','bar','bar'],
         'B':['one','one','two','two','one','one'],
         'C':['x','y','x','y','x','y'],
@@ -526,5 +526,27 @@ df_x = pd.read_csv('my_output_2')
         pd.to_clipboard
         pd.to_sql
 """
+
+
+
+# ----  open and read excel file  ----
+# read/write an excel file
+    # pandas only works with data 
+    # not with images, formulas or macros
+    # trying to do that may crash pandas
+
+# We can use following libraries also
+# pip install xlrd
+# or
+# pip install openpyxl
+
+# a workbook is bunch of sheets and 
+# each sheet is a DataFrame
+
+# read_excel()
+import pandas as pd
+# pd.read_excel(path, sheetname=)
+pd.read_excel("./z_prTla_Excel_Sample.xlsx", sheet_name="Sheet1")
+# pd.read_excel('z_prTla_Excel_Sample.xlsx', 'Sheet1')
 
 
