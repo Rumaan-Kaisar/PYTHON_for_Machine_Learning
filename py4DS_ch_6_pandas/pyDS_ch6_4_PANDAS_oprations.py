@@ -1,9 +1,9 @@
 
-################# 348: 6.8:full, 6.9: full, 6.10: Full, 6.11: 4.25
-# copy: new examples
+################# 348: 6.8:full, 6.9: full, 6.10: Full, 6.11: 7.02
+# copy:
 #        
 #        
-################# (06-Aug-24 for 07-Aug-24)
+################# (07-Aug-24 for 09-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -535,7 +535,7 @@ df_x = pd.read_csv('my_output_2')
     # not with images, formulas or macros
     # trying to do that may crash pandas
 
-# We can use following libraries also
+# We need to use one of the following libraries
 # pip install xlrd
 # or
 # pip install openpyxl
@@ -548,5 +548,10 @@ import pandas as pd
 # pd.read_excel(path, sheetname=)
 pd.read_excel("./z_prTla_Excel_Sample.xlsx", sheet_name="Sheet1")
 # pd.read_excel('z_prTla_Excel_Sample.xlsx', 'Sheet1')
+
+# write to excel(): 
+# pdObject.to_excel(path, sheetname=)
+dfw.to_excel("./Excel_Sample2.xlsx", sheet_name='NewSheet')
+# notice we used the pandas-DataFrame object "dfw" instead of "pd"
 
 
