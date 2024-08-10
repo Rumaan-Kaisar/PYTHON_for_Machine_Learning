@@ -1,9 +1,9 @@
 
-################# 348: 6.8:full, 6.9: full, 6.10: Full, 6.11: 7.02
+################# 348: 6.8:full, 6.9: full, 6.10: Full, 6.11: 9.46
 # copy:
 #        
 #        
-################# (07-Aug-24 for 09-Aug-24)
+################# (09-Aug-24 for 10-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -553,5 +553,30 @@ pd.read_excel("./z_prTla_Excel_Sample.xlsx", sheet_name="Sheet1")
 # pdObject.to_excel(path, sheetname=)
 dfw.to_excel("./Excel_Sample2.xlsx", sheet_name='NewSheet')
 # notice we used the pandas-DataFrame object "dfw" instead of "pd"
+
+
+
+# ----  working with "HTML"  ----
+# we may need to install libraries: 
+# pip install html5lib
+
+# it's a kind of srapping using pandas
+
+# Failed Bank List: FDIC - Federal Deposit Insurance Corporation
+# its an HTML link: https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/index.html
+
+dataHtml = pd.read_html("https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/index.html")
+
+# Note that it isn't directly relate to a DataFrame, it's in a List form
+type(dataHtml)
+# pandas trying to find every "table element" in this html link
+    # then it converts each items into a DataFrame
+    # we need to cycle through the dataHtml to find the actual data
+dataHtml[0]
+
+# let's explore
+dataHtml[0].head()
+# notice some NaN values
+
 
 
