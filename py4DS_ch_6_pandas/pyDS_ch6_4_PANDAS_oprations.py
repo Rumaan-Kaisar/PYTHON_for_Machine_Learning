@@ -3,7 +3,7 @@
 # copy:
 #        
 #        
-################# (09-Aug-24 for 10-Aug-24)
+################# (10-Aug-24 for 11-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -578,5 +578,23 @@ dataHtml[0]
 dataHtml[0].head()
 # notice some NaN values
 
+
+
+# ----  Working with SQL  ----
+# pandas isn't actually good for SQL database
+# there's many SQL engines:
+    # PostgreSQL
+    # MySQL
+    # SQLite
+
+# We'll built very basic SQL engine, that temporarily held in memory
+# we'll use pandas to read tables as DataFrame
+# we need to use specific driver to use specific SQL engine
+    # if we're using PostgreSQL, we need to use library called "psycopg2"
+        # psycopg is the most popular PostgreSQL database library for the Python
+    # if we're using "MySQL" we need to use "PyMySQL" library
+
+# create a very simple sql engine in memory
+from sqlalchemy import create_engine
 
 
