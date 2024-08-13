@@ -597,4 +597,23 @@ dataHtml[0].head()
 # create a very simple sql engine in memory
 from sqlalchemy import create_engine
 
+# create a very temporary, small "sqlite" engine, database that's running in memory
+engin = create_engine("sqlite:////:memory:")
 
+# write the DataFrame to the DB (temporary engine running in the memory)
+# dfw.to_sql(name=table_name, con=engine_name); "con" is connection
+dfw.to_sql(name="my_table", con=engin)
+
+# read the table
+sqlDF = pd.read_sql('my_table', con=engin)
+sqlDF
+# notice "index" is in new column
+
+# To properly close or "turn off" the SQLite engine running in memory, 
+    # you need to dispose of the connection. 
+    # This will release any resources associated with the engine.
+
+# After you're done using the engine
+engin.dispose()
+
+# ----  rev[run above code: 11-Aug-2024]  ----
