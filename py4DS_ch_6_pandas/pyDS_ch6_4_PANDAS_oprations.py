@@ -3,7 +3,7 @@
 # copy:
 #        
 #        
-################# (10-Aug-24 for 11-Aug-24)
+################# (13-Aug-24 for 14-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
@@ -587,6 +587,9 @@ dataHtml[0].head()
     # MySQL
     # SQLite
 
+# used libraries
+    # pip install SQLAlchemy
+
 # We'll built very basic SQL engine, that temporarily held in memory
 # we'll use pandas to read tables as DataFrame
 # we need to use specific driver to use specific SQL engine
@@ -596,24 +599,65 @@ dataHtml[0].head()
 
 # create a very simple sql engine in memory
 from sqlalchemy import create_engine
+import pandas as pd
+
+# read/write a csv file
+data = {'A':['foo','foo','foo','bar','bar','bar'],
+        'B':['one','one','two','two','one','one'],
+        'C':['x','y','x','y','x','y'],
+        'D':[1,3,2,5,4,1]
+        }
+dfw = pd.DataFrame(data)
+dfw
 
 # create a very temporary, small "sqlite" engine, database that's running in memory
-engin = create_engine("sqlite:////:memory:")
+# notice "///" 3-slash
+engine = create_engine("sqlite:///:memory:")
 
 # write the DataFrame to the DB (temporary engine running in the memory)
-# dfw.to_sql(name=table_name, con=engine_name); "con" is connection
-dfw.to_sql(name="my_table", con=engin)
+# dfw.to_sql(table_name, con=engine_name); "con" is connection
+dfw.to_sql("my_table", con=engine)
 
-# read the table
-sqlDF = pd.read_sql('my_table', con=engin)
+# read the table: pd.read_sql(table, engine.connect())
+sqlDF = pd.read_sql('my_table', con=engine.connect())
 sqlDF
 # notice "index" is in new column
+# Note: we need to use create_engine.connect() to connect the database
 
 # To properly close or "turn off" the SQLite engine running in memory, 
     # you need to dispose of the connection. 
     # This will release any resources associated with the engine.
 
 # After you're done using the engine
-engin.dispose()
+engine.dispose()
 
-# ----  rev[run above code: 11-Aug-2024]  ----
+
+
+# ----  Re-run above code  ----
+# import libraries
+import pandas as pd
+from sqlalchemy import create_engine
+
+# read/write a csv file
+data = {'A':['foo','foo','foo','bar','bar','bar'],
+        'B':['one','one','two','two','one','one'],
+        'C':['x','y','x','y','x','y'],
+        'D':[1,3,2,5,4,1]
+        }
+dfw = pd.DataFrame(data)
+print(dfw)
+print("\n-------------------------------")
+
+# create a very temporary, small "sqlite" engine, database that's running in memory
+# notice "///" 3-slash
+engn = create_engine("sqlite:///:memory:")
+dfw.to_sql("my_table", engn)
+
+# pd.read_sql(table, engine.connect())
+df = pd.read_sql("my_table", con=engn.connect())
+# Note: we need to use create_engine.connect() to connect the database
+print(df)
+
+engn.dispose()  # "turn off" the SQLite engine
+
+
