@@ -1,10 +1,4 @@
 
-################# 348: 6.8:full, 6.9: full, 6.10: Full, 6.11: 9.46
-# copy:
-#        
-#        
-################# (13-Aug-24 for 14-Aug-24)
-
 # Courses: PrTla PY for DS & ML >   6.8, 6.9, 6.10, 6.11
 
 
@@ -594,7 +588,7 @@ dataHtml[0].head()
 # we'll use pandas to read tables as DataFrame
 # we need to use specific driver to use specific SQL engine
     # if we're using PostgreSQL, we need to use library called "psycopg2"
-        # psycopg is the most popular PostgreSQL database library for the Python
+        # "psycopg" is the most popular PostgreSQL database library for the Python
     # if we're using "MySQL" we need to use "PyMySQL" library
 
 # create a very simple sql engine in memory
