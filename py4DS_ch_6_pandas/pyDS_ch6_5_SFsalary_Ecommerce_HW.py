@@ -1,10 +1,9 @@
 
-
-################# 7.2: 0.39
+################# 7.2: Full, 7.3:
 # copy: dataset-csv
 #        
 #        
-################# (16-Aug-24 for 17-Aug-24)
+################# (17-Aug-24 for 18-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -23,6 +22,26 @@ On the Salary Exercise, one of the questions asks
 """
 
 # We will be using the SF Salaries Dataset: https://www.kaggle.com/kaggle/sf-salaries from Kaggle!
+# "kaggle.com" is a good platform to practice Machine Learning
+
+
+# Import pandas as pd.
+import pandas as pd
+
+# Read Salaries.csv as a dataframe called sal.
+sal = pd.read_csv("./z_data_Salaries.csv")
+
+# Check the head of the DataFrame
+sal.head()
+
+# Use the .info() method to find out how many entries there are
+sal.info()
+
+
+# --------   rev[17-Aug-2024]   --------
+# What is the average BasePay ?
+
+
 
 
 
