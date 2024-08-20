@@ -3,7 +3,7 @@
 # copy: dataset-csv
 #        
 #        
-################# (17-Aug-24 for 18-Aug-24)
+################# (18-Aug-24 for 20-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -37,11 +37,19 @@ sal.head()
 # Use the .info() method to find out how many entries there are
 sal.info()
 
-
-# --------   rev[17-Aug-2024]   --------
 # What is the average BasePay ?
+sal["BasePay"].mean()
 
+# What is the highest amount of OvertimePay in the dataset ?
+sal['OvertimePay'].max()
 
+# What is the job title of  JOSEPH DRISCOLL ? 
+# Note: Use all caps, otherwise you may get an answer that doesn't match up (there is also a lowercase Joseph Driscoll).
+sal[sal["EmployeeName"] == "JOSEPH DRISCOLL"]
+sal[sal["EmployeeName"] == "JOSEPH DRISCOLL"]["JobTitle"]
 
+# --------    rev[18-Aug-2024]    --------
+
+# How much does JOSEPH DRISCOLL make (including benefits)?
 
 
