@@ -3,7 +3,7 @@
 # copy: dataset-csv
 #        
 #        
-################# (18-Aug-24 for 20-Aug-24)
+################# (20-Aug-24 for 21-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -48,8 +48,22 @@ sal['OvertimePay'].max()
 sal[sal["EmployeeName"] == "JOSEPH DRISCOLL"]
 sal[sal["EmployeeName"] == "JOSEPH DRISCOLL"]["JobTitle"]
 
-# --------    rev[18-Aug-2024]    --------
-
 # How much does JOSEPH DRISCOLL make (including benefits)?
+sal[sal["EmployeeName"] == "JOSEPH DRISCOLL"]["TotalPayBenefits"]
+
+# What is the name of highest paid person (including benefits)?
+sal[sal["TotalPayBenefits"] == sal["TotalPayBenefits"].max()]
+# or
+print(sal.loc[sal['TotalPayBenefits'].idxmax()])
+
+# What is the name of lowest paid person (including benefits)? 
+# Do you notice something strange about how much he or she is paid?
+sal[sal["TotalPayBenefits"] == sal["TotalPayBenefits"].min()]
+## ITS NEGATIVE!! VERY STRANGE
+# we noticed a negative payment!! -618.13
+
+
+# --------    rev[20-Aug-2024]    --------
+# What was the average (mean) BasePay of all employees per year? (2011-2014) ?
 
 
