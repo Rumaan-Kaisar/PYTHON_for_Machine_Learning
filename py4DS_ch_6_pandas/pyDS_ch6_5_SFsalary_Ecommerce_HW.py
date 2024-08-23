@@ -3,7 +3,7 @@
 # copy: dataset-csv
 #        
 #        
-################# (20-Aug-24 for 21-Aug-24)
+################# (21-Aug-24 for 23-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -63,7 +63,21 @@ sal[sal["TotalPayBenefits"] == sal["TotalPayBenefits"].min()]
 # we noticed a negative payment!! -618.13
 
 
-# --------    rev[20-Aug-2024]    --------
+# --------    groupby    --------
 # What was the average (mean) BasePay of all employees per year? (2011-2014) ?
+yearGroup = sal.groupby("Year")
+yearGroup["BasePay"].mean()
+# or
+sal.groupby('Year').mean()['BasePay']
+# following also works
+# sal.groupby('Year')['BasePay'].mean()
 
+# --------    operations    --------
+# How many unique job titles are there?
+jobs = sal["JobTitle"].unique()
+len(jobs)
+# or
+sal['JobTitle'].nunique()
 
+# What are the top 5 most common jobs?
+sal["JobTitle"].value_counts().head(5)
