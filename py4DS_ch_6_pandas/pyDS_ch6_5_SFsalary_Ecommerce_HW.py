@@ -3,7 +3,7 @@
 # copy: dataset-csv
 #        
 #        
-################# (21-Aug-24 for 23-Aug-24)
+################# (23-Aug-24 for 24-Aug-24)
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -81,3 +81,14 @@ sal['JobTitle'].nunique()
 
 # What are the top 5 most common jobs?
 sal["JobTitle"].value_counts().head(5)
+
+# How many Job Titles were represented by only one person in 2013? 
+# (e.g. Job Titles with only one occurence in 2013?)
+jobs_2013 = sal[sal["Year"] == 2013]
+occur_once = jobs_2013["JobTitle"].value_counts() == 1
+sum(occur_once)
+# or
+sum(sal[sal['Year']==2013]['JobTitle'].value_counts() == 1) # pretty tricky way to do this...
+
+# How many people have the word "Chief" in their job title? (This is pretty tricky)
+
