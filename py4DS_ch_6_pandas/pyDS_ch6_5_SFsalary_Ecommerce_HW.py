@@ -1,14 +1,14 @@
 
 ################# 7.2: Full, 7.3:
 # copy: 
-# UPDATE: pyDS_ch6_5_SFsalary_Ecommerce_HW.py, pyDS_ch6_4_PANDAS_oprations.py, pyDS_ch6_4_PANDAS_oprtn.ipynb
+# UPDATE: 
 #        
-################# (25-Aug-24 for 27-Aug-24), next excercise
+################# (27-Aug-24 for 28-Aug-24), previous excercise review + current exercise 1 execution
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
 
-# ------------    SF Salaries Overview    ------------
+# ------------    Exercises 1: SF Salaries Overview    ------------
 
 """ 
 On the Salary Exercise, one of the questions asks 
@@ -127,4 +127,27 @@ sal[['title_len','TotalPayBenefits']].corr() # No correlation.
             i.e. 'TotalPayBenefits' and 'title_len' has no correlation
 
 """
+
+
+
+# --------    Exercises 2: E-commerce Purchases    --------
+
+# You will be given some Fake Data about some purchases done through Amazon!
+#     Please excuse anything that doesn't make "Real-World" sense in the dataframe, all the data is fake and made-up.
+
+# Most of the tasks can be solved in different ways.
+# All of these questions can be answered with one line of code.
+
+
+# Import pandas and read in the Ecommerce Purchases csv file and set it to a DataFrame called ecom.
+
+# Import pandas as pd.
+import pandas as pd
+
+# Read "z_data_Ecommerce_Purchases" as a dataframe called ecom
+    # Even though it's a csv file, no ".csv" extension used because file-name has no '.csv' extension. 
+ecom = pd.read_csv("./z_data_Ecommerce_Purchases")
+
+# Check the head of the DataFrame
+ecom.head()
 
