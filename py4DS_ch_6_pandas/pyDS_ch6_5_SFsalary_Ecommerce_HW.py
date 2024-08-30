@@ -1,9 +1,9 @@
 
-################# 7.2: Full, 7.3:
+################# 7.2: Full, 7.3: 2.33
 # copy: 
 # UPDATE: 
 #        
-################# (27-Aug-24 for 28-Aug-24), previous excercise review + current exercise 1 execution
+################# (28-Aug-24 for 30-Aug-24), previous excercise review + current exercise 1 execution
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -150,4 +150,9 @@ ecom = pd.read_csv("./z_data_Ecommerce_Purchases")
 
 # Check the head of the DataFrame
 ecom.head()
+
+# How many rows and columns are there?
+ecom.info()
+
+# What is the average Purchase Price?
 
