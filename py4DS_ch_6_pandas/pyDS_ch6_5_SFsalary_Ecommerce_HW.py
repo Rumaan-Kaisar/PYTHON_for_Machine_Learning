@@ -155,4 +155,18 @@ ecom.head()
 ecom.info()
 
 # What is the average Purchase Price?
+ecom['Purchase Price'].mean()
+
+# What were the highest and lowest purchase prices?
+print(f"Highest purchase price: {ecom['Purchase Price'].max()} \n Lowest purchase price: {ecom['Purchase Price'].min()}")
+
+# How many people have English 'en' as their Language of choice on the website?
+ecom[ecom['Language'] == 'en'].count()
+
+# How many people have the job title of "Lawyer" ?
+ecom[ecom['Job'] == 'Lawyer'].count()
+# or
+ecom[ecom['Job'] == 'Lawyer'].info()
+
+
 
