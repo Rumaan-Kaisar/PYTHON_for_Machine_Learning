@@ -1,9 +1,9 @@
 
 ################# 7.2: Full, 7.3: 2.33
-# copy: 
+# copy: Review and execute: 55-64 lines
 # UPDATE: 
 #        
-################# (28-Aug-24 for 30-Aug-24), previous excercise review + current exercise 1 execution
+################# (30-Aug-24 for 31-Aug-24), previous excercise review + current exercise 1 execution
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -54,8 +54,15 @@ sal[sal["EmployeeName"] == "JOSEPH DRISCOLL"]["TotalPayBenefits"]
 
 # What is the name of highest paid person (including benefits)?
 sal[sal["TotalPayBenefits"] == sal["TotalPayBenefits"].max()]
+# sal[sal["TotalPayBenefits"] == sal["TotalPayBenefits"].max()]["EmployeeName"]
 # or
 print(sal.loc[sal['TotalPayBenefits'].idxmax()])
+# it's similar to NumPy's argmax() method
+sal['TotalPayBenefits'].idxmax()  # it is just a number
+sal['TotalPayBenefits'].argmax()  # pandas also supports argmax()
+# locate that person
+sal.iloc[sal['TotalPayBenefits'].argmax()]
+
 
 # What is the name of lowest paid person (including benefits)? 
 # Do you notice something strange about how much he or she is paid?
@@ -167,6 +174,5 @@ ecom[ecom['Language'] == 'en'].count()
 ecom[ecom['Job'] == 'Lawyer'].count()
 # or
 ecom[ecom['Job'] == 'Lawyer'].info()
-
 
 
