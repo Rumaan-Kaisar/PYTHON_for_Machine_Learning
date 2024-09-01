@@ -1,9 +1,9 @@
 
-################# 7.2: Full, 7.3: 2.33
-# copy: Review and execute: 55-64 lines
+################# 7.2: Full, 7.3: 8.06
+# copy:
 # UPDATE: 
 #        
-################# (30-Aug-24 for 31-Aug-24), previous excercise review + current exercise 1 execution
+################# (31-Aug-24 for 01-Sep-24), previous excercise review + current exercise 1 execution
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -69,6 +69,10 @@ sal.iloc[sal['TotalPayBenefits'].argmax()]
 sal[sal["TotalPayBenefits"] == sal["TotalPayBenefits"].min()]
 ## ITS NEGATIVE!! VERY STRANGE
 # we noticed a negative payment!! -618.13
+# or we can use following way
+sal["TotalPayBenefits"].argmin()    # gives the id location
+sal.iloc[sal["TotalPayBenefits"].argmin()]
+
 
 
 
@@ -175,4 +179,8 @@ ecom[ecom['Job'] == 'Lawyer'].count()
 # or
 ecom[ecom['Job'] == 'Lawyer'].info()
 
+# How many people made the purchase during the AM and how many people made the purchase during PM ?
+# Hint: Check out value_counts()
+# value_counts() counts the each unique's appearance in a given colmun
+ecom['AM or PM'].value_counts()
 
