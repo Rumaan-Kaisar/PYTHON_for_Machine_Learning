@@ -1,9 +1,9 @@
 
-################# 7.2: Full, 7.3: 8.06
+################# 7.2: Full, 7.3: full, 7.4:
 # copy:
 # UPDATE: 
 #        
-################# (31-Aug-24 for 01-Sep-24), previous excercise review + current exercise 1 execution
+################# (01-Sep-24 for 03-Sep-24), previous excercise review + current exercise 1 execution
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -117,6 +117,8 @@ def chief_string(title):
     else:
         return False
 
+# chief_string('CHIEF MANAGER-METROPOLITAN TRANSIT AUTHORITY')
+
 sum(sal['JobTitle'].apply(lambda x: chief_string(x)))
 
 
@@ -183,4 +185,13 @@ ecom[ecom['Job'] == 'Lawyer'].info()
 # Hint: Check out value_counts()
 # value_counts() counts the each unique's appearance in a given colmun
 ecom['AM or PM'].value_counts()
+
+# What are the 5 most common Job Titles?
+ecom['Job'].value_counts().head(5)
+
+# Someone made a purchase that came from Lot: "90 WT"
+    # what was the Purchase Price for this transaction?
+ecom[ecom['Lot'] == "90 WT"]["Purchase Price"]
+
+
 
