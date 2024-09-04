@@ -1,9 +1,8 @@
 
-################# 7.2: Full, 7.3: full, 7.4:
-# copy:
+################# 7.2: Full, 7.3: full, 7.4: full, 7.5: 1.42
 # UPDATE: 
 #        
-################# (01-Sep-24 for 03-Sep-24), previous excercise review + current exercise 1 execution
+################# (03-Sep-24 for 04-Sep-24), previous excercise review + current exercise 1 execution
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -165,7 +164,8 @@ ecom = pd.read_csv("./z_data_Ecommerce_Purchases")
 ecom.head()
 
 # How many rows and columns are there?
-ecom.info()
+print(f"Columns: {len(ecom.columns)} \nRows: {len(ecom.index)}")
+ecom.info() # notice 2nd and 3rd line: RangeIndex is total row = 10000; Data columns = 14 columns
 
 # What is the average Purchase Price?
 ecom['Purchase Price'].mean()
@@ -193,5 +193,12 @@ ecom['Job'].value_counts().head(5)
     # what was the Purchase Price for this transaction?
 ecom[ecom['Lot'] == "90 WT"]["Purchase Price"]
 
+# What is the email of the person with the following Credit Card Number: 4926535242672853
+ecom[ecom['Credit Card'] == 4926535242672853]["Email"]
+
+# How many people have American Express as their Credit Card Provider *and* made a purchase above $95 ?
+# use BITWISE AND "&" instead of LOGICAL "and"
+print(ecom[(ecom['CC Provider'] == 'American Express') & (ecom['Purchase Price'] > 95.00)].count())
+ecom[(ecom['CC Provider'] == 'American Express') & (ecom['Purchase Price'] > 95.00)]
 
 
