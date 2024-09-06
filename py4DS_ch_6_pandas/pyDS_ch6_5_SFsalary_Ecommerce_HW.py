@@ -1,8 +1,8 @@
 
-################# 7.2: Full, 7.3: full, 7.4: full, 7.5: 1.42
+################# 7.2: Full, 7.3: full, 7.4: full, 7.5: 9.58
 # UPDATE: 
 #        
-################# (03-Sep-24 for 04-Sep-24), previous excercise review + current exercise 1 execution
+################# (04-Sep-24 for 06-Sep-24), previous excercise review + current exercise 1 execution
 
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
@@ -175,11 +175,18 @@ print(f"Highest purchase price: {ecom['Purchase Price'].max()} \n Lowest purchas
 
 # How many people have English 'en' as their Language of choice on the website?
 ecom[ecom['Language'] == 'en'].count()
+# note: ecom[ecom['Language'] == 'en'] is a sub-DataFrame on which we applied count(). We can also use to be more specific
+ecom[ecom['Language'] == 'en']['Language'].count()
 
 # How many people have the job title of "Lawyer" ?
 ecom[ecom['Job'] == 'Lawyer'].count()
 # or
 ecom[ecom['Job'] == 'Lawyer'].info()
+# or
+ecom[ecom['Job'] == 'Lawyer']['Job'].count()
+# or
+len(ecom[ecom['Job'] == 'Lawyer'].index)
+# ecom[ecom['Job'] == 'Lawyer'].index       gives the indexes of rows thta cotains a 'Lawyer'
 
 # How many people made the purchase during the AM and how many people made the purchase during PM ?
 # Hint: Check out value_counts()
@@ -187,6 +194,7 @@ ecom[ecom['Job'] == 'Lawyer'].info()
 ecom['AM or PM'].value_counts()
 
 # What are the 5 most common Job Titles?
+# also sorts the unique's based on their total appearance
 ecom['Job'].value_counts().head(5)
 
 # Someone made a purchase that came from Lot: "90 WT"
