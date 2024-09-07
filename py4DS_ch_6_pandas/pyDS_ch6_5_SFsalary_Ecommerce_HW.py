@@ -1,9 +1,4 @@
 
-################# 7.2: Full, 7.3: full, 7.4: full, 7.5: 9.58
-# UPDATE: 
-#        
-################# (04-Sep-24 for 06-Sep-24), previous excercise review + current exercise 1 execution
-
 # Courses: PrTla PY for DS & ML >   7.2, 7.3, 7.4, 7.5
 
 
@@ -208,5 +203,33 @@ ecom[ecom['Credit Card'] == 4926535242672853]["Email"]
 # use BITWISE AND "&" instead of LOGICAL "and"
 print(ecom[(ecom['CC Provider'] == 'American Express') & (ecom['Purchase Price'] > 95.00)].count())
 ecom[(ecom['CC Provider'] == 'American Express') & (ecom['Purchase Price'] > 95.00)]
+
+
+
+# --------    use apply() with lambda    --------
+
+# Hard: How many people have a credit card that expires in 2025?
+# note: split() works on string so consider 25 as a string '25'
+count = 0
+for x in ecom['CC Exp Date']:
+    if x.split('/')[1] == '25': count+=1
+print(count) 
+# or
+sum(ecom['CC Exp Date'].apply(lambda x: x[3:]) == '25')
+# or
+sum(ecom['CC Exp Date'].apply(lambda x: x.split('/')[1]) == '25')
+# or: not to use sum()
+# ecom[ecom['CC Exp Date'].apply(lambda x: x[3:]) == '25'].count()
+ecom[ecom['CC Exp Date'].apply(lambda x: x[3:]) == '25']['CC Exp Date'].count()     # also works
+
+
+# Hard: What are the top 5 most popular email providers/hosts (e.g. gmail.com, yahoo.com, etc...)
+empv = []
+for em in ecom['Email']:
+    empv.append(em.split('@')[1])
+ecom["Email Provider"] = empv
+ecom["Email Provider"].value_counts().head(5)
+# or
+ecom['Email'].apply(lambda x: x.split('@')[1]).value_counts().head(5)
 
 
