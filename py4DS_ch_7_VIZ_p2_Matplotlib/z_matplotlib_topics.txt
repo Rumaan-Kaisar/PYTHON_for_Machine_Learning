@@ -82,3 +82,52 @@ pyDS_ch6_4_operations
 7. Matplotlib Exercises - Solutions
 
 
+
+---------------------------------------    08-Sep-2024    ---------------------------------------------
+
+--------   A-Z PY for Data-Science   --------
+Previously:
+    inside : py4DS_ch_4_VIZ_p1
+
+
+Category data type, JointPlots 1, 2
+Histograms & Stacked histograms 3, 4
+Subplots(), KDE,  5, 6
+violin, Boxplots 7
+Facet Grid, Coordinates and Diagonals 8, 9
+Dashbors_styling_finishing 11, 12, 13
+Movie_gross_HW 14, 7.7, 7.8
+
+
+H:\shared_docs\codes_pyMLDL\py4DS_ch_4_VIZ_p1\pyDS_ch4_3_Subplots_KDE.py
+
+
+        pyDS_ch2_1_pandas_imprt_Xplr_colRenm
+            A-Z PY for Data-Science    5.1, 5.2, 5.3
+
+        pyDS_ch2_2_subsetting
+            A-Z PY for Data-Science    5.4
+
+        pyDS_ch2_3_basic_opr
+            A-Z PY for Data-Science    5.5
+
+        pyDS_ch2_4_filtering
+            A-Z PY for Data-Science    5.6
+
+        pyDS_ch2_5_at_iat
+            A-Z PY for Data-Science    5.7
+
+
+
+--------   PrTla PY for DS & ML   --------
+Welcome to the Pandas Section!
+Introduction to Pandas
+Series
+DataFrames - Part 1
+DataFrames - Part 2
+DataFrames - Part 3
+Missing Data
+Groupby
+Merging Joining and Concatenating
+Operations
+Data Input and Output
