@@ -1,0 +1,84 @@
+
+--------   A-Z PY for Data-Science   --------
+Previously:
+    inside : py4DS_ch_2_dataFrame
+
+        pyDS_ch2_1_pandas_imprt_Xplr_colRenm
+            A-Z PY for Data-Science    5.1, 5.2, 5.3
+
+        pyDS_ch2_2_subsetting
+            A-Z PY for Data-Science    5.4
+
+        pyDS_ch2_3_basic_opr
+            A-Z PY for Data-Science    5.5
+
+        pyDS_ch2_4_filtering
+            A-Z PY for Data-Science    5.6
+
+        pyDS_ch2_5_at_iat
+            A-Z PY for Data-Science    5.7
+
+
+
+--------   PrTla PY for DS & ML   --------
+Welcome to the Pandas Section!
+Introduction to Pandas
+Series
+DataFrames - Part 1
+DataFrames - Part 2
+DataFrames - Part 3
+Missing Data
+Groupby
+Merging Joining and Concatenating
+Operations
+Data Input and Output
+
+
+
+Welcome to the Pandas Section:      Write some objectives
+Introduction to Pandas:         Use of pandas and install
+Series:         pandas series
+DataFrames - Part 1:        series and dataframe, creating dataframe, methods, arithmetic, Operations
+DataFrames - Part 2:        conditional opeartions, filtering and selection, manipulation, 
+DataFrames - Part 3:        Generating dataframe and Grouping, accessing via multi-level index, index hierarchy
+Missing Data:       use NaN
+
+
+
+----  rev[05-jun-2024]  ----
+Groupby:        
+Merging Joining and Concatenating
+Operations
+Data Input and Output
+
+
+dataframe 2 paRTS:
+1: BASIC Operations
+2: SELECT FILTER INDEX
+
+pyDS_ch6_1_series           : 6.1, 6.2, 6.3
+pyDS_ch6_2_dataFrame_basic  : 6.4, 6.5(1/2)
+pyDS_ch6_3_dataFrame_dtail  : 6.5, 6.6, 6.7
+pyDS_ch6_4_operations       : 6.8, 6.9, 6.10, 6.11
+
+# combine with OLD (A-Z)
+
+
+pyDS_ch6_1_series
+pyDS_ch6_2_dataFrame_basic
+pyDS_ch6_3_dataFrame_dtail
+pyDS_ch6_4_operations
+
+
+
+-----------------    viz part 2    -----------------
+
+1. Welcome to the Data Visualization Section!
+2. Introduction to Matplotlib
+3. Matplotlib Part 1
+4. Matplotlib Part 2
+5. Matplotlib Part 3
+6. Matplotlib Exercises Overview
+7. Matplotlib Exercises - Solutions
+
+
