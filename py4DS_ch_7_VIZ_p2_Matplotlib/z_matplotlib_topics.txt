@@ -1,76 +1,4 @@
 
---------   A-Z PY for Data-Science   --------
-Previously:
-    inside : py4DS_ch_2_dataFrame
-
-        pyDS_ch2_1_pandas_imprt_Xplr_colRenm
-            A-Z PY for Data-Science    5.1, 5.2, 5.3
-
-        pyDS_ch2_2_subsetting
-            A-Z PY for Data-Science    5.4
-
-        pyDS_ch2_3_basic_opr
-            A-Z PY for Data-Science    5.5
-
-        pyDS_ch2_4_filtering
-            A-Z PY for Data-Science    5.6
-
-        pyDS_ch2_5_at_iat
-            A-Z PY for Data-Science    5.7
-
-
-
---------   PrTla PY for DS & ML   --------
-Welcome to the Pandas Section!
-Introduction to Pandas
-Series
-DataFrames - Part 1
-DataFrames - Part 2
-DataFrames - Part 3
-Missing Data
-Groupby
-Merging Joining and Concatenating
-Operations
-Data Input and Output
-
-
-
-Welcome to the Pandas Section:      Write some objectives
-Introduction to Pandas:         Use of pandas and install
-Series:         pandas series
-DataFrames - Part 1:        series and dataframe, creating dataframe, methods, arithmetic, Operations
-DataFrames - Part 2:        conditional opeartions, filtering and selection, manipulation, 
-DataFrames - Part 3:        Generating dataframe and Grouping, accessing via multi-level index, index hierarchy
-Missing Data:       use NaN
-
-
-
-----  rev[05-jun-2024]  ----
-Groupby:        
-Merging Joining and Concatenating
-Operations
-Data Input and Output
-
-
-dataframe 2 paRTS:
-1: BASIC Operations
-2: SELECT FILTER INDEX
-
-pyDS_ch6_1_series           : 6.1, 6.2, 6.3
-pyDS_ch6_2_dataFrame_basic  : 6.4, 6.5(1/2)
-pyDS_ch6_3_dataFrame_dtail  : 6.5, 6.6, 6.7
-pyDS_ch6_4_operations       : 6.8, 6.9, 6.10, 6.11
-
-# combine with OLD (A-Z)
-
-
-pyDS_ch6_1_series
-pyDS_ch6_2_dataFrame_basic
-pyDS_ch6_3_dataFrame_dtail
-pyDS_ch6_4_operations
-
-
-
 -----------------    viz part 2    -----------------
 
 1. Welcome to the Data Visualization Section!
@@ -83,51 +11,91 @@ pyDS_ch6_4_operations
 
 
 
----------------------------------------    08-Sep-2024    ---------------------------------------------
+
 
 --------   A-Z PY for Data-Science   --------
 Previously:
     inside : py4DS_ch_4_VIZ_p1
 
-
-Category data type, JointPlots 1, 2
-Histograms & Stacked histograms 3, 4
-Subplots(), KDE,  5, 6
-violin, Boxplots 7
-Facet Grid, Coordinates and Diagonals 8, 9
-Dashbors_styling_finishing 11, 12, 13
-Movie_gross_HW 14, 7.7, 7.8
-
-
-H:\shared_docs\codes_pyMLDL\py4DS_ch_4_VIZ_p1\pyDS_ch4_3_Subplots_KDE.py
+    Category data type, JointPlots 1, 2
+    Histograms & Stacked histograms 3, 4
+    Subplots(), KDE,  5, 6
+    violin, Boxplots 7
+    Facet Grid, Coordinates and Diagonals 8, 9
+    Dashbors_styling_finishing 11, 12, 13
+    Movie_gross_HW 14, 7.7, 7.8
 
 
-        pyDS_ch2_1_pandas_imprt_Xplr_colRenm
-            A-Z PY for Data-Science    5.1, 5.2, 5.3
 
-        pyDS_ch2_2_subsetting
-            A-Z PY for Data-Science    5.4
+        pyDS_ch4_1_ctgryData_JointPlt
+            A-Z PY for Data-Science    6.1, 6.2
+            How to deal with categorical data? Create Joint-plot: pandas, matplotlib, seaborn 
 
-        pyDS_ch2_3_basic_opr
-            A-Z PY for Data-Science    5.5
 
-        pyDS_ch2_4_filtering
-            A-Z PY for Data-Science    5.6
+        pyDS_ch4_2_Hist_StkdHist
+            A-Z PY for Data-Science    6.3, 6.4
+            Histogram and Stacked-Histogram using: pandas, matplotlib, seaborn 
 
-        pyDS_ch2_5_at_iat
-            A-Z PY for Data-Science    5.7
+
+        pyDS_ch4_3_Subplots_KDE
+            A-Z PY for Data-Science    6.5, 6.6
+            Subplots and KDE-plot using: pandas, matplotlib, seaborn 
+
+
+        pyDS_ch4_4_violinPlt_BoxPlt
+            A-Z PY for Data-Science    6.7
+            violin-plot and Box-plot using: pandas, matplotlib, seaborn 
+
+
+        pyDS_ch4_5_FacetGrid_Cordnt_diagnl
+            A-Z PY for Data-Science    6.8, 6.9
+            Facet Grid, Coordinates and Diagonals using: pandas, matplotlib, seaborn 
+
+
+        pyDS_ch4_6_Dshbrd_styly_finalTuch
+            A-Z PY for Data-Science    6.11, 6.12, 6.13
+            Dashboard creation, plot using: pandas, matplotlib, seaborn 
+
+
+        pyDS_ch4_7_Movie_gross_HW
+            A-Z PY for Data-Science    6.14, 6.15, 7.7, 7.8, 7.9
+            Visualize dataset, and recreation of a given plot using: pandas, matplotlib, seaborn 
+
 
 
 
 --------   PrTla PY for DS & ML   --------
-Welcome to the Pandas Section!
-Introduction to Pandas
-Series
-DataFrames - Part 1
-DataFrames - Part 2
-DataFrames - Part 3
-Missing Data
-Groupby
-Merging Joining and Concatenating
-Operations
-Data Input and Output
+Welcome to the Data Visualization Section!
+Introduction to Matplotlib
+Matplotlib Part 1
+Matplotlib Part 2
+Matplotlib Part 3
+Matplotlib Exercises Overview
+Matplotlib Exercises - Solutions
+
+
+
+Welcome to the Data Visualization Section!:     Write some objectives
+Introduction to Matplotlib:     Use of Matplotlib and install
+Matplotlib Part 1:      How to create a Plot, Functional
+Matplotlib Part 2:      subplt & OO-methods
+Matplotlib Part 3:      Plot customization : FigSize, DPI, SaveFig, Legend, Color, Line weight
+Matplotlib Exercises Overview
+Matplotlib Exercises - Solutions
+
+----  Matplotlib 2 parts  ----
+1. Basics MakePlot
+2. PlotCustomize
+
+pyDS_ch7_1_MatPltLib_intro                          : 8.1, 8.2, 
+pyDS_ch7_2_MakePlot Functional subplt OO method     : 8.3, 8.4 (Half:6.25)
+pyDS_ch7_3_PlotCustomize: FigSize,DPI, SaveFig, Legend, Color, Line weight      : 8.4 (Last-Half:6.25), 8.5
+pyDS_ch7_4_Exercise                                 : 8.6, 8.7
+
+# combine/review with OLD (A-Z)
+
+pyDS_ch7_1_MatPltLib_intro
+pyDS_ch7_2_MakePlot
+pyDS_ch7_3_PlotCustomize
+pyDS_ch7_4_Exercise
+
