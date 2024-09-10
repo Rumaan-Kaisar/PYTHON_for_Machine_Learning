@@ -2,10 +2,10 @@
 
 # Directory: List of the folders you want to create
 
-file_names = ["pyDS_ch6_1_series",
-"pyDS_ch6_2_dataFrame_basic",
-"pyDS_ch6_3_dataFrame_dtail",
-"pyDS_ch6_4_PANDAS_oprations"]
+file_names = ['pyDS_ch7_1_MatPltLib_intro',
+'pyDS_ch7_2_MakePlot',
+'pyDS_ch7_3_PlotCustomize',
+'pyDS_ch7_4_Exercise']
 
 
 
@@ -28,7 +28,3 @@ for i in range (0, len(file_names)):
 # run windows cmd/terminal inside the working directory
 # python z_make_files.py
 
-# pyDS_ch6_1_series
-# pyDS_ch6_2_dataFrame_basic
-# pyDS_ch6_3_dataFrame_dtail
-# pyDS_ch6_4_operations
