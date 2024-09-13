@@ -1,10 +1,4 @@
 
-################# 8.1: FULL, 8.2: 0.52
-# copy:  
-#        
-#        
-################# (10-Sep-24 for 11-sep-24)
-
 # Courses: PrTla PY for DS & ML >   8.1, 8.2
 
 
@@ -24,15 +18,23 @@
 
 # ----  install  ----
 
-To install Matplotlib:
-Run the following command in your terminal or Jupyter notebook:
-
-bash
-Copy code
+# To install Matplotlib Run the following command in your terminal or Jupyter notebook:
+# use pip or conda
 pip install matplotlib
+# or 
+conda install matplotlib
+
+# --------    official website: matplotlib.org    --------
+# gallery:
+    # different types of plots, we can use any of those
+    # eg: pie or polar chart -> pie chart
+
+# doc:
+    # documentation for usage and how to plot
+    # just be familier with common functions
 
 
-Example 1: Simple Line Plot
+# Example 1: Simple Line Plot
 
 import matplotlib.pyplot as plt
 
@@ -52,9 +54,9 @@ plt.show()
 
 
 
-Example 2: Bar Plot
-python
-Copy code
+
+# Example 2: Bar Plot
+
 import matplotlib.pyplot as plt
 
 # Data
