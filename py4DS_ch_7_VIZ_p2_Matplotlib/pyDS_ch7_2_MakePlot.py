@@ -1,9 +1,9 @@
 
-################# 8.3: 3.56
+################# 8.3: 6:47
 # copy:
 #        
 #        
-################# (14-Sep-24 for 15-sep-24)
+################# (15-Sep-24 for 17-sep-24)
 
 # Courses: PrTla PY for DS & ML >   8.3, 8.4 (6.25)
 
@@ -46,11 +46,10 @@ import matplotlib.pyplot as plt
 
 # 2 way to plot in Matplotlib:
     # Functional way
-    # OOP way
+    # OOP way - object oriented way
 
 
 # --------    Functional way of plotting    --------
-# MatLab syntax is also used, eg: to set color r
 import numpy as np
 
 # Let's define two numpy arrays. 
@@ -64,4 +63,33 @@ print(x)
 print(y)
 plt.plot(x, y)
 # plt.show()    # other than Jupyter NB
+
+# MatLab-like syntax is also used, eg: to set color and line style 'r--'
+plt.plot(x, y, 'r--')
+
+# X,Y labels and title
+plt.plot(x, y)
+plt.xlabel('X label')
+plt.ylabel('Y label')
+plt.title("Title: simple plot")
+
+# Note: later we'll learn to control dpi to get a finar font & plot
+# we need to set the specific DPI before use plt.plot()
+plt.figure(dpi=150)  # Higher DPI value results in a finer plot
+plt.plot(x, y)
+
+
+
+# ------------    multi-plot: subplot    ------------
+# plt.subplot(row, col, ref_to_plot_num)
+plt.subplot(1,2, 1)
+plt.plot(x,y, 'r')
+
+plt.subplot(1,2, 2)     # notice 3rd arg "ref_to_plot_num" set to 2 for 2nd plot
+plt.plot(y,x, 'b--')
+
+
+
+
+# --------    Object-Oriented way of plotting    --------
 
