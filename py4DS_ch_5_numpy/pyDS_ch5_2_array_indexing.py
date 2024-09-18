@@ -128,6 +128,61 @@ arr_2d[:2, 1:]
 # ':2' = grabs all rows upto index-2 (excluding 2)
 # '1:' = grab all columns from index 1 (including 1)
 
+# Getting bottom row
+arr_2d[2]
+# or
+arr_2d[2,:]
+
+
+
+# --------    Fancy Indexing    --------
+# Fancy indexing allows you to select entire rows or columns out of order,
+#   to show this, let's quickly build out a numpy array:
+
+
+""" 
+    ----    Fancy Indexing    ----
+    Fancy indexing refers to the ability to access elements of an array using lists or arrays of indices, 
+        rather than sequential or scalar indexing. 
+    This is useful when you need to select elements based on specific positions, even out of order.
+
+    Instead of selecting rows or columns one by one, 
+        "Fancy Indexing" allows you to provide a list (or array) of row/column indices and extract them all at once.
+    
+    It's a powerful feature for efficiently manipulating and accessing data. 
+"""
+
+
+#Set up matrix
+arr2d = np.zeros((10,10))   # Initialize a 2D array with zeros. This creates a 2D NumPy array (arr2d) with 10 rows and 10 columns, all filled with zeros
+
+#Length of array
+arr_length = arr2d.shape[1] # arr2d.shape[1] gets the number of columns in arr2d, which is 10. The result is stored in arr_length.
+
+#Set up array: Populate the array with values:
+""" This loop fills each row of arr2d with the value of i. After this loop:
+
+        Row 0 will be [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        Row 1 will be [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        Row 2 will be [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+
+        and so on until row 9. 
+"""
+for i in range(arr_length):
+    arr2d[i] = i
+
+# Fancy Indexing:
+# Select rows using specific indices:
+# This is an example of fancy indexing, where you select rows based on a list of indices. 
+#   Here, rows with indices 2, 4, 6, and 8 are selected. Fancy indexing allows non-sequential row selection.
+arr2d[[2,4,6,8]]
+
+# Selecting rows in any order:
+# In this case, rows 6, 4, 2, and 7 are selected, but the order of selection doesn’t have to follow any pattern. 
+#   Fancy indexing allows you to pick rows or columns in any order.
+arr2d[[6,4,2,7]]
+
+
 
 
 # --------    conditional selection    --------
