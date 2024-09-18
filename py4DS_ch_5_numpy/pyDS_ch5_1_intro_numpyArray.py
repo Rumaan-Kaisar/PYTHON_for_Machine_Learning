@@ -270,6 +270,10 @@ arr_2 = arr_1.reshape(5,5)
 arr_2.shape
 # returns (5,5) i.e. it's 2D now
 
+# Notice the two sets of brackets
+arr_1.reshape(1,25)
+arr_1.reshape(1,25).shape
+arr_1.reshape(25,1)
 
 # ----  data-type info  ----
 # to get the datatype of an array use "dtype" attribute
