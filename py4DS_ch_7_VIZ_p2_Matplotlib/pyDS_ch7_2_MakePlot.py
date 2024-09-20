@@ -1,5 +1,5 @@
 
-################# 8.3: 6:47
+################# 8.3: 8.58
 # copy:
 #        
 #        
@@ -92,4 +92,18 @@ plt.plot(y,x, 'b--')
 
 
 # --------    Object-Oriented way of plotting    --------
+# Let's break down Matplotlib's Object-Oriented API:
+#   This approach involves creating figure objects and then calling methods or attributes from them.
+#   The key idea is to create figure objects and use their methods, especially when handling multiple plots on one canvas.
+
+# First, create a figure instance
+fig = plt.figure()
+# notice matplotlib.figure object is created
+# consider it as a blank canvas
+
+# Add set of axes to figure, add_axes() takes an list argument with four element
+#   left, bottom, width, height (range 0 to 1, as percentage)
+axes = fig.add_axes([0.1, 0.1, 0.8, 0.8]) 
+
+# Plot on that set of axes
 
