@@ -1,5 +1,5 @@
 
-################# 8.3: 8.58
+################# 8.3: 15:20
 # copy:
 #        
 #        
@@ -96,14 +96,53 @@ plt.plot(y,x, 'b--')
 #   This approach involves creating figure objects and then calling methods or attributes from them.
 #   The key idea is to create figure objects and use their methods, especially when handling multiple plots on one canvas.
 
+import numpy as np
+import matplotlib.pyplot as plt
+# shows plots directly in Jupyter notebooks.
+%matplotlib inline
+
 # First, create a figure instance
 fig = plt.figure()
 # notice matplotlib.figure object is created
 # consider it as a blank canvas
 
+
 # Add set of axes to figure, add_axes() takes an list argument with four element
 #   left, bottom, width, height (range 0 to 1, as percentage)
 axes = fig.add_axes([0.1, 0.1, 0.8, 0.8]) 
 
+# The data we want to plot:
+# linearly spaced 11 points between (0, 5)
+x = np.linspace(0, 5, 11)
+y = x**2    # output, function of x
+
 # Plot on that set of axes
+axes.plot(x, y, 'r')
+
+# X,Y labels and title, notice the use of set_ to begin methods
+axes.set_xlabel('X Label')
+axes.set_ylabel('y Label')
+axes.set_title('Title')
+
+
+# Let's try multiple plot in one canvas. 
+#   It'll clear the purpose of using the list [0.1, 0.1, 0.8, 0.8], to what it referances
+#       basically first two are the coordinate of origin
+#       last tw are define the size of the plot
+#       all 4 numbers ranges between (0, 1) as relative-percetage
+
+fig2 = plt.figure()
+
+ax1 = fig2.add_axes([0.1, 0.1, 0.8, 0.8])   # origin at (0.1, 0.1), size of (0.8, 0.8)
+ax2 = fig2.add_axes([0.2, 0.5, 0.4, 0.5])   # origin at (0.2, 0.5), size of (0.4, 0.5), smaller moved upper-left
+
+# Plot on ax1
+ax1.plot(x, y, 'r')
+ax1.set_title('Big plot')
+
+# Plot on ax2
+ax2.plot(y, x)
+ax2.set_title('Small Plot')
+
+
 
