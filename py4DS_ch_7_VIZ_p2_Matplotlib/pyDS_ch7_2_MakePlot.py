@@ -1,9 +1,9 @@
 
-################# 8.3: 15:20
+################# 8.3: 15:20, 8.4: 4.9
 # copy:
 #        
 #        
-################# (15-Sep-24 for 17-sep-24)
+################# (21-Sep-24 for 22-sep-24)
 
 # Courses: PrTla PY for DS & ML >   8.3, 8.4 (6.25)
 
@@ -135,6 +135,8 @@ fig2 = plt.figure()
 
 ax1 = fig2.add_axes([0.1, 0.1, 0.8, 0.8])   # origin at (0.1, 0.1), size of (0.8, 0.8)
 ax2 = fig2.add_axes([0.2, 0.5, 0.4, 0.5])   # origin at (0.2, 0.5), size of (0.4, 0.5), smaller moved upper-left
+# Note: each ax1, ax2 is an 'matplotlib.axes' object
+#       we've manually created it, in subplot() we'll work with array of 'matplotlib.axes'
 
 # Plot on ax1
 ax1.plot(x, y, 'r')
@@ -145,4 +147,58 @@ ax2.plot(y, x)
 ax2.set_title('Small Plot')
 
 
+
+
+# ------------    SUBPLOTs using OO    ------------
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots()
+
+# as before we can use 'axes' to plot 
+x = np.linspace(0, 5, 11)
+y = x**2    # output, function of x
+
+# Plot on that set of axes
+axes.plot(x, y, 'r')
+axes.set_xlabel('X Label')
+axes.set_ylabel('y Label')
+axes.set_title('Title')
+
+# subplot allows number of rows and columns
+#   it's actually an axes manager on top of plt.figure
+fig_2, axes_2 = plt.subplots(nrows=1, ncols=2)
+fig_3, axes_3 = plt.subplots(nrows=3, ncols=3)
+
+# ----  issues of overlapping  ----
+#   we'll deal with it later. But a quickfix is using: tight_layout()
+#   fig.tight_layout() or plt.tight_layout() automatically adjusts the positions of the axes on the figure canvas
+plt.tight_layout()
+
+
+# Here 'axes' is an array of axes to plot on (i.e. an array of 'matplotlib.axes' objects).
+#   that's the reason of this "tuple-unpacking":  "fig, axes"   
+#   of  "fig, axes= plt.subplots()"
+axes
+axes_3
+
+# we can manually access each 'axes' and plot
+axes_3[1][1].plot(x, y)
+axes_3[2][0].plot(y, x)
+fig_3
+
+# we can LOOP through that "array of axes"
+for currnt_ax in axes_2:
+    currnt_ax.plot(x, y)
+fig_2
+
+# notice nested loop to access "array of axes"
+for row in axes_3:
+    for currnt_ax in row:
+        currnt_ax.plot(x, y)
+fig_3
+
+
+
+# --------    Figure size, aspect ratio and DPI    --------
 
