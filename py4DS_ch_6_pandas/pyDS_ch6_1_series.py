@@ -33,7 +33,7 @@
     # DataFrames 
     # Missing Data 
     # GroupBy
-    # Mergingjoining^nd Concatenating 
+    # Merging joining and Concatenating 
     # Operations
     # Data Input and Output: csv, excel files, SQL and more
 
@@ -129,5 +129,6 @@ ser_1 + ser_2
 
 # Note: "int" will convert to "float" Working with NumPy or Pandas based object
 #           it's done to retain all the information. eg: int-division data loss
+
 
 
