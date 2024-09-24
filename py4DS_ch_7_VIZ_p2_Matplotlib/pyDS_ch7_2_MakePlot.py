@@ -1,11 +1,5 @@
 
-################# 8.3: 15:20, 8.4: 4.9
-# copy:
-#        
-#        
-################# (21-Sep-24 for 22-sep-24)
-
-# Courses: PrTla PY for DS & ML >   8.3, 8.4 (6.25)
+# Courses: PrTla PY for DS & ML >   8.3, 8.4 (6.22)
 
 # ------------    Matplotlib concepts    ------------
 
@@ -182,9 +176,11 @@ plt.tight_layout()
 axes
 axes_3
 
-# we can manually access each 'axes' and plot
+# we can manually access each 'axes' by indexing and plot
 axes_3[1][1].plot(x, y)
+axes_3[1][1].set_title('First Plot')
 axes_3[2][0].plot(y, x)
+axes_3[2][0].set_title('Second Plot')
 fig_3
 
 # we can LOOP through that "array of axes"
@@ -198,7 +194,7 @@ for row in axes_3:
         currnt_ax.plot(x, y)
 fig_3
 
+# put "tight_layout" at the of the plot-statements
+plt.tight_layout()
 
-
-# --------    Figure size, aspect ratio and DPI    --------
 
