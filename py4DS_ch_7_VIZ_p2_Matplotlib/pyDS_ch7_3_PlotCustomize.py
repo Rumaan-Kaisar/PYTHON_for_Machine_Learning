@@ -1,9 +1,9 @@
 
-################# 8.4: 11.34
-# copy:  2 figs
+################# 8.4: full
+# copy:
 #        
 #        
-################# (10-Sep-24 for 11-sep-24)
+################# (25-Sep-24 for 27-sep-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -56,5 +56,67 @@ fig2.savefig("fig2_subplot.jpg", dpi=200)
 
 
 # --------    Legends, labels and titles    --------
+# 'set_title' sets the TITLE of the axes instance
+# 'set_xlabel' and 'set_ylabel' sets the labels of the X and Y axes:
+
+# LEGEND: with legend we can have labled text for more info about a plot
+#   used to specify multiple lines in one plot
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig3 = plt.figure(figsize=(3, 2))
+ax3 = fig3.add_axes([0, 0, 1, 1])
+
+# The data we want to plot:
+x = np.linspace(0, 5, 11)
+y = x**2 
+
+# adding a legend is 2 step process
+# 1.    label the objects in ax.plot(): label="label text"
+# 2.    call legend() at the end
+
+# multiple lines in one plot
+ax3.plot(x, y, label='X vs Y')
+ax3.plot(y, x, label='Y vs X')
+ax3.plot(x, x**2, label='X Squared')
+ax3.plot(x, x**3, label='X Cubed')
+
+ax3.set_title('Title')
+ax3.set_ylabel('Y')
+ax3.set_xlabel('X')
+
+ax3.legend(loc=0)    # check each of the plot and looks for a label
+# to avoid the overlapping we can use 'loc', there is location codes and location strings
+(location_strings, location_codes) = {
+    ('best', 0),
+    ('upper right', 1),
+    ('upper left', 2),
+    ('lower left', 3),
+    ('lower right', 4),
+    ('right', 5),
+    ('center left', 6),
+    ('center right', 7),
+    ('lower center', 8),
+    ('upper center', 9),
+    ('center', 10)
+}
+# 'best' is recomended, i.e. loc=0
+
+# alternative 2 tuple position: set the position of (x, y) of the "lower-left corner" of the legend
+ax3.legend(loc=(0.1, 0.1))
+
+
+
+# ------------    Setting colors, linewidths, linetypes    ------------
+
+
+
+
+
+
+
+
+
+
 
 
