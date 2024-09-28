@@ -1,9 +1,9 @@
 
-################# 8.4: full
+################# 8.4: full, 8.5:3.50
 # copy:
 #        
 #        
-################# (25-Sep-24 for 27-sep-24)
+################# (27-Sep-24 for 28-sep-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -11,6 +11,7 @@
 # --------    Figure size, aspect ratio and DPI    --------
 # By calling the 'fig' object we can customize the figure
 
+from turtle import color
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -108,15 +109,43 @@ ax3.legend(loc=(0.1, 0.1))
 
 
 # ------------    Setting colors, linewidths, linetypes    ------------
+# MATLAB like sntax can be used (but avoid these for more clarity)
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig4 = plt.figure()
+ax4 = fig4.add_axes([0, 0, 1, 1])
+
+# The data we want to plot:
+x = np.linspace(0, 5, 11)
+y = x**2 
 
 
+# ----  setting colors  ----
+# colorcan take strings ('red', 'blue', 'orange') or RGB-HEX-color like "#FF9C00"
+ax4.plot(x, y, color='#FF9C00')
 
 
+# ----  linewidth  ----
+# can also use shorthand: linewidth 'lw'
+ax4.plot(x, y, linewidth=3)
+# use "alpha-style" for tranparency
+ax4.plot(x, y, linewidth=3, alpha=0.5)
 
 
+# ----  using MATLAB-like syntax  ----
+# we can define the colors of lines and other graphical elements 
+    # color: 'b' means blue, 'g' means green, etc. 
+    # line styles: 'b.-' means a blue line with dots
+fig5, ax5 = plt.subplots()
+ax.plot(x, x+1, color="blue", alpha=0.5) # half-transparant
+ax.plot(x, x+2, 'g--')         # MATLAB-like syntax
+ax.plot(x, x+3, color="#FF8C00")         # RGB hex code 
 
 
-
+# ----  linestyle  ----
+# Line and marker styles
 
 
 
