@@ -3,7 +3,7 @@
 # copy:
 #        
 #        
-################# (27-Sep-24 for 28-sep-24)
+################# (28-Sep-24 for 29-sep-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -144,8 +144,78 @@ ax.plot(x, x+2, 'g--')         # MATLAB-like syntax
 ax.plot(x, x+3, color="#FF8C00")         # RGB hex code 
 
 
-# ----  linestyle  ----
-# Line and marker styles
+
+# ----  linestyle and marker styles  ----
+# linestyle 
+    # we can use different styles. Use 'linestyle' or 'ls' attribute
+    # '-' solid line (default)
+    # '--' dashed line
+    # '-.' dot-dashed line
+    # ':' smaller dashes
+    # 'steps' stair-case like for 'fixes-increment of x axis'
+
+# markers
+# markers can be used if we have discrete "fiewer data-points"
+# for example x is a set of 11 data points
+# we want to mark those 11 points on the plot
+
+# we'll use "marker" and "markersize" attribute
+# styles: 
+    # 'o' dots, '*' asteric, '1' star, '2' star, '+' points
+    # 'markeredgewidth', 'markeredgcolor' and 'markerfacecolor' for more styling
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig6 = plt.figure(figsize=(12,6))
+ax6 = fig6.add_axes([0, 0, 1, 1])
+
+x = np.linspace(0, 5, 11)
+print(x)
+
+# ax6.plot(x, (1*x)+1, color="red", linewidth=0.25, linestyle='steps')
+# ls ='steps' doesn't work anymore, use 'drawstyle' or 'ds': drawstyle='steps-pre'
+ax6.plot(x, (1*x)+1, color="red", linewidth=0.25, linestyle='-', drawstyle='steps-pre')
+ax6.plot(x, (2*x)+2, color="green", linewidth=0.50, linestyle='-')
+ax6.plot(x, (3*x)+3, color="blue", linewidth=1.00, ls='-.')
+ax6.plot(x, (4*x)+4, color="purple", linewidth=2.00, ls=':')
+
+# possible marker symbols: marker = '+', 'o', '*', 's', ',', '.', '1', '2', '3', '4', ...
+ax6.plot(x, (x**1), color="#FF9C00", lw=2, ls='-', marker='+', markersize=2)
+ax6.plot(x, (x**2), color="#FF9C00", lw=2, ls='--', marker='o', markersize=2)
+# marker with more styles
+ax6.plot(x, (x**0.5), color="#FF9C00", lw=2, ls='-', marker='s', markersize=8, markerfacecolor="yellow", markeredgewidth=3, markeredgecolor="#008811")
+ax6.plot(x, (x**-2), color="#FF9C00", lw=2, ls='--', marker='1', markersize=8, markerfacecolor="#008811", markeredgewidth=3, markeredgecolor="red")
 
 
+# ----  custom dash  ----
+# format: line length, space length, ...
+fig7, ax7 = plt.subplots(figsize=(12,6))
+
+line, = ax7.plot(x, -x, color="black", lw=1.50)     # notice "tuple unpacking"
+line.set_dashes([5, 10, 15, 10])  # format: line length, space length, ...
+
+
+fig8 = plt.figure(figsize=(6,6))
+ax8 = fig8.add_axes([0, 0, 1, 1])
+line2, = ax8.plot(x, -x, color="black", lw=1.50)     # no tuple sepearion needed for single object
+line2.set_dashes([5, 10, 15, 10])  # format: line length, space length, ...
+
+""" 
+    ----  why "tuple unpacking"  ----
+    line, = ax7.plot(x, -x, ...) 
+    assigns the "Line2D object" created by the plot() function to the variable 'line'
+
+    The tuple unpacking (line, =) is necessary because ax7.plot() returns a "list of line objects", even if only one line is plotted. 
+    The trailing comma ensures that 'line' is assigned the "single Line2D object", rather than a list containing it.
+
+    If you don't use tuple unpacking (i.e., if you just do line = ax7.plot(...)), 
+        then line becomes a 'list', and lists don't have a "set_dashes()" method. 
+    That's why you would get the error: 'list' object has no attribute 'set_dashes'.
+
+    So, to avoid this error, the "line, =" syntax ensures that you are dealing with the actual Line2D object, which has the set_dashes method.
+"""
+
+
+# ------------    axis appearance control    ------------
 
