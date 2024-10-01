@@ -1,9 +1,9 @@
 
-################# 8.4: full, 8.5:3.50
+################# 8.4: full, 8.5:full
 # copy:
 #        
 #        
-################# (28-Sep-24 for 29-sep-24)
+################# (29-Sep-24 for 01-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -218,4 +218,34 @@ line2.set_dashes([5, 10, 15, 10])  # format: line length, space length, ...
 
 
 # ------------    axis appearance control    ------------
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig9 = plt.figure(figsize=(12,6))
+ax9 = fig9.add_axes([0, 0, 1, 1])
+
+x = np.linspace(0, 5, 11)
+print(x)
+
+ax9.plot(x, x*x, color='red', lw=2, ls='--')
+
+# plot range
+# y-limit and x-limit: for eaxample we want to set x= [0, 1]
+ax9.set_xlim([0, 1])
+ax9.set_ylim([0, 2])
+
+
+# ------------    special plot  types    ------------
+# Most of these special methods we'll use in the Seaborn library, but they primarily originate from Matplotlib.
+    # barplot
+    # histogram
+    # scatterplot
+    # boxplot
+
+
+
+# ------------    Advanced plots and Refererance links    ------------
+# Essentially, we'll rely on Seaborn to manage most of the following staff
+
+
 
