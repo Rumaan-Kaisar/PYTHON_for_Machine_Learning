@@ -1,9 +1,9 @@
 
-################# 8.4: full, 8.5:full
+################# Advanced & special
 # copy:
 #        
 #        
-################# (29-Sep-24 for 01-Oct-24)
+################# (02-Oct-24 for 04-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -235,12 +235,47 @@ ax9.set_xlim([0, 1])
 ax9.set_ylim([0, 2])
 
 
+
 # ------------    special plot  types    ------------
-# Most of these special methods we'll use in the Seaborn library, but they primarily originate from Matplotlib.
+# Most of these special methods we'll use in the "seaborn" library, but they primarily originate from Matplotlib.
     # barplot
     # histogram
     # scatterplot
     # boxplot
+
+import numpy as np
+import matplotlib.pyplot as plt
+t = np.arange(0, 16)    # 0 to 15, 16 points
+
+# scatter plot
+plt.scatter(x, (x**2)*(-1)**2)
+
+
+# Histogram
+from random import sample
+dta = sample(range(1, 1000), 100)
+print(dta)
+plt.hist(dta) # plots how many data points falls in (0, 100), (101, 200), ..., (901, 1000)
+
+"""  
+    sample() is an built-in function of "random" module in Python that returns a particular length "list of items" chosen from the sequence 
+    The "sequence" can be a list, tuple, string, or set, and the sampling is done without replacement.
+
+            Syntax : 
+                        random.sample(sequence, k)  
+            Parameters:
+                        sequence: Can be a list, tuple, string, or set. 
+                        k: An Integer value, it specify the length of a sample
+
+            Returns: k length new list of elements chosen from the sequence.
+"""
+# demo of random.sample()
+from random import sample
+
+# Prints list of random items of given length
+list1 = [1, 2, 3, 4, 5] 
+
+print(sample(list1,3))
 
 
 
