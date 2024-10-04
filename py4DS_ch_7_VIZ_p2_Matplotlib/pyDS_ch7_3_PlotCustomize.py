@@ -1,6 +1,6 @@
 
 ################# Advanced & special
-# copy:
+# copy: update: pyDS_ch5_1_intro_numpyArray.py + ipynb
 #        
 #        
 ################# (02-Oct-24 for 04-Oct-24)
@@ -278,9 +278,40 @@ list1 = [1, 2, 3, 4, 5]
 print(sample(list1,3))
 
 
+# Boxplot
+dta2 = [np.random.normal(0, std, 100) for std in range(1, 4)]
+# rectangular box plot
+plt.boxplot(dta2, vert=True, patch_artist=True); 
+
+""" 
+    numpy.random.normal(loc, scale, size):
+
+        Distribution: Normal (Gaussian) distribution.
+        Parameters:
+            loc: Mean of the distribution (default is 0).
+            scale: Standard deviation of the distribution (default is 1).
+            size: Dimensions of the output array.
+
+        Returns: Random numbers from a normal distribution with a specified mean (loc) and standard deviation (scale).
+
+"""
+
+
+
+
 
 # ------------    Advanced plots and Refererance links    ------------
 # Essentially, we'll rely on Seaborn to manage most of the following staff
 
 
 
+
+""" 
+# Further reading
+http://www.matplotlib.org - The project web page for matplotlib.
+https://github.com/matplotlib/matplotlib - The source code for matplotlib.
+http://matplotlib.org/gallery.html - A large gallery showcaseing various types of plots matplotlib can create. Highly recommended! 
+http://www.loria.fr/~rougier/teaching/matplotlib - A good matplotlib tutorial.
+http://scipy-lectures.github.io/matplotlib/matplotlib.html - Another good matplotlib reference.
+
+ """
