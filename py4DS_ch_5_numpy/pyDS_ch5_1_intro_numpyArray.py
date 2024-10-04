@@ -279,3 +279,91 @@ arr_1.reshape(25,1)
 # to get the datatype of an array use "dtype" attribute
 arr_2.dtype
 
+
+# ------------    some special "numpy.random" methods    ------------
+"""  
+    sample() is an built-in function of "random" module in Python that returns a particular length "list of items" chosen from the sequence 
+    The "sequence" can be a list, tuple, string, or set, and the sampling is done without replacement.
+
+            Syntax : 
+                        random.sample(sequence, k)  
+            Parameters:
+                        sequence: Can be a list, tuple, string, or set. 
+                        k: An Integer value, it specify the length of a sample
+
+            Returns: k length new list of elements chosen from the sequence.
+"""
+# demo of random.sample()
+from random import sample
+
+# Prints list of random items of given length
+list1 = [1, 2, 3, 4, 5] 
+
+print(sample(list1,3))
+
+
+Here’s a clear breakdown of the differences between numpy.random.rand(), numpy.random.randn(), and numpy.random.normal():
+
+
+# numpy.random.rand():
+Distribution: Uniform distribution.
+Range: [0, 1).
+Parameters: Dimensions of the output array.
+Returns: Random numbers from a uniform distribution over [0, 1).
+Usage:
+python
+Copy code
+np.random.rand(3, 2)  # Output: Random numbers from a uniform distribution between 0 and 1.
+Example Output:
+lua
+Copy code
+array([[0.485, 0.169],
+       [0.943, 0.763],
+       [0.210, 0.897]])
+
+# numpy.random.randn():
+Distribution: Standard normal distribution (mean = 0, standard deviation = 1).
+Range: Entire real number line.
+Parameters: Dimensions of the output array.
+Returns: Random numbers from the standard normal (Gaussian) distribution with mean 0 and standard deviation 1.
+Usage:
+python
+Copy code
+np.random.randn(3, 2)  # Output: Random numbers from a standard normal distribution.
+Example Output:
+lua
+Copy code
+array([[ 0.926, -1.252],
+       [ 0.526,  0.136],
+       [-0.927,  0.837]])
+
+# numpy.random.normal():
+Distribution: Normal (Gaussian) distribution.
+Parameters:
+loc: Mean of the distribution (default is 0).
+scale: Standard deviation of the distribution (default is 1).
+size: Dimensions of the output array.
+Returns: Random numbers from a normal distribution with a specified mean (loc) and standard deviation (scale).
+Usage:
+python
+Copy code
+np.random.normal(loc=5, scale=2, size=(3, 2))  # Output: Random numbers from a normal distribution with mean 5 and standard deviation 2.
+Example Output:
+lua
+Copy code
+array([[4.382, 6.752],
+       [5.023, 1.723],
+       [7.041, 4.349]])
+
+""" 
+Key Differences:
+rand(): Samples from a uniform distribution between [0, 1).
+randn(): Samples from a standard normal distribution (mean = 0, standard deviation = 1).
+normal(): Samples from a normal distribution where you can specify the mean (loc) and standard deviation (scale). It is more flexible than randn() because you can change the mean and standard deviation.
+
+Summary:
+rand(): Uniform distribution over [0, 1).
+randn(): Standard normal distribution (mean = 0, std = 1).
+normal(): General normal distribution (you can set mean and standard deviation).
+
+ """
