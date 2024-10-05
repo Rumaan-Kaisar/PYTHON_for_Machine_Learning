@@ -280,7 +280,10 @@ arr_1.reshape(25,1)
 arr_2.dtype
 
 
+
+
 # ------------    some special "numpy.random" methods    ------------
+# ----  random.sample()  ----
 """  
     sample() is an built-in function of "random" module in Python that returns a particular length "list of items" chosen from the sequence 
     The "sequence" can be a list, tuple, string, or set, and the sampling is done without replacement.
@@ -293,7 +296,6 @@ arr_2.dtype
 
             Returns: k length new list of elements chosen from the sequence.
 """
-# demo of random.sample()
 from random import sample
 
 # Prints list of random items of given length
@@ -301,8 +303,6 @@ list1 = [1, 2, 3, 4, 5]
 
 print(sample(list1,3))
 
-
-Here’s a clear breakdown of the differences between numpy.random.rand(), numpy.random.randn(), and numpy.random.normal():
 
 
 # numpy.random.rand():
