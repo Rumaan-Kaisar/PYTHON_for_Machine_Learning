@@ -305,65 +305,75 @@ print(sample(list1,3))
 
 
 
-# numpy.random.rand():
-Distribution: Uniform distribution.
-Range: [0, 1).
-Parameters: Dimensions of the output array.
-Returns: Random numbers from a uniform distribution over [0, 1).
-Usage:
-python
-Copy code
+# ----  numpy.random.rand()  ----
+""" 
+    Distribution:   Uniform distribution.
+    Range:          [0, 1)
+    Parameters:     Dimensions of the output array.
+    Returns:        Random numbers from a uniform distribution over [0, 1).
+ """
+
 np.random.rand(3, 2)  # Output: Random numbers from a uniform distribution between 0 and 1.
-Example Output:
-lua
-Copy code
-array([[0.485, 0.169],
-       [0.943, 0.763],
-       [0.210, 0.897]])
 
-# numpy.random.randn():
-Distribution: Standard normal distribution (mean = 0, standard deviation = 1).
-Range: Entire real number line.
-Parameters: Dimensions of the output array.
-Returns: Random numbers from the standard normal (Gaussian) distribution with mean 0 and standard deviation 1.
-Usage:
-python
-Copy code
+# output:
+# array([[0.485, 0.169],
+#        [0.943, 0.763],
+#        [0.210, 0.897]])
+
+
+
+# ----  numpy.random.randn()  ----
+""" 
+    Distribution:   Standard normal distribution (mean = 0, standard deviation = 1).
+    Range:          Entire real number line (-inf, inf)
+    Parameters:     Dimensions of the output array.
+    Returns:        Random numbers from the standard normal (Gaussian) distribution with mean 0 and standard deviation 1.
+"""
 np.random.randn(3, 2)  # Output: Random numbers from a standard normal distribution.
-Example Output:
-lua
-Copy code
-array([[ 0.926, -1.252],
-       [ 0.526,  0.136],
-       [-0.927,  0.837]])
 
-# numpy.random.normal():
-Distribution: Normal (Gaussian) distribution.
-Parameters:
-loc: Mean of the distribution (default is 0).
-scale: Standard deviation of the distribution (default is 1).
-size: Dimensions of the output array.
-Returns: Random numbers from a normal distribution with a specified mean (loc) and standard deviation (scale).
-Usage:
-python
-Copy code
+# Output:
+# array([[ 0.926, -1.252],
+#        [ 0.526,  0.136],
+#        [-0.927,  0.837]])
+
+
+
+# ----  numpy.random.normal()  ----
+""" 
+    Distribution:   Normal (Gaussian) distribution.
+    Parameters:
+                loc:    Mean of the distribution (default is 0).
+                scale:  Standard deviation of the distribution (default is 1).
+                size:   Dimensions of the output array.
+
+    Returns:        Random numbers from a normal distribution with a specified mean (loc) and standard deviation (scale).
+"""
 np.random.normal(loc=5, scale=2, size=(3, 2))  # Output: Random numbers from a normal distribution with mean 5 and standard deviation 2.
-Example Output:
-lua
-Copy code
-array([[4.382, 6.752],
-       [5.023, 1.723],
-       [7.041, 4.349]])
+
+# Output:
+# array([[4.382, 6.752],
+#        [5.023, 1.723],
+#        [7.041, 4.349]])
 
 """ 
-Key Differences:
-rand(): Samples from a uniform distribution between [0, 1).
-randn(): Samples from a standard normal distribution (mean = 0, standard deviation = 1).
-normal(): Samples from a normal distribution where you can specify the mean (loc) and standard deviation (scale). It is more flexible than randn() because you can change the mean and standard deviation.
+    -=-=-=-    Key Differences between rand(), randn(), normal()    -=-=-=-
+    
+    rand():     Samples from a UNIFORM distribution between [0, 1).
+    randn():    Samples from a STANDARD NORMAL distribution (mean = 0, standard deviation = 1).
+    normal():   Samples from a NORMAL distribution where you can specify the mean (loc) and standard deviation (scale). 
+                It is more flexible than randn() because you can change the mean and standard deviation.
 
-Summary:
-rand(): Uniform distribution over [0, 1).
-randn(): Standard normal distribution (mean = 0, std = 1).
-normal(): General normal distribution (you can set mean and standard deviation).
+"""
 
- """
+
+# --------    Standared deviation    --------
+"""  
+    In simple terms, standard deviation is a measure of how "spread out" or SCATTERED the values in a data set are around the average (mean).
+        If the standard deviation is small, it means most of the numbers are close to the average.
+        If the standard deviation is large, it means the numbers are more spread out, with some far above or below the average.
+
+    For example, if you have test scores of students:
+        If "most students" scored around 75 and a few scored slightly higher or lower, the standard deviation would be "small".
+        If "some students" scored very high (90s) and others scored very low (50s), the standard deviation would be "large".
+"""
+
