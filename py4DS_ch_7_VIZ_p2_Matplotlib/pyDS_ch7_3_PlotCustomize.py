@@ -1,9 +1,9 @@
 
 ################# Advanced & special
-# copy: update: pyDS_ch5_1_intro_numpyArray.py + ipynb
+# copy: update: 
 #        
 #        
-################# (02-Oct-24 for 04-Oct-24)
+################# (05-Oct-24 for 06-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -302,16 +302,54 @@ plt.boxplot(dta2, vert=True, patch_artist=True);
 
 # ------------    Advanced plots and Refererance links    ------------
 # Essentially, we'll rely on Seaborn to manage most of the following staff
+# Following are more advanced topics which we won't usually use as often
+
+#### Set "Logarithmic scale" to axis
+It is also possible to set a logarithmic scale for one or both axes. This functionality is in fact only one application of a more general transformation system in Matplotlib. Each of the axes' scales are set seperately using `set_xscale` and `set_yscale` methods which accept one parameter (with the value "log" in this case):
+
+fig, axes = plt.subplots(1, 2, figsize=(10,4))
+      
+axes[0].plot(x, x**2, x, np.exp(x))
+axes[0].set_title("Normal scale")
+
+axes[1].plot(x, x**2, x, np.exp(x))
+axes[1].set_yscale("log")
+axes[1].set_title("Logarithmic scale (y)");
+
+
+
+### Placement of ticks and custom tick labels
+We can explicitly determine where we want the axis ticks with `set_xticks` and `set_yticks`, which both take a list of values for where on the axis the ticks are to be placed. We can also use the `set_xticklabels` and `set_yticklabels` methods to provide a list of custom text labels for each tick location:
+
+fig, ax = plt.subplots(figsize=(10, 4))
+
+ax.plot(x, x**2, x, x**3, lw=2)
+
+ax.set_xticks([1, 2, 3, 4, 5])
+ax.set_xticklabels([r'$\alpha$', r'$\beta$', r'$\gamma$', r'$\delta$', r'$\epsilon$'], fontsize=18)
+
+yticks = [0, 50, 100, 150]
+ax.set_yticks(yticks)
+ax.set_yticklabels(["$%.1f$" % y for y in yticks], fontsize=18); # use LaTeX formatted labels
+
+There are a number of more advanced methods for controlling major and minor tick placement in matplotlib figures, such as automatic placement according to different policies. See http://matplotlib.org/api/ticker_api.html for details.
 
 
 
 
-""" 
-# Further reading
-http://www.matplotlib.org - The project web page for matplotlib.
-https://github.com/matplotlib/matplotlib - The source code for matplotlib.
-http://matplotlib.org/gallery.html - A large gallery showcaseing various types of plots matplotlib can create. Highly recommended! 
-http://www.loria.fr/~rougier/teaching/matplotlib - A good matplotlib tutorial.
-http://scipy-lectures.github.io/matplotlib/matplotlib.html - Another good matplotlib reference.
+#### Scientific notation
+With large numbers on axes, it is often better use scientific notation:
 
- """
+fig, ax = plt.subplots(1, 1)
+      
+ax.plot(x, x**2, x, np.exp(x))
+ax.set_title("scientific notation")
+
+ax.set_yticks([0, 50, 100, 150])
+
+from matplotlib import ticker
+formatter = ticker.ScalarFormatter(useMathText=True)
+formatter.set_scientific(True) 
+formatter.set_powerlimits((-1,1)) 
+ax.yaxis.set_major_formatter(formatter) 
+
