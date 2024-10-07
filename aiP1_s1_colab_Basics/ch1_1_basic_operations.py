@@ -75,3 +75,44 @@ with open('./all_data_5.pickle', 'rb') as file:
 
 print(data)
 
+
+# ----  view images  ----
+image_prev = data['images']
+label_prev = data['label']
+print(image_prev.shape)
+print(label_prev.shape)
+
+"""  
+    (27558, 36, 36, 3): This refers to the shape of image_prev. 
+        It contains 27,558 images, 
+        each of size 36x36 pixels, 
+        with 3 color channels (likely RGB).
+
+    (27558,): This refers to label_prev, which contains 27,558 labels, with one label for each image. 
+        The shape (27558,) indicates that it is a one-dimensional array of labels.
+"""
+
+
+# ----  images  ----
+# To preview images from your dataset in a grid format using matplotlib and seaborn, 
+# you can use plt.imshow() to display each image and organize them in subplots.
+import matplotlib.pyplot as plt
+
+# Create subplots
+fig, axes = plt.subplots(20, 40, figsize=(80, 40))  
+# creates a grid of subplots arranged in 20 rows and 40 columns 
+# with the overall figure size specified as 80 inches wide and 40 inches tall.
+
+for i, ax in enumerate(axes.flat):
+    # Display an image
+    ax.imshow(image_prev[i])  # Display the i-th image
+    ax.axis('off')            # Turn off axis labels/ticks
+
+plt.show()
+
+"""  
+    The figsize=(80, 40) specifies the "overall size" of the "entire figure" (not the size of each individual subplot).
+    Each subplot will have its own dimensions based on the figure size divided by the number of rows and columns:
+"""
+
+
