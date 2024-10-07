@@ -41,3 +41,37 @@ drive.mount('/content/drive/MyDrive/_MLDL')
 
 
 
+# - - - -    preview the dataset    - - - -
+import pickle
+
+# Open the pickle file in read-binary mode
+with open('./all_data_5.pickle', 'rb') as file:
+    data1 = pickle.load(file)
+
+# Now, the 'data' variable contains the contents of your pickle file
+print(data1)
+
+# - = - = - = -    Advanced    - = - = - = -
+# Open Compressed Pickle
+    # Sometimes, pickle files are compressed, then you need to decompress it first. 
+    # It could use different methods, for example: zlib, gzip, bz2. We can use:
+            # zlib.decompress()
+            # gzip.decompress()
+            # bz2.decompress()
+
+import pickle
+import zlib
+
+# Open the compressed pickle file
+with open('./all_data_5.pickle', 'rb') as file:
+    # Step 1: Read the binary content
+    compressed_data = file.read()
+    
+    # Step 2: Decompress the binary content
+    decompressed_data = zlib.decompress(compressed_data)
+    
+    # Step 3: Unpickle the decompressed data
+    data = pickle.loads(decompressed_data)
+
+print(data)
+
