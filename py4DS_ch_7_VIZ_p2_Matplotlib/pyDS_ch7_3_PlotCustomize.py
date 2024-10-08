@@ -3,7 +3,7 @@
 # copy: update: 
 #        
 #        
-################# (05-Oct-24 for 06-Oct-24)
+################# (06-Oct-24 for 08-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -11,7 +11,6 @@
 # --------    Figure size, aspect ratio and DPI    --------
 # By calling the 'fig' object we can customize the figure
 
-from turtle import color
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -300,46 +299,79 @@ plt.boxplot(dta2, vert=True, patch_artist=True);
 
 
 
-# ------------    Advanced plots and Refererance links    ------------
+# ----------------    Advanced plots and Refererance links    ----------------
 # Essentially, we'll rely on Seaborn to manage most of the following staff
 # Following are more advanced topics which we won't usually use as often
+# ----------------------------------------------------------------------------
+import numpy as np
+import matplotlib.pyplot as plt
 
-#### Set "Logarithmic scale" to axis
-It is also possible to set a logarithmic scale for one or both axes. This functionality is in fact only one application of a more general transformation system in Matplotlib. Each of the axes' scales are set seperately using `set_xscale` and `set_yscale` methods which accept one parameter (with the value "log" in this case):
+# The data we want to plot:
+# linearly spaced 11 points between (0, 5)
+x = np.linspace(0, 5, 11)
 
-fig, axes = plt.subplots(1, 2, figsize=(10,4))
+
+
+# --------    AXIS modification    --------
+# Set "Logarithmic scale" to axis (one or both axes)
+# scales are set seperately using "set_xscale" and "set_yscale" using "log" as parameter
+
+figAdv1, axsAdv1 = plt.subplots(1, 2, figsize=(8,4))
       
-axes[0].plot(x, x**2, x, np.exp(x))
-axes[0].set_title("Normal scale")
+axsAdv1[0].plot(x, x**2, x, np.exp(x))
+axsAdv1[0].set_title("Normal scale")
 
-axes[1].plot(x, x**2, x, np.exp(x))
-axes[1].set_yscale("log")
-axes[1].set_title("Logarithmic scale (y)");
+axsAdv1[1].plot(x, x**2, x, np.exp(x))
+axsAdv1[1].set_yscale("log")
+axsAdv1[1].set_title("Logarithmic scale (y)");
+
+"""  
+    Note:
+        Notice the transformation of the lines after using "Logarithmic scale" : set_yscale("log")
+        You can plot multiple lines on the same set of axes using a single plot() function in Matplotlib 
+            by providing multiple sets of x and y data. 
+            General form:
+                            plt.plot(x1, y1, x2, y2, x3, y3, ...)
+"""
+
+
+# ----  rev[06-Oct-2024]  ----
 
 
 
-### Placement of ticks and custom tick labels
-We can explicitly determine where we want the axis ticks with `set_xticks` and `set_yticks`, which both take a list of values for where on the axis the ticks are to be placed. We can also use the `set_xticklabels` and `set_yticklabels` methods to provide a list of custom text labels for each tick location:
+# --------    Placement of ticks and custom tick labels    --------
+# use "set_xticks" and "set_yticks"
+    # both take a 'list of values' for where on the axis the ticks are to be placed. 
+# custom tick labels
+    # use "set_xticklabels" and "set_yticklabels" and provide a list of custom text labels for each tick location
 
-fig, ax = plt.subplots(figsize=(10, 4))
+figAdv2, axsAdv2 = plt.subplots(figsize=(8, 4))
+axsAdv2.plot(x, x**2, x, x**3, lw=2)
 
-ax.plot(x, x**2, x, x**3, lw=2)
-
-ax.set_xticks([1, 2, 3, 4, 5])
-ax.set_xticklabels([r'$\alpha$', r'$\beta$', r'$\gamma$', r'$\delta$', r'$\epsilon$'], fontsize=18)
+axsAdv2.set_xticks([1, 2, 3, 4, 5])
+axsAdv2.set_xticklabels([r'$\alpha$', r'$\beta$', r'$\gamma$', r'$\delta$', r'$\epsilon$'], fontsize=18)
 
 yticks = [0, 50, 100, 150]
-ax.set_yticks(yticks)
-ax.set_yticklabels(["$%.1f$" % y for y in yticks], fontsize=18); # use LaTeX formatted labels
+axsAdv2.set_yticks(yticks)
+axsAdv2.set_yticklabels(["$%.1f$" % y for y in yticks], fontsize=18); # use LaTeX formatted labels
 
-There are a number of more advanced methods for controlling major and minor tick placement in matplotlib figures, such as automatic placement according to different policies. See http://matplotlib.org/api/ticker_api.html for details.
+"""  
+In the code:
+
+$: The dollar signs are used to denote LaTeX math formatting in Matplotlib. Anything between the dollar signs is interpreted as LaTeX code, allowing for the use of special symbols, Greek letters, superscripts, subscripts, and other mathematical notations. For example:
+
+r'$\alpha$' displays the Greek letter α.
+"$%.1f$" % y formats numbers with one decimal place and then wraps them in LaTeX to display them in a math-like format.
+r (raw string prefix): The r before the string makes it a raw string. In raw strings, escape characters (like \) are treated as literal characters. This is especially useful when writing LaTeX expressions that often include backslashes (\). For example:
+
+r'$\alpha$' means that \alpha is treated as part of the LaTeX code rather than an escape sequence.
+In summary, the $ is for LaTeX math formatting, and the r ensures that special characters like \ are interpreted literally.
+"""
 
 
 
 
-#### Scientific notation
-With large numbers on axes, it is often better use scientific notation:
-
+# --------    Scientific notation    --------
 fig, ax = plt.subplots(1, 1)
       
 ax.plot(x, x**2, x, np.exp(x))
