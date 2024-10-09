@@ -3,7 +3,7 @@
 # copy: update: 
 #        
 #        
-################# (06-Oct-24 for 08-Oct-24)
+################# (09-Oct-24 for 11-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -335,15 +335,13 @@ axsAdv1[1].set_title("Logarithmic scale (y)");
 """
 
 
-# ----  rev[06-Oct-2024]  ----
-
-
 
 # --------    Placement of ticks and custom tick labels    --------
 # use "set_xticks" and "set_yticks"
     # both take a 'list of values' for where on the axis the ticks are to be placed. 
 # custom tick labels
     # use "set_xticklabels" and "set_yticklabels" and provide a list of custom text labels for each tick location
+# For  more deatil visit: https://matplotlib.org/stable/api/ticker_api.html
 
 figAdv2, axsAdv2 = plt.subplots(figsize=(8, 4))
 axsAdv2.plot(x, x**2, x, x**3, lw=2)
@@ -355,39 +353,49 @@ yticks = [0, 50, 100, 150]
 axsAdv2.set_yticks(yticks)
 axsAdv2.set_yticklabels(["$%.1f$" % y for y in yticks], fontsize=18); # use LaTeX formatted labels
 
+
 """  
-In the code:
+    $: The dollar signs are used to denote LaTeX math formatting in Matplotlib. 
+        Anything between the dollar signs is interpreted as LaTeX code.
+        Used for special symbols, Greek letters, superscripts, subscripts, and other mathematical notations
 
-$: The dollar signs are used to denote LaTeX math formatting in Matplotlib. Anything between the dollar signs is interpreted as LaTeX code, allowing for the use of special symbols, Greek letters, superscripts, subscripts, and other mathematical notations. For example:
+            r'$\alpha$' displays the Greek letter α
 
-r'$\alpha$' displays the Greek letter α.
-"$%.1f$" % y formats numbers with one decimal place and then wraps them in LaTeX to display them in a math-like format.
-r (raw string prefix): The r before the string makes it a raw string. In raw strings, escape characters (like \) are treated as literal characters. This is especially useful when writing LaTeX expressions that often include backslashes (\). For example:
+            "$%.1f$" % y formats numbers with one decimal place and then wraps them in LaTeX math-like format.
 
-r'$\alpha$' means that \alpha is treated as part of the LaTeX code rather than an escape sequence.
-In summary, the $ is for LaTeX math formatting, and the r ensures that special characters like \ are interpreted literally.
+    r (raw string prefix): 
+        The r before the string makes it a "raw string". 
+        In raw strings, escape characters (like \) are treated as literal characters. 
+        Used when writing LaTeX expressions that often include backslashes (\). For example:
+
+            r'$\alpha$' means that \alpha is treated as part of the LaTeX code rather than an "escape sequence".
 """
 
 
 
-
 # --------    Scientific notation    --------
-fig, ax = plt.subplots(1, 1)
-      
-ax.plot(x, x**2, x, np.exp(x))
-ax.set_title("scientific notation")
-
-ax.set_yticks([0, 50, 100, 150])
-
+# if we work with very large numbers like million or trillion, "Scientific notation" is best option
 from matplotlib import ticker
+
 formatter = ticker.ScalarFormatter(useMathText=True)
 formatter.set_scientific(True) 
 formatter.set_powerlimits((-1,1)) 
-ax.yaxis.set_major_formatter(formatter) 
+
+figAdv3, axAdv3 = plt.subplots(1, 1)
+axAdv3.plot(x, x**2, x, np.exp(x))
+axAdv3.set_title("scientific notation")
+axAdv3.set_yticks([0, 50, 100, 150])
+# set "Scientific notation" 
+axAdv3.yaxis.set_major_formatter(formatter) 
 
 
 
-### Axis number and axis label spacing
+
+
+
+# ----  rev[08-Oct-2024]  ----
+
+# --------    Axis number and axis label spacing    --------
 
 # distance between x and y axis and the numbers on the axes
 matplotlib.rcParams['xtick.major.pad'] = 5
