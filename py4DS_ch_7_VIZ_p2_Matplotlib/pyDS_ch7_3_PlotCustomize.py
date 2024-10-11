@@ -391,35 +391,48 @@ axAdv3.yaxis.set_major_formatter(formatter)
 
 
 
+# --------    Axis number and axis label spacing    --------
+# "matplotlib.rcParams" is a dictionary for Matplotlib's default plot settings.
+# By modifying rcParams, you can change how Matplotlib renders plots without having to specify options for each individual plot.
+    # It controls properties like figure size, color, font size, and line width.
+    # "rc" stands for run commands.
+    # Customizes plot appearance globally in a Matplotlib session.
+
+# View current default settings
+print(plt.rcParams)
+
+# Change the default figure size and font size
+plt.rcParams['figure.figsize'] = (8, 6)  # Sets default figure size to 8x6 inches
+plt.rcParams['font.size'] = 14           # Sets default font size to 14
+
+# DISTANCE between x and y axis and the numbers on the axes
+# Folowing refers to the configuration setting that controls the padding (i.e., the space) between the 
+    # major x-axis, y-axis  ticks and the labels in a plot. 
+    # The "value" set for this parameter adjusts the distance 
+    # between the tick marks and their corresponding "labels" on the axis.
+
+plt.rcParams['xtick.major.pad'] = 5
+plt.rcParams['ytick.major.pad'] = 5
+
+figAdv4, axAdv4 = plt.subplots(1, 1)
+axAdv4.plot(x, x**2, x, np.exp(x))
+axAdv4.set_yticks([0, 50, 100, 150])
+axAdv4.set_title("label and axis spacing")
+
+# padding between "axis label" and "axis values"
+axAdv4.xaxis.labelpad = 5
+axAdv4.yaxis.labelpad = 5
+
+axAdv4.set_xlabel("x")
+axAdv4.set_ylabel("y");
+
+# restore DEFAULTS
+plt.rcParams['xtick.major.pad'] = 3
+plt.rcParams['ytick.major.pad'] = 3
+
 
 
 # ----  rev[08-Oct-2024]  ----
-
-# --------    Axis number and axis label spacing    --------
-
-# distance between x and y axis and the numbers on the axes
-matplotlib.rcParams['xtick.major.pad'] = 5
-matplotlib.rcParams['ytick.major.pad'] = 5
-
-fig, ax = plt.subplots(1, 1)
-      
-ax.plot(x, x**2, x, np.exp(x))
-ax.set_yticks([0, 50, 100, 150])
-
-ax.set_title("label and axis spacing")
-
-# padding between axis label and axis numbers
-ax.xaxis.labelpad = 5
-ax.yaxis.labelpad = 5
-
-ax.set_xlabel("x")
-ax.set_ylabel("y");
-
-# restore defaults
-matplotlib.rcParams['xtick.major.pad'] = 3
-matplotlib.rcParams['ytick.major.pad'] = 3
-
-
 
 #### Axis position adjustments
 
