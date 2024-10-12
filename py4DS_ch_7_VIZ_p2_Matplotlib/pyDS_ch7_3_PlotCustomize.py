@@ -3,7 +3,7 @@
 # copy: update: 
 #        
 #        
-################# (09-Oct-24 for 11-Oct-24)
+################# (11-Oct-24 for 12-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -432,24 +432,69 @@ plt.rcParams['ytick.major.pad'] = 3
 
 
 
-# ----  rev[08-Oct-2024]  ----
+# --------    Axis position adjustments    --------
+""" 
+    Sometimes figure may be cropped.
+        subplots_adjust() can adjust the spacing between subplots within a figure. 
+        allowing control the padding between subplots, including margins, spacing between rows and columns, 
+        and the position of the subplots in relation to the figure edges.  
+"""
 
-#### Axis position adjustments
+# You can adjust parameters like left, right, top, bottom, wspace (width space), and hspace (height space)
+# left cannot be >= right and bottom cannot be >= top
 
-Unfortunately, when saving figures the labels are sometimes clipped, and it can be necessary to adjust the positions of axes a little bit. This can be done using `subplots_adjust`:
+plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1, wspace=0.3, hspace=0.5)
 
-fig, ax = plt.subplots(1, 1)
+figAdv5, axAdv5 = plt.subplots(1, 1)
       
-ax.plot(x, x**2, x, np.exp(x))
-ax.set_yticks([0, 50, 100, 150])
+axAdv5.plot(x, x**2, x, np.exp(x))
+axAdv5.set_yticks([0, 50, 100, 150])
 
-ax.set_title("title")
-ax.set_xlabel("x")
-ax.set_ylabel("y")
+axAdv5.set_title("title")
+axAdv5.set_xlabel("x")
+axAdv5.set_ylabel("y")
 
-fig.subplots_adjust(left=0.15, right=.9, bottom=0.1, top=0.9);
+figAdv5.subplots_adjust(left=0.15, right=.9, bottom=0.1, top=0.9);
+
+# ----  Another example  ----
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate some data
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+# Create a 2x2 grid of subplots
+fig, axes = plt.subplots(2, 2, figsize=(8, 6))
+
+# Plot data on each subplot
+axes[0, 0].plot(x, y1)
+axes[0, 0].set_title('Sine Wave')
+
+axes[0, 1].plot(x, y2)
+axes[0, 1].set_title('Cosine Wave')
+
+axes[1, 0].plot(x, y1 + y2)
+axes[1, 0].set_title('Sine + Cosine')
+
+axes[1, 1].plot(x, y1 - y2)
+axes[1, 1].set_title('Sine - Cosine')
+
+# Adjust the space between plots
+# Note: left cannot be >= right and bottom cannot be >= top
+plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1, wspace=0.4, hspace=0.5)
+# now use following changed positions
+# plt.subplots_adjust(left=0.4, right=0.5, top=0.5, bottom=0.4, wspace=0.8, hspace=0.9)
 
 
+# Show the plot
+plt.show()
+
+
+
+
+# ----  rev[12-Oct-2024]  ----
 
 ### Axis grid
 
