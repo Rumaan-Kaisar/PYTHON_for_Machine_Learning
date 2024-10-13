@@ -3,7 +3,7 @@
 # copy: update: 
 #        
 #        
-################# (11-Oct-24 for 12-Oct-24)
+################# (13-Oct-24 for 13-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -494,40 +494,38 @@ plt.show()
 
 
 
-# ----  rev[12-Oct-2024]  ----
+# --------    Axis position adjustments    --------
+# use 'grid' to turn on and off grid lines. 
+# customize the grid lines using similar kwargs as 'plot' function:
+figAdv6, axAdv6 = plt.subplots(1, 2, figsize=(10,3))
 
-### Axis grid
+# default grid
+axAdv6[0].plot(x, x**2, x, x**3, lw=2)
+axAdv6[0].grid(True)
 
-With the `grid` method in the axis object, we can turn on and off grid lines. We can also customize the appearance of the grid lines using the same keyword arguments as the `plot` function:
-
-fig, axes = plt.subplots(1, 2, figsize=(10,3))
-
-# default grid appearance
-axes[0].plot(x, x**2, x, x**3, lw=2)
-axes[0].grid(True)
-
-# custom grid appearance
-axes[1].plot(x, x**2, x, x**3, lw=2)
-axes[1].grid(color='b', alpha=0.5, linestyle='dashed', linewidth=0.5)
+# custom grid
+axAdv6[1].plot(x, x**2, x, x**3, lw=2)
+axAdv6[1].grid(color='b', alpha=0.3, linestyle='dashed', linewidth=0.75)
 
 
 
-### Axis spines
+# --------    Axis spines (i.e. X, Y axis lines)    --------
+figAdv7, axAdv7 = plt.subplots(figsize=(6,2))
 
-We can also change the properties of axis spines:
+# color
+axAdv7.spines['bottom'].set_color('blue')
+axAdv7.spines['top'].set_color('red')
 
-fig, ax = plt.subplots(figsize=(6,2))
-
-ax.spines['bottom'].set_color('blue')
-ax.spines['top'].set_color('blue')
-
-ax.spines['left'].set_color('red')
-ax.spines['left'].set_linewidth(2)
+axAdv7.spines['left'].set_color('green')
+axAdv7.spines['left'].set_linewidth(2)
 
 # turn off axis spine to the right
-ax.spines['right'].set_color("none")
-ax.yaxis.tick_left() # only ticks on the left side
+axAdv7.spines['right'].set_color("none")
+axAdv7.yaxis.tick_left() # only ticks on the left side
 
+
+
+# ----  rev[12-Oct-2024]  ----
 
 ### Twin axes
 
