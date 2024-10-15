@@ -3,7 +3,7 @@
 # copy: update: 
 #        
 #        
-################# (13-Oct-24 for 13-Oct-24)
+################# (13-Oct-24 for 15-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -525,28 +525,26 @@ axAdv7.yaxis.tick_left() # only ticks on the left side
 
 
 
-# ----  rev[12-Oct-2024]  ----
+# --------    Twin axes    --------
+# Dual x or y axes are useful when plotting curves with different units together.
+# twinx() for a second y-axis
+# twiny() for a second x-axis
 
-### Twin axes
+figAdv8, axAdv8 = plt.subplots()
 
-Sometimes it is useful to have dual x or y axes in a figure; for example, when plotting curves with different units together. Matplotlib supports this with the `twinx` and `twiny` functions:
-
-
-fig, ax1 = plt.subplots()
-
-ax1.plot(x, x**2, lw=2, color="blue")
-ax1.set_ylabel(r"area $(m^2)$", fontsize=18, color="blue")
-for label in ax1.get_yticklabels():
+axAdv8.plot(x, x**2, lw=2, color="blue")
+axAdv8.set_ylabel(r"area $(m^2)$", fontsize=18, color="blue")
+for label in axAdv8.get_yticklabels():
     label.set_color("blue")
     
-ax2 = ax1.twinx()
+ax2 = axAdv8.twinx()
 ax2.plot(x, x**3, lw=2, color="red")
 ax2.set_ylabel(r"volume $(m^3)$", fontsize=18, color="red")
 for label in ax2.get_yticklabels():
     label.set_color("red")
 
 
-
+# ----  rev[13-Oct-2024]  ----
 ### Axes where x and y is zero
 
 fig, ax = plt.subplots()
