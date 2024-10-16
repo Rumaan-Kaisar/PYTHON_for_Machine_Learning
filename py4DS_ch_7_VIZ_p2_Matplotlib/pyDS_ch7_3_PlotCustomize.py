@@ -544,46 +544,48 @@ for label in ax2.get_yticklabels():
     label.set_color("red")
 
 
-# ----  rev[13-Oct-2024]  ----
-### Axes where x and y is zero
 
-fig, ax = plt.subplots()
+# --------    axes with origin point    --------
+figAdv9, axAdv9 = plt.subplots()
 
-ax.spines['right'].set_color('none')
-ax.spines['top'].set_color('none')
+axAdv9.spines['right'].set_color('none')
+axAdv9.spines['top'].set_color('none')
 
-ax.xaxis.set_ticks_position('bottom')
-ax.spines['bottom'].set_position(('data',0)) # set position of x spine to x=0
+axAdv9.xaxis.set_ticks_position('bottom')   # tick position
+axAdv9.spines['bottom'].set_position(('data',0)) # set position of x spine to x=0
 
-ax.yaxis.set_ticks_position('left')
-ax.spines['left'].set_position(('data',0))   # set position of y spine to y=0
+axAdv9.yaxis.set_ticks_position('left')     # tick position
+axAdv9.spines['left'].set_position(('data',0))   # set position of y spine to y=0
 
-xx = np.linspace(-0.75, 1., 100)
-ax.plot(xx, xx**3);
-
+cu_be = np.linspace(-0.75, 1., 100)
+axAdv9.plot(cu_be, cu_be**3);
 
 
-### Other 2D plot styles
 
-In addition to the regular `plot` method, there are a number of other functions for generating different kind of plots. See the matplotlib plot gallery for a complete list of available plot types: http://matplotlib.org/gallery.html. Some of the more useful ones are show below:
+# --------    Other 2D plot styles    --------
+# instead of plot() there are other methods that can generate different kinds of plots
+# for more: https://matplotlib.org/2.0.2/gallery.html
+# Some of the more useful ones are: scatter(), step(), bar(), fill_between()
 
 n = np.array([0,1,2,3,4,5])
 
-fig, axes = plt.subplots(1, 4, figsize=(12,3))
+figAdv10, axAdv10 = plt.subplots(1, 4, figsize=(12,3))
 
-axes[0].scatter(xx, xx + 0.25*np.random.randn(len(xx)))
-axes[0].set_title("scatter")
+axAdv10[0].scatter(xx, xx + 0.25*np.random.randn(len(xx)))
+axAdv10[0].set_title("scatter")
 
-axes[1].step(n, n**2, lw=2)
-axes[1].set_title("step")
+axAdv10[1].step(n, n**2, lw=2)
+axAdv10[1].set_title("step")
 
-axes[2].bar(n, n**2, align="center", width=0.5, alpha=0.5)
-axes[2].set_title("bar")
+axAdv10[2].bar(n, n**2, align="center", width=0.5, alpha=0.5)
+axAdv10[2].set_title("bar")
 
-axes[3].fill_between(x, x**2, x**3, color="green", alpha=0.5);
-axes[3].set_title("fill_between");
+axAdv10[3].fill_between(x, x**2, x**3, color="green", alpha=0.5);
+axAdv10[3].set_title("fill_between");
 
 
+
+# ----  rev[15-Oct-2024]  ----
 
 ### Text annotation
 
