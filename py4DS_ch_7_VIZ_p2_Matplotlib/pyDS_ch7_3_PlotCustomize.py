@@ -3,7 +3,7 @@
 # copy: update: 
 #        
 #        
-################# (13-Oct-24 for 15-Oct-24)
+################# (16-Oct-24 for 18-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -585,41 +585,42 @@ axAdv10[3].set_title("fill_between");
 
 
 
-# ----  rev[15-Oct-2024]  ----
+# --------    Text annotation    --------
+figAdv11, axAdv11 = plt.subplots()
 
-### Text annotation
+axAdv11.plot(cu_be, cu_be**2, cu_be, cu_be**3)
 
-fig, ax = plt.subplots()
-
-ax.plot(xx, xx**2, xx, xx**3)
-
-ax.text(0.15, 0.2, r"$y=x^2$", fontsize=20, color="blue")
-ax.text(0.65, 0.1, r"$y=x^3$", fontsize=20, color="green");
-
-
-
-### Figures with multiple subplots and insets
-
-Axes can be added to a matplotlib Figure canvas manually using `fig.add_axes` or using a sub-figure layout manager such as `subplots`, `subplot2grid`, or `gridspec`:
+axAdv11.text(0.15, 0.2, r"$y=x^2$", fontsize=20, color="blue")
+axAdv11.text(0.65, 0.1, r"$y=x^3$", fontsize=20, color="green");
 
 
 
 
-#### subplots
+# ----  rev[16-Oct-2024]  ----
 
-fig, ax = plt.subplots(2, 3)
-fig.tight_layout()
+# --------    multiple subplots and insets    --------
+# You can manually add axes to a figure using fig.add_axes, or 
+    # use "Layout Managers" like subplots, subplot2grid, or gridspec
+
+# ----  subplots  ----
+# we've discussed it earlier
+figAdv12, axAdv12 = plt.subplots(2, 3)
+axAdv12.tight_layout()
 
 
 
-#### subplot2grid
+# ----  subplot2grid  ----
+# subplot2grid is a Matplotlib function for creating "subplots in a grid"
+    # It offers flexibility in setting the size and position of each subplot.
+# Unlike subplots, which creates "evenly spaced plots", 
+    # subplot2grid allows subplots to "span multiple rows and columns"
 
-fig = plt.figure()
-ax1 = plt.subplot2grid((3,3), (0,0), colspan=3)
-ax2 = plt.subplot2grid((3,3), (1,0), colspan=2)
-ax3 = plt.subplot2grid((3,3), (1,2), rowspan=2)
-ax4 = plt.subplot2grid((3,3), (2,0))
-ax5 = plt.subplot2grid((3,3), (2,1))
+figAdv13 = plt.figure()
+axAdv13_ax1 = plt.subplot2grid((3,3), (0,0), colspan=3)
+axAdv13_ax2 = plt.subplot2grid((3,3), (1,0), colspan=2)
+axAdv13_ax3 = plt.subplot2grid((3,3), (1,2), rowspan=2)
+axAdv13_ax4 = plt.subplot2grid((3,3), (2,0))
+axAdv13_ax5 = plt.subplot2grid((3,3), (2,1))
 fig.tight_layout()
 
 
@@ -663,7 +664,10 @@ inset_ax.set_xticks([-0.1,0,.1]);
 
 
 
-### Colormap and contour figures
+
+
+
+# --------    Colormap and CONTOUR    --------
 
 Colormaps and contour figures are useful for plotting functions of two variables. In most of these functions we will use a colormap to encode one dimension of the data. There are a number of predefined colormaps. It is relatively straightforward to define custom colormaps. For a list of pre-defined colormaps, see: http://www.scipy.org/Cookbook/Matplotlib/Show_colormaps
 
@@ -707,7 +711,13 @@ cnt = ax.contour(Z, cmap=matplotlib.cm.RdBu, vmin=abs(Z).min(), vmax=abs(Z).max(
 
 
 
-## 3D figures
+
+
+
+
+
+
+# --------    3D figures    --------
 
 To use 3D graphics in matplotlib, we first need to create an instance of the `Axes3D` class. 3D axes can be added to a matplotlib figure canvas in exactly the same way as 2D axes; or, more conveniently, by passing a `projection='3d'` keyword argument to the `add_axes` or `add_subplot` methods.
 
