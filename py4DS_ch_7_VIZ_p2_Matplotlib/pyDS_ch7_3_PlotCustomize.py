@@ -3,7 +3,7 @@
 # copy: update: 
 #        
 #        
-################# (16-Oct-24 for 18-Oct-24)
+################# (18-Oct-24 for 19-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -595,9 +595,6 @@ axAdv11.text(0.65, 0.1, r"$y=x^3$", fontsize=20, color="green");
 
 
 
-
-# ----  rev[16-Oct-2024]  ----
-
 # --------    multiple subplots and insets    --------
 # You can manually add axes to a figure using fig.add_axes, or 
     # use "Layout Managers" like subplots, subplot2grid, or gridspec
@@ -605,7 +602,7 @@ axAdv11.text(0.65, 0.1, r"$y=x^3$", fontsize=20, color="green");
 # ----  subplots  ----
 # we've discussed it earlier
 figAdv12, axAdv12 = plt.subplots(2, 3)
-axAdv12.tight_layout()
+plt.tight_layout()
 
 
 
@@ -621,9 +618,11 @@ axAdv13_ax2 = plt.subplot2grid((3,3), (1,0), colspan=2)
 axAdv13_ax3 = plt.subplot2grid((3,3), (1,2), rowspan=2)
 axAdv13_ax4 = plt.subplot2grid((3,3), (2,0))
 axAdv13_ax5 = plt.subplot2grid((3,3), (2,1))
-fig.tight_layout()
+plt.tight_layout()
 
 
+
+# ----  rev[18-Oct-2024]  ----
 
 #### gridspec
 
