@@ -3,7 +3,7 @@
 # copy: update: 
 #        
 #        
-################# (18-Oct-24 for 19-Oct-24)
+################# (19-Oct-24 for 20-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -571,7 +571,9 @@ n = np.array([0,1,2,3,4,5])
 
 figAdv10, axAdv10 = plt.subplots(1, 4, figsize=(12,3))
 
-axAdv10[0].scatter(xx, xx + 0.25*np.random.randn(len(xx)))
+# cu_be = np.linspace(-0.75, 1., 100)
+
+axAdv10[0].scatter(cu_be, cu_be + 0.25*np.random.randn(len(cu_be)))
 axAdv10[0].set_title("scatter")
 
 axAdv10[1].step(n, n**2, lw=2)
@@ -622,35 +624,58 @@ plt.tight_layout()
 
 
 
-# ----  rev[18-Oct-2024]  ----
-
-#### gridspec
+# ----  gridspec  ----
+# gridspec in Matplotlib is a utility that allows for "precise control over the positioning and size" of subplots within a grid. 
+# allowing subplots to occupy multiple rows and columns, or have unequal sizes.
+    # GridSpec creates a grid layout for subplots.
+    # Subplots can span multiple rows and columns.
+    # It offers finer control over the layout compared to other methods like subplots.
 
 import matplotlib.gridspec as gridspec
 
-fig = plt.figure()
+figAdv14 = plt.figure()
 
+# following creates:
+    # a 2, 3 grid with 2 rows and 3 columns.
+    # height_ratios=[2,1]: The first row is twice as tall as the second row.
+    # width_ratios=[1,2,1]: The middle column is twice as wide as the left and right columns.
 gs = gridspec.GridSpec(2, 3, height_ratios=[2,1], width_ratios=[1,2,1])
 for g in gs:
-    ax = fig.add_subplot(g)
-    
-fig.tight_layout()
+    axAdv14 = figAdv14.add_subplot(g)
+
+plt.tight_layout()
+
+
+"""  
+    height_ratios=[2, 1] 
+        the list [2, 1] specifies the "relative heights" of the "rows" in the grid.
+            2: The height of the first (top) row will be twice the base unit.
+            1: The height of the second (bottom) row will be equal to the base unit.
+
+    width_ratios=[1,2,1]
+        the list [1,2,1] specifies the "relative widths" of the "columns" in the grid.
+            1: The width of the first (left) column will be a base unit.
+            2: The width of the second (middle) column will be twice as wide as the base unit.
+            1: The width of the third (right) column will be the same as the first, i.e., the base unit.
+"""
 
 
 
-#### add_axes
 
-Manually adding axes with `add_axes` is useful for adding insets to figures:
+# ----  add_axes: figure inside figure  ----
+# Manually adding axes with "add_axes" is useful for adding insets to figures:
+    # Eg: zoom near origin
 
-fig, ax = plt.subplots()
+figAdv15, axAdv15 = plt.subplots()
 
-ax.plot(xx, xx**2, xx, xx**3)
-fig.tight_layout()
+axAdv15.plot(cu_be, cu_be**2, cu_be, cu_be**3)
+plt.tight_layout()
+
 
 # inset
-inset_ax = fig.add_axes([0.2, 0.55, 0.35, 0.35]) # X, Y, width, height
+inset_ax = figAdv15.add_axes([0.2, 0.55, 0.35, 0.35]) # X, Y, width, height
 
-inset_ax.plot(xx, xx**2, xx, xx**3)
+inset_ax.plot(cu_be, cu_be**2, cu_be, cu_be**3)
 inset_ax.set_title('zoom near origin')
 
 # set axis range
@@ -665,6 +690,7 @@ inset_ax.set_xticks([-0.1,0,.1]);
 
 
 
+# ----  rev[19-Oct-2024]  ----
 
 # --------    Colormap and CONTOUR    --------
 
