@@ -3,7 +3,7 @@
 # copy: update: 
 #        
 #        
-################# (19-Oct-24 for 20-Oct-24)
+################# (20-Oct-24 for 22-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -689,18 +689,18 @@ inset_ax.set_xticks([-0.1,0,.1]);
 
 
 
-
-# ----  rev[19-Oct-2024]  ----
-
 # --------    Colormap and CONTOUR    --------
-
-Colormaps and contour figures are useful for plotting functions of two variables. In most of these functions we will use a colormap to encode one dimension of the data. There are a number of predefined colormaps. It is relatively straightforward to define custom colormaps. For a list of pre-defined colormaps, see: http://www.scipy.org/Cookbook/Matplotlib/Show_colormaps
+# Colormaps and contour figures are useful for visualizing functions with two variables.
+# A colormap encodes one dimension of the data with colors.
+# Matplotlib provides many predefined colormaps. Custom colormaps can also be created easily.
+# For predefined colormaps, visit: https://matplotlib.org/stable/users/explain/colors/colormaps.html
+import matplotlib
 
 alpha = 0.7
-phi_ext = 2 * np.pi * 0.5
+phi_ext = 2*np.pi*0.5
 
 def flux_qubit_potential(phi_m, phi_p):
-    return 2 + alpha - 2 * np.cos(phi_p) * np.cos(phi_m) - alpha * np.cos(phi_ext - 2*phi_p)
+    return 2 + alpha - 2*np.cos(phi_p)*np.cos(phi_m) - alpha*np.cos(phi_ext - 2*phi_p)
 
 phi_m = np.linspace(0, 2*np.pi, 100)
 phi_p = np.linspace(0, 2*np.pi, 100)
@@ -708,15 +708,15 @@ X,Y = np.meshgrid(phi_p, phi_m)
 Z = flux_qubit_potential(X, Y).T
 
 
-#### pcolor
 
-fig, ax = plt.subplots()
+# ----  pcolor  ----
+figAdv16, axAdv16 = plt.subplots()
 
-p = ax.pcolor(X/(2*np.pi), Y/(2*np.pi), Z, cmap=matplotlib.cm.RdBu, vmin=abs(Z).min(), vmax=abs(Z).max())
-cb = fig.colorbar(p, ax=ax)
+p = axAdv16.pcolor(X/(2*np.pi), Y/(2*np.pi), Z, cmap=matplotlib.cm.RdBu, vmin=abs(Z).min(), vmax=abs(Z).max())
+cb = figAdv16.colorbar(p, ax=axAdv16)
 
 
-
+# ----  rev[19-Oct-2024]  ----
 #### imshow
 
 fig, ax = plt.subplots()
@@ -800,6 +800,7 @@ ax.set_zlim3d(-np.pi, 2*np.pi);
     http://www.matplotlib.org -     The project web page for matplotlib.
     https://github.com/matplotlib/matplotlib -  The source code for matplotlib.
     https://matplotlib.org/2.0.2/gallery.html - A large gallery showcaseing various types of plots matplotlib can create. Highly recommended! 
+    https://docs.scipy.org/doc/ or https://docs.scipy.org/doc/scipy/
     
     Nicolas P. Rougier (https://github.com/rougier):
         https://github.com/rougier/matplotlib-tutorial -  A good matplotlib tutorial.
