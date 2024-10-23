@@ -3,7 +3,7 @@
 # copy: update: 
 #        
 #        
-################# (20-Oct-24 for 22-Oct-24)
+################# (22-Oct-24 for 23-Oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
@@ -716,54 +716,47 @@ p = axAdv16.pcolor(X/(2*np.pi), Y/(2*np.pi), Z, cmap=matplotlib.cm.RdBu, vmin=ab
 cb = figAdv16.colorbar(p, ax=axAdv16)
 
 
-# ----  rev[19-Oct-2024]  ----
-#### imshow
 
-fig, ax = plt.subplots()
+# ----  imshow  ----
+figAdv17, axAdv17 = plt.subplots()
 
-im = ax.imshow(Z, cmap=matplotlib.cm.RdBu, vmin=abs(Z).min(), vmax=abs(Z).max(), extent=[0, 1, 0, 1])
+im = axAdv17.imshow(Z, cmap=matplotlib.cm.RdBu, vmin=abs(Z).min(), vmax=abs(Z).max(), extent=[0, 1, 0, 1])
 im.set_interpolation('bilinear')
 
-cb = fig.colorbar(im, ax=ax)
+cb = fig.colorbar(im, ax=axAdv17)
 
 
 
-#### contour
+# ----  contour  ----
+figAdv18, axAdv18 = plt.subplots()
 
-fig, ax = plt.subplots()
-
-cnt = ax.contour(Z, cmap=matplotlib.cm.RdBu, vmin=abs(Z).min(), vmax=abs(Z).max(), extent=[0, 1, 0, 1])
-
-
-
-
-
+cnt = axAdv18.contour(Z, cmap=matplotlib.cm.RdBu, vmin=abs(Z).min(), vmax=abs(Z).max(), extent=[0, 1, 0, 1])
 
 
 
 
 # --------    3D figures    --------
-
-To use 3D graphics in matplotlib, we first need to create an instance of the `Axes3D` class. 3D axes can be added to a matplotlib figure canvas in exactly the same way as 2D axes; or, more conveniently, by passing a `projection='3d'` keyword argument to the `add_axes` or `add_subplot` methods.
+# To use 3D graphics in Matplotlib, create an instance of the "Axes3D" class
+# 3D axes can be added to a figure just like 2D axes
+# A simpler way is to pass the projection='3d' argument to "add_axes" or "add_subplot" methods
 
 from mpl_toolkits.mplot3d.axes3d import Axes3D
 
+# ----  Surface plots  ----
+figAdv19 = plt.figure(figsize=(14,6))
 
-#### Surface plots
+# "axAdv19" is a 3D-aware axis instance because of the projection='3d' keyword argument to add_subplot
+axAdv19 = figAdv19.add_subplot(1, 2, 1, projection='3d')
+p = axAdv19.plot_surface(X, Y, Z, rstride=4, cstride=4, linewidth=0)
 
-fig = plt.figure(figsize=(14,6))
-
-# `ax` is a 3D-aware axis instance because of the projection='3d' keyword argument to add_subplot
-ax = fig.add_subplot(1, 2, 1, projection='3d')
-
-p = ax.plot_surface(X, Y, Z, rstride=4, cstride=4, linewidth=0)
-
-# surface_plot with color grading and color bar
-ax = fig.add_subplot(1, 2, 2, projection='3d')
-p = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=matplotlib.cm.coolwarm, linewidth=0, antialiased=False)
-cb = fig.colorbar(p, shrink=0.5)
+# ----  surface_plot with color grading and color bar  ----
+axAdv19 = figAdv19.add_subplot(1, 2, 2, projection='3d')
+p = axAdv19.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=matplotlib.cm.coolwarm, linewidth=0, antialiased=False)
+cb = figAdv19.colorbar(p, shrink=0.5)
 
 
+
+# ----  rev[22-Oct-2024]  ----
 
 #### Wire-frame plot
 
