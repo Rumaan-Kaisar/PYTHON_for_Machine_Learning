@@ -1,10 +1,4 @@
 
-################# Advanced & special
-# copy: update: 
-#        
-#        
-################# (22-Oct-24 for 23-Oct-24)
-
 # Courses: PrTla PY for DS & ML >   8.4 (6.22+), 8.5
 
 
@@ -756,32 +750,25 @@ cb = figAdv19.colorbar(p, shrink=0.5)
 
 
 
-# ----  rev[22-Oct-2024]  ----
-
-#### Wire-frame plot
-
-fig = plt.figure(figsize=(8,6))
-
-ax = fig.add_subplot(1, 1, 1, projection='3d')
-
-p = ax.plot_wireframe(X, Y, Z, rstride=4, cstride=4)
+# ----  Wire-frame plot  ----
+figAdv20 = plt.figure(figsize=(8,6))
+axAdv20 = figAdv20.add_subplot(1, 1, 1, projection='3d')
+p = axAdv20.plot_wireframe(X, Y, Z, rstride=4, cstride=4)
 
 
 
-#### Coutour plots with projections
+# ----  Coutour plots with projections  ----
+figAdv21 = plt.figure(figsize=(8,6))
+axAdv21 = figAdv21.add_subplot(1,1,1, projection='3d')
 
-fig = plt.figure(figsize=(8,6))
+axAdv21.plot_surface(X, Y, Z, rstride=4, cstride=4, alpha=0.25)
+cset = axAdv21.contour(X, Y, Z, zdir='z', offset=-np.pi, cmap=matplotlib.cm.coolwarm)
+cset = axAdv21.contour(X, Y, Z, zdir='x', offset=-np.pi, cmap=matplotlib.cm.coolwarm)
+cset = axAdv21.contour(X, Y, Z, zdir='y', offset=3*np.pi, cmap=matplotlib.cm.coolwarm)
 
-ax = fig.add_subplot(1,1,1, projection='3d')
-
-ax.plot_surface(X, Y, Z, rstride=4, cstride=4, alpha=0.25)
-cset = ax.contour(X, Y, Z, zdir='z', offset=-np.pi, cmap=matplotlib.cm.coolwarm)
-cset = ax.contour(X, Y, Z, zdir='x', offset=-np.pi, cmap=matplotlib.cm.coolwarm)
-cset = ax.contour(X, Y, Z, zdir='y', offset=3*np.pi, cmap=matplotlib.cm.coolwarm)
-
-ax.set_xlim3d(-np.pi, 2*np.pi);
-ax.set_ylim3d(0, 3*np.pi);
-ax.set_zlim3d(-np.pi, 2*np.pi);
+axAdv21.set_xlim3d(-np.pi, 2*np.pi);
+axAdv21.set_ylim3d(0, 3*np.pi);
+axAdv21.set_zlim3d(-np.pi, 2*np.pi);
 
 
 
