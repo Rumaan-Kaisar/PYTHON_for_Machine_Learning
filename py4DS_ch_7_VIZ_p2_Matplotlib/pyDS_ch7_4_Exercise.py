@@ -53,4 +53,41 @@ fig1 = plt.figure()
 ax1 = fig1.add_axes([0, 0, 1, 1])
 ax2 = fig1.add_axes([0.2, 0.5, .2, .2])
 
+# plot (x,y) on both axes. And call your figure object to show it
+ax1.plot(x, y)
+ax2.plot(x, -x)
+
+ax1.set_xlabel('X')
+ax1.set_ylabel('y')
+ax2.set_xlabel('X')
+ax2.set_ylabel('y')
+
+fig1    # Show figure object
+
+
+
+
+# Problem 3
+    # Create a plot by adding two axes to a figure object at [0,0,1,1] and [0.2,0.5,.4,.4]
+fig2 = plt.figure()
+ax_a1 = fig2.add_axes([0, 0, 1, 1])
+ax_a2 = fig2.add_axes([0.2, 0.5, .4, .4])
+
+# use x,y, and z arrays to plot. 
+# modify the xlimits and ylimits on the inserted plot: y : (30, 50), x: (20, 22)
+ax_a1.plot(x, z)
+ax_a2.plot(x, y)
+
+ax_a1.set_xlabel('X')
+ax_a1.set_ylabel('z')
+ax_a2.set_xlabel('X')
+ax_a2.set_ylabel('y')
+
+ax_a2.set_title("X vs Y")
+ax_a2.set_xlim(20, 22)
+ax_a2.set_ylim(30, 50)
+
+fig2    # Show figure object
+
+
 
