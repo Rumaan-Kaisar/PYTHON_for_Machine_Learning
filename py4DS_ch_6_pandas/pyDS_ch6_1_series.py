@@ -52,7 +52,6 @@
 
 
 # lets create some series from various object types
-from audioop import avg
 import numpy as np
 import pandas as pd
 
@@ -102,6 +101,7 @@ pd.Series(data= laBls)
     # in that case the Series will hold the function-referances as the data-points
 # following we use "list of built-in functions" as data-points
 pd.Series(data= [sum, avg, max, min], index=["s", "a", "mx", "mn"])
+# pd.Series([sum,print,len])
 
 
 
