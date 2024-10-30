@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (27-oct-24 for 29-oct-24)
+################# (29-oct-24 for 30-oct-24)
 
 # Courses: PrTla PY for DS & ML >   8.6, 8.7
 
@@ -89,5 +89,21 @@ ax_a2.set_ylim(30, 50)
 
 fig2    # Show figure object
 
+
+
+# Problem 4
+    # Use plt.subplots(nrows=1, ncols=2) to create a subplot
+    # plot (x,y) and (x,z) on the axes
+    # change linewidth and style
+
+fig_p4, ax_p4 = plt.subplots(nrows=1, ncols=2)
+
+# use x,y, and z arrays to plot
+ax_p4[0].plot(x, y, linewidth=3, linestyle='--', color='blue')
+ax_p4[1].plot(x, z, linewidth=3, color='red')
+
+# or
+# axes[0].plot(x,y, color="blue", lw=3, ls='--')
+# axes[1].plot(x,z, color="red", lw=3, ls='-')
 
 
