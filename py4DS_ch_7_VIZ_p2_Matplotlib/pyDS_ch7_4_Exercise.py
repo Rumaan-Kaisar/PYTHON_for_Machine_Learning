@@ -1,9 +1,9 @@
 
-################# 8.6: Full
+################# 8.6: Full, 8.7: Full
 # copy:  
 #        
 #        
-################# (29-oct-24 for 30-oct-24)
+################# (30-oct-24 for 01-Nov-24)
 
 # Courses: PrTla PY for DS & ML >   8.6, 8.7
 
@@ -105,5 +105,21 @@ ax_p4[1].plot(x, z, linewidth=3, color='red')
 # or
 # axes[0].plot(x,y, color="blue", lw=3, ls='--')
 # axes[1].plot(x,z, color="red", lw=3, ls='-')
+
+
+
+# Problem 5
+    # resize the previous plot by adding the 'figsize' argument in plt.subplots()
+fig_p5, ax_p5 = plt.subplots(nrows=1, ncols=2, figsize=(12, 2))
+
+# use x,y, and z arrays to plot
+ax_p5[0].plot(x,y, color="blue", lw=3, ls='--')
+ax_p5[0].set_xlabel('x')
+ax_p5[0].set_ylabel('y')
+
+ax_p5[1].plot(x,z, color="red", lw=3, ls='-')
+ax_p5[1].set_xlabel('x')
+ax_p5[1].set_ylabel('z')
+
 
 
