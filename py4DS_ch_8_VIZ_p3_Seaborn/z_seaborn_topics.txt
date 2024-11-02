@@ -1,0 +1,102 @@
+
+-----------------    viz part 3    -----------------
+
+1. Introduction to Seaborn
+2. Distribution Plots
+3. Categorical Plots
+4. Matrix Plots
+5. Grids
+6. Regression Plots
+7. Style and Color
+8. Seaborn Exercise Overview
+9. Seaborn Exercise Solutions
+
+
+
+
+--------   A-Z PY for Data-Science   --------
+Previously:
+    inside : py4DS_ch_4_VIZ_p1
+
+    Category data type, JointPlots 1, 2
+    Histograms & Stacked histograms 3, 4
+    Subplots(), KDE,  5, 6
+    violin, Boxplots 7
+    Facet Grid, Coordinates and Diagonals 8, 9
+    Dashbors_styling_finishing 11, 12, 13
+    Movie_gross_HW 14, 7.7, 7.8
+
+
+
+        pyDS_ch4_1_ctgryData_JointPlt
+            A-Z PY for Data-Science    6.1, 6.2
+            How to deal with categorical data? Create Joint-plot: pandas, matplotlib, seaborn 
+
+
+        pyDS_ch4_2_Hist_StkdHist
+            A-Z PY for Data-Science    6.3, 6.4
+            Histogram and Stacked-Histogram using: pandas, matplotlib, seaborn 
+
+
+        pyDS_ch4_3_Subplots_KDE
+            A-Z PY for Data-Science    6.5, 6.6
+            Subplots and KDE-plot using: pandas, matplotlib, seaborn 
+
+
+        pyDS_ch4_4_violinPlt_BoxPlt
+            A-Z PY for Data-Science    6.7
+            violin-plot and Box-plot using: pandas, matplotlib, seaborn 
+
+
+        pyDS_ch4_5_FacetGrid_Cordnt_diagnl
+            A-Z PY for Data-Science    6.8, 6.9
+            Facet Grid, Coordinates and Diagonals using: pandas, matplotlib, seaborn 
+
+
+        pyDS_ch4_6_Dshbrd_styly_finalTuch
+            A-Z PY for Data-Science    6.11, 6.12, 6.13
+            Dashboard creation, plot using: pandas, matplotlib, seaborn 
+
+
+        pyDS_ch4_7_Movie_gross_HW
+            A-Z PY for Data-Science    6.14, 6.15, 7.7, 7.8, 7.9
+            Visualize dataset, and recreation of a given plot using: pandas, matplotlib, seaborn 
+
+
+
+
+--------   PrTla PY for DS & ML   --------
+Welcome to the Data Visualization Section!
+Introduction to Matplotlib
+Matplotlib Part 1
+Matplotlib Part 2
+Matplotlib Part 3
+Matplotlib Exercises Overview
+Matplotlib Exercises - Solutions
+
+
+
+Welcome to the Data Visualization Section!:     Write some objectives
+Introduction to Matplotlib:     Use of Matplotlib and install
+Matplotlib Part 1:      How to create a Plot, Functional
+Matplotlib Part 2:      subplt & OO-methods
+Matplotlib Part 3:      Plot customization : FigSize, DPI, SaveFig, Legend, Color, Line weight
+Matplotlib Exercises Overview
+Matplotlib Exercises - Solutions
+
+----  Matplotlib 2 parts  ----
+1. Basics MakePlot
+2. PlotCustomize
+
+pyDS_ch7_1_MatPltLib_intro                          : 8.1, 8.2, 
+pyDS_ch7_2_MakePlot Functional subplt OO method     : 8.3, 8.4 (Half:6.25)
+pyDS_ch7_3_PlotCustomize: FigSize,DPI, SaveFig, Legend, Color, Line weight      : 8.4 (Last-Half:6.25), 8.5
+pyDS_ch7_4_Exercise                                 : 8.6, 8.7
+
+# combine/review with OLD (A-Z)
+
+pyDS_ch7_1_MatPltLib_intro
+pyDS_ch7_2_MakePlot
+pyDS_ch7_3_PlotCustomize
+pyDS_ch7_4_Exercise
+
