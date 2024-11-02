@@ -1,10 +1,4 @@
 
-################# 8.6: Full, 8.7: Full
-# copy:  
-#        
-#        
-################# (30-oct-24 for 01-Nov-24)
-
 # Courses: PrTla PY for DS & ML >   8.6, 8.7
 
 # ------------    matplotlib exercise    ------------
