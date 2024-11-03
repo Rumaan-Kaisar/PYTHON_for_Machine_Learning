@@ -66,27 +66,15 @@ Previously:
 
 
 --------   PrTla PY for DS & ML   --------
-Welcome to the Data Visualization Section!
-Introduction to Matplotlib
-Matplotlib Part 1
-Matplotlib Part 2
-Matplotlib Part 3
-Matplotlib Exercises Overview
-Matplotlib Exercises - Solutions
+1. Introduction to Seaborn:     Use of Seaborn and install
+2. Distribution Plots:      distplot, jointplot, pairplot, rugplot, kdeplot
+3. Categorical Plots:       barplot, countplot, boxplot, violinplot, stripplot, swarmplot, factorplot
+4. Matrix Plots:        heatmap, clustermap
+5. Grids:               pairplot, PairGrid, FacetGrid, 
+6. Regression Plots:    lmplot, 
+7. Style and Color
+8. Seaborn Exercise
 
-
-
-Welcome to the Data Visualization Section!:     Write some objectives
-Introduction to Matplotlib:     Use of Matplotlib and install
-Matplotlib Part 1:      How to create a Plot, Functional
-Matplotlib Part 2:      subplt & OO-methods
-Matplotlib Part 3:      Plot customization : FigSize, DPI, SaveFig, Legend, Color, Line weight
-Matplotlib Exercises Overview
-Matplotlib Exercises - Solutions
-
-----  Matplotlib 2 parts  ----
-1. Basics MakePlot
-2. PlotCustomize
 
 pyDS_ch7_1_MatPltLib_intro                          : 8.1, 8.2, 
 pyDS_ch7_2_MakePlot Functional subplt OO method     : 8.3, 8.4 (Half:6.25)
@@ -99,4 +87,8 @@ pyDS_ch7_1_MatPltLib_intro
 pyDS_ch7_2_MakePlot
 pyDS_ch7_3_PlotCustomize
 pyDS_ch7_4_Exercise
+
+
+
+
 
