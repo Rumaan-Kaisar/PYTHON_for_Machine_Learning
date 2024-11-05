@@ -2,10 +2,11 @@
 
 # Directory: List of the folders you want to create
 
-file_names = ['pyDS_ch7_1_MatPltLib_intro',
-'pyDS_ch7_2_MakePlot',
-'pyDS_ch7_3_PlotCustomize',
-'pyDS_ch7_4_Exercise']
+file_names = ['pyDS_ch8_1_distribution_plots',
+'pyDS_ch8_2_categorical_plots',
+'pyDS_ch8_3_matrixPlot_grid',
+'pyDS_ch8_4_regression_styles',
+'pyDS_ch8_5_Exercise']
 
 
 
