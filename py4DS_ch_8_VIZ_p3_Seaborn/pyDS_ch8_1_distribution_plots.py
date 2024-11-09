@@ -17,8 +17,6 @@
         #   rugplot
         #   kdeplot
 
-# ----  rev [05-nov-2024]  ----
-
 # what is seaborn:
     # Seaborn is a statistical plotting library based on Matplotlib
     # It has default styles that works with pandas DataFrame objects
@@ -39,5 +37,18 @@
         # API: reference for various plot-types
 
 
+# import libraries
+import seaborn as sns
+%matplotlib inline  # shows figures in ipynb
+
+# lets load a builtin dataset of seaborn. tips: a dataset of restaurant patrons' tipping behavior
+tips = sns.load_dataset('tips')
+tips.head()
 
 
+# ------------    distplot    ------------
+
+
+
+
+# ----  rev [08-nov-2024]  ----
