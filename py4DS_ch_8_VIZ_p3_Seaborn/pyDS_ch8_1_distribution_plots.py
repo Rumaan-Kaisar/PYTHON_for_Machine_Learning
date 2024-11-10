@@ -1,9 +1,9 @@
 
-################# 9.1: full.
+################# 9.1: full, 9.2: 3:10
 # copy:  
 #        
 #        
-################# (06-Nov-24 for 07-Nov-24)
+################# (09-Nov-24 for 10-Nov-24)
 
 # Courses: PrTla PY for DS & ML >    9.1, 9.2
 
@@ -45,10 +45,26 @@ import seaborn as sns
 tips = sns.load_dataset('tips')
 tips.head()
 
+# To remove 'warnings' use 'filterwarnings'
+import warnings
+warnings.filterwarnings('ignore')
+
+
 
 # ------------    distplot    ------------
+# it shows the distribution of uni-variate (one-variable) set of observations
+# use a single column of your datsset
+sns.distplot(tips['total_bill'])
+
+# Notice we have a "kde (kernel density estimation) layer" (the blue line)
+# to remove it, we just use "kde=False"
+sns.distplot(tips['tip'], kde=False)
+# now we just have a "histogram" is just a distribution of the data-points
+# Y-axis is the "counts" and X-axis is the "data"
+# so $2 nad $3 are most given tips
+
+# ----  rev[09-nov-2024]  ----
+# change noumber of bins (depends on dataset)
 
 
 
-
-# ----  rev [08-nov-2024]  ----
