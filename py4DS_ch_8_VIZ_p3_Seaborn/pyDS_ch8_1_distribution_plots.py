@@ -1,9 +1,9 @@
 
-################# 9.1: full, 9.2: 3:10
-# copy:  
+################# 9.1: full, 9.2: 4:10
+# copy:  update GitHub pyDS_ch6_4_PANDAS_oprtn.ipynb + py
 #        
 #        
-################# (09-Nov-24 for 10-Nov-24)
+################# (10-Nov-24 for 12-Nov-24)
 
 # Courses: PrTla PY for DS & ML >    9.1, 9.2
 
@@ -63,8 +63,11 @@ sns.distplot(tips['tip'], kde=False)
 # Y-axis is the "counts" and X-axis is the "data"
 # so $2 nad $3 are most given tips
 
-# ----  rev[09-nov-2024]  ----
 # change noumber of bins (depends on dataset)
+# bins too high plots every single instance, make your plot wierd
+sns.distplot(tips['total_bill'], kde=False, bins=40)
+# most of the bills happens in between 10 and 20 dollers
 
 
-
+# ----  rev[10-nov-2024]  ----
+# ------------    jointplot    ------------
