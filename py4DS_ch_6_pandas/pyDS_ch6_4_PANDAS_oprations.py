@@ -388,6 +388,9 @@ dfo
 dfo.drop("col1", axis=1)
 # use "inplae=True" to make the change parmanent
 
+# Permanently Removing a Column
+del dfo['col1']
+
 
 # ----   col / index names   ----
 # get the column names
