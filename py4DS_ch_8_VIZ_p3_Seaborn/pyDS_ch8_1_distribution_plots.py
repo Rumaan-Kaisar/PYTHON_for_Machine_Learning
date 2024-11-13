@@ -1,9 +1,9 @@
 
-################# 9.1: full, 9.2: 4:10
+################# 9.1: full, 9.2: 5:49
 # copy:  update GitHub pyDS_ch6_4_PANDAS_oprtn.ipynb + py
 #        
 #        
-################# (10-Nov-24 for 12-Nov-24)
+################# (12-Nov-24 for 13-Nov-24)
 
 # Courses: PrTla PY for DS & ML >    9.1, 9.2
 
@@ -69,5 +69,19 @@ sns.distplot(tips['total_bill'], kde=False, bins=40)
 # most of the bills happens in between 10 and 20 dollers
 
 
-# ----  rev[10-nov-2024]  ----
+
 # ------------    jointplot    ------------
+    # jointplot() creates a combined view of two distributions for bivariate (2-variable) data, 
+    # allowing you to select a comparison type with the kind parameter:
+    #   "scatter" -  scatter plot
+    #   "reg"     -  regression plot
+    #   "resid"   -  residuals plot
+    #   "kde"     -  kernel density plot
+    #   "hex"     -  hexbin plot
+
+# for example we can combine 2 dstribution plots of both (columns of or dataset) "total_bill" and "tip" 
+# also we can plot their relation on a scatterplot (to compare those 2 distributions)
+sns.jointplot(x='total_bill', y='tip', data=tips, kind='scatter')
+# notice, higher the total_bill has higher tips
+# most of the tips lie between (1, 5) for total_bill (5, 35)
+
