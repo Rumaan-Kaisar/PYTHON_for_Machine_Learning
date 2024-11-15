@@ -3,7 +3,7 @@
 # copy:  update GitHub pyDS_ch6_4_PANDAS_oprtn.ipynb + py
 #        
 #        
-################# (12-Nov-24 for 13-Nov-24)
+################# (13-Nov-24 for 15-Nov-24)
 
 # Courses: PrTla PY for DS & ML >    9.1, 9.2
 
@@ -79,9 +79,41 @@ sns.distplot(tips['total_bill'], kde=False, bins=40)
     #   "kde"     -  kernel density plot
     #   "hex"     -  hexbin plot
 
-# for example we can combine 2 dstribution plots of both (columns of or dataset) "total_bill" and "tip" 
-# also we can plot their relation on a scatterplot (to compare those 2 distributions)
+# For example we can combine 2 dstribution plots of both (columns of or dataset) "total_bill" and "tip" 
+#   also we can plot their relation on a scatterplot (to compare those 2 distributions)
 sns.jointplot(x='total_bill', y='tip', data=tips, kind='scatter')
 # notice, higher the total_bill has higher tips
 # most of the tips lie between (1, 5) for total_bill (5, 35)
 
+# ----  hexbin plot  ----
+# hexagon distribution representation
+sns.jointplot(x='total_bill',y='tip',data=tips, kind='hex')
+
+# ----  regression plot  ----
+# plots an additional "regression line" (we'll discuss more in Machine Learning)
+# notice the linear fitting using p-value (and pearsonr coefficient)
+sns.jointplot(x='total_bill',y='tip',data=tips, kind='reg')
+# by default "kind" is "scatter", now we've set it to 'hex' and 'reg'
+
+# ----  2D kde  ----
+# density of the points
+sns.jointplot(x='total_bill',y='tip',data=tips, kind='kde')
+
+
+
+# ------------    pairplot    ------------
+# pairplot will plot "pairwise relationships" across an entire dataframe (for the numerical columns) 
+# it supports a color hue argument (for categorical columns). 
+sns.pairplot(tips)
+# it applies jointplot to all possible combination of our dtaset's numerical columns
+# so it takes more time for larger dataFrames
+# good way to quickly visualize our data
+
+# hue using 'sex' variable from our dataset
+# we have to use a 'categorical' column like "sex"
+# use "palette" to modify color
+sns.pairplot(tips, hue='sex', palette='coolwarm')
+
+
+
+# ------------    rugplot    ------------
