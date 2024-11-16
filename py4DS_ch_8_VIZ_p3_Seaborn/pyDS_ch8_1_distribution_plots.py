@@ -1,9 +1,9 @@
 
-################# 9.1: full, 9.2: 5:49
+################# 9.1: full, 9.2: 12:10
 # copy:  update GitHub pyDS_ch6_4_PANDAS_oprtn.ipynb + py
 #        
 #        
-################# (13-Nov-24 for 15-Nov-24)
+################# (15-Nov-24 for 16-Nov-24)
 
 # Courses: PrTla PY for DS & ML >    9.1, 9.2
 
@@ -88,6 +88,7 @@ sns.jointplot(x='total_bill', y='tip', data=tips, kind='scatter')
 # ----  hexbin plot  ----
 # hexagon distribution representation
 sns.jointplot(x='total_bill',y='tip',data=tips, kind='hex')
+# hexagon gets darker if it has certain number of points in it 
 
 # ----  regression plot  ----
 # plots an additional "regression line" (we'll discuss more in Machine Learning)
@@ -96,8 +97,8 @@ sns.jointplot(x='total_bill',y='tip',data=tips, kind='reg')
 # by default "kind" is "scatter", now we've set it to 'hex' and 'reg'
 
 # ----  2D kde  ----
-# density of the points
-sns.jointplot(x='total_bill',y='tip',data=tips, kind='kde')
+# density of the points. Use 'shade' or 'fill' for coloring
+sns.jointplot(x='total_bill',y='tip',data=tips, kind='kde', fill=True)
 
 
 
@@ -116,4 +117,14 @@ sns.pairplot(tips, hue='sex', palette='coolwarm')
 
 
 
-# ------------    rugplot    ------------
+# ------------    kdepot, rugplot    ------------
+# A rugplot is a simple plot that places a "dash mark" for each point in a "univariate" distribution
+# They are the building block of a KDE plot
+sns.rugplot(tips['tip'])
+
+# compare to histogram: shows how many dashes (stacked) in a bin, 
+# less high in "histogram" means less dashes in "rugplot"
+# sns.histplot(tips['tip'], kde=True)
+sns.distplot(tips['tip'], kde=True)
+
+# How to build "kde" using "rugplot"
