@@ -1,10 +1,4 @@
 
-################# 9.1: full, 9.2: 12:10
-# copy:  update GitHub pyDS_ch6_4_PANDAS_oprtn.ipynb + py
-#        
-#        
-################# (15-Nov-24 for 16-Nov-24)
-
 # Courses: PrTla PY for DS & ML >    9.1, 9.2
 
 
@@ -127,4 +121,93 @@ sns.rugplot(tips['tip'])
 # sns.histplot(tips['tip'], kde=True)
 sns.distplot(tips['tip'], kde=True)
 
-# How to build "kde" using "rugplot"
+# ----  kdeplot  ----
+# if we just want the kde only (not bins)
+sns.kdeplot(tips['tip'])
+
+
+
+
+# ----  How to build "kde" using "rugplot"?  ----
+# kde has a kind of relation with rugplot count
+# kde: kernel density estimation
+
+# we'll construct a dataset, we then observe the "normal Gaussian distribution" of the dashes of rugplot, 
+# and then we'll see how to construct kde from those distributions (by adding)
+
+# to observe this, we'll copy some code (don't worry about understanding this code)
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+#Create dataset
+dataset = np.random.randn(25)
+
+# Create another rugplot
+sns.rugplot(dataset);
+
+# Set up the x-axis for the plot
+x_min = dataset.min() - 2
+x_max = dataset.max() + 2
+
+# 100 equally spaced points from x_min to x_max
+x_axis = np.linspace(x_min,x_max,100)
+
+# Set up the bandwidth, for info on this:
+url = 'http://en.wikipedia.org/wiki/Kernel_density_estimation#Practical_estimation_of_the_bandwidth'
+
+bandwidth = ((4*dataset.std()**5)/(3*len(dataset)))**.2
+
+
+# Create an empty kernel list
+kernel_list = []
+
+# Plot each basis function
+for data_point in dataset:
+    
+    # Create a kernel for each point and append to list
+    # "stats.norm" plots the normal distribution for each of the rugplot
+    kernel = stats.norm(data_point,bandwidth).pdf(x_axis)
+    kernel_list.append(kernel)
+    
+    #Scale for plotting
+    kernel = kernel / kernel.max()
+    kernel = kernel * .4
+    plt.plot(x_axis,kernel,color = 'grey',alpha=0.5)
+
+plt.ylim(0,1)
+
+# notice in the figure: each of the normal-distribution for each of the bule-dashes
+# each normal distribution is centered around each dash
+# we're having bunch of them in top of each other
+    # now we're going to "sum them all up" to get the "kernel density basis function"
+    # to do that we're going to use following code
+
+
+# To get the kde plot we can sum these basis functions.
+
+# Plot the sum of the basis function
+sum_of_kde = np.sum(kernel_list,axis=0)
+
+# Plot figure
+fig = plt.plot(x_axis,sum_of_kde,color='indianred')
+
+# Add the initial rugplot
+sns.rugplot(dataset,c = 'indianred')
+
+# Get rid of y-tick marks
+plt.yticks([])
+
+# Set title
+plt.suptitle("Sum of the Basis Functions")
+
+# Note: that's how the "kdeplot" is constructed in the "distplot"
+
+
+# ----  kdeplot and rugplot togateher  ----
+sns.kdeplot(tips['total_bill'])
+sns.rugplot(tips['total_bill'])
+
+sns.kdeplot(tips['tip'])
+sns.rugplot(tips['tip'])
