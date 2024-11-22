@@ -1,9 +1,9 @@
 
-################# 9.3: 0.58
+################# 9.3: 3.49
 # copy:  
 #        
 #        
-################# (19-Nov-24 for 20-Nov-24)
+################# (20-Nov-24 for 22-Nov-24)
 
 # Courses: PrTla PY for DS & ML >    9.3
 
@@ -58,6 +58,27 @@ Aggregate data:
 """
 
 # ----  barplot  ----
+# it aggregate the categorical data based on a function (mean is default)
+sns.barplot(x='sex', y='total_bill', data=tips)
+# notice x is categorical and y is numerical
+# shows mean of 'total_bill' per categorical value i.e. 'sex': 'male' or 'female'
+    # observation: average 'total_bill' of male is higher than female
+
+# change estimator object (affects the grouping/aggregation)
+# estimator: also called aggregate function 
+    # Statistical function to estimate within each categorical bin.
+    # by default it is the mean
+    # also we can put our custom function
+    # it's just a "groupby" mechanism
+
+# following aggregate on "std-deviation"
+import numpy as np
+sns.barplot(x='sex', y='total_bill', data=tips, estimator=np.std)
+
+
+
+# ----  countplot  ----
+
 
 # rev[19-Nov-2024]
 
