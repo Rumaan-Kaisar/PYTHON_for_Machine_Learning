@@ -1,9 +1,9 @@
 
-################# 9.3: 3.49
+################# 9.3: 4.33
 # copy:  
 #        
 #        
-################# (20-Nov-24 for 22-Nov-24)
+################# (22-Nov-24 for 23-Nov-24)
 
 # Courses: PrTla PY for DS & ML >    9.3
 
@@ -78,6 +78,15 @@ sns.barplot(x='sex', y='total_bill', data=tips, estimator=np.std)
 
 
 # ----  countplot  ----
+# mostly same as "barplot" except the estimator is explicitly counting the "number of occurrences"
+    # thats why we only pass the x value (which is categorical):
+sns.countplot(x='sex',data=tips)
+# more male than female
+
+
+
+# ------------    boxplot and violinplot    ------------
+
 
 
 # rev[19-Nov-2024]
