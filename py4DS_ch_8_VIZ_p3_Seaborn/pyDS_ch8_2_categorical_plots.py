@@ -86,10 +86,36 @@ sns.countplot(x='sex',data=tips)
 
 
 # ------------    boxplot and violinplot    ------------
+# Boxplots and violin plots display the distribution of data.
+
+# Boxplot (box-and-whisker plot): 
+    # Summarizes the distribution of quantitative data for comparison across categories.
+    # The "box" represents the quartiles (middle 50% of the data).
+    # The "whiskers" extend to show the data range, excluding outliers.
+    # Outliers are identified based on the interquartile range (IQR).
+
+# x= categorical, y= numerical
+sns.boxplot(x='day', y='total_bill', data=tips)
+
+# setting up hue (use another categorical data)
+sns.boxplot(x='day', y='total_bill', data=tips, hue='smoker')
+# now we can classify even further. Eg: on Thurseday non-smokers give more tips
+
+# more modifications
+# color palette
+sns.boxplot(x="day", y="total_bill", data=tips, palette='rainbow')
+sns.boxplot(x="day", y="total_bill", hue="smoker",data=tips, palette="coolwarm")
+
+# Can do entire dataframe with orient='h'
+sns.boxplot(data=tips, palette='rainbow', orient='h')
 
 
 
-# rev[19-Nov-2024]
+
+# ----  rev[19-Nov-2024]  ----
+
+# violinplot:
+
 
 
 
