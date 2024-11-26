@@ -1,9 +1,9 @@
 
-################# 9.3: 4.33
+################# 9.3: 10.43
 # copy:  
 #        
 #        
-################# (22-Nov-24 for 23-Nov-24)
+################# (24-Nov-24 for 26-Nov-24)
 
 # Courses: PrTla PY for DS & ML >    9.3
 
@@ -111,12 +111,28 @@ sns.boxplot(data=tips, palette='rainbow', orient='h')
 
 
 
+# ----  violinplot  ----
+# A "violin plot" is similar to a "box and whisker plot" but provides more detail about the data "distribution".
+    # but it needs more time to understand
+# It shows how quantitative data is "distributed across categories" for easy comparison. 
+# Unlike a boxplot, it includes a kernel density estimation (KDE), 
+    # giving a smooth curve that represents the data's underlying distribution.
+
+# it takes same arguments as boxplot
+sns.violinplot(x='day', y='total_bill', data=tips)
+
+# with hue
+sns.violinplot(x='day', y='total_bill', data=tips, hue='smoker', palette='rainbow')
+
+
+# with "splitted-hue": gives lot more information
+# directly campare the distribution for different categories
+    # and compoare categories themselvs on top of x-axis
+# Audience: it's useful for more thechnical people (those who can understand it).
+# for CEO or executive type management people, it won't help much (for those people use boxplot)
+sns.violinplot(x='day', y='total_bill', data=tips, hue='smoker', split=True, palette='rainbow')
+
 
 # ----  rev[19-Nov-2024]  ----
-
-# violinplot:
-
-
-
 
 
