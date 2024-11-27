@@ -1,9 +1,9 @@
 
-################# 9.3: 10.43
+################# 9.3: 12.6
 # copy:  
 #        
 #        
-################# (24-Nov-24 for 26-Nov-24)
+################# (26-Nov-24 for 27-Nov-24)
 
 # Courses: PrTla PY for DS & ML >    9.3
 
@@ -133,6 +133,33 @@ sns.violinplot(x='day', y='total_bill', data=tips, hue='smoker', palette='rainbo
 sns.violinplot(x='day', y='total_bill', data=tips, hue='smoker', split=True, palette='rainbow')
 
 
-# ----  rev[19-Nov-2024]  ----
+
+# ------------    stripplot and swarmplot    ------------
+# ----  stripplot()  ----
+# Displays a scatterplot where one variable is categorical
+# Can be used alone or alongside box/violin plots to show all data points with the underlying distribution.
+
+# in stripplot() we can't tell how many points are on top of each other
+sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', jitter=False)
+
+# to visualize the density use "jitter" in stripplot(), sepertaes the stacked points
+# Upodate: by default jitter=True, howver we're going to use it anyway
+sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1')
+
+# Notice the difference after using "jitter=True"
+sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', jitter=True)
 
 
+# ----  rev[26-Nov-2024]  ----
+
+# using "hue" (more category)
+
+
+
+# ----  swarmplot()  ----
+# Similar to stripplot() but adjusts points along the categorical axis to avoid overlap.
+# Better for visualizing distributions but less effective with large datasets 
+    # due to clutter and computational complexity.
+
+# we can see all points using swarmplot()
+sns.swarmplot(x="day", y="total_bill", data=tips)
