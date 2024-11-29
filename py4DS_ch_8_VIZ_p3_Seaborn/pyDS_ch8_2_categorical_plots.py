@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (26-Nov-24 for 27-Nov-24)
+################# (27-Nov-24 for 29-Nov-24)
 
 # Courses: PrTla PY for DS & ML >    9.3
 
@@ -149,17 +149,27 @@ sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1')
 # Notice the difference after using "jitter=True"
 sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', jitter=True)
 
-
-# ----  rev[26-Nov-2024]  ----
-
-# using "hue" (more category)
-
+# using "hue" (more category) and split (seperates the colors)
+sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', hue='sex', jitter=True)
+# split parameter is not available in sns.stripplot, use "dodge=True" instead
+sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', hue='sex', jitter=True, dodge=True)
 
 
 # ----  swarmplot()  ----
-# Similar to stripplot() but adjusts points along the categorical axis to avoid overlap.
+# The stripplot is slightly harder to interpret compared to a boxplot/violinplot.
+# hence the idea of swarmplot, combining the idea of "violinplot + stripplot"
+# swarmplot() is similar to stripplot() but adjusts points along the categorical axis to avoid overlap.
 # Better for visualizing distributions but less effective with large datasets 
     # due to clutter and computational complexity.
 
 # we can see all points using swarmplot()
 sns.swarmplot(x="day", y="total_bill", data=tips)
+
+# combine a swarmplot with violinplot
+# Note: The palette is different to make the colors stand out from one another
+sns.violinplot(x="day", y="total_bill", data=tips, palette='rainbow')
+sns.swarmplot(x="day", y="total_bill", data=tips, palette='Set1')
+
+
+# ----  rev[27-Nov-2024]  ----
+
