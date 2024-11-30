@@ -146,7 +146,7 @@ sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', jitter=True)
 # using "hue" (more category) and split (seperates the colors)
 sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', hue='sex', jitter=True)
 # split parameter is not available in sns.stripplot, use "dodge=True" instead
-sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', hue='sex', jitter=True, dodge=True) ]]]]]]
+sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', hue='sex', jitter=True, dodge=True)
 
 
 # ----  swarmplot()  ----
