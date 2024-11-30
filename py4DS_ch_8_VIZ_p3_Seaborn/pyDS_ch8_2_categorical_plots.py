@@ -1,10 +1,4 @@
 
-################# 9.3: 12.6
-# copy:  
-#        
-#        
-################# (27-Nov-24 for 29-Nov-24)
-
 # Courses: PrTla PY for DS & ML >    9.3
 
 
@@ -152,7 +146,7 @@ sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', jitter=True)
 # using "hue" (more category) and split (seperates the colors)
 sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', hue='sex', jitter=True)
 # split parameter is not available in sns.stripplot, use "dodge=True" instead
-sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', hue='sex', jitter=True, dodge=True)
+sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', hue='sex', jitter=True, dodge=True) ]]]]]]
 
 
 # ----  swarmplot()  ----
@@ -165,11 +159,26 @@ sns.stripplot(x="day", y="total_bill", data=tips, palette='Set1', hue='sex', jit
 # we can see all points using swarmplot()
 sns.swarmplot(x="day", y="total_bill", data=tips)
 
-# combine a swarmplot with violinplot
+# combine a swarmplot with violinplot (on top of each-other)
 # Note: The palette is different to make the colors stand out from one another
 sns.violinplot(x="day", y="total_bill", data=tips, palette='rainbow')
 sns.swarmplot(x="day", y="total_bill", data=tips, palette='Set1')
 
+# another example
+sns.violinplot(x="tip", y="day", data=tips,palette='rainbow')
+sns.swarmplot(x="tip", y="day", data=tips,color='black',size=3)
 
-# ----  rev[27-Nov-2024]  ----
+
+
+# ------------    factorplot()    ------------
+# it's a general form of the above plots
+# in addition of x, y, hue and data it take "kind"
+    # "kind" describe sthe factor plot itself
+    #  eg: kind="violin" or kind="bar"
+sns.factorplot(x="day", y="total_bill", data=tips, palette='rainbow', kind="bar")
+
+# "seaborn.factorplot" is deprecated and replaced by "seaborn.catplot", 
+# which provides the same features with a more flexible and consistent API.
+sns.catplot(x="day", y="total_bill", data=tips, palette='rainbow', kind="bar")
+
 
