@@ -1,5 +1,5 @@
 
-################# 9.4: 2.38
+################# 9.4: 5.15
 # copy:  
 #        
 #        
@@ -43,11 +43,30 @@ flights.head()
     # 1. through a pivot table
     # 2. Getting correlation data
 
-# using correlation
+
+# ----  using correlation  ----
 tc = tips.corr()     # notice the same variable names in the column and row
 
 # creating heatmap
 sns.heatmap(tc)
+# it just color those values based on some gradient scales
+# it helps to compare relative values of a correlation
 
-# rev[2.38 03-dec-2024]
+# annotations (show the values)
+sns.heatmap(tc, annot=True)
+
+# setting colormap
+sns.heatmap(tc, annot=True, cmap='rainbow')
+
+
+# ----  using Pivot  ----
+# Pivot: use pivot table for Flight data. We transform this data as below: 
+    # set "month" is the "index"
+    # set "year" as "columns"
+    # set number of passengers as "values"
+flPv = flights.pivot_table(index='month', columns='year', values='passengers')
+flPv    # notice the correlation
+
+
+# rev[5.15 04-dec-2024]
 
