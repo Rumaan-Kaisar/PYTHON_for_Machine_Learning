@@ -1,9 +1,9 @@
 
-################# 9.4: 5.15
+################# 9.4: 07.26
 # copy:  
 #        
 #        
-################# (30-Nov-24 for 01-Dec-24)
+################# (06-Dec-24 for 07-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.4, 9.5
 
@@ -66,7 +66,21 @@ sns.heatmap(tc, annot=True, cmap='rainbow')
     # set number of passengers as "values"
 flPv = flights.pivot_table(index='month', columns='year', values='passengers')
 flPv    # notice the correlation
+# heatmap
+sns.heatmap(flPv)
+# notice as the year increase, there's more flight
+# also notice the popular months are the summer months: June, July, August
+
+# change color map "cmap"
+sns.heatmap(flPv, cmap='magma')
+
+# to seperate the squares: linecolor, linewidth
+sns.heatmap(flPv, cmap='coolwarm', linecolor='white', linewidth=1)
 
 
-# rev[5.15 04-dec-2024]
+
+# --------    clustermap    --------
+# The clustermap uses "hierarchal clustering" to produce a clustered version of the heatmap.
+
+# rev[07.26 06-dec-2024]
 
