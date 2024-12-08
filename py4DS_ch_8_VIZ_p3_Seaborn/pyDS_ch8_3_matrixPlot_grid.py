@@ -1,9 +1,9 @@
 
-################# 9.4: 07.26
+################# 9.4: full
 # copy:  
 #        
 #        
-################# (06-Dec-24 for 07-Dec-24)
+################# (07-Dec-24 for 08-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.4, 9.5
 
@@ -32,6 +32,7 @@ flights.head()
 
 
 # --------    heatmap    --------
+# Order maintained
 # heatmap : primary way of showing the matrix plots
 # in order to work with heatmap, our data need to be in "matrix form"
 # "index name" and "column name" should match up so that 
@@ -80,7 +81,27 @@ sns.heatmap(flPv, cmap='coolwarm', linecolor='white', linewidth=1)
 
 
 # --------    clustermap    --------
+# No order maintained
 # The clustermap uses "hierarchal clustering" to produce a clustered version of the heatmap.
+sns.clustermap(flPv)
 
-# rev[07.26 06-dec-2024]
+# Notice that the years and months are now grouped by passenger count similarity rather than being in order. 
+# For example, August and July are similar, which makes sense as both are summer travel months
+
+# cluster columns and rows togather based of their similarity
+# notice the "years" axis and "month" axis.
+# notice the months/years are not in order: 
+#   months with nearby values (passengers) are grouped first then paires are grouped and so on
+#   i.e. they're clustured by months with similar values
+#   same goes for "year"
+# Eg: 1959 and 1960 are similar and "april" and "july"
+
+# change colormap
+sns.clustermap(flPv, cmap="coolwarm")
+
+# view similarities in normalized scale
+sns.clustermap(flPv, cmap="coolwarm", standard_scale=1)
+# notice winter moths has low passengers, summer months has more passengers
+
+
 
