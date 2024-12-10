@@ -1,9 +1,9 @@
 
-################# 9.4: full
+################# 9.4: full, 9.5:1.11
 # copy:  
 #        
 #        
-################# (07-Dec-24 for 08-Dec-24)
+################# (08-Dec-24 for 10-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.4, 9.5
 
@@ -85,7 +85,7 @@ sns.heatmap(flPv, cmap='coolwarm', linecolor='white', linewidth=1)
 # The clustermap uses "hierarchal clustering" to produce a clustered version of the heatmap.
 sns.clustermap(flPv)
 
-# Notice that the years and months are now grouped by passenger count similarity rather than being in order. 
+# Notice that the years and months are now grouped by "passenger count" similarity rather than being in order. 
 # For example, August and July are similar, which makes sense as both are summer travel months
 
 # cluster columns and rows togather based of their similarity
@@ -102,6 +102,37 @@ sns.clustermap(flPv, cmap="coolwarm")
 # view similarities in normalized scale
 sns.clustermap(flPv, cmap="coolwarm", standard_scale=1)
 # notice winter moths has low passengers, summer months has more passengers
+
+
+
+# ------------    Grids    ------------
+# Use sns grid capability to automate subplots based on features on our data
+# Grids are plots that let you organize different types of plots into rows and columns, 
+    # making it easy to create similar plots grouped by specific features.
+
+# import libraries
+import seaborn as sns
+# shows figures in ipynb
+%matplotlib inline
+
+# To remove 'warnings' use 'filterwarnings'
+import warnings
+warnings.filterwarnings('ignore')
+
+# "iris" dataset: Measurments of different flowers
+    # Iris is a genus of 310 flowering plant species known for their vibrant flowers. 
+    # The term "iris" is used both as the scientific and common name for all species in this genus.
+
+iris = sns.load_dataset('iris')
+iris.head()
+
+# last column of the dataset is for 3-different species
+iris['species'].unique()
+# other four columns are just features of the flower
+
+
+
+
 
 
 
