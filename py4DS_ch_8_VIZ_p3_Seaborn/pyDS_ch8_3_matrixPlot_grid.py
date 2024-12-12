@@ -1,9 +1,9 @@
 
-################# 9.4: full, 9.5:1.11
+################# 9.4: full, 9.5:1.30
 # copy:  
 #        
 #        
-################# (08-Dec-24 for 10-Dec-24)
+################# (10-Dec-24 for 10-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.4, 9.5
 
@@ -130,9 +130,12 @@ iris.head()
 iris['species'].unique()
 # other four columns are just features of the flower
 
+# ----  pairplot  ----
+# it's just the automated jointplot for the dataset
+# just pass the DataFrame, the plot will autometically created
+sns.pairplot(iris)
 
+# ----  pairgrid  ----
 
-
-
-
+# using "pairgrid"
 
