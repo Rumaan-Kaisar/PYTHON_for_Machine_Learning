@@ -1,9 +1,9 @@
 
-################# 9.4: full, 9.5:1.30
+################# 9.4: full, 9.5:2.50
 # copy:  
 #        
 #        
-################# (10-Dec-24 for 10-Dec-24)
+################# (12-Dec-24 for 13-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.4, 9.5
 
@@ -105,6 +105,7 @@ sns.clustermap(flPv, cmap="coolwarm", standard_scale=1)
 
 
 
+
 # ------------    Grids    ------------
 # Use sns grid capability to automate subplots based on features on our data
 # Grids are plots that let you organize different types of plots into rows and columns, 
@@ -112,6 +113,7 @@ sns.clustermap(flPv, cmap="coolwarm", standard_scale=1)
 
 # import libraries
 import seaborn as sns
+import matplotlib.pyplot as plt
 # shows figures in ipynb
 %matplotlib inline
 
@@ -130,12 +132,23 @@ iris.head()
 iris['species'].unique()
 # other four columns are just features of the flower
 
+
 # ----  pairplot  ----
 # it's just the automated jointplot for the dataset
 # just pass the DataFrame, the plot will autometically created
 sns.pairplot(iris)
 
-# ----  pairgrid  ----
 
-# using "pairgrid"
+# ----  PairGrid  ----
+# pairplot is just simplified version of PairGrid
+    # use PairGrid to modify the plots more
+    # takes all the numerical columns and grid them up
+    # makes a kind of subplots
+sns.PairGrid(iris)  # takes all the numerical columns and grid them up
+
+# map scatter-plot using PairGrid
+g = sns.PairGrid(iris)
+g.map(plt.scatter)
+
+# specify diagonal, upper-diagonal (upper-half), lower-diagonal (upper-half)
 
