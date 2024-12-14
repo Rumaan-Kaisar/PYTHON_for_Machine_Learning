@@ -1,9 +1,9 @@
 
-################# 9.4: full, 9.5:2.50
+################# 9.4: full, 9.5:4.10
 # copy:  
 #        
 #        
-################# (12-Dec-24 for 13-Dec-24)
+################# (13-Dec-24 for 14-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.4, 9.5
 
@@ -134,9 +134,13 @@ iris['species'].unique()
 
 
 # ----  pairplot  ----
-# it's just the automated jointplot for the dataset
-# just pass the DataFrame, the plot will autometically created
+# "pairplot" is a simpler version of "PairGrid" (discussed next)
+    # it's just the automated jointplot for the dataset
+    # just pass the DataFrame, the plot will autometically created
 sns.pairplot(iris)
+
+# stylize and setting up hue (use categorical data seperation)
+sns.pairplot(iris, hue='species', palette='rainbow')
 
 
 # ----  PairGrid  ----
@@ -144,11 +148,26 @@ sns.pairplot(iris)
     # use PairGrid to modify the plots more
     # takes all the numerical columns and grid them up
     # makes a kind of subplots
+
+# Just the Grid    
 sns.PairGrid(iris)  # takes all the numerical columns and grid them up
 
-# map scatter-plot using PairGrid
+# map to the grid: map scatter-plot using PairGrid
 g = sns.PairGrid(iris)
 g.map(plt.scatter)
 
 # specify diagonal, upper-diagonal (upper-half), lower-diagonal (upper-half)
+g2 = sns.PairGrid(iris)
+# g2.map_diag(plt.hist)
+g2.map_diag(sns.distplot)    # plots histograms in diagonal grids
+g2.map_upper(plt.scatter)    # scatter-plots in upper-half grids
+g2.map_lower(sns.kdeplot)    # kde-plots in lower-half grids
+# notice no () is used to call different plots, we just passed the names
+
+
+# Pairgrid is a subplot grid for plotting pairwise relationships in a dataset
+
+
+
+# ----  FacetGrid  ----
 
