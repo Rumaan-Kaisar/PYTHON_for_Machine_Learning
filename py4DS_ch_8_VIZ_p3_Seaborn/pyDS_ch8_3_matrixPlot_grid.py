@@ -1,10 +1,4 @@
 
-################# 9.4: full, 9.5:4.10
-# copy:  
-#        
-#        
-################# (13-Dec-24 for 14-Dec-24)
-
 # Courses: PrTla PY for DS & ML >    9.4, 9.5
 
 # ------------    Matrix Plots    ------------
@@ -170,4 +164,44 @@ g2.map_lower(sns.kdeplot)    # kde-plots in lower-half grids
 
 
 # ----  FacetGrid  ----
+# Note that regression plots autometically creates a FacetGrid
+# Load tips dataset
+tips = sns.load_dataset('tips')
+tips.head()
+
+# FacetGrid is similar to subplot of matplotlib
+# g = sns.FacetGrid(data=, col=, row=)
+g3 = sns.FacetGrid(tips, col='time', row='smoker')  # Just the Grid
+# map different plot-types into these grids
+
+# makes seperate plots if sns.displot is used
+# g3.map(sns.displot, 'total_bill')
+    # The issue occurs because sns.distplot (now deprecated in Seaborn) does not support two variables (like total_bill and tip) directly, 
+    # whereas plt.hist can work with multiple variables in this way.
+
+g3.map(plt.hist, 'total_bill')
+# we are mapping a plot-type based on seperation of columns and row
+    # notice times: Lunch and Dinner - placed in columns
+    # smoker: No, Yes -  placed in rows
+plt.show()
+
+# what about plots taht takes more than one argument? Just add the argument
+# Notice 'sns.distplot' takes one argument
+g4 = sns.FacetGrid(data=tips, col='time', row='smoker')  # Just the Grid
+# Notice hwo the arguments come after plt.scatter call
+g4 = g4.map(plt.scatter, 'total_bill', 'tip')    # tip vs total_bill
+
+# add legends
+g4.map(plt.scatter, "total_bill", "tip").add_legend()
+
+# using sns.hisplot instead of sns.distplot
+g5 = sns.FacetGrid(tips, col="time", row="smoker")
+g5.map(sns.histplot, "total_bill", kde=True).add_legend()
+
+
+
+# ----  JointGrid  ----
+# JointGrid is the general form of jointplot() grids.
+jg = sns.JointGrid(x="total_bill", y="tip", data=tips)
+jg.plot(sns.regplot, sns.distplot)
 
