@@ -1,9 +1,9 @@
 
-################# 9.6: 3.49
+################# 9.6: 5.06
 # copy:  
 #        
 #        
-################# (17-Dec-24 for 18-Dec-24)
+################# (18-Dec-24 for 20-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.6, 9.7
 
@@ -46,12 +46,32 @@ sns.lmplot(x='total_bill', y='tip', data=tips, hue='sex', palette="rocket")
 sns.lmplot(x='total_bill', y='tip', data=tips, hue='sex', markers=['o', 'v'], scatter_kws={'s':100}, palette="husl")
 
 
-# ----  rev[17-Dec-2024]  ----
-# more options
-
-### Working with Markers
+# more options: Working with Markers
 # palette: hls, husl, Set2, Paired (paired colors)
-# lmplot kwargs get passed through to **regplot** which is a more general form of lmplot(). regplot has a scatter_kws parameter that gets passed to plt.scatter. So you want to set the s parameter in that dictionary, which corresponds (a bit confusingly) to the squared markersize. In other words you end up passing a dictionary with the base matplotlib arguments, in this case, s for size of a scatter plot. In general, you probably won't remember this off the top of your head, but instead reference the documentation.
+""" 
+    "lmplot" passes its keyword arguments to "regplot", a more general form of lmplot().
+        "regplot" has a "scatter_kws" parameter, which is passed to "plt.scatter"
+        To adjust marker size, set the 's' key in "scatter_kws"
+        Note: s controls the squared marker size.
+        Use a dictionary for Matplotlib arguments, like {'s': 50} for marker size
+    
+    In other words you end up passing a dictionary with the base matplotlib arguments, in this case, s for size of a scatter plot.
+        You might not remember this detail, so check the documentation when needed. 
+        http://matplotlib.org/api/markers_api.html
+"""
 
+# use "grid" (seperate plot) insted of seperating by "hue" (do by color)
+sns.lmplot(x='total_bill', y='tip', data=tips, col="sex")   # plot for each sex
+# Gives two separate column plots separated by the 'sex' category
 
+# we can do this for rows as well
+sns.lmplot(x='total_bill', y='tip', data=tips, col="sex", row='time')   # plot for each sex
+# This is similar to the grid and FacetGrid call we've done earlier.
+# Now it's automatic because we specify 'row' and 'col' by passing them to 'lmplot'
 
+# combined 'hue' (as time) and 'grid' (as sex)
+sns.lmplot(x='total_bill', y='tip', data=tips, col="sex", hue='time')
+# another example: 'hue' (as sex) and 'grid' (as day)
+sns.lmplot(x='total_bill', y='tip', data=tips, col='day', hue='sex', palette='coolwarm')
+
+# ----  5.06 :: rev[18-Dec-2024]  ----
