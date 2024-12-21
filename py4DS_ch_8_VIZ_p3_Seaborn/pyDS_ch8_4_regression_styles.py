@@ -1,9 +1,9 @@
 
-################# 9.6: 5.06
+################# 9.6: full, 9.7:1.10
 # copy:  
 #        
 #        
-################# (18-Dec-24 for 20-Dec-24)
+################# (20-Dec-24 for 21-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.6, 9.7
 
@@ -74,4 +74,32 @@ sns.lmplot(x='total_bill', y='tip', data=tips, col="sex", hue='time')
 # another example: 'hue' (as sex) and 'grid' (as day)
 sns.lmplot(x='total_bill', y='tip', data=tips, col='day', hue='sex', palette='coolwarm')
 
-# ----  5.06 :: rev[18-Dec-2024]  ----
+
+# ----  adjusting aspect-size ratio (ratio between height and width)  ----
+# using 'aspect' and 'size' parameters
+# sns.lmplot(x='total_bill', y='tip', data=tips, col='day', hue='sex', palette='coolwarm', aspect=0.6, size=8)
+# lmplot() got an unexpected keyword argument 'size'. use 'height' instead
+sns.lmplot(x='total_bill', y='tip', data=tips, col='day', hue='sex', palette='coolwarm', aspect=0.6, height=8)
+
+
+
+
+# ------------    style    ------------
+# changing fontsize, asthetics, colors 
+
+# ----  Styles  ----
+# We can set particular "Background Styles"
+sns.countplot(data=tips, x='sex')
+# notice the background of the plot
+
+# by using "sns.set_style" we change the styles to: darkgrid, whitegrid, dark, white, ticks
+sns.set_style
+sns.countplot(data=tips, x='sex')
+
+
+
+
+# ----  1.10 :: rev[18-Dec-2024]  ----
+
+
+
