@@ -1,5 +1,5 @@
 
-################# 9.6: full, 9.7:1.10
+################# 9.6: full, 9.7:2.46
 # copy:  
 #        
 #        
@@ -93,13 +93,32 @@ sns.countplot(data=tips, x='sex')
 # notice the background of the plot
 
 # by using "sns.set_style" we change the styles to: darkgrid, whitegrid, dark, white, ticks
-sns.set_style
+sns.set_style('darkgrid')
 sns.countplot(data=tips, x='sex')
 
+# shows ticks and no background
+sns.set_style('ticks')
+sns.countplot(x='sex',data=tips,palette='deep')
 
 
 
-# ----  1.10 :: rev[18-Dec-2024]  ----
+# ----  spine removal  ----
+sns.set_style('ticks')  
+sns.countplot(x='sex',data=tips,palette='deep')
+sns.despine()   # removes top and right spines
+
+# to remove bottom and left spines use: top=True, right=True, left=False, bottom=False
+sns.set_style('ticks')  
+sns.countplot(x='sex',data=tips,palette='deep')
+sns.despine(left=True, bottom=True)   # removes top, right, left and bottom spines
+
+# only left spine
+sns.countplot(x='sex',data=tips)
+sns.despine(left=True)
+
+
+
+# ----  size and aspect  ----
 
 
 
