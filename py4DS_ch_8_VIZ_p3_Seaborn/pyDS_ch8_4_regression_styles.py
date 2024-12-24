@@ -1,9 +1,9 @@
 
-################# 9.6: full, 9.7:2.46
+################# 9.6: full, 9.7:3.45
 # copy:  
 #        
 #        
-################# (20-Dec-24 for 21-Dec-24)
+################# (22-Dec-24 for 24-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.6, 9.7
 
@@ -14,6 +14,7 @@
 
 # import libraries
 import seaborn as sns
+import matplotlib.pyplot as plt
 # shows figures in ipynb
 %matplotlib inline
 
@@ -119,6 +120,15 @@ sns.despine(left=True)
 
 
 # ----  size and aspect  ----
+# We can combine Matplotlib and Seaborn.  
+    # Using Matplotlib's "plt.figure(figsize=(width, height))", we can adjust most Seaborn plots.  
+    # "Seaborn" essentially calls back to "Matplotlib" for these adjustments.
+    # For Seaborn grid plots, we can also control the size and aspect ratio using the "height" and "aspect" parameters.
 
+plt.figure(figsize=(12, 3))
+sns.countplot(x='sex', data=tips)
+# Note: When Seaborn calls Matplotlib, the size is overridden. 
+    # Matplotlib now sets the figure size for the Seaborn plot.
 
-
+# size and aspect of Grid Type Plot
+sns.lmplot(x='total_bill',y='tip', height=2, aspect=4, data=tips)
