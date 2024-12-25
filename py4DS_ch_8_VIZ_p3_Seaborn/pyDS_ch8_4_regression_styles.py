@@ -1,9 +1,9 @@
 
-################# 9.6: full, 9.7:3.45
+################# 9.6: full, 9.7:5.11
 # copy:  
 #        
 #        
-################# (22-Dec-24 for 24-Dec-24)
+################# (24-Dec-24 for 25-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.6, 9.7
 
@@ -132,3 +132,23 @@ sns.countplot(x='sex', data=tips)
 
 # size and aspect of Grid Type Plot
 sns.lmplot(x='total_bill',y='tip', height=2, aspect=4, data=tips)
+
+
+
+# ----  Scale and context    ----
+# set_context() override default parameters and change font scales.  
+# For example, we can create a plot suitable for a poster.  
+    # Context options include: paper, notebook, talk, and poster.  
+    # By default, it is set to 'notebook'.  
+
+sns.set_context('poster')  
+# Notice the figures will be much larger with larger fonts, making them suitable for a poster.  
+
+# Setting font scale to 2x larger than the default.  
+sns.set_context('poster', font_scale=2)  
+sns.countplot(x='sex', data=tips)
+
+
+
+# --------    Palettes and colors    --------
+
