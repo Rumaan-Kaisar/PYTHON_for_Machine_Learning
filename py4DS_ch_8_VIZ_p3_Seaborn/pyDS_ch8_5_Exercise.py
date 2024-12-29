@@ -1,11 +1,11 @@
 
-################# 9.8
+################# 9.8 full, 9.9
 # copy:  
 #        
 #        
 ################# (27-Dec-24 for 28-Dec-24)
 
-# Courses: PrTla PY for DS & ML >    9.8
+# Courses: PrTla PY for DS & ML >    9.8, 9.9
 
 # ------------    seaborn exercise    ------------
 
@@ -40,4 +40,16 @@ ttnc.head()
 
 # plot age-fare distribution in jointpolt
 sns.jointplot(x='fare', y='age', data=ttnc, kind='scatter')
+
+# plot 'fare' on a "distplot"
+# sns.distplot(ttnc['fare'], kde=False, color='red')
+sns.set_style('whitegrid')
+sns.distplot(ttnc['fare'], bins=30, kde=False, color='red', hist_kws={'edgecolor':'red'})
+
+# make 'boxplot' for "age" and "class"-category
+# x= categorical, y= numerical
+sns.boxplot(x='class', y='age', data=ttnc, palette= 'rainbow')
+
+
+# make 'swarmplot' same for "age" and "class"-category
 
