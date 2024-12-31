@@ -1,9 +1,9 @@
 
 ################# 9.8 full, 9.9
-# copy:  
+# copy:  thse 2, and style 2: total 4
 #        
 #        
-################# (27-Dec-24 for 28-Dec-24)
+################# (29-Dec-24 for 31-Dec-24)
 
 # Courses: PrTla PY for DS & ML >    9.8, 9.9
 
@@ -50,6 +50,36 @@ sns.distplot(ttnc['fare'], bins=30, kde=False, color='red', hist_kws={'edgecolor
 # x= categorical, y= numerical
 sns.boxplot(x='class', y='age', data=ttnc, palette= 'rainbow')
 
-
 # make 'swarmplot' same for "age" and "class"-category
+sns.set_style('whitegrid')
+sns.swarmplot(x='class', y='age', data=ttnc, palette= 'Set2')
+
+# show countplot of 'sex'
+sns.countplot(x='sex', data=ttnc, palette='magma')
+
+# creating heatmap
+ttCor = ttnc.corr()     # calculates the correlation matrix for the DataFrame
+# corr() computes pairwise correlation coefficients between all numerical columns in ttnc
+print(ttCor)
+
+# To set a specific color palette for a heatmap in Seaborn, use the 'cmap' parameter
+sns.heatmap(ttCor, cmap='Set2')
+plt.title('titanic.corr()')
+
+
+# ----  Colormap Selection  ----
+# Note: For this kind of plot, use a "sequential" or "diverging" colormap for better interpretation
+    # do not use "Qualitative" like 'Set2'
+# To set a specific color palette for a heatmap in Seaborn, use the 'cmap' parameter
+sns.heatmap(ttCor, cmap='coolwarm')
+# notice we've used 'coolwarm' from "diverging" colormap
+    # because data ranges from -ve to -ve including 0
+plt.title('titanic.corr()')
+
+
+# catagirical distribution of age-gender using "FacetGrid"
+fg = sns.FacetGrid(ttnc, col='sex')
+fg.map(plt.hist, 'age', color='cyan', edgecolor='c')
+plt.show()
+
 
