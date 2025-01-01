@@ -1,10 +1,4 @@
 
-################# 9.8 full, 9.9
-# copy:  thse 2, and style 2: total 4
-#        
-#        
-################# (29-Dec-24 for 31-Dec-24)
-
 # Courses: PrTla PY for DS & ML >    9.8, 9.9
 
 # ------------    seaborn exercise    ------------
@@ -82,4 +76,6 @@ fg = sns.FacetGrid(ttnc, col='sex')
 fg.map(plt.hist, 'age', color='cyan', edgecolor='c')
 plt.show()
 
+# alternative
+fg.map(sns.distplot, 'age')
 
