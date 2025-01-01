@@ -1,1 +1,68 @@
-y
+
+-----------------    viz part 4    -----------------
+
+----  Pandas Built-in Data Visualization  ----
+1. Pandas Built-in Data Visualization
+2. Pandas Data Visualization Exercise
+3. Pandas Data Visualization Exercise- Solutions
+
+----  Plotly and Cufflinks  ----
+1. Introduction to Plotly and Cufflinks
+2. Plotly and Cufflinks
+
+----  Geographical Plotting  ----
+1. Introduction to Geographical Plotting
+2. Choropleth Maps - Part 1 - USA
+3. Choropleth Maps - Part 2 - World
+4. Choropleth Exercises
+5. Choropleth Exercises - Solutions
+
+
+
+
+--------   A-Z PY for Data-Science   --------
+Previously:
+    None
+
+
+
+
+--------   PrTla PY for DS & ML   --------
+1. Introduction to Seaborn:     Use of Seaborn and install
+2. Distribution Plots:          distplot, jointplot, pairplot, rugplot, kdeplot
+3. Categorical Plots:           barplot, countplot, boxplot, violinplot, stripplot, swarmplot, factorplot
+4. Matrix Plots:        heatmap, clustermap
+5. Grids:               pairplot, PairGrid, FacetGrid, 
+6. Regression Plots:    lmplot, 
+7. Style and Color
+8. Seaborn Exercise
+
+
+----  Pandas Built-in Data Visualization  ----
+1. Pandas Built-in Data Visualization
+2. Pandas Data Visualization Exercise
+3. Pandas Data Visualization Exercise- Solutions
+
+----  Plotly and Cufflinks  ----
+1. Introduction to Plotly and Cufflinks
+2. Plotly and Cufflinks
+
+----  Geographical Plotting  ----
+1. Introduction to Geographical Plotting
+2. Choropleth Maps - Part 1 - USA
+3. Choropleth Maps - Part 2 - World
+4. Choropleth Exercises
+5. Choropleth Exercises - Solutions
+
+
+
+pyDS_ch8_1_distribution_plots           : 9.1, 9.2, 
+pyDS_ch8_2_categorical_plots            : 9.3
+pyDS_ch8_3_matrixPlot_grid              : 9.4, 9.5
+pyDS_ch8_4_regression_styles            : 9.6, 9.7
+pyDS_ch8_5_Exercise                     : 9.8
+
+
+# combine/review with OLD (A-Z)
+
+
