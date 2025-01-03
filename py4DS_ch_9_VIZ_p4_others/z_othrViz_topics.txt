@@ -25,44 +25,20 @@ Previously:
     None
 
 
-
-
---------   PrTla PY for DS & ML   --------
-1. Introduction to Seaborn:     Use of Seaborn and install
-2. Distribution Plots:          distplot, jointplot, pairplot, rugplot, kdeplot
-3. Categorical Plots:           barplot, countplot, boxplot, violinplot, stripplot, swarmplot, factorplot
-4. Matrix Plots:        heatmap, clustermap
-5. Grids:               pairplot, PairGrid, FacetGrid, 
-6. Regression Plots:    lmplot, 
-7. Style and Color
-8. Seaborn Exercise
-
-
 ----  Pandas Built-in Data Visualization  ----
-pd_Builtin_Viz
-        DF.plot(), hist(), area(), bar(), line(), scatter(), box(), hexbin(), kde()
-
-----  Plotly and Cufflinks  ----
-Plotly_Cufflinks
-
-
-----  Geographical Plotting  ----
-GeoPlot_Choropleth
-
-
-
 pd_Builtin_Viz
         DF.plot(), hist(), area(), bar(), line(), scatter(), box(), hexbin(), kde()
         10.1, 10.2, 10.3
 
+
 ----  Plotly and Cufflinks  ----
-Plotly_Cufflinks: 
-11.1, 11.2
+Plotly_Cufflinks
+        11.1, 11.2
 
 
 ----  Geographical Plotting  ----
 GeoPlot_Choropleth: 
-12.1, 12.2, 12.3, 12.4, 12.5
+    12.1, 12.2, 12.3, 12.4, 12.5
 
 
 
