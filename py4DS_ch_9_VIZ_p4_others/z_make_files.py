@@ -19,7 +19,7 @@ for i in range (0, len(file_names)):
     try:
         # os.makedirs(path, exist_ok = True)
         with open(f"{file_names[i]}.py", "w") as f:     # creates an empty 'py'
-            f.write("\n################# 348: FULL\n# copy:  \n#        \n#        \n################# (26-sep-23 for 27-sep-23)\n\n# Courses: A-Z PY for Data-Science    0\n")
+            f.write("\n################# 0: FULL\n# copy:  \n#        \n#        \n################# (26-sep-23 for 27-sep-23)\n\n# Courses: PrTla PY for DS & ML >    1\n")
         print(f"{file_names[i]}.py is created sucuessfully")
     except:
         print("files '%s' can not be created" % file_names[i])
