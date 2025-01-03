@@ -2,11 +2,9 @@
 
 # Directory: List of the folders you want to create
 
-file_names = ['pyDS_ch8_1_distribution_plots',
-'pyDS_ch8_2_categorical_plots',
-'pyDS_ch8_3_matrixPlot_grid',
-'pyDS_ch8_4_regression_styles',
-'pyDS_ch8_5_Exercise']
+file_names = ['pyDS_ch9_1_pd_Builtin_Viz',
+'pyDS_ch9_2_Plotly_Cufflinks',
+'pyDS_ch9_3_GeoPlot_Choropleth']
 
 
 
