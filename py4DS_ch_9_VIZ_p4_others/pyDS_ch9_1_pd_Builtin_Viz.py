@@ -1,9 +1,9 @@
 
-################# 10.1: 3.30
+################# 10.1: 7.53
 # copy:
 #        
 #        
-################# (05-Jan-25 for 07-Jan-25)
+################# (07-Jan-25 for 08-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3
 
@@ -124,4 +124,28 @@ plt.style.use('ggplot')
 # Histogram
 df1['A'].plot(kind='hist')
 
+
+
+
+# ----  using methods directly  ----
+# anything of Matplotlib can be applicable to "df.plot"
+
+# instead of using kind='hist' we can directly call hist()
+df1['A'].plot.hist(edgecolor='white', linewidth=0.5)
+# Histogram with specified bins
+df1['A'].plot.hist(bins=50, edgecolor='white', linewidth=0.5)
+
+# area plot, shows area of the values
+df2.head()
+df2.plot.area()
+# use "alpha" for transperancy
+df2.plot.area(alpha=0.5)
+
+# barplot: takes index values as category
+    # so index in our DataFrame should be "categorical"
+    # sinc ethe dataset is so small, it won't matter
+df2.plot.bar()
+
+# make a stacked barplot
+df2.plot.bar(stacked=True)
 
