@@ -1,9 +1,9 @@
 
-################# 10.1: 7.53
+################# 10.1: 9.53
 # copy:
 #        
 #        
-################# (07-Jan-25 for 08-Jan-25)
+################# (08-Jan-25 for 10-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3
 
@@ -149,3 +149,47 @@ df2.plot.bar()
 # make a stacked barplot
 df2.plot.bar(stacked=True)
 
+
+
+# ----  lineplot: plot the data according to time-series  ----
+# specify x and y: we set index as x and any column as y
+df1.plot.line(x=df1.index, y=df1['B'])  # raising ERROR: KeyError: "None of [Index(['2000-01-01', . . ., are in the [columns]
+# adjust the figsize, linewidth 'lw'
+df1.plot.line(x=df1.index, y=df1['B'], figsize=(12,3)) # raising ERROR
+
+# ERR resolve: 
+    # Pandas plot.line requires both x and y to be column names in the DataFrame, 
+    # but df1.index is the DataFrame's index, not a column.
+
+# Solution 1: Pandas will use the Index Automatically if x is not explicitly provided
+df1['B'].plot.line(figsize=(12,3))
+# or
+df1['B'].plot.line(figsize=(16,3), linewidth=0.5)
+
+# Solution 2: Create a new column called 'date' from the 'df1.index'
+df1['date'] = df1.index
+df1.plot.line(x='date', y='B')
+
+# Solution 3: reset the index (altering the DataFrame)
+df1.reset_index(inplace=True)  # Moves index into a column named "index"
+df1.plot.line(x='index', y='B')
+
+
+
+# scatterplots, need to specify x, y
+df1.plot.scatter(x='A', y='B')
+# setting color based off of another column, 'c' means color
+# we can also choose colormap
+df1.plot.scatter(x='A', y='B', c='D', cmap="coolwarm")
+# in this way we can see 3-levels of information: 'A' vs 'B' vs 'D'
+
+# relative sizing: 's' means size
+# NOTE: s parameter needs to be an array, not just the name of a column
+    # if we set the column s=df1['D'], the poins will be small
+    # so we have to multiply the values by some factors
+df1.plot.scatter(x='A', y='B', alpha=0.20, s=df1['D']*100)
+# Now points on the scatterplot is A vs B and 
+    # size indicates the size of 'D' values, relative to each other
+
+
+# ----  Boxplot  ----
