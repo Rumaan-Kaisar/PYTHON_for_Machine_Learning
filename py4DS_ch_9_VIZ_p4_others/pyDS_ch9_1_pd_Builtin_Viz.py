@@ -1,9 +1,9 @@
 
-################# 10.1: 9.53
+################# 10.1: full
 # copy:
 #        
 #        
-################# (08-Jan-25 for 10-Jan-25)
+################# (10-Jan-25 for 11-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3
 
@@ -11,6 +11,7 @@
 # ------------    VISUALIZATION: Pandas Built-in Data Visualization    ------------
 # Pandas' built-in visualization capabilities are built on top of Matplotlib.  
 # These allow us to call visualization functions directly on a DataFrame.
+# For more functionality: use Seaborn instead
 
 # import libraries
 import numpy as np
@@ -193,3 +194,31 @@ df1.plot.scatter(x='A', y='B', alpha=0.20, s=df1['D']*100)
 
 
 # ----  Boxplot  ----
+# We've seen sns boxplot; however, for a quick overview, we can use pandas boxplot.
+df2.plot.box()
+# It takes each column as a category and plots their distributions as box plots.
+
+
+# ----  Hexagonal Bin plot  ----
+# for bivariate data we can do Hexagonal Bin plot
+
+# Let's first create a bivariate data
+df3 = pd.DataFrame(np.random.randn(1000, 2), columns=['a', 'b'])
+df3
+
+df3.plot.hexbin(x='a', y='b')
+
+# increasing bin size
+df3.plot.hexbin(x='a', y='b', gridsize=25, cmap='coolwarm')
+
+
+# ----  KDE: Kernel Density Estimation  ----
+# to plot only kernel density estimation
+df2['a'].plot.kde()
+# or
+df2['a'].plot.density()
+
+# to entire DataFrame. Plots KDE for each of the columns
+df2.plot.density()
+
+
