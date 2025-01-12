@@ -1,9 +1,9 @@
 
-################# 10.1: full
+################# 10.1: full, 10.2: full
 # copy:
 #        
 #        
-################# (10-Jan-25 for 11-Jan-25)
+################# (11-Jan-25 for 12-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3
 
@@ -220,5 +220,33 @@ df2['a'].plot.density()
 
 # to entire DataFrame. Plots KDE for each of the columns
 df2.plot.density()
+
+
+
+
+# ------------    Pandas Data Visualization practice    ------------
+# We'll use our 3rd DataFrame for this
+# Our goal is to recreate the plots
+
+# import libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# shows figures in ipynb
+%matplotlib inline
+
+# To remove 'warnings' use 'filterwarnings'
+import warnings
+warnings.filterwarnings('ignore')
+
+
+# --------    importing dataset    --------
+dTfr = pd.read_csv('./y_dataFrame_3.csv')
+dTfr.head()
+dTfr.info()
+
+# Make "scatter plot" of b vs a. Set color and size of the points. Resize the figure (stretch)
+# 's': size, 'edgecolor' and 'linewidth' used for border
+dTfr.plot.scatter(x='a', y='b', figsize=(12,3), c='red', edgecolor='black', linewidth=0.5, s=100)
 
 
