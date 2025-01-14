@@ -3,7 +3,7 @@
 # copy:
 #        
 #        
-################# (11-Jan-25 for 12-Jan-25)
+################# (12-Jan-25 for 14-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3
 
@@ -249,4 +249,23 @@ dTfr.info()
 # 's': size, 'edgecolor' and 'linewidth' used for border
 dTfr.plot.scatter(x='a', y='b', figsize=(12,3), c='red', edgecolor='black', linewidth=0.5, s=100)
 
+# Create a histogram of the 'a' column
+dTfr['a'].plot.hist()
+
+
+# Change style sheet and redo above histogram with 25 bins
+plt.style.use('ggplot')
+dTfr['a'].plot.hist(bins=25, edgecolor='white', linewidth=0.5, alpha=0.8)
+
+# make a "boxplot" comparing the a and b columns
+dTfr[['a', 'b']].plot.box()
+
+# Make "KDE" for column 'd'
+dTfr['d'].plot.kde()
+dTfr['d'].plot.density()    # alternative
+
+
+# ----  rev[12-Jan-25]  ----
+# Style kde: Increase the linewidth and set the line style to dashed.
+# (Dashing a kde plot line is uncommon.)
 
