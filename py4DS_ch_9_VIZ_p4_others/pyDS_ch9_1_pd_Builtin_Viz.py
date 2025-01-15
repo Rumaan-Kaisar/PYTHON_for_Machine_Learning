@@ -3,7 +3,7 @@
 # copy:
 #        
 #        
-################# (12-Jan-25 for 14-Jan-25)
+################# (14-Jan-25 for 15-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3
 
@@ -265,7 +265,9 @@ dTfr['d'].plot.kde()
 dTfr['d'].plot.density()    # alternative
 
 
-# ----  rev[12-Jan-25]  ----
 # Style kde: Increase the linewidth and set the line style to dashed.
 # (Dashing a kde plot line is uncommon.)
+dTfr['d'].plot.density(ls='--', lw=5)
 
+
+# ----  rev[12-Jan-25]  ----
