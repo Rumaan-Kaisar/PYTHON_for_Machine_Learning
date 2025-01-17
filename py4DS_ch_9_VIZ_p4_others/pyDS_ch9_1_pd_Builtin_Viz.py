@@ -3,7 +3,7 @@
 # copy:
 #        
 #        
-################# (14-Jan-25 for 15-Jan-25)
+################# (15-Jan-25 for 17-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3
 
@@ -270,4 +270,24 @@ dTfr['d'].plot.density()    # alternative
 dTfr['d'].plot.density(ls='--', lw=5)
 
 
-# ----  rev[12-Jan-25]  ----
+
+# --------    loc[], iloc[], at[], iat[]    --------
+# Select row / columns using loc[], iloc[], at[], iat[]
+
+# Create an area plot of all the columns for just the rows up to 30. (hint: use .ix)
+# Note: ".ix" was an indexer, but now deprecated and removed in Pandas 1.0.0
+# instead select rows using: loc[] and iloc[] or at[], iat[]
+
+# df.loc[raw_index, col_name]           eg: df.loc[2, 'column_name'], Selects a value by index label and column name
+# df.iloc[raw_index, col_index]         eg: df.iloc[2, 3], Selects a value by row index and column index positions
+# df.at[raw_index, col_name]            eg: df.at[2, 'a']. For fast access to a single scalar value by label.
+# df.iat[raw_index, col_index]          eg: df.iat[2, 1]. For fast access to a single scalar value by integer position.
+
+dTfr.iloc[:30, 2:].plot.area(alpha=0.5)
+dTfr.loc[:30, ['a', 'b']].plot.area(alpha=0.5)
+
+# Create an area plot of all the columns for just the rows up to 30.
+dTfr.loc[:30].plot.area(alpha=0.5)
+
+
+# ----  rev[15-Jan-25]  ----
