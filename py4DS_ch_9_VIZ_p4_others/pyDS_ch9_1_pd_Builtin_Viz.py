@@ -1,10 +1,4 @@
 
-################# 10.1: full, 10.2: full
-# copy:
-#        
-#        
-################# (15-Jan-25 for 17-Jan-25)
-
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3
 
 
@@ -290,4 +284,42 @@ dTfr.loc[:30, ['a', 'b']].plot.area(alpha=0.5)
 dTfr.loc[:30].plot.area(alpha=0.5)
 
 
-# ----  rev[15-Jan-25]  ----
+# ----  reposition the legend of area()  ----
+# You can choose other positions like:
+    # 'upper right'
+    # 'lower left'
+    # 'center right'
+dTfr.loc[:30].plot.area(alpha=0.5)  # Plot the area chart
+
+# Reposition the legend (e.g., 'upper left', 'lower right', etc.)
+plt.legend(loc='center right')  # Change 'center right' to your desired position
+plt.show()
+
+# if the legend still overlapping the plot, use coordinates to reposition
+# Plot the area chart
+dTfr.loc[:30].plot.area(alpha=0.5)
+# Reposition the legend using coordinates
+plt.legend(loc='center right', bbox_to_anchor=(1.2,0.5))  # Adjust (x, y) as needed
+# loc='center right': Defines the reference point of the legend (e.g., upper-left corner).
+# bbox_to_anchor=(1.05, 1): Specifies the x and y coordinates where the reference point (defined by loc) should be placed.
+    # x, y range in (0, 1), 0: bottom, 1:top
+    # Increase the x value in bbox_to_anchor to move the legend further right.
+    # Decrease the y value to lower the legend vertically.
+plt.show()
+
+
+# alternative way:
+f = plt.figure()
+dTfr.loc[:30].plot.area(alpha=0.4,ax=f.gca())
+plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
+plt.show()
+# gca() accounts for the plot's current axis, and any legend added using plt.legend() (or similar) 
+    # will be associated with this axis unless specified otherwise
+    # gca() determines the current axes for the plot and legend.
+    # The legend placement (loc and bbox_to_anchor) is calculated relative to this axis.
+
+# This placement uses the bbox_to_anchor parameter, 
+    # which defines the legend's position relative to the axes (gca() or the explicitly provided axes).
+    # gca() ensures the legend placement respects the associated axes' boundaries.
+# For more info use https://stackoverflow.com/ or https://chatgpt.com/
+
