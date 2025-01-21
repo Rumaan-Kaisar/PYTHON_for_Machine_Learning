@@ -3,41 +3,83 @@
 # copy:
 #        
 #        
-################# (03-Jan-25 for 04-Jan-25)
+################# (19-Jan-25 for 21-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
 # ------------    Plotly and cufflinks    ------------
 
-# NXT >> [GPT edit]
+# We'll learn a bit about the background of Plotly and Cufflinks, 
+# which allow us to create "Interactive Visualizations".
 
-# WE'LL LKEARN the bit of the background behaing of the plotly and cuflinks
-# which aloows us to make interactive visualizatiobnsd
-
-
-# "Plotly" is an interactive visualization library (opensource) and "Cufflinks" connects plotly with pandas
-# Before we explore these libraries you'll need to install them
-
-# therefore we can make interactive visualization directly off of our datafarme
-
-# before explore these libraries we need to install them
-# You’ll need to install it with pip at your command line or terminal with:
-# pip install plotly and
-# pip install cufflinks
+# 'Plotly' is an interactive, open-source visualization library, 
+# 'Cufflinks' connects 'Plotly' with 'pandas'.
+# These libraries enable us to generate "Interactive Visualizations" directly from our DataFrame.
 
 
-# offical website: https://plotly.com/ (old: plot.ly)
-# plotly: it's also a hoting company that can host your visualization and dashbords
-# if you do it yourself, the library is free and opensource
-# plotly is compatable to: python, R, MatLab, Excel, jaVASCRIPT
-# WE'LL FOCUS IT USING IN PYTHON
 
-# getting started with python: https://plotly.com/python/
+# ----  Installation  ----
+# Before exploring these libraries, ensure they are installed using pip:
+#       pip install plotly
+#       pip install cufflinks
+
+
+
+# ----  Official Website:    https://plotly.com/ (formerly plot.ly)
+# Plotly is also a hosting company that can host your 'visualizations' and 'dashboards'. 
+# However, if you handle it yourself, the library is entirely free and open-source.
+
+# Plotly is compatible with multiple languages and tools, including:
+# Python, R, MATLAB, Excel, and JavaScript.
+
+# Our focus will be on using Plotly with Python.
+
+
+
+# ----  Getting started with Python:    https://plotly.com/python/, https://plotly.com/python/getting-started/
 # Is Plotly for Python Free?
-# Plotly for Python is free and open-source software, licensed under the MIT license. It costs nothing to install and use.
-# You can use Plotly for Python to make, view, and distribute charts and maps without registering for any service, obtaining any token, or creating any account. 
-# You can use Plotly for Python to make, view, and distribute graphics totally offline.
+    # Yes, Plotly for Python is free and open-source, licensed under the MIT license.
+    # You can install and use it at no cost. 
+# Plotly allows you to create, view, and share charts and maps offline, 
+    # without requiring registration, tokens, or accounts.
+
+# To install Plotly's Python package, use the package manager pip inside your terminal.
+#       pip install plotly
+# or    pip install plotly==5.24.1
+# or    conda install -c plotly plotly=5.24.1
+
+# test plotly:
+import plotly.express as px
+fig = px.bar(x=["a", "b", "c"], y=[1, 3, 2])
+fig.write_html('first_figure.html', auto_open=True)
 
 
-# cufflinks
+# Standalone HTML:
+    # Offline mode will save an HTML file locally and open it inside your web browser.
+
+import plotly
+print(plotly.__version__) # version >1.9.4 required
+
+from plotly.graph_objs import Scatter, Layout 
+
+plotly.offline.plot({
+    "data": [
+        Scatter(x=[l, 2, 3, 4], y=[4, 1, 3, 7])
+    ],
+    "layout": Layout(
+        title="hello world"
+    )
+})
+
+
+# ----  cufflinks  ----
+# We need to connect Plotly to Pandas.
+    # install:      pip install cufflinks
+# It's a productivity tool that allows us to quickly call plots (similar to pandas df.plot).
+# However, instead of static plots, we're creating interactive visualizations with Plotly.
+
 # https://pypi.org/project/cufflinks/
+# https://github.com/santosjorge/cufflinks
+
+
+
