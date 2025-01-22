@@ -1,9 +1,9 @@
 
-################# 11.1: 0.44
+################# 11.1: full, 11.2:
 # copy:
 #        
 #        
-################# (19-Jan-25 for 21-Jan-25)
+################# (21-Jan-25 for 22-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
@@ -58,7 +58,7 @@ fig.write_html('first_figure.html', auto_open=True)
     # Offline mode will save an HTML file locally and open it inside your web browser.
 
 import plotly
-print(plotly.__version__) # version >1.9.4 required
+print(plotly.__version__) # version > 1.9.4 required
 
 from plotly.graph_objs import Scatter, Layout 
 
@@ -81,5 +81,24 @@ plotly.offline.plot({
 # https://pypi.org/project/cufflinks/
 # https://github.com/santosjorge/cufflinks
 
+
+
+# ------------  import libraries, setup  ------------
+# import libraries
+import numpy as np
+import pandas as pd
+import cufflinks as cf
+
+# shows figures in ipynb
+%matplotlib inline
+
+# To remove 'warnings' use 'filterwarnings'
+import warnings
+warnings.filterwarnings('ignore')
+
+
+# check plotly version
+import plotly
+print(plotly.__version__)   # version > 1.9.4 required
 
 
