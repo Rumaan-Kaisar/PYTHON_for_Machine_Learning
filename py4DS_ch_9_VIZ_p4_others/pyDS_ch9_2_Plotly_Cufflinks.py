@@ -1,9 +1,9 @@
 
 ################# 11.1: full, 11.2:
-# copy: plotly.js, local_plot.html, embeded_html
+# copy: plot_fig2
 #        
 #        
-################# (22-Jan-25 for 24-Jan-25)
+################# (24-Jan-25 for 25-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
@@ -164,3 +164,58 @@ import plotly.express as px
 fig = px.bar(x=["a", "b", "c"], y=[1, 3, 2])
 pio.write_html(fig, 'plot_lc.html', include_plotlyjs='.\plotly-2.35.2.min.js')
 
+
+
+
+# ------------    plotly plots    ------------
+
+# Plotly functions to create different types of plots  
+# Example Plotly functions for various visualizations:  
+    # 1. go.Scatter: For line plots, scatter plots  
+    # 2. go.Bar: For bar plots  
+    # 3. go.Pie: For pie charts  
+    # 4. go.Box: For box plots  
+    # 5. go.Histogram: For histograms  
+    # 6. go.Heatmap: For heatmaps  
+    # 7. go.Surface: For 3D surface plots  
+
+# You can explore and customize each plot by adding traces and updating layouts. 
+"""  
+# Example:  
+import plotly.graph_objects as go
+
+# Line plot example
+fig = go.Figure(data=go.Scatter(x=["A", "B", "C"], y=[10, 20, 30]))
+fig.show()
+"""
+
+# Let's create 2 dataframes
+
+# df1: normal distribution of 100 rows and 4 columns
+df1 = pd.DataFrame(np.random.randn(100, 4), columns='A B C D'.split())
+df1.head()
+
+# df2: used categorical data, notice dictionary style
+df2 = pd.DataFrame({'Category';['A', 'B', 'C'], 'val':[32, 43, 50]})
+df2
+
+
+# lets plot using malpotlib
+df1.plot()
+
+
+
+# ----  Plot using Plotly & iplot  ----
+import plotly.io as pio
+from plotly.offline import iplot
+
+# Generate the plot
+fig2 = df1.iplot(asFigure=True)
+# The asFigure=True parameter is used in Cufflinks' iplot() function to ensure 
+    # that it returns a Plotly Figure object instead of rendering the plot directly in the notebook.
+    # Instead of rendering the plot, iplot() returns a Plotly Figure object.
+    # This allows you to manipulate, save, or customize the figure further before displaying or exporting it.
+# By Default When you call iplot() without asFigure=True, it immediately renders the plot in the notebook.
+
+# Save the plot as an HTML file using a local Plotly.js file
+pio.write_html(fig2, 'plotly_fig2.html', include_plotlyjs='./plotly-2.35.2.min.js')
