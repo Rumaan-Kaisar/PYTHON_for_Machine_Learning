@@ -1,9 +1,9 @@
 
 ################# 11.1: full, 11.2:
-# copy: plot_fig2
+# copy: plot_fig3, 4
 #        
 #        
-################# (24-Jan-25 for 25-Jan-25)
+################# (25-Jan-25 for 26-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
@@ -219,3 +219,43 @@ fig2 = df1.iplot(asFigure=True)
 
 # Save the plot as an HTML file using a local Plotly.js file
 pio.write_html(fig2, 'plotly_fig2.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+
+
+# lets see an alternative way to plot without using iplot()
+    # alternative: plotly.offline.plot()
+from plotly.offline import plot
+import plotly.graph_objects as go
+
+# Create a simple figure
+fig3 = go.Figure(data=go.Scatter(x=df1.index, y=df1['A']))
+
+# Save the plot as an HTML file
+plot(fig3, filename='plotly_fig3.html', include_plotlyjs='./plotly-2.35.2.min.js', auto_open=True)
+
+
+
+# Create a line plot for all columns
+fig4 = go.Figure()
+
+for column in df1.columns:
+    fig4.add_trace(go.Scatter(x=df1.index, y=df1[column], mode='lines+markers', name=column))
+
+# Update layout
+fig4.update_layout(
+    title="Line Plot for All Columns",
+    xaxis_title="Index",
+    yaxis_title="Values",
+    template="plotly_white"
+)
+
+# Show the plot
+fig4.show()
+
+# Save the plot as an HTML file
+plot(fig4, filename='plotly_fig4.html', include_plotlyjs='./plotly-2.35.2.min.js', auto_open=True)
+
+
+
+# ----  rev[25-Jan-2025]  ---- do same for All plot from TUT using, iplot
+
