@@ -1,9 +1,9 @@
 
-################# 11.1: full, 11.2:
-# copy: plot_fig3, 4
+################# 11.1: full, 11.2: 6.16
+# copy: plot_fig5
 #        
 #        
-################# (25-Jan-25 for 26-Jan-25)
+################# (26-Jan-25 for 28-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
@@ -257,5 +257,38 @@ plot(fig4, filename='plotly_fig4.html', include_plotlyjs='./plotly-2.35.2.min.js
 
 
 
-# ----  rev[25-Jan-2025]  ---- do same for All plot from TUT using, iplot
+# ----  Enable Hovermode on axis & features  ----
+# magic of: iplot, plotly & cufflinks
+import plotly.io as pio
+from plotly.offline import iplot
+
+# Generate the plot
+fig5 = df1.iplot(asFigure=True, kind='line', title="Comparison Hover Example")
+# By using kind='line', you're explicitly instructing Cufflinks to render the data as a line chart.
+# For numeric data, it usually defaults to kind='line'.
+# Custom Plot Types: You can specify other plot types using kind, such as 'bar', 'scatter', 'box', 'surface', etc.
+
+# Update the layout to enable hover comparisons
+fig5.update_layout(
+    hovermode='x unified',  # Enable hover comparison
+    xaxis_title="Index",
+    yaxis_title="Values"
+)
+
+# Save the plot as an HTML file using a local Plotly.js file
+pio.write_html(fig5, 'plotly_fig5.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+# features: 
+    # zoom-in: By marking selection-box (or use the buttnon)
+    # zoom-out: double click (or use the buttnon)
+    # capture as png
+    # pan/move the whole plot
+    # Hover on the plot
+    # Hover on the X-axis
+    # trun on/off a plot by 2x-clicking on legend
+
+
+
+# ------------    scatter, bar, box, ratio, heatmap and more    ------------
+
 
