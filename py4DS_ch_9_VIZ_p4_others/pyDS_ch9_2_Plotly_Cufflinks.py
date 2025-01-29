@@ -1,9 +1,9 @@
 
-################# 11.1: full, 11.2: 6.16
+################# 11.1: full, 11.2: 8.32
 # copy: plot_fig5
 #        
 #        
-################# (26-Jan-25 for 28-Jan-25)
+################# (28-Jan-25 for 29-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
@@ -289,6 +289,26 @@ pio.write_html(fig5, 'plotly_fig5.html', include_plotlyjs='./plotly-2.35.2.min.j
 
 
 
-# ------------    scatter, bar, box, ratio, heatmap and more    ------------
 
+# ------------    scatter, bar, box, ratio, heatmap and more    ------------
+# use 'kind' to set plot-type
+
+# scatterplot: need x and y (we set those for column)
+    # by default it'll connect the points by line, so we've used "mode=marker"
+    # we can also set size
+import plotly.io as pio
+from plotly.offline import iplot
+
+# Generate the plot
+# fig6 = df1.iplot(asFigure=True, kind='scatter', x='A', y='B')
+fig6 = df1.iplot(asFigure=True, kind='scatter', x='A', y='B', mode='markers')
+
+# Save the plot as an HTML file using a local Plotly.js file
+pio.write_html(fig6, 'plotly_fig6_2.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+
+
+# Barplot : we now use a categorical DataFrame
+fig7 = df2.iplot(asFigure=True, kind='bar', x='Category', y='val')
+pio.write_html(fig7, 'plotly_fig7.html', include_plotlyjs='./plotly-2.35.2.min.js')
 
