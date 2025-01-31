@@ -1,9 +1,9 @@
 
-################# 11.1: full, 11.2: 8.32
+################# 11.1: full, 11.2: 9.47
 # copy: plot_fig5
 #        
 #        
-################# (28-Jan-25 for 29-Jan-25)
+################# (29-Jan-25 for 31-Jan-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
@@ -311,4 +311,25 @@ pio.write_html(fig6, 'plotly_fig6_2.html', include_plotlyjs='./plotly-2.35.2.min
 # Barplot : we now use a categorical DataFrame
 fig7 = df2.iplot(asFigure=True, kind='bar', x='Category', y='val')
 pio.write_html(fig7, 'plotly_fig7.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+
+# When data is not conveniently placed, such as in df1,  
+    # we need to use an aggregate function like count, mean/average, or groupby.  
+    # Combining a "bar plot" with an aggregate function makes it more powerful.
+
+# Without an aggregate function, df1 would result in a cluttered bar plot with meaningless bars.
+fig8 = df1.iplot(asFigure=True, kind='bar')
+pio.write_html(fig8, 'plotly_fig8.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+# Using count as an aggregate function (counts occurrences in each column)
+fig9 = df1.count().iplot(asFigure=True, kind='bar')
+pio.write_html(fig9, 'plotly_fig9.html', include_plotlyjs='./plotly-2.35.2.min.js')
+# Since each column has the same number of instances, the bars will be of equal height (i.e. 100).
+
+# Using sum as an aggregate function
+fig10 = df1.sum().iplot(asFigure=True, kind='bar')
+pio.write_html(fig10, 'plotly_fig10.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+
+# boxplot (rev: 29-Jan-2025)
 
