@@ -1,9 +1,9 @@
 
 ################# 11.1: full, 11.2: 9.47
-# copy: plot_fig5
+# copy: fig_folder
 #        
 #        
-################# (29-Jan-25 for 31-Jan-25)
+################# (31-Jan-25 for 01-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
@@ -331,5 +331,12 @@ fig10 = df1.sum().iplot(asFigure=True, kind='bar')
 pio.write_html(fig10, 'plotly_fig10.html', include_plotlyjs='./plotly-2.35.2.min.js')
 
 
-# boxplot (rev: 29-Jan-2025)
+# boxplot
+    # It automatically aggregates data to show distribution.
+    # Columns can be toggled on/off by passing arguments or clicking on the plot.
+    # Quartiles for each column are shown interactively.
+fig11 = df1.iplot(asFigure=True, kind='box')
+pio.write_html(fig11, 'plotly_fig11.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+# ----  3D surfaceplot  ----
 
