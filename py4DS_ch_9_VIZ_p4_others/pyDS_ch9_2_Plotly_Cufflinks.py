@@ -1,9 +1,9 @@
 
-################# 11.1: full, 11.2: 9.47
+################# 11.1: full, 11.2: 12.29
 # copy: fig_folder
 #        
 #        
-################# (31-Jan-25 for 01-Feb-25)
+################# (01-Feb-25 for 02-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
@@ -338,5 +338,21 @@ pio.write_html(fig10, 'plotly_fig10.html', include_plotlyjs='./plotly-2.35.2.min
 fig11 = df1.iplot(asFigure=True, kind='box')
 pio.write_html(fig11, 'plotly_fig11.html', include_plotlyjs='./plotly-2.35.2.min.js')
 
+
+
 # ----  3D surfaceplot  ----
+# Activity: Rotate, zoom, interactive view
+
+# First, create a DataFrame with 3 variables for a 3D plot.
+# A 3D surface plot is generated from these three variables.
+df3 = pd.DataFrame({'x': [1, 2, 3, 4, 5], 'y': [10, 20, 30, 20, 10], 'z': [500, 400, 300, 200, 100]})
+fig12 = df3.iplot(asFigure=True, kind='surface')
+pio.write_html(fig12, 'plotly_fig12.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+# Changing color scale: rd (red), yl (yellow), bu (blue). 'rdylbu' matches Matplotlib colormaps.
+# Check Plotly documentation for more color scale options.
+df4 = pd.DataFrame({'x': [1, 2, 3, 4, 5], 'y': [10, 20, 30, 20, 10], 'z': [5, 4, 3, 2, 1]})
+fig13 = df4.iplot(asFigure=True, kind='surface', colorscale='rdylbu')
+pio.write_html(fig13, 'plotly_fig13.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
 
