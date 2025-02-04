@@ -1,9 +1,9 @@
 
-################# 11.1: full, 11.2: 12.29
+################# 11.1: full, 11.2: 14.52
 # copy: fig_folder
 #        
 #        
-################# (01-Feb-25 for 02-Feb-25)
+################# (02-Feb-25 for 04-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
@@ -312,6 +312,13 @@ pio.write_html(fig6, 'plotly_fig6_2.html', include_plotlyjs='./plotly-2.35.2.min
 fig7 = df2.iplot(asFigure=True, kind='bar', x='Category', y='val')
 pio.write_html(fig7, 'plotly_fig7.html', include_plotlyjs='./plotly-2.35.2.min.js')
 
+# Histogram
+fig14 = df1['A'].iplot(asFigure=True, kind='hist', bins=50)
+pio.write_html(fig14, 'plotly_fig14.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+# Using whole DataFrame results in overlapping histograms, but we can toggle them on/off.
+fig15 = df1.iplot(asFigure=True, kind='hist', bins=50)
+pio.write_html(fig15, 'plotly_fig15.html', include_plotlyjs='./plotly-2.35.2.min.js')
 
 # When data is not conveniently placed, such as in df1,  
     # we need to use an aggregate function like count, mean/average, or groupby.  
@@ -356,3 +363,29 @@ fig13 = df4.iplot(asFigure=True, kind='surface', colorscale='rdylbu')
 pio.write_html(fig13, 'plotly_fig13.html', include_plotlyjs='./plotly-2.35.2.min.js')
 
 
+
+# ----  spread  ----
+# This type of visualization is most commonly used for stock data, such as comparing stocks.
+    # This involves plotting two columns as line plots and 
+    # visualizing their spread against each other.
+# This is how we can observe the spread between two stocks.    
+# We'll explore this more in the "Financial Data Analysis project", 
+    # where we'll see more technical analysis plots.
+fig16 = df1[['A', 'B']].iplot(asFigure=True, kind='spread')
+pio.write_html(fig16, 'plotly_fig16.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+# notice double '[]'
+# The double brackets [['A', 'B']] are used to select multiple columns from a DataFrame.
+
+# Single brackets (['A']) return a Series
+# Double brackets ([['A', 'B']]) return a DataFrame
+# Since .iplot() expects a DataFrame when plotting 
+    # multiple columns together (like in a spread plot), we need to use double brackets.
+
+# if df1['A', 'B'] is used KeyError: ('A', 'B') is appear
+# if df1['A'].iplot() is used iplot will throw an error 
+    # because it cannot create a spread plot with just one column.
+
+
+
+# Bubble plot
