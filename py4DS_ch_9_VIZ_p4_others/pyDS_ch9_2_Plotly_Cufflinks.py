@@ -3,7 +3,7 @@
 # copy: fig_folder
 #        
 #        
-################# (02-Feb-25 for 04-Feb-25)
+################# (04-Feb-25 for 05-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
@@ -387,5 +387,32 @@ pio.write_html(fig16, 'plotly_fig16.html', include_plotlyjs='./plotly-2.35.2.min
     # because it cannot create a spread plot with just one column.
 
 
+# ----  Bubble plot  ----
+# It's similar to a scatter plot, but the size of the points varies based on another variable.  
+# Notice x='A', y='B' is the same as in a scatter plot, 
+    # but here, the size is based on column 'C' (size='C').  
 
-# Bubble plot
+# This type of visualization is often used in reports, 
+    # such as comparing world GDP with population or happiness factors in UN reports.  
+
+fig17 = df1.iplot(asFigure=True, kind='bubble', x='A', y='B', size='C')  
+pio.write_html(fig17, 'plotly_fig17.html', include_plotlyjs='./plotly-2.35.2.min.js')  
+
+
+
+# ----  rev [04-Feb-2025]  ----
+
+# scatter_matrix is very similar to sns parplot
+# it crates the scatter matix for the all columns thatit can
+# need to all columns to be numerical ti make this work
+# it's interactive and we can zoo-m in for each of the plot
+# for large dataset this may take more time to load
+df1.scatter_matrix()
+
+# for more infor mation and the documentation
+# go to thew cufflinks github page 
+# github.com/santosjorge/cufflinks
+# notice there cufflinks chart gallery. eg: Cufflinks Tutorial - Pandas Like.ipynb that we cover most here
+# more technical analysis in cufflinks/cufflinks/ta.py, where it is mostly for financioal analysis, we explore it in financial analysis capstone project
+
+
