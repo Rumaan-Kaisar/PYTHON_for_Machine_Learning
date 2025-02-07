@@ -1,10 +1,4 @@
 
-################# 11.1: full, 11.2: 14.52
-# copy: fig_folder
-#        
-#        
-################# (04-Feb-25 for 05-Feb-25)
-
 # Courses: PrTla PY for DS & ML >    11.1, 11.2
 
 # ------------    Plotly and cufflinks    ------------
@@ -396,23 +390,61 @@ pio.write_html(fig16, 'plotly_fig16.html', include_plotlyjs='./plotly-2.35.2.min
     # such as comparing world GDP with population or happiness factors in UN reports.  
 
 fig17 = df1.iplot(asFigure=True, kind='bubble', x='A', y='B', size='C')  
-pio.write_html(fig17, 'plotly_fig17.html', include_plotlyjs='./plotly-2.35.2.min.js')  
+pio.write_html(fig17, 'plotly_fig17.html', include_plotlyjs='./plotly-2.35.2.min.js')
 
 
 
-# ----  rev [04-Feb-2025]  ----
+# scatter_matrix is very similar to sns pairplot.
+# It creates a scatter matrix for all the columns that it can.
+    # All columns need to be numerical for this to work.
+    # It's interactive, and we can zoom in for each of the plots.
+    # For large datasets, this may take more time to load.
+# fig18 = df1.scatter_matrix()    # won't work, needed: pip install chart_studio
+# wont work either: instead we'll use iplot and kind="scattermatrix"
 
-# scatter_matrix is very similar to sns parplot
-# it crates the scatter matix for the all columns thatit can
-# need to all columns to be numerical ti make this work
-# it's interactive and we can zoo-m in for each of the plot
-# for large dataset this may take more time to load
-df1.scatter_matrix()
+# static: using matplotlib
+pd.plotting.scatter_matrix(df1, alpha=0.2)
 
-# for more infor mation and the documentation
-# go to thew cufflinks github page 
-# github.com/santosjorge/cufflinks
-# notice there cufflinks chart gallery. eg: Cufflinks Tutorial - Pandas Like.ipynb that we cover most here
-# more technical analysis in cufflinks/cufflinks/ta.py, where it is mostly for financioal analysis, we explore it in financial analysis capstone project
 
+# since iplot is not working, we'll use "scatter_matrix" from plotly.express
+import plotly.express as px
+import plotly.io as pio
+
+# Create scatter matrix plot
+fig18 = px.scatter_matrix(df1)
+pio.write_html(fig18, 'plotly_fig18.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+
+
+# another example
+# use following method
+import plotly.express as px
+df = px.data.iris()
+fig = px.scatter_matrix(df,
+    dimensions=["sepal_length", "sepal_width", "petal_length", "petal_width"],
+    color="species")
+fig.show()
+
+
+
+# Comparison with Seaborn's pairplot
+# Seaborn's pairplot:
+    # Static plots.
+    # Easier to use for quick exploratory data analysis (EDA).
+
+# Plotly's scatter_matrix:
+    # Interactive plots.
+    # Better for presentations or sharing with others.
+
+
+# For more information and documentation,
+# visit the Cufflinks GitHub page:
+    # https://github.com/santosjorge/cufflinks
+
+# There is a Cufflinks chart gallery, e.g., "Cufflinks Tutorial - Pandas Like.ipynb,"
+    # which covers most of what we discussed here.
+
+# More technical analysis can be found in "cufflinks/cufflinks/ta.py,"
+    # which is mainly used for financial analysis.
+    # We will explore this further in the financial analysis capstone project.
 
