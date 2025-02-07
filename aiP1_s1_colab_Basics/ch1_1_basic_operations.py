@@ -5,6 +5,10 @@
 !pip list
 
 
+# --------  cell modification  --------
+# minimizable cell with title
+#@title Title_of_the_sell
+
 # install other versions for example:   python 3.5
 !sudo apt-get update -y
 !sudo apt-get install python3.5
