@@ -1,12 +1,13 @@
 
+IMPORTANT: GitHub is always updated from different source
+    * GitHub = Main
+    * Brfore editing from PC, always update it with GitHub's updated code
+
 Links:
     Codelab: https://codelabs.developers.google.com/
 
 1. Basic file operations: share, link etc
 2. Library and Environment
 3. First Program
-
-
-
 
 
