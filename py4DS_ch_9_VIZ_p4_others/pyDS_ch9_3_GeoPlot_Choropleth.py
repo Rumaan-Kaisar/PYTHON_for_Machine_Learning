@@ -1,9 +1,9 @@
 
-################# 12.1: full, 12.2: 5.40
+################# 12.1: full, 12.2: 12.05
 # copy:
 #        
 #        
-################# (11-Feb-25 for 12-Feb-25)
+################# (12-Feb-25 for 14-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
@@ -54,7 +54,7 @@ cf.go_offline()
 
 # using local "Plotly.js"
 import plotly.io as pio
-# import plotly.plotly as ptly      # deprected
+# import plotly.plotly as ptly      # deprecated
 import plotly.express as px
 from plotly.offline import iplot
 
@@ -107,17 +107,41 @@ data = dict(type = 'choropleth',
         )
 
 # Define key elements:
-    # "type": Set as 'choropleth'
-    # "locations": List of state abbreviations (e.g., ['AZ', 'CA', 'NY']).
-    # "locationmode": Set to 'USA-states'. It'll let plotly know that we're doing this in US-level
-        # theres' also different location modes, more in "documentation"
-    # "colorscale": Choose a predefined color scheme (e.g., 'Portland') 
-        # we can however use other colorscaleas such as green, grays
-    # "text": List of hover text values, i.e. each of the locations.
-    # "z": actual values shown in to the coloscale.
-    # "colorbar": Dictionary defining the "color bar title".
 
-# We use this kind of notation because it follows Plotly's documentation.
+    # "type": 
+        # Set as 'choropleth'
+        # In our "data" object, 'type' specifies what kind of geographical plot we're doing.  
+    
+    # "locations": 
+        # List of state abbreviations (e.g., ['AZ', 'CA', 'NY']).
+    
+    # "locationmode": 
+        # Set to 'USA-states'. It'll let plotly know that we're doing this in US-level
+        # Since we're working with the USA, we specify 'USA-states'. This applies at the state level.  
+        # theres' also different location modes, more in "documentation"
+        # For more detail (e.g., county level), refer to the documentation.
+
+    # "text": 
+        # List of hover text values, i.e. each of the locations.
+        # a list of text labels for each location in the 'locations' list, passed in the same indexed sequence.
+    
+    # "z": 
+        # actual values shown in to the coloscale.
+        # Values representing the color intensity for each location. 
+        # Later, we'll see how to color different states by intensity.
+
+    # "colorscale": 
+        # Defines a specific color scale for the plot.
+        # Choose a predefined color scheme (e.g., 'Portland') 
+        # we can however use other colorscaleas such as green, grays
+
+    # "colorbar": 
+        # Represents the "title" of the color scale.
+        # Dictionary defining the "color bar title".
+
+
+# This formatting must be followed. For more details, refer to the documentation. 
+    # We use this kind of notation because it follows Plotly's documentation.
 
 
 # Now we create a Layout object/variable, it'll be a nested dictionary
@@ -157,3 +181,20 @@ iplot(choromap_1)
 
 # Save the figure as an HTML file
 pio.write_html(choromap_1, 'choromap_1.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+# --------  Note:  
+# If we use plot() instead of iplot(), the plot is shown in an HTML file in a new browser window.  
+
+
+
+# ----------------    using csv dataset    ----------------
+# Another example with real data and more options  
+# Agricultural exports by state in the USA
+    # such as: beef, pork, poultry, dairy, fruits
+import pandas as pd
+
+df1 = pd.read_csv("./data_US_AGRI_Exports")
+df1.head()
+
+# let's create our "data" and "layout" objects
+
