@@ -1,9 +1,9 @@
 
-################# 12.1: full, 12.2: 12.05
-# copy:
+################# 12.1: full, 12.2: 17.01
+# copy: coroplot_2, ipynb, this py
 #        
 #        
-################# (12-Feb-25 for 14-Feb-25)
+################# (14-Feb-25 for 15-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
@@ -187,14 +187,50 @@ pio.write_html(choromap_1, 'choromap_1.html', include_plotlyjs='./plotly-2.35.2.
 
 
 
-# ----------------    using csv dataset    ----------------
+# ----------------    Using CSV Dataset    ----------------
 # Another example with real data and more options  
-# Agricultural exports by state in the USA
-    # such as: beef, pork, poultry, dairy, fruits
+# Agricultural exports by state in the USA  
+# Example commodities: beef, pork, poultry, dairy, fruits  
+
 import pandas as pd
 
 df1 = pd.read_csv("./data_US_AGRI_Exports")
 df1.head()
 
-# let's create our "data" and "layout" objects
+# Let's create our "data" and "layout" objects  
 
+data = dict(type='choropleth',  
+            colorscale='YlOrRd',  # Yellow-Orange-Red scale  
+            locations=df1['code'],  # State abbreviations  
+            locationmode='USA-states',  
+            z=df1['total exports'],  # Color intensities based on total exports  
+            text=df1['text'],  # Additional info for each state  
+            colorbar={'title': 'Millions USD'},  # Title for color scale  
+            marker=dict(line=dict(color='rgb(255,255,255)', width=2))  # White state borders  
+        )
+
+# Explanation of parameters:  
+#   - 'colorscale': Using 'YlOrRd' (Yellow-Orange-Red)  
+#   - 'locations': State abbreviations stored in df1['code']  
+#   - 'locationmode': 'USA-states' specifies a state-level map  
+#   - 'z': Total exports determine color intensities  
+#   - 'text': Labels from df1['text'], but often needs customization  
+#   - 'colorbar': Title represents exports in millions of USD  
+#   - 'marker': Defines state borders in white with a width of 2  
+
+# we need to modify:    layout = dict(geo={'scope':'usa'})
+layout = dict(  
+    title="2011 USA Agricultural Exports",  
+    geo=dict(  
+        scope='usa',  
+        showlakes=True,  
+        lakecolor='rgb(85, 173, 240)'  # Blue lakes  
+    )  
+)
+
+# Create the map  
+import plotly.graph_objs as go
+choromap_2 = go.Figure(data=[data], layout=layout)
+
+# Save the figure as an HTML file  
+pio.write_html(choromap_2, 'choromap_2.html', include_plotlyjs='./plotly-2.35.2.min.js')
