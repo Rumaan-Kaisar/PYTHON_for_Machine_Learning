@@ -1,4 +1,10 @@
 
+################# 12.1: full, 12.2: full, 12.3: 
+# copy: coroplot_2, ipynb, this py
+#        
+#        
+################# (15-Feb-25 for 16-Feb-25)
+
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
 
