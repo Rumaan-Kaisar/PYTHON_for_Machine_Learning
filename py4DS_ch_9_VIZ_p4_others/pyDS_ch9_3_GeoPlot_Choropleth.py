@@ -1,10 +1,4 @@
 
-################# 12.1: full, 12.2: 17.01
-# copy: coroplot_2, ipynb, this py
-#        
-#        
-################# (14-Feb-25 for 15-Feb-25)
-
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
 
@@ -234,3 +228,18 @@ choromap_2 = go.Figure(data=[data], layout=layout)
 
 # Save the figure as an HTML file  
 pio.write_html(choromap_2, 'choromap_2.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+# Notice as we hover over the "states", we can see all the "text".  
+# We can also see that the "lakes" are "blue".  
+# Observe the color scale and the title.  
+
+# Also, notice the spacing (white lines) between the states—this is due to the "marker" setting:  
+    # marker=dict(line=dict(color='rgb(255,255,255)', width=2))  
+    # We can increase the width if needed.  
+
+# Although the syntax and order might be confusing at first, Plotly works this way.  
+    # That's why we'll use this notebook as a reference 
+    # and also refer to the documentation for Plotly's choropleth maps.  
+# Most of the time, we'll just copy and paste the code and fill in the gaps for our particular dataset.  
+# However, these techniques are valuable because they help create clear and visually appealing geographical plots.  
+
