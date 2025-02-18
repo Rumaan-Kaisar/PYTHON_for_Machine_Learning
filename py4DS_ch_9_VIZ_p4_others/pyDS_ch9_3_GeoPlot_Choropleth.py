@@ -1,9 +1,9 @@
 
-################# 12.1: full, 12.2: full, 12.3: 
+################# 12.1: full, 12.2: full, 12.3: 1.19
 # copy: coroplot_2, ipynb, this py
 #        
 #        
-################# (15-Feb-25 for 16-Feb-25)
+################# (16-Feb-25 for 18-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
@@ -187,7 +187,7 @@ pio.write_html(choromap_1, 'choromap_1.html', include_plotlyjs='./plotly-2.35.2.
 
 
 
-# ----------------    Using CSV Dataset    ----------------
+# ----------------    USA map: Using CSV Dataset    ----------------
 # Another example with real data and more options  
 # Agricultural exports by state in the USA  
 # Example commodities: beef, pork, poultry, dairy, fruits  
@@ -248,4 +248,21 @@ pio.write_html(choromap_2, 'choromap_2.html', include_plotlyjs='./plotly-2.35.2.
     # and also refer to the documentation for Plotly's choropleth maps.  
 # Most of the time, we'll just copy and paste the code and fill in the gaps for our particular dataset.  
 # However, these techniques are valuable because they help create clear and visually appealing geographical plots.  
+
+
+
+
+# ----------------    WORLD Map: Using CSV Dataset    ----------------
+# Now we'll plot at the international level
+# We'll consider the world GDP dataset of 2014
+
+import pandas as pd
+
+df2 = pd.read_csv('./data_World_GDP')
+df2.head()
+
+# Contains Country Names, GDP in billions, and Country Codes (similar to the USA state codes we've seen earlier)
+    # In this case, we'll use "GDP in billions" as the "z" color intensity value
+    # We'll pass the "Country Codes" to the choropleth mapping
+    # Additionally, we can use "Country Names" as the text value in our choropleth
 
