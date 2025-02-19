@@ -3,7 +3,7 @@
 # copy: coroplot_2, ipynb, this py
 #        
 #        
-################# (16-Feb-25 for 18-Feb-25)
+################# (18-Feb-25 for 19-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
@@ -266,3 +266,34 @@ df2.head()
     # We'll pass the "Country Codes" to the choropleth mapping
     # Additionally, we can use "Country Names" as the text value in our choropleth
 
+# "data" and "layout". More on Plotly documentation: https://plot.ly/python/reference/#choropleth  
+# We'll get all the argument details (e.g., projection)  
+
+data_w = dict(
+    type='choropleth',
+    locations=df2['code'],  # Country abbreviations  
+    locationmode='ISO-3',  # Correct location mode for world maps  
+    z=df2['GDP (BILLIONS)'],  # Color intensities based on country's GDP  
+    text=df2['COUNTRY'],  # Name of each country  
+    colorbar={'title': 'GDP in billion USD'},  # Title for the color scale  
+)
+
+# Modify the layout  
+layout_w = dict(  
+    title="2014 Global GDP",  
+    geo=dict(  
+        showframe=False,
+        projection={'type': 'Mercator'} 
+    )  
+)
+
+# Notice no 'locationmode' or 'scope' is used for a world map  
+# Create the map  
+import plotly.graph_objs as go
+
+choromap_3 = go.Figure(data=[data_w], layout=layout_w)
+
+# Save the figure as an HTML file  
+pio.write_html(choromap_3, 'choromap_3.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+# Notice the color intensity indicates more developed countries like the USA or China  
