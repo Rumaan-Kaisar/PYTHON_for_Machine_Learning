@@ -1,9 +1,9 @@
 
-################# 12.1: full, 12.2: full, 12.3: 1.19
-# copy: coroplot_2, ipynb, this py
+################# 12.1: full, 12.2: full, 12.3: 4.10
+# copy:
 #        
 #        
-################# (18-Feb-25 for 19-Feb-25)
+################# (19-Feb-25 for 21-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
@@ -271,7 +271,7 @@ df2.head()
 
 data_w = dict(
     type='choropleth',
-    locations=df2['code'],  # Country abbreviations  
+    locations=df2['CODE'],  # Country abbreviations  
     locationmode='ISO-3',  # Correct location mode for world maps  
     z=df2['GDP (BILLIONS)'],  # Color intensities based on country's GDP  
     text=df2['COUNTRY'],  # Name of each country  
@@ -283,7 +283,8 @@ layout_w = dict(
     title="2014 Global GDP",  
     geo=dict(  
         showframe=False,
-        projection={'type': 'Mercator'} 
+        projection={'type': 'mercator'}
+        # used 'mercator' instead of 'Mercator'
     )  
 )
 
@@ -297,3 +298,5 @@ choromap_3 = go.Figure(data=[data_w], layout=layout_w)
 pio.write_html(choromap_3, 'choromap_3.html', include_plotlyjs='./plotly-2.35.2.min.js')
 
 # Notice the color intensity indicates more developed countries like the USA or China  
+
+
