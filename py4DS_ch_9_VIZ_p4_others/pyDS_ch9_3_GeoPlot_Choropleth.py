@@ -1,9 +1,9 @@
 
-################# 12.1: full, 12.2: full, 12.3: 4.10
-# copy:
+################# 12.1: full, 12.2: full, 12.3: full
+# copy: choromap_4, ipynb, py
 #        
 #        
-################# (19-Feb-25 for 21-Feb-25)
+################# (21-Feb-25 for 22-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
@@ -299,4 +299,8 @@ pio.write_html(choromap_3, 'choromap_3.html', include_plotlyjs='./plotly-2.35.2.
 
 # Notice the color intensity indicates more developed countries like the USA or China  
 
+# More on referance:
+    # https://plot.ly/python/reference/#choropleth
+    # we can search for projection -> type 
+    # for example we can set types "steriographic" or "kavrayskiy7" or "natural earth" to "projection={'type': 'mercator'}"
 
