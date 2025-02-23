@@ -1,9 +1,9 @@
 
-################# 12.1: full, 12.2: full, 12.3: full
+################# 12.1: full, 12.2: full, 12.3: full, 12.4: full
 # copy: choromap_4, ipynb, py
 #        
 #        
-################# (21-Feb-25 for 22-Feb-25)
+################# (22-Feb-25 for 23-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
@@ -39,7 +39,7 @@
 # import libraries
 import numpy as np
 import pandas as pd
-import cufflinks as cf
+# import cufflinks as cf    # we don't neet 'iplot' from cufflinks, instead we'll directly plot to HTML
 
 # shows figures in ipynb
 %matplotlib inline
@@ -49,7 +49,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Enable offline mode for interactive plotting
-cf.go_offline()
+# cf.go_offline()   # no need to use cufflinks
 
 
 # using local "Plotly.js"
@@ -303,4 +303,56 @@ pio.write_html(choromap_3, 'choromap_3.html', include_plotlyjs='./plotly-2.35.2.
     # https://plot.ly/python/reference/#choropleth
     # we can search for projection -> type 
     # for example we can set types "steriographic" or "kavrayskiy7" or "natural earth" to "projection={'type': 'mercator'}"
+
+
+
+
+
+
+# ----------------    Geo-Plot: Exercises   ----------------
+# Now, let's review choropleth map functionality using simple datasets in Plotly
+# Use choropleth map and Plotly documentation
+
+# we'll plot 2 dataset:
+# dataset 1 (world map): 2014 world power consumption.
+    # Create a choropleth plot showing power consumption by country using 'data' and 'layout'.
+
+# dtaset 2 (USA map): 2012 USA election data
+    # Create a plot displaying the Voting-Age Population (VAP) per state.
+
+# Note: Some data may be in floating-point or string format, requiring conversion before use.
+
+
+# import libraries
+import numpy as np
+import pandas as pd
+
+# shows figures in ipynb
+%matplotlib inline
+
+# To remove 'warnings' use 'filterwarnings'
+import warnings
+warnings.filterwarnings('ignore')
+
+# using local "Plotly.js"
+import plotly.io as pio
+import plotly.express as px
+from plotly.offline import iplot
+
+# ----  Ex1: World power consumption  ----
+
+df_ex1 = pd.read_csv("./data_World_Power_Consumption")
+df_ex1.head()
+
+
+# Let's create our "data" and "layout" objects  
+# rev[22-Feb-2025]
+data_ex1 = dict(
+    type='choropleth',
+    locations=df_ex1['Country'],  # Country names instead of Country abbreviations 
+    locationmode='ISO-3',  # Correct location mode for world maps  
+    z=df_ex1['Power Consumption KWH'],  # Color intensities based on country's GDP  
+    text=df_ex1['Country'],  # Name of each country  
+    colorbar={'title': 'World_Power_Consumption in KWH'},  # Title for the color scale  
+)
 
