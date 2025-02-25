@@ -1,9 +1,9 @@
 
 ################# 12.1: full, 12.2: full, 12.3: full, 12.4: full
-# copy: choromap_4, ipynb, py
+# copy: choromap_ex1, v2, ipynb, py
 #        
 #        
-################# (22-Feb-25 for 23-Feb-25)
+################# (23-Feb-25 for 25-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
@@ -39,7 +39,7 @@
 # import libraries
 import numpy as np
 import pandas as pd
-# import cufflinks as cf    # we don't neet 'iplot' from cufflinks, instead we'll directly plot to HTML
+# import cufflinks as cf    # we don't need 'iplot' from cufflinks, instead we'll directly plot to HTML
 
 # shows figures in ipynb
 %matplotlib inline
@@ -272,7 +272,8 @@ df2.head()
 data_w = dict(
     type='choropleth',
     locations=df2['CODE'],  # Country abbreviations  
-    locationmode='ISO-3',  # Correct location mode for world maps  
+    locationmode='ISO-3',  # Correct location mode for world maps 
+    # locationmode='country names',  # location mode if no country code is given
     z=df2['GDP (BILLIONS)'],  # Color intensities based on country's GDP  
     text=df2['COUNTRY'],  # Name of each country  
     colorbar={'title': 'GDP in billion USD'},  # Title for the color scale  
@@ -346,13 +347,90 @@ df_ex1.head()
 
 
 # Let's create our "data" and "layout" objects  
-# rev[22-Feb-2025]
+    # If your dataset does not have country abbreviations (ISO Alpha-3 codes), 
+    # you need to convert full country names into ISO Alpha-3 codes.
+        # We can do this using the "pycountry" library (pycountry provides the ISO databases for the standards). 
+        # pip install pycountry
+
+# Function to convert country names to ISO-3 codes
+import pycountry
+def get_iso3(country_name):
+    try:
+        return pycountry.countries.lookup(country_name).alpha_3
+    except LookupError:
+        return None  # Return None if country not found
+
+# Apply the function to create a new 'CODE' column
+df_ex1['CODE'] = df_ex1['Country'].apply(get_iso3)
+
+# Drop any rows where conversion failed
+rows_before = df_ex1.shape[0]
+df_ex1 = df_ex1.dropna(subset=['CODE'])
+
+rows_after = df_ex1.shape[0]
+dropped_rows = rows_before - rows_after  
+
+print(f"Dropped rows: {dropped_rows}")
+
 data_ex1 = dict(
     type='choropleth',
-    locations=df_ex1['Country'],  # Country names instead of Country abbreviations 
+    locations=df_ex1['CODE'],  # Country names instead of Country abbreviations 
     locationmode='ISO-3',  # Correct location mode for world maps  
     z=df_ex1['Power Consumption KWH'],  # Color intensities based on country's GDP  
     text=df_ex1['Country'],  # Name of each country  
     colorbar={'title': 'World_Power_Consumption in KWH'},  # Title for the color scale  
 )
 
+
+# Layout  
+layout_ex1 = dict(  
+    title="2014 world power consumption",  
+    geo=dict(  
+        showframe=False,
+        projection={'type': 'mercator'}
+        # used 'mercator' instead of 'Mercator'
+    )  
+)
+
+# Notice no 'locationmode' or 'scope' is used for a world map  
+# Create the map  
+import plotly.graph_objs as go
+
+choromap_ex1 = go.Figure(data=[data_ex1], layout=layout_ex1)
+
+# Save the figure as an HTML file  
+pio.write_html(choromap_ex1, 'choromap_ex1.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+
+
+# ----  No country code version  ----
+# to use "locations = df_ex1['Country']" instead of "locations=df_ex1['CODE']"
+    # we need to change the locationmode from 'ISO-3' to  "country names"
+
+df_ex1_v2 = pd.read_csv("./data_World_Power_Consumption")
+df_ex1_v2.head()
+
+data_ex1_v2 = dict(
+        type = 'choropleth',
+        colorscale = 'Viridis',
+        reversescale = True,
+        locations = df_ex1_v2['Country'],
+        locationmode = "country names",
+        z = df_ex1_v2['Power Consumption KWH'],
+        text = df_ex1_v2['Country'],
+        colorbar = {'title' : 'Power Consumption KWH'},
+      ) 
+
+layout_ex1_v2 = dict(title = '2014 Power Consumption KWH',
+                geo = dict(
+                    showframe = False,
+                    projection = {'type':'mercator'})
+                )
+
+# Create the map  
+import plotly.graph_objs as go
+
+choromap_ex1_v2 = go.Figure(data=[data_ex1_v2], layout=layout_ex1_v2)
+
+# Save the figure as an HTML file  
+pio.write_html(choromap_ex1_v2, 'choromap_ex1_v2.html', include_plotlyjs='./plotly-2.35.2.min.js')
