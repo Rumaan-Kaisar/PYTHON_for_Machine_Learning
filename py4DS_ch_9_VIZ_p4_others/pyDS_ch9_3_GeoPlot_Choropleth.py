@@ -3,7 +3,7 @@
 # copy: choromap_ex1, v2, ipynb, py
 #        
 #        
-################# (23-Feb-25 for 25-Feb-25)
+################# (25-Feb-25 for 26-Feb-25)
 
 # Courses: PrTla PY for DS & ML >    12.1, 12.2, 12.3, 12.4, 12.5
 
@@ -273,7 +273,7 @@ data_w = dict(
     type='choropleth',
     locations=df2['CODE'],  # Country abbreviations  
     locationmode='ISO-3',  # Correct location mode for world maps 
-    # locationmode='country names',  # location mode if no country code is given
+    # locationmode='country names',  # use this location mode if no country code is given
     z=df2['GDP (BILLIONS)'],  # Color intensities based on country's GDP  
     text=df2['COUNTRY'],  # Name of each country  
     colorbar={'title': 'GDP in billion USD'},  # Title for the color scale  
@@ -434,3 +434,169 @@ choromap_ex1_v2 = go.Figure(data=[data_ex1_v2], layout=layout_ex1_v2)
 
 # Save the figure as an HTML file  
 pio.write_html(choromap_ex1_v2, 'choromap_ex1_v2.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+
+
+
+# ----  Ex2 (USA map): 2012 USA election  ----
+
+import pandas as pd
+
+df_ex2 = pd.read_csv("./data_Election_Data")
+df_ex2.head()
+
+# Let's create our "data" and "layout" objects  
+
+data_ex2 = dict(
+    type='choropleth',  
+    colorscale='YlOrRd',  # Yellow-Orange-Red scale  
+    reversescale = True,
+    locations=df_ex2['State Abv'],  # State abbreviations  
+    locationmode='USA-states',  
+    z=df_ex2['Voting-Age Population (VAP)'],  # Color intensities based on "Voting-Age Population (VAP)" 
+    text=df_ex2['State'],  # Additional info for each state  
+    colorbar={'title': 'Voting-Age Population (VAP)'},  # Title for color scale  
+    marker=dict(line=dict(color='rgb(255,255,255)', width=1))  # White state borders  
+)
+
+
+# we need to modify:    layout = dict(geo={'scope':'usa'})
+layout_ex2 = dict(  
+    title="2012 USA election: Voting-Age Population (VAP)",  
+    geo=dict(  
+        scope='usa',  
+        showlakes=True,  
+        lakecolor='rgb(85, 173, 240)'  # Blue lakes  
+    )  
+)
+
+# Create the map  
+import plotly.graph_objs as go
+choromap_ex2 = go.Figure(data=[data_ex2], layout=layout_ex2)
+
+# Save the figure as an HTML file  
+pio.write_html(choromap_ex2, 'choromap_ex2.html', include_plotlyjs='./plotly-2.35.2.min.js')
+
+
+
+# -=-----------------------------------
+# rev [25-Feb-2025]
+
+# Choropleth maps in Plotly often require an internet connection because they depend on map tiles (e.g., from Mapbox or other providers) to display geographic boundaries. Unlike other Plotly plots (e.g., scatter, line, bar), which are self-contained, choropleth maps typically pull geographic shape data from external sources.
+
+# How to Make Plotly Choropleth Work Offline:
+# To use a choropleth map offline, try these approaches:
+
+# Use Local GeoJSON Files
+
+# Download the required GeoJSON file and load it locally instead of relying on external sources.
+
+import plotly.express as px
+import json
+
+# Load GeoJSON file locally
+with open("local_geojson.json") as f:
+    geojson_data = json.load(f)
+
+# Create an offline choropleth
+fig = px.choropleth(
+    locations=["CA", "TX", "NY"],  # Example state codes
+    locationmode="USA-states",
+    color=[1, 2, 3],
+    geojson=geojson_data
+)
+
+fig.show()
+
+
+If you want to **view your locally saved HTML files with a Plotly choropleth map offline**, you need to make sure the necessary resources (like **GeoJSON files** and **Plotly JS**) are available offline.
+
+---
+
+## **Steps to Make a Local Plotly Choropleth Work Offline**
+### ✅ **1. Save the Plot as a Fully Offline HTML File**
+This ensures the Plotly JavaScript library is embedded in the file, allowing it to work without internet access.
+
+```python
+import plotly.express as px
+import plotly.offline as pyo
+import json
+
+# Load the GeoJSON file from the local directory
+with open("path/to/local_geojson.json") as f:
+    geojson_data = json.load(f)
+
+# Create the choropleth map
+fig = px.choropleth(
+    locations=["CA", "TX", "NY"],
+    locationmode="USA-states",
+    color=[1, 2, 3],
+    geojson=geojson_data
+)
+
+# Save as an HTML file that can be opened offline
+pyo.plot(fig, filename="path/to/save_folder/choropleth_map.html", auto_open=False)
+```
+- This will generate an HTML file **with all required scripts embedded** so it works offline.
+
+---
+
+### ✅ **2. Ensure the GeoJSON File is Available Locally**
+If your choropleth needs a **GeoJSON file**, make sure it’s stored in the same directory as the HTML file. 
+
+- Example **directory structure**:
+  ```
+  /my_maps/
+      choropleth_map.html
+      local_geojson.json
+  ```
+- When referencing the **GeoJSON** in the code, ensure it’s correctly loaded from the local path.
+
+---
+
+### ✅ **3. Open the HTML File in a Browser**
+After saving the file, **double-click** it or open it manually:
+1. Navigate to the folder containing `choropleth_map.html`
+2. Open it with **Chrome, Firefox, or Edge** (avoid Internet Explorer)
+3. If you see a security warning, use the browser console (`F12`) to check for errors
+
+---
+
+### **🔴 Troubleshooting: If the Map Doesn't Show**
+1. **Check the Console (`F12` in the browser)**
+   - Look for errors about missing files.
+   - If it says **GeoJSON file not found**, verify the correct file path.
+
+2. **Use `"scope='usa'"` Instead of a GeoJSON File**
+   - If your map is only for the **USA**, Plotly has built-in state boundaries that work offline:
+     ```python
+     fig = px.choropleth(
+         locations=["CA", "TX", "NY"],
+         locationmode="USA-states",
+         color=[1, 2, 3],
+         scope="usa"  # Uses Plotly's built-in USA map
+     )
+     ```
+
+3. **Try Running a Simple Offline Example**
+   - If the issue persists, test with this minimal example:
+     ```python
+     import plotly.express as px
+     import plotly.offline as pyo
+
+     fig = px.choropleth(
+         locations=["CA", "TX", "NY"],
+         locationmode="USA-states",
+         color=[1, 2, 3],
+         scope="usa"
+     )
+
+     pyo.plot(fig, filename="offline_test.html", auto_open=True)
+     ```
+
+---
+
+Would you like help debugging a specific **local choropleth file**? 🚀
+
+
+# https://www.kaggle.com/datasets/pompelmo/usa-states-geojson
