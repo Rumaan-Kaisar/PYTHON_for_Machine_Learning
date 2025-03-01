@@ -1,6 +1,8 @@
 
 -----------------    Data Capstone Projects    -----------------
 
-911 Calls Data Capstone Project
+    1.  911 Calls Project
 
-03-Finance Project
+    2.  Finance Project
+
+
