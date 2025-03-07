@@ -3,7 +3,7 @@
 # copy: py, ipynb
 #        
 #        
-################# (04-Mar-25 for 05-Mar-25)
+################# (05-Mar-25 for 07-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3, 10.4
 
@@ -50,7 +50,22 @@ df = pd.read_csv("./data_call_911_small.csv")
 df.info()
 
 # inspect first 5 row
-df.head()
+df.head(5)
+
+# top 5 most appeared zip codes
+df["zip"].value_counts().head(5)
+
+# top 5 townships (twp) for 911 calls?
+df["twp"].value_counts().head(5)
+
+# how many unique title codes are in the 'title' column?
+df['title'].unique.value_counts()
+
+# how many unique title codes are in the 'title' column?
+# df['title'].unique # gets the uniques
+df['title'].nunique()
 
 
-# NXT >> Basic Q in[134]
+# NXT >> # Creating new features
+
+# ----  Creating new features  ----
