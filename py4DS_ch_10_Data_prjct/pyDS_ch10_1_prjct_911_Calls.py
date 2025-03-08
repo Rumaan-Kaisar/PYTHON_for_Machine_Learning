@@ -3,7 +3,7 @@
 # copy: py, ipynb
 #        
 #        
-################# (05-Mar-25 for 07-Mar-25)
+################# (07-Mar-25 for 08-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3, 10.4
 
@@ -26,7 +26,7 @@
         # e: String variable, Dummy variable (always 1)
 
 
-# ----  Getting bacsic info from the dataset  ----
+# ----  Getting basic info from the dataset  ----
 
 # import libraries
 import numpy as np
@@ -66,6 +66,13 @@ df['title'].unique.value_counts()
 df['title'].nunique()
 
 
-# NXT >> # Creating new features
 
 # ----  Creating new features  ----
+
+# ----  apply() with "LAMBDA expression"  ----
+# Extract the department (EMS, Fire, or Traffic) from the title column using 
+    # .apply() with a lambda function and store it in a new column called Reason.
+    # Example: If title is "EMS: BACK PAINS/INJURY", then Reason will be "EMS".
+df['Reason'] = df['title'].apply(lambda x: x.split(':')[0])
+
+
