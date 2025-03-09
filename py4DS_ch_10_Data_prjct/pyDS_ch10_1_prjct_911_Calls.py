@@ -75,4 +75,30 @@ df['title'].nunique()
     # Example: If title is "EMS: BACK PAINS/INJURY", then Reason will be "EMS".
 df['Reason'] = df['title'].apply(lambda x: x.split(':')[0])
 
+# What is the common Reasons for a 911 call (use new column)?
+df["Reason"].value_counts()
+
+#  use seaborn to create a countplot of 911 calls by Reason.
+sns.countplot(x='Reason', data=df, palette='magma')
+
+
+
+
+# ----  time information  ----
+# lets focus on time information. 
+df["timeStamp"].dtypes  # Check the column's data type
+
+# data type of the objects in the timeStamp column
+type(df["timeStamp"].iloc[0])   # Check the type of individual elements
+
+
+# rev[08-Mar-2025]
+
+# Convert to datetime (since the column contains string timestamps)
+df['timeStamp'] = pd.to_datetime(df['timeStamp'])
+df['timeStamp'].dtype
+type(df["timeStamp"].iloc[0])
+
+
+# ----  more visualaization  ----
 
