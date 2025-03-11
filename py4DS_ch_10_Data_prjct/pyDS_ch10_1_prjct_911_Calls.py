@@ -1,9 +1,9 @@
 
-################# 10.1:
+################# 10.1: in:143
 # copy: py, ipynb
 #        
 #        
-################# (07-Mar-25 for 08-Mar-25)
+################# (09-Mar-25 for 11-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3, 10.4
 
@@ -91,13 +91,33 @@ df["timeStamp"].dtypes  # Check the column's data type
 # data type of the objects in the timeStamp column
 type(df["timeStamp"].iloc[0])   # Check the type of individual elements
 
-
-# rev[08-Mar-2025]
-
 # Convert to datetime (since the column contains string timestamps)
+    # Use pd.to_datetime to convert the column from strings to DateTime objects.
 df['timeStamp'] = pd.to_datetime(df['timeStamp'])
+# re-check
 df['timeStamp'].dtype
 type(df["timeStamp"].iloc[0])
+
+
+# since the "timeStamp" column is now in DateTime format, individual components like hour, month, and day of the week 
+    # can be extracted using their respective attributes (hour, month, dayofweek).
+
+            # time = df['timeStamp'].iloc[0]
+            # time.hour
+
+    # There are various attributes we can call. 
+
+# Now we'll use ".apply()" to create 3 new columns called 'Hour', 'Month', and 'Day of Week' based off of the timeStamp column
+    # Each row's timeStamp value is passed to the lambda function, 
+    # which extracts the relevant attribute and assigns it to the corresponding new column.
+df['Hour'] = df['timeStamp'].apply(lambda x: x.hour)
+df['Month'] = df['timeStamp'].apply(lambda x: x.month)
+df['Day of Week'] = df['timeStamp'].apply(lambda x: x.dayofweek)
+
+
+
+
+
 
 
 # ----  more visualaization  ----
