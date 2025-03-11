@@ -381,6 +381,27 @@ dfo["col3"].apply(len)
 dfo["col2"].apply(lambda x: x*2)  
 
 
+# ----  map()  ----
+# the map() function is a method available on Series objects that lets you transform the values in that Series.
+# It works by applying a mapping—either through a dictionary, another Series, or a function—to each element of the Series.
+    # Dictionary Mapping: Replace values based on a dictionary.
+    # Function Application: Apply a function to each element.
+    # Returns a New Series: The result is a new Series with the transformed values.
+
+# Example Series
+s = pd.Series(['apple', 'banana', 'apple', 'cherry'])
+
+# map() Using a dictionary
+fruit_map = {'apple': 'red', 'banana': 'yellow', 'cherry': 'red'}     # Mapping dictionary
+mapped_s = s.map(fruit_map)    # Apply mapping
+print(mapped_s)
+
+# map() Using a Function:
+mapped_s = s.map(lambda x: x.upper())    # Convert each string to uppercase
+print(mapped_s)
+
+
+
 # ----  removing columns  ----
 # need to specify the axis (col / row)
 dfo
