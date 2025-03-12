@@ -1,9 +1,9 @@
 
-################# 10.1: in:143
+################# 10.1: in:169
 # copy: py, ipynb
 #        
 #        
-################# (09-Mar-25 for 11-Mar-25)
+################# (11-Mar-25 for 12-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3, 10.4
 
@@ -115,8 +115,21 @@ df['Month'] = df['timeStamp'].apply(lambda x: x.month)
 df['Day of Week'] = df['timeStamp'].apply(lambda x: x.dayofweek)
 
 
+# use .map() with following dictionary to map the actual string names to the day of the week
+dmap = {0:'Mon',1:'Tue',2:'Wed',3:'Thu',4:'Fri',5:'Sat',6:'Sun'}
+df['Day of Week'] = df['Day of Week'].map(dmap)
 
 
+# visualization for "Day of Week"
+# use seaborn to create a "countplot" of the "Day of Week" column with the "Reason" column based "hue"
+sns.countplot(data=df, x='Day of Week', hue='Reason', palette='viridis')
+# To relocate the legend
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+
+# visualization for "Month"
+sns.countplot(data=df, x='Month', hue='Reason', palette='viridis')
+# To relocate the legend
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 
 
 
