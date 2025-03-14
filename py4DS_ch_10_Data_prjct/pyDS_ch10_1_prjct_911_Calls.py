@@ -3,7 +3,7 @@
 # copy: py, ipynb
 #        
 #        
-################# (11-Mar-25 for 12-Mar-25)
+################# (12-Mar-25 for 14-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3, 10.4
 
@@ -132,6 +132,18 @@ sns.countplot(data=df, x='Month', hue='Reason', palette='viridis')
 plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 
 
+# --------    fill missing info    --------
+# notice something strange about above Plot: some missing months
+    # Some months are missing, so a different approach is needed to visualize the data. 
+    # A line plot can help fill in the gaps, but first, the data must be prepared.
+
+# Create a groupby object called byMonth, grouping by the "Month" column and using count() to aggregate. 
+    # Then, display the first few rows with head().
+
+byMonth = df.groupby('Month')
+counted = byMonth.count()     # looks at "Month" and give us the "count"
+counted.head()  # prints all counted entries for each column (per group of months)
+byMonth.head(1) # prints 1 row from each group of months (gruped by month)
 
 # ----  more visualaization  ----
 
