@@ -1,9 +1,9 @@
 
-################# 10.1: in:169
+################# 10.1: in:187
 # copy: py, ipynb
 #        
 #        
-################# (12-Mar-25 for 14-Mar-25)
+################# (14-Mar-25 for 15-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3, 10.4
 
@@ -144,6 +144,31 @@ byMonth = df.groupby('Month')
 counted = byMonth.count()     # looks at "Month" and give us the "count"
 counted.head()  # prints all counted entries for each column (per group of months)
 byMonth.head(1) # prints 1 row from each group of months (gruped by month)
+
+
+# Now we'll create a simple plot using the dataframe indicating the count of calls per month
+    # byMonth['title'] is a Pandas Series containing the count of calls per month.
+    # .plot() is the "Pandas built-in method" that simplifies plotting without explicitly calling Matplotlib functions.
+    # figsize, marker, and linestyle are passed as parameters to customize the plot.
+import matplotlib.pyplot as plt
+
+# plots the number of calls per month using the title column as the count
+# Could be any column
+counted['title'].plot(figsize=(10, 5), marker='o', linestyle='-')
+plt.xlabel('Month')
+plt.ylabel('Number of Calls')
+plt.title('911 Calls Per Month')
+plt.show()
+
+
+# SEABORN: use seaborn's lmplot() to create a "linear fit" on the "number of calls per month". 
+# reset the index: Keep in mind you may need to reset the index to a column.
+import seaborn as sns  
+
+# Reset index so "Month" becomes a column  
+counted = counted.reset_index()  
+# Plot using seaborn's lmplot
+sns.lmplot(x='Month', y='title', data=counted)  
 
 # ----  more visualaization  ----
 
