@@ -1,9 +1,9 @@
 
-################# 10.1: in:187
+################# 10.1: in:203
 # copy: py, ipynb
 #        
 #        
-################# (14-Mar-25 for 15-Mar-25)
+################# (15-Mar-25 for 16-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3, 10.4
 
@@ -170,5 +170,48 @@ counted = counted.reset_index()
 # Plot using seaborn's lmplot
 sns.lmplot(x='Month', y='title', data=counted)  
 
-# ----  more visualaization  ----
 
+
+
+# ------------  more visualaization  ------------
+# Create a new column called 'Date' that contains the date from the 'timeStamp' column. 
+    # use apply() along with the .date()
+    # extructing date "YYYY-MM-DD" from 'timeStamp' column
+df['Date']=df['timeStamp'].apply(lambda t: t.date())
+df.head(1)
+
+# ----  plot how many calls per date  ----
+# how many calls per date
+calls_per_day = df.groupby('Date').count()
+calls_per_day.head(1)
+# plot how many calls per date
+calls_per_day['title'].plot(figsize=(10, 5), marker='o', markersize=1.5, linestyle='-', markerfacecolor='red', markeredgecolor='red')
+
+
+# ----  plot how many calls per date for specific reasons like: Traffic, Fire or EMS  ----
+
+callPerDay_Traffic = df[df['Reason']=='Traffic'].groupby('Date').count()
+callPerDay_Fire = df[df['Reason']=='Fire'].groupby('Date').count()
+callPerDay_EMS = df[df['Reason']=='EMS'].groupby('Date').count()
+
+import matplotlib.pyplot as plt
+
+# Plot each call type with different colors
+plt.figure(figsize=(18,6))
+
+plt.plot(callPerDay_Traffic['title'], label='Traffic', color='red')
+plt.plot(callPerDay_Fire['title'], label='Fire', color='blue')
+plt.plot(callPerDay_EMS['title'], label='EMS', color='green')
+
+# Add title and labels
+plt.title("911 Calls Per Day by Reason")
+plt.xlabel("Date")
+plt.ylabel("Number of Calls")
+
+# Add legend
+plt.legend()
+
+# Show the plot
+plt.show()
+
+# NXT sns
