@@ -1,9 +1,9 @@
 
-################# 10.1: in:203
+################# 10.1: in:heatmap
 # copy: py, ipynb
 #        
 #        
-################# (15-Mar-25 for 16-Mar-25)
+################# (16-Mar-25 for 18-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3, 10.4
 
@@ -214,4 +214,37 @@ plt.legend()
 # Show the plot
 plt.show()
 
-# NXT sns
+
+
+# ----  HeatMaps  ----
+# To create heatmaps with seaborn and our data, We'll first need to restructure the dataframe 
+    # so that the "columns" become the "Hours" and the "Index" becomes the "Day of the Week". 
+    # try to combine "groupby" with an "unstack"
+
+# Convert to datetime
+df['timeStamp'] = pd.to_datetime(df['timeStamp'])
+
+# use ".apply()" to create 3 new columns called 'Hour', 'Month', and 'Day of Week'
+df['Hour'] = df['timeStamp'].apply(lambda x: x.hour)
+df['Month'] = df['timeStamp'].apply(lambda x: x.month)
+df['Day of Week'] = df['timeStamp'].apply(lambda x: x.dayofweek)
+# use .map() with following dictionary to map the actual string names to the day of the week
+dmap = {0:'Mon',1:'Tue',2:'Wed',3:'Thu',4:'Fri',5:'Sat',6:'Sun'}
+df['Day of Week'] = df['Day of Week'].map(dmap)
+
+
+# Group by 'Day of Week' and 'Hour' and count occurrences
+group_day_hour = df.groupby(['Day of Week', 'Hour'])
+print(group_day_hour.head(1))
+
+heatmap_data = group_day_hour.count()['title'].unstack()
+# Display the transformed DataFrame
+print(heatmap_data)
+
+
+# in one line
+heatmap_data = df.groupby(['Day of Week', 'Hour']).count()['title'].unstack()
+
+# If the output is still not fully visible, you can try increasing the width of the display:
+pd.set_option('display.width', 1000)  # Adjust width (increase if needed)
+
