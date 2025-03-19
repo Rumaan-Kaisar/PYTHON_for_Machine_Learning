@@ -1,9 +1,9 @@
 
-################# 10.1: in:heatmap
+################# 10.1: rev vid
 # copy: py, ipynb
 #        
 #        
-################# (16-Mar-25 for 18-Mar-25)
+################# (18-Mar-25 for 19-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3, 10.4
 
@@ -232,7 +232,7 @@ df['Day of Week'] = df['timeStamp'].apply(lambda x: x.dayofweek)
 dmap = {0:'Mon',1:'Tue',2:'Wed',3:'Thu',4:'Fri',5:'Sat',6:'Sun'}
 df['Day of Week'] = df['Day of Week'].map(dmap)
 
-
+# ----  'Hour'  ----
 # Group by 'Day of Week' and 'Hour' and count occurrences
 group_day_hour = df.groupby(['Day of Week', 'Hour'])
 print(group_day_hour.head(1))
@@ -247,4 +247,26 @@ heatmap_data = df.groupby(['Day of Week', 'Hour']).count()['title'].unstack()
 
 # If the output is still not fully visible, you can try increasing the width of the display:
 pd.set_option('display.width', 1000)  # Adjust width (increase if needed)
+
+# HeatMap
+plt.figure(figsize=(12,6))
+sns.heatmap(heatmap_data, cmap='viridis')
+
+# clustermap
+sns.clustermap(heatmap_data, cmap="viridis")
+
+
+
+# ----  Month  ----
+# same plots and operations, for a DataFrame using "Month" as the column.
+heatmap_data_month = df.groupby(['Day of Week', 'Month']).count()['title'].unstack()
+# Display the transformed DataFrame
+print(heatmap_data_month)
+
+# HeatMap
+plt.figure(figsize=(12,6))
+sns.heatmap(heatmap_data_month, cmap='viridis')
+
+# clustermap
+sns.clustermap(heatmap_data_month, cmap="viridis")
 
