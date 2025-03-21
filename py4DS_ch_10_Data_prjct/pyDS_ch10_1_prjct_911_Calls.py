@@ -1,10 +1,4 @@
 
-################# 10.1: rev vid
-# copy: py, ipynb
-#        
-#        
-################# (18-Mar-25 for 19-Mar-25)
-
 # Courses: PrTla PY for DS & ML >    10.1, 10.2, 10.3, 10.4
 
 
@@ -106,6 +100,11 @@ type(df["timeStamp"].iloc[0])
             # time.hour
 
     # There are various attributes we can call. 
+time_data = df["timeStamp"].iloc[0]
+time_data.hour
+time_data.year
+time_data.dayofweek
+
 
 # Now we'll use ".apply()" to create 3 new columns called 'Hour', 'Month', and 'Day of Week' based off of the timeStamp column
     # Each row's timeStamp value is passed to the lambda function, 
@@ -234,9 +233,13 @@ df['Day of Week'] = df['Day of Week'].map(dmap)
 
 # ----  'Hour'  ----
 # Group by 'Day of Week' and 'Hour' and count occurrences
-group_day_hour = df.groupby(['Day of Week', 'Hour'])
+group_day_hour = df.groupby(['Day of Week', 'Hour'])    # grouping by multiple columns
 print(group_day_hour.head(1))
+# it has multi level index "Day of Week" -> "Hour"
+    # grouping by multiple columns creates multi-level index
 
+# now we call a column on this multi-level dataframe 
+    # using unstack() will transform the result into a matrix form
 heatmap_data = group_day_hour.count()['title'].unstack()
 # Display the transformed DataFrame
 print(heatmap_data)
