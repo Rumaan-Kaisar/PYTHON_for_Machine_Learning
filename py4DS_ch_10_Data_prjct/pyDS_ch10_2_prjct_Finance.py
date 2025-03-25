@@ -3,7 +3,7 @@
 # copy: topics txt, py(s)
 #        
 #        
-################# (22-Mar-25 for 23-Mar-25)
+################# (23-Mar-25 for 25-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -82,8 +82,6 @@ df['C']
 
 
 
-# rev[22-Mar-2025]
-
 # --------  about the Data  --------
 
 # We need to get data using "pandas datareader". We will get stock information for the following banks:
@@ -94,26 +92,80 @@ df['C']
     # Morgan Stanley
     # Wells Fargo
 
-Figure out how to get the stock data from Jan 1st 2006 to Jan 1st 2016 for each of these banks. 
-Set each bank to be a separate dataframe, with the variable name for that bank being its ticker symbol. This will involve a few steps:**
 
-1. Use datetime to set start and end datetime objects.
-2. Figure out the ticker symbol for each bank.
-2. Figure out how to use datareader to grab info on the stock.
+# Get the stock data from Jan 1st 2006 to Jan 1st 2016 for each of these banks. 
+    # Set each bank to be a separate dataframe, with the variable name for that bank being its ticker symbol. 
+
+# This will involve a few steps:
+    # 1. Use datetime() to set start and end datetime objects.
+    # 2. Figure out the ticker symbol for each bank.
+    # 2. Figure out how to use datareader to grab info on the stock.
+    #    -  Use Google Finance (or Yahoo Finance)
 
 # Use this documentation: https://pandas-datareader.readthedocs.io/en/latest/remote_data.html
 
 
-# Use google finance as a source, for example:
-    
+# Use Google Finance (or Yahoo Finance) as a source, for example:
     # Bank of America
     # BAC = data.DataReader("BAC", 'google', start, end)
-
 
 
 # NOTE: Check the link above for the latest API (or search online for latest API), as 'google' may not always work.
         # Google Finance no longer provides a public API or support in pandas-datareader. 
         # Use Yahoo Finance, Alpha Vantage, or Market Data API for real-time and historical stock data.
+
+
+
+# --------    rev[23-Mar-2025] : check 'run' in ipynb first    --------
+
+# --------  ONLINE: getting data from "yahoo finance"  --------
+
+import datetime
+import pandas as pd
+import pandas_datareader.data as data
+
+# Define start and end dates
+start = datetime.datetime(2006, 1, 1)
+end = datetime.datetime(2016, 1, 1)
+
+# Define bank tickers
+# Create a list of the "ticker symbols" (as strings) in alphabetical order. 
+    # Call this list: "tickers"
+tickers = ['BAC', 'CTG', 'GS', 'JPM', 'MS', 'WFC']
+
+# Fetch data for each bank using "Yahoo Finance" since 
+BAC = data.DataReader("BAC", 'yahoo', start, end)       # Bank of America
+CTG = data.DataReader("CTG", 'yahoo', start, end)       # CitiGroup
+GS = data.DataReader("GS", 'yahoo', start, end)     # Goldman Sachs
+JPM = data.DataReader("JPM", 'yahoo', start, end)       # JPMorgan Chase
+MS = data.DataReader("MS", 'yahoo', start, end)     # Morgan Stanley
+WFC = data.DataReader("WFC", 'yahoo', start, end)       # Wells Fargo
+
+# Fetch data for all banks in a single call
+df = data.DataReader(tickers, 'yahoo', start, end)
+
+# Fetcing could also do this for a "Panel Object"
+# df = data.DataReader(['BAC', 'C', 'GS', 'JPM', 'MS', 'WFC'], 'yahoo', start, end)
+
+
+# ----------------    Concatenate dataframes    ----------------
+# Concatenate dataframes into a single dataframe:
+# Use "pd.concat" to concatenate the bank dataframes together to a single dataframe called bank_stocks
+    # Set the keys argument equal to the "tickers" list. 
+    # Also pay attention to what axis you concatenate on.
+bank_stocks = pd.concat([BAC, CTG, GS, JPM, MS, WFC], axis=1, keys=tickers)
+
+# Set column name levels
+bank_stocks.columns.names = ['Bank Ticker', 'Stock Info']
+
+# Display the head of the dataframe
+print(bank_stocks.head())
+
+# Save as a pickle file for efficient storage
+import pickle
+with open("bank_stocks_yahoo.pkl", 'wb') as f:
+    pickle.dump(bank_stocks, f)
+
 
 
 # --------  ALTERNATIVE(online): getting data from "google finance"  --------
@@ -134,47 +186,11 @@ stock_data = {ticker: web.DataReader(ticker, 'yahoo', start, end) for ticker in 
 # Example: Display first few rows of Bank of America stock data
 print(stock_data["BAC"].head())
 
+# Save as a pickle file for efficient storage
+import pickle
+with open("stock_data_yahoo.pkl", 'wb') as f:
+    pickle.dump(stock_data, f)
 
-
-# old code
-
-start = datetime.datetime(2006, 1, 1)
-end = datetime.datetime(2016, 1, 1)
-
-# Bank of America
-BAC = data.DataReader("BAC", 'google', start, end)
-
-# CitiGroup
-C = data.DataReader("C", 'google', start, end)
-
-# Goldman Sachs
-GS = data.DataReader("GS", 'google', start, end)
-
-# JPMorgan Chase
-JPM = data.DataReader("JPM", 'google', start, end)
-
-# Morgan Stanley
-MS = data.DataReader("MS", 'google', start, end)
-
-# Wells Fargo
-WFC = data.DataReader("WFC", 'google', start, end)
-
-
-# Could also do this for a Panel Object
-df = data.DataReader(['BAC', 'C', 'GS', 'JPM', 'MS', 'WFC'],'google', start, end)
-
-# Create a list of the ticker symbols (as strings) in alphabetical order. Call this list: tickers**
-tickers = ['BAC', 'C', 'GS', 'JPM', 'MS', 'WFC']
- 
-
-# ** Use pd.concat to concatenate the bank dataframes together to a single data frame called bank_stocks. Set the keys argument equal to the tickers list. Also pay attention to what axis you concatenate on.**
-bank_stocks = pd.concat([BAC, C, GS, JPM, MS, WFC],axis=1,keys=tickers)
-
-# ** Set the column name levels (this is filled out for you):**
-bank_stocks.columns.names = ['Bank Ticker','Stock Info']
-
-# ** Check the head of the bank_stocks dataframe.**
-bank_stocks.head()
 
 
 
