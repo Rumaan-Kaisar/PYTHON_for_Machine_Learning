@@ -1,9 +1,9 @@
 
 ################# 10.6:
-# copy: topics txt, py(s)
+# copy: py, ipynb, new_data
 #        
 #        
-################# (23-Mar-25 for 25-Mar-25)
+################# (25-Mar-25 for 26-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -168,31 +168,79 @@ with open("bank_stocks_yahoo.pkl", 'wb') as f:
 
 
 
-# --------  ALTERNATIVE(online): getting data from "google finance"  --------
+# --------  ALTERNATIVE(online): getting data from "yfinance"  --------
 
-import pandas_datareader.data as web
+# Install yfinance from PYPI using pip
+    # pip install yfinance
+    # https://yfinance-python.org/
+    # https://github.com/ranaroussi/yfinance
+
+# check first: Use "yfinance" Directly Instead of "pandas_datareader"
+    # This method bypasses "pandas_datareader" and directly uses "yfinance", which is more reliable.
+    # If this works, it means yfinance is functioning properly.
+import yfinance as yf
 import datetime
 
-# Set the date range
-start = datetime.datetime(2006, 1, 1)
-end = datetime.datetime(2016, 1, 1)
+# Define start and end dates
+start = datetime.datetime(2023, 1, 1)
+end = datetime.datetime(2024, 1, 1)
 
-# Define the ticker symbols
-tickers = ["BAC", "C", "GS", "JPM", "MS", "WFC"]
+# Fetch stock data directly using yfinance
+df = yf.download("AAPL", start=start, end=end)
 
-# Fetch stock data for each bank
-stock_data = {ticker: web.DataReader(ticker, 'yahoo', start, end) for ticker in tickers}
-
-# Example: Display first few rows of Bank of America stock data
-print(stock_data["BAC"].head())
-
-# Save as a pickle file for efficient storage
-import pickle
-with open("stock_data_yahoo.pkl", 'wb') as f:
-    pickle.dump(stock_data, f)
+# Display the first few rows
+print(df.head())
+# ------------------------------------------------
 
 
 
+# ----------------    now we get our DataSet    ----------------
+import datetime
+import pandas as pd
+import yfinance as yf
+
+# Define start and end dates
+start = "2006-01-01"
+end = "2016-01-01"
+
+# Define bank tickers
+tickers = ['BAC', 'C', 'GS', 'JPM', 'MS', 'WFC']  # Fixed 'CTG' -> 'C' for CitiGroup
+
+# Fetch data for all banks using yfinance
+bank_data = {ticker: yf.download(ticker, start=start, end=end) for ticker in tickers}
+
+# Concatenate dataframes into a single dataframe with MultiIndex
+bank_stocks = pd.concat(bank_data, axis=1, keys=tickers)
+
+# Display the first few rows
+bank_stocks.head()
+
+
+# Note that: we can't set the multi-level index as before because "bank_stocks" has three levels instead of two. 
+    # This happens since "yfinance.download()" already returns a "MultiIndex" with Stock Info (Open/Close) and Ticker, 
+    # and concatenating adds another level.
+
+# we use following way ----
+# Check the number of levels in the MultiIndex
+print(bank_stocks.columns.nlevels)  # Should print 3
+
+# Drop the extra level by resetting the column index
+bank_stocks.columns = bank_stocks.columns.droplevel(2)  # Drops the repeated ticker level
+bank_stocks.head()  # Display the change
+
+
+# Now correctly assign MultiIndex column names
+bank_stocks.columns.names = ['Bank Ticker', 'Stock Info']
+
+# Display the fixed columns
+bank_stocks.head()
+
+
+# ----    save as pickle    ----
+# to_pickle() comes from "pandas". 
+    # It is a method available for pandas "DataFrames" and "Series", 
+    # allowing you to serialize and save data in "pickle" format
+bank_stocks.to_pickle("bank_stocks_yahoo.pkl")
 
 
 # ----------------    EDA    ----------------
