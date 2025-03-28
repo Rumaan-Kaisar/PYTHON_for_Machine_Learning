@@ -3,7 +3,7 @@
 # copy: py, ipynb, new_data
 #        
 #        
-################# (25-Mar-25 for 26-Mar-25)
+################# (26-Mar-25 for 28-Mar-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -243,5 +243,24 @@ bank_stocks.head()
 bank_stocks.to_pickle("bank_stocks_yahoo.pkl")
 
 
+
+
 # ----------------    EDA    ----------------
-# EDA stands for Exploratory Data Analysis. It involves analyzing and visualizing datasets to understand patterns, trends, and relationships before applying further data processing or modeling.
+# EDA stands for Exploratory Data Analysis. 
+# It involves analyzing and visualizing datasets to understand 
+    # patterns, trends, and relationships before applying further data processing or modeling.
+
+# ----  load the pickle dataset  ----
+df1 = pd.read_pickle("bank_stocks_yahoo.pkl")  # Load a pickle file into a DataFrame
+
+# data info
+df1.info()
+
+# inspect first 5 row
+df1.head(5)
+
+# The DataFrame has a multi-level index:
+    # 6 banks at the first level.
+    # Each bank has 2517 rows and 5 columns
+df1['BAC']
+df1['C']
