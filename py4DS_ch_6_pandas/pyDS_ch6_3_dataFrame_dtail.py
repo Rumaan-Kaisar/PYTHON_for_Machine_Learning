@@ -124,6 +124,11 @@ df.xs('G1')     # using 'xs', also notice '()' used
 df.xs(1, level="Num")
 # above gets all "1 indexes" from index-level named "Num"
 
+# using axis:
+    # axis=0: Operate on rows (index-wise)
+    # axis=1: Operate on columns (column-wise)
+df1.xs('Close', level="Stock Info", axis=1)
+df.xs(1, level="Num", axis=0)
 
 
 
