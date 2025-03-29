@@ -115,9 +115,6 @@ df['C']
         # Use Yahoo Finance, Alpha Vantage, or Market Data API for real-time and historical stock data.
 
 
-
-# --------    rev[23-Mar-2025] : check 'run' in ipynb first    --------
-
 # --------  ONLINE: getting data from "yahoo finance"  --------
 
 import datetime
@@ -264,3 +261,28 @@ df1.head(5)
     # Each bank has 2517 rows and 5 columns
 df1['BAC']
 df1['C']
+
+
+# ----    cross-section (xs)    ----
+# Check the column index levels
+print(df1.columns)  # This will show the structure of the MultiIndex columns
+
+# DataFrame has a two-level MultiIndex for columns:
+    # Level 0: Bank Ticker (BAC, C, GS, etc.)
+    # Level 1: Stock Info (Close, High, Low, etc.)
+
+# xs can skip levels to get deep into multi-level-index
+# returns cross-section of row(s) or column(s) in multi-indexed dataframe
+    # axis=0: Operate on rows (index-wise)
+    # axis=1: Operate on columns (column-wise)
+close_prices = df1.xs('Close', level="Stock Info", axis=1) # 'Close' valuse for all 6 banks
+print(close_prices)
+
+# What is the max Close price for each bank's stock throughout the time period?
+max_close_prices = close_prices.max()
+print(max_close_prices)
+
+# in single line
+df1.xs(key='Close',axis=1,level='Stock Info').max()
+
+
