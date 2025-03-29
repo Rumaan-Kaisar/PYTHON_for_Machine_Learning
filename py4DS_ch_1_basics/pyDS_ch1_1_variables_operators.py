@@ -208,6 +208,41 @@
             <div style="text-align: center; font-size: 40px; font-weight: bold; font-style: italic;">
                 This text will be centered.
             </div>
+
+
+
+    ------------    LATEX   ------------
+    LaTeX math notation, commonly used for writing mathematical expressions in documents, code comments, or Markdown.
+    
+        Both $$...$$ and \[...\] are block-level mathematical expressions.
+        Where $...$ and \(...\) are inline math in LaTeX
+
+
+    ----  using $  ----
+
+    1. Inline Math (Single Dollar Sign $...$)
+
+            $r_t = \frac{p_t}{p_{t-1}} - 1$
+
+
+    2. Block Math (Double Dollar Signs $$...$$)
+
+            $$r_t = \frac{p_t - p_{t-1}}{p_{t-1}} = \frac{p_t}{p_{t-1}} - 1$$
+
+
+    ----  using \ nad [  ----
+
+    1. Inline Math
+
+            \(r_t = \frac{p_t}{p_{t-1}} - 1\)
+
+
+    2. Block Math (Equivalent to $$...$$, used in LaTeX documents.)
+
+            \[
+                r_t = \frac{p_t - p_{t-1}}{p_{t-1}} = \frac{p_t}{p_{t-1}} - 1
+            \]
+
 """
 
 
