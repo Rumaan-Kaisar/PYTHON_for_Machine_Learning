@@ -1,5 +1,5 @@
 
-################# 10.6:
+################# 10.6: in 60
 # copy: py, ipynb, new_data
 #        
 #        
@@ -285,4 +285,31 @@ print(max_close_prices)
 # in single line
 df1.xs(key='Close',axis=1,level='Stock Info').max()
 
+
+
+# ------------    calculate RETURNS    ------------
+# Create a new empty DataFrame called "returns" for daily return percentages for each bank's stock.
+# This dataframe will contain the returns for each bank's stock. 
+returns = pd.DataFrame()
+
+# LATEX note: 
+    # block level math $$...$$ and \[...\]
+    # inline math $...$ and \(...\)
+
+# returns are typically defined by:
+    # $$r_t = \frac{p_t - p_{t-1}}{p_{t-1}} = \frac{p_t}{p_{t-1}} - 1$$
+    # Where $p_t$ is today's price and $p_{t-1}$ is the previous day's price.
+
+
+# Use .pct_change() to compute daily returns for each bank's "Close" price.
+# Store the results in returns.
+
+for bank in close_prices.columns:
+    returns[bank] = close_prices[bank].pct_change()
+
+
+# about pct_change(): 
+    # It is fractional change between the current and a prior element.
+    # Computes the fractional change from the immediately previous row by default. 
+    # This is useful in comparing the fraction of change in a time series of elements.
 
