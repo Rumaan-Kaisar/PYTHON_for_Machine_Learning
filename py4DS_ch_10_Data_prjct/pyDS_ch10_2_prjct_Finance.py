@@ -3,7 +3,7 @@
 # copy: py, ipynb, new_data
 #        
 #        
-################# (26-Mar-25 for 28-Mar-25)
+################# (30-Mar-25 for 01-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -283,7 +283,7 @@ max_close_prices = close_prices.max()
 print(max_close_prices)
 
 # in single line
-df1.xs(key='Close',axis=1,level='Stock Info').max()
+df1.xs(key='Close', axis=1, level='Stock Info').max()
 
 
 
@@ -305,11 +305,112 @@ returns = pd.DataFrame()
 # Store the results in returns.
 
 for bank in close_prices.columns:
-    returns[bank] = close_prices[bank].pct_change()
+    returns[bank+' return'] = close_prices[bank].pct_change()
 
 
 # about pct_change(): 
     # It is fractional change between the current and a prior element.
     # Computes the fractional change from the immediately previous row by default. 
     # This is useful in comparing the fraction of change in a time series of elements.
+
+
+# ----------  rev[30-Mar-2025]  ---------------
+# observations from "returns"
+
+# In the "returns" DataFrame, what do +ve and -ve values mean?
+
+# Which stock stands out, and how can we determine why?
+""" 
+The "returns" DataFrame contains the percentage change in stock prices for each bank over time. Each column represents a bank's stock, and each row represents the daily return for that bank.
+
+How to Identify the Best/Worst Performing Stock?
+Calculate Summary Statistics:
+
+Use .mean() to get the average return.
+
+Use .std() to check volatility (higher standard deviation means more risk).
+
+python
+Copy
+Edit
+returns.mean()
+returns.std()
+Find the Best/Worst Performing Stock:
+
+The highest mean return → Best-performing stock.
+
+The lowest mean return → Worst-performing stock.
+
+python
+Copy
+Edit
+best_stock = returns.mean().idxmax()
+worst_stock = returns.mean().idxmin()
+print(f"Best performing stock: {best_stock}")
+print(f"Worst performing stock: {worst_stock}")
+Visualize Returns:
+
+python
+Copy
+Edit
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=returns)
+plt.title("Stock Return Distribution")
+plt.show()
+Why Does a Stock Perform Better/Worse?
+Market Trends: Overall economic conditions.
+
+Bank Performance: Financial strength of the bank.
+
+News & Events: Scandals, mergers, interest rate changes, etc.
+
+Volatility: A high standard deviation may indicate a riskier stock.
+
+Would you like a deeper dive into any of these aspects?
+
+
+
+
+
+In the "returns" DataFrame:
+
+Positive (+ve) value: The stock price increased compared to the previous day.
+
+Example: 0.02 (or +2%) means the stock price went up by 2% from the previous day's closing price.
+
+Negative (-ve) value: The stock price decreased compared to the previous day.
+
+Example: -0.03 (or -3%) means the stock price went down by 3% from the previous day's closing price.
+
+Zero (0) value: No change in stock price from the previous day.
+
+Would you like a quick visualization to see how returns fluctuate over time?
+
+
+
+
+
+In the "returns" DataFrame:
+
+Positive (+ve) value: Indicates the stock price increased compared to the previous day.
+
+Negative (-ve) value: Indicates the stock price decreased compared to the previous day.
+
+What stock stands out?
+To determine which stock stands out, check:
+
+Highest and lowest returns: Use .max() and .min() to find the most volatile stocks.
+
+Standard deviation: A higher standard deviation means more price fluctuations.
+
+Visualization: Plot the returns to identify extreme spikes or drops.
+
+ """
+
+# Create a pairplot using seaborn of the returns dataframe. 
+# What stock stands out to you? Can you figure out why?
+
 
