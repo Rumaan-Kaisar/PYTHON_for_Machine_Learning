@@ -316,12 +316,28 @@ for bank in close_prices.columns:
 
 # ----------  rev[30-Mar-2025]  ---------------
 # observations from "returns"
-
 # In the "returns" DataFrame, what do +ve and -ve values mean?
+# (+ve) : Indicates the stock price increased compared to the previous day.
+# (-ve) : Indicates the stock price decreased compared to the previous day.
+
+
+
+
+
+# Create a pairplot using seaborn from "returns" data 
+import seaborn as sns
+sns.pairplot(returns[1:])
+# To set the bin size, use the "diag_kws" parameter, which allows passing arguments to the "diagonal histograms".
+sns.pairplot(returns[1:], diag_kws={'bins': 30})  # Set bins to 30
+
 
 # Which stock stands out, and how can we determine why?
+
+
 """ 
-The "returns" DataFrame contains the percentage change in stock prices for each bank over time. Each column represents a bank's stock, and each row represents the daily return for that bank.
+
+The "returns" DataFrame contains the percentage change in stock prices for each bank over time. 
+Each column represents a bank's stock, and each row represents the daily return for that bank.
 
 How to Identify the Best/Worst Performing Stock?
 Calculate Summary Statistics:
@@ -330,9 +346,7 @@ Use .mean() to get the average return.
 
 Use .std() to check volatility (higher standard deviation means more risk).
 
-python
-Copy
-Edit
+
 returns.mean()
 returns.std()
 Find the Best/Worst Performing Stock:
