@@ -1,9 +1,9 @@
 
-################# 10.6: in 60
+################# 10.6: in 75
 # copy:
 #        
 #        
-################# (01-Apr-25 for 02-Apr-25)
+################# (02-Apr-25 for 04-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -316,11 +316,12 @@ for bank in close_prices.columns:
 
 # ----------  rev[30-Mar-2025]  ---------------
 # observations from "returns"
-# In the "returns" DataFrame, what do +ve and -ve values mean?
-# (+ve) : Indicates the stock price increased compared to the previous day.
-# (-ve) : Indicates the stock price decreased compared to the previous day.
-
-
+    # The "returns" DataFrame contains the percentage change in stock prices for each bank over time. 
+        # Each column represents a bank's stock, and each row represents the daily return for that bank.
+        
+    # In the "returns" DataFrame, what do +ve and -ve values mean?
+        # (+ve) : Indicates the stock price increased compared to the previous day.
+        # (-ve) : Indicates the stock price decreased compared to the previous day.
 
 
 
@@ -331,42 +332,26 @@ sns.pairplot(returns[1:])
 sns.pairplot(returns[1:], diag_kws={'bins': 30})  # Set bins to 30
 
 
-# Which stock stands out, and how can we determine why?
+# How to Identify the Best/Worst Performing Stock?
 
-
-""" 
-
-The "returns" DataFrame contains the percentage change in stock prices for each bank over time. 
-Each column represents a bank's stock, and each row represents the daily return for that bank.
-
-How to Identify the Best/Worst Performing Stock?
-Calculate Summary Statistics:
-
-Use .mean() to get the average return.
-
-Use .std() to check volatility (higher standard deviation means more risk).
-
+# --------  Calculate Summary Statistics  --------
+#     Use .mean() to get the average return.
+#     Use .std() to check volatility (higher standard deviation means more risk).
 
 returns.mean()
 returns.std()
-Find the Best/Worst Performing Stock:
 
-The highest mean return → Best-performing stock.
+# Find the Best/Worst Performing Stock:
+    # The highest mean return -> Best-performing stock.
+    # The lowest mean return -> Worst-performing stock.
 
-The lowest mean return → Worst-performing stock.
-
-python
-Copy
-Edit
 best_stock = returns.mean().idxmax()
 worst_stock = returns.mean().idxmin()
 print(f"Best performing stock: {best_stock}")
 print(f"Worst performing stock: {worst_stock}")
-Visualize Returns:
 
-python
-Copy
-Edit
+
+# Visualize Returns:
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -374,44 +359,90 @@ plt.figure(figsize=(10, 6))
 sns.boxplot(data=returns)
 plt.title("Stock Return Distribution")
 plt.show()
-Why Does a Stock Perform Better/Worse?
-Market Trends: Overall economic conditions.
 
-Bank Performance: Financial strength of the bank.
 
-News & Events: Scandals, mergers, interest rate changes, etc.
+
+
+
+
+# -------- rev[02-apr-25] --------
+
+# Below is a subplots-based visualization that separately plots histograms with KDE (Kernel Density Estimation) and standard deviation (std) lines for each bank in the returns DataFrame.
+
+# Key Features:
+# Each bank gets its own subplot (using plt.subplots()).
+
+# Histogram & KDE are plotted together (sns.histplot() with kde=True).
+
+# Standard deviation lines are drawn using ax.axvline().
+
+
+# Explanation:
+# Creates separate subplots for each bank's returns.
+
+# Plots histograms with KDE curves using sns.histplot().
+
+# Overlays standard deviation markers (axvline at mean ± std).
+
+# Handles multiple banks dynamically (for i, bank in enumerate(returns.columns)).
+
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define number of banks (columns in 'returns')
+num_banks = len(returns.columns)
+
+# Create subplots: one row per bank
+fig, axes = plt.subplots(num_banks, 1, figsize=(10, 3 * num_banks))
+
+# Loop through each bank and plot histogram with KDE & std
+for i, bank in enumerate(returns.columns):
+    ax = axes[i] if num_banks > 1 else axes  # Handle single subplot case
+    
+    # Plot histogram & KDE
+    sns.histplot(returns[bank], kde=True, bins=30, ax=ax)
+    
+    # Compute mean & standard deviation
+    mean_val = returns[bank].mean()
+    std_val = returns[bank].std()
+    
+    # Draw standard deviation lines
+    ax.axvline(mean_val, color='red', linestyle='--', label='Mean')
+    ax.axvline(mean_val + std_val, color='blue', linestyle='--', label='±1 Std')
+    ax.axvline(mean_val - std_val, color='blue', linestyle='--')
+    
+    ax.set_title(f"Returns Distribution for {bank}")
+    ax.legend()
+
+# Adjust layout and show plot
+plt.tight_layout()
+plt.show()
+
+
+
+# ----------------------------------------
+
+# conclusion:
+# Background on [Citigroup's Stock Crash available here.](https://en.wikipedia.org/wiki/Citigroup#November_2008.2C_Collapse_.26_US_Government_Intervention_.28part_of_the_Global_Financial_Crisis.29) 
+# You'll also see the enormous crash in value if you take a look a the stock price plot (which we do later in the visualizations.
+
+# ----------------------------------------
+
+""" 
+
+
+
 
 Volatility: A high standard deviation may indicate a riskier stock.
 
-Would you like a deeper dive into any of these aspects?
 
 
 
 
 
-In the "returns" DataFrame:
-
-Positive (+ve) value: The stock price increased compared to the previous day.
-
-Example: 0.02 (or +2%) means the stock price went up by 2% from the previous day's closing price.
-
-Negative (-ve) value: The stock price decreased compared to the previous day.
-
-Example: -0.03 (or -3%) means the stock price went down by 3% from the previous day's closing price.
-
-Zero (0) value: No change in stock price from the previous day.
-
-Would you like a quick visualization to see how returns fluctuate over time?
-
-
-
-
-
-In the "returns" DataFrame:
-
-Positive (+ve) value: Indicates the stock price increased compared to the previous day.
-
-Negative (-ve) value: Indicates the stock price decreased compared to the previous day.
 
 What stock stands out?
 To determine which stock stands out, check:
@@ -423,6 +454,9 @@ Standard deviation: A higher standard deviation means more price fluctuations.
 Visualization: Plot the returns to identify extreme spikes or drops.
 
  """
+
+
+# --------  best and worst single day returns  --------
 
 # Create a pairplot using seaborn of the returns dataframe. 
 # What stock stands out to you? Can you figure out why?
