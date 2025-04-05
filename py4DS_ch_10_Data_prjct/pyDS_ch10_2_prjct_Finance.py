@@ -314,7 +314,8 @@ for bank in close_prices.columns:
     # This is useful in comparing the fraction of change in a time series of elements.
 
 
-# ----------  rev[30-Mar-2025]  ---------------
+
+# ---------------  observations  ---------------
 # observations from "returns"
     # The "returns" DataFrame contains the percentage change in stock prices for each bank over time. 
         # Each column represents a bank's stock, and each row represents the daily return for that bank.
@@ -322,7 +323,6 @@ for bank in close_prices.columns:
     # In the "returns" DataFrame, what do +ve and -ve values mean?
         # (+ve) : Indicates the stock price increased compared to the previous day.
         # (-ve) : Indicates the stock price decreased compared to the previous day.
-
 
 
 # Create a pairplot using seaborn from "returns" data 
@@ -362,31 +362,16 @@ plt.show()
 
 
 
-
-
-
-# -------- rev[02-apr-25] --------
-
-# Below is a subplots-based visualization that separately plots histograms with KDE (Kernel Density Estimation) and standard deviation (std) lines for each bank in the returns DataFrame.
-
-# Key Features:
-# Each bank gets its own subplot (using plt.subplots()).
+# -------------  subplots  -------------
+# Below is a subplots-based visualization that separately plots histograms with 
+    # KDE (Kernel Density Estimation) and 
+    # standard deviation (std) lines 
+# for each bank in the returns DataFrame.
 
 # Histogram & KDE are plotted together (sns.histplot() with kde=True).
-
 # Standard deviation lines are drawn using ax.axvline().
 
-
-# Explanation:
-# Creates separate subplots for each bank's returns.
-
-# Plots histograms with KDE curves using sns.histplot().
-
-# Overlays standard deviation markers (axvline at mean ± std).
-
 # Handles multiple banks dynamically (for i, bank in enumerate(returns.columns)).
-
-
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -421,6 +406,60 @@ for i, bank in enumerate(returns.columns):
 plt.tight_layout()
 plt.show()
 
+
+
+
+# -------------  subplot (same scale)  -------------
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define number of banks (columns in 'returns')
+num_banks = len(returns.columns)
+
+# Define subplot grid (3 rows, 2 columns)
+fig, axes = plt.subplots(3, 2, figsize=(12, 10))
+
+# Flatten axes array for easier indexing
+axes = axes.flatten()
+
+# Fixed x, y axis range
+x_min, x_max = -0.1, 0.1
+y_min, y_max = 0, 2000
+
+# Loop through each bank and plot histogram with KDE & std
+for i, bank in enumerate(returns.columns):
+    ax = axes[i]
+
+    # Plot histogram & KDE
+    sns.histplot(returns[bank], kde=True, bins=30, ax=ax)
+    
+    # Compute mean & standard deviation
+    mean_val = returns[bank].mean()
+    std_val = returns[bank].std()
+    
+    # Draw standard deviation lines
+    ax.axvline(mean_val, color='red', linestyle='--', label='Mean')
+    ax.axvline(mean_val + std_val, color='blue', linestyle='--', label='±1 Std')
+    ax.axvline(mean_val - std_val, color='blue', linestyle='--')
+    
+    # Set title and x-axis limits
+    ax.set_title(f"Returns Distribution for {bank}")
+    ax.set_xlim(x_min, x_max)  # Fixed x-axis range
+    ax.set_ylim(y_min, y_max)  # Fixed y-axis range
+    ax.legend()
+
+# Hide unused subplots if num_banks < 6
+for i in range(num_banks, len(axes)):
+    fig.delaxes(axes[i])
+
+# Adjust layout and show plot
+plt.tight_layout()
+plt.show()
+
+
+# -------- rev[04-apr-25] --------
 
 
 # ----------------------------------------
