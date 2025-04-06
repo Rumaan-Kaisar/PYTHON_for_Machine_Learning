@@ -3,7 +3,7 @@
 # copy:
 #        
 #        
-################# (02-Apr-25 for 04-Apr-25)
+################# (05-Apr-25 for 06-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -410,6 +410,7 @@ plt.show()
 
 
 # -------------  subplot (same scale)  -------------
+# Volatility: A high standard deviation may indicate a riskier stock.
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -459,45 +460,47 @@ plt.tight_layout()
 plt.show()
 
 
-# -------- rev[04-apr-25] --------
+
+# CONCLUSION:
+    # Citigroup, has experienced significant stock price fluctuations over the years, notably during the 2007-2008 financial crisis.
+    # Background on Citigroup's Stock Crash available here.
+        # https://en.wikipedia.org/wiki/Citigroup#November_2008.2C_Collapse_.26_US_Government_Intervention_.28part_of_the_Global_Financial_Crisis.29
+
+        # Citigroup, formed in 1998 through a merger, grew to be one of the world’s largest financial institutions. 
+            # By 2006, it was highly valuable, with $1.9 trillion in assets.
+
+        # However, during the 2007–2008 financial crisis, heavy exposure to "subprime mortgages" led to massive losses—
+            # nearly $10 billion in one quarter—and its stock price collapsed to under $1 by early 2009.
+
+        # The U.S. government stepped in with bailouts, but the company's value still dropped drastically. 
+            # In 2011, a reverse stock split was used to stabilize its share price.
+
+        # As of 2022, Citigroup's stock remained far below pre-crisis levels, showing how deeply the crisis impacted the company long-term.
 
 
-# ----------------------------------------
-
-# conclusion:
-# Background on [Citigroup's Stock Crash available here.](https://en.wikipedia.org/wiki/Citigroup#November_2008.2C_Collapse_.26_US_Government_Intervention_.28part_of_the_Global_Financial_Crisis.29) 
 # You'll also see the enormous crash in value if you take a look a the stock price plot (which we do later in the visualizations.
 
+
+
+
+
+
+
+
+# -------- rev[05-apr-25] --------
+
+
 # ----------------------------------------
-
-""" 
-
-
-
-
-Volatility: A high standard deviation may indicate a riskier stock.
-
-
-
-
-
-
-
-What stock stands out?
-To determine which stock stands out, check:
-
-Highest and lowest returns: Use .max() and .min() to find the most volatile stocks.
-
-Standard deviation: A higher standard deviation means more price fluctuations.
-
-Visualization: Plot the returns to identify extreme spikes or drops.
-
- """
 
 
 # --------  best and worst single day returns  --------
+# Using this returns DataFrame, figure out on what dates each bank stock had the best and worst single day returns. You should notice that 4 of the banks share the same day for the worst drop, did anything significant happen that day?
 
-# Create a pairplot using seaborn of the returns dataframe. 
-# What stock stands out to you? Can you figure out why?
+# short "returns" processing
+df1 = pd.read_pickle("bank_stocks_yahoo.pkl")  # Load a pickle file into a DataFrame
+close_prices = df1.xs('Close', level="Stock Info", axis=1) # 'Close' valuse for all 6 banks
 
+returns = pd.DataFrame()
+for bank in close_prices.columns:
+    returns[bank+' return'] = close_prices[bank].pct_change()
 
