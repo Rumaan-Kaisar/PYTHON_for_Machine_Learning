@@ -1,9 +1,9 @@
 
-################# 10.6: in 75
-# copy:
+################# 10.6: in 76
+# copy: new ipynb + py
 #        
 #        
-################# (05-Apr-25 for 06-Apr-25)
+################# (06-Apr-25 for 08-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -483,18 +483,7 @@ plt.show()
 
 
 
-
-
-
-
-# -------- rev[05-apr-25] --------
-
-
-# ----------------------------------------
-
-
 # --------  best and worst single day returns  --------
-# Using this returns DataFrame, figure out on what dates each bank stock had the best and worst single day returns. You should notice that 4 of the banks share the same day for the worst drop, did anything significant happen that day?
 
 # short "returns" processing
 df1 = pd.read_pickle("bank_stocks_yahoo.pkl")  # Load a pickle file into a DataFrame
@@ -503,4 +492,43 @@ close_prices = df1.xs('Close', level="Stock Info", axis=1) # 'Close' valuse for 
 returns = pd.DataFrame()
 for bank in close_prices.columns:
     returns[bank+' return'] = close_prices[bank].pct_change()
+
+
+# Identify the dates on which each bank stock had the "highest" (best) and "lowest" (worst) single-day returns.
+
+for bank in returns.columns:
+    max_return_date = returns[bank].idxmax()
+    min_return_date = returns[bank].idxmin()
+    max_return = returns[bank].loc[max_return_date]
+    min_return = returns[bank].loc[min_return_date]
+
+    print(f"{bank}:")
+    print(f"  Best Day:   {max_return_date.date()} — Return: {max_return:.4f}")
+    print(f"  Worst Day:  {min_return_date.date()} — Return: {min_return:.4f}")
+    print()
+
+# Notie: Four of the banks experienced their worst drop on the same date. 
+#           it is "2009-01-20" and the banks are BAC, GS, JPM, WFC
+#       Investigate whether a significant event occurred on that day.
+
+""" 
+    Significant Drop in Bank Stocks — January 20, 2009
+
+    On January 20, 2009, four major U.S. banks —
+        Bank of America (BAC), Goldman Sachs (GS), JPMorgan Chase (JPM), and Wells Fargo (WFC) 
+        experienced their worst single-day stock return in the dataset.
+
+    This sharp decline coincided with the "inauguration of President Barack Obama", 
+    suggesting that the market downturn occurred during a period of heightened uncertainty and stress in the financial sector. 
+"""
+
+
+
+
+# -------- rev[06-apr-25] --------
+
+# findout Citigroup largest drop and biggest gain
+# ** You should have noticed that Citigroup's largest drop and biggest gain were very close to one another, did anythign significant happen in that time frame? **
+
+# ----------------------------------------
 
