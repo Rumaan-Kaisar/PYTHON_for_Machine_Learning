@@ -1,9 +1,9 @@
 
-################# 10.6: in 76
+################# 10.6: in 81
 # copy: new ipynb + py
 #        
 #        
-################# (06-Apr-25 for 08-Apr-25)
+################# (08-Apr-25 for 09-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -523,12 +523,51 @@ for bank in returns.columns:
 """
 
 
+# --------  using "old pickle" from google  --------
+# short "returns" processing. Now we use the "old pickle" from google
+df1 = pd.read_pickle("data_all_banks")  # Load a pickle file into a DataFrame
+close_prices = df1.xs('Close', level="Stock Info", axis=1) # 'Close' valuse for all 6 banks
+
+returns = pd.DataFrame()
+for bank in close_prices.columns:
+    returns[bank+' return'] = close_prices[bank].pct_change()
+
+# Worst Drop (4 of them on Inauguration day)
+returns.idxmin()
+
+# Best Single Day Gain
+# citigroup stock split in May 2011, but also JPM day after inauguration.
+returns.idxmax()
 
 
-# -------- rev[06-apr-25] --------
 
-# findout Citigroup largest drop and biggest gain
-# ** You should have noticed that Citigroup's largest drop and biggest gain were very close to one another, did anythign significant happen in that time frame? **
+# --------  Citigroup's Largest Gain and Drop  --------
 
-# ----------------------------------------
+# Citigroup's biggest single-day gain and largest drop happened just days apart:
+    #   C return:
+    #       Best Day:   2011-05-09 — Return: 8.7699
+    #       Worst Day:  2011-05-06 — Return: -0.8991
+
+# ​In May 2011, Citigroup had a stock split:
+""" 
+    ----  Citigroup Reverse Stock Split - May 2011  ----
+    In May 2011, Citigroup carried out a 1-for-10 reverse stock split, 
+        meaning every 10 existing shares were combined into 1 new share. 
+        This reduced the number of outstanding shares from about 29 billion to 2.9 billion.
+
+    Effective Date: 
+        The split became official after the market closed on May 6, 2011, 
+        and trading resumed with adjusted prices on May 9, 2011.
+
+    Purpose: 
+        The move aimed to raise the share price and make the stock more attractive to institutional investors.
+
+    # https://www.citigroup.com/global/investors/stockholder-services/stock-split-history
+"""
+
+
+
+# ----  rev[08-apr-2025]  ----
+# riskiest stock
+# ** Take a look at the standard deviation of the returns, which stock would you classify as the riskiest over the entire time period? Which would you classify as the riskiest for the year 2015?**
 
