@@ -1,9 +1,9 @@
 
-################# 10.6: in 81
+################# 10.6: in 94
 # copy: new ipynb + py
 #        
 #        
-################# (08-Apr-25 for 09-Apr-25)
+################# (09-Apr-25 for 11-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -567,7 +567,34 @@ returns.idxmax()
 
 
 
-# ----  rev[08-apr-2025]  ----
-# riskiest stock
-# ** Take a look at the standard deviation of the returns, which stock would you classify as the riskiest over the entire time period? Which would you classify as the riskiest for the year 2015?**
+# ----  riskiest stock  ----
+# Overall Risk: 
+    # Check the "standard deviation" of returns for each stock over the full time period. 
+    # A higher value indicates more volatility (i.e., higher risk).
+
+# Risk in 2015: 
+    # Repeat the same analysis, but only using data from 2015 to see which stock was the most volatile that year.
+
+# Overall standard deviation (entire time period)
+overall_std = returns.std().sort_values(ascending=False)
+print("Standard Deviation - Entire Period:")
+print(overall_std)
+
+# Standard deviation for the year 2015
+returns_2015 = returns['2015']
+std_2015 = returns_2015.std().sort_values(ascending=False)
+print("\nStandard Deviation - Year 2015:")
+print(std_2015)
+
+# alternative:
+returns.std()   # overall
+returns.ix['2015-01-01':'2015-12-31'].std()     # for the year 2015
+
+# results:
+    # Overall Risk: Citigroup is riskiest
+    # Risk in 2015: Morgan Stanley (MS), Bank of America (BAC)
+
+
+# ----  rev[09-Apr-2025]  ----
+# Create a distplot using seaborn of the 2015 returns for Morgan Stanley
 
