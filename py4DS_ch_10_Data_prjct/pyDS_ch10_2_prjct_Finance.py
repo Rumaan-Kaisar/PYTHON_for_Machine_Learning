@@ -3,7 +3,7 @@
 # copy: new ipynb + py
 #        
 #        
-################# (09-Apr-25 for 11-Apr-25)
+################# (11-Apr-25 for 12-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -595,6 +595,19 @@ returns.ix['2015-01-01':'2015-12-31'].std()     # for the year 2015
     # Risk in 2015: Morgan Stanley (MS), Bank of America (BAC)
 
 
-# ----  rev[09-Apr-2025]  ----
 # Create a distplot using seaborn of the 2015 returns for Morgan Stanley
+returns["MS"]['2015']
+sns.distplot(returns['2015']['MS return'], bins=100, color='red', kde=True)
+
+# instead of distplot, we do histplot
+ms_ret = returns['2015']['MS return']
+sns.histplot(ms_ret, bins=100, color='red', kde=True)
+
+# Create a distplot using seaborn of the 2008 returns for CitiGroup
+c_ret = returns['2008']['C return']
+sns.histplot(c_ret, bins=100, color='green', kde=True)
+
+
+# ----  rev[11-Apr-2025]  ----
+# more visualization
 
