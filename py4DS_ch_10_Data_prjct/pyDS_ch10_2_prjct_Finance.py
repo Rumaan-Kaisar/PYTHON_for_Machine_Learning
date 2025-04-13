@@ -1,9 +1,9 @@
 
-################# 10.6: in 94
+################# 10.6: in 141
 # copy: new ipynb + py
 #        
 #        
-################# (11-Apr-25 for 12-Apr-25)
+################# (12-Apr-25 for 13-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -50,6 +50,7 @@ import datetime
 # We'll use following visualization libraries
 import matplotlib.pyplot as plt
 import seaborn as sns
+# sns.set_style('whitegrid')
 
 # shows figures in ipynb
 %matplotlib inline
@@ -608,6 +609,47 @@ c_ret = returns['2008']['C return']
 sns.histplot(c_ret, bins=100, color='green', kde=True)
 
 
-# ----  rev[11-Apr-2025]  ----
-# more visualization
 
+
+# ----------------    more VISUALIZATION    ----------------
+# This project emphasizes visualizations. You can use any library you prefer—like 
+# Seaborn, Matplotlib, Plotly, Cufflinks, or even just Pandas—to recreate the plots described below.
+
+# Visualize Close prices of all Banks in line plot
+    # Create a line plot to show the Close prices of all banks over time.
+    # Tip: Use a loop or .xs() to extract Close prices for each bank.
+
+# We'll use the "old pickle" from google
+df1 = pd.read_pickle("data_all_banks")  # Load a pickle file into a DataFrame
+close_prices = df1.xs('Close', level="Stock Info", axis=1) # 'Close' valuse for all 6 banks
+
+# Plot using matplotlib
+plt.figure(figsize=(12, 6))
+
+for bank in close_prices.columns:
+    plt.plot(close_prices.index, close_prices[bank], label=bank)
+
+plt.title("Close Prices of All Banks Over Time")
+plt.xlabel("Date")
+plt.ylabel("Close Price (USD)")
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+
+# alternative code 1: Builtin
+for bank in close_prices.columns:
+    close_prices[bank].plot(figsize=(12,4),label=bank)
+plt.legend()
+
+
+# alternative code 2: directly from DataFrame
+df1.xs(key='Close', axis=1, level='Stock Info').plot()
+
+
+# alternative code 3: using plotly
+df1.xs(key='Close', axis=1, level='Stock Info').iplot()
+
+
+# ----  rev[12-Apr-2025]  ----
+# Moving Averages
