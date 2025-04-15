@@ -1,9 +1,9 @@
 
 ################# 10.6: in 141
-# copy: new ipynb + py
+# copy: new ipynb + py + MA note
 #        
 #        
-################# (12-Apr-25 for 13-Apr-25)
+################# (13-Apr-25 for 15-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -651,5 +651,101 @@ df1.xs(key='Close', axis=1, level='Stock Info').plot()
 df1.xs(key='Close', axis=1, level='Stock Info').iplot()
 
 
-# ----  rev[12-Apr-2025]  ----
-# Moving Averages
+
+
+# ----  rev[13-Apr-2025]  ----
+
+# ----  Moving Averages  ----
+# Whats a moving avearge? 
+# A moving average (MA) is a statistical technique used to smooth out short-term fluctuations and highlight longer-term trends in a dataset—commonly applied to time series data like stock prices.
+# Its a sliding window: 
+# A moving average calculates the average value of a variable (e.g., stock closing price) over a sliding window of time.
+
+# For example:
+
+# A 5-day moving average of stock prices takes the average of the last 5 days, then shifts forward one day and does it again.
+
+""" Types of Moving Averages:
+
+Simple Moving Average (SMA):    Equal weighting of past values over the selected window.
+Exponential Moving Average (EMA):   Gives more weight to recent data; reacts more quickly to changes.
+
+Useful:
+Trend Detection: Helps identify bullish (upward) or bearish (downward) trends.
+
+Noise Reduction: Removes daily volatility and makes patterns clearer.
+
+It's widely used in machine learning (ML), deep learning (DL), and reinforcement learning (RL) too — though in different ways depending on the context.
+
+For example in Reinforcement Learning (RL):
+Moving average is used to track reward trends:
+To observe agent performance over time. """
+
+
+# Is it a type of sliding window technique, and is it also used during the training of machine learning (ML), deep learning (DL), or reinforcement learning (RL) models?
+
+
+
+
+
+# Let's analyze the moving averages for these stocks in the year 2008. 
+# Plot the rolling 30 day average against the Close Price for Bank Of America's stock for the year 2008
+
+# GPT--
+
+# vndr--
+plt.figure(figsize=(12,6))
+BAC['Close'].ix['2008-01-01':'2009-01-01'].rolling(window=30).mean().plot(label='30 Day Avg')
+BAC['Close'].ix['2008-01-01':'2009-01-01'].plot(label='BAC CLOSE')
+plt.legend()
+
+
+# Create a heatmap of the correlation between the stocks Close Price.
+
+# GPT--
+
+# vndr--
+sns.heatmap(bank_stocks.xs(key='Close',axis=1,level='Stock Info').corr(),annot=True)
+
+
+# Use seaborn's clustermap to cluster the correlations together:
+
+# GPT--
+
+# vndr--
+sns.clustermap(bank_stocks.xs(key='Close',axis=1,level='Stock Info').corr(),annot=True)
+
+close_corr = bank_stocks.xs(key='Close',axis=1,level='Stock Info').corr()
+close_corr.iplot(kind='heatmap',colorscale='rdylbu')
+
+
+
+# ----    cufflinks:   ----
+# Part 2 (Optional)
+
+# In this second part of the project we will rely on the cufflinks library to create some Technical Analysis plots. This part of the project is experimental due to its heavy reliance on the cuffinks project, so feel free to skip it if any functionality is broken in the future.
+
+# Use .iplot(kind='candle) to create a candle plot of Bank of America's stock from Jan 1st 2015 to Jan 1st 2016.
+
+# GPT--
+
+# vndr--
+BAC[['Open', 'High', 'Low', 'Close']].ix['2015-01-01':'2016-01-01'].iplot(kind='candle')
+
+
+# Use .ta_plot(study='sma') to create a Simple Moving Averages plot of Morgan Stanley for the year 2015.
+
+# GPT--
+
+# vndr--
+MS['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='sma',periods=[13,21,55],title='Simple Moving Averages')
+
+
+# Use .ta_plot(study='boll') to create a Bollinger Band Plot for Bank of America for the year 2015.
+
+# GPT--
+
+# vndr--
+BAC['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='boll')
+
+
