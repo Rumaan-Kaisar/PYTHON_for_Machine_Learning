@@ -3,7 +3,7 @@
 # copy: new ipynb + py + MA note
 #        
 #        
-################# (13-Apr-25 for 15-Apr-25)
+################# (15-Apr-25 for 16-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -652,53 +652,91 @@ df1.xs(key='Close', axis=1, level='Stock Info').iplot()
 
 
 
+""" 
+    ----  Moving Averages  ----
+    Whats a moving avearge? 
+        A moving average (MA) is a statistical technique used to "smooth out short-term fluctuations" and 
+        highlight longer-term trends in a dataset—commonly applied to time series data like stock prices.
 
-# ----  rev[13-Apr-2025]  ----
+    Its a sliding window:
+        A moving average calculates the average value of a variable (e.g., stock closing price) over a sliding window of time.
+        For example:
+            A 5-day moving average of stock prices takes the average of the last 5 days, 
+            then shifts forward one day and does it again.
 
-# ----  Moving Averages  ----
-# Whats a moving avearge? 
-# A moving average (MA) is a statistical technique used to smooth out short-term fluctuations and highlight longer-term trends in a dataset—commonly applied to time series data like stock prices.
-# Its a sliding window: 
-# A moving average calculates the average value of a variable (e.g., stock closing price) over a sliding window of time.
-
-# For example:
-
-# A 5-day moving average of stock prices takes the average of the last 5 days, then shifts forward one day and does it again.
-
-""" Types of Moving Averages:
-
-Simple Moving Average (SMA):    Equal weighting of past values over the selected window.
-Exponential Moving Average (EMA):   Gives more weight to recent data; reacts more quickly to changes.
-
-Useful:
-Trend Detection: Helps identify bullish (upward) or bearish (downward) trends.
-
-Noise Reduction: Removes daily volatility and makes patterns clearer.
-
-It's widely used in machine learning (ML), deep learning (DL), and reinforcement learning (RL) too — though in different ways depending on the context.
-
-For example in Reinforcement Learning (RL):
-Moving average is used to track reward trends:
-To observe agent performance over time. """
+    Types of Moving Averages:
+        Simple Moving Average (SMA):    Equal weighting of past values over the selected window.
+        Exponential Moving Average (EMA):   Gives more weight to recent data; reacts more quickly to changes.
 
 
-# Is it a type of sliding window technique, and is it also used during the training of machine learning (ML), deep learning (DL), or reinforcement learning (RL) models?
+    Usage of MA:
+        Trend Detection: Helps identify bullish (upward) or bearish (downward) trends.
+        Noise Reduction: Removes daily volatility and makes patterns clearer.
+        It's widely used in-
+                    machine learning (ML), 
+                    deep learning (DL), and 
+                    reinforcement learning (RL)  
+            in different ways depending on the context.
+
+            For example in Reinforcement Learning (RL):
+                Moving average is used to track reward trends:
+                To observe agent performance over time. 
+"""
 
 
+# Moving Averages in the year 2008. 
+    # Analyze the 30-day moving average of Bank of America's (BAC) stock during the year 2008.
+    # Plot both the "rolling 30-day average" and the "actual Close price" to observe trends and smoothing effects.
+
+# following both give the same results:
+close_prices['BAC']['2008']
+# or
+close_prices['BAC']['2008-01-01':'2009-01-01']
+
+# BAC's close in 2008
+bac_close_2008 = close_prices['BAC']['2008']
+
+# Compute 30-day moving average
+bac_rolling_30 = bac_close_2008.rolling(window=30).mean()
+
+# Plotting
+plt.figure(figsize=(12, 6))
+
+plt.plot(bac_close_2008, label='BAC Close Price (2008)', alpha=0.6)
+plt.plot(bac_rolling_30, label='30-Day Moving Average', linewidth=2)
+
+plt.title('Bank of America Stock - 30-Day Moving Average (2008)')
+plt.xlabel('Date')
+plt.ylabel('Price (USD)')
+plt.legend()
+plt.tight_layout()
+plt.show()
 
 
-
-# Let's analyze the moving averages for these stocks in the year 2008. 
-# Plot the rolling 30 day average against the Close Price for Bank Of America's stock for the year 2008
-
-# GPT--
-
-# vndr--
+# ALTERNATIVE: Using "ix"
 plt.figure(figsize=(12,6))
-BAC['Close'].ix['2008-01-01':'2009-01-01'].rolling(window=30).mean().plot(label='30 Day Avg')
-BAC['Close'].ix['2008-01-01':'2009-01-01'].plot(label='BAC CLOSE')
+close_prices['BAC']['2008-01-01':'2009-01-01'].rolling(window=30).mean().plot(label='30 Day Avg')
+close_prices['BAC']['2008-01-01':'2009-01-01'].plot(label='BAC CLOSE')
 plt.legend()
 
+
+# --------    rolling() in Pandas    --------
+# The .rolling() function in pandas is used to create a rolling view 
+    # (or sliding window) over a time series or sequence of data.
+
+    # It allows the computation of moving (rolling) statistics, such as:
+        # Moving averages
+        # Rolling sums
+        # Rolling standard deviations
+        # And more
+
+df['Close'].rolling(window=30)
+# This sets up a window of 30 values, moving one step at a time through the data. 
+# But it doesn't compute anything until you apply an AGGREGATION FUNCTION, like .mean(), .sum(), .std(), etc.
+
+
+
+# ----  rev[15-Apr-2025]  ----
 
 # Create a heatmap of the correlation between the stocks Close Price.
 
@@ -749,3 +787,4 @@ MS['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='sma',periods=[13,21,55]
 BAC['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='boll')
 
 
+    
