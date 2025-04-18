@@ -1,9 +1,9 @@
 
-################# 10.6: in 141
+################# 10.6: iplot
 # copy: new ipynb + py + MA note
 #        
 #        
-################# (15-Apr-25 for 16-Apr-25)
+################# (16-Apr-25 for 18-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -736,30 +736,35 @@ df['Close'].rolling(window=30)
 
 
 
-# ----  rev[15-Apr-2025]  ----
+# ----  heatmap and clustermap  ----
 
-# Create a heatmap of the correlation between the stocks Close Price.
+# Heatmap of the correlation between the Close Price.
+sns.heatmap(df1.xs(key='Close',axis=1,level='Stock Info').corr(), annot=True)
 
-# GPT--
-
-# vndr--
-sns.heatmap(bank_stocks.xs(key='Close',axis=1,level='Stock Info').corr(),annot=True)
+# Clustermap to cluster the correlations:
+sns.clustermap(close_prices.corr(),annot=True)
 
 
-# Use seaborn's clustermap to cluster the correlations together:
 
-# GPT--
 
-# vndr--
-sns.clustermap(bank_stocks.xs(key='Close',axis=1,level='Stock Info').corr(),annot=True)
+
+# ----    cufflinks: using local "Plotly.js"   ----
+# use 'cdn' or 'plotly-2.35.2.min.js in working directory'
+    # The HTML file's large size is primarily due to the embedded Plotly.js.
+    # we can download "Plotly.js" to our working directory and reference it locally.
+    # pio.write_html(fig, 'plot_local_plotly_js.html', include_plotlyjs='.\plotly-2.35.2.min.js')
+
+# Part 2 (Optional)
+import cufflinks as cf
+
+import plotly.io as pio
+import plotly.express as px
+
+
 
 close_corr = bank_stocks.xs(key='Close',axis=1,level='Stock Info').corr()
 close_corr.iplot(kind='heatmap',colorscale='rdylbu')
 
-
-
-# ----    cufflinks:   ----
-# Part 2 (Optional)
 
 # In this second part of the project we will rely on the cufflinks library to create some Technical Analysis plots. This part of the project is experimental due to its heavy reliance on the cuffinks project, so feel free to skip it if any functionality is broken in the future.
 
@@ -768,7 +773,7 @@ close_corr.iplot(kind='heatmap',colorscale='rdylbu')
 # GPT--
 
 # vndr--
-BAC[['Open', 'High', 'Low', 'Close']].ix['2015-01-01':'2016-01-01'].iplot(kind='candle')
+fig = BAC[['Open', 'High', 'Low', 'Close']].ix['2015-01-01':'2016-01-01'].iplot(kind='candle')
 
 
 # Use .ta_plot(study='sma') to create a Simple Moving Averages plot of Morgan Stanley for the year 2015.
@@ -776,7 +781,7 @@ BAC[['Open', 'High', 'Low', 'Close']].ix['2015-01-01':'2016-01-01'].iplot(kind='
 # GPT--
 
 # vndr--
-MS['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='sma',periods=[13,21,55],title='Simple Moving Averages')
+fig = MS['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='sma',periods=[13,21,55],title='Simple Moving Averages')
 
 
 # Use .ta_plot(study='boll') to create a Bollinger Band Plot for Bank of America for the year 2015.
@@ -784,7 +789,7 @@ MS['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='sma',periods=[13,21,55]
 # GPT--
 
 # vndr--
-BAC['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='boll')
+fig = BAC['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='boll')
 
 
     
