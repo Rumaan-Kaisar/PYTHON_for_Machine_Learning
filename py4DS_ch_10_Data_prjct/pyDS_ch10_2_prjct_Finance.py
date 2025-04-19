@@ -1,9 +1,9 @@
 
 ################# 10.6: iplot
-# copy: new ipynb + py + MA note
+# copy: new ipynb + py + fig
 #        
 #        
-################# (16-Apr-25 for 18-Apr-25)
+################# (18-Apr-25 for 19-Apr-25)
 
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
@@ -739,11 +739,10 @@ df['Close'].rolling(window=30)
 # ----  heatmap and clustermap  ----
 
 # Heatmap of the correlation between the Close Price.
-sns.heatmap(df1.xs(key='Close',axis=1,level='Stock Info').corr(), annot=True)
+sns.heatmap(df1.xs(key='Close', axis=1, level='Stock Info').corr(), annot=True)
 
 # Clustermap to cluster the correlations:
 sns.clustermap(close_prices.corr(),annot=True)
-
 
 
 
@@ -753,18 +752,48 @@ sns.clustermap(close_prices.corr(),annot=True)
     # The HTML file's large size is primarily due to the embedded Plotly.js.
     # we can download "Plotly.js" to our working directory and reference it locally.
     # pio.write_html(fig, 'plot_local_plotly_js.html', include_plotlyjs='.\plotly-2.35.2.min.js')
-
-# Part 2 (Optional)
 import cufflinks as cf
 
 import plotly.io as pio
 import plotly.express as px
 
+close_corr = df1.xs(key='Close', axis=1, level='Stock Info').corr()
+
+# credentials required: skipped
+fig1 = close_corr.iplot(kind='heatmap',colorscale='rdylbu')
+# save to html
+pio.write_html(fig1, 'stock_fig1_heatmap.html', include_plotlyjs='.\plotly-2.35.2.min.js')
 
 
-close_corr = bank_stocks.xs(key='Close',axis=1,level='Stock Info').corr()
-close_corr.iplot(kind='heatmap',colorscale='rdylbu')
+# --------------  ALTRENATIVE  --------------
+# instead use following (directly use go.Figure obj to save as html)
+import plotly.graph_objects as go
+from plotly.offline import iplot, init_notebook_mode
+import pandas as pd
 
+# Initialize notebook mode
+init_notebook_mode(connected=True)
+
+# Example Data
+corr = close_corr
+
+# Heatmap figure
+fig = go.Figure(data=go.Heatmap(
+    z=corr.values,
+    x=corr.columns,
+    y=corr.columns,
+    colorscale='Viridis'
+))
+
+# Plot offline inside notebook
+iplot(fig)
+
+# save to html
+pio.write_html(fig, 'stock_fig1_heatmap.html', include_plotlyjs='.\plotly-2.35.2.min.js')
+
+
+
+# ----  rev[18-Apr-2025]  ----
 
 # In this second part of the project we will rely on the cufflinks library to create some Technical Analysis plots. This part of the project is experimental due to its heavy reliance on the cuffinks project, so feel free to skip it if any functionality is broken in the future.
 
