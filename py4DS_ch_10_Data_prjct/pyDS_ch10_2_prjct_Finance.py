@@ -1,10 +1,4 @@
 
-################# 10.6: iplot
-# copy: new ipynb + py + fig
-#        
-#        
-################# (19-Apr-25 for 20-Apr-25)
-
 # Courses: PrTla PY for DS & ML >    10.6, 10.7, 10.8, 10.9
 
 # Download data: https://www.dropbox.com/s/s9uq4qvls4rghm7/all_banks?dl=0
@@ -828,33 +822,33 @@ fig1.update_layout(title='BAC Stock - Candlestick Chart (2015)',
 # Show the plot
 fig1.show()
 
+# save to html
+pio.write_html(fig1, 'stock_fig2_candleplot.html', include_plotlyjs='.\plotly-2.35.2.min.js')
 
 
-# ----  rev[19-Apr-2025]  ----
 
-# Use .ta_plot(study='sma') to create a Simple Moving Averages plot of Morgan Stanley for the year 2015.
+
+# --------  PLOTLY: Simple Moving Averages plot  --------
+# provides a clear visualization of the stock's closing price alongside its short-term and long-term trends for a technical analysis
+
+# Use .ta_plot(study='sma') to create a Simple Moving Averages plot of "Morgan Stanley" for the year 2015.
 fig = MS['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='sma',periods=[13,21,55],title='Simple Moving Averages')
 
 
-# Use .ta_plot(study='boll') to create a Bollinger Band Plot for Bank of America for the year 2015.
-fig = BAC['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='boll')
+# Above is no longer used; use the following ALTERNATIVE instead.
+# Note: 
+        # "df1" must be a multi-level column structure with stock tickers at the top level
+        # rolling(window).mean() function in pandas computes the moving average over the specified window
 
+        # Each "go.Scatter" trace represents a line on the plot. 
+            # You can customize the appearance by modifying parameters like "line=dict(color='blue')"
 
-
-
-
-
-To create a Simple Moving Averages (SMA) plot for Bank of America's (BAC) stock in 2015 using only `plotly.graph_objects`, you can follow these steps:
-
-### 📊 Plotting SMAs with Plotly
-
-```python
 import pandas as pd
 import plotly.graph_objects as go
 
 # Assuming df1 is your DataFrame with multi-level columns
 # Extract BAC data for 2015
-bac_2015 = df1['BAC'].loc['2015', ['Close']].copy()
+bac_2015 = df1['MS'].loc['2015', ['Close']].copy()
 
 # Calculate SMAs using pandas
 bac_2015['SMA_13'] = bac_2015['Close'].rolling(window=13).mean()
@@ -862,10 +856,10 @@ bac_2015['SMA_21'] = bac_2015['Close'].rolling(window=21).mean()
 bac_2015['SMA_55'] = bac_2015['Close'].rolling(window=55).mean()
 
 # Create the figure
-fig = go.Figure()
+fig2 = go.Figure()
 
 # Add Close price trace
-fig.add_trace(go.Scatter(
+fig2.add_trace(go.Scatter(
     x=bac_2015.index,
     y=bac_2015['Close'],
     mode='lines',
@@ -874,21 +868,21 @@ fig.add_trace(go.Scatter(
 ))
 
 # Add SMA traces
-fig.add_trace(go.Scatter(
+fig2.add_trace(go.Scatter(
     x=bac_2015.index,
     y=bac_2015['SMA_13'],
     mode='lines',
     name='SMA 13',
     line=dict(color='blue')
 ))
-fig.add_trace(go.Scatter(
+fig2.add_trace(go.Scatter(
     x=bac_2015.index,
     y=bac_2015['SMA_21'],
     mode='lines',
     name='SMA 21',
     line=dict(color='orange')
 ))
-fig.add_trace(go.Scatter(
+fig2.add_trace(go.Scatter(
     x=bac_2015.index,
     y=bac_2015['SMA_55'],
     mode='lines',
@@ -897,7 +891,7 @@ fig.add_trace(go.Scatter(
 ))
 
 # Update layout
-fig.update_layout(
+fig2.update_layout(
     title='BAC Close Price with SMAs (2015)',
     xaxis_title='Date',
     yaxis_title='Price',
@@ -905,31 +899,28 @@ fig.update_layout(
 )
 
 # Show the plot
-fig.show()
-```
+# fig2.show()
 
-### 📝 Notes
-
-- **DataFrame Structure** Ensure that your DataFrame `df1` has a multi-level column structure with stock tickers at the top level and OHLC data at the second leve.
-
-- **Rolling Averages** The `rolling(window).mean()` function in pandas computes the moving average over the specified windo.
-
-- **Plotly Traces** Each `go.Scatter` trace represents a line on the plot. You can customize the appearance by modifying parameters like `line=dict(color='blue').
-This approach provides a clear visualization of the stock's closing price alongside its short-term and long-term trends, aiding in technical analysi. 
+# save to html
+import plotly.io as pio
+pio.write_html(fig2, 'stock_fig3_SMA.html', include_plotlyjs='.\plotly-2.35.2.min.js')
 
 
 
 
 
+# --------  PLOTLY: Bollinger Band Plot  --------
 
+# Use .ta_plot(study='boll') to create a Bollinger Band Plot for Bank of America for the year 2015.
+fig = BAC['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='boll')
 
-Great! Here's how to create a **Bollinger Bands Plot** for **BAC stock in 2015** using only `plotly.graph_objects`:
+# Above is no longer valid; use the following ALTERNATIVE instead.
+# What It Shows:
+    # Close Price: Black line.
+    # 20-day SMA: Blue line (midline of Bollinger Band).
+    # Upper & Lower Bands: Green and red lines.
+    # Shaded Region: Volatility envelope indicating ±2 standard deviations from SMA.
 
----
-
-### 📊 Plotting Bollinger Bands with `plotly.graph_objects`
-
-```python
 import pandas as pd
 import plotly.graph_objects as go
 
@@ -947,10 +938,10 @@ bac_2015['Upper Band'] = bac_2015['SMA_20'] + (2 * bac_2015['STD_20'])
 bac_2015['Lower Band'] = bac_2015['SMA_20'] - (2 * bac_2015['STD_20'])
 
 # Create the figure
-fig = go.Figure()
+fig3 = go.Figure()
 
 # Close price
-fig.add_trace(go.Scatter(
+fig3.add_trace(go.Scatter(
     x=bac_2015.index,
     y=bac_2015['Close'],
     mode='lines',
@@ -959,7 +950,7 @@ fig.add_trace(go.Scatter(
 ))
 
 # SMA 20
-fig.add_trace(go.Scatter(
+fig3.add_trace(go.Scatter(
     x=bac_2015.index,
     y=bac_2015['SMA_20'],
     mode='lines',
@@ -968,7 +959,7 @@ fig.add_trace(go.Scatter(
 ))
 
 # Upper Bollinger Band
-fig.add_trace(go.Scatter(
+fig3.add_trace(go.Scatter(
     x=bac_2015.index,
     y=bac_2015['Upper Band'],
     mode='lines',
@@ -978,7 +969,7 @@ fig.add_trace(go.Scatter(
 ))
 
 # Lower Bollinger Band
-fig.add_trace(go.Scatter(
+fig3.add_trace(go.Scatter(
     x=bac_2015.index,
     y=bac_2015['Lower Band'],
     mode='lines',
@@ -988,7 +979,7 @@ fig.add_trace(go.Scatter(
 ))
 
 # Fill area between bands
-fig.add_trace(go.Scatter(
+fig3.add_trace(go.Scatter(
     x=bac_2015.index.tolist() + bac_2015.index[::-1].tolist(),
     y=bac_2015['Upper Band'].tolist() + bac_2015['Lower Band'][::-1].tolist(),
     fill='toself',
@@ -999,7 +990,7 @@ fig.add_trace(go.Scatter(
 ))
 
 # Layout settings
-fig.update_layout(
+fig3.update_layout(
     title='BAC Bollinger Bands (2015)',
     xaxis_title='Date',
     yaxis_title='Price',
@@ -1007,20 +998,9 @@ fig.update_layout(
 )
 
 # Show plot
-fig.show()
-```
+# fig3.show()
 
----
-
-### 🧠 What It Shows:
-
-- **Close Price**: Black line.
-- **20-day SMA**: Blue line (midline of Bollinger Band).
-- **Upper & Lower Bands**: Green and red lines.
-- **Shaded Region**: Volatility envelope indicating ±2 standard deviations from SMA.
-
-Let me know if you'd like the same for other technical indicators too!
-
-
-
+# save to html
+import plotly.io as pio
+pio.write_html(fig3, 'stock_fig4_BollingerBand.html', include_plotlyjs='.\plotly-2.35.2.min.js')
 
