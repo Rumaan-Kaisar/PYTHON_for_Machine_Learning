@@ -1,0 +1,8 @@
+
+-----------------    Machine Learning basics    -----------------
+
+    Introduction to Machine Learning
+    Linear Regression
+    Cross Validation and Bias-Variance Trade-Off
+
+    :: update from folder_structure
