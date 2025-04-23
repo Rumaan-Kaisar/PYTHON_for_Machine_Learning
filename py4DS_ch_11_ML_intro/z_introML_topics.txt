@@ -1,8 +1,22 @@
 
 -----------------    Machine Learning basics    -----------------
 
-    Introduction to Machine Learning
-    Linear Regression
-    Cross Validation and Bias-Variance Trade-Off
+1. Introduction to Machine Learning
+    Welcome to the Machine Learning Section!.mp4
+    Supervised Learning Overview.mp4
+    Evaluating Performance - Classification Error Metrics.mp4
+    Evaluating Performance - Regression Error Metrics.mp4
+    Machine Learning with Python.mp4
 
-    :: update from folder_structure
+
+2. Linear Regression
+    Linear Regression Theory.mp4 
+    Linear Regression with Python - Part 1.mp4 
+    Linear Regression with Python - Part 2.mp4 
+    Linear Regression Project 0verview.mp4 
+    Linear Regression Project Solution.mp4
+
+
+3. Cross Validation and Bias-Variance Trade-Off
+    Bias Variance Trade-Off
+
