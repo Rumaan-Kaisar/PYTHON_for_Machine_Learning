@@ -5,6 +5,7 @@
 # ----------------    project: Emergency - 911 Calls    ----------------
 
 # For this project, we'll analyze 911 call data from Kaggle (https://www.kaggle.com/mchirico/montcoalert)
+# Go to kaggle -> Dataset (we also can post dataset there)
 # Since the dataset is large, we'll use a smaller version from any GitHub repo with similar data. 
 
 # --------  About dataset:  --------
@@ -152,7 +153,9 @@ byMonth.head(1) # prints 1 row from each group of months (gruped by month)
 import matplotlib.pyplot as plt
 
 # plots the number of calls per month using the title column as the count
-# Could be any column
+# Could be any column: however some columns may have missing valuse. 
+    # The best practice is coosing "lat" or "lng" because latitude and longitude always counted
+    # in our case we'll use "title", because its also counted
 counted['title'].plot(figsize=(10, 5), marker='o', linestyle='-')
 plt.xlabel('Month')
 plt.ylabel('Number of Calls')
@@ -168,6 +171,8 @@ import seaborn as sns
 counted = counted.reset_index()  
 # Plot using seaborn's lmplot
 sns.lmplot(x='Month', y='title', data=counted)  
+# Notice the number of calls desreases to month 12
+    # error grows with less information as month reaches to 12
 
 
 
@@ -254,6 +259,11 @@ pd.set_option('display.width', 1000)  # Adjust width (increase if needed)
 # HeatMap
 plt.figure(figsize=(12,6))
 sns.heatmap(heatmap_data, cmap='viridis')
+# observations:
+# we can see minimal calls between hours 0 and 6, because it's midnight to morning time and most are asleep
+# most 911 call are EMS, Traffic accidents and Fire and they're happenning in between 7am to 7pm
+# also notice Sunday & Saturday has less activity
+
 
 # clustermap
 sns.clustermap(heatmap_data, cmap="viridis")
