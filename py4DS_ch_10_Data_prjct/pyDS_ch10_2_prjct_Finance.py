@@ -325,6 +325,7 @@ import seaborn as sns
 sns.pairplot(returns[1:])
 # To set the bin size, use the "diag_kws" parameter, which allows passing arguments to the "diagonal histograms".
 sns.pairplot(returns[1:], diag_kws={'bins': 30})  # Set bins to 30
+# Notice "C" Citigroup has wieard vertical scatterplot, it indicates the huge crash of Citigroup in 2008
 
 
 # How to Identify the Best/Worst Performing Stock?
@@ -332,6 +333,10 @@ sns.pairplot(returns[1:], diag_kws={'bins': 30})  # Set bins to 30
 # --------  Calculate Summary Statistics  --------
 #     Use .mean() to get the average return.
 #     Use .std() to check volatility (higher standard deviation means more risk).
+
+# Volatility: A high standard deviation may indicate a riskier stock.
+    # When we get a large standard deviation it means the stocks going "up" and "down" a lot
+    # small standard deviation means proce is steady
 
 returns.mean()
 returns.std()
@@ -406,6 +411,8 @@ plt.show()
 
 # -------------  subplot (same scale)  -------------
 # Volatility: A high standard deviation may indicate a riskier stock.
+    # When we get a large standard deviation it means the stocks going "up" and "down" a lot
+    # small standard deviation means proce is steady
 
 import seaborn as sns
 import matplotlib.pyplot as plt
