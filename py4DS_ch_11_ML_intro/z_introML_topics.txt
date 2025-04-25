@@ -1,22 +1,48 @@
 
+
+--------------    ML part : 1    --------------
+
+Objectives: Eacg algoritm consisits 5 parts
+    - Intro & basic theory
+    - Opt reading assignment
+    - py implementation of that ML algorithm
+    - Portfolio project exercise
+- solutuion of the exercise
+
+-------------------------------------------
+
+
+
 -----------------    Machine Learning basics    -----------------
 
-1. Introduction to Machine Learning
-    Welcome to the Machine Learning Section!.mp4
-    Supervised Learning Overview.mp4
-    Evaluating Performance - Classification Error Metrics.mp4
-    Evaluating Performance - Regression Error Metrics.mp4
-    Machine Learning with Python.mp4
+part 1: Introduction to Machine Learning
+(just theory, no code)
+    Welcome to the Machine Learning Section!
+    ipynb-note:     Supervised Learning Overview
+
+    ipynb-note:     Evaluating Performance - Classification Error Metrics
+                    Evaluating Performance - Regression Error Metrics
+
+    ipynb-note:     Machine Learning with Python
 
 
 2. Linear Regression
-    Linear Regression Theory.mp4 
-    Linear Regression with Python - Part 1.mp4 
-    Linear Regression with Python - Part 2.mp4 
-    Linear Regression Project 0verview.mp4 
-    Linear Regression Project Solution.mp4
+    ipynb-note:     Linear Regression Theory
+
+    ipynb/py_code:
+                    Linear Regression with Python - Part 1
+                    Linear Regression with Python - Part 2
+
+    ipynb/py_prctc:
+                    Linear Regression Project 0verview
+                    Linear Regression Project Solution
 
 
 3. Cross Validation and Bias-Variance Trade-Off
-    Bias Variance Trade-Off
+    ipynb/py:       Bias Variance Trade-Off
+
+
+
+
+
 
