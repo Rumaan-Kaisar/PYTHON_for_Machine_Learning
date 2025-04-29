@@ -9,7 +9,7 @@
 # Courses: PrTla PY for DS & ML >    14.1, 14.3, 14.6
 
 """ 
-    Each algorithm we cover in this section will follow 4 parts:
+    Each Machine Learning algorithm we cover in this section will follow 4 parts:
         A short theory lecture.
         Reading assignment (optional)
         A implementation in Python
@@ -117,96 +117,7 @@ No significant misconceptions were present, but it did wisely caution against ov
 Would you like this turned into a structured study note or diagram as well? Can arrange that too.
 
 
-
--------------    DS    --------------
-
-Analysis of the Text: Supervised Learning Lecture Breakdown
-1. Core Topics Identified:
-Supervised Learning Fundamentals
-
-Definition: Algorithms trained on labeled examples (input-output pairs).
-
-Example: Email spam detection (spam vs. legitimate) or movie reviews (positive vs. negative).
-
-Key Idea: Historical labeled data trains models to predict future unlabeled data.
-
-Neural Networks & Model Training
-
-Process:
-
-Input data + correct outputs → Model compares predictions vs. actuals → Adjusts weights/biases to minimize errors.
-
-Key Terms: Weights, bias values (mentioned but not deeply explained; likely a teaser for later theory).
-
-Data Pipeline for Supervised Learning
-
-Step 1: Data Acquisition
-
-Sources: Customer data, online databases, physical sensors, etc.
-
-Step 2: Data Cleaning & Formatting
-
-Tools: Libraries like Pandas for preprocessing.
-
-Step 3: Train-Test Split
-
-Typical ratio: 70% training, 30% testing.
-
-Misconception Alert: The text initially oversimplifies by omitting validation sets, later correcting this.
-
-Model Evaluation & Pitfalls
-
-Problem: Using the same test set repeatedly to tweak models → "cheating" (data leakage).
-
-Solution: Introduce a validation set (3-way split: train/validate/test).
-
-Training set: Fit model parameters.
-
-Validation set: Tune hyperparameters (e.g., layers, neurons).
-
-Test set: Final unseen data to evaluate real-world performance.
-
-Critical Point: No further tweaks after test-set evaluation—this metric reflects true performance.
-
-Course Context & Simplifications
-
-The lecture acknowledges a simplified approach (train-test only) for course exercises but emphasizes real-world need for train-validate-test splits.
-
-Students are encouraged to explore 3-way splits later.
-
-2. Key Clarifications & Corrections:
-Misconception: Early text implies a single train-test split is sufficient.
-
-Reality: Repeatedly adjusting a model based on test-set performance inflates accuracy (fails to generalize). The validation set acts as a "proxy test set" during development.
-
-Technical Nuance:
-
-Hyperparameters vs. Parameters:
-
-Parameters: Learned during training (e.g., weights).
-
-Hyperparameters: Set before training (e.g., layers, neurons). The text conflates these slightly.
-
-Overfitting Mention: The lecture hints at "sobrepesca" (likely overfitting—a typo/spelling error) as a future topic.
-
-3. Cultural/Contextual Insights:
-Language Note: The Spanish term "sobrepesca" literally means "overfishing" but is likely a mistranscription of overfitting (common in ML).
-
-Pedagogical Approach: The speaker balances theory with practical concessions (simplified splits for beginners), reflecting a hands-on teaching style.
-
-4. Final Summary:
-This text is a lecture snippet on supervised learning, covering:
-
-Labeled data → training → prediction.
-
-The criticality of proper data splits (train/validate/test) to avoid biased models.
-
-A student-friendly simplification (train-test only) with a nod to advanced practices.
-
-Next Steps: Likely diving into overfitting, hyperparameter tuning, or neural network architectures.
-
-Let me know if you’d like deeper dives into any section!
-
+GPT: Give a simple example of ML pipeline for supervised learning
 
 
 """
