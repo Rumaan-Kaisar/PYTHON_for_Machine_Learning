@@ -10,10 +10,6 @@
 
 
 
-""" 
-
-
-
 Performance Evaluation for Classification Models:
 
 
@@ -242,64 +238,24 @@ Next Topic: Likely model tuning (e.g., hyperparameter optimization) or advanced 
 
 Need practical examples? Ask about applying these metrics to specific datasets!
 
- """
 
 
 
 
 
-
-
-
-
-
-
-"""  
 ----------------------    Use google translate:    -----------------------------
 
-Welcome everyone to this lecture on performance evaluation, particularly for classification problems, in the
-
-next lecture.
-
-We'll be discussing performance evaluation for regression protests. So, we just learned that after
-
-a machine learning process is complete, we'll use performance metrics to evaluate how our model actually performed.
-
-And we keep mentioning the fact that we train our model on the training data and then we'll use
-
-some kind of metrics to actually see how it performed on the test set or the validation set.
-
-So let's go ahead and discuss what that really means.
-
-What classification metrics are we going to use and the key classification metrics?
-
-We should understand our accuracy, precision, recall, and f1 score. 
-
-
-
-But first, we need to understand the reasoning behind these metrics and how they will actually perform in the real world. 
-Typically, in any classification task, your model can actually only achieve two outcomes: either your model was correct in its prediction, or your model was incorrect in its prediction. 
-And all classification metrics stem from this idea.
 
 --------------------------  1.12
 
- Now,
 
-Fortunately, incorrect versus correct also expands to situations where you have multiple classes, such as trying to predict categories of more than two.
 
-For example, you have Category A, B, C, D. You can either be correct in predicting the correct category or incorrect in predicting the correct category.
 
-Now, for the purpose of explaining the metrics, let's go ahead and simplify this to what is known as a binary classification situation, which means two.
 
-So, there are only two classes available: either class 0 or class 1.
 
-And this idea will also expand to multiple classes.
 
-But for simplicity, let's just imagine a binary classification situation, so in our example, we'll try to predict whether an image
-
-is a dog or a cat. The neural network part of this course will actually perform this task later during the convolution of the entire
-
-course.
+Let's conside an example: in this example, we'll try to predict whether an image is a dog or a cat. 
+we' can also perform this task using CNN (by using neural network)
 
 Now, since this is a supervised learning problem, what we'll need to do first is fit or train a model
 
@@ -454,4 +410,4 @@ I got it right.
 And as always, context is everything.
 
 Let's imagine you were doing some kind of machinery model and got a squared error.
-"""
+
