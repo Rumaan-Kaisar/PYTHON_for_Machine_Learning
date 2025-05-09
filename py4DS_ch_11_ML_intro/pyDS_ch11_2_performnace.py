@@ -248,30 +248,9 @@ Need practical examples? Ask about applying these metrics to specific datasets!
 
 --------------------------  2.43 -> 3.55
 
+Sure — here’s a **clear, short clarification without losing context**:
 
-
----------------------------------------------------
-Evaluation process:
-
-Let's imagine we've already trained our model on some training data, and now it's time to actually evaluate the model's performance. This is where our test dataset comes in.
-
-So we take a test image, which we're going to label "x" (X_test), which stands for "feature." So the image itself is a feature, and this is from the test set, 
-
-and there's a corresponding correct label from Y_test.
-
-So we have feature or image X, and that's the test image, and we also have the correct label from Y_test.
-
-
-
-And in this case, this image is an image of a dog. So, what we're going to do is feed the features. In this case, we'll feed the image into our already trained model, and then the model will make some predictions.
-
-So, the model predicts that it's a dog, and then what we do is compare the prediction with the correct label.
-
-So, if this dog (prediction) = dog (correct label), in this case was correct; 
-however, it might have predicted this image to be a cat. And in this case, this comparison with the correct label would be incorrect.
-
-
-And these are essentially the only two situations. You're either right or wrong, correct or incorrect. 
+---
 
 
 ------------------------------
