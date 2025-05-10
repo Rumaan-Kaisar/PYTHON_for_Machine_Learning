@@ -10,237 +10,6 @@
 
 
 
-Performance Evaluation for Classification Models:
-
-
-1. Core Topics Identified:
-Introduction to Model Evaluation
-
-Focus: Assessing performance of classification models (binary and multiclass).
-
-Key Idea: After training, metrics quantify how well the model generalizes to unseen data (test/validation sets).
-
-Classification Metrics
-
-Accuracy:
-
-Formula: (Correct Predictions) / (Total Predictions).
-
-Limitation: Misleading for imbalanced datasets (e.g., 99% "dog" images → 99% accuracy by always predicting "dog").
-
-Precision:
-
-Measures: "How many predicted positives are actual positives?"
-
-Formula: True Positives / (True Positives + False Positives).
-
-Recall (Sensitivity):
-
-Measures: "How many actual positives were correctly predicted?"
-
-Formula: True Positives / (True Positives + False Negatives).
-
-F1 Score:
-
-Harmonic mean of precision and recall. Penalizes extreme imbalances (e.g., high precision but low recall).
-
-Formula: 2 * (Precision * Recall) / (Precision + Recall).
-
-Confusion Matrix
-
-A table comparing predicted vs. actual labels:
-
-True Positives (TP): Correctly predicted positives.
-
-True Negatives (TN): Correctly predicted negatives.
-
-False Positives (FP): Incorrectly predicted positives (Type I error).
-
-False Negatives (FN): Incorrectly predicted negatives (Type II error).
-
-Application: Critical in fields like medical diagnosis (e.g., cancer screening).
-
-Trade-offs & Real-World Context
-
-Precision-Recall Trade-off:
-
-High recall (minimize FNs) often increases FPs (e.g., in disease diagnosis, missing a case is worse than false alarms).
-
-High precision (minimize FPs) may miss true cases (e.g., spam filtering).
-
-Domain-Specific Decisions:
-
-Example: In cancer testing, prioritize low FNs (avoid missing patients) even if it raises FPs (follow-up tests can clarify).
-
-Misconceptions Clarified
-
-Accuracy is Not Always Reliable:
-
-The text initially highlights accuracy but later emphasizes its pitfalls in imbalanced datasets.
-
-"One Metric Fits All" Fallacy:
-
-No universal "good" metric—depends on the problem (e.g., fraud detection vs. movie reviews).
-
-2. Key Insights & Corrections:
-Binary vs. Multiclass:
-
-Metrics extend to multiclass problems (e.g., "correct/incorrect" per class), but binary examples simplify explanations.
-
-F1 Score Nuance:
-
-The text correctly notes F1 is a harmonic mean (not arithmetic), which harshly penalizes low values in either precision or recall.
-
-Context Matters:
-
-The lecture stresses consulting domain experts (e.g., doctors for medical models) to set acceptable FP/FN thresholds.
-
-3. Pedagogical Approach:
-Simplification for Teaching:
-
-Uses binary classification (dog vs. cat) to introduce concepts but hints at scalability to multiclass.
-
-Practical Warning:
-
-Warns against over-relying on test-set metrics without validation sets (echoing prior lecture’s train-validate-test split).
-
-4. Final Summary:
-This text is a lecture on evaluating classification models, covering:
-
-Core metrics (accuracy, precision, recall, F1).
-
-Confusion matrices as a foundational tool.
-
-The criticality of context (e.g., medical diagnosis vs. spam filtering).
-
-Trade-offs between false positives/negatives and their real-world implications.
-
-Next Topic: Performance evaluation for regression tasks (likely MSE, R-squared).
-
-Need deeper dives? Ask about specific metrics or real-world examples! 
-
-
-
-Analysis of the Text: Regression Error Metrics
-1. Core Topics Identified:
-Introduction to Regression Evaluation
-
-Regression vs. Classification:
-
-Regression predicts continuous values (e.g., house prices).
-
-Classification predicts categorical values (e.g., spam vs. legitimate emails).
-
-Key Difference: Metrics like accuracy/precision/recall (used in classification) are irrelevant for regression.
-
-Regression Error Metrics
-
-Mean Absolute Error (MAE):
-
-Formula: Average of |True Value − Predicted Value|.
-
-Pros: Easy to interpret (same units as the target variable, e.g., dollars for house prices).
-
-Cons: Does not penalize large errors heavily (treats all errors equally).
-
-Mean Squared Error (MSE):
-
-Formula: Average of (True Value − Predicted Value)².
-
-Pros: Punishes larger errors more severely (useful for outlier-sensitive tasks).
-
-Cons: Units are squared (e.g., dollars²), making interpretation harder.
-
-Root Mean Squared Error (RMSE):
-
-Formula: √MSE.
-
-Pros: Retains MSE’s outlier sensitivity but restores original units (e.g., dollars).
-
-Most popular for regression tasks.
-
-Contextual Interpretation of Metrics
-
-No Universal "Good" Value:
-
-Example: An RMSE of $10 is excellent for house price prediction but terrible for candy bar prices.
-
-Domain Knowledge is Critical:
-
-Compare error metrics to the average target value (e.g., RMSE of 
-10
-v
-s
-.
-a
-v
-e
-r
-a
-g
-e
-h
-o
-u
-s
-e
-p
-r
-i
-c
-e
-o
-f
-10vs.averagehousepriceof300K).
-
-Collaborate with domain experts (e.g., real estate agents for housing models).
-
-Visualizing Trade-offs
-
-Anscombe’s Quartet Example:
-
-Four datasets with identical statistical properties (e.g., mean, variance) but vastly different distributions.
-
-Highlights why visualizing data is as important as calculating metrics.
-
-2. Key Clarifications & Corrections:
-Misconception: "MAE is always better because it’s simpler."
-
-Reality: MAE is robust to outliers but may hide significant prediction flaws. MSE/RMSE are preferred when large errors are costly (e.g., medical dosing).
-
-Units Matter:
-
-The text correctly notes that MSE’s squared units are unintuitive, but RMSE fixes this.
-
-Error Metric Selection:
-
-Not explicitly stated: Huber Loss (a hybrid of MAE/MSE) is another option for balancing outlier sensitivity and interpretability.
-
-3. Pedagogical Approach:
-Simplification: Uses house price prediction as an intuitive example.
-
-Real-World Analogy: Contrasts RMSE applicability for housing (good) vs. candy bars (bad).
-
-Warning Against Blind Metrics: Emphasizes that error values must be compared to the dataset’s scale.
-
-4. Final Summary:
-This lecture explains regression evaluation metrics:
-
-MAE: Simple but ignores outlier severity.
-
-MSE: Punishes large errors but hard to interpret.
-
-RMSE: Best of both worlds (sensitive to outliers + interpretable units).
-
-Context is King: No metric is universally "good"—always compare to domain-specific benchmarks.
-
-Next Topic: Likely model tuning (e.g., hyperparameter optimization) or advanced regression techniques.
-
-Need practical examples? Ask about applying these metrics to specific datasets!
-
-
-
-
 
 
 ----------------------    Use google translate:    -----------------------------
@@ -259,15 +28,172 @@ de prueba x.
 ------------------------------
 
 
-so we repeat this process for all the images in our test data x.
+Accuracy and confusion matrix:
+We could organize our predicted values ​​against the actual values ​​and what's known as a "confusion matrix", 
 
-And in the end, we'll have a count of correct matches and a count of incorrect matches.
 
-And the key realization we need to make here is that in the real world, not all incorrect or correct matches have the same value.
+Accuracy
+so we'll touch on the confusion matrix later.
 
-So, let's focus on what we mean by that, so that in the real world, a single metric won't tell the whole story. To understand all of this, let's go back to those four metrics we mentioned and see how they're actually calculated.
+But first, let's talk about accuracy. 
 
-We could organize our predicted values ​​against the actual values ​​in what is known as a confusion matrix, so
+Accuracy is one of the most common classification metrics.
+
+And luckily, it's also the easiest to understand.
+
+It's really intuitive what its measuring. 
+
+
+Accuracy in classification problems:
+It's the number of correct predictions made by the model divided by the total number of predictions.
+
+So again, it's the number of correct predictions divided by the total number of predictions, essentially answering the question: how many predictions it gets right as a percentage. 
+
+
+
+Sure — here’s a clean, **simplified version without losing context**:
+
+
+
+
+
+=========  05.07  ==========
+
+So, for example, let's imagine
+
+that the test set X had 100 images and our model correctly predicted 80 images.
+
+Then we have 80 divided by 100, or zero, eight, or 80 percent accuracy. And accuracy is really useful when
+
+the target classes are well balanced.
+
+So what does that mean?
+
+Well balanced, well, in our example.
+
+That would mean we have roughly the same number of cat images as dog images in all of our data.
+
+So, it means that the labels themselves are more or less equally represented in the dataset, but let's imagine we have
+
+what's known as a class imbalance situation.
+
+In this case, accuracy isn't a good metric to use.
+
+So let's do a little thought experiment.
+
+Let's imagine that in this test set we had 99 images of dogs and only one image of a cat.
+
+Now, if our model were simply a line that always predicted the dog, no matter what image it saw, we would get an accuracy of
+
+99 percent on this particular test set because by simply saying that the
+
+dog is 99 images of dogs and one image of a cat, we only missed one.
+
+That's why you need to be aware of the tradeoff with accuracy, and the tradeoff really comes
+
+when you have a class imbalance situation.
+
+If your classes are more or less balanced, accuracy is a very nice intuitive method or metric to understand.
+
+However, if you have an imbalanced class, you can see in this particular situation
+
+where it starts to pose a problem, and that's where the other metrics come into play.
+
+So, again in this situation, we'll want to understand recall and precision, which help us understand how well a model is performing at removing imbalanced classes. It's the ability of a model to find all relevant cases within a dataset. The precise definition of recall is the number of true positives, which we'll refine later when we look at the confusion matrix.
+
+But it's the number of true positives divided by the number of true positives plus the number of false negatives, and precision is the ability of a classification model to identify only relevant data points.
+
+Precision is defined as the number of true positives divided by the number of true positives plus the number of false positives.
+
+Often, you have a trade-off between recall and precision, while recall expresses the ability to find all relevant instances in a data set. Precision expresses the proportion of data points that our model says are relevant and that actually are relevant, and the F1 score is essentially a combination of these two.
+
+
+
+
+In cases where we want to find an optimal combination of precision and recall, we can combine
+
+the two metrics using what's known as the F1 score, and the F1 score is the harmonic mean of precision and recall, taking both metrics into account in the following equation.
+
+So, this isn't just taking the average log precision, but taking the harmonic mean of them.
+
+And here we have the formula for the F1 score or F1 scores equal to two.
+
+The precision times are recalled in the numerator and then divided by the precision plus recall in the denominator, so
+
+the reason we use the harmonic mean instead of just a simple mean or a simple average is because it will punish outliers.
+
+For example, if you created a classifier that had a rank of 1, which meant essentially perfect precision,
+
+and a recall of zero was essentially the worst possible record.
+
+If you just took the simple average of this, then it would be 0.5.
+
+But the F1 score because a harmonic has been taken means we have precision recall times there at the top, which
+
+means you get zero times one of the best and you get an F1 score of zero.
+
+This is really nice because it allows you to punish extreme differences between precision and recall, so
+
+it gives you a sort of fair assessment of that precision-recall trade-off.
+
+Now we can also see all the correctly classified versus incorrectly classified images in the form of a
+
+confusion matrix.
+
+So the confusion matrix looks something like this.
+
+We have the true underlying conditions.
+
+That's the true correct label, and we can think of the condition as positive or negative, like
+
+actually being a dog or not being a dog, or often used in a medical diagnosis, like having the presence of
+
+a disease as opposed to not having it. We have the predicted condition from the models.
+
+So, positive prediction or negative prediction, and I think when it comes to confusion matrices, it's often
+
+easier to first get an intuition if you think of this as a diagnostic test for having some type of disease present
+
+in a person after maybe taking a blood sample and running it through your model.
+
+So, for example, a true positive would be someone who actually has that disease and your model correctly predicts
+
+that they have it; a true negative would be someone who doesn't have the disease and your model correctly predicts
+
+that they don't have the disease.
+
+So, you have true positives and true negatives, and both are correct predictions, and then we essentially have
+
+these two types of incorrect predictions: a false positive and a false negative. A false positive would be if the person
+
+doesn't have the disease, and you predict that it's a false positive because you're falsely saying that they're
+
+positive for this disease or this condition. A false negative is essentially
+
+the opposite of where this person has the disease present, and then you report using your model and your
+
+test that they're actually negative, they actually don't have this disease, and sometimes
+
+they're also called, and the statistics are, a type 1 error and a type 2 error, and
+
+then from these true negative results, true positive results, false negative results, and false positive results.
+
+There are many other metrics you can calculate, so we can see some of them here.
+
+In the bottom left corner, we can see the actual accuracy calculation. It's the sum of true positives plus true negatives, essentially the sum of the total population guesses.
+
+There are a bunch of others, like the positive probability rate, false positive rate, prevalence rate, and false positive rate.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -496,7 +422,7 @@ O tienes razón o estás equivocado, correcto o incorrecto, así que repetimos e
 
 
 ------------------------------
-00:03:55,430 --> 00:03:56,910
+00:03:55,430 --> 00:03:56,910 :: DONE 9-May-2025
 de prueba x.
 ------------------------------
 
@@ -594,7 +520,7 @@ estos dos.
 
 
 -----------------------------
-00:07:42,670 --> 00:07:43,570
+00:07:42,670 --> 00:07:43,570 :: DONE 9-May-2025
 estos dos.
 -----------------------------
 
