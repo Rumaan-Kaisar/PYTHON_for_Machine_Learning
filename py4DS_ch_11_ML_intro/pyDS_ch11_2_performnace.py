@@ -3,7 +3,7 @@
 # copy: Analyze: analyze this text, get the topics, 
 #       output in english: describe the topics on your own knowledge withot losing context, use clarification and fix any misconception (mention them)
 #        
-################# (25-Apr-25 for 26-Apr-25)
+################# (10-May-25 for 11-May-25)
 
 # Courses: PrTla PY for DS & ML >    14.4, 14.5
 
@@ -14,68 +14,15 @@
 
 ----------------------    Use google translate:    -----------------------------
 
-
---------------------------  2.43 -> 3.55
-
-Sure — here’s a **clear, short clarification without losing context**:
-
----
-
-
 ------------------------------
 00:03:55,430 --> 00:03:56,910
 de prueba x.
 ------------------------------
 
-
-Accuracy and confusion matrix:
-We could organize our predicted values ​​against the actual values ​​and what's known as a "confusion matrix", 
+=========  05.41  ==========
 
 
-Accuracy
-so we'll touch on the confusion matrix later.
-
-But first, let's talk about accuracy. 
-
-Accuracy is one of the most common classification metrics.
-
-And luckily, it's also the easiest to understand.
-
-It's really intuitive what its measuring. 
-
-
-Accuracy in classification problems:
-It's the number of correct predictions made by the model divided by the total number of predictions.
-
-So again, it's the number of correct predictions divided by the total number of predictions, essentially answering the question: how many predictions it gets right as a percentage. 
-
-
-
-Sure — here’s a clean, **simplified version without losing context**:
-
-
-
-
-
-=========  05.07  ==========
-
-So, for example, let's imagine
-
-that the test set X had 100 images and our model correctly predicted 80 images.
-
-Then we have 80 divided by 100, or zero, eight, or 80 percent accuracy. And accuracy is really useful when
-
-the target classes are well balanced.
-
-So what does that mean?
-
-Well balanced, well, in our example.
-
-That would mean we have roughly the same number of cat images as dog images in all of our data.
-
-So, it means that the labels themselves are more or less equally represented in the dataset, but let's imagine we have
-
-what's known as a class imbalance situation.
+but let's imagine we have what's known as a imbalance class situation.
 
 In this case, accuracy isn't a good metric to use.
 
