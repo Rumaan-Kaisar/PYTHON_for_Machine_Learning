@@ -8,10 +8,6 @@
 # Courses: PrTla PY for DS & ML >    14.4, 14.5
 
 
-
-
-
-
 ----------------------    Use google translate:    -----------------------------
 
 ------------------------------
@@ -19,32 +15,7 @@
 de prueba x.
 ------------------------------
 
-=========  05.41  ==========
-
-
-but let's imagine we have what's known as a imbalance class situation.
-
-In this case, accuracy isn't a good metric to use.
-
-So let's do a little thought experiment.
-
-Let's imagine that in this test set we had 99 images of dogs and only one image of a cat.
-
-Now, if our model were simply a line that always predicted the dog, no matter what image it saw, we would get an accuracy of
-
-99 percent on this particular test set because by simply saying that the
-
-dog is 99 images of dogs and one image of a cat, we only missed one.
-
-That's why you need to be aware of the tradeoff with accuracy, and the tradeoff really comes
-
-when you have a class imbalance situation.
-
-If your classes are more or less balanced, accuracy is a very nice intuitive method or metric to understand.
-
-However, if you have an imbalanced class, you can see in this particular situation
-
-where it starts to pose a problem, and that's where the other metrics come into play.
+=========  06.37  ==========
 
 So, again in this situation, we'll want to understand recall and precision, which help us understand how well a model is performing at removing imbalanced classes. It's the ability of a model to find all relevant cases within a dataset. The precise definition of recall is the number of true positives, which we'll refine later when we look at the confusion matrix.
 
