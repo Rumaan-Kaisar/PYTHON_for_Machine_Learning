@@ -16,44 +16,86 @@ de prueba x.
 ------------------------------
 
 
-==================  8.17  =====================
+==================  9.00  =====================
+Confusion matrix:
 
+Now we can also see all the "correctly classified" versus "incorrectly classified" images in the form of a confusion matrix.
+So the confusion matrix looks something like this:
 
-the reason we use the harmonic mean instead of just a simple mean or a simple average is because it will punish outliers.
+multi level Table:
+----------------------------------------------------------------------------------------------------------
+|                    |                      | **Predicted Condition**        |                                 |
+| :----------------- | :------------------- | :----------------------------- | :------------------------------ |
+|                    | **Total Population** | **Predicted Positive**         | **Predicted Negative**          |
+| **True Condition** | **Actual Positive**  | True Positive (TP)             | False Negative (FN) *(Type II error)* |
+|                    | **Actual Negative**  | False Positive (FP) *(Type I error)* | True Negative (TN)              |
+----------------------------------------------------------------------------------------------------------
 
-For example, if you created a classifier that had a rank of 1, which meant essentially perfect precision,
-
-and a recall of zero was essentially the worst possible record.
-
-If you just took the simple average of this, then it would be 0.5.
-
-But the F1 score because a harmonic has been taken means we have precision recall times there at the top, which
-
-means you get zero times one of the best and you get an F1 score of zero.
-
-This is really nice because it allows you to punish extreme differences between precision and recall, so
-
-it gives you a sort of fair assessment of that precision-recall trade-off.
-
-Now we can also see all the correctly classified versus incorrectly classified images in the form of a
-
-confusion matrix.
-
-So the confusion matrix looks something like this.
-
-We have the true underlying conditions.
-
+true condition:
+We have the underlying true conditions.
 That's the true correct label, and we can think of the condition as positive or negative, like
-
 actually being a dog or not being a dog, or often used in a medical diagnosis, like having the presence of
+a disease as opposed to not having it.
 
-a disease as opposed to not having it. We have the predicted condition from the models.
 
+predicted condition
+We have the predicted condition from the models.
 So, positive prediction or negative prediction, and I think when it comes to confusion matrices, it's often
-
 easier to first get an intuition if you think of this as a diagnostic test for having some type of disease present
-
 in a person after maybe taking a blood sample and running it through your model.
+
+---------------  GPT  ---------------
+
+
+Sure — here’s a simplified, clear version without losing context:
+
+---
+
+### 📊 **Confusion Matrix Simplified**
+
+* A **confusion matrix** shows how many predictions were **correct** or **incorrect** by comparing predicted and actual labels.
+
+---
+
+**Structure:**
+
+|                     | **Predicted Positive**               | **Predicted Negative**                |
+| :-----------------: | :----------------------------------- | :------------------------------------ |
+| **Actual Positive** | True Positive (TP)                   | False Negative (FN) *(Type II error)* |
+| **Actual Negative** | False Positive (FP) *(Type I error)* | True Negative (TN)                    |
+
+---
+
+**Key Ideas:**
+
+* **True Condition:**
+  The actual, correct label — e.g. whether the image is *actually a dog* or *not a dog*, or in medical tests, *has a disease* or *doesn't have it*.
+
+* **Predicted Condition:**
+  What the model predicts — positive or negative.
+
+* **Use Case Example:**
+  Think of this like a medical test:
+
+  * *Positive prediction* → model says person has disease
+  * *Negative prediction* → model says person doesn’t
+    The confusion matrix tracks where the model was right and wrong.
+
+---
+
+Would you like a small diagram-style illustration version too?
+
+
+
+|                    |                      | **Predicted Condition**        |                                 |
+| :----------------- | :------------------- | :----------------------------- | :------------------------------ |
+|                    | **Total Population** | **Predicted Positive**         | **Predicted Negative**          |
+| **True Condition** | **Actual Positive**  | True Positive (TP)             | False Negative (FN) *(Type II error)* |
+|                    | **Actual Negative**  | False Positive (FP) *(Type I error)* | True Negative (TN)              |
+
+
+----  9.48  ----
+
 
 So, for example, a true positive would be someone who actually has that disease and your model correctly predicts
 
