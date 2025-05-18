@@ -16,106 +16,24 @@ de prueba x.
 ------------------------------
 
 
-==================  9.00  =====================
+==================  9.48  =====================
 Confusion matrix:
 
-Now we can also see all the "correctly classified" versus "incorrectly classified" images in the form of a confusion matrix.
-So the confusion matrix looks something like this:
-
-multi level Table:
-----------------------------------------------------------------------------------------------------------
-|                    |                      | **Predicted Condition**        |                                 |
-| :----------------- | :------------------- | :----------------------------- | :------------------------------ |
-|                    | **Total Population** | **Predicted Positive**         | **Predicted Negative**          |
-| **True Condition** | **Actual Positive**  | True Positive (TP)             | False Negative (FN) *(Type II error)* |
-|                    | **Actual Negative**  | False Positive (FP) *(Type I error)* | True Negative (TN)              |
-----------------------------------------------------------------------------------------------------------
-
-true condition:
-We have the underlying true conditions.
-That's the true correct label, and we can think of the condition as positive or negative, like
-actually being a dog or not being a dog, or often used in a medical diagnosis, like having the presence of
-a disease as opposed to not having it.
-
-
-predicted condition
-We have the predicted condition from the models.
-So, positive prediction or negative prediction, and I think when it comes to confusion matrices, it's often
-easier to first get an intuition if you think of this as a diagnostic test for having some type of disease present
-in a person after maybe taking a blood sample and running it through your model.
-
----------------  GPT  ---------------
-
-
-Sure — here’s a simplified, clear version without losing context:
-
----
-
-### 📊 **Confusion Matrix Simplified**
-
-* A **confusion matrix** shows how many predictions were **correct** or **incorrect** by comparing predicted and actual labels.
-
----
-
-**Structure:**
-
-|                     | **Predicted Positive**               | **Predicted Negative**                |
-| :-----------------: | :----------------------------------- | :------------------------------------ |
-| **Actual Positive** | True Positive (TP)                   | False Negative (FN) *(Type II error)* |
-| **Actual Negative** | False Positive (FP) *(Type I error)* | True Negative (TN)                    |
-
----
-
-**Key Ideas:**
-
-* **True Condition:**
-  The actual, correct label — e.g. whether the image is *actually a dog* or *not a dog*, or in medical tests, *has a disease* or *doesn't have it*.
-
-* **Predicted Condition:**
-  What the model predicts — positive or negative.
-
-* **Use Case Example:**
-  Think of this like a medical test:
-
-  * *Positive prediction* → model says person has disease
-  * *Negative prediction* → model says person doesn’t
-    The confusion matrix tracks where the model was right and wrong.
-
----
-
-Would you like a small diagram-style illustration version too?
-
-
-
-|                    |                      | **Predicted Condition**        |                                 |
-| :----------------- | :------------------- | :----------------------------- | :------------------------------ |
-|                    | **Total Population** | **Predicted Positive**         | **Predicted Negative**          |
-| **True Condition** | **Actual Positive**  | True Positive (TP)             | False Negative (FN) *(Type II error)* |
-|                    | **Actual Negative**  | False Positive (FP) *(Type I error)* | True Negative (TN)              |
 
 
 ----  9.48  ----
 
 
-So, for example, a true positive would be someone who actually has that disease and your model correctly predicts
+---------------------- GPT
 
-that they have it; a true negative would be someone who doesn't have the disease and your model correctly predicts
 
-that they don't have the disease.
 
-So, you have true positives and true negatives, and both are correct predictions, and then we essentially have
+---
 
-these two types of incorrect predictions: a false positive and a false negative. A false positive would be if the person
 
-doesn't have the disease, and you predict that it's a false positive because you're falsely saying that they're
 
-positive for this disease or this condition. A false negative is essentially
-
-the opposite of where this person has the disease present, and then you report using your model and your
-
-test that they're actually negative, they actually don't have this disease, and sometimes
-
-they're also called, and the statistics are, a type 1 error and a type 2 error, and
+----------------  10:40
+and
 
 then from these true negative results, true positive results, false negative results, and false positive results.
 
