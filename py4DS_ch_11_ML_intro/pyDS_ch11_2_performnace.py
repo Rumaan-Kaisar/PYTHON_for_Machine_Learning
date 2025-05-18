@@ -3,7 +3,7 @@
 # copy: Analyze: analyze this text, get the topics, 
 #       output in english: describe the topics on your own knowledge withot losing context, use clarification and fix any misconception (mention them)
 #        
-################# (10-May-25 for 11-May-25)
+################# (17-May-25 for 18-May-25)
 
 # Courses: PrTla PY for DS & ML >    14.4, 14.5
 
@@ -14,21 +14,6 @@
 00:03:55,430 --> 00:03:56,910
 de prueba x.
 ------------------------------
-
-
-==================  9.48  =====================
-Confusion matrix:
-
-
-
-----  9.48  ----
-
-
----------------------- GPT
-
-
-
----
 
 
 
