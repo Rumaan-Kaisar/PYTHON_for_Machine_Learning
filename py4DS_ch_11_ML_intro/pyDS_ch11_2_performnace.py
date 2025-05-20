@@ -16,6 +16,51 @@ de prueba x.
 ------------------------------
 
 
+More matrices (using confusion matrix):
+Accuracy:
+formula (using summation)
+
+
+
+Positive Predictive Value (PPV)
+formula (using summation)
+
+
+
+False Discovery Rate (FDR)
+formula (using summation)
+
+
+False Omission Rate (FOR)
+formula (using summation)
+
+
+Negative Predictive Value (NPV)
+formula (using summation)
+
+
+Prevalence
+formula (using summation)
+
+
+True Positive Rate (TPR), Sensitivity, Recall, Probability of Detection
+formula (using summation)
+
+TP/condition positive
+formula (using summation)
+
+
+
+False Positive Rate (FPR), Fall-out, Probability of False Alarm
+formula (using summation)
+
+
+Positive Likelihood Ratio (LR+)
+TPR/FPR
+
+Negative Likelihood Ratio (LR-)
+FNR/TNR
+
 
 ----------------  10:40
 and
@@ -27,6 +72,158 @@ There are many other metrics you can calculate, so we can see some of them here.
 In the bottom left corner, we can see the actual accuracy calculation. It's the sum of true positives plus true negatives, essentially the sum of the total population guesses.
 
 There are a bunch of others, like the positive probability rate, false positive rate, prevalence rate, and false positive rate.
+
+
+
+
+false discoveries, etc. Now, the main point to remember here is that the confusion matrix and the various calculated metrics are essentially all fundamental ways of comparing the predicted value against the true values, and what constitutes a good metric really depends on the specific situation.
+
+A very common question I get from students is, hey, is accuracy good enough?
+
+Well, that really depends on your situation and the context of the situation.
+
+Now, if you're still confused by the confusion matrix, no problem.
+
+Check out the Wikipedia page for it.
+
+It has a really good diagram with all the most important things for all the metrics, and throughout the training, this course would generally just print out metrics, like printing out the basic accuracy.
+
+Now, before we wrap up this lecture, I want to go back to the initial question I mentioned that students
+
+ask me all the time: what is this idea of ​​what is good enough accuracy?
+
+And as always, this really depends on the context of the situation in which you're running your model.
+
+There's no single number you can give.
+
+Saying something like 90 percent accuracy is good enough for every situation.
+
+We've already seen the problem with imbalanced classes, but there's also no really good commentary you can
+
+give about what a good enough precision or recall is, and we have to think about the context of the situation.
+
+So, let's think again about that diagnostic model for predicting the presence of a disease.
+
+So, if we build a model to predict the presence of a disease, the first thing we want to
+
+think about is whether we're going to have balanced classes or imbalanced classes.
+
+So, the presence of the disease is well balanced in the general population, and in most cases, it probably
+
+isn't.
+
+There's probably no disease that's going to occur where about half the population is affected and
+
+half the population is unaffected.
+
+Therefore, we can already say that we will have an unbalanced class situation,
+
+which means we will have a precision-recall trade-off. Therefore, we must also keep in mind that these models are often used as
+
+rapid diagnostic tests before having a more invasive test.
+
+For example, for prostate cancer models, it is very common to do a simple urine test before undergoing
+
+a biopsy because it is much easier to do the urine test than to undergo a complete biopsy
+
+of the prostate.
+
+So, we must also consider what is at stake if it is prostate cancer.
+
+The stakes are actually quite high.
+
+
+
+
+So, as we mentioned, we often have that accuracy trade-off, which means we essentially need to decide whether the
+
+model should focus on fixing false positives versus false negatives.
+
+So, at the expense of decreasing false negatives.
+
+We'll most likely increase false positives, and vice versa.
+
+And in disease diagnosis, it's probably better to try to minimize the number of false negatives
+
+at the expense of increasing the number of false positives.
+
+So it goes in the direction of these false positives.
+
+And why do we really want to do that?
+
+Well, we want to make sure we correctly classify as many cases of the disease as possible.
+
+So, at the expense of increasing false positives, we do our best to decrease false negatives.
+
+In this context of disease diagnosis and why we really want to do that.
+
+Well, we want to make sure that anyone who actually has some kind of presence of this disease, or in this case,
+
+of this example, prostate cancer.
+
+If we're doing that urine test, we want to make sure that all those people who have
+
+the presence of the disease actually move on to the next step.
+
+That's perhaps a more invasive test like a biopsy.
+
+And remember, this type usually comes at the cost of increasing those false positives.
+
+So, our models won't be perfect, and eventually it will happen that someone who
+
+doesn't have the disease when we do our simple urine test or whatever our machine learning model is
+
+will predict that hey, sorry, but you have the positive presence of this disease, and it will be
+
+an error because it will be a false positive.
+
+However, when they receive more invasive tests, they will realize, "Sorry, it was a false positive."
+
+You're actually fine.
+
+You don't have this disease, and that comes because we're trying to minimize false negatives.
+
+What we really don't want when it comes to something as important as having cancer or a disease,
+
+we really don't want to reject someone who actually has a disease and tell them they don't have the
+
+disease.
+
+So, it's a false negative when it comes to disease diagnosis.
+
+That's something we really want to minimize.
+
+We want to minimize those false negatives so that we don't accidentally miss someone right away with our
+
+diagnostic tool and tell them they don't have the disease or they don't have cancer when they actually
+
+do.
+
+So, we can see something as important as disease diagnosis really minimizing those
+
+false negatives becomes really important, and almost all of this is to say that machine learning will not be performed in
+
+a vacuum.
+
+And these performance metrics don't have some kind of universal truth that's true across all problems,
+
+but machine learning is a truly collaborative process in which we should always consult
+
+domain experts.
+
+For example, in the case of disease diagnosis, we should probably talk to the doctors in
+
+metal cola about what our acceptable standards are for false negatives versus false positives.
+
+But as a general presence of this disease in the general population, etc., this will change depending on the context of your situation, so always keep that in mind.
+
+There won't be an easy answer for me to say what is accuracy or accuracy that is good enough because it all depends on the context and the domain of the situation.
+
+Okay, we just talked about how we can evaluate classification models.
+
+Let's move on to the next lecture where we discuss evaluating regression tasks.
+
+I'll see you there.
 
 
 
@@ -138,7 +335,6 @@ I got it right.
 And as always, context is everything.
 
 Let's imagine you were doing some kind of machinery model and got a squared error.
-
 
 
 
@@ -453,7 +649,7 @@ falsos positivos tasa de
 
 
 -----------------------------
-00:11:08,300 --> 00:11:09,660
+00:11:08,300 --> 00:11:09,660:: DONE 18-May-2025
 falsos positivos tasa de
 -----------------------------
 
@@ -523,7 +719,7 @@ Las apuestas son en realidad bastante altas.
 
 
 ------------------------------------
-00:13:23,510 --> 00:13:25,500
+00:13:23,510 --> 00:13:25,500:: done 18-May-2025
 Las apuestas son en realidad bastante altas.
 ------------------------------------
 
@@ -625,7 +821,7 @@ Te veré allá.
 
 
 -----------------------------
-00:16:35,990 --> 00:16:36,470
+00:16:35,990 --> 00:16:36,470:: done 18-May-2025
 Te veré allá.
 -----------------------------
 
