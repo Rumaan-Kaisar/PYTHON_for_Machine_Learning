@@ -14,6 +14,27 @@
 00:03:55,430 --> 00:03:56,910
 de prueba x.
 ------------------------------
+Positive Predictive Value (PPV)
+Negative Predictive Value (NPV)
+
+False Discovery Rate (FDR)
+False Omission Rate (FOR)
+
+
+True Positive Rate (TPR) / Sensitivity / Recall / Probability of Detection
+False Positive Rate (FPR) / Fall-out / Probability of False Alarm
+TP/condition positive
+
+Positive Likelihood Ratio (LR+)
+Negative Likelihood Ratio (LR-)
+
+Prevalence
+
+
+
+
+-----------------------------
+
 
 
 More matrices (using confusion matrix):
@@ -63,24 +84,81 @@ FNR/TNR
 
 
 ----------------  10:40
-and
+and then from these true negative (TN), true positive (TP), false negative  (FN), and false positive (FP) results.
 
-then from these true negative results, true positive results, false negative results, and false positive results.
+There are many other metrics that you can calculate, so we can see some of them here.
 
-There are many other metrics you can calculate, so we can see some of them here.
-
-In the bottom left corner, we can see the actual accuracy calculation. It's the sum of true positives plus true negatives, essentially the sum of the total population guesses.
-
-There are a bunch of others, like the positive probability rate, false positive rate, prevalence rate, and false positive rate.
+such as accuracy calculation. It's the sum of true positives + true negatives, i.e sum of waht we got correct over the total population.
 
 
+$$
+\text{Accuracy} = \frac{\sum \text{TP} + \sum \text{TN}}{\text{Total Population}}
+$$
+
+There are a bunch of others, like the 
+
+Positive Likelihood Ratio, 
+
+False Positive Rate, 
+
+True Positive Rate
+
+prevalence, and 
+
+False Discovery Rate
+
+etc. 
 
 
-false discoveries, etc. Now, the main point to remember here is that the confusion matrix and the various calculated metrics are essentially all fundamental ways of comparing the predicted value against the true values, and what constitutes a good metric really depends on the specific situation.
+Now, the main point to remember here is that the confusion matrix and the various calculated metrics are essentially all fundamental ways of comparing the predicted value vs the true values, and what constitutes a good metric really depends on the specific situation.
 
-A very common question I get from students is, hey, is accuracy good enough?
-
+A very common question is: is it a good enough accuracy?
 Well, that really depends on your situation and the context of the situation.
+
+
+
+
+
+
+
+
+=======================
+
+$\text{Prevalence} = \frac{\sum \text{TP} + \sum \text{FN}}{\text{Total Population}}$
+$$
+$\text{True Positive Rate (TPR)} = \frac{\sum \text{TP}}{\sum \text{Condition Positive}}$
+$$
+$\text{False Positive Rate (FPR)} = \frac{\sum \text{FP}}{\sum \text{Condition Negative}}$
+$$
+$\text{Accuracy} = \frac{\sum \text{TP} + \sum \text{TN}}{\text{Total Population}}$
+$$
+$\text{Positive Predictive Value (PPV), Precision} = \frac{\sum \text{TP}}{\sum \text{Prediction Positive}}$
+$$
+$\text{False Discovery Rate (FDR)} = \frac{\sum \text{FP}}{\sum \text{Prediction Positive}}$
+$$
+$\text{False Omission Rate (FOR)} = \frac{\sum \text{FN}}{\sum \text{Prediction Negative}}$
+$$
+$\text{Negative Predictive Value (NPV)} = \frac{\sum \text{TN}}{\sum \text{Prediction Negative}}$
+$$
+$\text{Positive Likelihood Ratio (LR+)} = \frac{\text{TPR}}{\text{FPR}}$
+$$
+$\text{Negative Likelihood Ratio (LR-)} = \frac{\text{FNR}}{\text{TNR}}$
+
+=======================
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------  11.36
+
 
 Now, if you're still confused by the confusion matrix, no problem.
 
