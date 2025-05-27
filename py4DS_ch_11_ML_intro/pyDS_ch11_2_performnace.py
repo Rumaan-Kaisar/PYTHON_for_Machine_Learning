@@ -1,5 +1,5 @@
 
-################# 0: FULL
+################# 14.4: FULL
 # copy: Analyze: analyze this text, get the topics, 
 #       output in english: describe the topics on your own knowledge withot losing context, use clarification and fix any misconception (mention them)
 #        
@@ -14,105 +14,6 @@
 00:03:55,430 --> 00:03:56,910
 de prueba x.
 ------------------------------
-
-
-----------------------------  13.25  ------------------------------
-
-So, as we mentioned, we often have that accuracy trade-off, which means we essentially need to decide whether the
-
-model should focus on fixing false positives versus false negatives.
-
-So, at the expense of decreasing false negatives.
-
-We'll most likely increase false positives, and vice versa.
-
-And in disease diagnosis, it's probably better to try to minimize the number of false negatives
-
-at the expense of increasing the number of false positives.
-
-So it goes in the direction of these false positives.
-
-And why do we really want to do that?
-
-Well, we want to make sure we correctly classify as many cases of the disease as possible.
-
-So, at the expense of increasing false positives, we do our best to decrease false negatives.
-
-In this context of disease diagnosis and why we really want to do that.
-
-Well, we want to make sure that anyone who actually has some kind of presence of this disease, or in this case,
-
-of this example, prostate cancer.
-
-If we're doing that urine test, we want to make sure that all those people who have
-
-the presence of the disease actually move on to the next step.
-
-That's perhaps a more invasive test like a biopsy.
-
-And remember, this type usually comes at the cost of increasing those false positives.
-
-So, our models won't be perfect, and eventually it will happen that someone who
-
-doesn't have the disease when we do our simple urine test or whatever our machine learning model is
-
-will predict that hey, sorry, but you have the positive presence of this disease, and it will be
-
-an error because it will be a false positive.
-
-However, when they receive more invasive tests, they will realize, "Sorry, it was a false positive."
-
-You're actually fine.
-
-You don't have this disease, and that comes because we're trying to minimize false negatives.
-
-What we really don't want when it comes to something as important as having cancer or a disease,
-
-we really don't want to reject someone who actually has a disease and tell them they don't have the
-
-disease.
-
-So, it's a false negative when it comes to disease diagnosis.
-
-That's something we really want to minimize.
-
-We want to minimize those false negatives so that we don't accidentally miss someone right away with our
-
-diagnostic tool and tell them they don't have the disease or they don't have cancer when they actually
-
-do.
-
-So, we can see something as important as disease diagnosis really minimizing those
-
-false negatives becomes really important, and almost all of this is to say that machine learning will not be performed in
-
-a vacuum.
-
-And these performance metrics don't have some kind of universal truth that's true across all problems,
-
-but machine learning is a truly collaborative process in which we should always consult
-
-domain experts.
-
-For example, in the case of disease diagnosis, we should probably talk to the doctors in
-
-metal cola about what our acceptable standards are for false negatives versus false positives.
-
-But as a general presence of this disease in the general population, etc., this will change depending on the context of your situation, so always keep that in mind.
-
-There won't be an easy answer for me to say what is accuracy or accuracy that is good enough because it all depends on the context and the domain of the situation.
-
-Okay, we just talked about how we can evaluate classification models.
-
-Let's move on to the next lecture where we discuss evaluating regression tasks.
-
-I'll see you there.
-
-
-
-
-
-
 
 
 
