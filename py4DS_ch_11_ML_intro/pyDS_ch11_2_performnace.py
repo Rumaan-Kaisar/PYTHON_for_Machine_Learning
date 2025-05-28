@@ -17,44 +17,8 @@ de prueba x.
 
 
 
+-----------  1:09
 
-
-
-
-
-
-
-
-
-
-
-Part 2: 
-
-Welcome back, everyone.
-
-We just discussed how to evaluate performance for classification problems.
-
-Now let's understand how to evaluate performance for regression testing, so we can take a moment to discuss how we evaluate a model that is performing some type of regression task.
-
-And, in general, a regression is the task when a model tries to predict continuous values.
-
-Unlike classification tasks, where we are trying to predict categorical values, you may have heard of some evaluation metrics, such as precision or recall, as we just discussed.
-
-However, these types of metrics will not be useful for regression problems.
-
-It doesn't really make sense to calculate the precision or recall of a regression task since you are actually classifying things.
-
-Instead, you are predicting a continuous value.
-
-Therefore, we need new metrics designed for those continuous values.
-
-For example, imagine we are trying to predict the price of a house given its characteristics.
-
-That would be a regression task, or trying to predict the country.
-
-A house is inside.
-
-Given its characteristics, it would be a classification task.
 
 And again, we're focused now on how to evaluate that regression task where a label is continuous and not separate categories.
 
