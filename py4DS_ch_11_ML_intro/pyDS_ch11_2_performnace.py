@@ -11,62 +11,10 @@
 ----------------------    Use google translate:    -----------------------------
 
 
-
-
-
-
-
-
-
-mean absolute error (MAE):
-Let's start with the simplest, which is the mean absolute error.
-
-And this is the easiest one to understand. Essentially, all you're going to do is:
-compare your predictions (remember, we're comparing a continuous value here since this is a regression task).
-
-We're going to compare our predictions with the true Y-label. 
-
-
-For example, compare the "prediction of the house price"  with the "actual/true house price".
-
-And what we do is- simply take the difference between the "true price" minus our "predicted price (y-hat)". 
-we take the absolute value of that. 
-The reason we take the absolute value is because technically, our predictions could be above or below the true value.
-And since we want to average all of our predictions, we take the absolute value.
-
-
-
-Sure — here’s a clear, middle-ground simplification:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ----------------  2.18
-
+mean squared error:
 Now, the problem with the mean absolute error is that it won't punish large errors.
 
-So here we have what's known as an ans comes quartet, and we can see here that we have a wide variety
-
-of different spreads of data points here.
-
-However, the line of best fit for all of these is actually the same.
-
-So we want to make sure we're aware of situations like this.
-
-For example, let's take a look at this specific situation.
-
-We have one point that's a huge outlier, so we want our air metrics to really account for them.
 
 So what we can do is use a mean squared error.
 
@@ -78,6 +26,53 @@ And as you can imagine, when we actually square that error, the larger errors ar
 
 And we no longer need to take the absolute value because anything squared ends up being positive.
 
+
+
+Sure — here’s a simplified, middle-ground version without losing context:
+
+---
+
+**Mean Squared Error (MSE):**
+
+* MAE treats all errors equally, but it doesn’t strongly penalize large mistakes.
+* MSE fixes this by **squaring the errors** before averaging them.
+* Formula involves:
+
+  * Taking the difference between the actual and predicted value.
+  * Squaring that difference.
+  * Averaging these squared errors.
+
+**Why square it?**
+
+* Squaring makes big errors count more than small ones.
+* No need for absolute values since squaring removes negatives.
+
+**In short:** MSE highlights large errors, making it useful when big mistakes matter.
+
+
+Sure — here’s the formula for **Mean Squared Error (MSE)**:
+
+$$
+\text{MSE} = \frac{1}{m} \sum_{i=1}^{m} (y^{(i)} - \hat{y}^{(i)})^2
+$$
+
+**Where:**
+
+* $m$ = total number of examples
+* $y^{(i)}$ = true value for the $i^{th}$ example
+* $\hat{y}^{(i)}$ = predicted value for the $i^{th}$ example
+
+**Explanation:**
+Take the difference between actual and predicted values, square it, then average across all examples.
+
+
+
+
+
+
+
+
+root mean squared error:
 However, there's another problem we run into with a squared error that squares the actual label minus its prediction.
 
 It actually also squares the units themselves.
@@ -86,17 +81,84 @@ So, for example, if you're predicting the price of a house, our error metric wit
 
 We end up getting an error metric in units of dollars squared, which is hard to interpret, so the way we solve this is with the root mean squared error. Essentially, at the end, you just take the square root of your mean squared error.
 
-So this is the most popular because it punishes those larger error values ​​and
+So this is the most popular because it does both: punishes those larger error values ​​and
 
 at the end of the day, it has the same metrics or the same units as y now.
 
-The most common question I get from students is: Hey, does this squared error mean this value?
 
-I got it right.
+
+Sure — here’s a clean, simplified version without losing context:
+
+---
+
+**Root Mean Squared Error (RMSE):**
+
+* **Problem with MSE:** It squares the errors, which also squares the units (e.g. dollars²), making it hard to interpret.
+* **Solution:** Take the square root of the MSE to bring the error back to the original unit (e.g. dollars).
+* **Benefit:**
+
+  * Still punishes large errors (since it uses squared errors).
+  * Final result is in the same unit as the target value.
+
+**Commonly preferred because it balances both error punishment and interpretability.**
+
+
+Sure — here’s the equation for **Root Mean Squared Error (RMSE)**:
+
+$$
+\text{RMSE} = \sqrt{\frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2}
+$$
+
+**Where:**
+
+* $y_i$ = actual value
+* $\hat{y}_i$ = predicted value
+* $m$ = total number of data points
+
+
+
+
+
+The most common question I get from students is: Hey, does this value of RMSE good?
+And as always, context is everything.
+
+---------  4.26
+
+Let's imagine you were doing some kind of ML model and got a squared error.
+
+
+
+
 
 And as always, context is everything.
 
-Let's imagine you were doing some kind of machinery model and got a squared error.
+Let's imagine I was doing some kind of machine modeling and got a root mean squared error of ten dollars, and you're like, "Is this a good enough squared error?"
+
+Well, it really depends on the context of the situation.
+
+It means a ten-dollar quarter would be fantastic if you're predicting the price of a house, since ten dollars is very small compared to the average price of a house.
+
+But if your machine learning model was supposed to predict the price of a chocolate bar based on its characteristics,
+
+and your path means the quarter was ten dollars.
+
+Actually, that's really bad. What we need to do is compare your error metric for the regression task with the average label value.
+
+That's the mean value in your dataset to try to get an intuition about its overall performance.
+
+And as always, domain knowledge also plays a really important role here.
+
+So, machine learning again isn't done in a vacuum; it's usually done with a collaborative process.
+
+So, if you're predicting house prices and want to get a sense of whether your routine error was good or not, it's probably a good idea to start talking to someone with experience as a real estate agent.
+
+Okay, now we understand the different metrics you can use to evaluate the performance of a regression task.
+
+Thanks, and we'll see you at the next conference.
+
+
+
+
 
 
 
