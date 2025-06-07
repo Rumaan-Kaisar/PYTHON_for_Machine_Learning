@@ -214,63 +214,13 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 
 
-Hello everyone and welcome to the machine learning of Python lecture.
 
-Now that we've gotten an introduction to machine learning is in this lecture we're going to discuss
+----------------------------------------  1.55
 
-how we're going to be using Python and the sikat learn package to perform machine learning with Python
+allrighty, every algorithm in sikat learn is exposed via an "estimator object".
 
-.
-
-Like I mention we're going to be using the sikat learn package.
-
-It's the most popular machine learning package for Python and it has a lot of algorithms already built
-
-into it.
-
-You'll need to install it at your command line or terminal using Konda install sikat learn if you have
-
-an anaconda distribution or install sikat dasht learn if you have another distribution in Python.
-
-Let's talk about the basic structure of how to use sikat learn first.
-
-A quick review of the machine learning process the machine learning process starts off with your data
-
-.
-
-Somehow you need to acquire data and then the next step usually is to clean that data and format it
-
-so that the machine learning model can accept that before you actually give it to the machine learning
-
-model however you're going to split that clean the data into a test set and a training set.
-
-Your train your model or the training set and then in the next step you test your model on the test
-
-set and you iterate your model and tune the parameters of your model until it's ready to deploy.
-
-Now let's go over an example of the process to use psychic learn.
-
-Now don't worry about memorizing any of this.
-
-We're going to get plenty of practice and review all of this when we actually start coding in subsequent
-
-lectures.
-
-This lecture is just the overview of the sikat learn process.
-
-Don't worry about memorizing all the steps you're going to see these steps over and over and will walk
-
-you through each of these steps.
-
-We're actually coding out the algorithms.
-
-This is just an overview so you don't see it for your first time when you're actually coding out all
-
-right every algorithm in sikat learn is exposed via an estimator object.
-
-First you'll import the model and the general form of this is to say from S-K learn family import model
-
-.
+First you'll import the model and the general form of this is to say:
+from S-K learn family import model
 
 So a specific example would look like this.
 
@@ -278,11 +228,15 @@ Let's say we want to perform a linear regression which is going to be the first 
 
 we learn about.
 
-We'll go ahead and say from S-K learn linear underscore a model where it linear underscore model is
+We'll go ahead and say "from S-K learn linear underscore a model where it linear underscore model is
 
 the family of models import and then linear regression and that linear regression is that estimator
 
-object that's the model itself and then the next that is to instantiate that model or estimator.
+object that's the model itself" and then the next that is to instantiate that model/estimator.
+
+
+
+
 
 So the estimator parameters all the parameters of an estimator can be set when it's instantiated in
 
