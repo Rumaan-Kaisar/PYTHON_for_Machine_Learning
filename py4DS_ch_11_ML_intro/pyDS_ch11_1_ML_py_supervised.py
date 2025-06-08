@@ -215,29 +215,9 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 
 
-----------------------------------------  1.55
+----------------------------------------  2.36
 
-allrighty, every algorithm in sikat learn is exposed via an "estimator object".
-
-First you'll import the model and the general form of this is to say:
-from S-K learn family import model
-
-So a specific example would look like this.
-
-Let's say we want to perform a linear regression which is going to be the first machine learning algorithm
-
-we learn about.
-
-We'll go ahead and say "from S-K learn linear underscore a model where it linear underscore model is
-
-the family of models import and then linear regression and that linear regression is that estimator
-
-object that's the model itself" and then the next that is to instantiate that model/estimator.
-
-
-
-
-
+estimator parameters:
 So the estimator parameters all the parameters of an estimator can be set when it's instantiated in
 
 all of them have suitable default values.
