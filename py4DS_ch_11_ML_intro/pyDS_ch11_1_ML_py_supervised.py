@@ -214,65 +214,7 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 
 
-
-----------------------------------------  2.36
-
-estimator parameters:
-So the estimator parameters all the parameters of an estimator can be set when it's instantiated in
-
-all of them have suitable default values.
-
-Later on we're going to explore these values and these parameters using shift time in the Jupiter notebook
-
-.
-
-Check all the possible parameters.
-
-For example you can instantiate a linear regression model by specifying a parameter to be normalized
-
-equals true and then after printing the model you just instantiated.
-
-You can go ahead and check out the parameters that were defaulted to the model such as the intercept
-
-true and copy sequel's true again you actually don't need to specify normalized as equal to true.
-
-Those are just additional parameters you can use to tune the model to something more specific.
-
-Once you have your model created your parameters it's time to fit your model on some data.
-
-But remember we should split this data into a training set and a test set.
-
-Let's go over an example of how we can do that.
-
-I'm going to go ahead and say important umpires and P in order to create some fake data then we can
-
-use sikat learn to do a train test split splitting our data into a training set and a testing set is
-
-the same for mid-scale learn cross underscore validation in poor train tests.
-
-Then we're have our sets of data.
-
-X and Y or X are the actual features and Y is the actual label for each of those feature rows using
-
-train to split.
-
-You pasan X and Y and you passin the test size.
-
-Then again don't worry too much about fully memorize this or even fully understanding it.
-
-We're going to get a lot more practice with this process later on but just as an overview you can use
-
-train test split on your features and labels and sikat learn will automatically output your training
-
-set and your testing set.
-
-So we have X train and a white train and then X test and white test and you can see how these arrays
-
-are outputted here.
-
-Basically you just have your labels for your training and testing data as well as your features for
-
-your training and testing data.
+------------------------------  4.45
 
 Now that we have split the data we can train or fit our model on the training data.
 
