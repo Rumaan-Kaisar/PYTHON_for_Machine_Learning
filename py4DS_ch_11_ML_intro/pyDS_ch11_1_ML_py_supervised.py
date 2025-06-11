@@ -214,35 +214,10 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 
 
-------------------------------  4.45
+------------------------------  5.43
 
-Now that we have split the data we can train or fit our model on the training data.
 
-And this is done through the model fit method.
-
-Basically you take your model.
-
-Remember we instantiated it as a linear regression estimator and then you say model fit and you pass
-
-in your training data you pass in your X training data which the features of your data and then you
-
-passen your y training data which are the training labels.
-
-Now the model has been fit and trained on the training data and the models rates predict labels or values
-
-on the test set.
-
-Keep in mind I'm showing an example of a supervised learning process.
-
-The process for an unsupervised model is going to be a little different because you're actually not
-
-going to have those labels very supervised learning model.
-
-We get the predicted values using the Predict method.
-
-They'll go ahead and say model but predict.
-
-Passing your test data those are your test features and predictions off of that.
+Evaluation:
 
 Then you can evaluate our model by comparing our predictions to the correct values.
 
