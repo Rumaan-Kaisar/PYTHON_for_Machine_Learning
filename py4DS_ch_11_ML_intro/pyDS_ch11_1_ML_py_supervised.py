@@ -223,75 +223,17 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 ==========  recap  ==========
 6.00
-Let's go ahead and get a quick recap of all of this.
-Sikat learn really strives to have a uniform interface "across all methods" and we're going to see examples of these below.
-Given a scikit-learn estimator object named "model", the following methods are available on all estimators:
-
-Available in all Estimators:
-- model.fit(): fit training data.
-- For supervised learning applications, this accepts two arguments: the data X and the labels y (e.g. model.fit(X, y)).
-- For unsupervised learning applications, this accepts only a single argument, the data X (e.g. model.fit(X)).
 
 
 
-You're going to be able to fit to the training data then 
 
- for unsupervised learning applications this only accepts a single argument.
-
-The data 
-
-which makes sense because unsupervised learning works of unlabeled data
-
-
-then in supervised estimators you're going to have 
-- model.predict(): a predict method which given a trains model is going to predict the label of a new set of data.
-  This method accepts one argument the new data which is going to be X_new in this example or in the previous example it was X_test .
-  And then this returns the learned label for each object in the array.
-
-- model.predict_proba(): For classification problems, some estimators also provide this method, 
-  which returns the probability that a new observation has each categorical label. 
-  In this case, the label with the highest probability is returned by model.predictQ.
-
-
-
-model.score():
-for reclassification or regression problems.
-
-You also have a score method available and most in most estimators implement this method and scores
-
-are between 0 and 1 with a larger score indicating a better fit.
-
-
-
----------------  unsupervised  ----------------
-7.40
-model.predict() for unsupervised clusterinng:
-Also available in unsupervised estimators is the model not predict which is going to allow us to predict
-labels in clustering algorithms
-
-
-model.transform():
-in unsupervised estimeters. You also have modeled.transform() where given an unsupervised model you can transform new data into
-the new basis (explain a bit).
-Now we'll get a lot more into this when we talk about unsupervised learning algorithms.
-But basically this also accepts one argument.
-This X new and returns the new representation of the data based off of the unsupervised model again
-will get a lot more into this and in-depth and actually explain this in a lot more detail when we talk
-about unsupervised machine learning problems.
-
-
-
-model.fit_transfrm():
-Finally we have modeled fit underscore transform unsupervised estimators some estimators implement this
-
-method which more efficiently performs a fit and a transform on the same input data.
 
 
 
 
 ===========================
 8.35
-choosing an algorithm (add fig from scikit learn)
+choosing an algorithm (add fig in "ipynb" from scikit learn)
 
 Right now you may be wondering well how do I choose an algorithm "classification" versus "regression" versus "clustering".
 
