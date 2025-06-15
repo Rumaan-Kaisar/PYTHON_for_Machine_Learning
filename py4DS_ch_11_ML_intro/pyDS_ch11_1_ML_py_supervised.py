@@ -214,56 +214,9 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 
 
-------------------------------  5.43
-
-
-
-
-
-
-==========  recap  ==========
-6.00
-
-
-
-
-
-
-
 
 ===========================
-8.35
-choosing an algorithm (add fig in "ipynb" from scikit learn)
 
-Right now you may be wondering well how do I choose an algorithm "classification" versus "regression" versus "clustering".
-
-If you go ahead and just google search "sikat learn algorithm cheat sheet" you should get an image that
-
-looks like this.
-
-And this is from the official sikat learned documentation.
-
-But basically this is a bit of a "decision tree" or a "walkthrough guide" on how to actually go about choosing
-
-an algorithm and if we go ahead and start off you'll see that it asks you the more than 50 samples.
-
-If not you should really get more data.
-
-If you do have more than 50 samples then asks you Are you trying to predict the category predict the
-
-quantity.
-
-Whether your label is data.
-
-Cetera.
-
-
-
-
-
-Next:
-Let's go ahead and start using Python for machine learning by starting our first machine learning algorithm
-
-which is going to be linear regression.
+NXT >> full scikit learn code 
 
 
