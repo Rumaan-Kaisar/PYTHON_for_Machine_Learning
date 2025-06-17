@@ -7,4 +7,6 @@
 
 # Courses: PrTla PY for DS & ML >    14.4, 14.5
 
-
+# make a sample scikit-learn used "classification" ml code with basic steps and proper dataset
+# main focus is performance analysis demonstration
+# evaluation process
