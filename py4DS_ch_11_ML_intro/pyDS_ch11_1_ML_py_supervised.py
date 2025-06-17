@@ -214,9 +214,47 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 
 
+# Example 2: Basic scikit-learn Process
 
-===========================
+# from sklearn.family import ModelName
+from sklearn.linear_model import LinearRegression
 
-NXT >> full scikit learn code 
+# Create a Linear Regression model with a custom parameter:  
+model = LinearRegression(normalize=True)
 
+# Then, check the model’s settings:
+print(model)
+model.get_params()
+
+# creating our dataset using numpy
+import numpy as np
+
+# each row in X has a matching value in y
+X = np.arange(10).reshape((5, 2))  # 5 rows, 2 features each
+y = range(5)                      # 5 labels
+
+print(X)
+print(list(y))
+
+# in one line
+X, y = np.arange(10).reshape((5, 2)), range(5)
+
+
+# Splitting the dataset
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+print('\nX_train\n', X_train)
+print('\nX_test\n', X_test)
+print('\ny_train\n', y_train)
+print('\ny_test\n', y_test)
+
+
+# TRAINING (fitting) the model on the training data
+model.fit(X_train, y_train)
+
+# Making Predictions with the Model
+predictions = model.predict(X_test)
+
+# Evaluation
 
