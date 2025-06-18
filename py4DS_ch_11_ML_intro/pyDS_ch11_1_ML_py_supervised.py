@@ -214,47 +214,66 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 
 
-# Example 2: Basic scikit-learn Process
 
-# from sklearn.family import ModelName
-from sklearn.linear_model import LinearRegression
+# Example 2: Basic scikit-learn Process for Regression
 
-# Create a Linear Regression model with a custom parameter:  
-model = LinearRegression(normalize=True)
-
-# Then, check the model’s settings:
-print(model)
-model.get_params()
-
-# creating our dataset using numpy
+# 1. Import necessary libraries and modules
 import numpy as np
-
-# each row in X has a matching value in y
-X = np.arange(10).reshape((5, 2))  # 5 rows, 2 features each
-y = range(5)                      # 5 labels
-
-print(X)
-print(list(y))
-
-# in one line
-X, y = np.arange(10).reshape((5, 2)), range(5)
-
-
-# Splitting the dataset
+from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
-
-print('\nX_train\n', X_train)
-print('\nX_test\n', X_test)
-print('\ny_train\n', y_train)
-print('\ny_test\n', y_test)
 
 
-# TRAINING (fitting) the model on the training data
+# 2. Create the model (estimator)
+    # Note: 'normalize' is deprecated in recent versions of scikit-learn — will raise a warning or error.
+            # Correct modern usage: just instantiate the model without 'normalize'
+            # model = LinearRegression(normalize=True)
+
+model = LinearRegression()  # Create a Linear Regression model
+
+# 3. Check the model's default parameters settings
+print(model)
+print(model.get_params())
+
+
+# 4. Create dataset
+    # Features (X) — a 5x2 array, Labels (y) — a list of 5 values
+X = np.arange(10).reshape((5, 2))   # 5 samples, 2 features per sample
+y = np.arange(5)                    # Numeric labels: 0, 1, 2, 3, 4
+
+print("\nX:\n", X)
+print("\ny:\n", y)
+
+
+# 5. in one line (Optional): You can also create both X and y in one line:
+    # X, y = np.arange(10).reshape((5, 2)), np.arange(5)
+
+
+# 6. Split the dataset into training and testing sets
+    # test_size=0.3 means 30% test data, 70% training data
+    # random_state=42: Sets the random seed so that the split is reproducible 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Display the splits
+print('\nX_train:\n', X_train)
+print('\nX_test:\n', X_test)
+print('\ny_train:\n', y_train)
+print('\ny_test:\n', y_test)
+
+
+# 7. Train (fit) the model on training data
 model.fit(X_train, y_train)
 
-# Making Predictions with the Model
+
+# 8. Make predictions on the test set
 predictions = model.predict(X_test)
 
-# Evaluation
+
+# 9. Display predictions
+print('\nPredictions on X_test:\n', predictions)
+
+
+# 10. (Optional) Evaluate model performance. Eg: R² score
+score = model.score(X_test, y_test)
+print("\nModel R² score on test set:", score)
+
 
