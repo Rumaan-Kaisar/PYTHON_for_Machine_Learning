@@ -215,7 +215,7 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 
 
-# Example 2: Basic scikit-learn Process for Regression
+# Example 3: Basic scikit-learn Process for Regression
 
 # 1. Import necessary libraries and modules
 import numpy as np
