@@ -70,21 +70,13 @@ print("\nClassification Report:\n", report)
 
 
 
+# --------------------------------  REGRESSION example using scikit-learn  --------------------------------
+# Example 2: proper regression example using scikit-learn, covering:
 
-# CHECKPOINT 2/2
-
-
-# NEXT:
-# make a sample scikit-learn used "regression" ml code with basic steps and proper dataset
-# main focus is performance analysis demonstration
-# evaluation process
-
-let’s now create a clean, proper regression example using scikit-learn, covering:
-
-✅ Data loading
-✅ Model training
-✅ Prediction
-✅ Performance evaluation with key regression metrics: MSE, RMSE, MAE, and R² score
+    # Data loading
+    # Model training
+    # Prediction
+    # Performance evaluation with key regression metrics: MSE, RMSE, MAE, and R² score
 
 
 # 1. Import libraries
@@ -133,6 +125,4 @@ print("Mean Absolute Error (MAE):", mae)
 # R² Score (Coefficient of Determination)
 r2 = r2_score(y_test, predictions)
 print("R² Score:", r2)
-
-
 
