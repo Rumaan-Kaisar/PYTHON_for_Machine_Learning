@@ -1,12 +1,5 @@
 
-################# 14.1: FULL, 14.3: FULL, NXT >> 14.6 after 14.4, 14.5
-# copy: Analyze: analyze this text, get the topics, 
-#       output in english: describe the topics on your own knowledge withot losing context, use clarification and fix any misconception (mention them)
-#   
-#
-################# (02-May-25 for 03-May-25)
-
-# Courses: PrTla PY for DS & ML >    14.1, 14.3, 14.6
+# Courses: PrTla PY for DS & ML >    14.1, 14.3, 14.6  >>  details in ipynb
 
 """ 
     Each Machine Learning algorithm we cover in this section will follow 4 parts:
