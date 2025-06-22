@@ -1,5 +1,5 @@
 
-# Courses: PrTla PY for DS & ML >    14.4, 14.5 >> details in in ipynb
+# Courses: PrTla PY for DS & ML >    14.4, 14.5  >>  details in ipynb
 
 
 # --------------------------------  CLASSIFICATION example using scikit-learn  --------------------------------
