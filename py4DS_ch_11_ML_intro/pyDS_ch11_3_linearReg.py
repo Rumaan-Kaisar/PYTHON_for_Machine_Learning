@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (22-Jun-25 for 24-Jun-25)
+################# (24-Jun-25 for 25-Jun-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 14.6  >>  details in ipynb
 
