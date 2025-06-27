@@ -4,58 +4,15 @@
 #       
 #   
 #
-################# (24-Jun-25 for 25-Jun-25)
+################# (25-Jun-25 for 27-Jun-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 14.6  >>  details in ipynb
 
 
 
+----  1.50  ----
 
-Hello everyone and welcome to an introduction to linear regression and this lecture we're going to get
 
-a light theoretical background history behind the idea of linear regression before we actually tackle
-
-the concept with Python and the sikat learn library.
-
-If you want a deeper mathematical understanding of linear regression.
-
-You can go ahead and check out chapters 2 and 3 of an introduction to statistical learning.
-
-Let's discuss the history behind literary aggression.
-
-This entire idea all started back in the 1800s a man named Francis gult in Colten was studying the relationship
-
-between parents and their children and in particular he investigated the relationship between the heights
-
-of fathers and the heights of their sons.
-
-What he discovered was that a man's son tended to be roughly as tall as his father.
-
-However Galton's breakthrough was at the son's high tended to be closer to the overall average height
-
-of all people.
-
-Let's go ahead and take an example of this.
-
-Shaquille O'Neal was a famous NBA player is very tall.
-
-He's 7 foot 1 inch or 2.2 meters tall.
-
-If Shaq as he's known has a son chances are he'll be pretty tall too.
-
-However Czech is such an anomaly in height that there is also a very good chance that his son is not
-
-going to be as tall as Shaq.
-
-And it turns out this is the case.
-
-Shaquille O'Neal son is pretty tall.
-
-He's 6 foot seven inches but he's not nearly as tall as his dad who was 7 foot 1 Gault him calls this
-
-phenomenon regression as in a fathers sons Height's tends to regress or drift towards the mean or average
-
-height of everyone else.
 
 Let's go ahead and begin to plot out the sort of example let's cut to the regression with only two data
 
