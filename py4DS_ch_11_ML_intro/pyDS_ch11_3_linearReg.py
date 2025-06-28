@@ -1,10 +1,10 @@
 
 ################# 15.1:
-# copy: 
+# copy: 2 data, py, ipynb
 #       
 #   
 #
-################# (25-Jun-25 for 27-Jun-25)
+################# (27-Jun-25 for 28-Jun-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 14.6  >>  details in ipynb
 
@@ -14,39 +14,53 @@
 
 
 
-Let's go ahead and begin to plot out the sort of example let's cut to the regression with only two data
+Let's go ahead and begin to plot out the sort of example let's talk to the simples regression with only two data
 
 points which is the simplest possible example.
 
-Here we have two data points.
+Here we have two data points (x, y), (2, 4) and (5, 10)
 
-Sequels to and white was for as one data point and the X sequel's 5 and y equals 10 is another data
 
-point.
 
-These two little black dots all we're trying to do when we calculate our regression line is draw a line
+all we're trying to do when we calculate our regression line is draw a line
 
-that's as close to every dot as possible for classic linear regression or the least squares method.
+that's as close to every dot as possible.
+For classic linear regression or the "least squares method".
 
-You only measure the closeness in the up and down their action.
+You only measure the closeness in the "up and down" direction.
+
 
 Here we have a perfectly fitted line because we only had two points.
 
-Now wouldn't it be great if we could apply this same concept to grasp with more than just two data points
+
+
+
+Now wouldn't it be great if we could apply this same concept to a graph with more than just two data points?
+By doing this, we could take multiple men and their son's heights and do things like tell a man how tall we expect his son to be...before he even has a son!
+
+FIG 
+
+Now wouldn't it be great if we could apply this same concept to graph with more than just two data points?
 
 .
 
-By doing this we could take multiple men and their sons heights and do things like tell Amanda how tall
-
-we expect the son to be before he even has a son.
+By doing this we could take multiple men and their son's heights and do things like tell a man that how tall we expect the son to be before he even has a son!
 
 And this is the idea behind supervised learning.
 
-We're going to have a bunch of labeled data points create a model.
+We're going to have a bunch of labeled data points -> create a model. (In this case linear regression) and try to take any unlabeled data (test) such as a father's hight and spit back
 
-In this case in theory aggression and try to take unlabeled data such as a father's high and spit back
+out a prediction of the label (sun's height).
 
-out labeled data our prediction of the sun's height.
+
+''
+
+
+
+
+----  3.03  ----
+
+
 
 Our goal if linear regression is to minimize the vertical distance between all the data points in our
 
