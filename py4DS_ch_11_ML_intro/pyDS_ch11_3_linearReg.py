@@ -10,50 +10,6 @@
 
 
 
-----  1.50  ----
-
-
-
-Let's go ahead and begin to plot out the sort of example let's talk to the simples regression with only two data
-
-points which is the simplest possible example.
-
-Here we have two data points (x, y), (2, 4) and (5, 10)
-
-
-
-all we're trying to do when we calculate our regression line is draw a line
-
-that's as close to every dot as possible.
-For classic linear regression or the "least squares method".
-
-You only measure the closeness in the "up and down" direction.
-
-
-Here we have a perfectly fitted line because we only had two points.
-
-
-
-
-Now wouldn't it be great if we could apply this same concept to a graph with more than just two data points?
-By doing this, we could take multiple men and their son's heights and do things like tell a man how tall we expect his son to be...before he even has a son!
-
-FIG 
-
-Now wouldn't it be great if we could apply this same concept to graph with more than just two data points?
-
-.
-
-By doing this we could take multiple men and their son's heights and do things like tell a man that how tall we expect the son to be before he even has a son!
-
-And this is the idea behind supervised learning.
-
-We're going to have a bunch of labeled data points -> create a model. (In this case linear regression) and try to take any unlabeled data (test) such as a father's hight and spit back
-
-out a prediction of the label (sun's height).
-
-
-''
 
 
 
