@@ -24,8 +24,11 @@
 Linear Regression with Python: Practical Implementation
 
 # Data exploration
-After covering the theory behind linear regression, it’s time to implement a linear regression model using scikit-learn in Python. The initial focus will be on working with a housing dataset to predict housing prices based on various features. As this is an introductory implementation, emphasis will be placed on getting the basic workflow correct rather than complex data cleaning, which will be addressed later.
 
+
+
+00.50
+Work flow:
 To begin, the necessary libraries are imported: pandas and numpy for data manipulation, along with matplotlib and seaborn for data visualization. For displaying plots within Jupyter Notebooks, %matplotlib inline is also set.
 
 The dataset is loaded into a Pandas DataFrame using pd.read_csv(). This housing dataset contains several columns: each row represents a house, with columns including the address, the price the house was sold for, and various city-level statistics such as population, average number of bedrooms and rooms, average house age, and average income. It’s important to note that the address values are artificially generated for demonstration purposes.
