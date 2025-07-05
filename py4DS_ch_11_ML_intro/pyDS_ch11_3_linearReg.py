@@ -23,19 +23,19 @@
 
 Linear Regression with Python: Practical Implementation
 
-# Data exploration
 
 
 
-00.50
-Work flow:
-To begin, the necessary libraries are imported: pandas and numpy for data manipulation, along with matplotlib and seaborn for data visualization. For displaying plots within Jupyter Notebooks, %matplotlib inline is also set.
+01.50 
+dataset:
 
 The dataset is loaded into a Pandas DataFrame using pd.read_csv(). This housing dataset contains several columns: each row represents a house, with columns including the address, the price the house was sold for, and various city-level statistics such as population, average number of bedrooms and rooms, average house age, and average income. It’s important to note that the address values are artificially generated for demonstration purposes.
 
 Before proceeding with modeling, it's good practice to inspect the dataset. The .info() method provides an overview of the data types and number of entries for each column. The .describe() method offers summary statistics for the numeric columns, including mean, minimum, maximum, and standard deviation. If needed, the column names can be listed using df.columns.
 
 To visualize and explore the data, simple plots can be created. One effective option is using Seaborn's pairplot() function, which generates histograms for each variable and scatter plots for each pairwise combination of columns. This reveals general distributions and potential relationships between features. For example, the average number of bedrooms appears segmented, typically between 2 to 6 bedrooms.
+
+
 
 Next, it’s useful to examine the distribution of the target variable — in this case, house prices. A distribution plot shows that the prices are roughly normally distributed, centered around $1 million to $1.5 million. This kind of visualization helps identify whether target values are skewed or normally distributed, although this dataset happens to be clean.
 
