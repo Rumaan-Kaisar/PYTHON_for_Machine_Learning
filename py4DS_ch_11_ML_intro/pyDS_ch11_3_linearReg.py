@@ -30,13 +30,26 @@ Linear Regression with Python: Practical Implementation
 
 
 
-To visualize and explore the data, simple plots can be created. One effective option is using Seaborn's pairplot() function, which generates histograms for each variable and scatter plots for each pairwise combination of columns. This reveals general distributions and potential relationships between features. For example, the average number of bedrooms appears segmented, typically between 2 to 6 bedrooms.
+
+# distribution of a single column
+Next, it’s useful to examine the distribution of the target variable (or target column, i.e. price in our case) that we're trying to predict — in this case, house prices. 
+checkout the distribution:A distribution plot shows that the prices are roughly normally distributed, centered around $1 million to $1.5 million (i.e. average price is in between thise values).
+It won't always be normally distributed for any other target variables, our's just nice dataset we got.
+This kind of visualization helps identify whether target values are skewed or normally distributed, although this dataset happens to be clean.
+
+
+# heatmap
+Another valuable step is to generate a heatmap of the correlation matrix (beteen  each of the columns). 
+correlation matrix: The .corr() method computes the pairwise correlation coefficients between all numeric columns. 
+This matrix can be visualized using Seaborn's heatmap(), where higher values indicate stronger linear relationships between variables. 
+The diagonal of the heatmap naturally shows a perfect correlation of 1 for each feature with itself (because each colum is fully correlated itself, it' obvious). '
+also we got some info from other columns (without annotations numerically)
+'Including annotations with the actual correlation values (annot=True) helps in assessing these relationships numerically.'
 
 
 
-Next, it’s useful to examine the distribution of the target variable — in this case, house prices. A distribution plot shows that the prices are roughly normally distributed, centered around $1 million to $1.5 million. This kind of visualization helps identify whether target values are skewed or normally distributed, although this dataset happens to be clean.
 
-Another valuable step is to generate a heatmap of the correlation matrix. The .corr() method computes the pairwise correlation coefficients between all numeric columns. This matrix can be visualized using Seaborn's heatmap(), where higher values indicate stronger linear relationships between variables. The diagonal of the heatmap naturally shows a perfect correlation of 1 for each feature with itself. Including annotations with the actual correlation values (annot=True) helps in assessing these relationships numerically.
+# Let's focus on scikit leanrn and training a linear regression model 6.30
 
 Once data exploration is complete, the next step is to focus on applying scikit-learn to train a linear regression model. This will involve defining the feature and target variables, splitting the data into training and test sets, creating and fitting the regression model, making predictions, and finally evaluating the model’s performance.
 
