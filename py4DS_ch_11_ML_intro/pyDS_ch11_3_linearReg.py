@@ -26,29 +26,37 @@ Linear Regression with Python: Practical Implementation
 
 
 
-04.09 
+
 
 
 
 
 # Let's focus on scikit leanrn and training a linear regression model 6.30
 
-Once data exploration is complete, the next step is to focus on applying scikit-learn to train a linear regression model. This will involve defining the feature and target variables, splitting the data into training and test sets, creating and fitting the regression model, making predictions, and finally evaluating the model’s performance.
+# Getting feature and target
+The first step in building a linear regression model is to split the dataset into two parts: one containing the feature variables (X) used for training, and another containing the target variable (y) that the model will learn to predict. In this case, the "Price" column is the target variable. 
+The "Address" column is excluded because it contains text data that linear regression cannot handle directly. 
+Later, techniques such as Natural Language Processing (NLP) can be applied to process textual information, but for now, let's focus on the numerical data.
 
-This structured workflow forms the foundation for supervised learning tasks using regression in Python.
+The feature columns are selected by accessing the list of column names by df.columns 
+and excluding the target variable (label) and irrelevant columns like 'address'. The feature set X is then created from these selected columns, while y is assigned the values from the Price column.
+
+so X is our featireand y is our target variable (GPT:is also called label?)
 
 
-
-The first step in building a linear regression model is to split the dataset into two parts: one containing the feature variables (X) used for training, and another containing the target variable (y) that the model will learn to predict. In this case, the Price column is the target variable. The Address column is excluded because it contains text data that linear regression cannot handle directly. Later, techniques such as Natural Language Processing (NLP) can be applied to process textual information, but for now, it is removed from the model.
-
-The feature columns are selected by accessing the list of column names and excluding the target variable and irrelevant columns. The feature set X is then created from these selected columns, while y is assigned the values from the Price column.
-
+# Split data 7.31
 Once the features and target variables are prepared, the next step is to split the data into a training set and a testing set. The training set is used to train the model, while the testing set evaluates the model’s performance on unseen data. This split is performed using scikit-learn’s train_test_split() function, which can be imported from sklearn.model_selection.
+
 
 When using train_test_split(), the feature data X and target data y are passed as arguments, along with a test_size parameter, which defines what proportion of the data should be reserved for testing. A common choice is 30% or 40%. Additionally, specifying a random_state ensures that the random splitting of the data is reproducible — meaning the same split will be generated every time the code is run with the same value, providing consistent results for debugging and comparison.
 
-For example, setting test_size=0.4 allocates 40% of the data for testing, while random_state=101 ensures consistent splits. The function returns four outputs: X_train, X_test, y_train, and y_test, representing the feature and target data for both training and testing sets.
+For example, setting test_size=0.4 allocates 40% of the data for testing (commonly 0/3 or 30% is used), while random_state=101 ensures consistent splits (could be any numbers, mkes the fixed random splits). The function returns four outputs: X_train, X_test, y_train, and y_test, representing the feature and target data for both training and testing sets (GPT: this function returns a tuple and we're doing tuple unpacking).
+ 
 
+
+
+
+# Create and fit the model 10.20
 After splitting the data, the next step is to create and train the linear regression model. This is done by importing the LinearRegression class from sklearn.linear_model. The model can then be instantiated and fitted to the training data.
 
 This structured workflow — preparing data, splitting into training and testing sets, creating the model, and training it — forms the foundation for building reliable supervised learning models using scikit-learn in Python.
