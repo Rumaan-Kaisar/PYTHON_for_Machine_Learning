@@ -34,14 +34,6 @@ Linear Regression with Python: Practical Implementation
 # Let's focus on scikit leanrn and training a linear regression model 6.30
 
 # Getting feature and target
-The first step in building a linear regression model is to split the dataset into two parts: one containing the feature variables (X) used for training, and another containing the target variable (y) that the model will learn to predict. In this case, the "Price" column is the target variable. 
-The "Address" column is excluded because it contains text data that linear regression cannot handle directly. 
-Later, techniques such as Natural Language Processing (NLP) can be applied to process textual information, but for now, let's focus on the numerical data.
-
-The feature columns are selected by accessing the list of column names by df.columns 
-and excluding the target variable (label) and irrelevant columns like 'address'. The feature set X is then created from these selected columns, while y is assigned the values from the Price column.
-
-so X is our featireand y is our target variable (GPT:is also called label?)
 
 
 # Split data 7.31
