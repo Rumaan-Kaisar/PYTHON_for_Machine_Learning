@@ -37,18 +37,9 @@ Linear Regression with Python: Practical Implementation
 
 
 # Split data 7.31
-Once the features and target variables are prepared, the next step is to split the data into a training set and a testing set. The training set is used to train the model, while the testing set evaluates the model’s performance on unseen data. This split is performed using scikit-learn’s train_test_split() function, which can be imported from sklearn.model_selection.
 
 
-When using train_test_split(), the feature data X and target data y are passed as arguments, along with a test_size parameter, which defines what proportion of the data should be reserved for testing. A common choice is 30% or 40%. Additionally, specifying a random_state ensures that the random splitting of the data is reproducible — meaning the same split will be generated every time the code is run with the same value, providing consistent results for debugging and comparison.
-
-For example, setting test_size=0.4 allocates 40% of the data for testing (commonly 0/3 or 30% is used), while random_state=101 ensures consistent splits (could be any numbers, mkes the fixed random splits). The function returns four outputs: X_train, X_test, y_train, and y_test, representing the feature and target data for both training and testing sets (GPT: this function returns a tuple and we're doing tuple unpacking).
- 
-
-
-
-
-# Create and fit the model 10.20
+# Create and fit the model 10.20 rev[12-Jul-2025]
 After splitting the data, the next step is to create and train the linear regression model. This is done by importing the LinearRegression class from sklearn.linear_model. The model can then be instantiated and fitted to the training data.
 
 This structured workflow — preparing data, splitting into training and testing sets, creating the model, and training it — forms the foundation for building reliable supervised learning models using scikit-learn in Python.
