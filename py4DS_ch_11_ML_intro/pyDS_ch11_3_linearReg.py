@@ -39,12 +39,7 @@ Linear Regression with Python: Practical Implementation
 # Split data 7.31
 
 
-# Create and fit the model 10.20 rev[12-Jul-2025]
-After splitting the data, the next step is to create and train the linear regression model. This is done by importing the LinearRegression class from sklearn.linear_model. The model can then be instantiated and fitted to the training data.
-
-
-
-Once the LinearRegression model is imported from scikit-learn, the next step is to instantiate it by creating an instance of the LinearRegression class. This instance serves as the linear regression model object. By calling the .fit() method on this object, the model can be trained on the prepared training data. The fit() method takes two arguments: the training features X_train and the corresponding target values y_train. Once executed, the model is trained and ready for evaluation. It is important to note that this method modifies the model object in place and does not need to be assigned to a new variable (is already taken effect over the used object). so no need to use lm = lm.fit()
+# Create and fit the model 12.02 rev[15-Jul-2025]
 
 -------------------------------------
 
