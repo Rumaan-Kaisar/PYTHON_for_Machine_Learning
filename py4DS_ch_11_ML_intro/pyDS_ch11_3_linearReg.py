@@ -43,16 +43,7 @@ Linear Regression with Python: Practical Implementation
 
 # 13.35
 
-iterpreting the coefficient:
-For better readability, these coefficients can be organized into a pandas DataFrame, associating each coefficient value with its corresponding feature (i.e. columns). This structured view helps interpret how each independent variable affects the dependent variable. For example, a positive coefficient indicates that increasing the corresponding feature leads to an increase in the predicted value, assuming all other features remain constant. Similarly, a negative coefficient would imply a decrease in the predicted value.
 
-lets's examin the coefficint on x_train
-
-
-
-
-
-after frinting the cdf we can see the coeff of each feature
 13.20
 
 for example: 
