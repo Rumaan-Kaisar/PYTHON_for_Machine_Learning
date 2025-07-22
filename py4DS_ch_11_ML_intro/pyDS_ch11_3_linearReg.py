@@ -47,26 +47,7 @@ Linear Regression with Python: Practical Implementation
 13.36
 
 
-
-
-So here we have a coefficient for each feature.
-And if again if you want the more mathematical reasoning behind these coefficients and how they work
-Mixy do the reading (chapter 3, An Introduction to Statistical Learning, Gareth James) and I'm going to briefly explain how to interpret these coefficients.
-Basically what this means if we take a look at this first one (Avg. Area Income	21.528276) if we hold all other features fixed a
-one unit increase in average area.
-Income is associated with an increase of $21 and 52 cents in price.
-
-And then for the second one (Avg. Area House Age	164883.282027) we could also say something like a one year increase in the average area
-house age is associated with an increase of $164 and a.
-Or excuse me a hundred sixty four thousand eight hundred eighty three dollars and you can do a similar
-analysis for each of these features and the coefficients.
-
-Now you may be wondering does this actually make any sense.
-Probably not because this is artificially created data but if you want to do a real data analysis you
-can actually repeat this project on the "Boston dataset".
-That is the same housing sort of data but it's actually real.
-It's from a 1970s study and you can find it in sikat learn let me go ahead and show you how you can
-go ahead and grab that Boston data set.
+# NXT >> Load the boston dataset
 
 what you can do is you can call from S-K learn dot data sets
 import load Boston and there's a link in your notebook wups load Boston near princes.
