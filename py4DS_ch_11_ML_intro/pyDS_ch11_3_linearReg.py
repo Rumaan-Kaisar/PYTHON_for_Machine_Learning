@@ -44,15 +44,70 @@ Linear Regression with Python: Practical Implementation
 # 13.35
 
 
-13.20
+13.36
+
+
+
+
+So here we have a coefficient for each feature.
+And if again if you want the more mathematical reasoning behind these coefficients and how they work
+Mixy do the reading (chapter 3, An Introduction to Statistical Learning, Gareth James) and I'm going to briefly explain how to interpret these coefficients.
+Basically what this means if we take a look at this first one (Avg. Area Income	21.528276) if we hold all other features fixed a
+one unit increase in average area.
+Income is associated with an increase of $21 and 52 cents in price.
+
+And then for the second one (Avg. Area House Age	164883.282027) we could also say something like a one year increase in the average area
+house age is associated with an increase of $164 and a.
+Or excuse me a hundred sixty four thousand eight hundred eighty three dollars and you can do a similar
+analysis for each of these features and the coefficients.
+
+Now you may be wondering does this actually make any sense.
+Probably not because this is artificially created data but if you want to do a real data analysis you
+can actually repeat this project on the "Boston dataset".
+That is the same housing sort of data but it's actually real.
+It's from a 1970s study and you can find it in sikat learn let me go ahead and show you how you can
+go ahead and grab that Boston data set.
+
+what you can do is you can call from S-K learn dot data sets
+import load Boston and there's a link in your notebook wups load Boston near princes.
+There's a link in your notebook for the documentation on the state of frame.
+But basically what it does say Boston is to load Boston and then you call it you actually call that
+function load Boston and then if you check out what Boston is it's essentially a dictionary with a bunch
+of information on it and you can check out the description of the data set by saying print(boston['DSCR'])
+and this will print out the Boston House's price data set.
+
+from sklearn.datasets import load_boston
+boston = load_boston() boston.keys()
+# dict_keys(['data', 'feature_names', 'target', 'DESCR'])
+
+Now this is real housing data that you can go ahead and repeat our analysis once word of this lecture
+.
+If you want to do a similar analysis for house price data on a real dataset.
+Keep in mind this data is quite old.
+And then if you want to grab the data itself you can just say print(boston['data']) and you'll see here you data and
+then you can also grab the feature names print(boston['feature_names'])
+which are right here essentially the columns or data frame and then you can also grab the target print(boston['target'])
+And these are the target prices in thousands.
+All right.
+So that's just a quick aside in case you ever want to repeat this if you're not satisfied with our fake data
+conclusion which is really not realistic that as her house gets old you will get an increase in price
+.
+If these coefficients were negative then you would say for each increase in unit you get a downsizing
+in price for the house.
+
+
 
 for example: 
 
-
-
 In this artificial dataset, interpreting these coefficients may not yield meaningful insights since the data is randomly generated. However, in practical applications using real datasets, this analysis can reveal valuable relationships. A recommended alternative for working with realistic housing price data is the Boston Housing Dataset, a classic dataset commonly used in regression problems.
 
+
 The Boston dataset can be loaded from scikit-learn using from sklearn.datasets import load_boston. This function returns a dictionary-like object containing the dataset’s features, target values (housing prices in thousands of dollars), and descriptive details. By accessing .data, .feature_names, and .target, one can retrieve the dataset's feature matrix, column names, and target values, respectively. Although this dataset is somewhat outdated, it provides a reliable starting point for regression analysis on real housing data.
+
+
+
+
+
 
 To summarize the workflow so far:
 
