@@ -41,54 +41,35 @@ Linear Regression with Python: Practical Implementation
 -------------------------------------
 
 
-# 13.35
+# 16.50
+
+OK we'll go ahead and end our first part of our analysis here.
+In part two we'll discuss getting predictions from our model.
+But before we go to part 2 let's do a quick review of everything we just did.
 
 
-13.36
-
-
-# NXT >> Load the boston dataset
-
-what you can do is you can call from S-K learn dot data sets
-import load Boston and there's a link in your notebook wups load Boston near princes.
-There's a link in your notebook for the documentation on the state of frame.
-But basically what it does say Boston is to load Boston and then you call it you actually call that
-function load Boston and then if you check out what Boston is it's essentially a dictionary with a bunch
-of information on it and you can check out the description of the data set by saying print(boston['DSCR'])
-and this will print out the Boston House's price data set.
-
-from sklearn.datasets import load_boston
-boston = load_boston() boston.keys()
-# dict_keys(['data', 'feature_names', 'target', 'DESCR'])
-
-Now this is real housing data that you can go ahead and repeat our analysis once word of this lecture
+First we had to actually grab the data using pandas and he did not read CXXVIII.
+We did a little bit of exploratory data analysis but since his artificial data we're not going to focus
+too much on that later on we'll see a lot more in-depth exploratory data analysis but then we went ahead
+and separated our data into X and Y where X is the features and Y is what we're trying to predict.
+We said from S-K learned that cross-validation import train test split we went ahead and split our data
+specifying a test size and also specifying a random state.
+So your results are the same as what's shown in this video.
+Then we said from S-K learn that linear model import the actual model linear regression we create a
+linear regression object basically an instantiation of a linear regression model.
+We fit that model to the training set and then we explore the intercept and the coefficient.
+And you can check out the Jupiter notebook for this lecture if you want a larger breakdown how to interpret
+these coefficients and basically just formatted the coefficients into a nice data frame in order to
+read them and then at the end we showed you how I can access a real dataset from sikat learn itself
 .
-If you want to do a similar analysis for house price data on a real dataset.
-Keep in mind this data is quite old.
-And then if you want to grab the data itself you can just say print(boston['data']) and you'll see here you data and
-then you can also grab the feature names print(boston['feature_names'])
-which are right here essentially the columns or data frame and then you can also grab the target print(boston['target'])
-And these are the target prices in thousands.
-All right.
-So that's just a quick aside in case you ever want to repeat this if you're not satisfied with our fake data
-conclusion which is really not realistic that as her house gets old you will get an increase in price
-.
-If these coefficients were negative then you would say for each increase in unit you get a downsizing
-in price for the house.
 
+S-K learned that data sets import load Boston in case you want to repeat the sort of analysis on a real
+dataset.
+So we're not quite finished yet.
+In part two we'll discuss had actually GRABBE predictions from our model based off our test set.
+Thanks everyone and I'll see you at the next lecture
 
-
-for example: 
-
-In this artificial dataset, interpreting these coefficients may not yield meaningful insights since the data is randomly generated. However, in practical applications using real datasets, this analysis can reveal valuable relationships. A recommended alternative for working with realistic housing price data is the Boston Housing Dataset, a classic dataset commonly used in regression problems.
-
-
-The Boston dataset can be loaded from scikit-learn using from sklearn.datasets import load_boston. This function returns a dictionary-like object containing the dataset’s features, target values (housing prices in thousands of dollars), and descriptive details. By accessing .data, .feature_names, and .target, one can retrieve the dataset's feature matrix, column names, and target values, respectively. Although this dataset is somewhat outdated, it provides a reliable starting point for regression analysis on real housing data.
-
-
-
-
-
+---------------------------------------
 
 To summarize the workflow so far:
 
