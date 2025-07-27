@@ -41,56 +41,108 @@ Linear Regression with Python: Practical Implementation
 -------------------------------------
 
 
-# 16.50
 
-OK we'll go ahead and end our first part of our analysis here.
-In part two we'll discuss getting predictions from our model.
-But before we go to part 2 let's do a quick review of everything we just did.
+# NXT >> review lecture ipynb -> Part 2
 
 
-First we had to actually grab the data using pandas and he did not read CXXVIII.
-We did a little bit of exploratory data analysis but since his artificial data we're not going to focus
-too much on that later on we'll see a lot more in-depth exploratory data analysis but then we went ahead
-and separated our data into X and Y where X is the features and Y is what we're trying to predict.
-We said from S-K learned that cross-validation import train test split we went ahead and split our data
-specifying a test size and also specifying a random state.
-So your results are the same as what's shown in this video.
-Then we said from S-K learn that linear model import the actual model linear regression we create a
-linear regression object basically an instantiation of a linear regression model.
-We fit that model to the training set and then we explore the intercept and the coefficient.
-And you can check out the Jupiter notebook for this lecture if you want a larger breakdown how to interpret
-these coefficients and basically just formatted the coefficients into a nice data frame in order to
-read them and then at the end we showed you how I can access a real dataset from sikat learn itself
+
+Hello everyone and welcome to part two of the linear regression of Python lecture series in part 2.
+We're going to focus on getting predictions from our model.
+Let's go ahead and jump right back to the notebook where we left off last time.
+All right.
+Here I am at the Jupiter notebook.
+Last time we were able to create our model and fit the model to the training set.
+Now we want to do is grab predictions from our test set what you can do is say predictions is equal
+to L-M.
+And then we're going to call the Predict method and predict method used passen X just the features.
+And in this case we want to pass in features that the models never seen before.
+So we want to pasan X underscore test which is the testing set and just the features then we can go
+ahead and check out the predictions and if we just look at the array of predictions there's a thought
+thought thought here.
+These are the predicted prices of the house.
+However since we did the train test split we know that Y test contains the correct prices of the house
+and we want to know how far off are the predictions from the tests prices the actual prices.
+There is one quick way you can visually analyze this which is just by doing a scatterplot.
+So you can say something like Piazzi thoughts scatter from that plot limb and compare Whitehurst versus
+the predictions you just made.
+And if they line up something like this you know you've done a pretty good job.
+It means that a perfect straight line would be perfectly correct predictions.
+So a little bit off the sort of straight line is actually a very good job.
+Let's go ahead and actually create a histogram of the distribution of our residuals.
+I'm going to say s this plot
+and the residuals remember are the difference between the actual values why test and the predicted values
 .
+So go ahead and passen why test minus predictions
+and we can go ahead and create a plot that looks like this.
+And this is going to be a histogram of the residuals.
+Notice here that our residuals looked to be normally distributed.
+That's a very good sign if you have normally distributed residuals.
+It means your model was a correct choice for the data.
+If this is not normally distributed and you have some sort of weird behavior going on you may want to
+look back at your data and check to see if a linear regression model was the correct choice for the
+data set later on in the machine learning section.
+We'll discuss other ways to analyze the correct choice of a model.
+Let's go ahead and continue with regression evaluation metrics.
+There are three common evaluation metrics for regression problems.
+I'm going to go ahead and hop quickly to the Jupiter note book that contains the notes for this lecture
+in order to explain these evaluation metrics.
 
-S-K learned that data sets import load Boston in case you want to repeat the sort of analysis on a real
-dataset.
-So we're not quite finished yet.
-In part two we'll discuss had actually GRABBE predictions from our model based off our test set.
+
+
+All right.
+I'm going to go ahead and hop over to the linear regression of Python notebook and like I mentioned
+there's three regression evaluation metrics.
+At least the most common ones there's the mean absolute error which is the mean of the absolute value
+of the errors.
+There's the mean squared error MSCE which is the mean of the square to errors and then there's the root
+mean squared error.
+Our MSCE which is the square root of the mean of the squared errors.
+And these are all basic variations on the difference between what you predicted and the true values
+.
+Let's go at and compare these metrics and see which was mean absolute air is the easiest to understand
+because just your average error you take your error take the absolute value of it and average it out
+and S E mean square it.
+Air is more popular than the mean absolute error because MSE will punish larger errors meaning it tends
+to be more useful in the real world because it takes into account larger errors because it's squaring
+them are.
+MSE is even more popular than MSE because our MSCE is interpretable in the Y units meaning you can directly
+interpret our Amasa me in the Y units whatever your target was and all of these are lost functions because
+we want to minimize them.
+All of these values here is something we want to minimize we want to minimize all these errors in order
+to create the best model.
+Let's go ahead and hop back and finish calculating out these metrics in our notebook.
+Okay back to the notebook.
+We can calculate all of these by just saying from S-K learn import metrics and offer this metrics.
+You can say mean underscore absolute error and this will take in your y true and y predictions.
+In this case that's why tests in our predictions.
+And you can go ahead and prints out.
+In this case your mean absolute error.
+And similarly you can go ahead and calculate the same thing for your mean squared error.
+And no I'm just using tab to autocomplete here for white test and predictions and the other thing can
+also do is grab the root mean squared error and you can do this easily just by taking using some PI
+and p s q r t one or under one of those universal functions and then just passing in our previous result
+here.
+Since that was the means operator if you want the root means squirter we just pass that in and that
+gets us the root means Quader.
+OK and that brings us to a conclusion for our linear regression model.
+We were able to successfully taken the data split the data into a training set and a testing set based
+on the features and the target.
+Then we were able.
+Please go ahead and scroll back up here to train a linear model from sikat learn fit the model check
+up the coefficients and the intercepts to try to learn a bit about the model and then actually make
+predictions using the model and analyze our residuals.
+Basically our error of the model based off the test set and we can actually check out the metrics themselves
+.
+Ok like I mentioned you can go ahead and explore the Boston data set that I mentioned earlier and that's
+linked in your note book.
+If you want to redo this analysis on a real dataset.
+But coming up next is going to be your exercise for your portfolio project.
+Or we're going to give you some e-commerce data and you'll have to create a linear regression model
+by following the directions in the exercise and then afterwards we'll go over the solutions.
+I hope you enjoy your first foray into machine learning.
+Later on we'll delve into real data sets from Kaggle dot com and perform machine learning projects that
+are even more in-depth.
 Thanks everyone and I'll see you at the next lecture
-
----------------------------------------
-
-To summarize the workflow so far:
-
-The dataset was loaded using pandas.
-
-Basic exploratory data analysis was performed.
-
-The data was divided into features (X) and the target variable (y).
-
-The data was split into training and testing sets using train_test_split from sklearn.model_selection, with specified test_size and random_state values for reproducibility.
-
-A linear regression model was created and trained on the training set.
-
-The model’s intercept and coefficients were examined and organized for easier interpretation.
-
-An example was provided on how to access and analyze a real dataset using scikit-learn’s load_boston function.
-
-In the next step of the analysis, predictions will be generated from the trained model using the test data, and the model’s performance will be evaluated by comparing these predictions with the actual target values.
-
-
-
 
 -------------------------------------------
 PART 2:
