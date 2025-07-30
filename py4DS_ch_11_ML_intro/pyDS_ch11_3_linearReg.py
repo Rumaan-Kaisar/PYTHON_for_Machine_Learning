@@ -6,7 +6,7 @@
 #
 ################# (01-Jul-25 for 02-Jul-25)
 
-# Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 14.6  >>  details in ipynb
+# Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
 # a clear, pointwise simplification with mid-ground details while preserving full context:
 # Use folloing as interactive note-code
@@ -36,7 +36,7 @@ Linear Regression with Python: Practical Implementation
 # Getting feature and target
 
 
-# interpret 13.35 rev[18-Jul-2025]
+#  rev[29-Jul-2025]
 
 -------------------------------------
 
@@ -111,7 +111,7 @@ There are three common evaluation metrics for regression problems.
 I'm going to go ahead and hop quickly to the Jupiter note book that contains the notes for this lecture
 in order to explain these evaluation metrics.
 
-
+---- Check Point 1
 
 All right.
 I'm going to go ahead and hop over to the linear regression of Python notebook and like I mentioned
