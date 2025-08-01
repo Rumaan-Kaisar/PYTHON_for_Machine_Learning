@@ -46,29 +46,9 @@ Linear Regression with Python: Practical Implementation
 
 
 
-in part 2 We're going to focus on getting predictions from our model.
-Let's go ahead and jump right back to the notebook where we left off last time.
+# rev[30-Jul-2025] 1.23
 
 
-All right.
-Here I am at the Jupiter notebook.
-Last time we were able to create our model and fit the model to the training set.
-Now we want to do is grab predictions from our test set 
-
-
-what you can do is say predictions is equal
-to L-M.
-And then we're going to call the Predict method and predict method used passen X just the features.
-And in this case we want to pass in features that the models never seen before.
-So we want to pasan X underscore test which is the testing set and just the features then we can go
-ahead and check out the predictions and if we just look at the array of predictions there's a thought
-thought thought here.
-These are the predicted prices of the house.
-
-
-
-However since we did the train test split we know that Y test contains the correct prices of the house
-and we want to know how far off are the predictions from the tests prices the actual prices.
 There is one quick way you can visually analyze this which is just by doing a scatterplot.
 
 
