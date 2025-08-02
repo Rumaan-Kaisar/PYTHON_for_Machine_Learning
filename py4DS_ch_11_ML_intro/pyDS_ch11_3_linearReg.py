@@ -23,35 +23,11 @@
 
 Linear Regression with Python: Practical Implementation
 
-
-
-
-
-
-
-
-
-# Let's focus on scikit leanrn and training a linear regression model 6.30
-
-# Getting feature and target
-
-
-#  rev[29-Jul-2025]
-
 -------------------------------------
-
-
 
 # NXT >> review lecture ipynb -> Part 2
 
-
-
-# rev[30-Jul-2025] 1.23
-
-
-There is one quick way you can visually analyze this which is just by doing a scatterplot.
-
-
+# 1.24
 
 So you can say something like Piazzi thoughts scatter from that plot limb and compare Whitehurst versus
 the predictions you just made.
