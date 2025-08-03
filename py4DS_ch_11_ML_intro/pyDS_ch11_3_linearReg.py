@@ -27,15 +27,7 @@ Linear Regression with Python: Practical Implementation
 
 # NXT >> review lecture ipynb -> Part 2
 
-# 1.24
-
-So you can say something like Piazzi thoughts scatter from that plot limb and compare Whitehurst versus
-the predictions you just made.
-And if they line up something like this you know you've done a pretty good job.
-It means that a perfect straight line would be perfectly correct predictions.
-So a little bit off the sort of straight line is actually a very good job.
-
-
+# 1.53
 
 Let's go ahead and actually create a histogram of the distribution of our residuals.
 I'm going to say s this plot
