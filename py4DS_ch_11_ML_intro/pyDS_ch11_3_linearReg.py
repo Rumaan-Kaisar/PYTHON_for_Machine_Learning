@@ -27,37 +27,8 @@ Linear Regression with Python: Practical Implementation
 
 # NXT >> review lecture ipynb -> Part 2
 
-# 1.53
+# rev[03-aug-2025] 3.12
 
-Let's go ahead and actually create a histogram of the distribution of our residuals.
-I'm going to say s this plot
-and the residuals remember are the difference between the actual values why test and the predicted values
-.
-So go ahead and passen why test minus predictions
-and we can go ahead and create a plot that looks like this.
-
-
-PLOT (using python code)
-
-
-And this is going to be a histogram of the residuals.
-Notice here that our residuals looked to be normally distributed.
-
-Why normally distributed residuals is a good sign:
-That's a very good sign if you have normally distributed residuals.
-It means your model was a correct choice for the data.
-If this is not normally distributed and you have some sort of weird behavior going on you may want to
-look back at your data and check to see if a linear regression model was the correct choice for the
-data set 
-
-
-
-later on in the machine learning section.
-We'll discuss other ways to analyze the correct choice of a model.
-Let's go ahead and continue with regression evaluation metrics.
-There are three common evaluation metrics for regression problems.
-I'm going to go ahead and hop quickly to the Jupiter note book that contains the notes for this lecture
-in order to explain these evaluation metrics.
 
 ---- Check Point 1
 
