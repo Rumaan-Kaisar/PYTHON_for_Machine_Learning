@@ -27,22 +27,10 @@ Linear Regression with Python: Practical Implementation
 
 # NXT >> review lecture ipynb -> Part 2
 
-# rev[03-aug-2025] 3.12
+# rev[03-aug-2025] 3.40
 
 
 ---- Check Point 1
-
-All right.
-I'm going to go ahead and hop over to the linear regression of Python notebook and like I mentioned
-there's three regression evaluation metrics.
-At least the most common ones there's the mean absolute error which is the mean of the absolute value
-of the errors.
-There's the mean squared error MSE which is the mean of the square to errors and then there's the root
-mean squared error.
-RMSE which is the square root of the mean of the squared errors.
-And these are all basic variations on the difference between what you predicted and the true values
-.
-
 
 
 Let's go at and compare these metrics and see which was mean absolute air is the easiest to understand
