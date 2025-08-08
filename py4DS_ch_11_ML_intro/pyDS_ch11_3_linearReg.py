@@ -30,47 +30,43 @@ Linear Regression with Python: Practical Implementation
 # rev[03-aug-2025] 3.40
 
 
----- Check Point 1
+---- Check Point 1 : simplify
 
 
-Let's go at and compare these metrics and see which was mean absolute air is the easiest to understand
-because just your average error you take your error take the absolute value of it and average it out
-and S E mean square it.
-Air is more popular than the mean absolute error because MSE will punish larger errors meaning it tends
-to be more useful in the real world because it takes into account larger errors because it's squaring
-them are.
-MSE is even more popular than MSE because our MSCE is interpretable in the Y units meaning you can directly
-interpret our Amasa me in the Y units whatever your target was and 
-
-
-Loss Functions:
-all of these are "Loss functions" because
-we want to minimize them.
-All of these values here is something we want to minimize we want to minimize all these errors in order
-to create the best model.
 Let's go ahead and hop back and finish calculating out these metrics in our notebook.
 
 
 
 Okay back to the notebook.
-We can calculate all of these by just saying from S-K learn import metrics and offer this metrics.
-You can say mean underscore absolute error and this will take in your y true and y predictions.
-In this case that's why tests in our predictions.
-And you can go ahead and prints out.
-In this case your mean absolute error.
+We can calculate all of these by just saying 
+
+from sklearn import metrics 
+
+and off of this metrics You can say mean_absolute_error and this will take in your y_true and y_predictions.
+In this case that's "y_test" and our "predictions". And you can go ahead and prints out. In this case your mean absolute error.
+
+
+metrics.mean_absolute_error(y_test,predictions)
 
 
 And similarly you can go ahead and calculate the same thing for your mean squared error.
-And no I'm just using tab to autocomplete here for white test and predictions and 
+And note I'm just using tab to autocomplete here for y_test and predictions and 
 
+metrics.mean_squared_error(y_test,predictions) 
 
 
 the other thing can
-also do is grab the root mean squared error and you can do this easily just by taking using some PI
-and p s q r t one or under one of those universal functions and then just passing in our previous result
-here.
-Since that was the means operator if you want the root means squirter we just pass that in and that
-gets us the root means Quader.
+also do is grab the root mean squared error and you can do this easily just by taking using np.sqrt()
+one of those universal functions and then just passing in our previous MSE here.
+
+np.sqrt(metrics.mean_squared_error(y_test,predictions))
+
+Since that was the mean_squared_error and we want the root mean_squared_error we just pass that in and that
+gets us the RMSE.
+
+
+
+---- Check Point 2 : simplify :
 
 
 GPT Explain what those metrices mean in our dataset, and also how to interpreat them?
@@ -91,12 +87,22 @@ OK and that brings us to a conclusion for our linear regression model.
 We were able to successfully taken the data split the data into a training set and a testing set based
 on the features and the target.
 Then we were able.
-Please go ahead and scroll back up here to train a linear model from sikat learn fit the model check
-up the coefficients and the intercepts to try to learn a bit about the model and then actually make
-predictions using the model and analyze our residuals.
-Basically our error of the model based off the test set and we can actually check out the metrics themselves
+to train a linear model from sikat learn 
+fit the model check
+up the coefficients and the intercepts to try to learn a bit about the model 
+
+and then actually make
+predictions using the model and 
+
+analyze our residuals.
+Basically our error of the model based off the test set 
+
+and we can actually check out the metrics themselves
 .
 
+
+
+---- Check Point 3 : clarify
 
  
 Ok like I mentioned you can go ahead and explore the Boston data set that I mentioned earlier and that's
