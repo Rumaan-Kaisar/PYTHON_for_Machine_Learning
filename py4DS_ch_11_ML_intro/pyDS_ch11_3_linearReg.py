@@ -25,81 +25,7 @@ Linear Regression with Python: Practical Implementation
 
 -------------------------------------
 
-# NXT >> review lecture ipynb -> Part 2
-
-# rev[03-aug-2025] 3.40
-
-
----- Check Point 1 : simplify
-
-
-Let's go ahead and hop back and finish calculating out these metrics in our notebook.
-
-
-
-Okay back to the notebook.
-We can calculate all of these by just saying 
-
-from sklearn import metrics 
-
-and off of this metrics You can say mean_absolute_error and this will take in your y_true and y_predictions.
-In this case that's "y_test" and our "predictions". And you can go ahead and prints out. In this case your mean absolute error.
-
-
-metrics.mean_absolute_error(y_test,predictions)
-
-
-And similarly you can go ahead and calculate the same thing for your mean squared error.
-And note I'm just using tab to autocomplete here for y_test and predictions and 
-
-metrics.mean_squared_error(y_test,predictions) 
-
-
-the other thing can
-also do is grab the root mean squared error and you can do this easily just by taking using np.sqrt()
-one of those universal functions and then just passing in our previous MSE here.
-
-np.sqrt(metrics.mean_squared_error(y_test,predictions))
-
-Since that was the mean_squared_error and we want the root mean_squared_error we just pass that in and that
-gets us the RMSE.
-
-
-
----- Check Point 2 : simplify :
-
-
-GPT Explain what those metrices mean in our dataset, and also how to interpreat them?
-from sklearn import metrics
-
-
-metrics.mean_absolute_error(y_test,predictions)
-82288.222519149509
-
-metrics.mean_squared_error(y_test,predictions) 
-10460958907.208992
-
-np.sqrt(metrics.mean_squared_error(y_test,predictions))
-102278.82922290904
-
-
-OK and that brings us to a conclusion for our linear regression model.
-We were able to successfully taken the data split the data into a training set and a testing set based
-on the features and the target.
-Then we were able.
-to train a linear model from sikat learn 
-fit the model check
-up the coefficients and the intercepts to try to learn a bit about the model 
-
-and then actually make
-predictions using the model and 
-
-analyze our residuals.
-Basically our error of the model based off the test set 
-
-and we can actually check out the metrics themselves
-.
-
+# NXT >> add codes from ipynb here
 
 
 ---- Check Point 3 : clarify
@@ -116,34 +42,6 @@ Later on we'll delve into real data sets from Kaggle dot com and perform machine
 are even more in-depth.
 Thanks everyone and I'll see you at the next lecture
 
--------------------------------------------
-PART 2:
 
-In the second part of the linear regression workflow, the focus shifts to generating predictions from the trained model. After creating and fitting the linear regression model to the training dataset, the next step is to use this model to predict target values based on new, unseen data — specifically, the features from the test dataset.
+# rev[08-Aug-2025]  copy all the code here from ipynb
 
-To make predictions, the .predict() method of the trained model is called, with the test feature set (X_test) passed as an argument. This generates an array of predicted values corresponding to the test data. Since the original dataset was split into a training and test set, the true values for the test set are stored in y_test. Comparing these true values against the model's predictions helps assess the model's accuracy.
-
-A quick and useful way to visualize this comparison is by creating a scatter plot of the actual target values (y_test) against the predicted values. Ideally, if the model performed perfectly, the points would lie along a straight diagonal line. A well-performing model will show points clustering closely around this line, indicating accurate predictions.
-
-Another important diagnostic step is to examine the distribution of residuals — the differences between the actual values and the predicted values. This can be visualized using a histogram of residuals, calculated as y_test - predictions. If the residuals are roughly normally distributed, it suggests that the linear regression model is an appropriate fit for the data. An abnormal distribution of residuals, on the other hand, may indicate issues with the data or suggest that a different type of model would be more suitable.
-
-Finally, evaluating the model numerically involves calculating standard regression evaluation metrics. There are three commonly used metrics for this purpose: Mean Absolute Error (MAE), Mean Squared Error (MSE), and Root Mean Squared Error (RMSE). These metrics quantify the average difference between predicted and actual values in various ways, providing a clearer understanding of the model's performance.
-
-This structured workflow — generating predictions, visualizing actual vs. predicted values, analyzing residuals, and applying quantitative performance metrics — forms the basis for assessing and refining regression models in practical machine learning tasks.
-
-
-There are three commonly used evaluation metrics for regression problems: Mean Absolute Error (MAE), Mean Squared Error (MSE), and Root Mean Squared Error (RMSE). These metrics measure the difference between predicted and actual values in various ways, providing insight into the model’s accuracy.
-
-Mean Absolute Error (MAE) is the simplest to interpret. It represents the average of the absolute differences between predicted values and the actual values. This gives a straightforward measure of the model’s average error.
-
-Mean Squared Error (MSE), on the other hand, calculates the average of the squared differences between the predicted and actual values. Squaring the errors penalizes larger errors more severely, making MSE particularly useful in real-world applications where larger errors are more problematic.
-
-Root Mean Squared Error (RMSE) is the square root of the MSE. It is often preferred because it expresses the error in the same units as the target variable, making it more interpretable in practical terms. Like MAE and MSE, RMSE serves as a loss function that the model aims to minimize.
-
-These metrics can be easily computed in Python using the sklearn.metrics module. The mean_absolute_error() and mean_squared_error() functions accept the true target values and the model’s predictions as inputs. The RMSE can be calculated by taking the square root of the MSE using NumPy’s sqrt() function.
-
-Once the evaluation metrics are computed, they provide a clear numerical summary of the model’s performance on the test data. Lower values for these metrics indicate a better-fitting model.
-
-The full workflow of this linear regression implementation involves several steps: importing the necessary libraries, loading and inspecting the data, splitting it into training and testing sets, fitting a linear regression model, making predictions, and then evaluating those predictions both visually (using residual plots and scatterplots) and numerically (using regression metrics).
-
-This process demonstrates the fundamental cycle of building and assessing a supervised machine learning model. To extend this practice, learners are encouraged to apply the same workflow on real datasets such as the Boston housing dataset or datasets from sources like Kaggle. These exercises help reinforce concepts and develop skills for applying machine learning to real-world data problems.
