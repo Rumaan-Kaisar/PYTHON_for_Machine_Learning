@@ -1,10 +1,10 @@
 
-################# 15.1:
-# copy: house data, py, ipynb
+################# 15.1-15.5: doene,
+# copy: dat(Prj) + py(Prj) + ipynb(Prj) + review lecture ipynb -> Prj
 #       
 #   
 #
-################# (01-Jul-25 for 02-Jul-25)
+################# (10-Aug-25 for 12-Aug-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -143,10 +143,27 @@ np.sqrt(metrics.mean_squared_error(y_test, predictions))
 
 
 """  
-    portfolio project exercise: Ecommerce analysis
+    --------  portfolio project exercise: Ecommerce analysis  --------
+
+    Data file: data_Ecommerce_Customers. its a FAKE data.
+
+    
+    Background: 
+        NYC e-commerce firm sells clothes online + offers in-store stylist help. 
+        Users see stylist, then order via app or site. 
+        
+        Goal: choose whether to improve app or site. 
+        Task: use data to decide.
+
+
+    Steps: 
+        Load libs & data -> EDA (Seaborn) -> answer pattern Qs 
+        split train/test -> train linear regression 
+        predict -> check metrics -> check residuals -> write conclusion.
 """
 
 
+# GPT: a clear, pointwise simplification with mid-ground details while preserving full context:
 
 
 
