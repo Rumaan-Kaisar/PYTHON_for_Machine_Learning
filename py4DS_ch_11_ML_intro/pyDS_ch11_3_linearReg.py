@@ -1,10 +1,10 @@
 
 ################# 15.1-15.5: doene,
-# copy: dat(Prj) + py(Prj) + ipynb(Prj) + review lecture ipynb -> Prj
+# copy: update reviwed pyDS_ch11_3_linearReg.ipynb -> Prj
 #       
 #   
 #
-################# (10-Aug-25 for 12-Aug-25)
+################# (12-Aug-25 for 13-Aug-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -161,6 +161,25 @@ np.sqrt(metrics.mean_squared_error(y_test, predictions))
         split train/test -> train linear regression 
         predict -> check metrics -> check residuals -> write conclusion.
 """
+
+# import libraries
+import numpy as np
+import pandas as pd
+
+# We'll use following visualization libraries
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# To remove 'warnings' use 'filterwarnings'
+import warnings
+warnings.filterwarnings('ignore')
+
+# shows figures in ipynb
+%matplotlib inline
+
+
+
+
 
 
 # GPT: a clear, pointwise simplification with mid-ground details while preserving full context:
