@@ -1,15 +1,12 @@
 
-################# 15.1-15.5: doene,
-# copy: update reviwed pyDS_ch11_3_linearReg.ipynb -> Prj
+################# 15.1-15.5: doene, 15.6: 280 (EDA)
+# copy: 
 #       
 #   
 #
-################# (12-Aug-25 for 13-Aug-25)
+################# (13-Aug-25 for 15-Aug-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
-
-# a clear, pointwise simplification with mid-ground details while preserving full context:
-# Use folloing as interactive note-code
 
 
 """ 
@@ -178,8 +175,32 @@ warnings.filterwarnings('ignore')
 %matplotlib inline
 
 
+# Get the Data
+    # We will use the Ecommerce Customers file "data_Ecommerce_Customers" 
+        # (no .csv extension, but still loadable with read_csv).
+
+    # The dataset contains customer information such as 
+        # Email, 
+        # Address, and 
+        # Avatar color.
+
+    # It also includes numerical columns:
+        # Avg. Session Length – minutes
+        # Time spent on App – minutes
+        # Time spent on Website – minutes
+        # Time length of Membership – Number of years as a member.
+
+# Read in the csv file and as a dataframe named customers.
+customers = pd.read_csv("./data_Ecommerce_Customers")
 
 
+# ----  check info  ----
+# Check head() of customers, info() and describe()
+
+customers.head()
+customers.info()
+customers.describe()
+customers.columns
 
 
 # GPT: a clear, pointwise simplification with mid-ground details while preserving full context:
