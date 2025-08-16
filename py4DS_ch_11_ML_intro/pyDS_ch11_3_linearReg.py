@@ -1,10 +1,10 @@
 
-################# 15.1-15.5: doene, 15.6: 280 (EDA)
+################# 15.1-15.5: doene, 15.6: 282 (next 2 joint plots)
 # copy: 
 #       
 #   
 #
-################# (13-Aug-25 for 15-Aug-25)
+################# (15-Aug-25 for 16-Aug-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -201,6 +201,51 @@ customers.head()
 customers.info()
 customers.describe()
 customers.columns
+
+
+# ------------   EDA   ------------
+# Exploratory Data Analysis
+# Now we'll only use the numerical data of the csv file.
+
+# jointplot
+    # Use sns.jointplot to compare the "Time on Website" and "Yearly Amount Spent" columns. 
+        # Does the correlation make sense?
+    # Do the same but with the "Time on App" column instead.
+    # Use jointplot to create a 2D hex bin plot comparing Time on App and Length of Membership.
+
+
+# ----  jointplot 1  ----
+
+sns.jointplot(data= customers, x=customers['Time on Website'], y=customers['Yearly Amount Spent'])
+
+
+# with sns plotstyle
+sns.set_palette("OrRd_d")
+sns.set_style('whitegrid')
+
+sns.jointplot(x='Time on Website',y='Yearly Amount Spent',data=customers)
+
+
+# with more style
+
+fig1 = sns.jointplot(
+    data=customers,
+    x="Time on Website",
+    y="Yearly Amount Spent",
+    kind="scatter",
+    height=6,
+    color="#89cff0",
+    edgecolor="#2978c7",
+    s=12,
+    marginal_kws=dict(bins=20, fill=True, color="#00c4b0", edgecolor="white", alpha=0.8)
+).set_axis_labels("Time on Website", "Yearly Amount Spent")
+
+fig1.ax_joint.grid(True, linestyle="--", alpha=0.5)
+
+
+# correlation: More time on site, more money spent.
+    # Customers who spend more time on the site tend to spend more money.
+    # Most customers spend around 37 minutes on the site, with an average yearly spending of about $500.
 
 
 # GPT: a clear, pointwise simplification with mid-ground details while preserving full context:
