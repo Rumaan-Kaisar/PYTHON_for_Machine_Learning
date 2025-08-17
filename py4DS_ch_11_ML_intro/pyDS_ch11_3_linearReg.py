@@ -211,7 +211,7 @@ customers.columns
     # Use sns.jointplot to compare the "Time on Website" and "Yearly Amount Spent" columns. 
         # Does the correlation make sense?
     # Do the same but with the "Time on App" column instead.
-    # Use jointplot to create a 2D hex bin plot comparing Time on App and Length of Membership.
+    # Use jointplot to create a 2D hex bin plot comparing "Time on App" and "Length of Membership".
 
 
 # ----  jointplot 1  ----
@@ -252,3 +252,24 @@ fig1.ax_joint.grid(True, linestyle="--", alpha=0.5)
 
 
 
+# More time on site, more money spent.
+fig1 = sns.jointplot(
+    data=customers,
+    x="Time on App",
+    y="Length of Membership",
+    kind="hex",
+    height=6,
+    color="#1abcde",
+    edgecolor="#f9f9f9",
+    marginal_kws=dict(
+        bins=20, 
+        fill=True, 
+        # color="#ee4466",      # histogram fill color
+        edgecolor="white", 
+        alpha=0.5,
+        kde = True,             # enable KDE
+        line_kws=dict(linewidth=2)  # KDE curve color
+    )
+).set_axis_labels("Time on App", "Length of Membership")
+
+fig1.ax_joint.grid(True, linestyle="--", alpha=0.5)
