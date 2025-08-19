@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (15-Aug-25 for 16-Aug-25)
+################# (17-Aug-25 for 19-Aug-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -252,7 +252,44 @@ fig1.ax_joint.grid(True, linestyle="--", alpha=0.5)
 
 
 
-# More time on site, more money spent.
+# ----  jointplot 2  ----
+
+# More time on app, more money spent.
+fig1 = sns.jointplot(
+    data=customers,
+    x="Time on App",
+    y="Yearly Amount Spent",
+    kind="scatter",
+    height=6,
+    color="#ffa98f",
+    edgecolor="#e52b52",
+    s=12,
+    marginal_kws=dict(
+        bins=20, 
+        fill=True, 
+        color="#ee4466",      # histogram fill color
+        edgecolor="white", 
+        alpha=0.5,
+        kde = True,             # enable KDE
+        line_kws=dict(linewidth=2)  # KDE curve width
+    )
+).set_axis_labels("Time on App", "Yearly Amount Spent")
+
+fig1.ax_joint.grid(True, linestyle="--", alpha=0.5)
+
+# error occurs using "kde_kws=dict(linewidth=2)" because the KDE plotting function 
+    # in Seaborn does not accept a color argument through kde_kws when used alongside histplot via jointplot. 
+    # Seaborn specifically uses line_kws instead for styling the KDE curve.
+
+# correlation:
+    # Customers who spend more time on the 'App' tend to spend more money.  
+    # Most customers spend around "12 minutes" on the 'App' and spend around $400-$600.
+
+
+
+# ----  jointplot 3  ----
+
+# Hex Bin: More time on app, longer membership
 fig1 = sns.jointplot(
     data=customers,
     x="Time on App",
@@ -273,3 +310,10 @@ fig1 = sns.jointplot(
 ).set_axis_labels("Time on App", "Length of Membership")
 
 fig1.ax_joint.grid(True, linestyle="--", alpha=0.5)
+
+
+# correlation
+    # Customers who spend more time on the "App" tend to be long-time members.
+    # Most customers spend about "12 minutes" on the "App" and have been members for around **2 to 5 years**."
+
+
