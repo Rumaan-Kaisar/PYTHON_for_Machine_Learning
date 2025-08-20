@@ -1,6 +1,6 @@
 
 ################# 15.1-15.5: doene, 15.6: 282 (next 2 joint plots)
-# copy: 
+# copy: ecommerce_pairplot.png, add by html (py + ipynb), 
 #       
 #   
 #
@@ -316,4 +316,14 @@ fig1.ax_joint.grid(True, linestyle="--", alpha=0.5)
     # Customers who spend more time on the "App" tend to be long-time members.
     # Most customers spend about "12 minutes" on the "App" and have been members for around **2 to 5 years**."
 
+
+# ----  pairplot  ----
+# sns.pairplot(df, height=2, aspect=1.3)
+
+# save as image, then load it in "markdown cell"
+plot = sns.pairplot(customers, height=2, aspect=1.3)
+plot.savefig("./ch11_img/ecommerce_pairplot.png", dpi=50)
+plt.close() # prevents the plot from displaying and embedding
+
+# attach in markdown:   ![Alt Text](./ch11_img/ecommerce_pairplot.png)
 
