@@ -327,3 +327,7 @@ plt.close() # prevents the plot from displaying and embedding
 
 # attach in markdown:   ![Alt Text](./ch11_img/ecommerce_pairplot.png)
 
+# observation: Based on above plot what are the most correlated feature with "Yearly Amount Spent"?
+# ans: 
+
+
