@@ -327,7 +327,24 @@ plt.close() # prevents the plot from displaying and embedding
 
 # attach in markdown:   ![Alt Text](./ch11_img/ecommerce_pairplot.png)
 
-# observation: Based on above plot what are the most correlated feature with "Yearly Amount Spent"?
-# ans: 
+# observation: 
+    # Based on above plot what are the most correlated feature with "Yearly Amount Spent"?
+    # ans: "Length of Membership"
+
+
+# ----  lmplot  ----
+# Make a sns.lmplot (linear model plot) of  "Yearly Amount Spent" vs. "Length of Membership". 
+sns.set_style('whitegrid')
+
+sns.lmplot(
+    x='Length of Membership', 
+    y='Yearly Amount Spent', 
+    data=customers, 
+    scatter_kws=dict(
+        color="#89cff0", 
+        edgecolor="#2978c7", 
+        s=12
+    )
+)
 
 
