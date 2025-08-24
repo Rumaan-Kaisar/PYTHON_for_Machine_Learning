@@ -1,5 +1,5 @@
 
-################# 15.1-15.5: doene, 15.6: 282 (next 2 joint plots)
+################# 15.1-15.5: done, 15.6:
 # copy: ecommerce_pairplot.png, add by html (py + ipynb), 
 #       
 #   
@@ -346,5 +346,121 @@ sns.lmplot(
         s=12
     )
 )
+
+
+# ----------------    Training and Testing a Model    ----------------
+
+# ----  Feature & Target  ----
+# Feature and Target:
+    # Extract features 'X' and target 'y' from the data
+    # select feature columns
+
+# ----  split  ----
+# Split the data into "train" and "test"
+    # Use train_test_split() from sklearn.model_selection.
+    #  Pass X (features) and y (target) as inputs.
+    # Set test_size
+        # Defines what fraction of data goes to testing.
+        # Common values: 0.3 (30%) or 0.4 (40%).
+    # Set random_state for reproduce the result (like random_state=101).
+    # store output:
+        # X_train, X_test: features for training and testing. 
+        # y_train, y_test: labels for training and testing.
+
+# ----  model train  ----
+# Create and Fit Model
+    # Import and instantiate the LinearRegression model.
+    # Train it using model.fit(X_train, ytrain).
+
+1.	Import the Model Class
+° Import LinearRegression from sklearn.linear_model. o This class provides the linear regression algorithm.
+2.	Create the Model Instance
+° Instantiate an object of LinearRegression().
+° This object will hold the trained model once fitted.
+° This instance serves as the linear regression model object.
+° By calling the .fit() method on this object, the model can be trained on the training data.
+3.	Fit the Model to Training Data
+° Call the .fit() method on the model object.
+° Pass X_train (features) and y_train (target values) as arguments.
+° This trains the model by finding the best-fit line for the given data.
+4.	No Need to Reassign the Fitted Model
+° The .fit() method modifies the model object in place.
+° No need to reassign it like model = model.fit().
+° The original model object now contains the trained model.
+
+
+# ----  model iterpretation  ----
+# Make Predictions
+    # Use the trained model to predict on the test set with model.predict(X_test).
+
+1.	Each feature has a coefficient:
+° These numbers show how much the target (e.g. house price) changes when that feature changes by one unit.
+2.	How to interpret a coefficient:
+° Example: Avg. Area Income -» 21.528 -> Holding all other features constant, a $1 increase in average area income leads to a $21.53 increase in predicted price.
+° Another example: Avg. Area House Age -» 164,883.28 -> A 1 -year increase in average house age increases predicted price by $164,883 (again, holding others fixed).
+3.	Negative coefficients?
+° A negative value means the feature is inversely related to price: — e.g., Increase in that feature -* Decrease in predicted price.
+
+
+1. Check the Intercept
+° Use . intercept_ on the model object (lm. intercept_) to get the intercept value of the regression line. ° This represents the predicted value of the target when all features are zero.
+2.	Check the Coefficients
+° In. coef_ -* Gives the list of learned coefficients.
+° Use . coef_ on the model object (lm. coef_) to get the coefficients for each feature.
+° These represent the effect of each feature on the target variable.
+3.	Match Coefficients to Feature Names
+° The coefficients are in the same order as the features in X or X_train.
+° X. columns -> Gives the feature names (same as in X_train).
+4.	Create a DataFrame for Clarity
+° To make interpretation easier, create a pandas.DataFrame that:
+*	Uses lm. coef_ as data
+■ Uses X. columns as the index (feature names)
+*	Names the column (e.g., "Coefficient")
+
+
+# ----  model evaluation  ----
+# Evaluate Performance
+
+1. Getting Predictions
+•	After training the model (fit on training set), use:
+# now we only pass the features and no Label. predictions = lm.predict(X_test)
+to get the predictions from our test set.
+•	X_test contains the test features the model hasn't seen before.
+•	These predictions are the model's estimated house prices.
+
+# comparison
+Since we used train-test split, y_test contains the actual house prices. Now we can use that to compare our predictions and see how different they are from the real values.
+2. Comparing Predictions to Actual Values
+•	y_test contains the actual house prices.
+•	To see how well the model performed, compare predictions to y_test.
+B Note:
+•	In regression (like predicting house prices):
+"Actual values" or "real values" is more appropriate term.
+•	In classification:
+"Actual labels" is the better term, since you're comparing predicted categories against true class labels
+
+
+# 3. Visual Evaluation: Scatter Plot
+Now we want to know how far the predictions from the actual prices (label) The quick way to visually analyze this is just by doing a scatterplot.
+• Plot actual vs. predicted values:
+pit.scatter(ytestj predictions)
+• If these y_test, predictions forms a straight diagonal line like pattern, we say the model is doing well.
+
+
+# 4. Analyzing Residuals
+Let's create a histogram of the distribution of our residuals, residuals are the difference between the actual values (y_test) and the predicted values.
+•	Residuals = Actual - Predicted
+sns.histplot(y_test - predictions, bins=50)
+•	A normally distributed residual plot (bell-shaped) means the model fits the data well.
+Why This Matters
+•	If residuals look random and normally distributed-> linear regression is likely appropriate.
+° It means our model was a correct choice for the data.
+•	If residuals look skewed or unusual -> consider using a different model.
+•	Later, we'll explore other methods to check if we chose the right model.
+Next Step: Evaluation Metrics
+•	Up next: common metrics used to measure regression performance.
+
+
+# Evaluation Metrics
 
 
