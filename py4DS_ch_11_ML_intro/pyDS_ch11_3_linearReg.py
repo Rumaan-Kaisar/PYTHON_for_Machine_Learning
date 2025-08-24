@@ -463,4 +463,7 @@ Next Step: Evaluation Metrics
 
 # Evaluation Metrics
 
+Calculate Mean Absolute Error (MAE)
+Calculate Mean Squared Error (MSE)
+Calculate Root Mean Squared Error (RMSE)
 
