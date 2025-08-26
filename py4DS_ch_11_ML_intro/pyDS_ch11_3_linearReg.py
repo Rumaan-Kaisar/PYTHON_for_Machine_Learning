@@ -1,10 +1,10 @@
 
 ################# 15.1-15.5: done, 15.6:
-# copy: ecommerce_pairplot.png, add by html (py + ipynb), 
+# copy: no ipynb for now, 2x py only
 #       
 #   
 #
-################# (17-Aug-25 for 19-Aug-25)
+################# (24-Aug-25 for 19-Aug-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -355,6 +355,7 @@ sns.lmplot(
     # Extract features 'X' and target 'y' from the data
     # select feature columns
 
+
 # ----  split  ----
 # Split the data into "train" and "test"
     # Use train_test_split() from sklearn.model_selection.
@@ -367,26 +368,17 @@ sns.lmplot(
         # X_train, X_test: features for training and testing. 
         # y_train, y_test: labels for training and testing.
 
+
+
 # ----  model train  ----
 # Create and Fit Model
     # Import and instantiate the LinearRegression model.
+        # Import the Model Class: import LinearRegression from sklearn.linear_model
+        # Create the Model Instance: Instantiate an object of LinearRegression().
+    
     # Train it using model.fit(X_train, ytrain).
-
-1.	Import the Model Class
-° Import LinearRegression from sklearn.linear_model. o This class provides the linear regression algorithm.
-2.	Create the Model Instance
-° Instantiate an object of LinearRegression().
-° This object will hold the trained model once fitted.
-° This instance serves as the linear regression model object.
-° By calling the .fit() method on this object, the model can be trained on the training data.
-3.	Fit the Model to Training Data
-° Call the .fit() method on the model object.
-° Pass X_train (features) and y_train (target values) as arguments.
-° This trains the model by finding the best-fit line for the given data.
-4.	No Need to Reassign the Fitted Model
-° The .fit() method modifies the model object in place.
-° No need to reassign it like model = model.fit().
-° The original model object now contains the trained model.
+        # train the model By calling the .fit() over the object
+        # use X_train (features) and y_train (target values) as arguments.
 
 
 # ----  model iterpretation  ----
@@ -466,4 +458,5 @@ Next Step: Evaluation Metrics
 Calculate Mean Absolute Error (MAE)
 Calculate Mean Squared Error (MSE)
 Calculate Root Mean Squared Error (RMSE)
+
 
