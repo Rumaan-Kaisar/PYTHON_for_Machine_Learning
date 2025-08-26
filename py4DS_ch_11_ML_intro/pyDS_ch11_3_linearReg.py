@@ -398,55 +398,21 @@ sns.lmplot(
 
 
 
-
 # ----  model evaluation  ----
-# Evaluate Performance
+# Evaluate Performance using following:
 
-1. Getting Predictions
-•	After training the model (fit on training set), use:
-# now we only pass the features and no Label. predictions = lm.predict(X_test)
-to get the predictions from our test set.
-•	X_test contains the test features the model hasn't seen before.
-•	These predictions are the model's estimated house prices.
+# Get Predictions: lm.predict(X_test)
 
-# comparison
-Since we used train-test split, y_test contains the actual house prices. Now we can use that to compare our predictions and see how different they are from the real values.
-2. Comparing Predictions to Actual Values
-•	y_test contains the actual house prices.
-•	To see how well the model performed, compare predictions to y_test.
-B Note:
-•	In regression (like predicting house prices):
-"Actual values" or "real values" is more appropriate term.
-•	In classification:
-"Actual labels" is the better term, since you're comparing predicted categories against true class labels
+# comparison: ompare predictions with y_test
+    # Visual Evaluation: Scatter Plot of the comparison
+    # How far the predictions from the actual prices
 
-
-# 3. Visual Evaluation: Scatter Plot
-Now we want to know how far the predictions from the actual prices (label) The quick way to visually analyze this is just by doing a scatterplot.
-• Plot actual vs. predicted values:
-pit.scatter(ytestj predictions)
-• If these y_test, predictions forms a straight diagonal line like pattern, we say the model is doing well.
-
-
-# 4. Analyzing Residuals
-Let's create a histogram of the distribution of our residuals, residuals are the difference between the actual values (y_test) and the predicted values.
-•	Residuals = Actual - Predicted
-sns.histplot(y_test - predictions, bins=50)
-•	A normally distributed residual plot (bell-shaped) means the model fits the data well.
-Why This Matters
-•	If residuals look random and normally distributed-> linear regression is likely appropriate.
-° It means our model was a correct choice for the data.
-•	If residuals look skewed or unusual -> consider using a different model.
-•	Later, we'll explore other methods to check if we chose the right model.
-Next Step: Evaluation Metrics
-•	Up next: common metrics used to measure regression performance.
-
+# Analyzing Residuals
+    # create a histogram of the distribution of residuals
+    # Residuals = Actual - Predicted
 
 # Evaluation Metrics
-
-Calculate Mean Absolute Error (MAE)
-Calculate Mean Squared Error (MSE)
-Calculate Root Mean Squared Error (RMSE)
-
-
+    # Mean Absolute Error (MAE)
+    # Mean Squared Error (MSE)
+    # Root Mean Squared Error (RMSE)
 
