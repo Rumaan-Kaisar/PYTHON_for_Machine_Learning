@@ -381,33 +381,22 @@ sns.lmplot(
         # use X_train (features) and y_train (target values) as arguments.
 
 
+
 # ----  model iterpretation  ----
 # Make Predictions
     # Use the trained model to predict on the test set with model.predict(X_test).
 
-1.	Each feature has a coefficient:
-° These numbers show how much the target (e.g. house price) changes when that feature changes by one unit.
-2.	How to interpret a coefficient:
-° Example: Avg. Area Income -» 21.528 -> Holding all other features constant, a $1 increase in average area income leads to a $21.53 increase in predicted price.
-° Another example: Avg. Area House Age -» 164,883.28 -> A 1 -year increase in average house age increases predicted price by $164,883 (again, holding others fixed).
-3.	Negative coefficients?
-° A negative value means the feature is inversely related to price: — e.g., Increase in that feature -* Decrease in predicted price.
+# coefficient
+    # Each feature has a coefficient, interpret those coefficient (lm.coef_)
+    # Create a DataFrame from the coefficients for Clarity
+    # Uses lm. coef_ as data
+    # Uses X.columns as the index (feature names)
+    # Match Coefficients to Feature Names
+
+# Intercept
+    # get the intercept value of the regression line (lm.intercept_)
 
 
-1. Check the Intercept
-° Use . intercept_ on the model object (lm. intercept_) to get the intercept value of the regression line. ° This represents the predicted value of the target when all features are zero.
-2.	Check the Coefficients
-° In. coef_ -* Gives the list of learned coefficients.
-° Use . coef_ on the model object (lm. coef_) to get the coefficients for each feature.
-° These represent the effect of each feature on the target variable.
-3.	Match Coefficients to Feature Names
-° The coefficients are in the same order as the features in X or X_train.
-° X. columns -> Gives the feature names (same as in X_train).
-4.	Create a DataFrame for Clarity
-° To make interpretation easier, create a pandas.DataFrame that:
-*	Uses lm. coef_ as data
-■ Uses X. columns as the index (feature names)
-*	Names the column (e.g., "Coefficient")
 
 
 # ----  model evaluation  ----
@@ -458,5 +447,6 @@ Next Step: Evaluation Metrics
 Calculate Mean Absolute Error (MAE)
 Calculate Mean Squared Error (MSE)
 Calculate Root Mean Squared Error (RMSE)
+
 
 
