@@ -380,6 +380,21 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_
 
 
 
+# ----  model train  ----
+# Create and Fit Model
+    # Import and instantiate the LinearRegression model.
+        # Import the Model Class: import LinearRegression from sklearn.linear_model
+        # Create the Model Instance: Instantiate an object of LinearRegression().
+    
+    # Train it using model.fit(X_train, ytrain).
+        # train the model By calling the .fit() over the object
+        # use X_train (features) and y_train (target values) as arguments.
+from sklearn.linear_model import LinearRegression
+lm = LinearRegression()
+lm.fit(X_train, y_train)    # notice the output -> it has been trained
+
+
+
 # ----  model iterpretation  ----
 # Make Predictions
     # Use the trained model to predict on the test set with model.predict(X_test).
@@ -413,5 +428,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_
     # Mean Absolute Error (MAE)
     # Mean Squared Error (MSE)
     # Root Mean Squared Error (RMSE)
+
 
 
