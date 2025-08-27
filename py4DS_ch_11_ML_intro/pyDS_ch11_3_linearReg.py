@@ -354,12 +354,20 @@ sns.lmplot(
 # Feature and Target:
     # Extract features 'X' and target 'y' from the data
     # select feature columns
+customers.columns
+
+# 'Email', 'Address', 'Avatar' are just info, so we avoid these
+X = customers[['Avg. Session Length', 'Time on App', 'Time on Website', 'Length of Membership']]
+
+# we make 'Yearly Amount Spent' as target
+y = customers['Yearly Amount Spent']
+
 
 
 # ----  split  ----
 # Split the data into "train" and "test"
     # Use train_test_split() from sklearn.model_selection.
-    #  Pass X (features) and y (target) as inputs.
+    # Pass X (features) and y (target) as inputs.
     # Set test_size
         # Defines what fraction of data goes to testing.
         # Common values: 0.3 (30%) or 0.4 (40%).
@@ -367,18 +375,8 @@ sns.lmplot(
     # store output:
         # X_train, X_test: features for training and testing. 
         # y_train, y_test: labels for training and testing.
-
-
-
-# ----  model train  ----
-# Create and Fit Model
-    # Import and instantiate the LinearRegression model.
-        # Import the Model Class: import LinearRegression from sklearn.linear_model
-        # Create the Model Instance: Instantiate an object of LinearRegression().
-    
-    # Train it using model.fit(X_train, ytrain).
-        # train the model By calling the .fit() over the object
-        # use X_train (features) and y_train (target values) as arguments.
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=101)
 
 
 
@@ -415,4 +413,5 @@ sns.lmplot(
     # Mean Absolute Error (MAE)
     # Mean Squared Error (MSE)
     # Root Mean Squared Error (RMSE)
+
 
