@@ -409,6 +409,15 @@ lm.fit(X_train, y_train)    # notice the output -> it has been trained
 # Intercept
     # get the intercept value of the regression line (lm.intercept_)
 
+print(lm.intercept_)
+lm.coef_
+X_train.columns
+
+# Examin the coefficint on x_train
+import pandas as pd
+cdf = pd.DataFrame(lm.coef_, X.columns, columns = ['Coeff'])
+print(cdf)
+
 
 
 # ----  model evaluation  ----
@@ -428,6 +437,7 @@ lm.fit(X_train, y_train)    # notice the output -> it has been trained
     # Mean Absolute Error (MAE)
     # Mean Squared Error (MSE)
     # Root Mean Squared Error (RMSE)
+
 
 
 
