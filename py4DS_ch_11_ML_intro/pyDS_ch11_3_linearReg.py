@@ -1,10 +1,10 @@
 
-################# 15.1-15.5: done, 15.6:
+################# 15.1-15.5: done, 15.6: interpretation edit (coefficients in ipynb, all in py)
 # copy: no ipynb for now, 2x py only
 #       
 #   
 #
-################# (24-Aug-25 for 19-Aug-25)
+################# (27-Aug-25 for 29-Aug-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -419,7 +419,6 @@ cdf = pd.DataFrame(lm.coef_, X.columns, columns = ['Coeff'])
 print(cdf)
 
 
-
 # ----  model evaluation  ----
 # Evaluate Performance using following:
 
@@ -437,6 +436,7 @@ print(cdf)
     # Mean Absolute Error (MAE)
     # Mean Squared Error (MSE)
     # Root Mean Squared Error (RMSE)
+
 
 
 
