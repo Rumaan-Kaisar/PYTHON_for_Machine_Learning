@@ -435,92 +435,60 @@ print(cdf)
     
         Notice the use of "Intercept" and "coefficients" in above equation.
         
-📌 Intercept
 
-Intercept = -1045.12
-This is the baseline prediction when all features are 0.
-Since "0 minutes" and "0 years of membership" are unrealistic, the intercept doesn’t have a strong practical meaning here. It mainly adjusts the regression line to fit the data correctly.
+    Intercept:
+        -1045.12
+        This is the baseline prediction when all features are 0.
+        Since "0 minutes" and "0 years of membership" are unrealistic, 
+        the intercept doesn't have a strong practical meaning here. 
+        It mainly adjusts the regression line to fit the data correctly.
 
-📌 Coefficients (Interpretation)
+        Coefficients:
+            Each coefficient shows how much the Yearly Amount Spent changes if 
+            that feature increases by 1 unit, holding the others constant.
 
-Each coefficient shows how much the Yearly Amount Spent changes if that feature increases by 1 unit, holding the others constant.
+            Avg. Session Length (25.69)
+                For each extra unit (minute) in session length, yearly spending increases by about $25.69.
+                Suggests in-store style advice sessions are "positively correlated" with spending.
 
-Avg. Session Length (25.69)
+            Time on App (37.89)
+                Each extra minute on the App leads to about $37.89 more in yearly spending.
+                Strongest impact per unit -> the App experience drives sales significantly.
 
-For each extra unit (minute) in session length, yearly spending increases by about $25.69.
+            Time on Website (0.56)
+                Each additional minute on the website adds only $0.56 in yearly spending.
+                Weak effect -> website engagement is "less linked" to spending.
 
-Suggests in-store style advice sessions are positively correlated with spending.
-
-Time on App (37.89)
-
-Each extra minute on the App leads to about $37.89 more in yearly spending.
-
-Strongest impact per unit → the App experience drives sales significantly.
-
-Time on Website (0.56)
-
-Each additional minute on the website adds only $0.56 in yearly spending.
-
-Weak effect → website engagement is less linked to spending.
-
-Length of Membership (61.65)
-
-Each extra year as a member adds about $61.65 to yearly spending.
-
-Long-term customers are consistently more valuable.
-
-✅ Summary Insight:
-
-The App and Membership length are the strongest predictors of higher yearly spending.
-
-The Website contributes very little, suggesting the company should focus more on improving the App experience than the website.
+            Length of Membership (61.65)
+                Each extra year as a member adds about $61.65 to yearly spending.
+                Long-term customers are consistently more valuable.
 
 
+    Summary:
+        The "App" and "Membership length" are the strongest predictors of higher yearly spending.
+        The Website contributes very little, suggesting the company should 
+            focus more on improving the App experience than the website.
+
+        Spending increases the most with "Length of Membership", making it the most important feature.
+        The second most important feature is "Time on App", which also has a strong effect.
+        The third most important feature is "Average Session Length".
+        Time on Website has very little impact and seems the least important.
 
 
-Your version is close 👍 but needs a bit of correction and polishing for clarity and correctness.
+    Note:
+        It seems like  "Membership length" has bigger implact that "Time on App" 
+        But its not the case, because "Membership length" measured in Year and "Time on App" measured in minutes
+        so the units are different, and actually making "Time on App" is the strongest and "Average Session Length" is second most impactful
 
-🔎 Corrected and Simplified Version
+        So technically Time on App has a larger coefficient (37.89) than Membership (61.65 per year)
 
-Spending increases the most with Length of Membership, making it the most important feature.
-
-The second most important feature is Time on App, which also has a strong effect.
-
-The third most important feature is Average Session Length.
-
-Time on Website has very little impact and seems the least important.
-
-⚠️ One subtle point:
-The importance ranking you gave is almost correct, but technically Time on App has a larger coefficient (37.89) than Membership (61.65 per year). However, the scale of units matters:
-
-Membership increases in years, while Time on App increases in minutes.
-So even though the coefficient for membership looks smaller, a change of just 1 year is more impactful than a single minute on the app.
-
-✅ Final Interpretation
-
-Most important: Length of Membership (per realistic change in years).
-
-Next important: Time on App (per change in minutes).
-
-Then: Average Session Length.
-
-Least important: Time on Website.
-
-Do you want me to rewrite this in a neutral textbook style (like notes), or in a business-style insight summary?
-
-
- """
+        Membership increases in years, while "Time on App" increases in minutes.
+            
+"""
 
 
 
-
-
-
-
-
-
-
-
+# --------  rev[29-aug-2025]  --------
 
 # ----  model evaluation  ----
 # Evaluate Performance using following:
@@ -539,5 +507,4 @@ Do you want me to rewrite this in a neutral textbook style (like notes), or in a
     # Mean Absolute Error (MAE)
     # Mean Squared Error (MSE)
     # Root Mean Squared Error (RMSE)
-
 
