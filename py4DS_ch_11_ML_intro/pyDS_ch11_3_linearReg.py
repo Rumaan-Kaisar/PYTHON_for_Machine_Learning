@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (27-Aug-25 for 29-Aug-25)
+################# (29-Aug-25 for 30-Aug-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -421,49 +421,20 @@ print(cdf)
 
 # iterpretation of coefficinet
 """ 
-Model Setup
+    Model Setup:
+        We trained a linear regression model to predict Yearly Amount Spent based on:
+            Avg. Session Length
+            Time on App
+            Time on Website
+            Length of Membership
 
-We trained a linear regression model to predict Yearly Amount Spent based on:
+        The fitted model is:
 
-Avg. Session Length
-
-Time on App
-
-Time on Website
-
-Length of Membership
-
-The fitted model is:
-
-Yearly Amount Spent
-=
-−
-1045.12
-+
-25.69
-⋅
-(
-Session Length
-)
-+
-37.89
-⋅
-(
-Time on App
-)
-+
-0.56
-⋅
-(
-Time on Website
-)
-+
-61.65
-⋅
-(
-Membership Length
-)
-Yearly Amount Spent=−1045.12+25.69⋅(Session Length)+37.89⋅(Time on App)+0.56⋅(Time on Website)+61.65⋅(Membership Length)
+        Yearly Amount Spent = —1045.12 + 25.69*(Session Length) + 37.89*(Time on App) + 
+                                0.56*(Time on Website) + 61.65*(Membership Length)
+    
+        Notice the use of "Intercept" and "coefficients" in above equation.
+        
 📌 Intercept
 
 Intercept = -1045.12
@@ -568,4 +539,5 @@ Do you want me to rewrite this in a neutral textbook style (like notes), or in a
     # Mean Absolute Error (MAE)
     # Mean Squared Error (MSE)
     # Root Mean Squared Error (RMSE)
+
 
