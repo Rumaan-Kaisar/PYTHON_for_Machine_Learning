@@ -488,23 +488,32 @@ print(cdf)
 
 
 
-# --------  rev[29-aug-2025]  --------
-
 # ----  model evaluation  ----
 # Evaluate Performance using following:
 
 # Get Predictions: lm.predict(X_test)
+predictions = lm.predict(X_test)
+print(predictions)
+
 
 # comparison: ompare predictions with y_test
     # Visual Evaluation: Scatter Plot of the comparison
     # How far the predictions from the actual prices
+y_test  # these are the actual prices
+
+# Create the scatterplot
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, predictions, color="#89cff0", edgecolors='#318ce7', s=10, alpha=0.8)
+
 
 # Analyzing Residuals
     # create a histogram of the distribution of residuals
     # Residuals = Actual - Predicted
+sns.histplot(y_test - predictions, kde=True, shrink=0.95, edgecolor='white', color="#1abcdf", bins=50)
 
 # Evaluation Metrics
     # Mean Absolute Error (MAE)
     # Mean Squared Error (MSE)
     # Root Mean Squared Error (RMSE)
+
 
