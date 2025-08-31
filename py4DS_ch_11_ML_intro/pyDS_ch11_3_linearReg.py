@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (29-Aug-25 for 30-Aug-25)
+################# (30-Aug-25 for 31-Aug-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -511,9 +511,20 @@ plt.scatter(y_test, predictions, color="#89cff0", edgecolors='#318ce7', s=10, al
     # Residuals = Actual - Predicted
 sns.histplot(y_test - predictions, kde=True, shrink=0.95, edgecolor='white', color="#1abcdf", bins=50)
 
+
+
 # Evaluation Metrics
-    # Mean Absolute Error (MAE)
-    # Mean Squared Error (MSE)
-    # Root Mean Squared Error (RMSE)
+from sklearn import metrics
+
+# Mean Absolute Error (MAE)
+metrics.mean_absolute_error(y_test, predictions)
+
+# Mean Squared Error (MSE)
+metrics.mean_squared_error(y_test, predictions)
+
+# Root Mean Squared Error (RMSE)
+import numpy as np
+np.sqrt(metrics.mean_squared_error(y_test, predictions))
+
 
 
