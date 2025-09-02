@@ -502,11 +502,17 @@ predictions[0:9]    # first 10 predictions
 
 
 
-# comparison: ompare predictions with y_test
+# comparison: compare predictions with y_test
     # Visual Evaluation: Scatter Plot of the comparison
     # How far the predictions from the actual prices
 y_test  # these are the actual prices
 
+y_test[0:9]  # these are the actual spend (first 10)
+
+# above we also have corresponding index of "Yearly Amount Spent", lets verify
+customers['Yearly Amount Spent'][18]
+
+# ----  rev[31-Aug-2025]  ----
 # Create the scatterplot
 plt.figure(figsize=(10, 6))
 plt.scatter(y_test, predictions, color="#89cff0", edgecolors='#318ce7', s=10, alpha=0.8)
@@ -531,6 +537,7 @@ metrics.mean_squared_error(y_test, predictions)
 # Root Mean Squared Error (RMSE)
 import numpy as np
 np.sqrt(metrics.mean_squared_error(y_test, predictions))
+
 
 
 
