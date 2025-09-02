@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (30-Aug-25 for 31-Aug-25)
+################# (31-Aug-25 for 02-Sep-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -198,6 +198,8 @@ customers = pd.read_csv("./data_Ecommerce_Customers")
 # Check head() of customers, info() and describe()
 
 customers.head()
+customers.size
+
 customers.info()
 customers.describe()
 customers.columns
@@ -495,6 +497,10 @@ print(cdf)
 predictions = lm.predict(X_test)
 print(predictions)
 
+len(predictions)
+predictions[0:9]    # first 10 predictions
+
+
 
 # comparison: ompare predictions with y_test
     # Visual Evaluation: Scatter Plot of the comparison
@@ -525,6 +531,7 @@ metrics.mean_squared_error(y_test, predictions)
 # Root Mean Squared Error (RMSE)
 import numpy as np
 np.sqrt(metrics.mean_squared_error(y_test, predictions))
+
 
 
 
