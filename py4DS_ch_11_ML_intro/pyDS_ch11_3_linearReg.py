@@ -523,12 +523,19 @@ plt.scatter(y_test, predictions, color="#89cff0", edgecolors='#318ce7', s=10, al
         # Tight clustering around the diagonal: Higher accuracy and lower error.
         #Spread around the diagonal: Some prediction error, but still generally aligned.
 
+# Note:
+    # A perfect diagonal line = perfect predictions.
+    # A diagonal with some scatter = good model, but with noise/errors.
+    # A cloud with no diagonal trend = poor model performance.
+
+
 # Analyzing Residuals
     # create a histogram of the distribution of residuals
     # Residuals = Actual - Predicted
 sns.histplot(y_test - predictions, kde=True, shrink=0.95, edgecolor='white', color="#1abcdf", bins=50)
 
 
+# ----  rev[02-Sep-2025]  ----
 
 # Evaluation Metrics
 from sklearn import metrics
@@ -542,9 +549,6 @@ metrics.mean_squared_error(y_test, predictions)
 # Root Mean Squared Error (RMSE)
 import numpy as np
 np.sqrt(metrics.mean_squared_error(y_test, predictions))
-
-
-
 
 
 
