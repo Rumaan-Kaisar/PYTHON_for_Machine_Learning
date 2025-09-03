@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (31-Aug-25 for 02-Sep-25)
+################# (02-Sep-25 for 03-Sep-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -512,11 +512,16 @@ y_test[0:9]  # these are the actual spend (first 10)
 # above we also have corresponding index of "Yearly Amount Spent", lets verify
 customers['Yearly Amount Spent'][18]
 
-# ----  rev[31-Aug-2025]  ----
 # Create the scatterplot
 plt.figure(figsize=(10, 6))
 plt.scatter(y_test, predictions, color="#89cff0", edgecolors='#318ce7', s=10, alpha=0.8)
 
+# Observation:
+    # points forms a diagonal line (from bottom-left to top-right), it means:
+        # Good fit: The model is predicting values close to the actual ones.
+        # Linearity: Predictions increase in proportion to actual values.
+        # Tight clustering around the diagonal: Higher accuracy and lower error.
+        #Spread around the diagonal: Some prediction error, but still generally aligned.
 
 # Analyzing Residuals
     # create a histogram of the distribution of residuals
@@ -537,6 +542,7 @@ metrics.mean_squared_error(y_test, predictions)
 # Root Mean Squared Error (RMSE)
 import numpy as np
 np.sqrt(metrics.mean_squared_error(y_test, predictions))
+
 
 
 
