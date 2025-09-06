@@ -411,11 +411,12 @@ lm.fit(X_train, y_train)    # notice the output -> it has been trained
 # Intercept
     # get the intercept value of the regression line (lm.intercept_)
 
-print(lm.intercept_)
-lm.coef_
+print(lm.intercept_)    # intercept
+print(lm.coef_)    # the coefficients
+
 X_train.columns
 
-# Examin the coefficint on x_train
+# Examin the coefficint on x_train using "coefficint dataframe"
 import pandas as pd
 cdf = pd.DataFrame(lm.coef_, X.columns, columns = ['Coeff'])
 print(cdf)
@@ -588,3 +589,26 @@ np.sqrt(metrics.mean_squared_error(y_test, predictions))
             with an error margin of only about $8-10, which is highly accurate.
 
 """
+
+
+# ----  rev[06-Sep-2025]  ----
+# rev from given ipynb
+
+
+
+# scatter
+plt.xlabel('Y Test')
+plt.ylabel('Predicted Y')
+
+# Let's evaluate our model performance by calculating the residual sum of squares and the explained variance score (R^2).
+
+# ----  298::soln  ----
+# conclusion:
+""" We still want to figure out the answer to the original question, do we focus our efforst on mobile app or website development? 
+From the coefficient analysis we've got:
+
+This is tricky, there are two ways to think about this: Develop the Website to catch up to the performance of the mobile app, or develop the app more since that is what is working better. This sort of answer really depends on the other factors going on at the company, you would probably want to explore the relationship between Length of Membership and the App or the Website before coming to a conclusion!
+
+Or maybe that doesn't even really matter, and Membership Time is what is really important.  Let's see if we can interpret the coefficients at all to get an idea.
+
+ """
