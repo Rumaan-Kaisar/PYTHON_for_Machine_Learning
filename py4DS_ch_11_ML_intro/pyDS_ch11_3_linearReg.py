@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (02-Sep-25 for 03-Sep-25)
+################# (05-Sep-25 for 06-Sep-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -397,7 +397,7 @@ lm.fit(X_train, y_train)    # notice the output -> it has been trained
 
 
 
-# ----  model iterpretation  ----
+# ----  model interpretation  ----
 # Make Predictions
     # Use the trained model to predict on the test set with model.predict(X_test).
 
@@ -421,7 +421,7 @@ cdf = pd.DataFrame(lm.coef_, X.columns, columns = ['Coeff'])
 print(cdf)
 
 
-# iterpretation of coefficinet
+# Interpretation of coefficinet
 """ 
     Model Setup:
         We trained a linear regression model to predict Yearly Amount Spent based on:
@@ -535,8 +535,6 @@ plt.scatter(y_test, predictions, color="#89cff0", edgecolors='#318ce7', s=10, al
 sns.histplot(y_test - predictions, kde=True, shrink=0.95, edgecolor='white', color="#1abcdf", bins=50)
 
 
-# ----  rev[02-Sep-2025]  ----
-
 # Evaluation Metrics
 from sklearn import metrics
 
@@ -549,51 +547,6 @@ metrics.mean_squared_error(y_test, predictions)
 # Root Mean Squared Error (RMSE)
 import numpy as np
 np.sqrt(metrics.mean_squared_error(y_test, predictions))
-
-
-# GPT
-"""  
-* MAE's Output: 7.74:  
-* MSE's Output: 93.83:  
-* RMSE's Output: 9.67:  
-considering the yearly spend range is [70, 700], and most spend (bell shaped around this range) is [400, 600].
-GPT your job is to explain those matrix.
-ChatGPT said:
-
-Got it 👍 Let’s carefully interpret your evaluation metrics (MAE = 7.74, MSE = 93.83, RMSE = 9.67) in the context of the dataset.
-
-1. Mean Absolute Error (MAE = 7.74)
-
-This means that, on average, the model’s predictions are off by about 7.7 units (dollars, in this case, since the target is "Yearly Amount Spent").
-
-Considering that most yearly spends are in the $400–600 range, an error of ~8 is very small (about 1–2%), which is a good result.
-
-2. Mean Squared Error (MSE = 93.83)
-
-MSE squares the errors, so larger mistakes are penalized more heavily.
-
-An MSE of ~94 means that while the typical error is small, the model occasionally makes bigger mistakes (but not extreme ones).
-
-This is why MSE looks much larger than MAE, even though both come from the same errors.
-
-3. Root Mean Squared Error (RMSE = 9.67)
-
-RMSE is the square root of MSE, so it’s in the same units as the target (dollars).
-
-On average, predictions are about ±9.7 dollars off from the actual values.
-
-Again, compared to the range [70, 700] and the core spend distribution [400–600], this error is very low.
-
-✅ Final Interpretation
-
-The model is performing very well.
-
-Errors are small compared to the overall spending range, and especially compared to the main concentration of customers ($400–600).
-
-In practical terms, the model can predict a customer’s yearly spending with an error margin of only about $8–10, which is highly accurate.
-
-Would you like me to also explain which of MAE, MSE, or RMSE is most useful for decision-making in this scenario?
-"""
 
 
 # DS
@@ -698,3 +651,4 @@ There are very few massive errors in your predictions. If there were, the RMSE w
 
 Conclusion on your model's performance: The MSE value of 93.83, when put into context with your other metrics, is simply mathematical proof that your model is not only accurate on average (low MAE) but is also consistent and does not produce large, catastrophic errors. It's a robust model.
 """
+
