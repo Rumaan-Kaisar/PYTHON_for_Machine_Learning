@@ -600,15 +600,6 @@ np.sqrt(metrics.mean_squared_error(y_test, predictions))
 
 
 
-# ----  rev[06-Sep-2025]  ----
-# rev from given ipynb
-
-
-
-# scatter
-plt.xlabel('Y Test')
-plt.ylabel('Predicted Y')
-
 # Let's evaluate our model performance by calculating the residual sum of squares and the explained variance score (R^2).
 
 # ----  298::soln  ----
@@ -621,4 +612,3 @@ This is tricky, there are two ways to think about this: Develop the Website to c
 Or maybe that doesn't even really matter, and Membership Time is what is really important.  Let's see if we can interpret the coefficients at all to get an idea.
 
  """
-
