@@ -1,10 +1,10 @@
 
-################# 15.1-15.5: done, 15.6: interpretation edit (coefficients in ipynb, all in py)
+################# 15.1-15.5: done, 15.6: done
 # copy: no ipynb for now, 2x py only
 #       
 #   
 #
-################# (05-Sep-25 for 06-Sep-25)
+################# (06-Sep-25 for 07-Sep-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -513,9 +513,12 @@ y_test[0:9]  # these are the actual spend (first 10)
 # above we also have corresponding index of "Yearly Amount Spent", lets verify
 customers['Yearly Amount Spent'][18]
 
-# Create the scatterplot
+# SCATTER: Create the scatterplot 'Y Test' vs 'Predicted Y'
 plt.figure(figsize=(10, 6))
 plt.scatter(y_test, predictions, color="#89cff0", edgecolors='#318ce7', s=10, alpha=0.8)
+plt.xlabel('Y Test')
+plt.ylabel('Predicted Y')
+
 
 # Observation:
     # points forms a diagonal line (from bottom-left to top-right), it means:
@@ -591,6 +594,12 @@ np.sqrt(metrics.mean_squared_error(y_test, predictions))
 """
 
 
+
+
+
+
+
+
 # ----  rev[06-Sep-2025]  ----
 # rev from given ipynb
 
@@ -612,3 +621,4 @@ This is tricky, there are two ways to think about this: Develop the Website to c
 Or maybe that doesn't even really matter, and Membership Time is what is really important.  Let's see if we can interpret the coefficients at all to get an idea.
 
  """
+
