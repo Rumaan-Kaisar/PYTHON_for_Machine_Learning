@@ -594,9 +594,155 @@ np.sqrt(metrics.mean_squared_error(y_test, predictions))
 """
 
 
+# ---- rev[07-Sep-2025]  ----
+
+# Size problem :: X_train, X_test 0.4 ? since 4000 was main dataset
+
+# RSS & TSS calculation
+
+Let’s evaluate with Residual Sum of Squares (RSS) and Explained Variance Score (R²).
+
+You already have:
+
+MAE = 7.74
+
+MSE = 93.83
+
+RMSE = 9.67
+
+Target variable = Yearly Amount Spent ∈ [70, 700], main distribution ≈ [400, 600].
+
+1. Residual Sum of Squares (RSS)
+
+Formula:
+
+𝑅
+𝑆
+𝑆
+=
+∑
+𝑖
+=
+1
+𝑛
+(
+𝑦
+𝑖
+−
+𝑦
+^
+𝑖
+)
+2
+RSS=
+i=1
+∑
+n
+	​
+
+(y
+i
+	​
+
+−
+y
+^
+	​
+
+i
+	​
+
+)
+2
+
+This is basically the total squared error (not averaged).
+
+Since you already have MSE:
+
+𝑀
+𝑆
+𝐸
+=
+𝑅
+𝑆
+𝑆
+𝑛
+MSE=
+n
+RSS
+	​
 
 
+So:
 
+𝑅
+𝑆
+𝑆
+=
+𝑀
+𝑆
+𝐸
+×
+𝑛
+RSS=MSE×n
+
+👉 If you give me your test set size (n), I can compute RSS exactly.
+
+Interpretation:
+
+Lower RSS means predictions are closer to true values.
+
+RSS grows with dataset size, so it’s mainly useful for comparing models on the same dataset, not across different datasets.
+
+2. Explained Variance Score (R²)
+
+Formula:
+
+𝑅
+2
+=
+1
+−
+𝑅
+𝑆
+𝑆
+𝑇
+𝑆
+𝑆
+R
+2
+=1−
+TSS
+RSS
+	​
+
+
+where
+
+RSS = Residual Sum of Squares (errors left unexplained).
+
+TSS = Total Sum of Squares (variance in the data, relative to mean).
+
+👉 R² measures how much of the variance in the target is explained by the model.
+
+Interpretation:
+
+R² = 1 → perfect prediction.
+
+R² = 0 → model no better than predicting the mean.
+
+R² < 0 → model worse than predicting the mean.
+
+In linear regression, a typical good model will have R² > 0.8.
+Given your small MAE and RMSE, we can expect a very high R² (probably > 0.95).
+
+✅ Summary:
+
+RSS quantifies total error (depends on sample size).
+
+R² quantifies model quality (how well variance is explained).
+
+Your model likely has low RSS and very high R², meaning it fits the spending data extremely well.
 
 
 
