@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (06-Sep-25 for 07-Sep-25)
+################# (09-Sep-25 for 10-Sep-25)
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
@@ -748,6 +748,163 @@ R² quantifies model quality (how well variance is explained).
 
 Your model likely has low RSS and very high R², meaning it fits the spending data extremely well.
 
+-------
+
+2. Explained Variance Score (R²)
+
+Formula:
+
+𝑅
+2
+=
+1
+−
+𝑅
+𝑆
+𝑆
+𝑇
+𝑆
+𝑆
+R
+2
+=1−
+TSS
+RSS
+	​
+
+
+where
+
+𝑇
+𝑆
+𝑆
+=
+∑
+𝑖
+=
+1
+𝑛
+(
+𝑦
+𝑖
+−
+𝑦
+ˉ
+)
+2
+TSS=
+i=1
+∑
+n
+	​
+
+(y
+i
+	​
+
+−
+y
+ˉ
+	​
+
+)
+2
+
+is the total variance in the target.
+
+We don’t have exact test values here, but we know:
+
+Range ≈ [70, 700]
+
+Most data clustered [400, 600]
+
+Looks bell-shaped → so variance is not too small.
+
+👉 If we approximate:
+
+Mean spend ≈ 500
+
+Standard deviation ≈ 100 (reasonable for bell curve in [400–600])
+
+Then variance ≈ 
+100
+2
+=
+10
+,
+000
+100
+2
+=10,000.
+
+For 200 samples:
+
+𝑇
+𝑆
+𝑆
+≈
+200
+×
+10
+,
+000
+=
+2
+,
+000
+,
+000
+TSS≈200×10,000=2,000,000
+
+Now plug in:
+
+𝑅
+2
+≈
+1
+−
+18
+,
+766
+2
+,
+000
+,
+000
+R
+2
+≈1−
+2,000,000
+18,766
+	​
+
+𝑅
+2
+≈
+1
+−
+0.0094
+R
+2
+≈1−0.0094
+
+✅ R² ≈ 0.991 (≈ 99.1% variance explained).
+
+🔑 Interpretation
+
+RSS = 18,766 → The total squared error across 200 test points.
+
+R² ≈ 0.99 → Model explains about 99% of the variability in yearly spending.
+
+This is an excellent model fit.
+
+👉 Do you want me to also show how MAE, RMSE, and R² together can be compared to judge practical accuracy (i.e., in terms of money spent per customer)?
+
+
+
+
+
+
 
 
 # Let's evaluate our model performance by calculating the residual sum of squares and the explained variance score (R^2).
@@ -762,4 +919,3 @@ This is tricky, there are two ways to think about this: Develop the Website to c
 Or maybe that doesn't even really matter, and Membership Time is what is really important.  Let's see if we can interpret the coefficients at all to get an idea.
 
  """
-
