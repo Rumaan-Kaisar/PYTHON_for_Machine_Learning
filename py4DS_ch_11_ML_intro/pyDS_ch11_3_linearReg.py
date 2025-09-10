@@ -198,7 +198,8 @@ customers = pd.read_csv("./data_Ecommerce_Customers")
 # Check head() of customers, info() and describe()
 
 customers.head()
-customers.size
+# get the total entries
+customers['Email'].size # 500 entries
 
 customers.info()
 customers.describe()
@@ -379,7 +380,10 @@ y = customers['Yearly Amount Spent']
         # y_train, y_test: labels for training and testing.
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=101)
+# 0.4 means "selecting 200 entries out of 500 as test set"
 
+# test size
+test_size = len(X_test)
 
 
 # ----  model train  ----
@@ -596,7 +600,7 @@ np.sqrt(metrics.mean_squared_error(y_test, predictions))
 
 # ---- rev[07-Sep-2025]  ----
 
-# Size problem :: X_train, X_test 0.4 ? since 4000 was main dataset
+# Size problem: since 4000 was main dataset
 
 # RSS & TSS calculation
 
@@ -758,3 +762,4 @@ This is tricky, there are two ways to think about this: Develop the Website to c
 Or maybe that doesn't even really matter, and Membership Time is what is really important.  Let's see if we can interpret the coefficients at all to get an idea.
 
  """
+
