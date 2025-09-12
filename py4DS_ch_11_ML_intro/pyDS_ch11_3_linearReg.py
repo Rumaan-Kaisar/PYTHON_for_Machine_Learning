@@ -607,3 +607,32 @@ np.sqrt(metrics.mean_squared_error(y_test, predictions))
     # Test size = 200 (40%)
 
 # RSS & TSS calculation
+
+
+import numpy as np
+from sklearn.metrics import mean_squared_error, r2_score
+
+# Assume y_test and predictions are numpy arrays (or pandas Series)
+
+# --- RSS ---
+mse = mean_squared_error(y_test, predictions)
+n = len(y_test)
+RSS = mse * n
+
+# --- TSS ---
+y_mean = np.mean(y_test)
+TSS = np.sum((y_test - y_mean) ** 2)
+
+# --- R^2 ---
+R2_manual = 1 - (RSS / TSS)
+
+# --- Cross-check with sklearn ---
+R2_sklearn = r2_score(y_test, predictions)
+
+print(f"mean: {np.mean(y_test)}")
+print(f"RSS: {RSS:.2f}")
+print(f"TSS: {TSS:.2f}")
+print(f"R^2 (manual): {R2_manual:.4f}")
+print(f"R^2 (sklearn): {R2_sklearn:.4f}")
+
+
