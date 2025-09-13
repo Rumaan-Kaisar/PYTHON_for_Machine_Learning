@@ -636,3 +636,25 @@ print(f"R^2 (manual): {R2_manual:.4f}")
 print(f"R^2 (sklearn): {R2_sklearn:.4f}")
 
 
+
+
+
+# std Dev for "R^2 calculation"
+
+y = customers['Yearly Amount Spent']
+
+# Variance
+variance = np.var(y, ddof=0)   # population variance
+variance_sample = np.var(y, ddof=1)  # sample variance
+
+# Standard Deviation
+std_dev = np.std(y, ddof=0)    # population std
+std_dev_sample = np.std(y, ddof=1)   # sample std
+
+print(f"Population Variance: {variance:.2f}")
+print(f"Sample Variance: {variance_sample:.2f}")
+print(f"Population Std Dev: {std_dev:.2f}")
+print(f"Sample Std Dev: {std_dev_sample:.2f}")
+
+
+
