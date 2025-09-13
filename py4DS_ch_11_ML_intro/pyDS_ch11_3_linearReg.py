@@ -658,3 +658,41 @@ print(f"Sample Std Dev: {std_dev_sample:.2f}")
 
 
 
+
+# Let's evaluate our model performance by calculating the residual sum of squares and the explained variance score (R^2).
+
+# ----  298::soln  ----
+# conclusion:
+""" We still want to figure out the answer to the original question, do we focus our efforst on mobile app or website development? 
+From the coefficient analysis we've got:
+
+This is tricky, there are two ways to think about this: Develop the Website to catch up to the performance of the mobile app, or develop the app more since that is what is working better. This sort of answer really depends on the other factors going on at the company, you would probably want to explore the relationship between Length of Membership and the App or the Website before coming to a conclusion!
+
+Or maybe that doesn't even really matter, and Membership Time is what is really important.  Let's see if we can interpret the coefficients at all to get an idea.
+
+
+Clarification
+
+The key business question is: Should the company focus more on improving the mobile app or the website?
+
+From the linear regression coefficients, we see:
+
+Time on App has a strong positive relationship with yearly spending.
+
+Time on Website shows a very weak relationship.
+
+Length of Membership has the strongest overall impact, but it’s measured in years, not minutes, so interpretation needs care.
+
+This leads to two possible strategies:
+
+Invest in the Website → to catch up and make it more impactful.
+
+Invest in the App → since it already shows strong influence on spending.
+
+The right choice may also depend on other business considerations (budget, customer behavior, marketing goals).
+
+Additionally, it’s worth exploring whether Length of Membership interacts with App or Website usage — for example, do long-term members rely more on the app than new customers?
+
+Another perspective: if Membership Time is the real driver of higher spending, then customer retention strategies (increasing membership length) might be more important than focusing purely on app vs website.
+
+ """
