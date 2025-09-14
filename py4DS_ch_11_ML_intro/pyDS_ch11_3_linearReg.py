@@ -1,11 +1,4 @@
 
-################# 15.1-15.5: done, 15.6: done
-# copy: no ipynb for now, 2x py only
-#       
-#   
-#
-################# (10-Sep-25 for 11-Sep-25)
-
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
 
@@ -594,20 +587,22 @@ np.sqrt(metrics.mean_squared_error(y_test, predictions))
         Errors are small compared to the overall spending range.
         In practical terms, the model can predict a customer's yearly spending 
             with an error margin of only about $8-10, which is highly accurate.
-
 """
 
 
-# ---- rev[07-Sep-2025]  ----
-
-# Size problem: 
+# Size: 
     # since 4000 was main dataset
     # it mulplies the total number of columns by total rows (8*500)
     # Total entries = 500
     # Test size = 200 (40%)
 
-# RSS & TSS calculation
 
+
+# ----  RSS, TSS & R^2 calculation  ----
+
+# Evalute the model performance by calculating the 
+    # Residual Sum of Squares (RSS) and the 
+    # explained variance score (R^2).
 
 import numpy as np
 from sklearn.metrics import mean_squared_error, r2_score
@@ -637,8 +632,6 @@ print(f"R^2 (sklearn): {R2_sklearn:.4f}")
 
 
 
-
-
 # std Dev for "R^2 calculation"
 
 y = customers['Yearly Amount Spent']
@@ -655,8 +648,6 @@ print(f"Population Variance: {variance:.2f}")
 print(f"Sample Variance: {variance_sample:.2f}")
 print(f"Population Std Dev: {std_dev:.2f}")
 print(f"Sample Std Dev: {std_dev_sample:.2f}")
-
-
 
 
 # Let's evaluate our model performance by calculating the residual sum of squares and the explained variance score (R^2).
@@ -696,3 +687,4 @@ Additionally, it’s worth exploring whether Length of Membership interacts with
 Another perspective: if Membership Time is the real driver of higher spending, then customer retention strategies (increasing membership length) might be more important than focusing purely on app vs website.
 
  """
+
