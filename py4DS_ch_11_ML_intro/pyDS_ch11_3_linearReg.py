@@ -1,6 +1,21 @@
 
 # Courses: PrTla PY for DS & ML >  15.1 (ipynb), 15.3, 15.4, 15.5, 15.6  >>  details in ipynb
 
+# ----  Quiz:  ----
+
+# For linear regression, the model is "f_wb(x) = wx + b"
+# Which of the following are the inputs, or features, and which are the traget (that model try to predict)?
+    # x
+    # w and b
+    # (x,y)
+    # m
+
+# For linear regression, if we find parameters w and b so that J(w,b) is very close to zero, what it means?
+    # Never possible -- there must be a bug in the code.
+    # Those values of the parameters $$w$$ and $$b$$ cause the algorithm to fit the training set really well.
+    # Those values of the parameters $$w$$ and $$b$$ cause the algorithm to fit the training set really poorly. 
+
+
 
 """ 
     Project 1:
