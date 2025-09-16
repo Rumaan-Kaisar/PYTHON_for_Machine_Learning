@@ -672,7 +672,9 @@ print(f"Sample Std Dev: {std_dev_sample:.2f}")
         Additionally, it's worth exploring whether Length of Membership interacts with App or Website usage 
             — for example, do long-term members rely more on the app than new customers?
 
-    Another perspective: if Membership Time is the real driver of higher spending, then customer retention strategies (increasing membership length) might be more important than focusing purely on app vs website.
+    Another perspective: if Membership Time is the real driver of higher spending, 
+        then customer retention strategies (increasing membership length) 
+        might be more important than focusing purely on app vs website.
 """
 
 
