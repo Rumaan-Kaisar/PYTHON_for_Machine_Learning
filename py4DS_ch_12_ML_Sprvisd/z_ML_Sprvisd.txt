@@ -53,3 +53,23 @@ part 1: Introduction to Machine Learning
 
 
 
+
+
+    ===  ===
+1. Logistic Regression
+
+
+2. K Nearest Neighbors
+
+
+3. Decision Trees and Random Forests
+
+
+4. Support Vector Machines
+
+
+5. K Means Clustering
+
+
+6. Principal Component Analysis
+
