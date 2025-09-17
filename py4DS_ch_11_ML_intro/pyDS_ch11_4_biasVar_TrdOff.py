@@ -1,5 +1,14 @@
 
-# Cross Validation and Bias-Variance Trade-Off
+################# 16.1 :
+# copy: 
+#       
+#   
+#
+################# (17-Sep-25 for 19-Sep-25)
+
+# Courses: PrTla PY for DS & ML >  16.1
+
+# ----------------    Cross Validation and Bias-Variance Trade-Off    ----------------
 
 """ 
 Hello everyone and welcome to the biased variance tradeoff lecture and this lecture.
