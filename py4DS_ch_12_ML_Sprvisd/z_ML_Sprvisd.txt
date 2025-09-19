@@ -57,19 +57,20 @@ part 1: Introduction to Machine Learning
 
     ===  ===
 1. Logistic Regression
-
+A 1. Logistic Regression Theory.mp4 ^ 2. Logistic Regression with Python - Part 1.mp4 ^ 3. Logistic Regression with Python - Part 2.mp4 A 4. Logistic Regression with Python - Part 3.mp4 A 5. Logistic Regression Project Overview.mp4 A 6. Logistic Regression Project Solutions.mp4
 
 2. K Nearest Neighbors
-
+*4. 1. KNN Theory.mp4 *4. 2. KNN with Python.mp4 i. 3. KNN Project Overview.mp4 i. 4. KNN Project Solutions.mp4
 
 3. Decision Trees and Random Forests
-
+*4. 1. Introduction to Tree Methods.mp4 *4. 2. Decision Trees and Random Forest with Python.mp4 ^ 3. Decision Trees and Random Forest Project Overview.mp4 *4. 4. Decision Trees and Random Forest Solutions Part 1.mp4 i. 5. Decision Trees and Random Forest Solutions Part 2.mp4
 
 4. Support Vector Machines
-
+A 1. SVM Theory.mp4
+A 2. Support Vector Machines with Python.mp4 *4. 3. SVM Project Overview.mp4 A 4. SVM Project Solutions.mp4
 
 5. K Means Clustering
-
+A 1. K Means Algorithm Theory.mp4 i. 2.K Means with Python.mp4 A 3. K Means Project 0verview.mp4 A 4. K Means Project Solutions.mp4
 
 6. Principal Component Analysis
-
+^ 1. Principal Component Analysis.mp4 *4. 2. PCAwith Python.mp4
