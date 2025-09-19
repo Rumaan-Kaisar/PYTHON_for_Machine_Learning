@@ -15,11 +15,11 @@ Hello everyone and welcome to the biased variance tradeoff lecture and this lect
 
 We're going to discuss the bias various straight off and how you can use it to evaluate your model's
 
-performance by his various tradeoff as a fundamental topic of understanding model performance and evaluation
-
-.
+performance by his various tradeoff as a fundamental topic of understanding model performance and evaluation.
 
 Go ahead and review chapter two of an introduction to learning for more in-depth look on this topic
+
+
 
 .
 
@@ -194,3 +194,85 @@ OK thanks everyone and I'll see you at the next lecture.
 """
 
 
+
+
+
+"""  
+
+Got it ✅ I’ll rewrite this into a clear, simplified, and structured version of the lecture transcript. Here’s a cleaned-up version:
+
+Bias–Variance Tradeoff Lecture
+
+Hello everyone, and welcome to the lecture on the bias–variance tradeoff.
+In this session, we’ll discuss what it means, why it’s important, and how it helps us evaluate model performance.
+
+For a deeper dive, you can review Chapter 2 of An Introduction to Learning.
+
+What is the Bias–Variance Tradeoff?
+
+The bias–variance tradeoff describes the balance between model complexity and prediction accuracy:
+
+As a model becomes more complex, its training error decreases (it fits the training data better).
+
+However, after a certain point, the test error increases, because the model starts to overfit and capture noise instead of true patterns.
+
+The tradeoff is about finding the “sweet spot” where the model is flexible enough to capture real patterns, but not so complex that it memorizes noise.
+
+Dartboard Analogy
+
+Imagine a dartboard where the bullseye represents perfect predictions:
+
+Low bias, low variance: darts cluster tightly around the bullseye (ideal).
+
+Low bias, high variance: darts are spread widely, but around the bullseye.
+
+High bias, low variance: darts cluster together, but far from the bullseye.
+
+High bias, high variance: darts are scattered all over the board.
+
+This illustrates how different models can make errors either systematically (bias) or randomly (variance).
+
+Overfitting Example
+
+Beginners often try to make models more complex to reduce training error.
+For example, with linear regression:
+
+A simple model (like a straight line) may not capture the data well → underfitting.
+
+A more flexible model (quadratic or spline) may fit training data better.
+
+But if the model becomes too complex, it starts fitting noise → overfitting, leading to poor test performance.
+
+This is why we always evaluate using both training data and test data.
+
+Visualizing the Tradeoff
+
+If we plot model complexity (x-axis) against prediction error (y-axis):
+
+On the left: simple models → high bias, low variance (underfitting).
+
+On the right: very complex models → low bias, high variance (overfitting).
+
+In the middle: a balanced model with low test error.
+
+Your goal is to choose the point where both bias and variance are reasonably low—not too simple, not too complex.
+
+Key Takeaways
+
+The bias–variance tradeoff is a core concept in model evaluation.
+
+Too simple → underfitting.
+
+Too complex → overfitting.
+
+The best model balances the two.
+
+Always validate using train/test splits to check generalization.
+
+Keep this in mind as we move forward into practical machine learning with Python.
+
+Thanks everyone—see you in the next lecture!
+
+Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
+
+"""
