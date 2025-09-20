@@ -9,15 +9,54 @@
 # Courses: PrTla PY for DS & ML >  16.1
 
 # ----------------    Cross Validation and Bias-Variance Trade-Off    ----------------
+# Use slide:
+
+"""  
+Scala and Spark for Model Evaluation:
+
+Scala + Spark for ML
+
+Big data focus – Spark (written in Scala) is great when you need to train or preprocess ML data at scale (terabytes to petabytes).
+
+Enterprise use – Many large companies (finance, e-commerce, ad tech) run their ML pipelines in Spark for distributed ETL, feature engineering, and sometimes model training.
+
+MLlib – Spark’s MLlib exists, but it’s less advanced compared to Python’s ML/DL ecosystem. Typically, Spark is used for data prep + distributed feature engineering, then training happens in Python.
+👉 If your focus is big data pipelines, data engineering, or ML at enterprise scale, Scala (or PySpark) with Spark is very valuable.
+
+
+
+
+Practical recommendation
+
+Start with Python → best entry point, most flexibility, easiest to land ML-focused roles.
+
+Add Spark/Scala later if needed → especially if you move into roles that require distributed data processing (e.g., data engineer, ML engineer in big companies).
+
+You don’t even need Scala right away – you can use PySpark (Python bindings for Spark), which is very common in industry. Scala becomes relevant if you need maximum performance or are working in teams that standardize on Scala.
+
+
+
+Rule of thumb:
+
+ML Scientist / Research / Prototyping → Python
+
+Data Engineer / Big Data ML Pipelines → Spark (Scala or PySpark) + Python
+
+"""
+
+
 
 """ 
-Hello everyone and welcome to the biased variance tradeoff lecture and this lecture.
+Hello everyone and welcome to the biase-variance tradeoff lecture and this lecture.
 
 We're going to discuss the bias various straight off and how you can use it to evaluate your model's
 
 performance by his various tradeoff as a fundamental topic of understanding model performance and evaluation.
 
 Go ahead and review chapter two of an introduction to learning for more in-depth look on this topic
+
+Chapter 2 of Introduction to Statistical Learning for a more in depth look!
+
 
 
 
@@ -201,12 +240,20 @@ OK thanks everyone and I'll see you at the next lecture.
 
 Got it ✅ I’ll rewrite this into a clear, simplified, and structured version of the lecture transcript. Here’s a cleaned-up version:
 
-Bias–Variance Tradeoff Lecture
+
+
+Bias-Variance Tradeoff:
 
 Hello everyone, and welcome to the lecture on the bias–variance tradeoff.
 In this session, we’ll discuss what it means, why it’s important, and how it helps us evaluate model performance.
 
 For a deeper dive, you can review Chapter 2 of An Introduction to Learning.
+
+
+
+
+
+
 
 What is the Bias–Variance Tradeoff?
 
