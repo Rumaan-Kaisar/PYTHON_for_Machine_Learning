@@ -55,10 +55,30 @@ Procedure:
     5. K Means Clustering
         1. K Means Algorithm Theory
         2. K Means with Python
-        3. K Means Project 0verview
+        3. K Means Project overview
         4. K Means Project Solutions
 
     6. Principal Component Analysis
         1. Principal Component Analysis
         2. PCAwith Python
 
+
+File Structure: 
+    single 'py', 2 'ipynb'
+
+    Theory + codeAlong = ipynb
+    project = ipynb
+
+    Theory + codeAlong + project = py
+
+
+'py' files:
+
+pyDS_ch11_1
+
+1. Logistic Regression
+2. K Nearest Neighbors
+3. Decision Trees and Random Forests
+4. Support Vector Machines
+5. K Means Clustering
+6. Principal Component Analysis
