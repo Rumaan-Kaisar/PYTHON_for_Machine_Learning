@@ -12,37 +12,53 @@
 # Use slide:
 
 """  
-Scala and Spark for Model Evaluation:
+    ----------------    Scala and Spark for Model Evaluation, Data-prep, Data/Feature engineering    ----------------
 
-Scala + Spark for ML
+    Scala + Spark for ML:
+        Big data focus: 
+            Spark (written in Scala) is great when you need to train or preprocess ML data at scale (terabytes to petabytes).
+        Enterprise use: 
+            Many large companies (finance, e-commerce, ad tech) run their ML pipelines in Spark for 
+            distributed ETL, feature engineering, and sometimes model training.
 
-Big data focus – Spark (written in Scala) is great when you need to train or preprocess ML data at scale (terabytes to petabytes).
+    MLlib: 
+        Spark's MLlib exists, but it's less advanced compared to Python's ML/DL ecosystem. 
+        
 
-Enterprise use – Many large companies (finance, e-commerce, ad tech) run their ML pipelines in Spark for distributed ETL, feature engineering, and sometimes model training.
+    Typically, Spark is used for 
+        -> data prep + distributed feature engineering, then 
+        -> training happens in Python.
 
-MLlib – Spark’s MLlib exists, but it’s less advanced compared to Python’s ML/DL ecosystem. Typically, Spark is used for data prep + distributed feature engineering, then training happens in Python.
-👉 If your focus is big data pipelines, data engineering, or ML at enterprise scale, Scala (or PySpark) with Spark is very valuable.
+        
+    If your focus is: 
+        -> big data pipelines, 
+        -> data engineering, or 
+        -> ML at enterprise scale, 
+        
+        Scala (or PySpark) with Spark would be very valuable.
+
+# CP 1
+
+    ----  Practical recommendation  ----
+    Start with Python:
+        Best entry point, most flexibility, easiest to land ML-focused roles.
+
+    Add Spark/Scala later if needed:
+        Especially if you move into roles that require "distributed data processing" 
+        (e.g., data engineer, ML engineer in big companies).
+
+    You don't even need Scala right away- you can use PySpark (Python bindings for Spark), which is very common in industry. 
+    Scala becomes relevant if you need "maximum performance" or are working in teams that standardize on Scala.
 
 
-
-
-Practical recommendation
-
-Start with Python → best entry point, most flexibility, easiest to land ML-focused roles.
-
-Add Spark/Scala later if needed → especially if you move into roles that require distributed data processing (e.g., data engineer, ML engineer in big companies).
-
-You don’t even need Scala right away – you can use PySpark (Python bindings for Spark), which is very common in industry. Scala becomes relevant if you need maximum performance or are working in teams that standardize on Scala.
-
-
-
-Rule of thumb:
-
-ML Scientist / Research / Prototyping → Python
-
-Data Engineer / Big Data ML Pipelines → Spark (Scala or PySpark) + Python
+    Rule of thumb:
+        ML Scientist / Research / Prototyping   ->  Python
+        Data Engineer / Big Data ML Pipelines   ->  Spark (Scala or PySpark) + Python
 
 """
+
+
+
 
 
 
