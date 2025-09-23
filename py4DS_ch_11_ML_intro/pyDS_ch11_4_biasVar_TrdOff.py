@@ -1,10 +1,10 @@
 
 ################# 16.1 :
-# copy: 
+# copy: add bullseye images for analogy
 #       
 #   
 #
-################# (20-Sep-25 for 21-Sep-25)
+################# (21-Sep-25 for 23-Sep-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -62,15 +62,11 @@
 
 
 """ 
-Hello everyone and welcome to the biase-variance tradeoff lecture and this lecture.
+    ----------------    Bias-Variance Tradeoff    ----------------
+    The bias-variance tradeoff is a key concept for evaluating model performance.
 
-We're going to discuss the biase-variance tradeoff and how you can use it to evaluate your model's
-
-performance by his various tradeoff as a fundamental topic of understanding model performance and evaluation.
-
-Go ahead and review chapter two of an introduction to learning for more in-depth look on this topic
-
-Chapter 2 of Introduction to Statistical Learning for a more in depth look!
+    The "bias-variance tradeoff" is fundamental to understanding how well a model "learns" and "generalizes".
+    For a deeper explanation, review Chapter 2 of "An Introduction to Statistical Learning - Gareth James".
 
 
 
@@ -405,3 +401,4 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
+
