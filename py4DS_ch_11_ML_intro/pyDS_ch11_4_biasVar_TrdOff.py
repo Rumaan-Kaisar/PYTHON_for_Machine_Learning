@@ -76,22 +76,19 @@
     It helps explain why model is "underfit" or "overfit" and 
         it guides "Model selection" and "Regularization".
 
--------------------------------------
 
+    Bias-Variance Tradeoff:
+        The bias-variance tradeoff describes the balance between 
+            "model complexity" and 
+            "prediction accuracy"
 
-The bias variance tradeoff is the point where we are just adding noise by adding model complexity or flexibility.
-The training error goes down as it has to put the test error will start to go up the model after the bias tradeoff begins to overfit 
+        As a model becomes more complex, its training error decreases (it fits the training data better).
 
+        However, after a certain point, the "test error increases", because 
+            the model starts to overfit and "capture noise" instead of "true patterns".
 
-
-Bias-Variance Tradeoff:
-
-What is the Bias–Variance Tradeoff?
-The bias–variance tradeoff describes the balance between model complexity and prediction accuracy:
-As a model becomes more complex, its training error decreases (it fits the training data better).
-However, after a certain point, the test error increases, because the model starts to overfit and capture noise instead of true patterns.
-The tradeoff is about finding the “sweet spot” where the model is flexible enough to capture real patterns, but not so complex that it memorizes noise.
-
+        The tradeoff is about finding the “sweet spot” where the model is "flexible enough to capture real patterns", 
+            but not too complex that it memorizes noise.
 
         
 
@@ -421,3 +418,4 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
+
