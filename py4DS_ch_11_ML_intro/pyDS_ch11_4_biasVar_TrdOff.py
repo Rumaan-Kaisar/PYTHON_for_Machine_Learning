@@ -90,10 +90,17 @@
         The tradeoff is about finding the “sweet spot” where the model is "flexible enough to capture real patterns", 
             but not too complex that it memorizes noise.
 
-        
+
+    So during training, we train the model on the training set and the "training error" keeps going down.
+
+    However, if we train the model “too well” on the training set (making the model too complex),
+        beyond a certain point, the model starts to overfit—it learns "noise" and "random fluctuations" in the training data.
+        At this stage, the "test error" begins to go up even while "training error" keeps decreasing.
+
+    This balance point is known as the "bias-variance tradeoff".        
 
 
--------------------------------------
+------------------  Qwen  -------------------
 
 1. Definitions
 ➤ Bias
@@ -340,7 +347,7 @@ OK thanks everyone and I'll see you at the next lecture.
 
 
 """  
--------------------------------------
+------------------  GPT  -------------------
 
 Got it ✅ I’ll rewrite this into a clear, simplified, and structured version of the lecture transcript. Here’s a cleaned-up version:
 
@@ -418,4 +425,3 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
-
