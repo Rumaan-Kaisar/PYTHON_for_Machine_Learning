@@ -203,21 +203,22 @@ Sometimes we will get a good distribution of training data so we predict very we
 and these different realizations result in a scatter of hits on the target or aiming for something for low bias and low variance.
 
 
-But realistically which you'll have to do is tradeoff variance or bias.
 
-And here we can see in the quarter of the target a low variance low bias model will predict correct
+But realistically which you'll have to do is "tradeoff" the "variance" or the "bias".
+    - And here we can see in the quadrent of the target a "low variance - low bias model" will predict correct values on the bullseye.
+    - A "low bias high variance model" will predicts values around the bullseye but with a high degree of variance
+    - Where as a "high bias low variance" model in that lower quadrant will have a "high bias to a certain location" but low variance.
+        All your models predictions are in a certain area     
+    - and in the worst case: "high variance high bias" means you
 
-values on the bullseye.
+just all over the place basically 
 
-A low bias high variance model will predicts values around the bullseye but with a high degree of variance
 
-versus a high bias low variance model in that lower quadrant will have a high bias to a certain location
 
-but low variance.
 
-All your models predictions are in a certain area and in the worst high variance high bias means you
+---- rev [24-sep-2025] ----
 
-just all over the place basically a common temptation for beginners is to continually add complexity
+a common temptation for beginners is to continually add complexity
 
 to a model until it fits the training set very well.
 
@@ -424,5 +425,3 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
-
-
