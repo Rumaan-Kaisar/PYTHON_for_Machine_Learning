@@ -184,32 +184,24 @@ while a model that overfits (exeeding bias-variance tradeoff) make a curve line 
 The first model predicts 85% on test data, but the overfitted model gives 60% prediction on teh test data (because it focused on outliers and noises, making the complex jagged/ragged line )
 
 
+(classification based)
+Let's go ahead and discuss this topic by imagining a dartboard :
+    Imagine that the center of the target is a model that perfectly predicts the correct values.
+    As we move away from the bulls-eye, our predictions will get worse and worse.
 
-Let's go ahead and discuss this topic by imagining a dartboard.
+If we're going to make a quadrant of "low variance vs high variance" and "high bias vs. low bias",
+we can get an understanding of what the bias in variance terms mean generally.
 
-So imagine that the center of this target or a dartboard is a model that perfectly predicts the correct
+Imagine we can repeat our entire model building process to get a number of separate hits on the target.
+    Each hit represents an individual realization of our model, given the chance variability in the training data we gather.
 
-values as we move away from the bullseye.
+Sometimes we will get a good distribution of training data so we predict very well and we are close to the bulls-eye, while
+    sometimes our training data might be full of outliers or non-standard values resulting in poorer predictions.
 
-Our predictions will get worse and worse and we're going to go ahead and make a quadrant of low variance
+----  FIG of quadrant  ----
+    
+and these different realizations result in a scatter of hits on the target or aiming for something for low bias and low variance.
 
-versus high variance and high bias vs. low bias.
-
-So we can get an understanding of what the bias in variance terms mean generally.
-
-Imagine we can repeat our entire model building process to get a number of separate hits on the target
-
-each hit represents an individual realisation of our model.
-
-Given the chance variability in the training data we gather sometimes we will get a good distribution
-
-of training data so we predict very well and we are close to the bull's eye.
-
-While sometimes our training data might full of outliers or non-standard values resulting in poor predictions
-
-and these different realizations result in a scatter of hits on the target or aiming for something for
-
-low bias and low variance.
 
 But realistically which you'll have to do is tradeoff variance or bias.
 
@@ -432,4 +424,5 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
+
 
