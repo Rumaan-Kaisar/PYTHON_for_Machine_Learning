@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (21-Sep-25 for 23-Sep-25)
+################# (24-Sep-25 for 26-Sep-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -59,8 +59,6 @@
 
 
 
-
-
 """ 
     ----------------    Bias-Variance Tradeoff    ----------------
     The bias-variance tradeoff is a key concept for evaluating model performance.
@@ -97,8 +95,10 @@
         beyond a certain point, the model starts to overfit—it learns "noise" and "random fluctuations" in the training data.
         At this stage, the "test error" begins to go up even while "training error" keeps decreasing.
 
-    This balance point is known as the "bias-variance tradeoff".        
+    This balance point is known as the "bias-variance tradeoff".  
+        The model after the "bias trade-off" begins to overfit.      
 
+        
 
 ------------------  Qwen  -------------------
 
@@ -122,6 +122,8 @@ Goal: Find the sweet spot — a model with low bias and low variance — that ge
 Total Error = Bias² + Variance + Irreducible Error 
 
 (Irreducible error is noise in the data that cannot be eliminated by any model.)
+
+
 
 3. Bullseye Analogy (visual)
 Imagine trying to hit a bullseye:
@@ -154,6 +156,8 @@ Ensemble methods (Boosting)
 
 *Boosting reduces bias but can increase variance if not controlled (e.g., with early stopping or shrinkage). 
 
+
+
 5. Practical Implications
 If your model underfits → increase complexity, add features, reduce regularization.
 If your model overfits → simplify model, add regularization, get more data, use cross-validation.
@@ -173,8 +177,11 @@ Let me know if you want diagrams or code examples to illustrate this!
 
 -------------------------------------
 
-
-
+(regression based)
+another analogy :
+Now consider my analogy: if we consider a regresson model, say our true model is a straight line passing maintaing the optimal distance from all datapoints,
+while a model that overfits (exeeding bias-variance tradeoff) make a curve line jagged through all the points and making its distance minimal (consideriing too many outliers on the training set).
+The first model predicts 85% on test data, but the overfitted model gives 60% prediction on teh test data (because it focused on outliers and noises, making the complex jagged/ragged line )
 
 
 
@@ -425,3 +432,4 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
+
