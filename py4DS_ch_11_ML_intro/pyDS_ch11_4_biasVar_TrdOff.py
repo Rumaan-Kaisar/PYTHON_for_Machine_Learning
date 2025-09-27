@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (24-Sep-25 for 26-Sep-25)
+################# (26-Sep-25 for 27-Sep-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -209,29 +209,22 @@ But realistically which you'll have to do is "tradeoff" the "variance" or the "b
     - A "low bias high variance model" will predicts values around the bullseye but with a high degree of variance
     - Where as a "high bias low variance" model in that lower quadrant will have a "high bias to a certain location" but low variance.
         All your models predictions are in a certain area     
-    - and in the worst case: "high variance high bias" means you
-
-just all over the place basically 
+    - and in the worst case: "high variance high bias" means you just all over the place basically 
 
 
 
+----  FIG 1 of Regression Line complexity example  ----
 
----- rev [24-sep-2025] ----
+Regression Line complexity example:
+    "A common temptation for beginners is to continually add complexity to a model until it fits the training set "very well"."
 
-a common temptation for beginners is to continually add complexity
+    And let's go ahead and begin to understand this in a machine learning algorithm or to learn about linear regression.
 
-to a model until it fits the training set very well.
+    What you may want to do is let's say you are given a set of training data-points (red points).
+        You might have a simple model such as the straight line passing through the cluster of points (blue line) 
+        and you get a certain error on your training data.
 
-And let's go ahead and begin to understand this in a machine learning algorithm or to learn about linear
-
-regression.
-
-What you may want to do is let's say you are given a set of red training data.
-
-Now you testing data distric training data.
-
-You might have a simple model such as the blue line and you get a certain error on your training data
-
+        
 and you decide as a beginner.
 
 Hey maybe I should just make the model more and more complex or flexible so that it hits all those training
@@ -425,3 +418,4 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
+
