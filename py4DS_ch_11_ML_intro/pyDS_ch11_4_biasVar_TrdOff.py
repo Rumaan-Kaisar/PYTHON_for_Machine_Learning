@@ -225,31 +225,26 @@ Regression Line complexity example:
         and you get a certain error on your training data.
 
         
-and you decide as a beginner.
+    Then you decide as a beginner:
+        "Hey maybe I should just make the model **more and more complex or flexible** so that it hits all those training points."
 
-Hey maybe I should just make the model more and more complex or flexible so that it hits all those training
+        - However for hitting all those training points you're going to.
+            Your model is going to fail to predict for new test points.
+            Which is why we do that train test split.
 
-points.
+        - Doing that can cause a model to overfit to your training data.
+            And like I mention cause large errors on new data such as the tests that were going to do 
 
-However for hitting all those training points you're going to.
 
-Your model is going to fail to predict for new test points.
+    Lets take a look at an example model on how we can see overfitting occur from an error standpoint using test data
+        We'll use a black curve with some noise points off of it to represent the true shape.
 
-Which is why we do that train test split.
 
-Doing that can cause a model to overfit to your training data.
+    ----  FIG 2 of Regression Line complexity example (3 part comparison)  ----
+        
 
-And like I mention cause large errors on new data such as the tests that were going to do is take a
-
-look at an example model on how we can see overfitting occur from an air standpoint using test data
-
-.
-
-We'll use a black curve with some noise points off of it to represent the true shape.
-
-The data follows.
-
-All right.
+---- rev [26-sep-2025] ----
+    
 
 We have three images here.
 
@@ -418,4 +413,3 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
-
