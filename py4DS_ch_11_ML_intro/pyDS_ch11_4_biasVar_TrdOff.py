@@ -259,32 +259,31 @@ Regression Line complexity example:
     Also you'll notice that the black curve is the truth that the model actually follows.
         So all the points are just "noise around the actual black curve" which is the truth.
 
-        
-In order to evaluate your models and compare the complexities to each other which you'll have to do
+              
+        Part 2: comparing the complexities
+            In order to evaluate your models and "compare the complexities to each other" which you'll have to do is- plot out the complexity or flexibility of the model.
+                For instance the "polynomial level of a regression fit" versus "the error metric such as mean square error".
 
-is plot out the complexity or flexibility of the model.
+            And you can see here in that middle plot "Flexibility vs MSE" that's exactly what we've done 
+                we've plotted out for the "training data" versus the "test data".
 
-For instance the polynomial level of a regression fit versus the error metric such as mean square error
 
-.
+        Part 3:                
+            
+            Notice In our first part of the image on the left.
+                We have a simple model in yellow color linear model. 
+                for this model We have a "high error" on both the "test data" and the "training data" we can observe this in the middle plot "Flexibility vs MSE" 
 
-And you can see here in that middle plot that's exactly what we've done and we've plotted out for the
+            as our model begin to get more complicated such as with the quadratic model,
+                In blue-color we begin to "lower the error" for the both "test data and the training data" notice it in plot "Flexibility vs MSE" 
 
-training data versus the test data.
+            But as we get even more complex model however we begin to lower the error for the training data significantly.
+                But as a result you begin to have "raised the error on the test data".
 
-You'll notice all the way to the left.
+                
+    ---- rev [27-sep-2025] ----
 
-We have a simple model that yellow linear model for this model.
 
-We have a high error on both the test data and the training data as we begin to get more complicated
-
-with the quadratic model.
-
-In blue we begin to lower the error for the test data and the training data as we get even more complex
-
-however we begin to lower the lower the error for the training data significantly.
-
-But as a result you begin to have raised the error on the test data.
 
 The new data show you want to find the point that's going to balance out the bias and the variance.
 
@@ -411,4 +410,3 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
-
