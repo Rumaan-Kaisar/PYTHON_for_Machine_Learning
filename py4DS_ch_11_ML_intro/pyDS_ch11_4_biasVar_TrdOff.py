@@ -242,26 +242,24 @@ Regression Line complexity example:
 
     ----  FIG 2 of Regression Line complexity example (3 part comparison)  ----
         
-
----- rev [26-sep-2025] ----
     
+    We have three images here:
 
-We have three images here.
+        Part 1: The first one is the X versus the Y.
+            And here we have model flexibility as different linear fits: 
+                - a linear fit 
+                - a quadratic fit and 
+                - a spline fit 
+                
+            with each one getting more complex.
 
-The first one is the X versus the Y.
+    So the simplest of them is just a "linear fit" and gets more complicated 
+        that is quadratic And then you can have a spline fit 
 
-And here we have model flexibility as different linear fits a linear fit a quadratic fit or a spline
+    Also you'll notice that the black curve is the truth that the model actually follows.
+        So all the points are just "noise around the actual black curve" which is the truth.
 
-fit with each one getting more complex.
-
-So the simplest is just a linear fit more complicated that is quadratic.
-
-And then you can have a spline fit and you'll notice that the black curve is the truth that the model
-
-actually follows.
-
-So all the points are just noise around the actual black curve which is the truth.
-
+        
 In order to evaluate your models and compare the complexities to each other which you'll have to do
 
 is plot out the complexity or flexibility of the model.
@@ -413,3 +411,4 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
+
