@@ -288,27 +288,20 @@ Regression Line complexity example:
     So you want to balance out the bias and variance of your model to the point where your test data and
     training data have reached some sort of minimum and grouping together.
 
-So you want to balance out the bias and variance of your model to the point where your test data and
+    
+    
+    This is the classic plot to show this as a general stance where you have low versus high model complexity
+        on the X-axis and some sort of prediction error on the y axis.
 
-training data have reached some sort of minimum and grouping together.
+    ----  FIG: Model complexity vs Prediction error  ----
 
-This is the classic plot to show this as a general stance where you have low versus high model complexity
-
-on the X-axis and some sort of prediction error on the y axis.
-
-And as you moved to the left you get a higher bias but lower variance.
-
-And as he moves to the right to a higher complexity model you get a lower bias the high variance in
-
-what you want to do is pick a point where you are comfortable with the bias tradeoff.
-
-If you go to the left of it you'll start to under fit to the data and if you go to the right of it you'll
-
-start to overfit the data.
-
-Meaning you're hitting all of those points and your training data and new data is cutting a larger error
-
-because of that.
+        And as you moved to the left you get a higher bias but lower variance.
+        And as we moves to the right to a higher complexity model you get a lower bias the high variance 
+        
+    what you want to do is: pick a point where you are comfortable with the bias tradeoff.
+        If you go to the left of it you'll start to "under fit to the data" and 
+        if you go to the right of it you'll start to "overfit the data".
+        (Meaning you're hitting all of those points in your training data and new data is cutting a larger error because of that.)
 
 All right.
 
@@ -409,4 +402,5 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
+
 
