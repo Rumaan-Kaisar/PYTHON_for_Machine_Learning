@@ -303,23 +303,20 @@ Regression Line complexity example:
         if you go to the right of it you'll start to "overfit the data".
         (Meaning you're hitting all of those points in your training data and new data is cutting a larger error because of that.)
 
+        
+    ---- rev [30-sep-2025] ----
+
+
 All right.
+Keep that in mind as we continue on using Python for machine learning. This is more of just a theoretical background.
 
-Keep that in mind as we continue on using Python for machine learning.
+Go ahead and read Chapter 2 of "An Introduction to Statistical Learning - Gareth James"
 
-This is more of just a theoretical background.
+If you want a more in-depth look of this this is a topic you want to keep in mind as you begin to work with real world data.
 
-Go ahead and read Chapter 2 of the introduction to Cisco learning.
 
-If you want a more in-depth look of this this is a topic you want to keep in mind as you begin to work
-
-with real world data.
-
-OK thanks everyone and I'll see you at the next lecture.
  
 """
-
-
 
 
 
@@ -402,5 +399,6 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
+
 
 
