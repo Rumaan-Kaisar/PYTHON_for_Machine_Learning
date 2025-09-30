@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (26-Sep-25 for 27-Sep-25)
+################# (28-Sep-25 for 30-Sep-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -280,14 +280,13 @@ Regression Line complexity example:
             But as we get even more complex model however we begin to lower the error for the training data significantly.
                 But as a result you begin to have "raised the error on the test data".
 
-                
-    ---- rev [27-sep-2025] ----
+         
+    
+    The new data show you want to find the point that's going to "balance out the bias and the variance".
+        - In this particular case it's going to be closer to the quadratic fit that Bluepoint.
 
-
-
-The new data show you want to find the point that's going to balance out the bias and the variance.
-
-In this particular case it's going to be closer to the quadratic fit that Bluepoint.
+    So you want to balance out the bias and variance of your model to the point where your test data and
+    training data have reached some sort of minimum and grouping together.
 
 So you want to balance out the bias and variance of your model to the point where your test data and
 
@@ -410,3 +409,4 @@ Thanks everyone—see you in the next lecture!
 Do you want me to also make a short, student-friendly summary version (like a one-page cheat sheet with definitions + visuals explained), or do you prefer this cleaned-up transcript style?
 
 """
+
