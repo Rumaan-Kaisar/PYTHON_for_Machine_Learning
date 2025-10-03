@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (28-Sep-25 for 30-Sep-25)
+################# (01-Oct-25 for 03-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -97,6 +97,57 @@
 
     This balance point is known as the "bias-variance tradeoff".  
         The model after the "bias trade-off" begins to overfit.      
+
+
+        
+--------  Definitions of Bias Variance in ML-context  --------
+
+
+---- rev[01-Oct-2025] ----
+
+-- DS --
+== THINK ==
+Let's break it down in simple terms.
+
+Bias and Variance are two types of errors that can occur in machine learning models.
+
+Bias:
+
+Bias is the error due to overly simplistic assumptions in the learning algorithm.
+
+High bias can cause the model to miss relevant relations between features and target outputs (underfitting).
+
+Example: Linear regression might have high bias if the data is actually non-linear.
+
+Variance:
+
+Variance is the error due to too much complexity in the learning algorithm.
+
+High variance can cause the model to model the random noise in the training data (overfitting).
+
+Example: A very high-degree polynomial regression might have high variance.
+
+The Bias-Variance Tradeoff:
+
+We want to minimize both bias and variance, but they are often in tension.
+
+As we increase model complexity, bias decreases but variance increases.
+
+As we decrease model complexity, bias increases but variance decreases.
+
+The goal is to find a balance where both errors are minimized, leading to the best predictive performance.
+
+Visualizing the tradeoff:
+
+Imagine plotting model complexity on the x-axis and error on the y-axis.
+
+Bias error decreases as complexity increases (but only to a point).
+
+Variance error increases as complexity increases.
+
+The total error (bias + variance) forms a U-shaped curve, and we aim for the bottom of that curve.
+
+In practice, we use techniques like cross-validation, regularization, and ensemble methods to manage this tradeoff.
 
         
 
@@ -692,6 +743,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
