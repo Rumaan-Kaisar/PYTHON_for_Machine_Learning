@@ -121,6 +121,30 @@ Bias:
 
     Example: Fitting a straight line to data that actually follows a curve.
 
+   
+
+
+Variance:
+    Variance is the error due to sensitivity to fluctuations in the training data.
+        It makes too much complexity in the learning algorithm.
+    It measures how much the model's predictions change if we train it on a different dataset (from the same distribution).
+    High variance can cause the learning algorithm to "model the random noise" in the training data (overfitting).
+    High variance = model is too complex (overfitting).
+
+    Causes:
+        When a model is too complex (e.g., deep decision trees on small datasets).
+
+    Result:
+        Overfitting—the model learns noise instead of signal.
+
+    Characteristics:
+        Very low training error
+        High test error
+        Great on training data, poor on new data
+
+    Example: 
+        A very wiggly curve that tries to go through every training point, including noise.
+        A very high-degree polynomial regression might have high variance.
 
 == SHORT: ==
 
@@ -904,6 +928,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
