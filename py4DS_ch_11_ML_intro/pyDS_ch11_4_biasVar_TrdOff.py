@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (01-Oct-25 for 03-Oct-25)
+################# (04-Oct-25 for 05-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -152,15 +152,16 @@
         High bias, low variance: 
             model is too rigid, misses important patterns.
 
-    Goal: find the sweet spot where both bias and variance are reasonably low → best generalization.
+    Goal:
+        We want to minimize both 'bias' and 'variance', but they are often in tension.
+            As we increase model complexity, bias decreases but variance increases.
+            As we decrease model complexity, bias increases but variance decreases.
+        
+        The goal is to find a balance where both errors are minimized, 
+            i.e. finding the sweet spot where both bias and variance are reasonably low 
+            leading to the best predictive performance -> best generalization.
 
-
-
-The Bias-Variance Tradeoff:
-    We want to minimize both bias and variance, but they are often in tension.
-    As we increase model complexity, bias decreases but variance increases.
-    As we decrease model complexity, bias increases but variance decreases.
-    The goal is to find a balance where both errors are minimized, leading to the best predictive performance.
+---- cp1
 
 👉 In short:
 
@@ -925,6 +926,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
