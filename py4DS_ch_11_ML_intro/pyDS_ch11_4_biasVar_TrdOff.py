@@ -163,30 +163,18 @@
 
 ---- cp1
 
-👉 In short:
-
-Bias = systematic error (wrong assumptions).
-
-Variance = sensitivity to training data (overreaction to noise).
+    👉 In short:
+            Bias = systematic error (wrong assumptions).
+            Variance = sensitivity to training data (overreaction to noise).
 
 
 
 
----- rev[03-Oct-2025] ----
-
+---- rev[04-Oct-2025] ----
+---- Analozy ----
 
 
 -- DS --
-== THINK ==
-Let's break it down in simple terms.
-
-
-
-
-
-Variance:
-
-
 
 
 Visualizing the tradeoff:
@@ -926,7 +914,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
