@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (04-Oct-25 for 05-Oct-25)
+################# (07-Oct-25 for 08-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -166,18 +166,30 @@
 
             
     👉 In short:
-            Bias = systematic error (wrong assumptions).
-            Variance = sensitivity to training data (overreaction to noise).
+            Bias:
+                systematic error (wrong assumptions).
+                Error due to overly simplistic assumptions in the learning algorithm.
+            
+            Variance:
+                sensitivity to training data (overreaction to noise).
+                Error due to sensitivity to small fluctuations in the training set.
+
+                High variance → Model learns noise and fits training data too closely → overfitting.
+
+            The Tradeoff:
+                Low bias + High variance: Model fits training data very well but fails on test data (overfit).
+                High bias + Low variance: Model is too rigid, performs poorly on both train and test (underfit).
+
+            Goal: 
+                Find the sweet spot — a model with low bias and low variance — that generalizes well.
+                    TotalError = Bias**2 + Variance + IrreducibleError 
+                (Irreducible error is noise in the data that cannot be eliminated by any model.)
 
 
-
-
----- rev[04-Oct-2025] ----
+---- rev[07-Oct-2025] ----
 
 ---- cp1
      
-
-
 
 -- GPT --
 
@@ -824,6 +836,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
