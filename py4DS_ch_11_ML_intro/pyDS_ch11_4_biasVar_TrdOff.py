@@ -195,6 +195,8 @@
 
 ---- rev[08-Oct-2025] ----
 
+---- cp1
+
 ------------------  Qwen  -------------------
 
 
@@ -483,6 +485,8 @@ Do you want me to also make a short, student-friendly summary version (like a on
 Below is a clean, corrected, and well-organized pointwise summary of the bias–variance tradeoff, preserving the full context while fixing errors and clarifying concepts.
 
 Bias–Variance Tradeoff — concise, corrected, pointwise
+
+
 1 — What it is (big picture)
 
 The bias–variance tradeoff describes how model complexity affects two types of error:
@@ -770,7 +774,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
