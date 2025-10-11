@@ -192,10 +192,75 @@
     Now, let's clarify these errors through two Visual Analogies.
     We'll explore them in the context of both Classification and Regression.
 
+    
+(classification based)
+Let's go ahead and discuss this topic by imagining a dartboard :
+    Imagine that the center of the target is a model that perfectly predicts the correct values.
+    As we move away from the bulls-eye, our predictions will get worse and worse.
 
----- rev[08-Oct-2025] ----
+If we're going to make a quadrant of "low variance vs high variance" and "high bias vs. low bias",
+we can get an understanding of what the bias in variance terms mean generally.
 
----- cp1
+Imagine we can repeat our entire model building process to get a number of separate hits on the target.
+    Each hit represents an individual realization of our model, given the chance variability in the training data we gather.
+
+Sometimes we will get a good distribution of training data so we predict very well and we are close to the bulls-eye, while
+    sometimes our training data might be full of outliers or non-standard values resulting in poorer predictions.
+
+----  FIG of quadrant  ----
+    
+and these different realizations result in a scatter of hits on the target or aiming for something for low bias and low variance.
+
+
+
+But realistically which you'll have to do is "tradeoff" the "variance" or the "bias".
+    - And here we can see in the quadrent of the target a "low variance - low bias model" will predict correct values on the bullseye.
+    - A "low bias high variance model" will predicts values around the bullseye but with a high degree of variance
+    - Where as a "high bias low variance" model in that lower quadrant will have a "high bias to a certain location" but low variance.
+        All your models predictions are in a certain area     
+    - and in the worst case: "high variance high bias" means you just all over the place basically 
+
+
+    
+
+
+Dartboard Analogy
+
+Imagine a dartboard where the bullseye represents perfect predictions:
+
+Low bias, low variance: darts cluster tightly around the bullseye (ideal).
+
+Low bias, high variance: darts are spread widely, but around the bullseye.
+
+High bias, low variance: darts cluster together, but far from the bullseye.
+
+High bias, high variance: darts are scattered all over the board.
+
+This illustrates how different models can make errors either systematically (bias) or randomly (variance).
+
+
+
+5 — Classification analogy (dartboard)
+
+Each model training is one “shot” at a dartboard target:
+
+Low bias, low variance → shots clustered tightly on bullseye (ideal).
+
+High bias, low variance → shots cluster away from bullseye (consistently wrong).
+
+Low bias, high variance → shots scattered around bullseye (average right, but inconsistent).
+
+High bias, high variance → shots all over the board (bad).
+
+Repeating training with different sampled training sets produces the scatter of hits that illustrates variance.
+
+
+
+
+--------------------------------------------------------------
+
+
+---- rev[10-Oct-2025] ----
 
 ------------------  Qwen  -------------------
 
@@ -774,6 +839,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
