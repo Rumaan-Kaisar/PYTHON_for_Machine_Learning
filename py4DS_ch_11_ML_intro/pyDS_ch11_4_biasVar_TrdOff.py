@@ -203,6 +203,9 @@
 
         -- cp1 --
 
+    
+    
+    
 we can get an understanding of what the bias in variance terms mean generally.
 
 Imagine we can repeat our entire model building process to get a number of separate hits on the target.
@@ -230,7 +233,7 @@ But realistically which you'll have to do is "tradeoff" the "variance" or the "b
 
 Dartboard Analogy
 
-Imagine a dartboard where the bullseye represents perfect predictions:
+
 
 Low bias, low variance: darts cluster tightly around the bullseye (ideal).
 
@@ -275,7 +278,7 @@ Repeating training with different sampled training sets produces the scatter of 
 
 3. Bullseye Analogy (visual)
 
-(center = truth, scatter = variance, shift = bias)
+
 
 Imagine trying to hit a bullseye:
 
@@ -816,7 +819,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
