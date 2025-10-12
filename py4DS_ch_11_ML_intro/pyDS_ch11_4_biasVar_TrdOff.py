@@ -193,12 +193,16 @@
     We'll explore them in the context of both Classification and Regression.
 
     
-(classification based)
-Let's go ahead and discuss this topic by imagining a dartboard :
-    Imagine that the center of the target is a model that perfectly predicts the correct values.
-    As we move away from the bulls-eye, our predictions will get worse and worse.
+    Dartboard Analogy (classification based):
+        Imagine a dartboard where the bullseye (center) represents perfect predictions by a model.
+        As we move away from the center, our predictions will get worse.
 
-If we're going to make a quadrant of "low variance vs high variance" and "high bias vs. low bias",
+        ----  quadrant  ----
+        Lets make a quadrant of "low variance vs high variance" and "high bias vs. low bias"
+        (center = truth, scatter = variance, shift = bias)
+
+        -- cp1 --
+
 we can get an understanding of what the bias in variance terms mean generally.
 
 Imagine we can repeat our entire model building process to get a number of separate hits on the target.
@@ -812,6 +816,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
