@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (12-Oct-25 for 14-Oct-25)
+################# (14-Oct-25 for 15-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -207,7 +207,6 @@
             These different versions of the model result in a "scatter of hits" on the target.
             The goal is to achieve "low bias and low variance", meaning the hits are closely clustered around the BULLSEYE.
             
-        -- cp1 --
 
         There's always a chance variability in the training data we gather:
             When the training data is well-distributed, 
@@ -222,12 +221,7 @@
 
             ----  FIG of quadrant  ----
 
-            
-        -- cp2 --
-
-    
-and these different version of models result in a "scatter of hits" on the target. 
-Our goal is "low bias and low variance", i.e. close scatter around the bullsye.
+# ----  rev[14-Oct-2025]  ----
 
 
 
