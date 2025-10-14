@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (08-Oct-25 for 10-Oct-25)
+################# (12-Oct-25 for 14-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -201,21 +201,12 @@
         Lets make a quadrant of "low variance vs high variance" and "high bias vs. low bias"
         (center = truth, scatter = variance, shift = bias)
 
-        -- cp1 --
-
-    
-    
-    
-we can get an understanding of what the bias in variance terms mean generally.
-
-Imagine we can repeat our entire model building process to get a number of separate hits on the target.
-    Each hit represents an individual realization of our model, given the chance variability in the training data we gather.
-
-Sometimes we will get a good distribution of training data so we predict very well and we are close to the bulls-eye, while
-    sometimes our training data might be full of outliers or non-standard values resulting in poorer predictions.
-
-----  FIG of quadrant  ----
-    
+        "hit" on the target:
+            If we repeat the whole MODEL-BUILDING PROCESS "multiple times", 
+            each "hit" on the target represents "one version of the model" trained on "slightly different data".
+            These different versions of the model result in a "scatter of hits" on the target.
+            The goal is to achieve "low bias and low variance", meaning the hits are closely clustered around the BULLSEYE.
+            
 and these different realizations result in a scatter of hits on the target or aiming for something for low bias and low variance.
 
 
@@ -819,6 +810,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
