@@ -222,8 +222,12 @@
 
             ----  FIG of quadrant  ----
 
-          
-and these different realizations result in a scatter of hits on the target or aiming for something for low bias and low variance.
+            
+        -- cp2 --
+
+    
+and these different version of models result in a "scatter of hits" on the target. 
+Our goal is "low bias and low variance", i.e. close scatter around the bullsye.
 
 
 
@@ -826,8 +830,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
-
 
 
 
