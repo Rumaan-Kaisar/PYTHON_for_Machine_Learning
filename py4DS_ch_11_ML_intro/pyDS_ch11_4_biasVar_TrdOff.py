@@ -207,6 +207,22 @@
             These different versions of the model result in a "scatter of hits" on the target.
             The goal is to achieve "low bias and low variance", meaning the hits are closely clustered around the BULLSEYE.
             
+        -- cp1 --
+
+        There's always a chance variability in the training data we gather:
+            When the training data is well-distributed, 
+                the model predicts accurately, and the hits are close to the bullseye.
+
+            When the training data contains OUTLIERS or unusual values, 
+                the predictions are poorer, and the hits spread farther from the center.
+
+        These repeated outcomes form a "pattern of hits" on the target, 
+            showing how bias and variance together affect the model's accuracy and consistency.
+
+
+            ----  FIG of quadrant  ----
+
+          
 and these different realizations result in a scatter of hits on the target or aiming for something for low bias and low variance.
 
 
@@ -810,6 +826,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
