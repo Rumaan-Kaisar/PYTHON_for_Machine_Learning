@@ -236,9 +236,8 @@
                 model predicts values scattered widely and far from the target.
                 WORST CASE: it means we're just all over the place basically 
 
-
-
-Dartboard Analogy
+        This illustrates how different models can make errors either systematically (bias) or randomly (variance).
+        Repeating training with different sampled training sets produces the scatter of hits that illustrates variance.
 
 
 
@@ -826,6 +825,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
