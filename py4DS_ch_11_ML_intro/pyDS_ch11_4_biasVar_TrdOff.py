@@ -239,41 +239,12 @@
         This illustrates how different models can make errors either systematically (bias) or randomly (variance).
         Repeating training with different sampled training sets produces the scatter of hits that illustrates variance.
 
+            ----  cp2  ----
 
 
-Low bias, low variance: darts cluster tightly around the bullseye (ideal).
-
-Low bias, high variance: darts are spread widely, but around the bullseye.
-
-High bias, low variance: darts cluster together, but far from the bullseye.
-
-High bias, high variance: darts are scattered all over the board.
-
-This illustrates how different models can make errors either systematically (bias) or randomly (variance).
-
-
-
-5 — Classification analogy (dartboard)
-
-Each model training is one “shot” at a dartboard target:
-
-Low bias, low variance → shots clustered tightly on bullseye (ideal).
-
-High bias, low variance → shots cluster away from bullseye (consistently wrong).
-
-Low bias, high variance → shots scattered around bullseye (average right, but inconsistent).
-
-High bias, high variance → shots all over the board (bad).
-
-Repeating training with different sampled training sets produces the scatter of hits that illustrates variance.
-
-
-
-
---------------------------------------------------------------
-
-
----- rev[10-Oct-2025] ----
+# ----  rev[14-Oct-2025]  ----
+    
+    
 
 
 
@@ -825,8 +796,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
-
 
 
 
