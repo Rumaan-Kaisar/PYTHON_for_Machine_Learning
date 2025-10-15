@@ -216,24 +216,26 @@
                 the predictions are poorer, and the hits spread farther from the center.
 
         These repeated outcomes form a "pattern of hits" on the target, 
-            showing how bias and variance together affect the model's accuracy and consistency.
-
+            showing how 'bias' and 'variance' together affect the model's accuracy and consistency.
+            In practice, we must TRADE-OFF between 'bias' and 'variance'.
 
             ----  FIG of quadrant  ----
 
-# ----  rev[14-Oct-2025]  ----
+            low bias, low variance:
+                model predicts values close to the bullseye (clustered tightly) — this is ideal.
+                
+            low bias, high variance:
+                model predicts values around the bullseye but with large spread (high degree of variance).
+                (i.e. average right, but inconsistent)
+                
+            high bias, low variance:
+                model consistently predicts values far from the bullseye but in the same area ((consistently wrong)).
+                i.e. a high bias to a certain location but low variance (all of our models predictions are in a certain area)
+                
+            high bias, high variance:
+                model predicts values scattered widely and far from the target.
+                WORST CASE: it means we're just all over the place basically 
 
-
-
-But realistically which you'll have to do is "tradeoff" the "variance" or the "bias".
-    - And here we can see in the quadrent of the target a "low variance - low bias model" will predict correct values on the bullseye.
-    - A "low bias high variance model" will predicts values around the bullseye but with a high degree of variance
-    - Where as a "high bias low variance" model in that lower quadrant will have a "high bias to a certain location" but low variance.
-        All your models predictions are in a certain area     
-    - and in the worst case: "high variance high bias" means you just all over the place basically 
-
-
-    
 
 
 Dartboard Analogy
@@ -824,6 +826,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
