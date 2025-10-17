@@ -241,50 +241,21 @@
 
 
 
-# ----  rev[14-Oct-2025]  ----
-    
-    
+    Technique                       Effect on Bias      Effect on Variance
+    --------------------------------------------------------------------------------
+    Add more features               Decreases           Increases
+    Get more training data          Slight decrease     Decreases
 
+    Increase model complexity       Decreases           Increases
+    Reduce model complexity         Increases           Decreases
 
+    Regularization (L1/L2)          Increases           Decreases
 
-------------------  Qwen  -------------------
+    Ensemble methods (Bagging)      Slight effect       Decreases
+    Ensemble methods (Boosting)     Decreases           Increases*
 
+    * Boosting reduces bias but can increase variance if not controlled (e.g., with early stopping or shrinkage). 
 
-
-
-3. Bullseye Analogy (visual)
-
-
-
-Imagine trying to hit a bullseye:
-
-High bias, low variance: Shots are clustered far from center — consistently wrong.
-Low bias, high variance: Shots are centered around bullseye but widely scattered — accurate on average, but inconsistent.
-Low bias, low variance: Shots are tightly clustered around the bullseye — ideal!
-4. How to Manage the Tradeoff
-Add more features
-↓ Decreases
-↑ Increases
-Increase model complexity
-↓ Decreases
-↑ Increases
-Regularization (L1/L2)
-↑ Increases
-↓ Decreases
-Get more training data
-↔ Slight ↓
-↓ Decreases
-Reduce model complexity
-↑ Increases
-↓ Decreases
-Ensemble methods (Bagging)
-↔
-↓ Decreases
-Ensemble methods (Boosting)
-↓ Decreases
-↑ Increases*
-
-*Boosting reduces bias but can increase variance if not controlled (e.g., with early stopping or shrinkage). 
 
 
 
@@ -795,6 +766,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
