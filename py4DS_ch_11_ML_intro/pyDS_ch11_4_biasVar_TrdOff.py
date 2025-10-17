@@ -239,7 +239,6 @@
         This illustrates how different models can make errors either systematically (bias) or randomly (variance).
         Repeating training with different sampled training sets produces the scatter of hits that illustrates variance.
 
-            ----  cp2  ----
 
 
 # ----  rev[14-Oct-2025]  ----
@@ -796,6 +795,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
