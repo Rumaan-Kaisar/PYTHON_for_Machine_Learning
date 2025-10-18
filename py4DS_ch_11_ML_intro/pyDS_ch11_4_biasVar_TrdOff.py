@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (14-Oct-25 for 15-Oct-25)
+################# (17-Oct-25 for 18-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -289,39 +289,18 @@
 
 
 
-# ----  rev[15-Oct-2025]  ----
+        
+    ----------------    Regression-based analogy    ----------------
     
-    
+    Consider a regression model where the true relationship is a "smooth curve line" 
+        that maintains an optimal distance from all data points.
 
+    An overfitted model (beyond the bias-variance tradeoff point) instead draws a "jagged curve"
+        that passes through nearly every training point, including "outliers".
 
-
-------------------  Qwen  -------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--------------------------------------
-
-(regression based)
-another analogy :
-Now consider my analogy: if we consider a regresson model, say our true model is a straight line passing maintaing the optimal distance from all datapoints,
-while a model that overfits (exeeding bias-variance tradeoff) make a curve line jagged through all the points and making its distance minimal (consideriing too many outliers on the training set).
-The first model predicts 85% on test data, but the overfitted model gives 60% prediction on teh test data (because it focused on outliers and noises, making the complex jagged/ragged line )
-
-
-
+        As a result, while the first model (simple curve) achieves about 85% accuracy on the "test data", 
+            the overfitted model drops to around 60% on the "test data", 
+            because it has focused too much on "noise and outliers" rather than the true pattern.
 
 ----  FIG 1 of Regression Line complexity example  ----
 
@@ -802,6 +781,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
