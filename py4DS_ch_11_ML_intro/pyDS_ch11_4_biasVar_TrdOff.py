@@ -302,7 +302,48 @@
             the overfitted model drops to around 60% on the "test data", 
             because it has focused too much on "noise and outliers" rather than the true pattern.
 
-----  FIG 1 of Regression Line complexity example  ----
+                    
+    ----  FIG 1 of Regression Line complexity example  ----
+
+    Beginners often try to make models more complex to reduce training error.
+
+# ----  rev[17-Oct-2025]  ----
+    
+
+    Visualizing the Tradeoff: 
+    
+    
+    Overfitting Example
+
+
+
+
+
+For example, with linear regression:
+
+    A simple model (like a straight line) may not capture the data well → underfitting.
+
+    A more flexible model (quadratic or spline) may fit training data better.
+
+    But if the model becomes too complex, it starts fitting noise → overfitting, leading to poor test performance.
+
+    This is why we always evaluate using both training data and test data.
+
+
+
+
+
+    
+    
+-------------------------------------
+
+(regression based)
+
+
+
+
+
+
 
 Regression Line complexity example:
     "A common temptation for beginners is to continually add complexity to a model until it fits the training set "very well"."
@@ -420,22 +461,6 @@ Got it ✅ I’ll rewrite this into a clear, simplified, and structured version 
 
 
 
-
-Overfitting Example
-
-Beginners often try to make models more complex to reduce training error.
-
-
-
-For example, with linear regression:
-
-    A simple model (like a straight line) may not capture the data well → underfitting.
-
-    A more flexible model (quadratic or spline) may fit training data better.
-
-    But if the model becomes too complex, it starts fitting noise → overfitting, leading to poor test performance.
-
-    This is why we always evaluate using both training data and test data.
 
 
 
@@ -781,7 +806,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
