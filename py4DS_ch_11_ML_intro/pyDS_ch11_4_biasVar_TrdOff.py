@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (17-Oct-25 for 18-Oct-25)
+################# (18-Oct-25 for 19-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -306,8 +306,17 @@
     ----  FIG 1 of Regression Line complexity example  ----
 
     Beginners often try to make models more complex to reduce training error.
+        i.e. try to fit the training set "very well"
 
-# ----  rev[17-Oct-2025]  ----
+    For example, with linear regression:
+        A simple model (like a straight line) may not capture the data well -> underfitting.
+        A more flexible model (quadratic or spline) may fit training data better.
+
+        But if the model becomes too complex, it starts "fitting noise and outliers" -> overfitting, 
+            leading to poor test performance.
+
+    This is why we always "evaluate" using both "training data" and "test data".
+
     
 
     Visualizing the Tradeoff: 
@@ -806,6 +815,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
