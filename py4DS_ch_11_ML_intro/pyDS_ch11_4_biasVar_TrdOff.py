@@ -317,26 +317,60 @@
 
     This is why we always "evaluate" using both "training data" and "test data".
 
+
+    
+# ----  rev[18-Oct-2025]  ----
     
 
     Visualizing the Tradeoff: 
     
+Understanding Model Complexity and Overfitting
+
+Suppose we are given a set of training data points (shown as red points).
+
+A simple model, such as a straight line (blue line), can pass through the general cluster of points.
+
+This model will have some training error, but it captures the overall trend well.
+
+
+
+As a beginner, one might think:
+
+“Maybe I should make the model more complex or flexible so that it fits all the training points perfectly.”
+
+
+
+However, increasing model complexity to fit every point has consequences:
+
+The model may fail to predict new test points accurately.
+
+This is why we use a train–test split — to check generalization.
+
+
+
+When the model becomes too complex:
+
+It begins to overfit the training data, capturing noise and random fluctuations.
+
+As a result, it performs poorly on unseen data, leading to large test errors.
+
+
+
+To visualize this:
+
+Imagine a black curve representing the true underlying pattern.
+
+The data points have some random noise around this true curve.
+
+A highly complex model might fit all noisy points instead of the true pattern, showing clear overfitting.
+
+
+
     
     Overfitting Example
 
 
 
-
-
-For example, with linear regression:
-
-    A simple model (like a straight line) may not capture the data well → underfitting.
-
-    A more flexible model (quadratic or spline) may fit training data better.
-
-    But if the model becomes too complex, it starts fitting noise → overfitting, leading to poor test performance.
-
-    This is why we always evaluate using both training data and test data.
 
 
 
@@ -349,15 +383,9 @@ For example, with linear regression:
 (regression based)
 
 
-
-
-
-
-
 Regression Line complexity example:
-    "A common temptation for beginners is to continually add complexity to a model until it fits the training set "very well"."
+    
 
-    And let's go ahead and begin to understand this in a machine learning algorithm or to learn about linear regression.
 
     What you may want to do is let's say you are given a set of training data-points (red points).
         You might have a simple model such as the straight line passing through the cluster of points (blue line) 
@@ -815,7 +843,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
