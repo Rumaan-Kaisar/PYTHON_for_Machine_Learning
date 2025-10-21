@@ -319,24 +319,27 @@
 
 
     
-# ----  rev[18-Oct-2025]  ----
+# ----  rev[19-Oct-2025]  ----
     
 
     Visualizing the Tradeoff: 
     
-Understanding Model Complexity and Overfitting
+    Understanding Model Complexity and Overfitting:
 
-Suppose we are given a set of training data points (shown as red points).
+    
+    Suppose we are given a set of training data points (shown as red points).
+    
+    Lets say we first get a simple model, such as a straight line (blue line), passes through the general cluster of points.
+    Then we get a certain error on the "training data".
 
-A simple model, such as a straight line (blue line), can pass through the general cluster of points.
+    Now as a beginner one might think:
+        "I should make the model more complex or flexible so that it fits all the training points perfectly."
+        It then hits all those training points
 
-This model will have some training error, but it captures the overall trend well.
+    -- cp1 --
 
 
 
-As a beginner, one might think:
-
-“Maybe I should make the model more complex or flexible so that it fits all the training points perfectly.”
 
 
 
@@ -843,6 +846,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
