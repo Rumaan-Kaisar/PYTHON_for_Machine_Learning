@@ -343,11 +343,16 @@
 
 
 
+
+
+
+
+
 However, increasing model complexity to fit every point has consequences:
 
 The model may fail to predict new test points accurately.
 
-This is why we use a train–test split — to check generalization.
+This is why we use a train-test split — to check generalization.
 
 
 
@@ -388,15 +393,9 @@ A highly complex model might fit all noisy points instead of the true pattern, s
 
 Regression Line complexity example:
     
-
-
-    What you may want to do is let's say you are given a set of training data-points (red points).
-        You might have a simple model such as the straight line passing through the cluster of points (blue line) 
-        and you get a certain error on your training data.
-
         
     Then you decide as a beginner:
-        "Hey maybe I should just make the model **more and more complex or flexible** so that it hits all those training points."
+    
 
         - However for hitting all those training points you're going to.
             Your model is going to fail to predict for new test points.
@@ -846,7 +845,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
