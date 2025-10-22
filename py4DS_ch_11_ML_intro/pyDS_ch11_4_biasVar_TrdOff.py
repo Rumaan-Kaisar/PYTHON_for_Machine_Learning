@@ -344,6 +344,9 @@
         Model begins to overfit on the training data, capturing noise and random fluctuations.
             As a result, it performs poorly on "unseen data", leading to large test errors.
 
+
+
+
 To visualize this:
 
 Imagine a black curve representing the true underlying pattern.
@@ -375,14 +378,7 @@ Regression Line complexity example:
     
         
     Then you decide as a beginner:
-    
 
-        - However for hitting all those training points you're going to.
-            Your model is going to fail to predict for new test points.
-            Which is why we do that train test split.
-
-        - Doing that can cause a model to overfit to your training data.
-            And like I mention cause large errors on new data such as the tests that were going to do 
 
 
     Lets take a look at an example model on how we can see overfitting occur from an error standpoint using test data
@@ -825,7 +821,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
