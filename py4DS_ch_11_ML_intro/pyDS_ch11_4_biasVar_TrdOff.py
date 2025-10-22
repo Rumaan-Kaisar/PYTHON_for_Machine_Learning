@@ -336,33 +336,13 @@
         "I should make the model more complex or flexible so that it fits all the training points perfectly."
         It then hits all those training points
 
-    -- cp1 --
 
+    However, increasing "model complexity" to fit every point has CONSEQUENCES:
+        The model may fail to predict "new test points" accurately.
+            (thats why we use train-test split — to check generalization).
 
-
-
-
-
-
-
-
-
-
-However, increasing model complexity to fit every point has consequences:
-
-The model may fail to predict new test points accurately.
-
-This is why we use a train-test split — to check generalization.
-
-
-
-When the model becomes too complex:
-
-It begins to overfit the training data, capturing noise and random fluctuations.
-
-As a result, it performs poorly on unseen data, leading to large test errors.
-
-
+        Model begins to overfit on the training data, capturing noise and random fluctuations.
+            As a result, it performs poorly on "unseen data", leading to large test errors.
 
 To visualize this:
 
@@ -845,6 +825,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
