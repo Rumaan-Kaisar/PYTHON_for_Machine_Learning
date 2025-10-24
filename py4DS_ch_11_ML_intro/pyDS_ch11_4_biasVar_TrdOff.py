@@ -1,5 +1,4 @@
 
-
 ################# 16.1 :
 # copy: add bullseye images for analogy
 #       
@@ -366,6 +365,9 @@
             So a highly complex model (spline) might fit all noisy points instead of the true pattern, showing clear overfitting.
 
 
+-- cp1 --
+
+        Part 2: comparing the complexities
 
 
 
@@ -381,30 +383,6 @@ Regression Line complexity example:
         
     Then you decide as a beginner:
 
-
-
-    Lets take a look at an example model on how we can see overfitting occur from an error standpoint using test data
-        We'll use a black curve with some noise points off of it to represent the true shape.
-
-
-    ----  FIG 2 of Regression Line complexity example (3 part comparison)  ----
-        
-    
-    We have three images here:
-
-        Part 1: The first one is the X versus the Y.
-            And here we have model flexibility as different linear fits: 
-                - a linear fit 
-                - a quadratic fit and 
-                - a spline fit 
-                
-            with each one getting more complex.
-
-    So the simplest of them is just a "linear fit" and gets more complicated 
-        that is quadratic And then you can have a spline fit 
-
-    Also you'll notice that the black curve is the truth that the model actually follows.
-        So all the points are just "noise around the actual black curve" which is the truth.
 
               
         Part 2: comparing the complexities
@@ -823,7 +801,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
