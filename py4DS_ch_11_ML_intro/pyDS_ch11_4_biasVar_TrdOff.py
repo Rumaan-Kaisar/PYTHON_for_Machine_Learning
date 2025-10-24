@@ -1,4 +1,5 @@
 
+
 ################# 16.1 :
 # copy: add bullseye images for analogy
 #       
@@ -319,14 +320,8 @@
 
 
     
-# ----  rev[19-Oct-2025]  ----
-    
+    ----  Understanding Model Complexity and Overfitting  ----
 
-    Visualizing the Tradeoff: 
-    
-    Understanding Model Complexity and Overfitting:
-
-    
     Suppose we are given a set of training data points (shown as red points).
     
     Lets say we first get a simple model, such as a straight line (blue line), passes through the general cluster of points.
@@ -344,24 +339,31 @@
         Model begins to overfit on the training data, capturing noise and random fluctuations.
             As a result, it performs poorly on "unseen data", leading to large test errors.
 
+            
 
+    ----  Visualizing the Tradeoff  ----
 
+    Imagine a black curve representing the true underlying pattern.
+    The data points have some random noise around this true curve.
 
-To visualize this:
-
-Imagine a black curve representing the true underlying pattern.
-
-The data points have some random noise around this true curve.
-
-A highly complex model might fit all noisy points instead of the true pattern, showing clear overfitting.
-
-
-
+    ----  FIG 2 of Regression Line complexity example (3 part comparison from ISL)  ----
     
-    Overfitting Example
+    We have three images here:
 
+        Part 1: The first one is the X versus the Y.
+            And here we have model flexibility as different linear fits (with each one getting more complex): 
+                - a linear fit (orange)
+                - a quadratic fit (sky-blue) and 
+                - a spline fit (green) 
+                
+            The simplest model is a "linear fit", followed by a "quadratic fit", and then a "spline fit" as complexity increases.
 
-
+            Truth: 
+                The "black curve" represents the true underlying relationship. 
+                It is the truth that the model actually follows.
+                So all the points are just "noise around the actual truth curve".
+                
+            So a highly complex model (spline) might fit all noisy points instead of the true pattern, showing clear overfitting.
 
 
 
@@ -821,6 +823,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
