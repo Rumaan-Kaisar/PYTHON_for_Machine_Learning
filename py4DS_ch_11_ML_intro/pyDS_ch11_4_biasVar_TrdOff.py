@@ -365,6 +365,12 @@
             So a highly complex model (spline) might fit all noisy points instead of the true pattern, showing clear overfitting.
 
 
+-- cp1 --
+
+        Part 2: comparing the complexities
+
+            To compare model complexities, we plot "model flexibility" (e.g., polynomial degree) against an "error metric" (e.g. MSE).
+            In the "Flexibility vs MSE" plot, we can observe how the "training error" and "test error" change as model complexity increases.
 
 
     
@@ -378,16 +384,6 @@ Regression Line complexity example:
     
         
     Then you decide as a beginner:
-
-
-              
-        Part 2: comparing the complexities
-            In order to evaluate your models and "compare the complexities to each other" which you'll have to do is- plot out the complexity or flexibility of the model.
-                For instance the "polynomial level of a regression fit" versus "the error metric such as mean square error".
-
-            And you can see here in that middle plot "Flexibility vs MSE" that's exactly what we've done 
-                we've plotted out for the "training data" versus the "test data".
-
 
         Part 3:                
             
@@ -797,7 +793,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
