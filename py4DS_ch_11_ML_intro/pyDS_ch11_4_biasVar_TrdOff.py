@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (18-Oct-25 for 19-Oct-25)
+################# (25-Oct-25 for 26-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -364,10 +364,6 @@
                 
             So a highly complex model (spline) might fit all noisy points instead of the true pattern, showing clear overfitting.
 
-
--- cp1 --
-
-        Part 2: comparing the complexities
 
 
 
@@ -801,6 +797,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
