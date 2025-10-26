@@ -347,7 +347,7 @@
 
     ----  FIG 2 of Regression Line complexity example (3 part comparison from ISL)  ----
     
-    We have three images here:
+    We have three parts in this images here:
 
         Part 1: The first one is the X versus the Y.
             And here we have model flexibility as different linear fits (with each one getting more complex): 
@@ -365,13 +365,25 @@
             So a highly complex model (spline) might fit all noisy points instead of the true pattern, showing clear overfitting.
 
 
--- cp1 --
-
         Part 2: comparing the complexities
-
             To compare model complexities, we plot "model flexibility" (e.g., polynomial degree) against an "error metric" (e.g. MSE).
             In the "Flexibility vs MSE" plot, we can observe how the "training error" and "test error" change as model complexity increases.
 
+
+        Part 3: comparing Bias, Var, MSE
+            In the first image (leftmost), the simplest model — a linear fit (yellow line) 
+                - shows high error on both the training and test data, as seen by the yellow squares in the "Flexibility vs MSE" plot.
+
+            As the model becomes more complex, such as a quadratic model (blue line), 
+                the error decreases for both TRAINING and TEST data (blue squares in the "Flexibility vs MSE" plot).
+
+            However, with too much complexity, the training error continues to drop, 
+                but the "test error starts increasing", indicating OVERFITTING.
+
+            In the final figure (rightmost), we compare MSE, Bias, and Variance curves together 
+                — representing the three main sources of prediction error.
+
+    -- cp1 --
 
     
     
@@ -793,6 +805,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
