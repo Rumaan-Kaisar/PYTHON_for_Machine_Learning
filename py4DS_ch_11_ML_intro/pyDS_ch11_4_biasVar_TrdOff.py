@@ -385,31 +385,17 @@
 
     -- cp1 --
 
-    
-    
--------------------------------------
+    -------------------------------------
 
 (regression based)
 
 
 Regression Line complexity example:
     
-        
-    Then you decide as a beginner:
-
-        Part 3:                
-            
-            Notice In our first part of the image on the left.
-                We have a simple model in yellow color linear model. 
-                for this model We have a "high error" on both the "test data" and the "training data" we can observe this in the middle plot "Flexibility vs MSE" 
-
-            as our model begin to get more complicated such as with the quadratic model,
-                In blue-color we begin to "lower the error" for the both "test data and the training data" notice it in plot "Flexibility vs MSE" 
-
-            But as we get even more complex model however we begin to lower the error for the training data significantly.
-                But as a result you begin to have "raised the error on the test data".
-
          
+                
+
+
     
     The new data show you want to find the point that's going to "balance out the bias and the variance".
         - In this particular case it's going to be closer to the quadratic fit that Bluepoint.
@@ -805,7 +791,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
