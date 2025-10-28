@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (25-Oct-25 for 26-Oct-25)
+################# (26-Oct-25 for 28-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -394,6 +394,7 @@
 
     -- cp1 --
 
+
     -------------------------------------
 
 (regression based)
@@ -404,17 +405,10 @@ Regression Line complexity example:
          
                 
 
-
-    
-    The new data show you want to find the point that's going to "balance out the bias and the variance".
-        - In this particular case it's going to be closer to the quadratic fit that Bluepoint.
-
-    So you want to balance out the bias and variance of your model to the point where your test data and
-    training data have reached some sort of minimum and grouping together.
-
+Prediction error vs model complexity
     
     
-    This is the classic plot to show this as a general stance where you have low versus high model complexity
+    Following is the classic plot to show this as a general stance where you have low versus high model complexity
         on the X-axis and some sort of prediction error on the y axis.
 
     ----  FIG: Model complexity vs Prediction error  ----
@@ -800,7 +794,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
