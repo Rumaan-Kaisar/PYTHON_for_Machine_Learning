@@ -383,6 +383,15 @@
             In the final figure (rightmost), we compare MSE, Bias, and Variance curves together 
                 — representing the three main sources of prediction error.
 
+                
+        role of "test data":
+            For the test data (new data), the goal is to find a model that balances BIAS and VARIANCE.
+            In this example, that balance occurs near the "quadratic fit" (blue point/squares in the "Flexibility vs MSE" plot).
+
+            Ideally, the "training and test errors should both be low" and close together, 
+                indicating a good balance between bias and variance.
+    
+
     -- cp1 --
 
     -------------------------------------
@@ -791,6 +800,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
