@@ -403,8 +403,7 @@
         As we moved to the LEFT- we get a "higher BIAS" but "lower VARIANCE".
         And as we moves to the RIGHT- we get a "higher complexity model" with a lower bias the high variance 
 
-
-
+        -- cp1 --
 
     what you want to do is: pick a point where you are comfortable with the bias tradeoff.
         If you go to the left of it you'll start to "under fit to the data" and 
@@ -784,7 +783,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
