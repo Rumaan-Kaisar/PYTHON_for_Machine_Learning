@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (26-Oct-25 for 28-Oct-25)
+################# (28-Oct-25 for 29-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -392,30 +392,20 @@
                 indicating a good balance between bias and variance.
     
 
-    -- cp1 --
-
-
-    -------------------------------------
-
-(regression based)
-
-
-Regression Line complexity example:
+    --------  Prediction error vs model complexity  --------
     
-         
-                
-
-Prediction error vs model complexity
-    
-    
-    Following is the classic plot to show this as a general stance where you have low versus high model complexity
-        on the X-axis and some sort of prediction error on the y axis.
+    Following is the classic plot where we have:
+        you have LOW vs HIGH Model Complexity on the X-axis and 
+        some sort of "Prediction Error" on the y axis.
 
     ----  FIG: Model complexity vs Prediction error  ----
 
-        And as you moved to the left you get a higher bias but lower variance.
-        And as we moves to the right to a higher complexity model you get a lower bias the high variance 
-        
+        As we moved to the LEFT- we get a "higher BIAS" but "lower VARIANCE".
+        And as we moves to the RIGHT- we get a "higher complexity model" with a lower bias the high variance 
+
+
+
+
     what you want to do is: pick a point where you are comfortable with the bias tradeoff.
         If you go to the left of it you'll start to "under fit to the data" and 
         if you go to the right of it you'll start to "overfit the data".
@@ -794,6 +784,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
