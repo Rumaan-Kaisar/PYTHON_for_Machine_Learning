@@ -414,23 +414,8 @@
 
         For deeper understanding, refer to Chapter 2 of "An Introduction to Statistical Learning" by Gareth James 
         — it explains this concept in detail for real-world data.
-
-    what you want to do is: pick a point where you are comfortable with the bias tradeoff.
-        If you go to the left of it you'll start to "under fit to the data" and 
-        if you go to the right of it you'll start to "overfit the data".
-        (Meaning you're hitting all of those points in your training data and new data is cutting a larger error because of that.)
-
-         
-
-All right.
-Keep that in mind as we continue on using Python for machine learning. This is more of just a theoretical background.
-
-Go ahead and read Chapter 2 of "An Introduction to Statistical Learning - Gareth James"
-
-If you want a more in-depth look of this this is a topic you want to keep in mind as you begin to work with real world data.
-
-
- 
+        
+-- cp1 -- 
 """
 
 
@@ -793,7 +778,6 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
-
 
 
 
