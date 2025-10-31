@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (28-Oct-25 for 29-Oct-25)
+################# (29-Oct-25 for 31-Oct-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -403,7 +403,17 @@
         As we moved to the LEFT- we get a "higher BIAS" but "lower VARIANCE".
         And as we moves to the RIGHT- we get a "higher complexity model" with a lower bias the high variance 
 
-        -- cp1 --
+        
+        Our GOAL:
+            Choose a point where the bias-variance tradeoff is acceptable.
+            From this point-
+                Moving too far LEFT causes UNDERFITTING (model too simple).
+                Moving too far RIGHT causes OVERFITTING (model fits noise, poor on new data).
+
+            This is the theoretical foundation behind building good machine learning models.
+
+        For deeper understanding, refer to Chapter 2 of "An Introduction to Statistical Learning" by Gareth James 
+        — it explains this concept in detail for real-world data.
 
     what you want to do is: pick a point where you are comfortable with the bias tradeoff.
         If you go to the left of it you'll start to "under fit to the data" and 
@@ -783,6 +793,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
