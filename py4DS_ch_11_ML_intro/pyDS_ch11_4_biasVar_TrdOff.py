@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (29-Oct-25 for 31-Oct-25)
+################# (31-Oct-25 for 01-Nov-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -392,20 +392,28 @@
                 indicating a good balance between bias and variance.
     
 
-    --------  Prediction error vs model complexity  --------
-    
-    Following is the classic plot where we have:
-        you have LOW vs HIGH Model Complexity on the X-axis and 
-        some sort of "Prediction Error" on the y axis.
+    --------  Visualizing the Tradeoff : Prediction error vs model complexity  --------
+
+    If we plot "Model Complexity" (x-axis) against some sort of "Prediction Error" (y-axis):
+
+        On the left: 
+            simple models -> high bias, low variance (underfitting).
+
+        On the right: 
+            very complex models -> low bias, high variance (overfitting).
+
+        In the middle: 
+            a balanced model with low test error.
 
     ----  FIG: Model complexity vs Prediction error  ----
 
         As we moved to the LEFT- we get a "higher BIAS" but "lower VARIANCE".
         And as we moves to the RIGHT- we get a "higher complexity model" with a lower bias the high variance 
-
-        
+    
         Our GOAL:
             Choose a point where the bias-variance tradeoff is acceptable.
+            Where both bias and variance are reasonably low—not too simple, not too complex.
+
             From this point-
                 Moving too far LEFT causes UNDERFITTING (model too simple).
                 Moving too far RIGHT causes OVERFITTING (model fits noise, poor on new data).
@@ -414,8 +422,7 @@
 
         For deeper understanding, refer to Chapter 2 of "An Introduction to Statistical Learning" by Gareth James 
         — it explains this concept in detail for real-world data.
-        
--- cp1 -- 
+
 """
 
 
@@ -778,6 +785,7 @@ Keep trusting that intuition! You’ve nailed a subtle but foundational ML conce
 
 
 """
+
 
 
 
