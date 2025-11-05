@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (02-Nov-25 for 04-Nov-25)
+################# (04-Nov-25 for 05-Nov-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -504,28 +504,8 @@ Bias-Variance Tradeoff - concise, corrected, pointwise
 
 
 
-----  rev[02-Nov-2025]  Clear GPT  ----
+----  rev[04-Nov-2025]  Clear GPT  ----
 
-
-
-8 - How to diagnose with metrics / plots
-
-Use training and validation/test errors (MAE, RMSE, accuracy, etc.) to see patterns:
-
-High training & validation error -> underfitting (bias).
-
-Low training error & high validation error -> overfitting (variance).
-
-Use cross-validation to estimate generalization error robustly.
-
-
-
-
-9 - Where the "sweet spot" usually lies
-
-The best model is flexible enough to capture the underlying signal but simple enough to ignore noise.
-
-The sweet spot depends on data size, noise level, and real complexity of the true relationship.
 
 
 
@@ -541,6 +521,8 @@ Quadratic: lower train and test error -> often a good choice.
 Spline: very low train error, higher test error -> overfit.
 
 Pick the model that minimizes test/validation error - often the middle complexity.
+
+
 
 11 - Final practical notes
 
@@ -950,4 +932,3 @@ Would you like me to show a simple visualization (e.g., polynomial regression of
 
 
 """
-
