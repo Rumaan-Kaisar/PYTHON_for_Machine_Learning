@@ -212,8 +212,23 @@
                     TotalError = Bias**2 + Variance + IrreducibleError 
                 (Irreducible error is noise in the data that cannot be eliminated by any model.)
 
+            The best model is:
+                flexible enough to capture the underlying signal 
+                but simple enough to ignore noise.
+
+            The sweet spot depends on data size, noise level, and real complexity of the true relationship.
+
+            
+            
+    --------  How to diagnose with metrics / plots  --------
+
+    Use training and validation/test errors (MAE, RMSE, accuracy, etc.) to see patterns:
+        High training & validation error -> underfitting (bias).
+        Low training error & high validation error -> overfitting (variance).
+        Use cross-validation to estimate "generalization error" robustly.
 
                 
+            
     ----------------    Visual Analogy    ----------------
 
     Now, let's clarify these errors through two Visual Analogies.
@@ -318,7 +333,7 @@
         - not too simple (high bias), not too complex (high variance). 
 
 
-
+        
         
     ----------------    Regression-based analogy    ----------------
     
@@ -935,3 +950,4 @@ Would you like me to show a simple visualization (e.g., polynomial regression of
 
 
 """
+
