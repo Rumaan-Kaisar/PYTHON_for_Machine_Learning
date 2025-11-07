@@ -406,7 +406,11 @@
                 The "black curve" represents the true underlying relationship. 
                 It is the truth that the model actually follows.
                 So all the points are just "noise around the actual truth curve".
-                
+
+            Linear:     high error on both train/test -> underfit.
+            Quadratic:  lower train and test error -> often a good choice.
+            Spline:     very low train error, higher test error -> overfit.
+
             So a highly complex model (spline) might fit all noisy points instead of the true pattern, showing clear overfitting.
 
 
@@ -485,6 +489,14 @@
     Always validate using train/test splits to check generalization.
     Plot learning curves (training size vs error) to diagnose high bias vs high variance.
     
+    
+    The bias-variance tradeoff is not theory only - it directly informs choices like:
+        Which algorithm to use.
+        How much regularization to apply.
+        Whether to collect more data.
+
+    Regularly revisit the tradeoff when moving from synthetic examples to real, messy data.
+
 
 -- cp1 -- 
 """
@@ -932,3 +944,4 @@ Would you like me to show a simple visualization (e.g., polynomial regression of
 
 
 """
+
