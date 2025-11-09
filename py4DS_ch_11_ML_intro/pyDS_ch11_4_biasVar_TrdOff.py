@@ -523,8 +523,6 @@
 
     Regularly revisit the tradeoff when moving from synthetic examples to real, messy data.
 
-
--- cp1 -- 
 """
 
 
@@ -535,32 +533,31 @@
 """  
 
 ----------------    CAPACITY vs COMPLEXITY    ----------------
+In simple machine learning models like linear regression, increasing the polynomial degree increases the model's complexity. 
+But in deep learning, if we add more layers, does that increase the model's complexity or its capacity?
 
-i know that in simple ML like Linear regression making higher polynomial degres increase a model complexity, but in DL if i add more layers, does it increase model complexity or model capacity?
+In ML and DL COMPLEXITY and CAPACITY are related but not the same thing.
+
+    CAPACITY = how many different functions the model *could* represent.
+    COMPLEXITY = how complicated the model *is* (in architecture or behavior).
+
+    
+In Linear / Polynomial Regression:
+
+    When you add higher polynomial degrees (e.g., ( x^2, x^3, ... )), you're "increasing the HYPOTHESIS SPACE"
+        the model can represent more complex nonlinear relationships.
+    
+    This increases model CAPACITY, which is the ability to fit more varied functions.
+
+    At the same time, it increases COMPLEXITY
+        - more parameters, 
+        - higher variance, 
+        - higher risk of overfitting
+
+    So in classical ML, CAPACITY and COMPLEXITY tend to rise together.
 
 
 ------------------------------------------------------------------
-
-
-
-
-Excellent question - and you’re right to distinguish between **complexity** and **capacity**, because they’re related but not the same thing. Let’s unpack this carefully:
-
----
-
-### 🧮 In Linear / Polynomial Regression:
-
-* When you add higher polynomial degrees (e.g., ( x^2, x^3, ... )), you’re **increasing the hypothesis space** - the model can represent more complex nonlinear relationships.
-* This **increases model capacity**, which is the ability to fit more varied functions.
-* At the same time, it **increases complexity** (more parameters, higher variance, higher risk of overfitting).
-
-So in classical ML, capacity and complexity tend to rise together.
-
----
-
-### 🤖 In Deep Learning:
-
-Let’s now consider a neural network.
 
 If you **add more layers** (i.e., make the network deeper):
 
@@ -772,3 +769,4 @@ Would you like me to show a simple visualization (e.g., polynomial regression of
 
 
 """
+
