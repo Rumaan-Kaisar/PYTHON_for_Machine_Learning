@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (07-Nov-25 for 08-Nov-25)
+################# (09-Nov-25 for 11-Nov-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -532,34 +532,43 @@
 
 """  
 
-----------------    CAPACITY vs COMPLEXITY    ----------------
-In simple machine learning models like linear regression, increasing the polynomial degree increases the model's complexity. 
-But in deep learning, if we add more layers, does that increase the model's complexity or its capacity?
+    ----------------    CAPACITY vs COMPLEXITY    ----------------
+    In simple machine learning models like linear regression, increasing the polynomial degree increases the model's complexity. 
+    But in deep learning, if we add more layers, does that increase the model's complexity or its capacity?
 
-In ML and DL COMPLEXITY and CAPACITY are related but not the same thing.
+    In ML and DL COMPLEXITY and CAPACITY are related but not the same thing.
 
-    CAPACITY = how many different functions the model *could* represent.
-    COMPLEXITY = how complicated the model *is* (in architecture or behavior).
+        CAPACITY = how many different functions the model *could* represent.
+        COMPLEXITY = how complicated the model *is* (in architecture or behavior).
 
-    
-In Linear / Polynomial Regression:
+        
+    In Linear / Polynomial Regression:
 
-    When you add higher polynomial degrees (e.g., ( x^2, x^3, ... )), you're "increasing the HYPOTHESIS SPACE"
-        the model can represent more complex nonlinear relationships.
-    
-    This increases model CAPACITY, which is the ability to fit more varied functions.
+        When you add higher polynomial degrees (e.g., ( x^2, x^3, ... )), you're "increasing the HYPOTHESIS SPACE"
+            the model can represent more complex nonlinear relationships.
+        
+        This increases model CAPACITY, which is the ability to fit more varied functions.
 
-    At the same time, it increases COMPLEXITY
-        - more parameters, 
-        - higher variance, 
-        - higher risk of overfitting
+        At the same time, it increases COMPLEXITY
+            - more parameters, 
+            - higher variance, 
+            - higher risk of overfitting
 
-    So in classical ML, CAPACITY and COMPLEXITY tend to rise together.
+        So in classical ML, CAPACITY and COMPLEXITY tend to rise together.
 
 
 ------------------------------------------------------------------
 
-If you **add more layers** (i.e., make the network deeper):
+
+-- cp1 -- 
+
+----  rev[08-Nov-2025]  ----
+
+In Deep Learning (neural network):
+
+
+
+If you add more LAYERS in a neural network (i.e., make the network deeper):
 
 * ✅ **Model capacity increases:**
   The network can now represent more complicated functions and hierarchical features. Each layer can learn a higher level of abstraction - for example, from edges -> shapes -> objects in images.
@@ -577,20 +586,22 @@ So adding layers increases **potential complexity** and **capacity**, but **whet
 
 ---
 
-### 🧠 TL;DR:
+
+
+
 
 | Action                              | Model Capacity | Model Complexity | Comments                                  |
 | ----------------------------------- | -------------- | ---------------- | ----------------------------------------- |
-| Add higher-degree polynomial terms  | ↑              | ↑                | Can overfit easily                        |
-| Add more layers to a neural network | ↑              | ↑                | More expressive, deeper hierarchy         |
-| Add more neurons per layer          | ↑              | ↑                | Increases width (more features per level) |
+| Add higher-degree polynomial terms  |       ↑        |       ↑          | Can overfit easily                        |
+| Add more layers to a neural network |       ↑        |       ↑          | More expressive, deeper hierarchy         |
+| Add more neurons per layer          |       ↑        |       ↑          | Increases width (more features per level) |
 
 ---
 
 ### 💡 Intuition:
 
-* **Capacity** = how many different functions the model *could* represent.
-* **Complexity** = how complicated the model *is* (in architecture or behavior).
+
+
 * Adding layers **increases both**, but "capacity" is the more fundamental term for representational power in DL.
 
 ---
@@ -769,4 +780,3 @@ Would you like me to show a simple visualization (e.g., polynomial regression of
 
 
 """
-
