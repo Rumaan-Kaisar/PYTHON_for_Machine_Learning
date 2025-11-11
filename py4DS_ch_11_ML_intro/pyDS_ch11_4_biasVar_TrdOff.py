@@ -562,6 +562,8 @@
 
 -- cp1 -- 
 
+-- cp1 -- 
+
 ----  rev[08-Nov-2025]  ----
 
 In Deep Learning (neural network):
@@ -780,3 +782,4 @@ Would you like me to show a simple visualization (e.g., polynomial regression of
 
 
 """
+
