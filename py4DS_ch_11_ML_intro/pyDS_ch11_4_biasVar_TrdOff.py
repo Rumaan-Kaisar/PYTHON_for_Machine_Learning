@@ -557,46 +557,47 @@
         So in classical ML, CAPACITY and COMPLEXITY tend to rise together.
 
 
-------------------------------------------------------------------
+    In Deep Learning (neural network):
+        If you add more LAYERS in a neural network (i.e., make the network deeper)
+
+        Model capacity increases:
+            The network then represent more complicated functions and hierarchical features. 
+            Each layer can learn a higher level of abstraction.
+   
+        Model complexity (architectural) increases:
+            There are more parameters, 
+            nonlinearities, and 
+            interactions
 
 
--- cp1 -- 
-
--- cp1 -- 
-
-----  rev[08-Nov-2025]  ----
-
-In Deep Learning (neural network):
-
-
-
-If you add more LAYERS in a neural network (i.e., make the network deeper):
-
-* ✅ **Model capacity increases:**
-  The network can now represent more complicated functions and hierarchical features. Each layer can learn a higher level of abstraction - for example, from edges -> shapes -> objects in images.
-
-* ⚙️ **Model complexity (architectural)** also increases:
-  There are more parameters, nonlinearities, and interactions, so the *architecture* becomes more complex.
-
-* ❗But note: "complexity" can mean different things:
-
-  * **Architectural complexity:** number of layers, parameters, connections.
-  * **Computational complexity:** how much compute/memory/time training requires.
-  * **Effective complexity:** how complex the learned function actually is (depends on training, regularization, data, etc.)
-
-So adding layers increases **potential complexity** and **capacity**, but **whether the model actually uses that capacity** depends on optimization and regularization (e.g., dropout, weight decay, etc.).
-
----
-
-
-
-
-
+            
 | Action                              | Model Capacity | Model Complexity | Comments                                  |
 | ----------------------------------- | -------------- | ---------------- | ----------------------------------------- |
 | Add higher-degree polynomial terms  |       ↑        |       ↑          | Can overfit easily                        |
 | Add more layers to a neural network |       ↑        |       ↑          | More expressive, deeper hierarchy         |
 | Add more neurons per layer          |       ↑        |       ↑          | Increases width (more features per level) |
+
+
+            
+    --------  types of COMPLEXITY  --------
+
+    "COMPLEXITY" can mean different things:
+
+        Architectural complexity:
+            number of layers, parameters, connections.
+
+        Computational complexity:
+            how much compute/memory/time training requires.
+
+        Effective complexity:
+            how complex the learned function actually is 
+            (depends on training, regularization, data, etc.)
+
+
+----  rev[09-Nov-2025]  ----
+---
+
+
 
 ---
 
@@ -782,4 +783,5 @@ Would you like me to show a simple visualization (e.g., polynomial regression of
 
 
 """
+
 
