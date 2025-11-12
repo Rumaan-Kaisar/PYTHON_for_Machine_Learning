@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (09-Nov-25 for 11-Nov-25)
+################# (11-Nov-25 for 12-Nov-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -528,8 +528,6 @@
 
 
 
-# rev [07-Nov-2025]
-
 """  
 
     ----------------    CAPACITY vs COMPLEXITY    ----------------
@@ -594,98 +592,39 @@
             (depends on training, regularization, data, etc.)
 
 
-----  rev[09-Nov-2025]  ----
----
+    In the case of "linear regression", what kind of complexity is it: 
+        architectural or behavioral?            
 
 
 
+    In the case of Linear Regression (including Polynomial Regression), 
+        the complexity you're increasing is "behavioral", not really "architectural".
+
+    ARCHITECTURAL complexity:    
+        Even if you add polynomial terms (like x^2, x^3) the model is still "linear in its parameters" - just with more inputs.
+        So the ARCHITECTURAL complexity stays basically the same (a single linear mapping).
+
+        
+    Behavioral (Functional) Complexity:
+
+        This refers to how complex a function the model can represent - 
+            i.e., how nonlinear, wiggly, or high-variance its predictions can be.
+
+        When you add polynomial features, you make the behavior more complex:
+            the model can represent curvier relationships, 
+            fit more patterns, and (potentially) overfit the data.
+
+        So the BEHAVIORAL complexity increases - the model's capacity to fit data becomes richer.
+
+        
+    In short:
+        Linear regression:  complexity = behavioral
+        Deep learning:      complexity = architectural + behavioral
 
 
+    ---- cp1 ----
 
-
----
-
-### 💡 Intuition:
-
-
-
-* Adding layers **increases both**, but "capacity" is the more fundamental term for representational power in DL.
-
----
-
-If you want, I can show a simple comparison (e.g., shallow vs. deep MLP on the same task) to visualize how adding layers affects expressivity and overfitting behavior. Would you like that?
-
-
-----------------------------------------------------------
-
-
-in the case of Linear regression , what kind of the complexity is? Architectural or Behaviour?
-
-Great follow-up - and very sharp question 👏
-
-In the case of Linear Regression (including Polynomial Regression), the complexity you’re increasing is behavioral, not really architectural.
-
-Let’s break this down clearly:
-
-🧱 1. Architectural Complexity
-
-This refers to the structure of the model - how many layers, neurons, or connections exist.
-
-For linear regression, the "architecture" is always one layer:
-
-𝑦
-^
-=
-𝑤
-0
-+
-𝑤
-1
-𝑥
-1
-+
-𝑤
-2
-𝑥
-2
-+
-⋯
-+
-𝑤
-𝑛
-𝑥
-𝑛
-y
-^
-	​
-
-=w
-0
-	​
-
-+w
-1
-	​
-
-x
-1
-	​
-
-+w
-2
-	​
-
-x
-2
-	​
-
-+⋯+w
-n
-	​
-
-x
-n
-	​
+----  rev[11-Nov-2025]  ----
 
 
 Even if you add polynomial terms (like 
@@ -787,3 +726,4 @@ Would you like me to show a simple visualization (e.g., polynomial regression of
 
 
 """
+
