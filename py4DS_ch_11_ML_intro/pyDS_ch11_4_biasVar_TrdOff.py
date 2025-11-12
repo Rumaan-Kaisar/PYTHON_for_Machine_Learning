@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (11-Nov-25 for 12-Nov-25)
+################# (12-Nov-25 for 14-Nov-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -627,45 +627,6 @@
 ----  rev[11-Nov-2025]  ----
 
 
-Even if you add polynomial terms (like 
-𝑥
-2
-,
-𝑥
-3
-x
-2
-,x
-3
-), the model is still linear in its parameters - just with more inputs.
-
-✅ So: Architectural complexity stays basically the same (a single linear mapping).
-
-🎢 2. Behavioral (Functional) Complexity
-
-This refers to how complex a function the model can represent - i.e., how nonlinear, wiggly, or high-variance its predictions can be.
-
-When you add polynomial features, you make the behavior more complex:
-the model can represent curvier relationships, fit more patterns, and (potentially) overfit the data.
-
-✅ So: Behavioral complexity increases - the model’s capacity to fit data becomes richer.
-
-🧠 Summary:
-Model	Architectural Complexity	Behavioral (Functional) Complexity	Comment
-Linear regression	Low (1 linear layer)	Low (straight line/plane)	Simple, interpretable
-Polynomial regression (higher degrees)	~Same	High	Can represent more complex functions
-Deep neural network	High	High (potentially very high)	Hierarchical representations
-💡 In short:
-
-Linear regression: complexity = behavioral
-
-Deep learning: complexity = architectural + behavioral
-
-Would you like me to show a simple visualization (e.g., polynomial regression of different degrees) to make the behavioral complexity difference clear?
-
-
-
-
 --------------------------------------------
 
 Great follow-up - and very sharp question 👏
@@ -726,4 +687,3 @@ Would you like me to show a simple visualization (e.g., polynomial regression of
 
 
 """
-
