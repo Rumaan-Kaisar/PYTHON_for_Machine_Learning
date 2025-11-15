@@ -628,25 +628,16 @@
 
 Here’s your text arranged in a **clean, pointwise, and logically grouped** structure — polished for readability but **without altering your original text**:
 
+<h4 style="color:#1bbc9f"><strong> Overview </strong></h4>  
+<h4 style="color:#1abcde"><strong> Overview </strong></h4> 
+<h4 style="color:#ff4466"><strong> Overview </strong></h4>  
 ---
 
 ## ----------------  Bias–Variance Tradeoff  ----------------
 
-### Overview
-
-* The bias–variance tradeoff is a key concept for evaluating model performance.
-* Bias and variance are two types of errors that can occur in machine learning models.
-* It is fundamental to understanding how well a model learns and generalizes.
-* For a deeper explanation, review **Chapter 2 of *An Introduction to Statistical Learning* – Gareth James**.
-
 ---
 
-### ----  What It Is (Big Picture)  ----
-
-* Describes how model complexity affects two types of error:
-
-  * **Bias** → Error from wrong assumptions (underfitting).
-  * **Variance** → Error from sensitivity to small data fluctuations (overfitting).
+---- >> rev [14-Nov-2025] ----
 
 **Goal:**
 
