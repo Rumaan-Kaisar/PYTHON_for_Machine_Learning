@@ -624,6 +624,20 @@
 """
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 """  
 
 Here’s your text arranged in a **clean, pointwise, and logically grouped** structure — polished for readability but **without altering your original text**:
@@ -643,34 +657,13 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 * Pick a model that fits real patterns (low bias) but does not memorize noise (low variance).
 
-**It explains:**
 
-* The tension between:
-
-  * Fitting training data well (low bias) and
-  * Generalizing to new data (low variance).
-* Why a model is underfit or overfit.
-* How it guides **model selection** and **regularization**.
 
 ---
 
-### ----  Bias–Variance Tradeoff ----
-
-* Describes the balance between:
-
-  * **Model complexity** and
-  * **Prediction accuracy.**
-
-**Behavior as model complexity increases:**
-
-* Training error decreases (fits training data better).
-* Test error decreases at first (better fit).
-* After a point, test error increases → model starts to overfit and captures noise.
-
-**Tradeoff:**
-
-* Find the “sweet spot” — model flexible enough to capture true patterns but simple enough to ignore noise.
-* This point minimizes **test error** and balances **bias** and **variance**.
+----------------------------------------------------------------
+rev[15-Nov-2025]: move "Underfitting vs Overfitting" after "Definitions in ML Context"
+----------------------------------------------------------------
 
 ---
 
