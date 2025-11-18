@@ -163,7 +163,7 @@
             When a model is too complex (e.g., deep decision trees on small datasets).
 
         Result:
-            Overfitting-the model learns noise instead of signal.
+            Overfitting-the model learns noise instead of signal/actual pattern.
 
         Characteristics:
             Very low training error
@@ -662,7 +662,7 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 ---
 
 ----------------------------------------------------------------
-rev[15-Nov-2025]: move "Underfitting vs Overfitting" after "Definitions in ML Context"
+rev[16-Nov-2025]: move "Underfitting vs Overfitting" after "Definitions in ML Context"
 ----------------------------------------------------------------
 
 ---
@@ -691,96 +691,6 @@ rev[15-Nov-2025]: move "Underfitting vs Overfitting" after "Definitions in ML Co
 * Beyond it, the model overfits.
 
 ---
-
-### --------  Definitions in ML Context  --------
-
-#### **Bias**
-
-* Error due to simplifying assumptions in the model.
-* Measures how far the model’s average predictions are from true values.
-* High bias → model too simple → underfitting.
-
-**Causes:**
-
-* Model too simple (e.g., linear regression on complex data).
-
-**Result:**
-
-* Underfitting — misses important patterns.
-
-**Characteristics:**
-
-* High training error
-* High test error
-* Poor performance on both
-
-**Example:**
-
-* Fitting a straight line to curved data.
-
----
-
-#### **Variance**
-
-* Error due to sensitivity to training data fluctuations.
-* Measures how much predictions change across datasets from the same distribution.
-* High variance → model too complex → overfitting.
-
-**Causes:**
-
-* Overly complex model (e.g., deep decision trees on small data).
-
-**Result:**
-
-* Overfitting — model learns noise instead of signal.
-
-**Characteristics:**
-
-* Very low training error
-* High test error
-* Great on training, poor on new data
-
-**Example:**
-
-* Very wiggly curve passing through every data point.
-
----
-
-### **Tradeoff Summary**
-
-| Type                    | Description                                         |
-| ----------------------- | --------------------------------------------------- |
-| Low bias, high variance | Model memorizes training data → poor generalization |
-| High bias, low variance | Model too rigid → misses patterns                   |
-
-**Goal:**
-
-* Minimize both bias and variance (balance).
-* Increasing complexity ↓ bias but ↑ variance.
-* Decreasing complexity ↑ bias but ↓ variance.
-* Find the sweet spot → best predictive performance & generalization.
-
----
-
-### 👉 In Short
-
-**Bias:** Systematic error from wrong assumptions.
-**Variance:** Sensitivity to data (noise).
-
-**Tradeoff:**
-
-* Low bias + High variance → overfitting.
-* High bias + Low variance → underfitting.
-
-**Goal:**
-
-* Low bias + Low variance → generalizes well.
-* $$ \text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Irreducible Error} $$
-
-**Ideal model:**
-
-* Flexible enough to capture signal, simple enough to ignore noise.
-* Sweet spot depends on data size, noise, and real complexity.
 
 ---
 
