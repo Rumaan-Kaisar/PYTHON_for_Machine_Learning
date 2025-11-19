@@ -651,58 +651,8 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 ---
 
----- >> rev [14-Nov-2025] ----
+---- >> rev [18-Nov-2025] ----
 
-**Goal:**
-
-* Pick a model that fits real patterns (low bias) but does not memorize noise (low variance).
-
-
-
----
-
-----------------------------------------------------------------
-rev[16-Nov-2025]: move "Underfitting vs Overfitting" after "Definitions in ML Context"
-----------------------------------------------------------------
-
----
-
-### ----  Underfitting vs Overfitting  ----
-
-**Underfitting (high bias, low variance):**
-
-* Model too simple to capture relationships (e.g., straight line for curved data).
-* High error on both training and test sets.
-
-**Overfitting (low bias, high variance):**
-
-* Model too complex, fits noise and outliers.
-* Very low training error but high test error.
-
-**Good fit:**
-
-* Moderate complexity → low test error.
-
-**Training behavior:**
-
-* Training error always decreases.
-* After a point, overfitting begins: model learns noise, so **test error increases** even though training error decreases.
-* This balance point = **bias–variance tradeoff**.
-* Beyond it, the model overfits.
-
----
-
----
-
-### --------  Diagnosing with Metrics / Plots  --------
-
-* Use **training** and **validation/test** errors (MAE, RMSE, accuracy, etc.):
-
-  * High training & validation error → underfitting (bias).
-  * Low training error & high validation error → overfitting (variance).
-* Use **cross-validation** to estimate generalization error reliably.
-
----
 
 ### ----------------  Visual Analogy  ----------------
 
