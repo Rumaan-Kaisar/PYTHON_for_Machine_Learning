@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (18-Nov-25 for 19-Nov-25)
+################# (19-Nov-25 for 21-Nov-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -651,18 +651,13 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 ---
 
----- >> rev [18-Nov-2025] ----
+---- >> rev [19-Nov-2025] : from line 264 "FIG of quadrent", use QWEN for no mod  ----
 
 
 ### ----------------  Visual Analogy  ----------------
 
 #### **Dartboard Analogy (Classification-Based)**
 
-* Bullseye = perfect prediction.
-* Each model version = one “hit.”
-* Scatter of hits = variance.
-* Shift from center = bias.
-* Goal → low bias + low variance (tight cluster near bullseye).
 
 **Quadrants:**
 
