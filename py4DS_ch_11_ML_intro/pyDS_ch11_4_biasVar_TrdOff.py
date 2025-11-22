@@ -651,60 +651,13 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 ---
 
----- >> rev [19-Nov-2025] : from line 264 "FIG of quadrent", use QWEN for no mod  ----
+---- >> rev [19-Nov-2025] : from line 315 "FIG of quadrent", use QWEN for no mod  ----
 
 
 ### ----------------  Visual Analogy  ----------------
 
 #### **Dartboard Analogy (Classification-Based)**
 
-
-**Quadrants:**
-
-| Bias | Variance | Description                          |
-| ---- | -------- | ------------------------------------ |
-| Low  | Low      | Ideal — tight, accurate cluster      |
-| Low  | High     | Average near center but inconsistent |
-| High | Low      | Consistently wrong, clustered far    |
-| High | High     | Scattered and far — worst case       |
-
-**Interpretation:**
-
-* Different models show systematic (bias) or random (variance) errors.
-* Variance = spread of hits when retraining on different samples.
-
----
-
-### **Effect of Techniques on Bias and Variance**
-
-| Technique                 | Effect on Bias  | Effect on Variance |
-| ------------------------- | --------------- | ------------------ |
-| Add more features         | Decrease        | Increase           |
-| Get more data             | Slight decrease | Decrease           |
-| Increase model complexity | Decrease        | Increase           |
-| Reduce model complexity   | Increase        | Decrease           |
-| Regularization (L1/L2)    | Increase        | Decrease           |
-| Ensemble (Bagging)        | Slight effect   | Decrease           |
-| Ensemble (Boosting)       | Decrease        | Increase*          |
-
-*Boosting reduces bias but can increase variance if not controlled.
-
----
-
-### **If the Model Underfits**
-
-* Increase complexity (higher polynomial degree).
-* Reduce regularization.
-* Add features or improve feature engineering.
-
-### **If the Model Overfits**
-
-* Simplify model (reduce complexity).
-* Add/increase regularization (L1/L2, dropout).
-* Get more data or use augmentation.
-* Use cross-validation, early stopping, or bagging/ensembling.
-
-**Model selection** and **regularization** help navigate the tradeoff.
 
 ---
 
