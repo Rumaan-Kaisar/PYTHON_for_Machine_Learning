@@ -651,7 +651,7 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 ---
 
----- >> rev [19-Nov-2025] : from line 315 "FIG of quadrent", use QWEN for no mod  ----
+---- >> rev [19-Nov-2025] : from line 315  use QWEN for no mod  ----
 
 
 ### ----------------  Visual Analogy  ----------------
@@ -661,24 +661,7 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 ---
 
-### **Typical Model Bias–Variance Tendencies**
 
-| Model Type             | Bias                                 | Variance |
-| ---------------------- | ------------------------------------ | -------- |
-| Linear Regression      | High                                 | Low      |
-| Deep Decision Tree     | Low                                  | High     |
-| Random Forest          | Low                                  | Lower    |
-| Ridge/Lasso Regression | Slightly higher bias, lower variance |          |
-
----
-
-### ----  The Ultimate Goal in ML  ----
-
-* Build models that **generalize well**.
-* Balance **simplicity** and **flexibility**.
-* Minimize total error by choosing right complexity — not too simple (high bias), not too complex (high variance).
-
----
 
 ## ----------------  Regression-Based Analogy  ----------------
 
