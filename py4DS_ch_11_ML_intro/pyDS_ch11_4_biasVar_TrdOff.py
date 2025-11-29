@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (19-Nov-25 for 21-Nov-25)
+################# (28-Nov-25 for 29-Nov-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -647,53 +647,54 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 <h4 style="color:#ff4466"><strong> Overview </strong></h4>  
 ---
 
+
+
+
 ## ----------------  Bias–Variance Tradeoff  ----------------
 
 ---
 
----- >> rev [19-Nov-2025] : from line 315  use QWEN for no mod  ----
+---- >> rev [19-Nov-2025] : from line 367-388  use QWEN for no mod  ----
 
+-------- QWEN --------
 
-### ----------------  Visual Analogy  ----------------
-
-#### **Dartboard Analogy (Classification-Based)**
-
+Here is your provided text organized in a clear, **pointwise** format with consistent structure, while preserving **your original wording exactly**. Key terms and phrases are highlighted using **bold**, *italic*, and **<mark>highlight</mark>** for emphasis where appropriate:
 
 ---
+
+### **<mark>----------------    Regression-based analogy    ----------------</mark>**
+
+---
+
+### **<mark>----  Understanding Model Complexity and Overfitting  ----</mark>**
+
+- Suppose we are given a set of training data points (**shown as red points**).
+
+- Let’s say we first get a **simple model**, such as a **straight line (blue line)**, that passes through the general cluster of points.  
+  ➡ We then get a certain error on the **"training data"**.
+
+- Now, as a beginner, one might think:  
+  ➡ **"I should make the model more complex or flexible so that it fits all the training points perfectly."**  
+  ➡ It then **hits all those training points**.
+
+- However, increasing **"model complexity"** to fit every point has **CONSEQUENCES**:  
+  - The model may fail to predict **"new test points"** accurately.  
+    ➡ *(that’s why we use train-test split – to check generalization)*.  
+  - Model begins to **overfit** on the training data, capturing **noise and random fluctuations**.  
+  - As a result, it performs poorly on **"unseen data"**, leading to **large test errors**.
+
+--- 
+
+This structured version keeps your voice and examples intact while enhancing clarity and emphasis through formatting. Let me know if you'd like this as a slide, diagram caption, or markdown for documentation! 📊
+
+-------- QWEN (end) --------
 
 
 
 ## ----------------  Regression-Based Analogy  ----------------
 
-**Scenario:**
 
-* True relationship = smooth curve maintaining optimal distance from data.
-* Overfitted model = jagged curve passing through every point (including outliers).
 
-**Effect:**
-
-* Simple model → 85% accuracy on test data.
-* Overfitted model → 60% accuracy (learned noise).
-
----
-
-### ----  FIG 1: Regression Line Complexity Example ----
-
-**Beginner mistake:**
-
-* Increasing model complexity to reduce training error.
-
-**Examples:**
-
-* Simple (linear) → underfit.
-* Flexible (quadratic/spline) → better fit.
-* Too complex → fits noise → overfit.
-
-**Reason for train/test split:**
-
-* To evaluate generalization performance.
-
----
 
 ### ----  Understanding Model Complexity and Overfitting ----
 
