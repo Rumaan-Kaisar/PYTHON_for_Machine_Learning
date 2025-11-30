@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (28-Nov-25 for 29-Nov-25)
+################# (29-Nov-25 for 30-Nov-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -17,7 +17,7 @@
     Scala + Spark for ML:
         Big data focus: 
             Spark (written in Scala) is great when you need to train or preprocess ML data at scale (terabytes to petabytes).
-        Enterprise use: 
+        Enterprise use:
             Many large companies (finance, e-commerce, ad tech) run their ML pipelines in Spark for 
             distributed ETL, feature engineering, and sometimes model training.
 
@@ -654,7 +654,7 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 ---
 
----- >> rev [19-Nov-2025] : from line 367-388  use QWEN for no mod  ----
+---- >> rev [19-Nov-2025] : from line 388  use QWEN for no mod  ----
 
 -------- QWEN --------
 
@@ -665,23 +665,6 @@ Here is your provided text organized in a clear, **pointwise** format with consi
 ### **<mark>----------------    Regression-based analogy    ----------------</mark>**
 
 ---
-
-### **<mark>----  Understanding Model Complexity and Overfitting  ----</mark>**
-
-- Suppose we are given a set of training data points (**shown as red points**).
-
-- Let’s say we first get a **simple model**, such as a **straight line (blue line)**, that passes through the general cluster of points.  
-  ➡ We then get a certain error on the **"training data"**.
-
-- Now, as a beginner, one might think:  
-  ➡ **"I should make the model more complex or flexible so that it fits all the training points perfectly."**  
-  ➡ It then **hits all those training points**.
-
-- However, increasing **"model complexity"** to fit every point has **CONSEQUENCES**:  
-  - The model may fail to predict **"new test points"** accurately.  
-    ➡ *(that’s why we use train-test split – to check generalization)*.  
-  - Model begins to **overfit** on the training data, capturing **noise and random fluctuations**.  
-  - As a result, it performs poorly on **"unseen data"**, leading to **large test errors**.
 
 --- 
 
