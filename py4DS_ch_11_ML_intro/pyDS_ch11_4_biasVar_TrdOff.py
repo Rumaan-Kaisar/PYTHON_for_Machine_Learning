@@ -658,44 +658,12 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 -------- QWEN --------
 
-Here is your provided text organized in a clear, **pointwise** format with consistent structure, while preserving **your original wording exactly**. Key terms and phrases are highlighted using **bold**, *italic*, and **<mark>highlight</mark>** for emphasis where appropriate:
-
----
-
-### **<mark>----------------    Regression-based analogy    ----------------</mark>**
-
----
-
---- 
-
-This structured version keeps your voice and examples intact while enhancing clarity and emphasis through formatting. Let me know if you'd like this as a slide, diagram caption, or markdown for documentation! 📊
-
--------- QWEN (end) --------
 
 
 
 ## ----------------  Regression-Based Analogy  ----------------
 
 
-
-
-### ----  Understanding Model Complexity and Overfitting ----
-
-**Setup:**
-
-* Training data = red points.
-* Start with simple linear model (blue line).
-
-**Common beginner thought:**
-
-> “Make it more complex to hit all training points.”
-
-**Consequence:**
-
-* Fails on new data (poor generalization).
-* Overfits to noise → large test error.
-
----
 
 ### ----  Visualizing the Tradeoff ----
 
