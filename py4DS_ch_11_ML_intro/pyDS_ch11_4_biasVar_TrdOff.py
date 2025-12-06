@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (02-Dec-25 for 03-Dec-25)
+################# (03-Dec-25 for 06-Dec-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -654,7 +654,7 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 ---
 
----- >> rev [19-Nov-2025] : from line 388  use QWEN for no mod  ----
+---- >> rev [19-Nov-2025] : from line 444  use QWEN for no mod  ----
 
 -------- QWEN --------
 
@@ -667,31 +667,11 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 ### ----   ----
 
-**True pattern:**
 
-* Black curve = truth; points = noisy observations.
 
-**Comparing Fits:**
 
-* Linear (orange) → high train/test error → underfit.
-* Quadratic (blue) → good balance → low error.
-* Spline (green) → fits noise → overfit.
 
-**Flexibility vs MSE Plot:**
 
-* Training error ↓ steadily.
-* Test error ↓ then ↑ (U-shaped curve).
-
-**Bias–Variance Curve:**
-
-* Simplest (yellow) → high bias, high error.
-* Moderate (blue) → balanced.
-* Complex (green) → low train error, high test error.
-
-**Test Data Role:**
-
-* Aim for **bias–variance balance** near quadratic fit.
-* Ideal → training and test errors both low and close.
 
 ---
 
