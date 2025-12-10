@@ -4,7 +4,7 @@
 #       
 #   
 #
-################# (07-Dec-25 for 09-Dec-25)
+################# (09-Dec-25 for 10-Dec-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -742,29 +742,6 @@ Would you like me to format this in a **visually styled outline (for study notes
 
 
 Here is your provided text organized in a clear **pointwise format**, with **original wording preserved exactly**, and enhanced using **bold**, *italic*, and **<mark>highlighted</mark>** formatting for key concepts and structure:
-
-
-### **<mark>--------  Key Takeaways  --------</mark>**
-
-- The bias-variance tradeoff is a core concept in **"Model Evaluation"**.  
-  - Too simple → **underfitting**.  
-  - Too complex → **overfitting**.  
-  - The **best model balances the two**.
-
-- **Training error curve** **"monotonically decreases"**.  
-- **Test error curve** **"typically U-shaped"**: decreases then increases.
-
-- **Choose complexity at the minimum of the "test error curve"**.
-
-- **Always validate using train/test splits** to check generalization.  
-- **Plot learning curves (training size vs error)** to diagnose **high bias vs high variance**.
-
-- The bias-variance tradeoff is **not theory only** – it **directly informs choices like**:  
-  - Which algorithm to use.  
-  - How much regularization to apply.  
-  - Whether to collect more data.
-
-- **Regularly revisit the tradeoff** when moving from **synthetic examples to real, messy data**.
 
 
 
