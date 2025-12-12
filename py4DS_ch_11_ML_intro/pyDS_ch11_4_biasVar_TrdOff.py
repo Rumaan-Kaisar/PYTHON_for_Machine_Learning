@@ -683,44 +683,26 @@ Here’s your text arranged in a **clean, pointwise, and logically grouped** str
 
 ### --------  In Simple Words  --------
 
-* Exceeding the bias–variance tradeoff point → overfitting.
-* Bias ↓ with complexity ↑, variance ↑ with complexity ↑.
-* Total error = Bias² + Variance + Noise → U-shaped curve.
+
 
 **Interpretation:**
 
-| Position | Meaning                                |
-| -------- | -------------------------------------- |
-| Left     | Underfitting (high bias, low variance) |
-| Middle   | Sweet spot (lowest total error)        |
-| Right    | Overfitting (low bias, high variance)  |
+
 
 ---
 
 ### --------  Key Takeaways  --------
 
-* Too simple → underfitting.
-* Too complex → overfitting.
-* Best model → balanced tradeoff.
 
-**Curve behavior:**
 
-* Training error ↓ monotonically.
-* Test error → U-shaped.
 
-**Best point:**
 
-* Minimum of test error curve.
 
-**Diagnostics:**
 
-* Always validate with train/test splits.
-* Plot learning curves (error vs training size).
 
-**Practical relevance:**
 
-* Influences algorithm choice, regularization level, and data collection needs.
-* Essential when transitioning from synthetic to real-world data.
+
+
 
 ---
 
