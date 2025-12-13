@@ -2,9 +2,9 @@
 ################# 16.1 :
 # copy: add bullseye images for analogy -> illustration phase -> add to ipynb
 #       
-#   
+#   NXT >> ipynb: complexity vs capacity, py: proceed next -> illustrate
 #
-################# (09-Dec-25 for 10-Dec-25)
+################# (12-Dec-25 for 13-Dec-25)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
@@ -623,111 +623,4 @@
 
 """
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""  
-
-Here’s your text arranged in a **clean, pointwise, and logically grouped** structure — polished for readability but **without altering your original text**:
-
-<h4 style="color:#1bbc9f"><strong> Overview </strong></h4>  
-<h4 style="color:#1abcde"><strong> Overview </strong></h4> 
-<h4 style="color:#ff4466"><strong> Overview </strong></h4>  
----
-
-
-
-
-## ----------------  Bias–Variance Tradeoff  ----------------
-
----
-
----- >> rev [19-Nov-2025] : from line 477  use QWEN for no mod  ----
-
--------- QWEN --------
-
-
-
-
-## ----------------  Regression-Based Analogy  ----------------
-
-
-
-### ----   ----
-
-
-
-
-
-
-
----
-
-### --------  Prediction Error vs Model Complexity  --------
-
-
-
----
-
-### --------  In Simple Words  --------
-
-
-
-**Interpretation:**
-
-
-
----
-
-### --------  Key Takeaways  --------
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-Would you like me to format this in a **visually styled outline (for study notes or slides)** — e.g., with indentation, emojis, and short color cues for clarity (while keeping your wording intact)?
-
-
-"""
-
-
-
-# cp1
-
-
-
-"""  
-
-----------------    QWEN    ----------------
-
-
-
-Here is your provided text organized in a clear **pointwise format**, with **original wording preserved exactly**, and enhanced using **bold**, *italic*, and **<mark>highlighted</mark>** formatting for key concepts and structure:
-
-
-
-
-
-"""
 
