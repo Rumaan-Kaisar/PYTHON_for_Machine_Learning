@@ -82,3 +82,20 @@ pyDS_ch11_1
 4. Support Vector Machines
 5. K Means Clustering
 6. Principal Component Analysis
+
+
+
+----  compressed, vowel-reduced shorthand  ----
+LgReg
+KNrstNbr
+DcsnTre_RndFst
+SprtVctMch
+KMeNsClstr
+PrncplCmpAnl
+
+pyDS_ch12_1_LgReg
+pyDS_ch12_1_KNN
+pyDS_ch12_1_DcsnTre_RndFst
+pyDS_ch12_1_SVM
+pyDS_ch12_1_KMeans_Clstr
+pyDS_ch12_1_PCA
