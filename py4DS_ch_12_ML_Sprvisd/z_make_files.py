@@ -2,8 +2,12 @@
 
 # Directory: List of the folders you want to create
 
-file_names = ['pyDS_ch11_1_ML_py_supervised',
-'pyDS_ch11_2_performnace']
+file_names = ['pyDS_ch12_1_LgReg',
+'pyDS_ch12_2_KNN',
+'pyDS_ch12_3_DcsnTre_RndFst',
+'pyDS_ch12_4_SVM',
+'pyDS_ch12_5_KMeans_Clstr',
+'pyDS_ch12_6_PCA']
 
 
 
@@ -18,7 +22,7 @@ for i in range (0, len(file_names)):
     try:
         # os.makedirs(path, exist_ok = True)
         with open(f"{file_names[i]}.py", "w") as f:     # creates an empty 'py'
-            f.write("\n################# 0: FULL\n# copy:  \n#        \n#        \n################# (26-sep-23 for 27-sep-23)\n\n# Courses: PrTla PY for DS & ML >    1\n")
+            f.write("\n################# 0: FULL\n# copy:  \n#        \n#        \n################# (16-Dec-25 for 17-Dec-25)\n\n# Courses: PrTla PY for DS & ML >    1\n")
         print(f"{file_names[i]}.py is created sucuessfully")
     except:
         print("files '%s' can not be created" % file_names[i])
@@ -49,11 +53,11 @@ KMeNsClstr
 PrncplCmpAnl
 
 pyDS_ch12_1_LgReg
-pyDS_ch12_1_KNN
-pyDS_ch12_1_DcsnTre_RndFst
-pyDS_ch12_1_SVM
-pyDS_ch12_1_KMeans_Clstr
-pyDS_ch12_1_PCA
+pyDS_ch12_2_KNN
+pyDS_ch12_3_DcsnTre_RndFst
+pyDS_ch12_4_SVM
+pyDS_ch12_5_KMeans_Clstr
+pyDS_ch12_6_PCA
 
 """
 
