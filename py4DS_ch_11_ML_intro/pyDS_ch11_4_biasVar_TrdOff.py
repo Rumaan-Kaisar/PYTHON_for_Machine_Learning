@@ -1,10 +1,10 @@
 
 ################# 16.1 :
-# copy: add bullseye images for analogy -> illustration phase -> add to ipynb
+# copy:
 #       
-#   NXT >> ipynb: complexity vs capacity, py: proceed next -> illustrate
+#   NXT >> py: add bullseye images for analogy -> illustration phase -> add to ipynb -> proceed next -> illustrate
 #
-################# (12-Dec-25 for 13-Dec-25)
+################# (done py, only add images to ipynb)
 
 # Courses: PrTla PY for DS & ML >  16.1
 
