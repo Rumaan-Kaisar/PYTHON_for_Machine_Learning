@@ -3,7 +3,7 @@
 # copy:  previous ipynb -> image attach, update this py
 #        
 #        
-################# (26-Dec-25 for 27-Dec-25)
+################# (27-Dec-25 for 28-Dec-25)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -11,36 +11,37 @@
 
 """  
 
-This section introduces classification problems, how logistic regression is used to solve them, 
-    and shows how to interpret results using a "confusion matrix". 
-    
-For the full mathematical details, see Sections 4-4.3 of "An Introduction to Statistical Learning by Gareth James".
+    This section introduces classification problems, how logistic regression is used to solve them, 
+        and shows how to interpret results using a "confusion matrix". 
+        
+    For the full mathematical details, see Sections 4-4.3 of "An Introduction to Statistical Learning by Gareth James".
 
 
---------  Logistic Regression (Classification Overview)  --------
+    --------  Logistic Regression (Classification Overview)  --------
 
-Purpose of Logistic Regression:
-    Logistic regression is a method used in "Classification Problems" within machine learning and statistics.
-    It is designed to predict "discrete categories", not continuous values (like linear regression).
-    Although the name includes “regression,” its primary use is CLASSIFICATION, especially "binary classification".
-        where outcomes belong to one of two classes, typically labeled as 0 and 1.
+    Purpose of Logistic Regression:
+        Logistic regression is a method used in "Classification Problems" within machine learning and statistics.
+        It is designed to predict "discrete categories", not continuous values (like linear regression).
 
-
-----  rev[26-Dec-2025]  ----
+        Although the name includes “regression,” its primary use is CLASSIFICATION, especially "binary classification".
+            where outcomes belong to one of two classes, typically labeled as 0 and 1.
 
 
+    ----  Classification Problems  ----
+
+    Classification involves "determining the category" to which a "new observation" belongs, 
+        Based on patterns learned from labeled training data.
+        Usually several categories predefined based on training data.
+
+        Common example:
+            Distinguishing spam from non-spam emails.
+            Predicting loan default risk.
+            Diagnosing the presence of a disease such as cancer.
+
+        These examples represent "binary classification", where there are only two possible classes.
 
 
-
-
-
-
-
-**Understanding Classification Problems**
-
-Classification involves determining the category to which a new observation belongs, based on patterns learned from labeled training data. Common examples include distinguishing spam from non-spam emails, predicting loan default risk, or diagnosing the presence of a disease such as cancer. These are all instances of binary classification, where only two possible outcomes exist.
-
-
+----  rev[27-Dec-2025]  ----
 
 
 **Limitations of Linear Regression for Classification**
@@ -494,6 +495,7 @@ clicked on an ad.
 OK thanks everyone and I'll see if the next lecture
 
 """
+
 
 
 
