@@ -44,6 +44,9 @@
 ----  rev[27-Dec-2025]  ----
 
 
+----  cp1  ----
+
+
 **Limitations of Linear Regression for Classification**
 
 Although linear regression can model relationships between variables, it is unsuitable for classification because it can produce predictions outside the valid probability range of [0, 1]. For instance, when modeling the likelihood of loan repayment based on income, actual training data consists of binary outcomes (default or full repayment). A linear fit to such data may yield negative probabilities or values greater than one—results that lack meaningful interpretation in a probabilistic context.
@@ -120,16 +123,6 @@ Below is a **clear, corrected, and well-organized pointwise simplification**, re
 ---
 
 ---
-
-### 2. What Is a Classification Problem?
-
-* Classification involves assigning a new observation to one of several predefined categories based on training data.
-* Common examples include:
-
-  * Spam vs. non-spam (ham) email detection
-  * Loan default vs. non-default prediction
-  * Disease diagnosis (disease present vs. absent)
-* These examples represent **binary classification**, where there are only two possible classes.
 
 ---
 
@@ -270,31 +263,11 @@ This structured explanation preserves the full conceptual flow while presenting 
 
 
 
-# ----  cp1  ----
+# ----  cp2  ----
 
 """  
 
 Hello everyone and welcome to the introduction to logistic regression lecture 
-
-
-
-
-
-
-Moving along we want to learn about logistic regression as a method for classification and machine learning
-and statistics.
-Classification is the problem of identifying to which of a set of categories a new observation belongs
-to based off of training data.
-
-
-
-Some examples of classification problems include trying to detect spam versus ham emails trying to detect
-whether someone's going to default on their loan or not or even trying to diagnose a disease for example
-trying to tell if someone has cancer or not.
-
-
-
-These above examples are all examples a binary classification meaning we have two classes 
 
 
 so far in
@@ -495,7 +468,6 @@ clicked on an ad.
 OK thanks everyone and I'll see if the next lecture
 
 """
-
 
 
 
