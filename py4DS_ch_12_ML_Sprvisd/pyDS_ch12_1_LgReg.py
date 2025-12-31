@@ -1,9 +1,9 @@
 
 ################# 0: FULL
-# copy:  previous ipynb -> image attach, update this py
+# copy:  
 #        
 #        
-################# (27-Dec-25 for 28-Dec-25)
+################# (31-Dec-25 for 02-Jan-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -23,6 +23,7 @@
         Logistic regression is a method used in "Classification Problems" within machine learning and statistics.
         It is designed to predict "discrete categories", not continuous values (like linear regression).
 
+        The name may be confusing at first-
         Although the name includes “regression,” its primary use is CLASSIFICATION, especially "binary classification".
             where outcomes belong to one of two classes, typically labeled as 0 and 1.
 
@@ -41,10 +42,16 @@
         These examples represent "binary classification", where there are only two possible classes.
 
 
-----  rev[27-Dec-2025]  ----
+    Linear Regression is unsuitable for Classification:
+        In binary classification, class labels are typically represented as '0' and '1'.
+        But Linear Regression predicts continuous values (can be less than 0 or greater than 1).
+        When interpreting outputs as probabilities, such values are invalid.
+        So linear regression produces a poor fit for binary classification tasks.
+        Therefore, we can't use a normal linear regression model on a binary group.
 
 
-----  cp1  ----
+
+        ----  rev[28-Dec-2025]  ----
 
 
 **Limitations of Linear Regression for Classification**
@@ -468,6 +475,7 @@ clicked on an ad.
 OK thanks everyone and I'll see if the next lecture
 
 """
+
 
 
 
