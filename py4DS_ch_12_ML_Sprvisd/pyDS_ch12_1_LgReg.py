@@ -54,9 +54,16 @@
         ----  rev[28-Dec-2025]  ----
 
 
+----  cp1  ----
+
+
+
+
 **Limitations of Linear Regression for Classification**
 
 Although linear regression can model relationships between variables, it is unsuitable for classification because it can produce predictions outside the valid probability range of [0, 1]. For instance, when modeling the likelihood of loan repayment based on income, actual training data consists of binary outcomes (default or full repayment). A linear fit to such data may yield negative probabilities or values greater than one—results that lack meaningful interpretation in a probabilistic context.
+
+
 
 
 
@@ -132,13 +139,6 @@ Below is a **clear, corrected, and well-organized pointwise simplification**, re
 ---
 
 ---
-
-### 3. Why Linear Regression Is Not Suitable for Classification
-
-* In binary classification, class labels are typically represented as **0 and 1**.
-* Linear regression predicts continuous values and can output values less than 0 or greater than 1.
-* When interpreting outputs as probabilities, such values are invalid.
-* Therefore, linear regression produces a poor fit for binary classification tasks.
 
 ---
 
@@ -276,22 +276,6 @@ This structured explanation preserves the full conceptual flow while presenting 
 
 Hello everyone and welcome to the introduction to logistic regression lecture 
 
-
-so far in
-our studies we've only seen regression problems where we try to predict a continuous value such as the
-price of a house although the name may be confusing at first.
-Logistic Regression allows us to solve classification problems where we're trying to predict discrete
-categories.
-
-
--- cp1 --
-
-The convention for binary classification is to have two classes zero and one.
-
-
-
-However we can't use a normal linear regression model on a binary group.
-It won't lead to a good fit.
 
 
 ----  Loan Example:  ----
@@ -475,7 +459,6 @@ clicked on an ad.
 OK thanks everyone and I'll see if the next lecture
 
 """
-
 
 
 
