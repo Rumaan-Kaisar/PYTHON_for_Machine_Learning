@@ -44,17 +44,47 @@
 
     Linear Regression is unsuitable for Classification:
         In binary classification, class labels are typically represented as '0' and '1'.
+
+        For instance, when modeling the likelihood of loan repayment based on income, 
+            actual training data consists of binary outcomes (default or full repayment).
+
         But Linear Regression predicts continuous values (can be less than 0 or greater than 1).
-        When interpreting outputs as probabilities, such values are invalid.
+            i.e. Linear Regression produce predictions outside the valid probability range of [0, 1]
+            When interpreting outputs as probabilities, such values are invalid.
         So linear regression produces a poor fit for binary classification tasks.
         Therefore, we can't use a normal linear regression model on a binary group.
 
 
 
-        ----  rev[28-Dec-2025]  ----
+        ----  rev[31-Dec-2025]  ----
 
+        
+    ----  Logistic Regression  ----
 
-----  cp1  ----
+        
+The Role of the Sigmoid Function in Logistic Regression:
+    Logistic regression solves above limitation by applying the sigmoid (or logistic) function to the output of a linear equation like $z = w^T x + b $.
+
+* The sigmoid function maps any real-valued input to a range strictly between **0 and 1**.
+The sigmoid function is defined as:
+
+$$
+    \sigma(z) = \frac{1}{1 + e^{-z}}
+$$
+
+  where z is is the linear function that produce any real value.
+
+$$
+    z = w^T x + b
+$$
+
+No matter how large or small the input value ( z ) is, the output always lies between 0 and 1.
+
+This property makes the sigmoid function ideal for modeling probabilities.
+
+        ----  rev[31-Dec-2025]  ----
+
+        
 
 
 
@@ -459,6 +489,7 @@ clicked on an ad.
 OK thanks everyone and I'll see if the next lecture
 
 """
+
 
 
 
