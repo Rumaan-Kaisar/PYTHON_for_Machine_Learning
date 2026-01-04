@@ -56,37 +56,47 @@
 
 
 
-        ----  rev[31-Dec-2025]  ----
+    ----  Logistic Regression (Modeling Probabilities)  ----
 
+    The Role of the Sigmoid Function in Logistic Regression:
+        Logistic regression solves above limitation by applying the sigmoid (or logistic) function to the output of a linear equation like "z = (w^T)*x + b".
+
+        The sigmoid function maps any real-valued input to a range strictly between 0 and 1.
+
+        The sigmoid function is defined as:
+
+                sigma(z) = 1/(1 + e^(-z))
+            
+            where z is is the linear function that produce any real value.
+
+                z = (w^T)x + b
+
+            No matter how large or small the input value z is, 
+            the output always lies between 0 and 1.
+
+        This property makes the sigmoid function ideal for "Modeling Probabilities".
+
+        Example:
+            For example, by substituting the linear combination "z = b0 + b1*x" into the sigmoid function,
+                logistic regression produces outputs that can be interpreted as-
+                "the probability of belonging to class 1 or class 0".        
         
-    ----  Logistic Regression  ----
+                
 
+    ----  From Linear Model to Logistic Model  ----
+
+        A standard linear model has the form:
+
+                z = b0 + b1*x
+
+            or more generally
+                
+                z = (w^T)*x + b
+
+        Logistic regression applies the sigmoid function to this linear combination.
+        This transformation ensures the final output is a valid probability in range [0. 1].
+        As a result, logistic regression predicts the probability of belonging to "class 0" or "class 1".
         
-The Role of the Sigmoid Function in Logistic Regression:
-    Logistic regression solves above limitation by applying the sigmoid (or logistic) function to the output of a linear equation like $z = w^T x + b $.
-
-* The sigmoid function maps any real-valued input to a range strictly between **0 and 1**.
-The sigmoid function is defined as:
-
-$$
-    \sigma(z) = \frac{1}{1 + e^{-z}}
-$$
-
-  where z is is the linear function that produce any real value.
-
-$$
-    z = w^T x + b
-$$
-
-No matter how large or small the input value ( z ) is, the output always lies between 0 and 1.
-
-This property makes the sigmoid function ideal for modeling probabilities.
-
-        ----  rev[31-Dec-2025]  ----
-
-        
-
-----  cp1  ----
 
 
 
@@ -495,3 +505,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
