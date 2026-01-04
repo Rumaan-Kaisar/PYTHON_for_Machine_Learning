@@ -98,16 +98,9 @@
         As a result, logistic regression predicts the probability of belonging to "class 0" or "class 1".
         
 
+----  cp1  ----
 
-
-
-
-This function maps any real-valued input \( z \) to a value strictly between 0 and 1, making it ideal for modeling probabilities. By substituting the linear combination \( z = \beta_0 + \beta_1 x \) into the sigmoid function, logistic regression produces outputs that can be interpreted as the probability of belonging to class 1.
-
-
-
-
-
+----  rev[03-Jan-2025]  ----
 
 
 **Decision Threshold and Classification**
@@ -176,21 +169,6 @@ Below is a **clear, corrected, and well-organized pointwise simplification**, re
 
 --- cp2 ---
 
-### 5. From Linear Model to Logistic Model
-
-* A standard linear model has the form:
-
-  [
-  z = \beta_0 + \beta_1 x
-  ]
-
-  or more generally $ z = w^T x + b $
-
-* Logistic regression applies the sigmoid function to this linear combination.
-
-* This transformation ensures the final output is a valid probability.
-
-* As a result, logistic regression predicts the **probability of belonging to class 1**.
 
 ---
 
@@ -505,4 +483,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
