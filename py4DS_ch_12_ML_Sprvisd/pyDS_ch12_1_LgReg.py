@@ -98,9 +98,22 @@
         As a result, logistic regression predicts the probability of belonging to "class 0" or "class 1".
         
 
+
+    ----  Decision Boundary and Classification Rule  ----
+    Once a probability is obtained from the logistic model,
+        a cutoff (decision threshold) value is chosen, commonly "0.5" to assign class labels.
+
+    Classification rule:
+        If predicted probability < 0.5 : assign "class 0"
+        If predicted probability ≥ 0.5 : assign "class 1"
+
+        This converts probabilistic output into discrete class labels.
+        i.e. this rule transforms "continuous probability estimates" into binary values like 0 and 1.        
+
+        
 ----  cp1  ----
 
-----  rev[03-Jan-2025]  ----
+----  rev[04-Jan-2025]  ----
 
 
 **Decision Threshold and Classification**
@@ -483,3 +496,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
