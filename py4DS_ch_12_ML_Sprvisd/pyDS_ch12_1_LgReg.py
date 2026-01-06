@@ -116,11 +116,6 @@
 ----  rev[04-Jan-2025]  ----
 
 
-**Decision Threshold and Classification**
-
-Once a probability is obtained from the logistic model, a decision threshold—typically 0.5—is used to assign class labels. Predictions with a probability of 0.5 or higher are classified as class 1, while those below 0.5 are classified as class 0. This threshold enables the transformation of continuous probability estimates into discrete class predictions.
-
-
 
 
 **Model Evaluation Using the Confusion Matrix**
@@ -184,15 +179,6 @@ Below is a **clear, corrected, and well-organized pointwise simplification**, re
 
 
 ---
-
-### 6. Decision Boundary and Classification Rule
-
-* A cutoff (threshold) value is chosen, commonly **0.5**.
-* Classification rule:
-
-  * If predicted probability < 0.5 → assign **class 0**
-  * If predicted probability ≥ 0.5 → assign **class 1**
-* This converts probabilistic output into discrete class labels.
 
 ---
 
@@ -496,4 +482,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
