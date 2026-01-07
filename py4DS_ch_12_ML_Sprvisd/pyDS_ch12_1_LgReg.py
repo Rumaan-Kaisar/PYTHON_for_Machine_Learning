@@ -100,6 +100,7 @@
 
 
     ----  Decision Boundary and Classification Rule  ----
+
     Once a probability is obtained from the logistic model,
         a cutoff (decision threshold) value is chosen, commonly "0.5" to assign class labels.
 
@@ -111,6 +112,16 @@
         i.e. this rule transforms "continuous probability estimates" into binary values like 0 and 1.        
 
         
+
+        
+    ----------------    Model Evaluation : CONFUSION MATRIX    ----------------
+
+    After training a logistic regression model, its PERFORMANCE is evaluated using "test data".
+confusion matrix
+    A confusion matrix summarizes prediction results when true labels are known.
+    It is commonly used for "binary classification problems", such as disease detection.
+
+
 ----  cp1  ----
 
 ----  rev[04-Jan-2025]  ----
@@ -482,3 +493,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
