@@ -139,10 +139,7 @@ confusion matrix
 ----  rev[07-Jan-2025]  ----
 
 
-Confusion Matrix:
-
-A confusion matrix is a table that visualizes a machine learning model's performance by comparing its predicted classifications against the actual outcomes, revealing correct predictions (True Positives, True Negatives) and errors (False Positives, False Negatives) to show where the model gets "confused" between classes, offering a detailed view beyond simple accuracy, especially for binary or multi-class problems. 
-Key Components (for binary classification)
+    Key Components (for binary classification)
 True Positive (TP): Correctly predicted positive cases.
 True Negative (TN): Correctly predicted negative cases.
 False Positive (FP) (Type I Error): Incorrectly predicted as positive when it was actually negative.
@@ -166,11 +163,8 @@ A confusion matrix is a table that summarizes how well a model is performing by 
 Voxel51
 
 Confusion matrix - Wikipedia
-In machine learning, a confusion matrix, also known as error matrix, is a specific table layout that allows visualization of the p...
 
-Wikipedia
 
-Show all
 
 
 
@@ -532,4 +526,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
