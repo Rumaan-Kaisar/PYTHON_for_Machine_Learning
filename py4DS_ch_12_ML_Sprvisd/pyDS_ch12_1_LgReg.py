@@ -160,14 +160,13 @@
 
 ----  cp1  ----
 
-----  rev[07-Jan-2025]  ----
+----  rev[09-Jan-2025]  ----
 
 
     Key Components (for binary classification)
-True Positive (TP): Correctly predicted positive cases.
-True Negative (TN): Correctly predicted negative cases.
-False Positive (FP) (Type I Error): Incorrectly predicted as positive when it was actually negative.
-False Negative (FN) (Type II Error): Incorrectly predicted as negative when it was actually positive. 
+
+    
+
 How it Works
 It's an N x N table where N is the number of classes, showing counts for each combination of actual vs. predicted class.
 Rows typically represent actual classes, and Columns represent predicted classes (or vice versa).
@@ -194,12 +193,6 @@ Confusion matrix - Wikipedia
 
 **Model Evaluation Using the Confusion Matrix**
 
-After training a logistic regression model, its performance is evaluated on test data using a confusion matrix—a table that compares actual and predicted classifications. In a binary classification setting (e.g., disease detection), the confusion matrix contains four key outcomes:
-
-- **True Positives (TP):** Correctly predicted positive cases (e.g., disease correctly identified).
-- **True Negatives (TN):** Correctly predicted negative cases (e.g., no disease correctly identified).
-- **False Positives (FP):** Incorrectly predicted positive cases (Type I error).
-- **False Negatives (FN):** Incorrectly predicted negative cases (Type II error).
 
 From these values, several performance metrics are derived:
 
@@ -258,23 +251,10 @@ Below is a **clear, corrected, and well-organized pointwise simplification**, re
 
 ---
 
-### 8. Confusion Matrix Components
+### 8. 
 
 For a binary classification problem:
 
-* **True Positive (TP)**
-  Predicted positive and actually positive.
-
-* **True Negative (TN)**
-  Predicted negative and actually negative.
-
-* **False Positive (FP)**
-  Predicted positive but actually negative.
-  Also called **Type I error**.
-
-* **False Negative (FN)**
-  Predicted negative but actually positive.
-  Also called **Type II error**.
 
 ---
 
@@ -332,6 +312,11 @@ This structured explanation preserves the full conceptual flow while presenting 
 
 
 
+# ----  Example Walkthrough: Why Linear Regression is Unsuitable for Classification  ----
+
+
+
+
 
 # ----  cp2  ----
 
@@ -343,8 +328,11 @@ Hello everyone and welcome to the introduction to logistic regression lecture
 
 ----  Loan Example:  ----
 
+We can't use a normal linear regression model on binary groups. It won't lead to a good fit:
 
 For example if we take a look at this plot below we have a Y axis which represents the probability of belonging to a particular group.
+
+----  PLOT-illustration  ----
 
 Let's go ahead and imagine that this example plot is trying to predict likelihood of paying back a loan.
 
@@ -550,4 +538,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
