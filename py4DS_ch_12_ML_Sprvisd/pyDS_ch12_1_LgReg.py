@@ -1,9 +1,11 @@
 
 ################# 0: FULL
 # copy:  
-#        
-#        
-################# (31-Dec-25 for 02-Jan-26)
+# ----  rev  ----
+# use SRT for detailed example with images
+# start from 1.11
+# finish confusion matrix part       
+################# (02-Jan-26 for 10-Jan-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -116,8 +118,7 @@
         
     ----------------    Model Evaluation : CONFUSION MATRIX    ----------------
 
-    After training a logistic regression model, its PERFORMANCE is evaluated using "test data".
-confusion matrix
+    After training a logistic regression model, its PERFORMANCE is evaluated using CONFUSION MATRIX on "test data".
     A confusion matrix summarizes prediction results when true labels are known.
     It is commonly used for "binary classification problems", such as disease detection.
 
@@ -133,7 +134,30 @@ confusion matrix
         It gives a detailed view beyond simple accuracy, especially for binary or multi-class problems. 
         
         A Confusion Matrix, also known as "Error Matrix"
-        
+
+
+
+    Confusion Matrix Components:
+
+        True Positive (TP):
+            Correctly predicted positive cases.
+            i.e. Predicted positive and actually positive.
+
+        True Negative (TN):
+            Correctly predicted negative cases.
+            i.e. Predicted negative and actually negative.
+
+        False Positive (FP) (Type I Error): 
+            Incorrectly predicted as positive.
+            i.e. Predicted positive but actually negative.
+            Also called Type I error.
+
+        False Negative (FN) (Type II Error): 
+            Incorrectly predicted as negative.
+            i.e. Predicted negative but actually positive.
+            Also called Type II error.
+
+
 ----  cp1  ----
 
 ----  rev[07-Jan-2025]  ----
@@ -526,3 +550,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
