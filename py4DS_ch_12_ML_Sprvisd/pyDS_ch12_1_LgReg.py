@@ -4,8 +4,10 @@
 # ----  rev  ----
 # use SRT for detailed example with images
 # start from 1.11
-# finish confusion matrix part       
-################# (02-Jan-26 for 10-Jan-26)
+# finish confusion matrix part:      
+    # Accuracy
+    # Misclassification Rate (Error Rate)
+################# (10-Jan-26 for 11-Jan-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -157,6 +159,39 @@
             i.e. Predicted negative but actually positive.
             Also called Type II error.
 
+
+            
+    How it Works:
+        It's an N x N table where N is the number of classes, 
+        showing counts for each combination of actual vs. predicted class.
+
+        Rows:
+            typically represent actual classes 
+        Columns:
+            represent predicted classes (or vice versa).
+
+        Diagonal entries are correct predictions; 
+        off-diagonal entries show misclassifications. 
+
+
+
+
+Why It's Used:
+    Reveals which classes are being confused with which other classes
+    i.e. understanding model weaknesses.
+
+    Accuracy metrics:
+            Precision, 
+            Recall (Sensitivity), 
+            Specificity, and 
+            F1-Score, 
+
+        these are crucial for imbalanced datasets or critical applications 
+        e.g., medical diagnosis where one type of error is more costly than another.
+
+        
+Model Comparison:
+    Helps compare the performance and error patterns of different classification algorithms.
 
 ----  cp1  ----
 
@@ -538,3 +573,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
