@@ -175,23 +175,42 @@
 
 
 
+    Why It's Used:
+        Reveals which classes are being confused with which other classes
+        i.e. understanding model weaknesses.
 
-Why It's Used:
-    Reveals which classes are being confused with which other classes
-    i.e. understanding model weaknesses.
+        Accuracy metrics:
+                Precision, 
+                Recall (Sensitivity), 
+                Specificity, and 
+                F1-Score, 
 
-    Accuracy metrics:
-            Precision, 
-            Recall (Sensitivity), 
-            Specificity, and 
-            F1-Score, 
+            these are crucial for imbalanced datasets or critical applications 
+            e.g., medical diagnosis where one type of error is more costly than another.
 
-        these are crucial for imbalanced datasets or critical applications 
-        e.g., medical diagnosis where one type of error is more costly than another.
+            
+        Model Comparison:
+            Helps compare the performance and error patterns of different classification algorithms.
 
-        
-Model Comparison:
-    Helps compare the performance and error patterns of different classification algorithms.
+
+
+    Model Evaluation Using the Confusion Matrix:
+
+        The proportion of correct predictions:
+            Accuracy = (TP + TN)/(TP + TN + FP + FN)
+                        = (TP + TN)/(Total predictions)
+
+        The proportion of incorrect predictions:    
+            Misclassification Rate = (FP + FN)/(TP + TN + FP + FN)
+                                    = (FP + FN)/(Total predictions)
+
+        For example, in a test involving 165 patients where 105 had a disease and 60 did not, 
+            a model yielding:
+                100 true positives, 
+                50 true negatives, 
+                10 false positives, and 
+                5 false negatives 
+            would achieve an accuracy of approximately 91% and a misclassification rate of 9%.
 
 
 ----  cp1  ----
@@ -527,3 +546,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
