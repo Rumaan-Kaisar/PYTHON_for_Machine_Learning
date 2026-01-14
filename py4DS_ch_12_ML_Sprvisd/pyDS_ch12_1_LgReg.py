@@ -7,7 +7,7 @@
 # finish confusion matrix part:      
     # Accuracy
     # Misclassification Rate (Error Rate)
-################# (10-Jan-26 for 11-Jan-26)
+################# (14-Jan-26 for 16-Jan-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -218,21 +218,6 @@
 ----  rev[09-Jan-2025]  ----
 
 
-    Key Components (for binary classification)
-
-**Model Evaluation Using the Confusion Matrix**
-
-
-From these values, several performance metrics are derived:
-
-- **Accuracy:** \(\frac{TP + TN}{TP + TN + FP + FN}\) — the proportion of correct predictions.
-- **Misclassification Rate:** \(\frac{FP + FN}{TP + TN + FP + FN}\) — the proportion of incorrect predictions.
-
-For example, in a test involving 165 patients where 105 had a disease and 60 did not, a model yielding 100 true positives, 50 true negatives, 10 false positives, and 5 false negatives would achieve an accuracy of approximately 91% and a misclassification rate of 9%.
-
-
-
-
 **Interpreting Type I and Type II Errors**
 
 Type I errors (false positives) occur when the model incorrectly predicts a positive outcome—such as diagnosing a healthy person with a disease. Type II errors (false negatives) occur when the model fails to detect a true positive—such as missing an actual case of disease. A common mnemonic illustrates this: a Type I error is telling a man he is pregnant (predicting "yes" when it’s impossible); a Type II error is telling a visibly pregnant woman she is not pregnant (predicting "no" when it’s clearly true).
@@ -266,19 +251,7 @@ Below is a **clear, corrected, and well-organized pointwise simplification**, re
 
 ---
 
-### 9. Performance Metrics
 
-* **Accuracy**
-  Measures how often the model is correct overall.
-  [
-  \text{Accuracy} = \frac{TP + TN}{\text{Total predictions}}
-  ]
-
-* **Misclassification Rate (Error Rate)**
-  Measures how often the model is wrong.
-  [
-  \text{Error Rate} = \frac{FP + FN}{\text{Total predictions}}
-  ]
 
 ---
 
@@ -546,4 +519,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
