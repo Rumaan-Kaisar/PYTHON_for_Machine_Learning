@@ -213,6 +213,59 @@
             would achieve an accuracy of approximately 91% and a misclassification rate of 9%.
 
 
+            
+--------  Understanding Type I and Type II Errors  --------
+
+Type I errors (false positives) occur when the model incorrectly predicts a positive outcome-
+such as diagnosing a healthy person with a disease. 
+
+Type II errors (false negatives) occur when the model fails to detect a true positive-
+such as missing an actual case of disease. 
+
+---- [rev 14-Jan-2026] ----
+
+The severity of Type I vs. Type II errors depends on the context. 
+In some situations, Type II errors can be much more dangerous than Type I.
+
+ Let's compare them in two critical real-world scenarios: cyclone prediction and cancer diagnosis.
+
+🔹 1. Cyclone Prediction
+Imagine a model predicts whether a cyclone will hit (Positive = cyclone expected; Negative = no cyclone).
+
+Type I Error (False Positive):
+The model predicts a cyclone is coming, but it doesn’t happen.
+→ Unnecessary evacuations, panic, economic loss, wasted resources.
+Type II Error (False Negative):
+The model says no cyclone, but a cyclone actually hits.
+→ No preparation, high risk of death, destruction, and disaster.
+✅ Which is worse?
+👉 Type II error (false negative) is far more dangerous here.
+Even though false alarms (Type I) are costly, failing to warn people when danger is real can cost lives.
+
+➡️ Better to have a few false alarms than miss a real cyclone.
+
+🔹 2. Disease Detection (e.g., Cancer)
+Model predicts whether a patient has cancer (Positive = cancer; Negative = no cancer).
+
+Type I Error (False Positive):
+The model says the person has cancer, but they are healthy.
+→ Anxiety, stress, extra tests, possibly invasive procedures—but usually caught later.
+Type II Error (False Negative):
+The model says "no cancer," but the person actually has it.
+→ Delayed treatment, disease progresses, lower survival chances.
+✅ Which is worse?
+👉 Type II error (false negative) is again more serious.
+Missing cancer early can mean losing the best chance for cure.
+
+➡️ It’s better to flag someone unnecessarily (and confirm with more tests) than to miss a real case.
+
+
+
+
+
+
+
+
 ----  cp1  ----
 
 ----  rev[09-Jan-2025]  ----
@@ -519,3 +572,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
