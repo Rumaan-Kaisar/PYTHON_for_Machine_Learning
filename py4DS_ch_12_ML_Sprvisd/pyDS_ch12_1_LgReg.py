@@ -271,11 +271,6 @@ Missing cancer early can mean losing the best chance for cure.
 ----  rev[09-Jan-2025]  ----
 
 
-**Interpreting Type I and Type II Errors**
-
-Type I errors (false positives) occur when the model incorrectly predicts a positive outcome—such as diagnosing a healthy person with a disease. Type II errors (false negatives) occur when the model fails to detect a true positive—such as missing an actual case of disease. A common mnemonic illustrates this: a Type I error is telling a man he is pregnant (predicting "yes" when it’s impossible); a Type II error is telling a visibly pregnant woman she is not pregnant (predicting "no" when it’s clearly true).
-
-
 
 
 **Practical Applications**
@@ -317,6 +312,22 @@ Below is a **clear, corrected, and well-organized pointwise simplification**, re
   Predicting a condition does not exist when it does.
 
 * These terms are widely used in statistics, medicine, and hypothesis testing.
+
+
+
+        False Positive (FP) (Type I Error): 
+            Incorrectly predicted as positive.
+            i.e. Predicted positive but actually negative.
+            Also called Type I error.
+
+        False Negative (FN) (Type II Error): 
+            Incorrectly predicted as negative.
+            i.e. Predicted negative but actually positive.
+            Also called Type II error.
+
+
+
+
 
 ---
 
@@ -572,4 +583,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
