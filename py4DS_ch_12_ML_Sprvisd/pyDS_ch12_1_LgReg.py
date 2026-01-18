@@ -224,8 +224,6 @@
     Type II errors (false negatives) occur when the model fails to detect a true positive-
     such as "missing" an actual case of disease. 
 
----- [rev 14-Jan-2026] ----
-
 
     ----  SEVERITY of these errors  ----
     The severity of Type I vs. Type II errors depends on the context. 
@@ -252,6 +250,29 @@
 
         So its better to have a few false alarms than miss a real cyclone.
 
+        
+    Disease Detection (e.g., Cancer):
+        Model predicts whether a patient has cancer 
+        (Positive = cancer; Negative = no cancer).
+
+        Type I Error (False Positive):
+            The model says the person has cancer, but they are healthy.
+            Results Anxiety, stress, extra tests (more cost)
+
+        Type II Error (False Negative):
+            The model says "no cancer," but the person actually has it.
+            Delayed treatment, disease progresses, lower survival chances.
+
+        Which is worse?
+            Type II error (false negative) is again more serious.
+            Missing cancer early can mean losing the best chance for cure.
+
+        It's far better to flag someone unnecessarily (and confirm with more tests) than to miss a real case.
+
+
+
+----  cp2  ----
+
 
     --------  Practical Applications  --------
 
@@ -265,24 +286,11 @@
 
     For a deeper mathematical understanding of logistic regression, including derivation and optimization, 
     READ Sections 4 to 4.3 of "An Introduction to Statistical Learning" by Gareth James et al.
-      
-----  cp1  ----
 
-----  rev[09-Jan-2025]  ----
+    
 
+----  cp3  ----
 
-
-
-**Practical Applications**
-
-Logistic regression is widely applied in real-world scenarios. For instance, it can be used with the Titanic dataset to predict passenger survival based on features like age, gender, and class. Similarly, it can model customer behavior, such as predicting whether a user will click on an online advertisement based on demographic and behavioral data.
-
-
-
-
-**Further Reading**
-
-For a deeper mathematical understanding of logistic regression, including derivation and optimization, reference Sections 4 through 4.3 of *An Introduction to Statistical Learning* by Gareth James et al.
 
 """
 
@@ -292,41 +300,6 @@ For a deeper mathematical understanding of logistic regression, including deriva
 ----  GPT  ----
 
 Below is a **clear, corrected, and well-organized pointwise simplification**, rewritten into proper paragraphs, avoiding first-person language and references to lectures or videos, while preserving the full conceptual context.
-
-
-
---- cp2 ---
-
----
-
-
-
----
-
-### 10. Understanding Type I and Type II Errors
-
-* **Type I Error (False Positive)**
-  Predicting a condition exists when it does not.
-
-* **Type II Error (False Negative)**
-  Predicting a condition does not exist when it does.
-
-* These terms are widely used in statistics, medicine, and hypothesis testing.
-
-
-
-        False Positive (FP) (Type I Error): 
-            Incorrectly predicted as positive.
-            i.e. Predicted positive but actually negative.
-            Also called Type I error.
-
-        False Negative (FN) (Type II Error): 
-            Incorrectly predicted as negative.
-            i.e. Predicted negative but actually positive.
-            Also called Type II error.
-
-
-
 
 
 ---
@@ -583,5 +556,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
-
