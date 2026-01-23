@@ -4,10 +4,8 @@
 # ----  rev  ----
 # use SRT for detailed example with images
 # start from 1.11
-# finish confusion matrix part:      
-    # Accuracy
-    # Misclassification Rate (Error Rate)
-################# (14-Jan-26 for 16-Jan-26)
+# NXT >> illustration
+################# (18-Jan-26 for 19-Jan-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -270,10 +268,6 @@
         It's far better to flag someone unnecessarily (and confirm with more tests) than to miss a real case.
 
 
-
-----  cp2  ----
-
-
     --------  Practical Applications  --------
 
     Logistic regression is widely applied in real-world scenarios. For instance: 
@@ -287,9 +281,17 @@
     For a deeper mathematical understanding of logistic regression, including derivation and optimization, 
     READ Sections 4 to 4.3 of "An Introduction to Statistical Learning" by Gareth James et al.
 
-    
+"""
 
-----  cp3  ----
+
+
+
+
+# ----  Example Walkthrough: Why Linear Regression is Unsuitable for Classification  ----
+
+
+
+
 
 
 """
@@ -556,3 +558,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
