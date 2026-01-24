@@ -5,7 +5,7 @@
 # use SRT for detailed example with images
 # start from 1.11
 # NXT >> illustration
-################# (18-Jan-26 for 19-Jan-26)
+################# (23-Jan-26 for 20-Jan-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -22,7 +22,7 @@
     --------  Logistic Regression (Classification Overview)  --------
 
     Purpose of Logistic Regression:
-        Logistic regression is a method used in "Classification Problems" within machine learning and statistics.
+        Logistic regression is a method used in "Classification Problems" within machine learning and STATISTICS.
         It is designed to predict "discrete categories", not continuous values (like linear regression).
 
         The name may be confusing at first-
@@ -292,8 +292,195 @@
 
 
 
+"""  
 
-# ----  cp1  ----
+Hello everyone and welcome to the introduction to logistic regression lecture 
+
+
+
+----  Loan Example:  ----
+
+We can't use a normal linear regression model on binary groups. It won't lead to a good fit:
+
+For example if we take a look at this plot below we have a Y axis which represents the probability of belonging to a particular group.
+
+----  PLOT-illustration  ----
+
+Let's go ahead and imagine that this example plot is trying to predict likelihood of paying back a loan.
+
+
+We'll go ahead and label 0 percent probability as defaulting on their loan meaning they have a zero
+percent probability of being able to pay back their loan.
+And at the top we have one or a 100 percent probability as fully paying back their loan will go ahead
+and mark the X axis as some sort of paycheck value.
+
+
+
+That means if we go ahead and look at this data as your paycheck goes lower you have a closer to zero
+percent probability that you're going to be able to pay back your loan as your paycheck value gets higher
+.
+You didn't have closer to 100 percent probability of paying back your loan.
+
+
+
+The reason these yellow dashes are all either on 0 percent or 100 percent is because this is training
+data.
+
+
+Now if this was trading data and we try to use a linear regression model on it we would get a very bad
+fit.
+We would actually end up predicting probabilities below zero percent which doesn't really make any sense
+.
+
+
+Instead we can transform our linear regression to a logistic regression curve and you'll notice our
+logistic regression curve can only go between 0 and 1 and that's going to be the key to understanding
+classification.
+
+
+========================================
+
+Here’s a simplified, point-wise version of the explanation:
+
+---
+
+### 🔹 Loan Example – Why We Need Logistic Regression
+
+1. **We’re predicting a yes/no outcome**:  
+   - Will a person pay back their loan? (Yes = 1, No = 0)
+
+2. **We can’t use normal linear regression for binary outcomes**:  
+   - Linear regression predicts continuous values, but here we need probabilities between 0 and 1.
+
+3. **X-axis: Paycheck amount**  
+   - Shows how much someone earns.
+
+4. **Y-axis: Probability of repaying the loan**  
+   - 0 = 0% chance (will default)  
+   - 1 = 100% chance (will repay)
+
+5. **Pattern in data**:  
+   - Lower paycheck → Lower chance of repayment → Closer to 0  
+   - Higher paycheck → Higher chance of repayment → Closer to 1
+
+6. **Training data points are only at 0 or 1**:  
+   - Because real people either paid back (1) or didn’t (0) — so dots are only on top (1) or bottom (0).
+
+7. **Problem with linear regression**:  
+   - If we fit a straight line, it might predict:
+     - Probabilities **below 0** (e.g., -20%) → doesn’t make sense
+     - Or **above 1** (e.g., 120%) → also impossible
+
+8. **Solution: Use logistic regression**:  
+   - Fits an S-shaped curve that **only stays between 0 and 1**
+   - Gives valid probability estimates for classification
+
+9. **Key idea**:  
+   - Logistic regression is made for predicting **categories** (like yes/no) by modeling **probabilities safely within 0 to 1**
+
+---
+
+✅ Bottom line: For yes/no predictions (like loan repayment), use **logistic regression**, not linear regression — because probabilities must stay between 0% and 100%.
+
+
+
+
+
+
+========================================
+
+Using a logistic regression curve 
+
+
+----  sigmoid  ----
+the sigmoid.
+Also known as logistic function is going to be the key to understanding using logistic regression to
+perform a classification.
+The key secret to this function is that it can take in any value and its output is going to be between
+0 and 1.
+We take a look at the equation here on this plot.
+We have the sigmoid function plotted out on the z axis is going to be the bottom line.
+Usually the x x there here without noting it as theta of Z and the formula is theta of Z.
+So the function of z is equal to 1 over 1 plus E to the power of negative Z.
+
+
+
+The key thing to notice here is that it doesn't matter what value of Z you put into the logistic function
+or the sigmoid function.
+You'll always get a value between 0 and 1.
+So again if you take a look at this plot it doesn't matter that whatever value you put in for Z the
+output along the vertical axis is always going to be between 0 and 1.
+And that's the key the sigmoid function.
+This means that we can take her linear regression solution and place it into this sigmoid function and
+that's going to look like this.
+Remember our linear model followed a basic y equals x plus B principle.
+Here we have a linear model as y equals beta plus Beta 1 times X..
+If we take that linear model and put it into the sigmoid function we finally are able to transform this
+linear regression to a logistic model 
+
+
+meaning it doesn't matter whatever the value of the linear model
+output actually is.
+It's always going to be between 0 and 1 when we place it into the logistic model or the sigmoid function
+.
+
+
+Here’s a clear, point-wise and simplified explanation:
+
+---
+
+### 🔹 Understanding the Sigmoid Function in Logistic Regression
+
+1. **The sigmoid function is the heart of logistic regression**  
+   - It’s what turns a linear model into a classification tool.
+
+2. **Formula of the sigmoid function**:  
+   \[
+   \sigma(z) = \frac{1}{1 + e^{-z}}
+   \]  
+   - This is also called the **logistic function**.
+
+3. **Key property: Output is always between 0 and 1**  
+   - No matter what value you give for \( z \), the result will always be:
+     \[
+     0 < \sigma(z) < 1
+     \]
+   - This makes it perfect for predicting **probabilities** (e.g., "What’s the chance this person will repay?").
+
+4. **Graph shape: S-shaped curve**  
+   - As \( z \) gets very large → output approaches 1  
+   - As \( z \) gets very small (negative) → output approaches 0  
+   - At \( z = 0 \) → output = 0.5
+
+5. **We use it to fix the problem of linear regression in classification**  
+   - Linear regression can output any number (even -5 or +10), which doesn’t work for probabilities.
+   - But with the sigmoid, we **transform** the linear model’s output so it stays safely between 0 and 1.
+
+6. **How it works step by step**:
+   - Start with a linear model:  
+     \[
+     z = \beta_0 + \beta_1 x
+     \]
+     (This could be based on features like income, credit score, etc.)
+   - Plug this \( z \) into the sigmoid function:  
+     \[
+     \text{Probability} = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x)}}
+     \]
+   - Now the output is a valid probability between 0 and 1.
+
+7. **Final result: Logistic Regression Model**  
+   - Instead of predicting raw values, it predicts the **probability** of belonging to class 1 (e.g., “will repay loan”).
+   - We can then classify based on a threshold (usually 0.5):
+     - If probability ≥ 0.5 → predict "Yes"
+     - If probability < 0.5 → predict "No"
+
+---
+
+✅ **Summary**:  
+The **sigmoid function** ensures that no matter what the linear input is, the final output is a valid probability (between 0 and 1). This is why logistic regression is ideal for binary classification tasks like loan approval, disease detection, or spam filtering.
+
+
+----  cp1  ----
 
 """  
 
@@ -560,3 +747,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
