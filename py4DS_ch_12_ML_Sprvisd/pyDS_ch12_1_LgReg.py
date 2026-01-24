@@ -482,133 +482,6 @@ The **sigmoid function** ensures that no matter what the linear input is, the fi
 
 ----  cp1  ----
 
-"""  
-
-Hello everyone and welcome to the introduction to logistic regression lecture 
-
-
-
-----  Loan Example:  ----
-
-We can't use a normal linear regression model on binary groups. It won't lead to a good fit:
-
-For example if we take a look at this plot below we have a Y axis which represents the probability of belonging to a particular group.
-
-----  PLOT-illustration  ----
-
-Let's go ahead and imagine that this example plot is trying to predict likelihood of paying back a loan.
-
-
-We'll go ahead and label 0 percent probability as defaulting on their loan meaning they have a zero
-percent probability of being able to pay back their loan.
-And at the top we have one or a 100 percent probability as fully paying back their loan will go ahead
-and mark the X axis as some sort of paycheck value.
-
-
-
-That means if we go ahead and look at this data as your paycheck goes lower you have a closer to zero
-percent probability that you're going to be able to pay back your loan as your paycheck value gets higher
-.
-You didn't have closer to 100 percent probability of paying back your loan.
-
-
-
-The reason these yellow dashes are all either on 0 percent or 100 percent is because this is training
-data.
-
-
-Now if this was trading data and we try to use a linear regression model on it we would get a very bad
-fit.
-We would actually end up predicting probabilities below zero percent which doesn't really make any sense
-.
-
-
-Instead we can transform our linear regression to a logistic regression curve and you'll notice our
-logistic regression curve can only go between 0 and 1 and that's going to be the key to understanding
-classification.
-
-
-========================================
-
-Here’s a simplified, point-wise version of the explanation:
-
----
-
-### 🔹 Loan Example – Why We Need Logistic Regression
-
-1. **We’re predicting a yes/no outcome**:  
-   - Will a person pay back their loan? (Yes = 1, No = 0)
-
-2. **We can’t use normal linear regression for binary outcomes**:  
-   - Linear regression predicts continuous values, but here we need probabilities between 0 and 1.
-
-3. **X-axis: Paycheck amount**  
-   - Shows how much someone earns.
-
-4. **Y-axis: Probability of repaying the loan**  
-   - 0 = 0% chance (will default)  
-   - 1 = 100% chance (will repay)
-
-5. **Pattern in data**:  
-   - Lower paycheck → Lower chance of repayment → Closer to 0  
-   - Higher paycheck → Higher chance of repayment → Closer to 1
-
-6. **Training data points are only at 0 or 1**:  
-   - Because real people either paid back (1) or didn’t (0) — so dots are only on top (1) or bottom (0).
-
-7. **Problem with linear regression**:  
-   - If we fit a straight line, it might predict:
-     - Probabilities **below 0** (e.g., -20%) → doesn’t make sense
-     - Or **above 1** (e.g., 120%) → also impossible
-
-8. **Solution: Use logistic regression**:  
-   - Fits an S-shaped curve that **only stays between 0 and 1**
-   - Gives valid probability estimates for classification
-
-9. **Key idea**:  
-   - Logistic regression is made for predicting **categories** (like yes/no) by modeling **probabilities safely within 0 to 1**
-
----
-
-✅ Bottom line: For yes/no predictions (like loan repayment), use **logistic regression**, not linear regression — because probabilities must stay between 0% and 100%.
-
-========================================
-
-Using a logistic regression curve 
-
-
-----  sigmoid  ----
-the sigmoid.
-Also known as logistic function is going to be the key to understanding using logistic regression to
-perform a classification.
-The key secret to this function is that it can take in any value and its output is going to be between
-0 and 1.
-We take a look at the equation here on this plot.
-We have the sigmoid function plotted out on the z axis is going to be the bottom line.
-Usually the x x there here without noting it as theta of Z and the formula is theta of Z.
-So the function of z is equal to 1 over 1 plus E to the power of negative Z.
-
-
-
-The key thing to notice here is that it doesn't matter what value of Z you put into the logistic function
-or the sigmoid function.
-You'll always get a value between 0 and 1.
-So again if you take a look at this plot it doesn't matter that whatever value you put in for Z the
-output along the vertical axis is always going to be between 0 and 1.
-And that's the key the sigmoid function.
-This means that we can take her linear regression solution and place it into this sigmoid function and
-that's going to look like this.
-Remember our linear model followed a basic y equals x plus B principle.
-Here we have a linear model as y equals beta plus Beta 1 times X..
-If we take that linear model and put it into the sigmoid function we finally are able to transform this
-linear regression to a logistic model 
-
-----  cp2  ----
-
-meaning it doesn't matter whatever the value of the linear model
-output actually is.
-It's always going to be between 0 and 1 when we place it into the logistic model or the sigmoid function
-.
 
 
 
@@ -617,13 +490,19 @@ It's always going to be between 0 and 1 when we place it into the logistic model
 
 Again if you want more of you on this mathematics make sure to read sections 4 through 4.3 of introduction
 to Stichel learning.
+
+
 But the basic premise of all of this is that this results in a probability from zero to one of belonging
 in the one class again doesn't matter what we put in on this horizontal access on the vertical axis
 will always get some sort of probability between 0 and 1.
+
+
 That means we can set a cutoff point usually at 0.5 and we'll say if anything below results in 0.5 or
 below 0.5 that will go to class 0.
 Anything above belongs to class 1.
 So we're going to transform that 0.5 probability as a cutoff point.
+
+
 Let's go ahead and do a quick recap overview of what we just discussed.
 We can use the logistic function to output of values ranging from 0 to 1.
 Again it doesn't matter what we put along the horizontal axis we get a value from 0 to 1 based off of
@@ -632,6 +511,66 @@ to say if the probability is 50 percent or less of belonging to class 1 then we 
 as Class 0 in our binary classification.
 If we have a probability of 0.5 or above of belonging to a class 1 we'll go ahead and assign this new
 point to class 1.
+
+
+Here’s a clear, organized, and simplified point-wise version of the explanation:
+
+---
+
+### 🔹 Key Points: Using Logistic Regression for Classification
+
+1. **The logistic (sigmoid) function outputs probabilities between 0 and 1**  
+   - No matter what input value you give it, the output is always:
+     \[
+     0 < \text{Probability} < 1
+     \]
+   - This makes it perfect for predicting the chance of belonging to **Class 1** in binary classification.
+
+2. **We use this probability to make decisions**  
+   - Since the output is a probability, we can set a **threshold** (cutoff point) to decide the final class.
+
+3. **Common cutoff: 0.5**  
+   - If predicted probability **≤ 0.5** → classify as **Class 0**  
+   - If predicted probability **> 0.5** → classify as **Class 1**
+
+   Example:  
+   - 40% chance of repaying loan → Class 0 (likely to default)  
+   - 70% chance of repaying loan → Class 1 (likely to repay)
+
+4. **Why 0.5?**  
+   - It means "more likely than not"  
+   - Below 50% → less likely to belong to Class 1 → assign to Class 0  
+   - 50% or above → more likely to belong to Class 1 → assign to Class 1  
+   - It's a balanced, logical default (can be adjusted if needed)
+
+5. **This transforms regression into classification**  
+   - We start with a linear model (which can give any number)  
+   - Pass it through the sigmoid → get a probability  
+   - Apply threshold → get a final class (0 or 1)  
+   → This is how **logistic regression** works!
+
+6. **Quick Recap**  
+   ✅ Sigmoid function ensures output is always a valid probability (0 to 1)  
+   ✅ We interpret this probability as the likelihood of being in **Class 1**  
+   ✅ We use a cutoff (usually 0.5) to assign each case to a class  
+   ✅ This gives us a simple, effective binary classifier
+
+---
+
+📌 **Note**: For deeper math, refer to **Sections 4 to 4.3** of *An Introduction to Statistical Learning* (ISL).
+
+✅ **Bottom Line**: Logistic regression uses the sigmoid function to turn any input into a probability, then uses a threshold (like 0.5) to make final predictions — making it ideal for yes/no classification tasks.
+
+
+
+----  cp2  ----
+
+
+
+
+
+----  Model evaluation using confusion metrix  ----
+
 All right.
 So let's go ahead and talk about model evaluation and using a confusion matrix after you train a logistic
 regression model to classify some training data.
@@ -747,4 +686,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
