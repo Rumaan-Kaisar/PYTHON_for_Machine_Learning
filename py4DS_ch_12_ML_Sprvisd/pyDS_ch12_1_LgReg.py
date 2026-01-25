@@ -647,57 +647,93 @@ No they do not have the disease but in reality they actually did have a disease 
 
 ----  cp1  ----
 
+Here’s a clear, organized, and simplified point-wise explanation of **model evaluation using a confusion matrix**, based on your input:
+
+---
+
+### 🔹 Model Evaluation Using a Confusion Matrix
+
+#### 1. **Why evaluate a model?**
+- After training a classification model (like logistic regression), we need to check how well it performs.
+- We test it on **new data (test set)** where we already know the true answers.
+
+#### 2. **What is a confusion matrix?**
+- A table that compares:
+  - **Actual (true) values** vs.
+  - **Predicted (model's) values**
+- It helps us see how many predictions were correct and what kind of errors the model made.
+
+#### 3. **Example: Binary Classification – Disease Detection**
+- Two possible outcomes:
+  - **Positive (Yes)** = has the disease → labeled as **1**
+  - **Negative (No)** = does not have the disease → labeled as **0**
+
+#### 4. **Total Predictions**
+- Total patients tested: **165**
+- Model predicted:
+  - **"Yes" (has disease): 110 times**
+  - **"No" (no disease): 55 times**
+- Actual truth (from real diagnosis):
+  - **105 patients had the disease**
+  - **60 patients did not have the disease**
+
+---
+
+### 📊 The Confusion Matrix (with numbers)
+
+|                     | **Predicted: No** | **Predicted: Yes** |
+|---------------------|-------------------|--------------------|
+| **Actual: No**      | TN = 50           | FP = 10            |
+| **Actual: Yes**     | FN = 5            | TP = 100           |
+
+---
+
+### ✅ Key Terms (Counts, Not Rates)
+
+| Term | Full Name | Meaning | Example from Above |
+|------|-----------|-------|--------------------|
+| **TP** | True Positive | Predicted "Yes", and patient **actually has** the disease | **100** cases |
+| **TN** | True Negative | Predicted "No", and patient **really doesn’t have** the disease | **50** cases |
+| **FP** | False Positive | Predicted "Yes", but patient **does NOT have** the disease<br>(**Type I Error**) | **10** cases |
+| **FN** | False Negative | Predicted "No", but patient **actually HAS** the disease<br>(**Type II Error**) | **5** cases |
+
+> 🔍 Note:  
+> - **Diagonal (TP + TN)** = Correct predictions  
+> - **Off-diagonal (FP + FN)** = Mistakes
+
+---
+
+### ❓ What Can We Learn?
+
+- The model correctly identified **100 out of 105 sick patients** (great recall for positives).
+- It incorrectly told **5 sick people they were healthy** (dangerous false negatives).
+- It falsely alarmed **10 healthy people** that they had the disease (false positives).
+- Overall accuracy = (TP + TN) / Total = (100 + 50) / 165 ≈ **90.9%**
+
+But wait — even with high accuracy, **false negatives** can be critical in medical cases!
+
+---
+
+### ✅ Summary
+- A **confusion matrix** gives a detailed view of model performance beyond simple accuracy.
+- It shows:
+  - Where the model is right (TP, TN)
+  - Where it makes mistakes (FP, FN)
+- Helps identify risks like missing real diseases (FN) or causing unnecessary stress (FP).
+- Essential for improving models, especially in high-stakes areas like healthcare.
+
+> 💡 Tip: Always look at both types of errors — sometimes reducing **false negatives** is more important than overall accuracy.
+
+--- 
+
+📌 **Next Step**: Use this matrix to calculate metrics like **accuracy, precision, recall, and F1-score** for deeper insights.
 
 
 
-----  Model evaluation using confusion metrix  ----
 
-All right.
-So let's go ahead and talk about model evaluation and using a confusion matrix after you train a logistic
-regression model to classify some training data.
-You're going to want to evaluate your model's performance on some test data.
-You can use a confusion matrix to evaluate classification models a confusion matrix is a table that
-is often used to describe the performance of a classification model on a set of test data for which
-the true values are already known.
-The confusion matrix itself is actually relatively simple to understand but sometimes the related terminology
-can be confusing.
-Let's go ahead and walk through this example.
-In this case we have a binary classification problem.
-So in this example we're testing for the presence of a disease where no is a negative test which is
-false equals zero.
-Yes is a positive test where true is equal to one.
-What can we learn from this matrix.
-Well there are two possible predicted classes.
-Yes and no.
-If we were predicting the presence of a disease for example yes it would mean that they have disease
-.
-No it would mean that they don't have disease.
-The classifier made a total of a hundred and sixty five predictions meaning 165 patients were tested
-for the presence of the disease.
-Out of those 165 cases the classifier predicted a yes 110 times and no.
-Fifty five times.
-In reality meaning we already have label test data 105 patients in the sample have the disease and 60
-patients do not.
-Now let's go ahead and define the most basic terms the basic terms are the whole number it terms so
-not rates just hold numbers and those terms are true positives true negatives false positives and false
-negatives.
-You may already be familiar of this terminology.
-If you've ever had a deal of studies related to vaccine checks or disease checks a true positive.
-Are the cases in which we predicted.
-Yes that they have disease.
-And in reality they do have the disease.
-That's T.P. true positive.
-In this case you can find it here at the bottom quadrant where T-P is equal to 100 true negatives are
-where we predicted.
-Know that they don't have disease.
-And in reality again they don't actually have.
-That's on the upper left hand corner T.N. and that's equal to 50.
-So those are true positives and true negatives that don't have false positives and false negatives false
-positives are where we predicted.
-Yes that they have to Zeese that in reality they don't actually have the.
-This is also known as a type 1 error that only have false negatives where we predicted.
-No they do not have the disease but in reality they actually did have a disease that's not as a type
-2 error.
+----  Rates  ----
+9.36
+
 Then we can talk about rates.
 The first rate we can discuss is accuracy.
 What this is actually getting at is overall how often is it correct.
@@ -767,4 +803,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
