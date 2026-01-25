@@ -480,8 +480,6 @@ Here’s a clear, point-wise and simplified explanation:
 The **sigmoid function** ensures that no matter what the linear input is, the final output is a valid probability (between 0 and 1). This is why logistic regression is ideal for binary classification tasks like loan approval, disease detection, or spam filtering.
 
 
-----  cp1  ----
-
 
 
 
@@ -563,8 +561,91 @@ Here’s a clear, organized, and simplified point-wise version of the explanatio
 
 
 
-----  cp2  ----
 
+
+
+----  Model evaluation using confusion metrix  ----
+
+All right.
+So let's go ahead and talk about model evaluation and using a confusion matrix 
+
+
+
+after you train a logistic
+regression model to classify some training data.
+You're going to want to evaluate your model's performance on some test data.
+
+
+You can use a confusion matrix to evaluate classification models 
+
+
+
+a confusion matrix is a table that
+is often used to describe the performance of a classification model on a set of test data for which
+the true values are already known.
+The confusion matrix itself is actually relatively simple to understand but sometimes the related terminology
+can be confusing.
+
+
+Let's go ahead and walk through this example.
+In this case we have a binary classification problem.
+
+
+So in this example we're testing for the presence of a disease where no is a negative test which is
+false equals zero.
+Yes is a positive test where true is equal to one.
+ 
+
+What can we learn from this matrix.
+Well there are two possible predicted classes.
+Yes and no.
+
+
+If we were predicting the presence of a disease for example yes it would mean that they have disease
+.
+No it would mean that they don't have disease. 
+
+
+The classifier made a total of a hundred and sixty five predictions meaning 165 patients were tested
+for the presence of the disease.
+Out of those 165 cases the classifier predicted a yes 110 times and no.
+Fifty five times.
+  
+
+
+In reality meaning we already have label test data 105 patients in the sample have the disease and 60
+patients do not.
+Now let's go ahead and define the most basic terms 
+
+
+the basic terms are the whole number it terms so
+not rates just hold numbers and those terms are true positives true negatives false positives and false
+negatives.
+
+
+You may already be familiar of this terminology.
+If you've ever had a deal of studies related to vaccine checks or disease checks a true positive.
+Are the cases in which we predicted.
+Yes that they have disease.
+And in reality they do have the disease.
+That's T.P. true positive.
+
+
+In this case you can find it here at the bottom quadrant where T-P is equal to 100 true negatives are
+where we predicted.
+Know that they don't have disease.
+And in reality again they don't actually have.
+That's on the upper left hand corner T.N. and that's equal to 50.
+
+
+So those are true positives and true negatives that don't have false positives and false negatives false
+positives are where we predicted.
+Yes that they have to Zeese that in reality they don't actually have the.
+This is also known as a type 1 error that only have false negatives where we predicted.
+No they do not have the disease but in reality they actually did have a disease that's not as a type
+2 error.
+
+----  cp1  ----
 
 
 
@@ -686,3 +767,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
