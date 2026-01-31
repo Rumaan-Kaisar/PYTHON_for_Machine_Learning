@@ -796,48 +796,109 @@ OK thanks everyone and I'll see if the next lecture
 
 
 
-----  Rates  ----
-9.36
+Here’s a clear, organized, and simplified version of your content — now structured point-by-point for better understanding:
 
-Then we can talk about rates.
-The first rate we can discuss is accuracy.
-What this is actually getting at is overall how often is it correct.
-A lot of times when you hear reports on studies they'll just tell you the accuracy and the accuracy
-is calculated by the number of true positives plus the number of true negatives over the total.
-In this case our model is 91 percent accurate.
-Then we have the misclassification rate which is answering the question.
-Overall how often is the model wrong.
-This is going to be calculated by the number of false positives plus a number of false negatives divided
-by the total.
-So that's 15 divided by a five.
-Overall this is 9 percent error rate or misclassification rate.
-Now let me discuss a nice quick way to remember false positives vs. false negatives.
-Or your type 1 error versus your type 2 error remember are false positives that I'm pointing out here
-of the laser P is equal to 10 that's where we predicted Yes but they didn't actually have the disease
-.
-That's Type 1 error.
-False negatives is what we predicted.
-No but they actually do has a disease that's known as type 2 error.
-Go ahead and move along.
-We can think of type 1 error and type 2 errors as this funny little diagram as a nice way to remember
-it.
-So a type 1 error is where you're telling a man they're pregnant again.
-You're predicting.
-Yes they're pregnant but they actually don't have the pregnancy type.
-To err is a false negative.
-Here you're saying someone that's obviously pregnant that they're not pregnant.
-So you're predicting.
-No but they actually are pregnant.
-And that's the difference in a type 1 ere type 2 error false positives vs. false negatives and statistics
-are commonly referred to as type 1 or Type 2 instead of their actual names false positive or false negative
-.
-Hopefully this is a nice helpful and funny reminder on how to actually memorize these terms.
-Let's go ahead and begin to explore an example of logistic regression using the famous Titanic data
-set will use Python to attempt to predict whether or not a passenger survived based off of their features
-.
-Then you'll have a portfolio project with some advertising data trying to predict whether or not a customer
-clicked on an ad.
-OK thanks everyone and I'll see if the next lecture
+---
+
+### 🔹 Model Evaluation: Understanding Rates from the Confusion Matrix
+
+After building a classification model (like logistic regression), we use **rates** to evaluate its performance more deeply.
+
+Let’s break down the key metrics using our earlier example (disease detection with 165 patients):
+
+|                     | Predicted No | Predicted Yes |
+|---------------------|--------------|---------------|
+| **Actual No**       | TN = 50      | FP = 10       |
+| **Actual Yes**       | FN = 5       | TP = 100      |
+
+---
+
+#### 1. **Accuracy – How often is the model correct?**
+- Measures overall correctness.
+- Formula:
+  \[
+  \text{Accuracy} = \frac{\text{True Positives (TP)} + \text{True Negatives (TN)}}{\text{Total Predictions}}
+  \]
+- Calculation:
+  \[
+  \frac{100 + 50}{165} = \frac{150}{165} ≈ 0.909 → \textbf{91\% accurate}
+  \]
+
+✅ Interpretation: The model is right 91% of the time.
+
+---
+
+#### 2. **Misclassification Rate – How often is the model wrong?**
+- Also called **error rate**.
+- Formula:
+  \[
+  \text{Error Rate} = \frac{\text{False Positives (FP)} + \text{False Negatives (FN)}}{\text{Total}}
+  \]
+- Calculation:
+  \[
+  \frac{10 + 5}{165} = \frac{15}{165} ≈ 0.091 → \textbf{9\% error rate}
+  \]
+
+❌ Interpretation: The model makes a mistake in about 1 out of every 11 cases.
+
+> 🔄 Note:  
+> Accuracy + Error Rate = 100%
+
+---
+
+### 🔁 Quick Tip: Remembering False Positives vs. False Negatives
+
+It's easy to mix up **Type I** and **Type II** errors. Here’s a fun way to remember:
+
+#### ✅ **False Positive (Type I Error)**  
+- You predict **YES**, but it’s actually **NO**  
+- Example: Telling a **man** he’s pregnant ❌  
+  → He doesn’t have the condition, but you said he does  
+- FP = 10 in our example
+
+🧠 Think: *"False alarm"*
+
+---
+
+#### ✅ **False Negative (Type II Error)**  
+- You predict **NO**, but it’s actually **YES**  
+- Example: Telling a **very pregnant person** they’re *not* pregnant ❌  
+  → They clearly have the condition, but you missed it  
+- FN = 5 in our example
+
+🧠 Think: *"Missed diagnosis"*
+
+> 💡 In statistics, these are also called:
+> - **Type I Error** = False Positive
+> - **Type II Error** = False Negative
+
+This humorous analogy helps you remember which is which — especially when stakes are high (like medicine or safety).
+
+---
+
+### 🚀 What’s Next?
+
+Now that we understand evaluation metrics, let’s apply logistic regression in real-world projects:
+
+1. **Titanic Dataset (Python Example)**  
+   - Predict whether a passenger **survived** the Titanic disaster  
+   - Based on features like age, gender, class, etc.
+
+2. **Portfolio Project: Advertising Data**  
+   - Predict if a customer **clicked on an ad**  
+   - Great for practicing classification and adding to your data science portfolio
+
+---
+
+👋 That’s it for now!  
+In the next lecture, we’ll dive into coding these models and interpreting results step by step.
+
+See you there! 😊
+
+
+
+
+
 
 """
 
@@ -868,4 +929,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
