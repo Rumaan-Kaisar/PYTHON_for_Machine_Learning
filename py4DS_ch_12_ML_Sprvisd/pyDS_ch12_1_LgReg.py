@@ -645,7 +645,7 @@ This is also known as a type 1 error that only have false negatives where we pre
 No they do not have the disease but in reality they actually did have a disease that's not as a type
 2 error.
 
-----  cp1  ----
+----    ----
 
 Here’s a clear, organized, and simplified point-wise explanation of **model evaluation using a confusion matrix**, based on your input:
 
@@ -737,6 +737,71 @@ But wait — even with high accuracy, **false negatives** can be critical in med
 Then we can talk about rates.
 The first rate we can discuss is accuracy.
 What this is actually getting at is overall how often is it correct.
+
+
+A lot of times when you hear reports on studies they'll just tell you the accuracy and the accuracy
+is calculated by the number of true positives plus the number of true negatives over the total.
+In this case our model is 91 percent accurate.
+
+
+Then we have the misclassification rate which is answering the question.
+Overall how often is the model wrong.
+
+
+This is going to be calculated by the number of false positives plus a number of false negatives divided
+by the total.
+So that's 15 divided by a five.
+Overall this is 9 percent error rate or misclassification rate.
+
+
+
+Now let me discuss a nice quick way to remember false positives vs. false negatives.
+Or your type 1 error versus your type 2 error remember are false positives that I'm pointing out here
+of the laser P is equal to 10 that's where we predicted Yes but they didn't actually have the disease
+.
+That's Type 1 error.
+False negatives is what we predicted.
+No but they actually do has a disease that's known as type 2 error.
+Go ahead and move along.
+We can think of type 1 error and type 2 errors as this funny little diagram as a nice way to remember
+it.
+So a type 1 error is where you're telling a man they're pregnant again.
+You're predicting.
+Yes they're pregnant but they actually don't have the pregnancy type.
+
+
+
+To err is a false negative.
+Here you're saying someone that's obviously pregnant that they're not pregnant.
+So you're predicting.
+No but they actually are pregnant.
+And that's the difference in a type 1 ere type 2 error false positives vs. false negatives and statistics
+are commonly referred to as type 1 or Type 2 instead of their actual names false positive or false negative
+.
+Hopefully this is a nice helpful and funny reminder on how to actually memorize these terms.
+
+
+
+Let's go ahead and begin to explore an example of logistic regression using the famous Titanic data
+set will use Python to attempt to predict whether or not a passenger survived based off of their features
+.
+Then you'll have a portfolio project with some advertising data trying to predict whether or not a customer
+clicked on an ad.
+OK thanks everyone and I'll see if the next lecture
+
+
+
+
+----  cp1  ----
+
+
+
+----  Rates  ----
+9.36
+
+Then we can talk about rates.
+The first rate we can discuss is accuracy.
+What this is actually getting at is overall how often is it correct.
 A lot of times when you hear reports on studies they'll just tell you the accuracy and the accuracy
 is calculated by the number of true positives plus the number of true negatives over the total.
 In this case our model is 91 percent accurate.
@@ -803,3 +868,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
