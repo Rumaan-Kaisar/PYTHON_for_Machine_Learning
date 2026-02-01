@@ -306,11 +306,9 @@
 
     ----  cp1  ----
 
-
-
-
-"""  
-
+    
+    
+        
 Hello everyone and welcome to the introduction to logistic regression lecture 
 
 
@@ -323,7 +321,7 @@ For example if we take a look at this plot below we have a Y axis which represen
 
 ----  PLOT-illustration  ----
 
-Let's go ahead and imagine that this example plot is trying to predict likelihood of paying back a loan.
+
 
 
 We'll go ahead and label 0 percent probability as defaulting on their loan meaning they have a zero
@@ -361,13 +359,13 @@ Here’s a simplified, point-wise version of the explanation:
 
 ---
 
-### 🔹 Loan Example – Why We Need Logistic Regression
+### 🔹 Loan Example – 
 
-1. **We’re predicting a yes/no outcome**:  
-   - Will a person pay back their loan? (Yes = 1, No = 0)
+1. ****:  
+   - 
 
-2. **We can’t use normal linear regression for binary outcomes**:  
-   - Linear regression predicts continuous values, but here we need probabilities between 0 and 1.
+2. ****:  
+    
 
 3. **X-axis: Paycheck amount**  
    - Shows how much someone earns.
@@ -946,4 +944,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
