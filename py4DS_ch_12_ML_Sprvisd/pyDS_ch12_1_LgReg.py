@@ -294,6 +294,23 @@
 
 """  
 
+    Following example demonstrates why We Need Logistic Regression:
+
+    Say we're trying to predict "likelihood of paying back a loan".
+        We're predicting a yes/no outcome
+        Will a person pay back their loan? (Yes = 1, No = 0)
+
+    We can't use normal linear regression for binary outcomes        
+        Linear regression predicts continuous values, 
+        But here we need probabilities between 0 and 1.
+
+    ----  cp1  ----
+
+
+
+
+"""  
+
 Hello everyone and welcome to the introduction to logistic regression lecture 
 
 
@@ -929,3 +946,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
