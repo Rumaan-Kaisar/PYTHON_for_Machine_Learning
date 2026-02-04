@@ -324,8 +324,12 @@
 
     ----  cp1  ----
 
+    Rev with GPT:
     
-    
+In the Y-axis
+    the points on the top (at y=1, all sits horizontal to x-axis) we have one or a 100 percent probability as fully paying back their loan will go ahead
+and mark the X axis as some sort of paycheck value.
+
         
 Hello everyone and welcome to the introduction to logistic regression lecture 
 
@@ -333,23 +337,11 @@ Hello everyone and welcome to the introduction to logistic regression lecture
 
 ----  Loan Example:  ----
 
-We can't use a normal linear regression model on binary groups. It won't lead to a good fit:
 
-For example if we take a look at this plot below we have a Y axis which represents the probability of belonging to a particular group.
-
-----  PLOT-illustration  ----
+That means if we go ahead and look at this data as your paycheck goes 
 
 
-
-
-We'll go ahead and label 0 percent probability as defaulting on their loan meaning they have a zero
-percent probability of being able to pay back their loan.
-And at the top we have one or a 100 percent probability as fully paying back their loan will go ahead
-and mark the X axis as some sort of paycheck value.
-
-
-
-That means if we go ahead and look at this data as your paycheck goes lower you have a closer to zero
+lower you have a closer to zero
 percent probability that you're going to be able to pay back your loan as your paycheck value gets higher
 .
 You didn't have closer to 100 percent probability of paying back your loan.
@@ -379,18 +371,6 @@ Here’s a simplified, point-wise version of the explanation:
 
 ### 🔹 Loan Example – 
 
-1. ****:  
-   - 
-
-2. ****:  
-    
-
-3. **X-axis: Paycheck amount**  
-   - Shows how much someone earns.
-
-4. **Y-axis: Probability of repaying the loan**  
-   - 0 = 0% chance (will default)  
-   - 1 = 100% chance (will repay)
 
 5. **Pattern in data**:  
    - Lower paycheck → Lower chance of repayment → Closer to 0  
@@ -962,4 +942,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
