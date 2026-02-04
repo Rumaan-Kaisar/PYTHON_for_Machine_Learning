@@ -300,9 +300,27 @@
         We're predicting a yes/no outcome
         Will a person pay back their loan? (Yes = 1, No = 0)
 
-    We can't use normal linear regression for binary outcomes        
+    We can't use normal linear regression for binary outcomes it won't lead to a good fit because:
         Linear regression predicts continuous values, 
         But here we need probabilities between 0 and 1.
+
+    
+    For example if we take a look at this plot below we have:
+
+        X-axis: Paycheck amount
+            Shows how much someone earns.
+
+        Y-axis: Probability of "repaying" the loan
+            0 = 0% chance (will default their loan)  
+            1 = 100% chance (will repay their loan)
+
+        The Y axis represents the probability of belonging to a particular group.
+
+        
+        ----  PLOT-illustration  ----
+
+        
+        
 
     ----  cp1  ----
 
@@ -944,3 +962,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
