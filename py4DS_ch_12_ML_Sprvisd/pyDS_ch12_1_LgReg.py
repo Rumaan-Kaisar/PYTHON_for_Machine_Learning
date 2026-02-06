@@ -308,9 +308,9 @@
     For example if we take a look at this plot below we have:
 
         X-axis: Paycheck amount
-            Shows how much someone earns.
+            Shows how much someone "earns".
 
-        Y-axis: Probability of "repaying" the loan
+        Y-axis: Scale of Probability of "repaying" the loan
             0 = 0% chance (will default their loan)  
             1 = 100% chance (will repay their loan)
 
@@ -319,7 +319,13 @@
         
         ----  PLOT-illustration  ----
 
+    Pattern in data:
+        - Lower paycheck → Probability of "repaying" the loan closer to 0  
+        - Higher paycheck → Probability of "repaying" the loan closer to 1  
         
+    Training data points are only at 0 or 1:  
+        Because real people either paid back (1) or didn't (0)
+        so dots are only on top (1) or bottom (0).
         
 
     ----  cp1  ----
@@ -942,3 +948,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
