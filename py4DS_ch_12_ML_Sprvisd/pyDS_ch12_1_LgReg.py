@@ -332,9 +332,7 @@
 
     Rev with GPT:
     
-In the Y-axis
-    the points on the top (at y=1, all sits horizontal to x-axis) we have one or a 100 percent probability as fully paying back their loan will go ahead
-and mark the X axis as some sort of paycheck value.
+
 
         
 Hello everyone and welcome to the introduction to logistic regression lecture 
@@ -342,21 +340,6 @@ Hello everyone and welcome to the introduction to logistic regression lecture
 
 
 ----  Loan Example:  ----
-
-
-That means if we go ahead and look at this data as your paycheck goes 
-
-
-lower you have a closer to zero
-percent probability that you're going to be able to pay back your loan as your paycheck value gets higher
-.
-You didn't have closer to 100 percent probability of paying back your loan.
-
-
-
-The reason these yellow dashes are all either on 0 percent or 100 percent is because this is training
-data.
-
 
 Now if this was trading data and we try to use a linear regression model on it we would get a very bad
 fit.
@@ -378,15 +361,12 @@ Here’s a simplified, point-wise version of the explanation:
 ### 🔹 Loan Example – 
 
 
-5. **Pattern in data**:  
-   - Lower paycheck → Lower chance of repayment → Closer to 0  
-   - Higher paycheck → Higher chance of repayment → Closer to 1
 
-6. **Training data points are only at 0 or 1**:  
-   - Because real people either paid back (1) or didn’t (0) — so dots are only on top (1) or bottom (0).
+
+
 
 7. **Problem with linear regression**:  
-   - If we fit a straight line, it might predict:
+   - If we fit a straight line (line that tries to fit those dots), it might predict:
      - Probabilities **below 0** (e.g., -20%) → doesn’t make sense
      - Or **above 1** (e.g., 120%) → also impossible
 
@@ -948,4 +928,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
