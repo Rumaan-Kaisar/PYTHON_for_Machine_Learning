@@ -344,18 +344,13 @@
     Rev with GPT:
     
 
+    
 
-        
 Hello everyone and welcome to the introduction to logistic regression lecture 
 
 
 
 ----  Loan Example:  ----
-
-Now if this was trading data and we try to use a linear regression model on it we would get a very bad
-fit.
-We would actually end up predicting probabilities below zero percent which doesn't really make any sense
-.
 
 
 Instead we can transform our linear regression to a logistic regression curve and you'll notice our
@@ -376,14 +371,9 @@ Here’s a simplified, point-wise version of the explanation:
 
 
 
-7. **Problem with linear regression**:  
-   - If we fit a straight line (line that tries to fit those dots), it might predict:
-     - Probabilities **below 0** (e.g., -20%) → doesn’t make sense
-     - Or **above 1** (e.g., 120%) → also impossible
 
-8. **Solution: Use logistic regression**:  
-   - Fits an S-shaped curve that **only stays between 0 and 1**
-   - Gives valid probability estimates for classification
+
+
 
 9. **Key idea**:  
    - Logistic regression is made for predicting **categories** (like yes/no) by modeling **probabilities safely within 0 to 1**
@@ -403,6 +393,7 @@ Using a logistic regression curve
 
 
 ----  sigmoid  ----
+
 the sigmoid.
 Also known as logistic function is going to be the key to understanding using logistic regression to
 perform a classification.
@@ -939,4 +930,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
