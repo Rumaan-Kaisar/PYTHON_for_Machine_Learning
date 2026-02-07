@@ -5,7 +5,7 @@
 # use SRT for detailed example with images
 # start from 1.11
 # NXT >> illustration
-################# (23-Jan-26 for 20-Jan-26)
+################# (06-Feb-26 for 07-Feb-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -327,7 +327,18 @@
         Because real people either paid back (1) or didn't (0)
         so dots are only on top (1) or bottom (0).
         
+    Problem with LINEAR regression: 
+        - Considering this dataset as traning data if we fit a straight line, it might predict:
+          (line that tries to fit those dots)
+        - Probabilities below 0 (e.g., -20%) which doesn't make sense
+        - Or above 1 (e.g., 120%) also impossible
 
+        
+    Solution: "Use LOGISTIC regression"
+        - Fits an S-shaped curve that only stays between 0 and 1
+        - Gives valid probability estimates for classification
+
+        
     ----  cp1  ----
 
     Rev with GPT:
@@ -928,3 +939,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
