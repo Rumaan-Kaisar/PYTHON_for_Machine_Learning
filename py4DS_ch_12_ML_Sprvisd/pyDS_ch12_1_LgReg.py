@@ -5,7 +5,7 @@
 # use SRT for detailed example with images
 # start from 1.11
 # NXT >> illustration
-################# (06-Feb-26 for 07-Feb-26)
+################# (07-Feb-26 for 08-Feb-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -338,10 +338,20 @@
         - Fits an S-shaped curve that only stays between 0 and 1
         - Gives valid probability estimates for classification
 
+
         
+    --------    sigmoid    --------
+
+    The SIGMOID also known as LOGISTIC FUNCTION is the heart of logistic regression to perform a classification.
+
+        Key idea:  
+            Logistic regression is made for predicting categories (like yes/no) 
+            by modeling "probabilities safely within 0 to 1"
+
     ----  cp1  ----
 
     Rev with GPT:
+    
     
 
     
@@ -930,3 +940,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
