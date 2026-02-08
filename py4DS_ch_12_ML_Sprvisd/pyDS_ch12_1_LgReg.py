@@ -352,20 +352,11 @@
 
     Rev with GPT:
     
-    
-
-    
-
-Hello everyone and welcome to the introduction to logistic regression lecture 
 
 
+----  rev[07-Feb-2026] about Sigmoid  ----
 
-----  Loan Example:  ----
 
-
-Instead we can transform our linear regression to a logistic regression curve and you'll notice our
-logistic regression curve can only go between 0 and 1 and that's going to be the key to understanding
-classification.
 
 
 ========================================
@@ -377,16 +368,6 @@ Here’s a simplified, point-wise version of the explanation:
 ### 🔹 Loan Example – 
 
 
-
-
-
-
-
-
-
-
-9. **Key idea**:  
-   - Logistic regression is made for predicting **categories** (like yes/no) by modeling **probabilities safely within 0 to 1**
 
 ---
 
@@ -402,11 +383,8 @@ Here’s a simplified, point-wise version of the explanation:
 Using a logistic regression curve 
 
 
-----  sigmoid  ----
 
-the sigmoid.
-Also known as logistic function is going to be the key to understanding using logistic regression to
-perform a classification.
+
 The key secret to this function is that it can take in any value and its output is going to be between
 0 and 1.
 We take a look at the equation here on this plot.
@@ -442,7 +420,7 @@ Here’s a clear, point-wise and simplified explanation:
 
 ### 🔹 Understanding the Sigmoid Function in Logistic Regression
 
-1. **The sigmoid function is the heart of logistic regression**  
+1. **The sigmoid function **  
    - It’s what turns a linear model into a classification tool.
 
 2. **Formula of the sigmoid function**:  
@@ -940,4 +918,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
