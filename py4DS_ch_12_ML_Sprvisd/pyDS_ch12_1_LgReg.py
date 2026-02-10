@@ -379,11 +379,11 @@
 
 ========================================
 
-Here’s a simplified, point-wise version of the explanation:
+Here's a simplified, point-wise version of the explanation:
 
 ---
 
-### 🔹 Loan Example – 
+
 
 
 
@@ -403,21 +403,7 @@ Using a logistic regression curve
 
 
 
-The key secret to this function is that it can take in any value and its output is going to be between
-0 and 1.
-We take a look at the equation here on this plot.
-We have the sigmoid function plotted out on the z axis is going to be the bottom line.
-Usually the x x there here without noting it as theta of Z and the formula is theta of Z.
-So the function of z is equal to 1 over 1 plus E to the power of negative Z.
 
-
-
-The key thing to notice here is that it doesn't matter what value of Z you put into the logistic function
-or the sigmoid function.
-You'll always get a value between 0 and 1.
-So again if you take a look at this plot it doesn't matter that whatever value you put in for Z the
-output along the vertical axis is always going to be between 0 and 1.
-And that's the key the sigmoid function.
 This means that we can take her linear regression solution and place it into this sigmoid function and
 that's going to look like this.
 Remember our linear model followed a basic y equals x plus B principle.
@@ -436,23 +422,6 @@ Here’s a clear, point-wise and simplified explanation:
 
 ---
 
-### 🔹 Understanding the Sigmoid Function in Logistic Regression
-
-1. **The sigmoid function **  
-   - It’s what turns a linear model into a classification tool.
-
-2. **Formula of the sigmoid function**:  
-   \[
-   \sigma(z) = \frac{1}{1 + e^{-z}}
-   \]  
-   - This is also called the **logistic function**.
-
-3. **Key property: Output is always between 0 and 1**  
-   - No matter what value you give for \( z \), the result will always be:
-     \[
-     0 < \sigma(z) < 1
-     \]
-   - This makes it perfect for predicting **probabilities** (e.g., "What’s the chance this person will repay?").
 
 4. **Graph shape: S-shaped curve**  
    - As \( z \) gets very large → output approaches 1  
@@ -936,4 +905,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
