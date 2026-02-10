@@ -74,7 +74,8 @@
                 z = (w^T)x + b
 
             No matter how large or small the input value z is, 
-            the output always lies between 0 and 1.
+            the "output" always lies between 0 and 1
+            i.e. 0 < sigma(z) < 1.
 
         This property makes the sigmoid function ideal for "Modeling Probabilities".
 
@@ -82,9 +83,13 @@
             For example, by substituting the linear combination "z = b0 + b1*x" into the sigmoid function,
                 logistic regression produces outputs that can be interpreted as-
                 "the probability of belonging to class 1 or class 0".        
-        
+
+
+
+        ----####  FIG_1 from lecture (logistic only)  ####----
                 
 
+        
     ----  From Linear Model to Logistic Model  ----
 
         A standard linear model has the form:
@@ -99,6 +104,10 @@
         This transformation ensures the final output is a valid probability in range [0. 1].
         As a result, logistic regression predicts the probability of belonging to "class 0" or "class 1".
         
+        
+
+        ----####  FIG_2 from lecture (logistic above linear)  ####----
+
 
 
     ----  Decision Boundary and Classification Rule  ----
@@ -113,6 +122,8 @@
         This converts probabilistic output into discrete class labels.
         i.e. this rule transforms "continuous probability estimates" into binary values like 0 and 1.        
 
+        
+    ----####  FIG_3 from lecture (logistic with threshold)  ####----
         
 
         
@@ -317,7 +328,7 @@
         The Y axis represents the probability of belonging to a particular group.
 
         
-        ----  PLOT-illustration  ----
+        ----  PLOT-illustration 1 (dots only)  ----
 
     Pattern in data:
         - Lower paycheck → Probability of "repaying" the loan closer to 0  
@@ -334,6 +345,9 @@
         - Or above 1 (e.g., 120%) also impossible
 
         
+        ----  PLOT-illustration 2 (dots & linear regression)  ----
+        
+        
     Solution: "Use LOGISTIC regression"
         - Fits an S-shaped curve that only stays between 0 and 1
         - Gives valid probability estimates for classification
@@ -347,6 +361,10 @@
         Key idea:  
             Logistic regression is made for predicting categories (like yes/no) 
             by modeling "probabilities safely within 0 to 1"
+
+        ----  PLOT-illustration 3 (linear vs logistic)  ----
+
+            
 
     ----  cp1  ----
 
@@ -918,3 +936,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
