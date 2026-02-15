@@ -393,29 +393,10 @@ Here's a simplified, point-wise version of the explanation:
 
 
 
----
-
-✅ Bottom line: For yes/no predictions (like loan repayment), use **logistic regression**, not linear regression — because probabilities must stay between 0% and 100%.
-
-
-
-
-
 
 ========================================
 
 Using a logistic regression curve 
-
-
-
-
-
-This means that we can take her linear regression solution and place it into this sigmoid function and
-that's going to look like this.
-Remember our linear model followed a basic y equals x plus B principle.
-Here we have a linear model as y equals beta plus Beta 1 times X..
-If we take that linear model and put it into the sigmoid function we finally are able to transform this
-linear regression to a logistic model 
 
 
 meaning it doesn't matter whatever the value of the linear model
@@ -911,4 +892,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
