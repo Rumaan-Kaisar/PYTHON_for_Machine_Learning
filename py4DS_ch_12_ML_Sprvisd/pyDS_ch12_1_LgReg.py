@@ -1,11 +1,11 @@
 
 ################# 0: FULL
 # copy:  
-# ----  rev  ----
+# ----  rev[10-Feb-2026] start: 116, 402  ----
 # use SRT for detailed example with images
-# start from 1.11
+# start from 4.27
 # NXT >> illustration
-################# (07-Feb-26 for 08-Feb-26)
+################# (10-Feb-26 for 11-Feb-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -94,19 +94,25 @@
 
         A standard linear model has the form:
 
-                z = b0 + b1*x
+                z = b_0 + b_1*x
 
             or more generally
                 
                 z = (w^T)*x + b
 
         Logistic regression applies the sigmoid function to this linear combination.
+        (i.e. we can take the linear regression solution and place it into this sigmoid function.)
         This transformation ensures the final output is a valid probability in range [0. 1].
         As a result, logistic regression predicts the probability of belonging to "class 0" or "class 1".
+        Notice folloing FIG.
         
         
+        ----####  FIG_2 "putting liner function into sigmoid function yeilds linear regression" from lecture (logistic above linear, change variable, y to z in fig)  ####----
 
-        ----####  FIG_2 from lecture (logistic above linear)  ####----
+        Here we have a linear model as:
+                z = b_0 + b_1*x
+            If we take that linear model and put it into the "sigmoid function"
+            we are transforming this linear regression to a logistic model.
 
 
 
@@ -905,3 +911,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
