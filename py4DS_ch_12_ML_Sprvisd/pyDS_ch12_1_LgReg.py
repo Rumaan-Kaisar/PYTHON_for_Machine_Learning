@@ -114,8 +114,12 @@
             If we take that linear model and put it into the "sigmoid function"
             we are transforming this linear regression to a logistic model.
 
+            i.e. whatever output 'z' is produced, after putting 'z' into the sigmoid function the result will be between 0 and 1
 
 
+            
+
+            
     ----  Decision Boundary and Classification Rule  ----
 
     Once a probability is obtained from the logistic model,
@@ -375,7 +379,7 @@
     ----  cp1  ----
 
     Rev with GPT:
-    
+        
 
 
 ----  rev[07-Feb-2026] about Sigmoid  ----
@@ -892,3 +896,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
