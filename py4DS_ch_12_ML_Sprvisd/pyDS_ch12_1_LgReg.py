@@ -379,7 +379,7 @@
     ----  cp1  ----
 
     Rev with GPT:
-        
+    
 
 
 ----  rev[07-Feb-2026] about Sigmoid  ----
@@ -401,12 +401,6 @@ Here's a simplified, point-wise version of the explanation:
 ========================================
 
 Using a logistic regression curve 
-
-
-meaning it doesn't matter whatever the value of the linear model
-output actually is.
-It's always going to be between 0 and 1 when we place it into the logistic model or the sigmoid function
-.
 
 
 Here’s a clear, point-wise and simplified explanation:
@@ -896,4 +890,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
