@@ -116,8 +116,27 @@
 
             i.e. whatever output 'z' is produced, after putting 'z' into the sigmoid function the result will be between 0 and 1
 
+        Graph shape: S-shaped curve
+            As z gets very large → output approaches 1  
+            As z gets very small (negative) → output approaches 0  
+            At z = 0 → output = 0.5
 
-            
+        How it works step by step:                        
+            Linear regression can output any number (even -5 or +10), which doesn't work for probabilities.
+            But with the sigmoid, we transform the linear model's output so it stays between 0 and 1.
+
+            STEPS:
+                Start with a linear model:  
+                        z = b_0 + b_1*x
+                    (This could be based on features like income, credit score, etc.)
+
+                Plug this z into the sigmoid function: 
+
+                        sigma(z) = 1/(1 + e^(-z))
+                i.e     Probability = 1/(1 + e^-(b_0 + b_1*x))
+
+                Now the output is a valid probability between 0 and 1.
+
 
             
     ----  Decision Boundary and Classification Rule  ----
@@ -379,7 +398,7 @@
     ----  cp1  ----
 
     Rev with GPT:
-    
+
 
 
 ----  rev[07-Feb-2026] about Sigmoid  ----
@@ -890,3 +909,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
