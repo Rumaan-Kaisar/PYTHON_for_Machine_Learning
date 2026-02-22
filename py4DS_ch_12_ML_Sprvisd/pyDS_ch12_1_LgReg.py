@@ -436,91 +436,9 @@ Here's a simplified, point-wise version of the explanation:
 
 
 
-✅ **Summary**:  
-The **sigmoid function** ensures that no matter what the linear input is, the final output is a valid probability (between 0 and 1). This is why logistic regression is ideal for binary classification tasks like loan approval, disease detection, or spam filtering.
 
 
-
-
-
-----  rev[17-Feb-2026] 5.00  ----
-
-
-Again if you want more of you on this mathematics make sure to read sections 4 through 4.3 of introduction
-to Stichel learning.
-
-
-But the basic premise of all of this is that this results in a probability from zero to one of belonging
-in the one class again doesn't matter what we put in on this horizontal access on the vertical axis
-will always get some sort of probability between 0 and 1.
-
-
-That means we can set a cutoff point usually at 0.5 and we'll say if anything below results in 0.5 or
-below 0.5 that will go to class 0.
-Anything above belongs to class 1.
-So we're going to transform that 0.5 probability as a cutoff point.
-
-
-Let's go ahead and do a quick recap overview of what we just discussed.
-We can use the logistic function to output of values ranging from 0 to 1.
-Again it doesn't matter what we put along the horizontal axis we get a value from 0 to 1 based off of
-this probability we will assign a class by putting a cutoff point 0.5 which makes sense because we want
-to say if the probability is 50 percent or less of belonging to class 1 then we should classify this
-as Class 0 in our binary classification.
-If we have a probability of 0.5 or above of belonging to a class 1 we'll go ahead and assign this new
-point to class 1.
-
-
-Here’s a clear, organized, and simplified point-wise version of the explanation:
-
----
-
-### 🔹 Key Points: Using Logistic Regression for Classification
-
-1. **The logistic (sigmoid) function outputs probabilities between 0 and 1**  
-   - No matter what input value you give it, the output is always:
-     \[
-     0 < \text{Probability} < 1
-     \]
-   - This makes it perfect for predicting the chance of belonging to **Class 1** in binary classification.
-
-2. **We use this probability to make decisions**  
-   - Since the output is a probability, we can set a **threshold** (cutoff point) to decide the final class.
-
-3. **Common cutoff: 0.5**  
-   - If predicted probability **≤ 0.5** → classify as **Class 0**  
-   - If predicted probability **> 0.5** → classify as **Class 1**
-
-   Example:  
-   - 40% chance of repaying loan → Class 0 (likely to default)  
-   - 70% chance of repaying loan → Class 1 (likely to repay)
-
-4. **Why 0.5?**  
-   - It means "more likely than not"  
-   - Below 50% → less likely to belong to Class 1 → assign to Class 0  
-   - 50% or above → more likely to belong to Class 1 → assign to Class 1  
-   - It's a balanced, logical default (can be adjusted if needed)
-
-5. **This transforms regression into classification**  
-   - We start with a linear model (which can give any number)  
-   - Pass it through the sigmoid → get a probability  
-   - Apply threshold → get a final class (0 or 1)  
-   → This is how **logistic regression** works!
-
-6. **Quick Recap**  
-   ✅ Sigmoid function ensures output is always a valid probability (0 to 1)  
-   ✅ We interpret this probability as the likelihood of being in **Class 1**  
-   ✅ We use a cutoff (usually 0.5) to assign each case to a class  
-   ✅ This gives us a simple, effective binary classifier
-
----
-
-📌 **Note**: For deeper math, refer to **Sections 4 to 4.3** of *An Introduction to Statistical Learning* (ISL).
-
-✅ **Bottom Line**: Logistic regression uses the sigmoid function to turn any input into a probability, then uses a threshold (like 0.5) to make final predictions — making it ideal for yes/no classification tasks.
-
-
-
+----  rev[21-Feb-2026] 5.00  ----
 
 
 
@@ -889,4 +807,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
