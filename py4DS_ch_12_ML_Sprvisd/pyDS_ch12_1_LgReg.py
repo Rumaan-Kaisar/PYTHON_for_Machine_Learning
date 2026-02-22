@@ -115,6 +115,8 @@
             we are transforming this linear regression to a logistic model.
 
             i.e. whatever output 'z' is produced, after putting 'z' into the sigmoid function the result will be between 0 and 1
+            i.e. it doesn't matter what we put in on the horizontal axis, 
+                on the vertical axis we'll always get a probability between 0 and 1.
 
         Graph shape: S-shaped curve
             As z gets very large → output approaches 1  
@@ -136,24 +138,37 @@
                 i.e     Probability = 1/(1 + e^-(b_0 + b_1*x))
 
                 Now the output is a valid probability between 0 and 1.
+                We use this probability to make decisions.
 
 
             
     ----  Decision Boundary and Classification Rule  ----
 
     Once a probability is obtained from the logistic model,
-        a cutoff (decision threshold) value is chosen, commonly "0.5" to assign class labels.
+        a cutoff (decision threshold) value is chosen, commonly "0.5"
+
+    This "cutoff point" (can be adjusted if needed) is used  to assign class labels.
 
     Classification rule:
-        If predicted probability < 0.5 : assign "class 0"
-        If predicted probability ≥ 0.5 : assign "class 1"
+        If predicted probability < 0.5 of belonging to class 1 :    assign "class 0"
+        If predicted probability ≥ 0.5 of belonging to class 1 :    assign "class 1"
 
         This converts probabilistic output into discrete class labels.
         i.e. this rule transforms "continuous probability estimates" into binary values like 0 and 1.        
 
+        Example:  
+            - 40% chance of repaying loan → Class 0 (likely to default)
+            - 70% chance of repaying loan → Class 1 (likely to repay)
+
         
     ----####  FIG_3 from lecture (logistic with threshold)  ####----
-        
+
+    STEPS to transforms regression into classification:
+        - We start with a linear model (which can give any number)  
+        - Pass it through the sigmoid → get a probability  
+        - Apply threshold → get a final class (0 or 1)  
+
+        This is how **logistic regression** works!        
 
         
     ----------------    Model Evaluation : CONFUSION MATRIX    ----------------
@@ -874,3 +889,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
