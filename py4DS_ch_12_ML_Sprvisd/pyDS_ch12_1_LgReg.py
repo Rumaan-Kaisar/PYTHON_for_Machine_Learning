@@ -170,7 +170,9 @@
 
         This is how **logistic regression** works!        
 
-        
+
+
+
     ----------------    Model Evaluation : CONFUSION MATRIX    ----------------
 
     After training a logistic regression model, its PERFORMANCE is evaluated using CONFUSION MATRIX on "test data".
@@ -259,13 +261,44 @@
             Misclassification Rate = (FP + FN)/(TP + TN + FP + FN)
                                     = (FP + FN)/(Total predictions)
 
-        For example, in a test involving 165 patients where 105 had a disease and 60 did not, 
+                                    
+        ----------------    EXAMPLE    ----------------
+
+        For EXAMPLE, in a test involving 165 patients where 105 had a disease and 60 did not, 
             a model yielding:
                 100 true positives, 
                 50 true negatives, 
                 10 false positives, and 
                 5 false negatives 
             would achieve an accuracy of approximately 91% and a misclassification rate of 9%.
+
+            Presence of a disease where:
+
+                NO  = negative test = FALSE = 0
+                YES = positive test = FALSE = 0
+
+            ------------------------|---------------------------|-----------------------------
+            n = 165                 |   Predicted "NO" = 55     |   Predicted "YES" = 100
+            ------------------------|---------------------------|-----------------------------
+            Actual "NO" = 60        |   TN = 50                 |   FP = 10
+            ------------------------|---------------------------|-----------------------------
+            Actual "YES" = 105      |   FN = 5                  |   TP = 100            
+            ------------------------|---------------------------|-----------------------------
+
+            What can we learn from this matrix:
+                Binary classification: there are two possible predicted classes- YES and NO.
+
+                    YES: it would mean that patients have disease
+                    NO: it would mean that patients don't have disease. 
+
+                The classifier made a total of a 165 predictions 
+                    meaning 165 patients were tested for the presence of the disease.
+
+                Out of those 165 cases, the classifier predicted: "YES" 110 times and "NO" 55 times.
+            
+                In actual data, we already have labeled test data where
+                    105 patients in the sample have the disease and 
+                    60 patients do not.
 
 
             
@@ -807,3 +840,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
