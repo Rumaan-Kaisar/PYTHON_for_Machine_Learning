@@ -449,7 +449,7 @@
     
 
 
-----  rev[07-Feb-2026] about Sigmoid  ----
+----  rev[22-Feb-2026] about Sigmoid  ----
 
 
 
@@ -468,66 +468,21 @@ Here's a simplified, point-wise version of the explanation:
 ========================================
 
 
-
-
-
-----  rev[21-Feb-2026] 5.00  ----
-
-
+----  rev[22-Feb-2026] 6.35  ----
 
 ----  Model evaluation using confusion metrix  ----
 
-All right.
-So let's go ahead and talk about model evaluation and using a confusion matrix 
-
-
-
-after you train a logistic
-regression model to classify some training data.
-You're going to want to evaluate your model's performance on some test data.
 
 
 You can use a confusion matrix to evaluate classification models 
 
 
 
-a confusion matrix is a table that
-is often used to describe the performance of a classification model on a set of test data for which
-the true values are already known.
-The confusion matrix itself is actually relatively simple to understand but sometimes the related terminology
-can be confusing.
 
 
-Let's go ahead and walk through this example.
-In this case we have a binary classification problem.
 
 
-So in this example we're testing for the presence of a disease where no is a negative test which is
-false equals zero.
-Yes is a positive test where true is equal to one.
- 
-
-What can we learn from this matrix.
-Well there are two possible predicted classes.
-Yes and no.
-
-
-If we were predicting the presence of a disease for example yes it would mean that they have disease
-.
-No it would mean that they don't have disease. 
-
-
-The classifier made a total of a hundred and sixty five predictions meaning 165 patients were tested
-for the presence of the disease.
-Out of those 165 cases the classifier predicted a yes 110 times and no.
-Fifty five times.
-  
-
-
-In reality meaning we already have label test data 105 patients in the sample have the disease and 60
-patients do not.
-Now let's go ahead and define the most basic terms 
-
+----  basic terms  ----
 
 the basic terms are the whole number it terms so
 not rates just hold numbers and those terms are true positives true negatives false positives and false
@@ -840,4 +795,3 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
-
