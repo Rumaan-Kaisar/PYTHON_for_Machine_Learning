@@ -179,6 +179,9 @@
     A confusion matrix summarizes prediction results when true labels are known.
     It is commonly used for "binary classification problems", such as disease detection.
 
+    Confusion Matrix is a table that compares:
+            Actual (true) values  VS  Predicted (model's) values
+
     Confusion Matrix:
         A confusion matrix is a table that visualizes a machine learning model's performance by 
             comparing its predicted classifications against the actual outcomes.
@@ -191,7 +194,6 @@
         It gives a detailed view beyond simple accuracy, especially for binary or multi-class problems. 
         
         A Confusion Matrix, also known as "Error Matrix"
-
 
 
     Confusion Matrix Components:
@@ -300,8 +302,19 @@
                     105 patients in the sample have the disease and 
                     60 patients do not.
 
+                - The model correctly identified "100 out of 105" sick patients (great recall for positives).
+                - It incorrectly told "5 sick people they were healthy" (dangerous false negatives, Type II).
+                - It falsely alarmed "10 healthy people" that they had the disease (false positives).
+                - Overall accuracy = (TP + TN) / Total = (100 + 50) / 165 ≈ **90.9%**
 
-            
+                But wait — even with high accuracy, "false negatives" can be critical in medical cases!
+
+        Tip: 
+            Always look at both types of errors 
+            Sometimes reducing "false negatives" is more important than overall accuracy.
+
+
+
     --------  Understanding Type I and Type II Errors  --------
 
     Type I errors (false positives) occur when the model incorrectly predicts a positive outcome-
@@ -795,3 +808,4 @@ P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
 - ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
 
 So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
+
