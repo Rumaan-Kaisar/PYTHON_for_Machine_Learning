@@ -1,11 +1,11 @@
 
 ################# 0: FULL
 # copy:  
-# ----  rev[10-Feb-2026] start: 116, 402  ----
+# ----  rev[15-apr-26] start: 116, 402  ----
 # use SRT for detailed example with images
 # start from 4.27
-# NXT >> illustration
-################# (10-Feb-26 for 11-Feb-26)
+
+################# (15-apr-26 for 17-Apr-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -176,7 +176,7 @@
     ----------------    Model Evaluation : CONFUSION MATRIX    ----------------
 
     After training a logistic regression model, its PERFORMANCE is evaluated using CONFUSION MATRIX on "test data".
-    A confusion matrix summarizes prediction results when true labels are known.
+    A confusion matrix summarizes prediction results when true labels are already known.
     It is commonly used for "binary classification problems", such as disease detection.
 
     Confusion Matrix is a table that compares:
@@ -216,6 +216,7 @@
             i.e. Predicted negative but actually positive.
             Also called Type II error.
 
+        Above trems are whole numbers (not rates or ratio)
         These terms are widely used in statistics, medicine, and hypothesis testing.
 
         
@@ -305,7 +306,14 @@
                 - The model correctly identified "100 out of 105" sick patients (great recall for positives).
                 - It incorrectly told "5 sick people they were healthy" (dangerous false negatives, Type II).
                 - It falsely alarmed "10 healthy people" that they had the disease (false positives).
-                - Overall accuracy = (TP + TN) / Total = (100 + 50) / 165 ≈ **90.9%**
+                
+            Accuracy:
+                - Overall accuracy = (TP + TN) / Total = (100 + 50) / 165 ≈ 90.9%
+                  (i.e. how often it gives correct prediction)
+
+                - Error rate = (FP + FN) / Total = (10 + 5) / 165 ≈ 9.1%
+                  (Misclassification rate, i.e. Overall how often the model is wrong)
+                  
 
                 But wait — even with high accuracy, "false negatives" can be critical in medical cases!
 
@@ -456,28 +464,7 @@
 
             
 
-    ----  cp1  ----
-
-    Rev with GPT:
-    
-
-
-========================================
-
-Here's a simplified, point-wise version of the explanation:
-
----
-
-
-
-
-
-
-========================================
-
-
-----  rev[24-Feb-2026] 9.35  ----
-
+    ----  cp1 [15-Apr-2026]  ----
 
 
 
