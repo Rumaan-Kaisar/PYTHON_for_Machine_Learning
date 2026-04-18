@@ -481,9 +481,11 @@
 
             
 
+    ----  cp1 [17-Apr-2026]  ----
 
 
----
+
+
 
 
 
@@ -497,7 +499,7 @@
 
 
 
-
+----  rev[17-Apr-2026]  ----
 
 Next Example:
 
@@ -620,28 +622,9 @@ See you there! 😊
 
 
 
-Yes, exactly! 🎯
 
-In **logistic regression**, we define:
 
-$$
-z = w^T x + b
-$$
 
-- Here, **\(z\)** is the **linear combination** of the input features \(x\) (with weights \(w\) and bias \(b\)).
-- Since \(x\), \(w\), and \(b\) are real numbers, **\(z\) can be any real number**: \(z \in (-\infty, +\infty)\).
 
-Then, we apply the **sigmoid (logistic) function** to \(z\):
 
-\[
-P(y = 1 \mid x) = \sigma(z) = \frac{1}{1 + e^{-z}}
-\]
 
-- The sigmoid **maps** the real-valued \(z\) to a value strictly between 0 and 1: \(\sigma(z) \in (0, 1)\).
-- This transformed output **can be interpreted as a probability**.
-
-### Summary:
-- ✅ **\(z = w^T x + b\)** → linear function → outputs any real number.
-- ✅ **\(\sigma(z)\)** → sigmoid function → outputs a valid probability in \((0, 1)\).
-
-So yes—you're absolutely right: **\(z\) is the linear function that produces any real value**, and the sigmoid ensures the final prediction is a proper probability.
