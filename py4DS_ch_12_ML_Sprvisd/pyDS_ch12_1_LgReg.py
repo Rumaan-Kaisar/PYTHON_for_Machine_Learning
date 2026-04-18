@@ -1,11 +1,11 @@
 
 ################# 0: FULL
 # copy:  
-# ----  rev[15-apr-26] start: 116, 402  ----
+# ----  rev[17-apr-26] start: 502 (Titanic example)  ----
 # use SRT for detailed example with images
-# start from 4.27
+# NXT >> Create ipynb "rouping part by part by GPT QWEN stylized form" >> add FIGS
 
-################# (15-apr-26 for 17-Apr-26)
+################# (17-apr-26 for 18-Apr-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -100,8 +100,20 @@
                 
                 z = (w^T)*x + b
 
-        Logistic regression applies the sigmoid function to this linear combination.
+            Here, z is the linear combination of the input features x with weights w and bias b.
+            Since x, w and b are real numbers, z can be any real number.
+
+        Logistic regression applies the sigmoid (logistic) function to this linear combination z.
         (i.e. we can take the linear regression solution and place it into this sigmoid function.)
+
+                P(y=1|x) = sigma(z) = 1/(1 + e^(-z))
+
+        P(y=1|x):
+            The conditional probability that the outcome y is 1 (e.g., "True," "Spam," "Positive") 
+            given input features x.
+                
+        The logistic (sigmoid) function used to predict the probability of a binary outcome (y=1) given input features x.
+        
         This transformation ensures the final output is a valid probability in range [0. 1].
         As a result, logistic regression predicts the probability of belonging to "class 0" or "class 1".
         Notice folloing FIG.
@@ -140,8 +152,13 @@
                 Now the output is a valid probability between 0 and 1.
                 We use this probability to make decisions.
 
+                
+    SUMMARY:
+        z = (w^T)*x + b  ->  linear function  ->  outputs any real number.
+        sigma(z)  ->  sigmoid function  ->  outputs a valid probability in (0, 1).
 
-            
+
+
     ----  Decision Boundary and Classification Rule  ----
 
     Once a probability is obtained from the logistic model,
@@ -463,8 +480,6 @@
         ----  PLOT-illustration 3 (linear vs logistic)  ----
 
             
-
-    ----  cp1 [15-Apr-2026]  ----
 
 
 
