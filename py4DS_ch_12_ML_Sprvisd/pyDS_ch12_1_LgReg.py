@@ -1,11 +1,11 @@
 
 ################# 0: FULL
 # copy:  
-# ----  rev[18-apr-26] start: 502 (Titanic example)  ----
-# use SRT for detailed example with images
-# NXT >> Create ipynb "grouping part by part by GPT QWEN stylized form" >> add FIGS
+# NXT   >> Create ipynb "grouping part by part by GPT QWEN stylized form" 
+#       >> do 100-150 line chunks
+#       >> add FIGS
 
-################# (18-apr-26 for 19-Apr-26)
+################# (21-apr-26 for 22-Apr-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -490,5 +490,6 @@
         - Great for practicing classification and adding to your data science portfolio
 
 """
+
 
 
