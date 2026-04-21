@@ -1,11 +1,11 @@
 
 ################# 0: FULL
 # copy:  
-# ----  rev[17-apr-26] start: 502 (Titanic example)  ----
+# ----  rev[18-apr-26] start: 502 (Titanic example)  ----
 # use SRT for detailed example with images
-# NXT >> Create ipynb "rouping part by part by GPT QWEN stylized form" >> add FIGS
+# NXT >> Create ipynb "grouping part by part by GPT QWEN stylized form" >> add FIGS
 
-################# (17-apr-26 for 18-Apr-26)
+################# (18-apr-26 for 19-Apr-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -415,9 +415,6 @@
 
 # ----  Example Walkthrough: Why Linear Regression is Unsuitable for Classification  ----
 
-
-
-
 """  
 
     Following example demonstrates why We Need Logistic Regression:
@@ -481,150 +478,17 @@
 
             
 
-    ----  cp1 [17-Apr-2026]  ----
+    --------  Next real-world project  --------
+    Now that we understand evaluation metrics, we'll apply logistic regression in real-world projects:
 
+    1. Titanic Dataset:
+        - Predict whether a passenger "survived" the Titanic disaster  
+        - Based on features like age, gender, class, etc.
 
-
-
-
-
-
-
-
-
-========================================
-
-
-
-
-
-
-----  rev[17-Apr-2026]  ----
-
-Next Example:
-
-Let's go ahead and begin to explore an example of logistic regression using the famous Titanic data
-set will use Python to attempt to predict whether or not a passenger survived based off of their features
-.
-Then you'll have a portfolio project with some advertising data trying to predict whether or not a customer
-clicked on an ad.
-OK thanks everyone and I'll see if the next lecture
-
-
-
-
-
-Here’s a clear, organized, and simplified version of your content — now structured point-by-point for better understanding:
-
----
-
-### 🔹 Model Evaluation: Understanding Rates from the Confusion Matrix
-
-After building a classification model (like logistic regression), we use **rates** to evaluate its performance more deeply.
-
-Let’s break down the key metrics using our earlier example (disease detection with 165 patients):
-
-|                     | Predicted No | Predicted Yes |
-|---------------------|--------------|---------------|
-| **Actual No**       | TN = 50      | FP = 10       |
-| **Actual Yes**       | FN = 5       | TP = 100      |
-
----
-
-#### 1. **Accuracy – How often is the model correct?**
-- Measures overall correctness.
-- Formula:
-  \[
-  \text{Accuracy} = \frac{\text{True Positives (TP)} + \text{True Negatives (TN)}}{\text{Total Predictions}}
-  \]
-- Calculation:
-  \[
-  \frac{100 + 50}{165} = \frac{150}{165} ≈ 0.909 → \textbf{91\% accurate}
-  \]
-
-✅ Interpretation: The model is right 91% of the time.
-
----
-
-#### 2. **Misclassification Rate – How often is the model wrong?**
-- Also called **error rate**.
-- Formula:
-  \[
-  \text{Error Rate} = \frac{\text{False Positives (FP)} + \text{False Negatives (FN)}}{\text{Total}}
-  \]
-- Calculation:
-  \[
-  \frac{10 + 5}{165} = \frac{15}{165} ≈ 0.091 → \textbf{9\% error rate}
-  \]
-
-❌ Interpretation: The model makes a mistake in about 1 out of every 11 cases.
-
-> 🔄 Note:  
-> Accuracy + Error Rate = 100%
-
----
-
-### 🔁 Quick Tip: Remembering False Positives vs. False Negatives
-
-It's easy to mix up **Type I** and **Type II** errors. Here’s a fun way to remember:
-
-#### ✅ **False Positive (Type I Error)**  
-- You predict **YES**, but it’s actually **NO**  
-- Example: Telling a **man** he’s pregnant ❌  
-  → He doesn’t have the condition, but you said he does  
-- FP = 10 in our example
-
-🧠 Think: *"False alarm"*
-
----
-
-#### ✅ **False Negative (Type II Error)**  
-- You predict **NO**, but it’s actually **YES**  
-- Example: Telling a **very pregnant person** they’re *not* pregnant ❌  
-  → They clearly have the condition, but you missed it  
-- FN = 5 in our example
-
-🧠 Think: *"Missed diagnosis"*
-
-> 💡 In statistics, these are also called:
-> - **Type I Error** = False Positive
-> - **Type II Error** = False Negative
-
-This humorous analogy helps you remember which is which — especially when stakes are high (like medicine or safety).
-
----
-
-### 🚀 What’s Next?
-
-Now that we understand evaluation metrics, let’s apply logistic regression in real-world projects:
-
-1. **Titanic Dataset (Python Example)**  
-   - Predict whether a passenger **survived** the Titanic disaster  
-   - Based on features like age, gender, class, etc.
-
-2. **Portfolio Project: Advertising Data**  
-   - Predict if a customer **clicked on an ad**  
-   - Great for practicing classification and adding to your data science portfolio
-
----
-
-👋 That’s it for now!  
-In the next lecture, we’ll dive into coding these models and interpreting results step by step.
-
-See you there! 😊
-
-
-
-
-
+    2. Portfolio Project: Advertising Data
+        - Predict if a customer "clicked on an ad"
+        - Great for practicing classification and adding to your data science portfolio
 
 """
-
-
-
-
-
-
-
 
 
