@@ -2,11 +2,11 @@
 ################# 0: FULL
 # copy:  
 # NXT   >> Create ipynb "grouping part by part by GPT QWEN stylized form" 
-#       >> do 100-150 line chunks: 90
+#       >> do 100-150 line chunks: 90 'done' -> FIG_1 from 
 #       >> use previous ipynbs styling
 #       >> add FIGS
 
-################# (21-apr-26 for 22-Apr-26)
+################# (22-apr-26 for 24-Apr-26)
 
 # Courses: PrTla PY for DS & ML >    1
 # Rewrite this using highlights, makeup, and styling in a point-wise format without altering the original content.
@@ -62,7 +62,8 @@
     ----  Logistic Regression (Modeling Probabilities)  ----
 
     The Role of the Sigmoid Function in Logistic Regression:
-        Logistic regression solves above limitation by applying the sigmoid (or logistic) function to the output of a linear equation like "z = (w^T)*x + b".
+        Logistic regression solves above limitation by applying the sigmoid (or logistic) function 
+            to the output of a linear equation like "z = (w^T)*x + b".
 
         The sigmoid function maps any real-valued input to a range strictly between 0 and 1.
 
