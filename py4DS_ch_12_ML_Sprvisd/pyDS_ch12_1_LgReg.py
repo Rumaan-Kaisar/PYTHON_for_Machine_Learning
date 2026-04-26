@@ -1,12 +1,12 @@
 
 ################# 0: FULL
-# copy:  
+# start:  -> -> 124 "----####  FIG_2...""
 # NXT   >> Create ipynb "grouping part by part by GPT QWEN stylized form" 
 #       >> do 100-150 line chunks: 95 - 190, 190-284
 #       >> use previous ipynbs styling
 #       >> add FIGS
 
-################# (24-apr-26 for 25-Apr-26)
+################# (25-apr-26 for 26-Apr-26)
 
 # Courses: PrTla PY for DS & ML >    1
 # Rewrite this using highlights, makeup, and styling in a point-wise format without altering the original content.
