@@ -1,12 +1,12 @@
 
 ################# 0: FULL
-# start:  -> -> 160 "How it works step by step:""
+# start:  -> -> 239 "These terms are widely . . . ""
 # NXT   >> Create ipynb "grouping part by part by GPT QWEN stylized form" 
 #       >> do 100-150 line chunks: 195-284
 #       >> use previous ipynbs styling
 #       >> add FIGS
 
-################# (28-apr-26 for 29-Apr-26)
+################# (29-Apr-26 for 01-May-26)
 
 # Courses: PrTla PY for DS & ML >    1
 # Rewrite this using highlights, makeup, and styling in a point-wise format without altering the original content.
@@ -187,7 +187,7 @@
         - Pass it through the sigmoid → get a probability  
         - Apply threshold → get a final class (0 or 1)  
 
-        This is how **logistic regression** works!        
+        This is how "logistic regression" works!        
 
 
 
