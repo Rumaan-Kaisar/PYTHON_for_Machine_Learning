@@ -1,12 +1,12 @@
 
 ################# 0: FULL
-# start:  -> -> 239 "These terms are widely . . . ""
+# start:  -> -> 287 "Example"
 # NXT   >> Create ipynb "grouping part by part by GPT QWEN stylized form" 
-#       >> do 100-150 line chunks: 195-284
+#       >> do 100-150 line chunks: 287-
 #       >> use previous ipynbs styling
 #       >> add FIGS
 
-################# (29-Apr-26 for 01-May-26)
+################# (03-May-26 for 05-May-26)
 
 # Courses: PrTla PY for DS & ML >    1
 # Rewrite this using highlights, makeup, and styling in a point-wise format without altering the original content.
