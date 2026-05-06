@@ -1,12 +1,12 @@
 
 ################# 0: FULL
-# start:  -> -> 287 "Example"
+# start:  -> -> 329   Accuracy: . . . 
 # NXT   >> Create ipynb "grouping part by part by GPT QWEN stylized form" 
 #       >> do 100-150 line chunks: 287-
 #       >> use previous ipynbs styling
 #       >> add FIGS
 
-################# (03-May-26 for 05-May-26)
+################# (05-May-26 for 06-May-26)
 
 # Courses: PrTla PY for DS & ML >    1
 # Rewrite this using highlights, makeup, and styling in a point-wise format without altering the original content.
@@ -297,7 +297,7 @@
             Presence of a disease where:
 
                 NO  = negative test = FALSE = 0
-                YES = positive test = FALSE = 0
+                YES = positive test = TRUE = 1
 
             ------------------------|---------------------------|-----------------------------
             n = 165                 |   Predicted "NO" = 55     |   Predicted "YES" = 100
