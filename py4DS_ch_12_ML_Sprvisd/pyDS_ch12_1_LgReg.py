@@ -1,12 +1,12 @@
 
 ################# 0: FULL
-# start:  -> -> 329   Accuracy: . . . 
+# start:  -> -> 345   --------  Understanding Type I and Type II Errors  --------
 # NXT   >> Create ipynb "grouping part by part by GPT QWEN stylized form" 
 #       >> do 100-150 line chunks: 287-
 #       >> use previous ipynbs styling
 #       >> add FIGS
 
-################# (05-May-26 for 06-May-26)
+################# (06-May-26 for 08-May-26)
 
 # Courses: PrTla PY for DS & ML >    1
 # Rewrite this using highlights, makeup, and styling in a point-wise format without altering the original content.
