@@ -1,14 +1,14 @@
 
 ################# 0: FULL
-# start:  -> -> 380   Disease Detection (e.g., Cancer): >> same format as "cyclone"
+# start:  -> 418 : end
 # NXT   >> Create ipynb "grouping part by part by GPT QWEN stylized form" 
 #       >> do 100-150 line chunks: 287-
 #       >> use previous ipynbs styling
 #       >> add FIGS
 
-################# (08-May-26 for 09-May-26)
+################# (09-May-26 for 10-May-26)
 
-# Courses: PrTla PY for DS & ML >    1
+# Courses: PrTla PY for DS & ML >
 # Rewrite this using highlights, makeup, and styling in a point-wise format without altering the original content.
 # Transfer to ipynb: the exact original text with professional styling, markup, and pointwise organization—zero content alterations—using precise highlighting and structural formatting:
 
