@@ -1,9 +1,4 @@
 
-################# 0: FULL
-# start:  -> 418 : end (done)
-# NXT   >> add FIGS
-################# (10-May-26 for 12-May-26)
-
 # Courses: PrTla PY for DS & ML >
 # Rewrite this using highlights, makeup, and styling in a point-wise format without altering the original content.
 # Transfer to ipynb: the exact original text with professional styling, markup, and pointwise organization—zero content alterations—using precise highlighting and structural formatting:
