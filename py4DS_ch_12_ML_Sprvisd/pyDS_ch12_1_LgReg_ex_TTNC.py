@@ -175,56 +175,6 @@ A comprehensive project walkthrough, including step-by-step code implementations
 
 The second text is essentially a **formalized and expanded rewrite** of the first lecture transcript. It removes conversational speech, adds structure, and introduces extra educational details. A simplified pointwise version that captures the core ideas from both texts would be:
 
-# Logistic Regression with the Titanic Dataset (Simplified)
-
-## 1. What We Will Learn
-
-* Learn how to use **Logistic Regression** in Python.
-* Build a model that predicts whether a Titanic passenger **survived or not**.
-* Understand the basic steps of a machine learning classification project.
-
-## 2. The Titanic Dataset
-
-* The Titanic dataset is one of the most popular beginner datasets in machine learning.
-* It contains information about passengers such as:
-
-  * Age
-  * Gender
-  * Ticket information
-  * Passenger class
-* Goal: Predict whether a passenger survived the disaster.
-
-## 3. Source of the Dataset
-
-* The original dataset comes from **[Kaggle](https://www.kaggle.com?utm_source=chatgpt.com)**.
-* Kaggle is a platform for data science and machine learning.
-
-## 4. What Kaggle Provides
-
-### Datasets
-
-* Thousands of datasets for practice and research.
-* Each dataset usually includes:
-
-  * Data files
-  * Descriptions
-  * Documentation
-
-### Competitions
-
-* Companies and organizations post real-world problems.
-* Participants build machine learning models to solve them.
-* Rewards may include:
-
-  * Cash prizes
-  * Recognition
-  * Job opportunities
-
-### Learning Community
-
-* Tutorials
-* Shared notebooks
-* Discussion forums
 
 ## 5. Titanic Competition
 
@@ -359,24 +309,7 @@ So if the instructor said Kaggle has "**two or three main aspects**" and only ex
 ---- cp5
 GPT text only
 
-The second text is essentially a formalized and expanded rewrite of the first lecture transcript. It removes conversational speech, adds structure, and introduces extra educational details. A simplified pointwise version that captures the core ideas from both texts would be:
 
-Logistic Regression with the Titanic Dataset (Simplified)
-1. What We Will Learn
-Learn how to use Logistic Regression in Python.
-Build a model that predicts whether a Titanic passenger survived or not.
-Understand the basic steps of a machine learning classification project.
-2. The Titanic Dataset
-The Titanic dataset is one of the most popular beginner datasets in machine learning.
-It contains information about passengers such as:
-Age
-Gender
-Ticket information
-Passenger class
-Goal: Predict whether a passenger survived the disaster.
-3. Source of the Dataset
-The original dataset comes from Kaggle.
-Kaggle is a platform for data science and machine learning.
 4. What Kaggle Provides
 Datasets
 Thousands of datasets for practice and research.
