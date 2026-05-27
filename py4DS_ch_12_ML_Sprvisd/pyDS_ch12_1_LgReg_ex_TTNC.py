@@ -12,6 +12,57 @@
 
 
 """ 
+    ----------------    Project: Titanic dataset (Logistic Regression in Python)    ----------------
+
+    Learning Objectives:
+        Learn how to use Logistic Regression in Python.
+        Build a model that predicts whether a "Titanic passenger survived or not".
+        Understand the "basic steps" of a machine learning "classification project".
+    
+        Data-source:  https://www.kaggle.com/competitions/titanic
+        Dataset:    Titanic - Machine Learning from Disaster
+
+        
+    The Titanic Dataset:
+        The Titanic dataset is one of the most popular beginner datasets in machine learning.
+        We're going to use a semi-cleaned version derived from the original source,
+
+    Goal: 
+        Predict whether a passenger survived the disaster. i.e. "survival status"
+
+
+    ----------------    www.kaggle.com    ----------------
+
+    Kaggle is a platform for data science and machine learning.
+    This is also a online community and data science hosting Web site.
+    
+    What Kaggle Provides:
+
+        Datasets:
+            Thousands of datasets for practice and research. Each dataset usually includes:
+                * Data files
+                * Descriptions
+                * Documentation
+
+            Such as "Airplane crashes since 1908".                
+            https://www.kaggle.com/datasets/saurograndi/airplane-crashes-since-1908
+
+
+        Competitions:
+            Companies and organizations post real-world problems.
+            Participants build machine learning models to solve them.
+            Rewards may include:
+                * Cash prizes
+                * Recognition
+                * Job opportunities
+
+        Learning Community:
+                * Tutorials
+                * Shared notebooks
+                * Discussion forums
+
+
+""" 
 -------------  https://www.kaggle.com/
 
 Hello everyone and welcome to the logistic regression of Python lecture I'm really excited for this
