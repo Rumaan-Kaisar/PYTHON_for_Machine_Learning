@@ -62,53 +62,10 @@
                 * Discussion forums
 
 
-""" 
--------------  https://www.kaggle.com/
-
-Hello everyone and welcome to the logistic regression of Python lecture I'm really excited for this
-lecture because we're going to be working with a titanic data set.
-This is a very famous dataset and it's often a student's first step in machine learning FOR classification
-.
-We're going to be trying to predict the classification survival or the CCed for passengers who were
-on the Titanic and we're going to be using a semi clean version of this titanic data set in the dataset
-.
-Original source is actually from "Kaggle dot com".
 
 
-Let me go ahead and briefly explain what Kaggle dot com is.
-I'm going to go ahead and jump to that Web site in my browser.
-OK.
-So here I am on Kaggle or Kaggle dot com pending how you pronounce it but it's K a G G L E dot com.
-And basically this is a data science hosting Web site.
-It has two or three main aspects to it.
+    ---- rev[26-May-2026] ----
 
-Dataset:
-    The first aspect is when we're actually already familiar with which is the data sets aspect.
-Basically this is a Web site that can host data sets for instance if you're interested in one of these
-data sets you can kind of scroll down here.
-Check out some of these data set such as "airplane crashes since 1908".
-<link>
-You can go ahead and click on this link and load up the data set a way to download it and some information
-on that data set.
-For instance here you can go ahead and click valid data set and read a description of the data set.
-And sometimes even has open ended questions free to answer just as a curiosity.
-
-
-competition:
-    The other aspect of this Web site is the competition's page.
-    You go ahead and click on the competition page.
-    It'll take you to a list of all the active competitions and basically this is the place where companies
-    can post their own data sets with their own problems and ask either a single person or a team of people
-    to compete for a monetary prize in order to solve their own real company problems.
-    Sometimes they're offering money other times or offering jobs at their corporation.
-    So you'll see things such as Facebook posts a challenge on this Web site and if you do well in the challenge
-    they'll actually ask you to interview at their company and other challenges are just for knowledge.
-    So you can see these simpler challenges here actually just knowledge based challenges 
-
-    and the one we're
-    going to do is the Titanic machine learning from disaster challenge.
-    And this is the basic source of where we're actually going to be getting our data from.
-    <link>
 
     Now this data is actually already been downloaded for you and it's part of the whole package you downloaded
     files notebooks.
@@ -127,24 +84,14 @@ competition:
     
 ---- cp1
 
-# Chapter: Logistic Regression in Python
+
 ## Case Study: The Titanic Passenger Dataset
 
 ### 1. Introduction
-This chapter introduces **logistic regression**, a foundational supervised learning algorithm used for binary classification tasks. The theoretical concepts will be applied to a practical machine learning project using the widely recognized **Titanic passenger dataset**. This dataset is frequently used as an introductory benchmark in data science due to its clear structure, real-world relevance, and well-documented feature set.
 
-### 2. Learning Objectives
-By the end of this chapter, you will be able to:
-- Understand the mathematical and algorithmic foundations of logistic regression.
-- Load, explore, and preprocess tabular data using Python libraries.
-- Train a binary classification model to predict passenger survival outcomes.
-- Evaluate model performance using standard classification metrics.
-
-### 3. Dataset Overview
-The objective of this project is to predict the **survival status** (survived or perished) of passengers aboard the RMS Titanic based on demographic, socioeconomic, and ticketing features. The dataset provided in this chapter is a semi-cleaned version derived from the original source, streamlining initial data preprocessing while preserving the core modeling challenges.
 
 ### 4. The Kaggle Platform
-The dataset originates from **Kaggle** (`www.kaggle.com`), a premier online community and hosting platform for data science and machine learning. Kaggle operates around three primary pillars:
+
 
 | Component | Description |
 |-----------|-------------|
@@ -185,19 +132,11 @@ A comprehensive project walkthrough, including step-by-step code implementations
 ---- cp2
 
 
-Case Study: The Titanic Passenger Dataset
-1. Introduction
-This chapter introduces logistic regression, a foundational supervised learning algorithm used for binary classification tasks. The theoretical concepts will be applied to a practical machine learning project using the widely recognized Titanic passenger dataset. This dataset is frequently used as an introductory benchmark in data science due to its clear structure, real-world relevance, and well-documented feature set.
-2. Learning Objectives
-By the end of this chapter, you will be able to:
-Understand the mathematical and algorithmic foundations of logistic regression.
-Load, explore, and preprocess tabular data using Python libraries.
-Train a binary classification model to predict passenger survival outcomes.
-Evaluate model performance using standard classification metrics.
-3. Dataset Overview
-The objective of this project is to predict the survival status (survived or perished) of passengers aboard the RMS Titanic based on demographic, socioeconomic, and ticketing features. The dataset provided in this chapter is a semi-cleaned version derived from the original source, streamlining initial data preprocessing while preserving the core modeling challenges.
+
 4. The Kaggle Platform
-The dataset originates from Kaggle (www.kaggle.com), a premier online community and hosting platform for data science and machine learning. Kaggle operates around three primary pillars:
+
+
+Kaggle operates around three primary pillars:
 Component
 Description
 Datasets
@@ -218,6 +157,8 @@ titanic_test.csv
 Contains passenger features without survival labels. Used to generate and submit final predictions.
 logistic_regression_python.ipynb
 Primary Jupyter Notebook for following along with code implementations, exercises, and solutions.
+
+
 6. Implementation Workflow
 To begin the practical exercise, follow these steps:
 Environment Setup: Open the provided Jupyter Notebook (logistic_regression_python.ipynb) or initialize a new Python environment.
