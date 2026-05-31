@@ -62,18 +62,18 @@
                 * Discussion forums
 
 
+                            
+    --------  Dataset overview  --------
+
+    Typical project files:
+                working directory/
+                ├── data_titanic_train.csv
+                ├── data_titanic_test.csv
+                └── pyDS_ch12_1_LgReg_ex_TTNC.ipynb
 
 
-    ---- rev[26-May-2026] ----
+    ---- rev[27-May-2026] ----
 
-
-    Now this data is actually already been downloaded for you and it's part of the whole package you downloaded
-    files notebooks.
-    Let me go in and show you where to find it.
-    If you go ahead and jump to the machine learning sections folder under logistic regression you'll see
-    some files here.
-    And the Titanic to see V and Titanic trained csv files are the data sets we're going to be working
-    with.
     So go ahead and use these two csv files that have already been downloaded for you and the notebook we're
     going to be using is logistic regression of Python.
     Later on we'll show you how to do the project and then we'll show the project solutions.
