@@ -95,21 +95,16 @@
 
 | Component | Description |
 |-----------|-------------|
-| **Datasets** | A public repository hosting thousands of datasets across diverse domains (e.g., historical records, scientific measurements, economic indicators). Each entry typically includes metadata, usage licenses, and community notebooks. |
-| **Competitions** | Structured challenges where organizations publish problem statements and anonymized datasets. Participants build predictive models to compete for prizes, academic recognition, or corporate recruitment opportunities. |
-| **Community & Learning** | Forums, tutorials, and shared Jupyter notebooks that facilitate collaborative problem-solving and skill development. |
 
-The specific competition referenced in this chapter is titled **"Titanic: Machine Learning from Disaster"**. It serves as an entry-level benchmark for classification modeling and remains a standard pedagogical tool in machine learning curricula.
 
-### 5. Data Acquisition & File Structure
-For instructional purposes, the required dataset files have been pre-packaged with the course materials. Navigate to the course directory:
+
+\
+
+
 ```
-machine_learning/
-└── logistic_regression/
-    ├── titanic_train.csv
-    ├── titanic_test.csv
-    └── logistic_regression_python.ipynb
+
 ```
+
 
 | File | Purpose |
 |------|---------|
@@ -184,15 +179,7 @@ The second text is essentially a **formalized and expanded rewrite** of the firs
 
 ## 6. Files Used in This Project
 
-Typical project files:
 
-```text
-logistic_regression/
-│
-├── titanic_train.csv
-├── titanic_test.csv
-└── logistic_regression_python.ipynb
-```
 
 ### File Purpose
 
@@ -310,24 +297,9 @@ So if the instructor said Kaggle has "**two or three main aspects**" and only ex
 GPT text only
 
 
-4. What Kaggle Provides
-Datasets
-Thousands of datasets for practice and research.
-Each dataset usually includes:
-Data files
-Descriptions
-Documentation
-Competitions
-Companies and organizations post real-world problems.
-Participants build machine learning models to solve them.
-Rewards may include:
-Cash prizes
-Recognition
-Job opportunities
-Learning Community
-Tutorials
-Shared notebooks
-Discussion forums
+
+
+
 5. Titanic Competition
 Competition name: Titanic: Machine Learning from Disaster
 A beginner-friendly machine learning challenge.
