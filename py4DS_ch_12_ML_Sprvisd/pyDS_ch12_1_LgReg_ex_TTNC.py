@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (16-Dec-25 for 17-Dec-25)
+################# (03-Jul-26 for 05-Jul-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -61,6 +61,12 @@
                 * Shared notebooks
                 * Discussion forums
 
+        Notebooks (Kernels):
+            An online coding environment similar to "Google Colab" or "Jupyter Notebook".
+            Write and run Python (and some other language) code directly in the browser.
+            Access Kaggle datasets without downloading them locally.
+            Share notebooks publicly with the community.
+            Use free CPU/GPU resources (subject to limits).
 
                             
     --------  Dataset overview  --------
@@ -71,15 +77,11 @@
                 ├── data_titanic_test.csv
                 └── pyDS_ch12_1_LgReg_ex_TTNC.ipynb
 
+    We're going to use these two datasets to perform logistic regression in Python.
+    Now let's apply some machine learning techniques to this Titanic dataset.
+    
 
-    ---- rev[27-May-2026] ----
 
-    So go ahead and use these two csv files that have already been downloaded for you and the notebook we're
-    going to be using is logistic regression of Python.
-    Later on we'll show you how to do the project and then we'll show the project solutions.
-    But right now let's go ahead and jump straight to a new notebook.
-    Or you can go ahead and follow along with the lecture notebook but I'm going to go ahead to get started
-    and do some machine learning with this titanic dataset.
 
     
 ---- cp1
