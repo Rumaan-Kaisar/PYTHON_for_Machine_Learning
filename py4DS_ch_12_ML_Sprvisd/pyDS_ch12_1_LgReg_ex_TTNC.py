@@ -433,10 +433,3 @@ Observation: There is only a negligible amount of missing data in the Embarked c
 Strategy: For such a minuscule amount of missing data, we can simply drop the specific rows containing the null values, or fill them using the mode (most frequent port of embarkation) without significantly impacting the overall dataset.
 
 
-
----- cp5
-
-
-
-"""
-
