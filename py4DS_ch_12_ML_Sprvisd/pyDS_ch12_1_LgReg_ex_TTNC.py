@@ -634,15 +634,9 @@ Got it. You want a middle ground between the raw transcript and the polished tex
 
 Something like this:
 
-1. Import Required Libraries
-Import Pandas as pd.
-Import Matplotlib's pyplot module as plt.
-Import Seaborn as sns.
-Enable inline plotting for Jupyter Notebook using %matplotlib inline.
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-%matplotlib inline
+
+
+
 2. Load the Titanic Dataset
 Read the titanic_train.csv file into a Pandas DataFrame.
 Store the DataFrame in a variable (e.g., df).
@@ -741,4 +735,15 @@ Avoids the heavy textbook explanations found in the polished version.
 
 
 """
+
+# --------    1. Setup the Environment    --------
+# Before beginning data analysis, it is essential to set up the workspace and import the necessary Python libraries. 
+
+import pandas as pd     # for data analysis.
+import numpy as np      # for nNumerical computations, arrays, mathematical operations
+%matplotlib inline      # to display plots inside Jupyter Notebook.
+
+# Matplotlib and Seaborn for visualization.
+import matplotlib.pyplot as plt
+import seaborn as sns
 
