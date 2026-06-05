@@ -287,24 +287,11 @@ By examining the heatmap, we can observe the extent of missing data across diffe
 
 
 
+
+
 ---- cp3
 
-Here is the polished, textbook-style version of the transcript. Conversational filler, phonetic transcription errors, and informal language have been removed and replaced with clear, structured, and professional educational content.
-Section 1: Environment Setup and Library Imports
-Before beginning data analysis, it is essential to set up the workspace and import the necessary Python libraries. For this analysis, we will use Pandas for data manipulation, and Matplotlib and Seaborn for data visualization.
-When working within a Jupyter Notebook environment, the %matplotlib inline magic command is used to ensure that plots are rendered directly within the notebook cells.
-python
-123456789
 
-# Import data manipulation library
-import pandas as pd
-
-# Import visualization libraries
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Enable inline plotting for Jupyter Notebooks
-%matplotlib inline
 
 Section 2: Loading the Dataset
 The next step is to load the dataset into a Pandas DataFrame. We will use the pd.read_csv() function to read the titanic_train.csv file.
@@ -415,19 +402,6 @@ Strategy: For such a minuscule amount of missing data, we can simply drop the sp
 
 The second text is essentially a **cleaned, structured, and educational version** of the first transcript. Here is a **simplified pointwise summary** of the content:
 
-### 1. Setup the Environment
-
-* Import **Pandas** for data analysis.
-* Import **Matplotlib** and **Seaborn** for visualization.
-* Use `%matplotlib inline` to display plots inside Jupyter Notebook.
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-%matplotlib inline
-```
-
 ---
 
 ### 2. Load the Titanic Dataset
@@ -493,21 +467,7 @@ This provides the foundation for all further analysis of the Titanic dataset.
 
 Got it. You want a **middle ground between the raw transcript and the polished textbook version**—a **simplified pointwise rewrite** that keeps the original flow but removes filler words and improves clarity.
 
-Something like this:
 
-### 1. Import Required Libraries
-
-* Import Pandas as `pd`.
-* Import Matplotlib's pyplot module as `plt`.
-* Import Seaborn as `sns`.
-* Enable inline plotting for Jupyter Notebook using `%matplotlib inline`.
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-%matplotlib inline
-```
 
 ### 2. Load the Titanic Dataset
 
