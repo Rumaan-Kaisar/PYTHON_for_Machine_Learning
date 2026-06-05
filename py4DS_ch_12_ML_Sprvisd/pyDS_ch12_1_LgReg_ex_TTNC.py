@@ -81,6 +81,7 @@
     Now let's apply some machine learning techniques to this Titanic dataset.
     
 
+    
 
 
     
@@ -88,13 +89,6 @@
 
 
 
-All right.
-I went ahead and clear the toolbar and the header just give us some more room.
-Let's go ahead and get started with our imports.
-I do Panas the pie as MP and then let me go ahead and do my visualization imports.
-I must say map plot lived up high plot as Piazzi I like importing seaborne as asinus.
-And then since I'm using the note book I'd say map plot lib in line.
-Perfect.
 
 
 Well we're going to go ahead and start doing is by reading in the Titanic train c a c file into a panda
@@ -177,23 +171,6 @@ Here is the polished, textbook-style version of the transcript. Conversational f
 
 ---
 
-### **Section 1: Environment Setup and Library Imports**
-
-Before beginning data analysis, it is essential to set up the workspace and import the necessary Python libraries. For this analysis, we will use **Pandas** for data manipulation, and **Matplotlib** and **Seaborn** for data visualization. 
-
-When working within a Jupyter Notebook environment, the `%matplotlib inline` magic command is used to ensure that plots are rendered directly within the notebook cells.
-
-```python
-# Import data manipulation library
-import pandas as pd
-
-# Import visualization libraries
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Enable inline plotting for Jupyter Notebooks
-%matplotlib inline
-```
 
 ---
 
@@ -302,8 +279,6 @@ By examining the heatmap, we can observe the extent of missing data across diffe
 #### **3. The `Embarked` Column**
 * **Observation:** There is only a negligible amount of missing data in the `Embarked` column (roughly one or two rows).
 * **Strategy:** For such a minuscule amount of missing data, we can simply **drop the specific rows** containing the null values, or fill them using the mode (most frequent port of embarkation) without significantly impacting the overall dataset.
-
-
 
 
 
