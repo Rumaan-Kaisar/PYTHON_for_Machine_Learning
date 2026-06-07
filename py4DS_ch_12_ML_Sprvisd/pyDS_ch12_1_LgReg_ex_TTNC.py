@@ -79,13 +79,47 @@
 
     We're going to use these two datasets to perform logistic regression in Python.
     Now let's apply some machine learning techniques to this Titanic dataset.
-    
-
-    
+"""
 
 
-    
----- cp1
+# --------    1. Setup the Environment    --------
+
+# Before beginning data analysis, it is essential to set up the workspace and import the necessary Python libraries. 
+
+import pandas as pd     # for data analysis.
+import numpy as np      # for nNumerical computations, arrays, mathematical operations
+%matplotlib inline      # to display plots inside Jupyter Notebook.
+
+# Matplotlib and Seaborn for visualization.
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+
+# --------    2. Loading the Dataset    --------
+
+# The next step is to load the dataset into a Pandas DataFrame. 
+# We will use the "pd.read_csv()" function to read the "titanic_train.csv" file. 
+
+# Load the dataset into a Pandas DataFrame
+df = pd.read_csv('titanic_train.csv')
+
+# Display the first few rows to inspect the data structure
+df.head()
+
+
+
+# --------    3. View the Data: Exploring the Dataset Features    --------
+
+# Use "df.head()" to display the first few rows of the dataset.
+# This helps understand the available columns and data structure.
+
+
+
+
+
+
+"""  
 
 
 
