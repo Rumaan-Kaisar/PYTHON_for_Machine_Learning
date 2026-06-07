@@ -205,19 +205,7 @@ Here is the polished, textbook-style version of the transcript. Conversational f
 
 ---
 
-### **Section 2: Loading the Dataset**
 
-The next step is to load the dataset into a Pandas DataFrame. We will use the `pd.read_csv()` function to read the `titanic_train.csv` file. 
-
-*(Note: In a Jupyter Notebook, typing the beginning of the file name and pressing the `Tab` key will trigger auto-completion, helping to prevent typographical errors.)*
-
-```python
-# Load the dataset into a Pandas DataFrame
-df = pd.read_csv('titanic_train.csv')
-
-# Display the first few rows to inspect the data structure
-df.head()
-```
 
 ---
 
@@ -241,6 +229,10 @@ Upon executing `df.head()`, we can observe the structure of the dataset. The Tit
 | **Embarked** | The port of embarkation. This is a categorical variable with three possible values:<br>• **C** = Cherbourg<br>• **Q** = Queenstown<br>• **S** = Southampton |
 
 Understanding these baseline features is a critical first step before proceeding to data cleaning, exploratory data analysis (EDA), and feature engineering.
+
+
+
+
 
 
 --------  Heatmap  --------
@@ -321,19 +313,6 @@ By examining the heatmap, we can observe the extent of missing data across diffe
 
 
 ---- cp3
-
-
-
-Section 2: Loading the Dataset
-The next step is to load the dataset into a Pandas DataFrame. We will use the pd.read_csv() function to read the titanic_train.csv file.
-(Note: In a Jupyter Notebook, typing the beginning of the file name and pressing the Tab key will trigger auto-completion, helping to prevent typographical errors.)
-python
-12345
-# Load the dataset into a Pandas DataFrame
-df = pd.read_csv('titanic_train.csv')
-
-# Display the first few rows to inspect the data structure
-df.head()
 
 
 Section 3: Exploring the Dataset Features
@@ -435,15 +414,7 @@ The second text is essentially a **cleaned, structured, and educational version*
 
 ---
 
-### 2. Load the Titanic Dataset
 
-* Read the `titanic_train.csv` file into a Pandas DataFrame.
-* Use `head()` to view the first few rows.
-
-```python
-df = pd.read_csv('titanic_train.csv')
-df.head()
-```
 
 ---
 
@@ -500,23 +471,6 @@ Got it. You want a **middle ground between the raw transcript and the polished t
 
 
 
-### 2. Load the Titanic Dataset
-
-* Read the `titanic_train.csv` file into a Pandas DataFrame.
-* Store the DataFrame in a variable (e.g., `df`).
-
-```python
-df = pd.read_csv('titanic_train.csv')
-```
-
-### 3. View the Data
-
-* Use `df.head()` to display the first few rows of the dataset.
-* This helps understand the available columns and data structure.
-
-```python
-df.head()
-```
 
 ### 4. Dataset Columns
 
@@ -667,15 +621,6 @@ Something like this:
 
 
 
-
-2. Load the Titanic Dataset
-Read the titanic_train.csv file into a Pandas DataFrame.
-Store the DataFrame in a variable (e.g., df).
-df = pd.read_csv('titanic_train.csv')
-3. View the Data
-Use df.head() to display the first few rows of the dataset.
-This helps understand the available columns and data structure.
-df.head()
 4. Dataset Columns
 PassengerId – Unique passenger identifier.
 Survived – Survival status (0 = did not survive, 1 = survived).
@@ -689,6 +634,8 @@ Ticket – Ticket number.
 Fare – Ticket price.
 Cabin – Cabin number (if known).
 Embarked – Port of embarkation.
+
+
 5. Embarked Values
 C = Cherbourg
 Q = Queenstown
@@ -766,15 +713,3 @@ Avoids the heavy textbook explanations found in the polished version.
 
 
 """
-
-# --------    1. Setup the Environment    --------
-# Before beginning data analysis, it is essential to set up the workspace and import the necessary Python libraries. 
-
-import pandas as pd     # for data analysis.
-import numpy as np      # for nNumerical computations, arrays, mathematical operations
-%matplotlib inline      # to display plots inside Jupyter Notebook.
-
-# Matplotlib and Seaborn for visualization.
-import matplotlib.pyplot as plt
-import seaborn as sns
-
