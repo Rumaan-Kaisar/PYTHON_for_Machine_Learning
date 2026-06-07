@@ -121,15 +121,12 @@ df.head()
 
 """  
 
+    
+---- cp1
+
+4.08
 
 
-
-
-Well we're going to go ahead and start doing is by reading in the Titanic train c a c file into a panda
-state of frame and created data from Coltrane and say PD read cxxviii and I can actually just start
-typing Titanic and if I click tab here it will auto complete to the options available for me.
-So in this case I want to do this titanic underscore train dot CSV run that and then I'm going to go
-ahead and check the head of the data frame just to get an idea of what's in there.
 
 
 It looks like we have a passenger write the column A survive which notice it's a 0 or 1 so 0 if they
