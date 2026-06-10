@@ -162,17 +162,6 @@ train.head()   # Display the first few rows to inspect the data structure
 4.08
 
 
-
-
-It looks like we have a passenger write the column A survive which notice it's a 0 or 1 so 0 if they
-did not survive what if they did survive.
-P class which is the passenger class so the passengers can be in first class second class or third class
-depending on where they are in the ship.
-There is also the name of the passenger the sex or gender the passenger of the string male or female
-.
-The age of the passenger if they happen to know it.
-And then this sibb s.p that indicates the number of siblings or spouses aboard and then parse S.H. indicates
-the number of parents children aboard.
 And then there's a ticket number a passenger fare how much they paid for their ticket.
 And if we go ahead and scroll over to the right we'll see a couple more columns.
 There is cabin which is the cabin they were in.
