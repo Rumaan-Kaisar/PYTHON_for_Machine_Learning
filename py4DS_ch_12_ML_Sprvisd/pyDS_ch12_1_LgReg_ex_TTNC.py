@@ -314,40 +314,6 @@ By examining the heatmap, we can observe the extent of missing data across diffe
 ---- cp3
 
 
-Section 3: Exploring the Dataset Features
-Upon executing df.head(), we can observe the structure of the dataset. The Titanic dataset contains several key features (columns) that provide information about each passenger. Below is a detailed breakdown of these columns:
-Column Name
-Description
-PassengerId
-A unique numerical identifier for each passenger.
-Survived
-The survival outcome of the passenger. This is a binary variable: 0 indicates the passenger did not survive, and 1 indicates the passenger survived.
-Pclass
-The passenger's ticket class, which serves as a proxy for socio-economic status. Values are 1 (First Class), 2 (Second Class), or 3 (Third Class).
-Name
-The full name of the passenger, which may include titles that can be engineered into new features.
-Sex
-The gender of the passenger, recorded as a string (male or female).
-Age
-The age of the passenger in years. (Note: This column may contain missing values).
-SibSp
-The number of siblings or spouses aboard the Titanic with the passenger.
-Parch
-The number of parents or children aboard the Titanic with the passenger.
-Ticket
-The passenger's ticket number.
-Fare
-The monetary amount the passenger paid for their ticket.
-Cabin
-The cabin number assigned to the passenger. (Note: This column frequently contains missing values).
-Embarked
-The port of embarkation. This is a categorical variable with three possible values:
-• C = Cherbourg
-• Q = Queenstown
-• S = Southampton
-Understanding these baseline features is a critical first step before proceeding to data cleaning, exploratory data analysis (EDA), and feature engineering.
-
-
 
 --------  HeatMap  --------
 
