@@ -383,31 +383,6 @@ The second text is essentially a **cleaned, structured, and educational version*
 
 ---
 
-### 3. Understand the Dataset Columns
-
-| Column          | Meaning                           |
-| --------------- | --------------------------------- |
-| **PassengerId** | Unique ID for each passenger      |
-| **Survived**    | Survival status (0 = No, 1 = Yes) |
-| **Pclass**      | Passenger class (1st, 2nd, 3rd)   |
-| **Name**        | Passenger's full name             |
-| **Sex**         | Gender (male/female)              |
-| **Age**         | Passenger's age                   |
-| **SibSp**       | Number of siblings/spouses aboard |
-| **Parch**       | Number of parents/children aboard |
-| **Ticket**      | Ticket number                     |
-| **Fare**        | Ticket price paid                 |
-| **Cabin**       | Cabin number (if known)           |
-| **Embarked**    | Port of embarkation               |
-
----
-
-### 4. Embarked Column Values
-
-* **C** = Cherbourg
-* **Q** = Queenstown
-* **S** = Southampton
-
 ---
 
 ### 5. Key Takeaway
@@ -437,26 +412,7 @@ Got it. You want a **middle ground between the raw transcript and the polished t
 
 
 
-### 4. Dataset Columns
 
-* **PassengerId** – Unique passenger identifier.
-* **Survived** – Survival status (`0` = did not survive, `1` = survived).
-* **Pclass** – Passenger class (`1`, `2`, or `3`).
-* **Name** – Passenger name.
-* **Sex** – Passenger gender (`male` or `female`).
-* **Age** – Passenger age.
-* **SibSp** – Number of siblings/spouses aboard.
-* **Parch** – Number of parents/children aboard.
-* **Ticket** – Ticket number.
-* **Fare** – Ticket price.
-* **Cabin** – Cabin number (if known).
-* **Embarked** – Port of embarkation.
-
-### 5. Embarked Values
-
-* **C** = Cherbourg
-* **Q** = Queenstown
-* **S** = Southampton
 
 ### 6. Next Step
 
@@ -583,37 +539,6 @@ Notice how this version:
 Got it. You want a middle ground between the raw transcript and the polished textbook version—a simplified pointwise rewrite that keeps the original flow but removes filler words and improves clarity.
 
 Something like this:
-
-
-
-4. Dataset Columns
-PassengerId – Unique passenger identifier.
-Survived – Survival status (0 = did not survive, 1 = survived).
-Pclass – Passenger class (1, 2, or 3).
-Name – Passenger name.
-Sex – Passenger gender (male or female).
-Age – Passenger age.
-SibSp – Number of siblings/spouses aboard.
-Parch – Number of parents/children aboard.
-Ticket – Ticket number.
-Fare – Ticket price.
-Cabin – Cabin number (if known).
-Embarked – Port of embarkation.
-
-
-5. Embarked Values
-C = Cherbourg
-Q = Queenstown
-S = Southampton
-6. Next Step
-Understand the available features before starting data cleaning and analysis.
-Difference Between the Three Styles
-Style	Example
-Raw Transcript	"Let's go ahead and check the head of the dataframe..."
-Simplified Pointwise	"Use df.head() to view the first few rows."
-Textbook Style	"Displaying the first few rows allows us to inspect the structure of the dataset before further analysis."
-
-Your example seems to be asking for the second style: concise, pointwise, and instructional without becoming overly formal or academic.
 
 
 ----  HeatMap  ----
