@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (03-Jul-26 for 05-Jul-26)
+################# (10-Jun-26 for 12-Jun-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -102,10 +102,7 @@ import seaborn as sns
 # We will use the "pd.read_csv()" function to read the "titanic_train.csv" file. 
 
 # Load the dataset into a Pandas DataFrame
-df = pd.read_csv('titanic_train.csv')
-
-# Display the first few rows to inspect the data structure
-df.head()
+train = pd.read_csv('titanic_train.csv')
 
 
 
@@ -114,6 +111,44 @@ df.head()
 # Use "df.head()" to display the first few rows of the dataset.
 # This helps understand the available columns and data structure.
 
+train.head()   # Display the first few rows to inspect the data structure
+
+# ----  Dataset Columns  ----
+# PassengerId   –   Unique passenger identifier.
+# Survived      –   Survival status (0 = did not survive, 1 = survived).
+# Pclass        –   Passenger class (1: First calss, 2: Second class, or 3: Third class).
+# Name          –   Passenger name.
+# Sex           –   Gender (male or female).
+# Age           –   Passenger age.
+# SibSp         –   Number of siblings/spouses aboard.
+# Parch         –   Number of parents/children aboard.
+# Ticket        –   Ticket number.
+# Fare          –   Ticket price.
+# Cabin         –   Cabin number (if known).
+# Embarked      –   Port of embarkation.
+
+# Embarked Values: C = Cherbourg, Q = Queenstown, S = Southampton
+
+
+# Understanding these baseline features is a critical first step before proceeding to 
+    # data cleaning, 
+    # exploratory data analysis (EDA), and 
+    # feature engineering.
+
+
+
+# ----  rev[07-Jun-2026]  ----
+
+
+# 6. Next Step
+# Understand the available features before starting data cleaning and analysis.
+# Difference Between the Three Styles
+# Style	Example
+# Raw Transcript	"Let's go ahead and check the head of the dataframe..."
+# Simplified Pointwise	"Use df.head() to view the first few rows."
+# Textbook Style	"Displaying the first few rows allows us to inspect the structure of the dataset before further analysis."
+
+# Your example seems to be asking for the second style: concise, pointwise, and instructional without becoming overly formal or academic.
 
 
 
