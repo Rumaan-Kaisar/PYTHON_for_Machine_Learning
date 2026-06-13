@@ -234,21 +234,12 @@ Cabane known 1 or 0.
 =====================  cp 3: Heatmap of Missing data
 
 
-
 ---- cp2
 
 ----  QWEN  ----
 
 Here is the polished, textbook-style version of the transcript. Conversational filler, phonetic transcription errors, and informal language have been removed and replaced with clear, structured, and professional educational content.
 
----
-
-
----
-
-
-
----
 
 
 --------  Heatmap  --------
@@ -259,7 +250,6 @@ Here is the polished, textbook-style version of the transcript. The conversation
 
 ### **Section 1: Detecting Missing Values**
 
-Before visualizing the data, it is crucial to identify where missing values exist within the dataset. In Pandas, this can be efficiently achieved using the `.isnull()` method. When applied to a DataFrame, this method returns a boolean mask of the same shape, where `True` indicates a missing (null) value and `False` indicates a present value.
 
 ```python
 # Check for missing values in the DataFrame
@@ -329,6 +319,8 @@ By examining the heatmap, we can observe the extent of missing data across diffe
 
 
 ---- cp3
+
+
 
 
 
