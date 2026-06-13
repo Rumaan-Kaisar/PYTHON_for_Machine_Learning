@@ -322,8 +322,6 @@ By examining the heatmap, we can observe the extent of missing data across diffe
 
 
 
-
-
 --------  HeatMap  --------
 
 Here is the polished, textbook-style version of the transcript. The conversational filler and phonetic transcription errors (such as "Asinus" for sns and "see map" for cmap) have been corrected and structured into clear, educational content.
@@ -377,6 +375,7 @@ Feature Engineering: Convert the column into a binary categorical feature (e.g.,
 3. The Embarked Column
 Observation: There is only a negligible amount of missing data in the Embarked column (roughly one or two rows).
 Strategy: For such a minuscule amount of missing data, we can simply drop the specific rows containing the null values, or fill them using the mode (most frequent port of embarkation) without significantly impacting the overall dataset.
+
 
 
 
