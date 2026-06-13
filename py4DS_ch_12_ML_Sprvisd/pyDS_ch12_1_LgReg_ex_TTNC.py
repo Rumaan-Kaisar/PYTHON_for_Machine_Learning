@@ -378,37 +378,7 @@ Strategy: For such a minuscule amount of missing data, we can simply drop the sp
 
 
 
-
 ---- cp4
-
---------  GPT: simplified  ------
-
-The second text is essentially a **cleaned, structured, and educational version** of the first transcript. Here is a **simplified pointwise summary** of the content:
-
----
-
-
-
----
-
----
-
-### 5. Key Takeaway
-
-Before performing:
-
-* Data Cleaning
-* Exploratory Data Analysis (EDA)
-* Feature Engineering
-
-you should first:
-
-1. Import the required libraries.
-2. Load the dataset.
-3. Inspect the data structure and understand the meaning of each column.
-
-This provides the foundation for all further analysis of the Titanic dataset.
-
 
 
 
@@ -422,23 +392,6 @@ Got it. You want a **middle ground between the raw transcript and the polished t
 
 
 
-### 6. Next Step
-
-* Understand the available features before starting data cleaning and analysis.
-
-### Difference Between the Three Styles
-
-| Style                | Example                                                                                                    |
-| -------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Raw Transcript       | "Let's go ahead and check the head of the dataframe..."                                                    |
-| Simplified Pointwise | "Use `df.head()` to view the first few rows."                                                              |
-| Textbook Style       | "Displaying the first few rows allows us to inspect the structure of the dataset before further analysis." |
-
-Your example seems to be asking for the **second style**: concise, pointwise, and instructional without becoming overly formal or academic.
-
-
-
-
 ----  HeatMap  ----
 
 Yes, for this transcript, the **simplified pointwise version** would look like this:
@@ -447,6 +400,7 @@ Yes, for this transcript, the **simplified pointwise version** would look like t
 
 * Check the dataset for missing values before further analysis.
 * Visualize missing data to understand its distribution.
+
 
 ---
 
