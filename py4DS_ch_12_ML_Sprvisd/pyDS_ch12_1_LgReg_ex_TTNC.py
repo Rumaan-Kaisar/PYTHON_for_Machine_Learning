@@ -137,18 +137,46 @@ train.head()   # Display the first few rows to inspect the data structure
 
 
 
-# ----  rev[07-Jun-2026]  ----
+""" 
+    ---------------------------   Exploratory Data Analysis  --------------------------- 
+
+    Before visualizing the data, it is crucial to identify where missing values exist within the dataset.
+    In Pandas, this can be done using the .isnull() method. 
+
+    When applied to a DataFrame, this method returns a boolean mask of the same shape, where:
+        "True" indicates a missing (null) value and 
+        "False" indicates a present value.
+
+    Let's start our exploratory data analysis (EDA). 
+    We will use "Seaborn" to create a "heatmap", which will quickly show us where data is "missing".
+
+"""
+
+# Goal:
+    # Check the dataset for missing values before further analysis.
+    # Visualize missing data to understand its distribution.
 
 
-# 6. Next Step
-# Understand the available features before starting data cleaning and analysis.
-# Difference Between the Three Styles
-# Style	Example
-# Raw Transcript	"Let's go ahead and check the head of the dataframe..."
-# Simplified Pointwise	"Use df.head() to view the first few rows."
-# Textbook Style	"Displaying the first few rows allows us to inspect the structure of the dataset before further analysis."
 
-# Your example seems to be asking for the second style: concise, pointwise, and instructional without becoming overly formal or academic.
+# ----  rev[10-Jun-2026]  ----
+
+
+
+# --------    4. Create a Missing Values Mask    --------
+# Use df.isnull() to identify missing values.
+# The result is a DataFrame of boolean values:
+# True → value is missing (null)
+# False → value is present
+
+df.isnull()
+
+Example:
+
+If a passenger's cabin is unknown, the corresponding Cabin value is True.
+
+
+
+
 
 
 
