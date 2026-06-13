@@ -190,14 +190,6 @@ If a passenger's cabin is unknown, the corresponding Cabin value is True.
 4.08
 
 
-And then there's a ticket number a passenger fare how much they paid for their ticket.
-And if we go ahead and scroll over to the right we'll see a couple more columns.
-There is cabin which is the cabin they were in.
-If it's known and then embarked and it's a port of impartation so see for Cherbourg.
-Queue for Queenstown and as for Southampton.
-All right.
-Those are the basic columns.
-
 
 =====================  cp 2: Dataset preview
 
@@ -206,10 +198,6 @@ Those are the basic columns.
 
 
 
-Let's go ahead and begin some exploratory data analysis.
-Now a lot of times you're going to have missing data.
-We're going to go ahead and do as you see Born to create a simple heat map to see where we're missing
-the most of our data.
 
 
 =========== Heatmap
@@ -244,6 +232,7 @@ We're going to go ahead and probably drop this later or change it to send up som
 Cabane known 1 or 0.
 
 =====================  cp 3: Heatmap of Missing data
+
 
 
 ---- cp2
