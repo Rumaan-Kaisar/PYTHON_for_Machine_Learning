@@ -162,24 +162,47 @@ train.head()   # Display the first few rows to inspect the data structure
 
 
 
-# --------    4. Create a Missing Values Mask    --------
+# --------    Step 1: Create a Missing Values Mask    --------
 # Use df.isnull() to identify missing values.
-# The result is a DataFrame of boolean values:
-# True → value is missing (null)
-# False → value is present
+# The result is a "DataFrame of boolean values":
+    # True  --> value is missing (null)
+    # False --> value is present (not null)
+    # Example: 
+    #   If a passenger's cabin is "unknown" or "NaN", 
+    #   the corresponding Cabin value is "True".
 
-df.isnull()
+train.isnull()
 
-Example:
+# Make a boolean mask: to Check for missing values in the DataFrame
+missing_values_mask = train.isnull()
 
-If a passenger's cabin is unknown, the corresponding Cabin value is True.
-
-
-
-
+# Display a sample of the boolean mask
+print(missing_values_mask.head())
 
 
+# --------    Step 2: Visualizing Missing Data with a Heatmap    --------
+# With above kind of "boolean DataFrame" we can make a Heatmap
 
+# Set the figure size for better visibility
+plt.figure(figsize=(12, 6))
+
+# Create the heatmap for missing values
+sns.heatmap(
+    missing_values_mask, 
+    yticklabels=False, 
+    cbar=False, 
+    cmap='viridis'
+)
+
+plt.title('Missing Values Heatmap')
+plt.show()
+
+""" What we're doing here:
+        Pass the boolean DataFrame (df.isnull()) to a Seaborn heatmap.
+        Hide row labels using yticklabels=False.
+        Remove the color bar using cbar=False.
+        Use a colormap (cmap) for better visibility. 
+"""
 
 
 """  
