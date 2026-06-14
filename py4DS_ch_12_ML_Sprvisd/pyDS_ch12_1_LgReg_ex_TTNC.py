@@ -336,6 +336,8 @@ Before visualizing the data, it is crucial to identify where missing values exis
 python
 12345
 
+
+
 # Check for missing values in the DataFrame
 missing_values_mask = df.isnull()
 
@@ -353,17 +355,7 @@ python
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Set the figure size for better visibility
-plt.figure(figsize=(12, 6))
 
-# Create the heatmap for missing values
-sns.heatmap(df.isnull(), 
-            yticklabels=False, 
-            cbar=False, 
-            cmap='viridis')
-
-plt.title('Missing Values Heatmap')
-plt.show()
 
 
 Interpreting the Heatmap:
@@ -518,16 +510,7 @@ Yes, for this transcript, the simplified pointwise version would look like this:
 
 
 3. Visualize Missing Data with a Heatmap
-Pass the boolean DataFrame (df.isnull()) to a Seaborn heatmap.
-Hide row labels using yticklabels=False.
-Remove the color bar using cbar=False.
-Use a colormap (cmap) for better visibility.
-sns.heatmap(
-    df.isnull(),
-    yticklabels=False,
-    cbar=False,
-    cmap='viridis'
-)
+
 
 
 4. Interpret the Heatmap
