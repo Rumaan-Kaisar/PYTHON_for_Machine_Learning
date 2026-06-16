@@ -158,9 +158,6 @@ train.head()   # Display the first few rows to inspect the data structure
 
 
 
-# ----  rev[10-Jun-2026]  ----
-
-
 
 # --------    Step 1: Create a Missing Values Mask    --------
 # Use df.isnull() to identify missing values.
@@ -199,8 +196,8 @@ plt.show()
 
 """ What we're doing here:
         Pass the boolean DataFrame (df.isnull()) to a Seaborn heatmap.
-        Hide row labels using yticklabels=False.
-        Remove the color bar using cbar=False.
+        Hide row labels using   "yticklabels=False."
+        Remove the color bar using  "cbar=False."
         Use a colormap (cmap) for better visibility. 
 """
 
