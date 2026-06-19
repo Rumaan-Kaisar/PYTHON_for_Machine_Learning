@@ -306,8 +306,8 @@ By examining the heatmap, we can observe the extent of missing data across diffe
 --------  HeatMap  --------
 
 
-Interpreting the Heatmap:
-In the resulting plot (using the 'viridis' colormap), the lighter/yellow vertical lines represent True values, which correspond to missing data. The darker regions represent False values, indicating complete data. This visual representation allows us to immediately identify which columns suffer from data sparsity.
+
+
 Section 3: Analyzing Missing Data and Formulating Strategies
 By examining the heatmap, we can observe the extent of missing data across different features and determine the appropriate handling strategy for each:
 1. The Age Column
@@ -331,22 +331,10 @@ Strategy: For such a minuscule amount of missing data, we can simply drop the sp
 
 ----  Simplified Pointwise  ----
 
-Got it. You want a **middle ground between the raw transcript and the polished textbook version**—a **simplified pointwise rewrite** that keeps the original flow but removes filler words and improves clarity.
-
-
-
-
-
 
 ----  HeatMap  ----
 
 ---
-
-### 4. Interpret the Heatmap
-
-* Yellow/light regions represent missing values (`True`).
-* Dark regions represent existing values (`False`).
-* The heatmap provides a quick overview of missing data across all columns.
 
 ---
 
@@ -400,19 +388,18 @@ Notice how this version:
 
 ---- text only
 
-Got it. You want a middle ground between the raw transcript and the polished textbook version—a simplified pointwise rewrite that keeps the original flow but removes filler words and improves clarity.
 
-Something like this:
 
 
 ----  HeatMap  ----
 
 
+### 4. Interpret the Heatmap
 
-4. Interpret the Heatmap
-Yellow/light regions represent missing values (True).
-Dark regions represent existing values (False).
-The heatmap provides a quick overview of missing data across all columns.
+
+
+
+
 
 
 5. Observations from the Titanic Dataset
