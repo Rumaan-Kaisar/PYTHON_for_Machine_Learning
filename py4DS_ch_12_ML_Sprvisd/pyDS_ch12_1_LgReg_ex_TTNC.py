@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (10-Jun-26 for 12-Jun-26)
+################# (19-Jun-26 for 20-Jun-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -199,7 +199,18 @@ plt.show()
         Hide row labels using   "yticklabels=False."
         Remove the color bar using  "cbar=False."
         Use a colormap (cmap) for better visibility. 
+
+    Interpret the Heatmap:
+        "Yellow/light" regions represent "missing" values (True for null).
+        "Dark" regions represent "existing" values (False).
+        The heatmap provides a quick overview of missing data across all columns.
+        
 """
+
+
+
+
+
 
 
 """  
