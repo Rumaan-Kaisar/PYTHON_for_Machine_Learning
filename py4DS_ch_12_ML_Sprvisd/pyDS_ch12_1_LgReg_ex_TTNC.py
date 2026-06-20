@@ -204,7 +204,27 @@ plt.show()
         "Yellow/light" regions represent "missing" values (True for null).
         "Dark" regions represent "existing" values (False).
         The heatmap provides a quick overview of missing data across all columns.
+
         
+    --------  Heatmap Observations  --------
+
+Age Column:
+    Some age values are missing.
+    Approximately 20% of the data is missing.
+    The amount of missing data is small enough to fill using imputation.
+
+Cabin Column:
+Most cabin values are missing.
+Too much data is missing for simple imputation.
+The column may be dropped later.
+Alternatively, create a new feature such as:
+CabinKnown = 1 (cabin recorded)
+CabinKnown = 0 (cabin missing)
+
+Embarked Column:
+Only a very small number of values are missing.
+Missing entries can be easily handled later.        
+
 """
 
 
