@@ -434,21 +434,6 @@ Notice how this version:
 
 
 
-5. Observations from the Titanic Dataset
-Age Column
-Some age values are missing.
-Approximately 20% of the data is missing.
-The amount of missing data is small enough to fill using imputation.
-Cabin Column
-Most cabin values are missing.
-Too much data is missing for simple imputation.
-The column may be dropped later.
-Alternatively, create a new feature such as:
-CabinKnown = 1 (cabin recorded)
-CabinKnown = 0 (cabin missing)
-Embarked Column
-Only a very small number of values are missing.
-Missing entries can be easily handled later.
 
 
 6. Conclusion
