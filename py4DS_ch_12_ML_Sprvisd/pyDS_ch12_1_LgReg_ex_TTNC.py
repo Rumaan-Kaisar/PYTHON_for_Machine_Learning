@@ -256,15 +256,27 @@ Missing entries can be easily handled later.
 
 
 
-So we can just glimps now order data from a very far bird's eye view and check out that yes we're missing
-some age information are missing a lot of Cabane information and we're missing just essentially one
-row of embarked roughly about 20 percent of that age data is missing and the proportion of age missing
-is likely small enough for a reasonable replacement of some form of imputation meaning I can actually
-use the knowledge of the other columns to fill in reasonable values for that age column.
-Looking at the cabin column however it looks like we're just missing too much of that data to do something
-useful with it at a basic level.
-We're going to go ahead and probably drop this later or change it to send up some other feature like
-Cabane known 1 or 0.
+So we can just glimps now order data from a very far bird's eye view and check out that:
+ age:
+    yes we're missing some age information are 
+     roughly about 20 percent of that age data is missing and the proportion of age missing
+    is likely small enough for a reasonable replacement of some form of imputation meaning I can actually
+    use the knowledge of the other columns to fill in reasonable values for that age column.
+ 
+ cabin:
+    missing a lot of Cabane information and 
+ 
+    Looking at the cabin column however it looks like we're just missing too much of that data to do something
+    useful with it at a basic level.
+    We're going to go ahead and probably drop this later or change it to send up some other feature like
+    Cabane known 1 or 0.
+
+ emberked:
+    we're missing just essentially one row of embarked 
+ 
+
+
+
 
 =====================  cp 3: Heatmap of Missing data
 
