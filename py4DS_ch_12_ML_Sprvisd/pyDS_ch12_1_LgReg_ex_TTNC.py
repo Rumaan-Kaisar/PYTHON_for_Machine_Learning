@@ -208,10 +208,17 @@ plt.show()
         
     --------  Heatmap Observations  --------
 
-Age Column:
-    Some age values are missing.
-    Approximately 20% of the data is missing.
-    The amount of missing data is small enough to fill using imputation.
+    Age Column:
+        Some age values are missing.
+        Approximately 20% of the data is missing (represented by the scattered yellow dashes).
+        Because the proportion of missing data is relatively small, it is reasonable to use "imputation".
+            i.e. since very few ages are missing, 
+            we can use "data from the other columns" to fill them in.
+
+            For example- conditioned on other features (such as Pclass) 
+            to ensure the imputed values are contextually accurate.
+        
+
 
 Cabin Column:
 Most cabin values are missing.
