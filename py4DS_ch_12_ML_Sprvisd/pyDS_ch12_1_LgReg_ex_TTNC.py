@@ -343,14 +343,15 @@ By examining the heatmap, we can observe the extent of missing data across diffe
 
 Section 3: Analyzing Missing Data and Formulating Strategies
 By examining the heatmap, we can observe the extent of missing data across different features and determine the appropriate handling strategy for each:
-1. The Age Column
-Observation: Approximately 20% of the data in the Age column is missing (represented by the scattered yellow dashes).
-Strategy: Because the proportion of missing data is relatively small, it is reasonable to use imputation. We can fill in the missing ages by calculating the mean or median age, potentially conditioned on other features (such as Pclass) to ensure the imputed values are contextually accurate.
+
+
+
 2. The Cabin Column
 Observation: The Cabin column has a massive amount of missing data, with the majority of the column appearing yellow on the heatmap.
 Strategy: Because too much information is missing, simple imputation is not viable and would introduce too much bias. We have two practical options:
 Drop the column entirely from the dataset.
 Feature Engineering: Convert the column into a binary categorical feature (e.g., CabinKnown), where 1 indicates the cabin was recorded and 0 indicates it was missing. This preserves the information that a cabin was unknown, which might itself be a predictive feature.
+
 3. The Embarked Column
 Observation: There is only a negligible amount of missing data in the Embarked column (roughly one or two rows).
 Strategy: For such a minuscule amount of missing data, we can simply drop the specific rows containing the null values, or fill them using the mode (most frequent port of embarkation) without significantly impacting the overall dataset.
@@ -373,11 +374,7 @@ Strategy: For such a minuscule amount of missing data, we can simply drop the sp
 
 ### 5. Observations from the Titanic Dataset
 
-#### Age Column
 
-* Some age values are missing.
-* Approximately 20% of the data is missing.
-* The amount of missing data is small enough to fill using imputation.
 
 #### Cabin Column
 
