@@ -264,11 +264,8 @@ Missing entries can be easily handled later.
 
 
 So we can just glimps now order data from a very far bird's eye view and check out that:
- age:
-    yes we're missing some age information are 
-     roughly about 20 percent of that age data is missing and the proportion of age missing
-    is likely small enough for a reasonable replacement of some form of imputation meaning I can actually
-    use the knowledge of the other columns to fill in reasonable values for that age column.
+
+
  
  cabin:
     missing a lot of Cabane information and 
@@ -315,9 +312,6 @@ So we can just glimps now order data from a very far bird's eye view and check o
 
 By examining the heatmap, we can observe the extent of missing data across different features and determine the appropriate handling strategy for each:
 
-#### **1. The `Age` Column**
-* **Observation:** Approximately 20% of the data in the `Age` column is missing (represented by the scattered yellow dashes). 
-* **Strategy:** Because the proportion of missing data is relatively small, it is reasonable to use **imputation**. We can fill in the missing ages by calculating the mean or median age, potentially conditioned on other features (such as `Pclass`) to ensure the imputed values are contextually accurate.
 
 #### **2. The `Cabin` Column**
 * **Observation:** The `Cabin` column has a massive amount of missing data, with the majority of the column appearing yellow on the heatmap.
