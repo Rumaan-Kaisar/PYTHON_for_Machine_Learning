@@ -3,7 +3,7 @@
 # copy:  
 #        
 #        
-################# (19-Jun-26 for 20-Jun-26)
+################# (21-Jun-26 for 23-Jun-26)
 
 # Courses: PrTla PY for DS & ML >    1
 
@@ -217,33 +217,20 @@ plt.show()
 
             For example- conditioned on other features (such as Pclass) 
             to ensure the imputed values are contextually accurate.
-        
 
+    Cabin Column:
+        Most cabin values are missing. Too much data is missing for simple imputation.
+        The column may be dropped later.
+        Alternatively, create a new feature such as:
+            CabinKnown = 1 (cabin recorded)
+            CabinKnown = 0 (cabin missing)
 
-Cabin Column:
-Most cabin values are missing.
-Too much data is missing for simple imputation.
-The column may be dropped later.
-Alternatively, create a new feature such as:
-CabinKnown = 1 (cabin recorded)
-CabinKnown = 0 (cabin missing)
+    Embarked Column:
+        Only a very small number of values are missing (roughly one or two rows).
 
-Embarked Column:
-Only a very small number of values are missing.
-Missing entries can be easily handled later.        
 
 """
 
-
-
-
-
-
-
-"""  
-
-    
----- cp1
 
 6.38
 
