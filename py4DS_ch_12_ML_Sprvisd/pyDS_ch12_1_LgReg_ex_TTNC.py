@@ -232,6 +232,16 @@ plt.show()
 """
 
 
+
+
+
+
+
+"""  
+
+    
+---- cp1
+
 6.38
 
 
@@ -247,24 +257,6 @@ plt.show()
 
 =========== Heatmap
 
-
-
-
-So we can just glimps now order data from a very far bird's eye view and check out that:
-
-
- 
- cabin:
-    missing a lot of Cabane information and 
- 
-    Looking at the cabin column however it looks like we're just missing too much of that data to do something
-    useful with it at a basic level.
-    We're going to go ahead and probably drop this later or change it to send up some other feature like
-    Cabane known 1 or 0.
-
- emberked:
-    we're missing just essentially one row of embarked 
- 
 
 
 
@@ -300,23 +292,6 @@ So we can just glimps now order data from a very far bird's eye view and check o
 By examining the heatmap, we can observe the extent of missing data across different features and determine the appropriate handling strategy for each:
 
 
-#### **2. The `Cabin` Column**
-* **Observation:** The `Cabin` column has a massive amount of missing data, with the majority of the column appearing yellow on the heatmap.
-* **Strategy:** Because too much information is missing, simple imputation is not viable and would introduce too much bias. We have two practical options:
-  1. **Drop the column entirely** from the dataset.
-  2. **Feature Engineering:** Convert the column into a binary categorical feature (e.g., `CabinKnown`), where `1` indicates the cabin was recorded and `0` indicates it was missing. This preserves the information that a cabin was unknown, which might itself be a predictive feature.
-
-#### **3. The `Embarked` Column**
-* **Observation:** There is only a negligible amount of missing data in the `Embarked` column (roughly one or two rows).
-* **Strategy:** For such a minuscule amount of missing data, we can simply **drop the specific rows** containing the null values, or fill them using the mode (most frequent port of embarkation) without significantly impacting the overall dataset.
-
-
-
-
-
-
-
-
 
 
 ---- cp3
@@ -346,6 +321,7 @@ Strategy: For such a minuscule amount of missing data, we can simply drop the sp
 
 
 ---- cp4
+
 
 
 
