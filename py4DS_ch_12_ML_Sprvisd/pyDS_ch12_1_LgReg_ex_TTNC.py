@@ -325,7 +325,6 @@ Strategy: For such a minuscule amount of missing data, we can simply drop the sp
 
 
 
-
 ----  Simplified Pointwise  ----
 
 
@@ -338,21 +337,6 @@ Strategy: For such a minuscule amount of missing data, we can simply drop the sp
 ### 5. Observations from the Titanic Dataset
 
 
-
-#### Cabin Column
-
-* Most cabin values are missing.
-* Too much data is missing for simple imputation.
-* The column may be dropped later.
-* Alternatively, create a new feature such as:
-
-  * `CabinKnown = 1` (cabin recorded)
-  * `CabinKnown = 0` (cabin missing)
-
-#### Embarked Column
-
-* Only a very small number of values are missing.
-* Missing entries can be easily handled later.
 
 ---
 
