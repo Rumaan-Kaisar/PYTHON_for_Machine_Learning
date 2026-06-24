@@ -233,22 +233,8 @@ plt.show()
 
 
 
+"""
 
-
-----  Simplified Pointwise  ----
-
-
-----  HeatMap  ----
-
----
-
----
-
-### 5. Observations from the Titanic Dataset
-
-
-
----
 
 ### 6. Conclusion
 
@@ -256,16 +242,6 @@ plt.show()
 * `Age` → suitable for imputation.
 * `Cabin` → likely drop or convert into a binary feature.
 * `Embarked` → only minor cleaning required.
-
----
-
-Notice how this version:
-
-* Keeps the **original teaching flow**.
-* Removes conversational filler.
-* Preserves important observations and reasoning.
-* Avoids the heavy textbook explanations found in the polished version.
-
 
 
 
